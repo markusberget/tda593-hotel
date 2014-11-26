@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_cDXnsHVNEeSotaYKRfcMRQ" name="model">
+  <packagedElement xmi:type="uml:Component" xmi:id="_LcW-4HVdEeSotaYKRfcMRQ" name="User"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_q-PRQHVdEeSotaYKRfcMRQ" name="Realization0" client="_HtzpgHVdEeSotaYKRfcMRQ" supplier="_g3MIwHVdEeSotaYKRfcMRQ" contract="_g3MIwHVdEeSotaYKRfcMRQ"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_wrMNAHVdEeSotaYKRfcMRQ" name="Usage0" client="_LcW-4HVdEeSotaYKRfcMRQ" supplier="_g3MIwHVdEeSotaYKRfcMRQ"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_4kcg4HVgEeSotaYKRfcMRQ" name="HotelManagement">
+    <packagedElement xmi:type="uml:Interface" xmi:id="_g3MIwHVdEeSotaYKRfcMRQ" name="IHotelManager">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_jpGPsHVdEeSotaYKRfcMRQ" name="login">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_leY2AHVgEeSotaYKRfcMRQ" name="username">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_HtzpgHVdEeSotaYKRfcMRQ" name="HotelManager">
+      <packagedElement xmi:type="uml:Class" xmi:id="_Jx2yoHViEeSotaYKRfcMRQ" name="StaffMember">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_f57nkHVjEeSotaYKRfcMRQ" name="staffManager" type="_mGMyAHViEeSotaYKRfcMRQ" association="_f6AgEHVjEeSotaYKRfcMRQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f57nkXVjEeSotaYKRfcMRQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f57nknVjEeSotaYKRfcMRQ" value="1"/>
+        </ownedAttribute>
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_mlm1YHVjEeSotaYKRfcMRQ" name="iHotelManagerImpl" type="_JAejkHVjEeSotaYKRfcMRQ" association="_mlp4sHVjEeSotaYKRfcMRQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mlm1YXVjEeSotaYKRfcMRQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mlm1YnVjEeSotaYKRfcMRQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_mGMyAHViEeSotaYKRfcMRQ" name="StaffManager">
+        <ownedAttribute xmi:type="uml:Property" xmi:id="_nFdaIHVjEeSotaYKRfcMRQ" name="iHotelManagerImpl" type="_JAejkHVjEeSotaYKRfcMRQ" association="_nFeBMHVjEeSotaYKRfcMRQ">
+          <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nFdaIXVjEeSotaYKRfcMRQ" value="1"/>
+          <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nFdaInVjEeSotaYKRfcMRQ" value="1"/>
+        </ownedAttribute>
+      </packagedElement>
+      <packagedElement xmi:type="uml:Class" xmi:id="_JAejkHVjEeSotaYKRfcMRQ" name="IHotelManagerImpl">
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_7pamYHVjEeSotaYKRfcMRQ" client="_JAejkHVjEeSotaYKRfcMRQ" supplier="_g3MIwHVdEeSotaYKRfcMRQ" contract="_g3MIwHVdEeSotaYKRfcMRQ"/>
+      </packagedElement>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_f6AgEHVjEeSotaYKRfcMRQ" memberEnd="_f6AgEXVjEeSotaYKRfcMRQ _f57nkHVjEeSotaYKRfcMRQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_f6AgEXVjEeSotaYKRfcMRQ" name="staffMember" type="_Jx2yoHViEeSotaYKRfcMRQ" association="_f6AgEHVjEeSotaYKRfcMRQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_f6AgEnVjEeSotaYKRfcMRQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_f6AgE3VjEeSotaYKRfcMRQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_mlp4sHVjEeSotaYKRfcMRQ" memberEnd="_mlp4sXVjEeSotaYKRfcMRQ _mlm1YHVjEeSotaYKRfcMRQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_mlp4sXVjEeSotaYKRfcMRQ" name="staffMember" type="_Jx2yoHViEeSotaYKRfcMRQ" association="_mlp4sHVjEeSotaYKRfcMRQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_mlp4snVjEeSotaYKRfcMRQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_mlp4s3VjEeSotaYKRfcMRQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_nFeBMHVjEeSotaYKRfcMRQ" memberEnd="_nFeBMXVjEeSotaYKRfcMRQ _nFdaIHVjEeSotaYKRfcMRQ">
+      <name xsi:nil="true"/>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_nFeBMXVjEeSotaYKRfcMRQ" name="staffManager" type="_mGMyAHViEeSotaYKRfcMRQ" association="_nFeBMHVjEeSotaYKRfcMRQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_nFeBMnVjEeSotaYKRfcMRQ" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_nFeBM3VjEeSotaYKRfcMRQ" value="1"/>
+      </ownedEnd>
+    </packagedElement>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_ZnjOEHVkEeSotaYKRfcMRQ" name="successScenario">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ZYGAUHVlEeSotaYKRfcMRQ" name="u" type="_LcW-4HVdEeSotaYKRfcMRQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_KYlM4HWNEeSotaYKRfcMRQ" name="hotelManager" type="_g3MIwHVdEeSotaYKRfcMRQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_m_UgcHVkEeSotaYKRfcMRQ" name="Lifeline" represents="_ZYGAUHVlEeSotaYKRfcMRQ" coveredBy="_Q9jq4HWPEeSotaYKRfcMRQ"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_nRRMEHVkEeSotaYKRfcMRQ" name="Lifeline0" represents="_KYlM4HWNEeSotaYKRfcMRQ" coveredBy="_Q9k5AHWPEeSotaYKRfcMRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Q9k5AHWPEeSotaYKRfcMRQ" name="login_MessageRecv" covered="_nRRMEHVkEeSotaYKRfcMRQ" message="_Q9dkQHWPEeSotaYKRfcMRQ"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Q9jq4HWPEeSotaYKRfcMRQ" name="login_MessageSend" covered="_m_UgcHVkEeSotaYKRfcMRQ" message="_Q9dkQHWPEeSotaYKRfcMRQ"/>
+    <message xmi:type="uml:Message" xmi:id="_Q9dkQHWPEeSotaYKRfcMRQ" name="login_Message" messageSort="asynchCall" receiveEvent="_Q9k5AHWPEeSotaYKRfcMRQ" sendEvent="_Q9jq4HWPEeSotaYKRfcMRQ" signature="_jpGPsHVdEeSotaYKRfcMRQ"/>
+  </packagedElement>
+</uml:Model>
