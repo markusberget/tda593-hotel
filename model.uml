@@ -358,6 +358,8 @@
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Fb6xQHYfEeS6mLi5FsOguA" name="addCancelationFee"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_KIB7EHYfEeS6mLi5FsOguA" name="searchRoom"/>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Lw8ZoHYfEeS6mLi5FsOguA" name="cancelBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_40Ht0HYfEeS6mLi5FsOguA" name="checkIn"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_57GkAHYfEeS6mLi5FsOguA" name="checkOut"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_bD0GwHYfEeS6mLi5FsOguA" name="IFinance">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_e5Z4QHYfEeS6mLi5FsOguA" name="calculatePayment"/>
