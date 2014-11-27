@@ -274,8 +274,8 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_sVMfEHYLEeSMx7vuKDnJZg" name="Staff"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_QaUx0HYaEeSNRvHXkk2GGA" name="User"/>
-  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_QahmIHYaEeSNRvHXkk2GGA" name="Realization0" client="_QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA _QaiNNHYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA" contract="_QaiNMXYaEeSNRvHXkk2GGA"/>
-  <packagedElement xmi:type="uml:Usage" xmi:id="_QahmIXYaEeSNRvHXkk2GGA" name="Usage0" client="_QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA _QaUx0HYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_QahmIHYaEeSNRvHXkk2GGA" name="Realization0" client="_QaiNNHYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA" contract="_QaiNMXYaEeSNRvHXkk2GGA"/>
+  <packagedElement xmi:type="uml:Usage" xmi:id="_QahmIXYaEeSNRvHXkk2GGA" name="Usage0" client="_QaUx0HYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_QaiNMHYaEeSNRvHXkk2GGA" name="HotelManagement">
     <packagedElement xmi:type="uml:Interface" xmi:id="_QaiNMXYaEeSNRvHXkk2GGA" name="IHotelManager">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_QaiNMnYaEeSNRvHXkk2GGA" name="login">
@@ -283,6 +283,9 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_yR3MoHYdEeS6mLi5FsOguA" name="addStaffMember"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_0rMbgHYdEeS6mLi5FsOguA" name="isPasswordSecure"/>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_1dxvAHYdEeS6mLi5FsOguA" name="isValidUsername"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Component" xmi:id="_QaiNNHYaEeSNRvHXkk2GGA" name="HotelManager">
       <packagedElement xmi:type="uml:Class" xmi:id="_QaiNNXYaEeSNRvHXkk2GGA" name="StaffMember">
@@ -302,7 +305,14 @@
         </ownedAttribute>
       </packagedElement>
       <packagedElement xmi:type="uml:Class" xmi:id="_QaiNQHYaEeSNRvHXkk2GGA" name="IHotelManagerImpl">
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QaiNQXYaEeSNRvHXkk2GGA" client="_QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA _QaiNQHYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA _QaiNMXYaEeSNRvHXkk2GGA" contract="_QaiNMXYaEeSNRvHXkk2GGA"/>
+        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QaiNQXYaEeSNRvHXkk2GGA" client="_QaiNQHYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA" contract="_QaiNMXYaEeSNRvHXkk2GGA"/>
+        <ownedOperation xmi:type="uml:Operation" xmi:id="_ySKuoHYdEeS6mLi5FsOguA" name="login">
+          <ownedParameter xmi:type="uml:Parameter" xmi:id="_ySPAEHYdEeS6mLi5FsOguA" name="username">
+            <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+            <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_ySQOMHYdEeS6mLi5FsOguA" value="1"/>
+            <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_ySQ1QHYdEeS6mLi5FsOguA" value="1"/>
+          </ownedParameter>
+        </ownedOperation>
       </packagedElement>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_QaiNQnYaEeSNRvHXkk2GGA" memberEnd="_QaiNQ3YaEeSNRvHXkk2GGA _QaiNNnYaEeSNRvHXkk2GGA">

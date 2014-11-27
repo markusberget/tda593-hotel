@@ -32,6 +32,12 @@
         <children>
           <emfPageIdentifier href="model.notation#_QatzYHYaEeSNRvHXkk2GGA"/>
         </children>
+        <children>
+          <emfPageIdentifier href="model.notation#_QalQgHYaEeSNRvHXkk2GGA"/>
+        </children>
+        <children>
+          <emfPageIdentifier href="model.notation#_Qao64HYaEeSNRvHXkk2GGA"/>
+        </children>
       </children>
     </windows>
   </sashModel>
