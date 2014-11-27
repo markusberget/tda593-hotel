@@ -25,6 +25,9 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_VsR0IHTcEeSOC7DG65-e3w" name="numberOfGuests">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_119wEHYeEeS6mLi5FsOguA" client="_NNrFkHTbEeSOC7DG65-e3w" supplier="_d2I54HYeEeS6mLi5FsOguA" contract="_d2I54HYeEeS6mLi5FsOguA"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_3FT4EHYeEeS6mLi5FsOguA" name="Operation1"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_3pdG8HYeEeS6mLi5FsOguA" name="updateBooking"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_c1EbwHTcEeSOC7DG65-e3w" name="RoomType">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_fmASUHTcEeSOC7DG65-e3w" name="name">
@@ -345,5 +348,15 @@
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_QakCZXYaEeSNRvHXkk2GGA" name="login_MessageRecv" covered="_QakCZHYaEeSNRvHXkk2GGA" message="_QakCZ3YaEeSNRvHXkk2GGA"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_QakCZnYaEeSNRvHXkk2GGA" name="login_MessageSend" covered="_QakCY3YaEeSNRvHXkk2GGA" message="_QakCZ3YaEeSNRvHXkk2GGA"/>
     <message xmi:type="uml:Message" xmi:id="_QakCZ3YaEeSNRvHXkk2GGA" name="login_Message" messageSort="asynchCall" receiveEvent="_QakCZXYaEeSNRvHXkk2GGA" sendEvent="_QakCZnYaEeSNRvHXkk2GGA" signature="_QaiNMnYaEeSNRvHXkk2GGA"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_d2I54HYeEeS6mLi5FsOguA" name="IBookingManagement">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_3FSC4HYeEeS6mLi5FsOguA" name="updateBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_40O4AHYeEeS6mLi5FsOguA" name="getBooking(bookingNumber)"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_AD-cMHYfEeS6mLi5FsOguA" name="getBooking(roomID,date)"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_B99coHYfEeS6mLi5FsOguA" name="createPendingBooking"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_D1wEsHYfEeS6mLi5FsOguA" name="confirmBooking()"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Fb6xQHYfEeS6mLi5FsOguA" name="addCancelationFee"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_KIB7EHYfEeS6mLi5FsOguA" name="searchRoom"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Lw8ZoHYfEeS6mLi5FsOguA" name="cancelBooking"/>
   </packagedElement>
 </uml:Model>
