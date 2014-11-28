@@ -785,9 +785,12 @@
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_s68lsHb2EeSlx-SIUE5Fhw" name="Interaction1">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_P7D5gHb3EeSlx-SIUE5Fhw" name="" type="_d2I54HYeEeS6mLi5FsOguA"/>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_RQEkoHb3EeSlx-SIUE5Fhw" name="" type="_QaUx0HYaEeSNRvHXkk2GGA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_P7CEUHb3EeSlx-SIUE5Fhw" name="" represents="_P7D5gHb3EeSlx-SIUE5Fhw"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_RQDWgHb3EeSlx-SIUE5Fhw" name="" represents="_RQEkoHb3EeSlx-SIUE5Fhw"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_P7D5gHb3EeSlx-SIUE5Fhw" name="bookingMnagement" type="_d2I54HYeEeS6mLi5FsOguA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RQEkoHb3EeSlx-SIUE5Fhw" name="u" type="_QaUx0HYaEeSNRvHXkk2GGA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_P7CEUHb3EeSlx-SIUE5Fhw" name="" represents="_P7D5gHb3EeSlx-SIUE5Fhw" coveredBy="_ic-1MHb6EeSlx-SIUE5Fhw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_RQDWgHb3EeSlx-SIUE5Fhw" name="" represents="_RQEkoHb3EeSlx-SIUE5Fhw" coveredBy="_ic8Y8Hb6EeSlx-SIUE5Fhw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ic8Y8Hb6EeSlx-SIUE5Fhw" name="searchRoom_MessageSend" covered="_RQDWgHb3EeSlx-SIUE5Fhw" message="_ic0dIHb6EeSlx-SIUE5Fhw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ic-1MHb6EeSlx-SIUE5Fhw" name="searchRoom_MessageRecv" covered="_P7CEUHb3EeSlx-SIUE5Fhw" message="_ic0dIHb6EeSlx-SIUE5Fhw"/>
+    <message xmi:type="uml:Message" xmi:id="_ic0dIHb6EeSlx-SIUE5Fhw" name="searchRoom_Message" messageSort="asynchCall" receiveEvent="_ic-1MHb6EeSlx-SIUE5Fhw" sendEvent="_ic8Y8Hb6EeSlx-SIUE5Fhw" signature="_KIB7EHYfEeS6mLi5FsOguA"/>
   </packagedElement>
 </uml:Model>
