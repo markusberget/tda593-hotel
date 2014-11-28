@@ -272,8 +272,21 @@
   <packagedElement xmi:type="uml:TimeObservation" xmi:id="_k82s4HV5EeSOC7DG65-e3w" name="TimeObservation1"/>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_beckYHYLEeSMx7vuKDnJZg" name="ChangeStatusOfRoom">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_TVVSwHYMEeSMx7vuKDnJZg" name="a" type="_sVMfEHYLEeSMx7vuKDnJZg"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_3AnqgHYMEeSMx7vuKDnJZg" name="Lifeline" represents="_TVVSwHYMEeSMx7vuKDnJZg"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="__mFrgHYMEeSMx7vuKDnJZg" name="Lifeline0"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_VgIcsHbYEeSheJiNqvd8mw" name="hotelManagement" type="_QaiNMXYaEeSNRvHXkk2GGA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_3AnqgHYMEeSMx7vuKDnJZg" name="Lifeline" represents="_TVVSwHYMEeSMx7vuKDnJZg" coveredBy="_i0P-IHbYEeSheJiNqvd8mw _i0XS4HbYEeSheJiNqvd8mw _CvxDEHbaEeSheJiNqvd8mw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="__mFrgHYMEeSMx7vuKDnJZg" name="Lifeline0" represents="_VgIcsHbYEeSheJiNqvd8mw" coveredBy="_i0P-IHbYEeSheJiNqvd8mw _i0XS4HbYEeSheJiNqvd8mw _CvxqIHbaEeSheJiNqvd8mw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CvxqIHbaEeSheJiNqvd8mw" name="changeStatusOfRoom_MessageRecv" covered="__mFrgHYMEeSMx7vuKDnJZg" message="_Cvt_wHbaEeSheJiNqvd8mw"/>
+    <fragment xmi:type="uml:CombinedFragment" xmi:id="_i0P-IHbYEeSheJiNqvd8mw" name="SearchRoom" covered="__mFrgHYMEeSMx7vuKDnJZg _3AnqgHYMEeSMx7vuKDnJZg">
+      <operand xmi:type="uml:InteractionOperand" xmi:id="_i0XS4HbYEeSheJiNqvd8mw" name="InteractionOperand" covered="__mFrgHYMEeSMx7vuKDnJZg _3AnqgHYMEeSMx7vuKDnJZg">
+        <guard xmi:type="uml:InteractionConstraint" xmi:id="_i0aWMHbYEeSheJiNqvd8mw" name="sd">
+          <specification xmi:type="uml:LiteralString" xmi:id="_BiAE4HbZEeSheJiNqvd8mw" value="Reference to Search Use Case "/>
+          <maxint xmi:type="uml:LiteralInteger" xmi:id="_i0a9QXbYEeSheJiNqvd8mw" value="1"/>
+          <minint xmi:type="uml:LiteralInteger" xmi:id="_i0a9QHbYEeSheJiNqvd8mw"/>
+        </guard>
+      </operand>
+    </fragment>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CvxDEHbaEeSheJiNqvd8mw" name="changeStatusOfRoom_MessageSend" covered="_3AnqgHYMEeSMx7vuKDnJZg" message="_Cvt_wHbaEeSheJiNqvd8mw"/>
+    <message xmi:type="uml:Message" xmi:id="_Cvt_wHbaEeSheJiNqvd8mw" name="changeStatusOfRoom_Message" messageSort="asynchCall" receiveEvent="_CvxqIHbaEeSheJiNqvd8mw" sendEvent="_CvxDEHbaEeSheJiNqvd8mw" signature="_K80rcHbXEeSheJiNqvd8mw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_sVMfEHYLEeSMx7vuKDnJZg" name="Staff"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_QaUx0HYaEeSNRvHXkk2GGA" name="User"/>
@@ -326,12 +339,28 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_1dxvAHYdEeS6mLi5FsOguA" name="isValidUsername">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_1dxvAHYdEeS6mLi5FsOguA" name="isValidUsername" concurrency="concurrent">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_7KxOwHZkEeSBRfeA9UETiw">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_BTv_MHZlEeSBRfeA9UETiw" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_K80rcHbXEeSheJiNqvd8mw" name="changeStatusOfRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3Zv8HbXEeSheJiNqvd8mw" name="roomId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_n2EHoHbXEeSheJiNqvd8mw" name="status">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEnumerator"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_BgISEHbYEeSheJiNqvd8mw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        </ownedParameter>
+      </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_vYG8wHbXEeSheJiNqvd8mw" name="getPossibleRoomStatuses">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQWKgHbYEeSheJiNqvd8mw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>

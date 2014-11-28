@@ -21,25 +21,13 @@
           <emfPageIdentifier href="model.notation#_QrJugHTaEeSOC7DG65-e3w"/>
         </children>
         <children>
-          <emfPageIdentifier href="model.notation#_1-344HV4EeSOC7DG65-e3w"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_hcHT0HTmEeSOC7DG65-e3w"/>
-        </children>
-        <children>
           <emfPageIdentifier href="model.notation#_cOycMHYLEeSMx7vuKDnJZg"/>
         </children>
         <children>
-          <emfPageIdentifier href="model.notation#_QatzYHYaEeSNRvHXkk2GGA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_QalQgHYaEeSNRvHXkk2GGA"/>
+          <emfPageIdentifier href="model.notation#_KtsgkHamEeSKk9bkKW7QkA"/>
         </children>
         <children>
           <emfPageIdentifier href="model.notation#_nIIMYHZPEeSiQcRa0VNXAQ"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_KtsgkHamEeSKk9bkKW7QkA"/>
         </children>
       </children>
     </windows>
