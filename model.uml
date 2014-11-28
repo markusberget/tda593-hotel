@@ -784,4 +784,5 @@
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BRgY0XV7EeSOC7DG65-e3w" name="MessageRecv" covered="_33-doHV6EeSOC7DG65-e3w"/>
     </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_s68lsHb2EeSlx-SIUE5Fhw" name="Interaction1"/>
 </uml:Model>

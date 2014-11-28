@@ -2033,4 +2033,20 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="__dqxcXbfEeSheJiNqvd8mw" id="(0.0,0.6178010471204188){L}"/>
     </edges>
   </notation:Diagram>
+  <notation:Diagram xmi:id="_wfUEUHb2EeSlx-SIUE5Fhw" type="PapyrusUMLSequenceDiagram" name="CombineRoomSearches" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_wfUEUXb2EeSlx-SIUE5Fhw" type="2001">
+      <children xmi:type="notation:DecorationNode" xmi:id="_wfUEUnb2EeSlx-SIUE5Fhw" type="5001"/>
+      <children xmi:type="notation:DecorationNode" xmi:id="_wfUEU3b2EeSlx-SIUE5Fhw" type="7001">
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wfUEVHb2EeSlx-SIUE5Fhw"/>
+      </children>
+      <element xmi:type="uml:Interaction" href="model.uml#_s68lsHb2EeSlx-SIUE5Fhw"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wfUEVXb2EeSlx-SIUE5Fhw"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_wfUEVnb2EeSlx-SIUE5Fhw" name="diagram_compatibility_version" stringValue="1.0.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_wfUEV3b2EeSlx-SIUE5Fhw"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_wfUEWHb2EeSlx-SIUE5Fhw">
+      <owner xmi:type="uml:Model" href="model.uml#_IAx-MHTAEeSwcMo9W7VXAg"/>
+    </styles>
+    <element xmi:type="uml:Interaction" href="model.uml#_s68lsHb2EeSlx-SIUE5Fhw"/>
+  </notation:Diagram>
 </xmi:XMI>
