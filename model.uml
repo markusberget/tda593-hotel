@@ -784,5 +784,10 @@
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BRgY0XV7EeSOC7DG65-e3w" name="MessageRecv" covered="_33-doHV6EeSOC7DG65-e3w"/>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interaction" xmi:id="_s68lsHb2EeSlx-SIUE5Fhw" name="Interaction1"/>
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_s68lsHb2EeSlx-SIUE5Fhw" name="Interaction1">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_P7D5gHb3EeSlx-SIUE5Fhw" name="" type="_d2I54HYeEeS6mLi5FsOguA"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RQEkoHb3EeSlx-SIUE5Fhw" name="" type="_QaUx0HYaEeSNRvHXkk2GGA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_P7CEUHb3EeSlx-SIUE5Fhw" name="" represents="_P7D5gHb3EeSlx-SIUE5Fhw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_RQDWgHb3EeSlx-SIUE5Fhw" name="" represents="_RQEkoHb3EeSlx-SIUE5Fhw"/>
+  </packagedElement>
 </uml:Model>

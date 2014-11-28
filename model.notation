@@ -2037,6 +2037,16 @@
     <children xmi:type="notation:Shape" xmi:id="_wfUEUXb2EeSlx-SIUE5Fhw" type="2001">
       <children xmi:type="notation:DecorationNode" xmi:id="_wfUEUnb2EeSlx-SIUE5Fhw" type="5001"/>
       <children xmi:type="notation:DecorationNode" xmi:id="_wfUEU3b2EeSlx-SIUE5Fhw" type="7001">
+        <children xmi:type="notation:Shape" xmi:id="_P7rkkHb3EeSlx-SIUE5Fhw" type="3001">
+          <children xmi:type="notation:DecorationNode" xmi:id="_P7tZwHb3EeSlx-SIUE5Fhw" type="5002"/>
+          <element xmi:type="uml:Lifeline" href="model.uml#_P7CEUHb3EeSlx-SIUE5Fhw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_P7rkkXb3EeSlx-SIUE5Fhw" x="552" y="10" width="155"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_RQQx4Hb3EeSlx-SIUE5Fhw" type="3001">
+          <children xmi:type="notation:DecorationNode" xmi:id="_RQSAAHb3EeSlx-SIUE5Fhw" type="5002"/>
+          <element xmi:type="uml:Lifeline" href="model.uml#_RQDWgHb3EeSlx-SIUE5Fhw"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_RQQx4Xb3EeSlx-SIUE5Fhw" x="116" y="10" width="60"/>
+        </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wfUEVHb2EeSlx-SIUE5Fhw"/>
       </children>
       <element xmi:type="uml:Interaction" href="model.uml#_s68lsHb2EeSlx-SIUE5Fhw"/>
