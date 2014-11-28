@@ -378,14 +378,17 @@
       </packagedElement>
     </packagedElement>
   </packagedElement>
-  <packagedElement xmi:type="uml:Interaction" xmi:id="_QakCYHYaEeSNRvHXkk2GGA" name="successScenario">
+  <packagedElement xmi:type="uml:Interaction" xmi:id="_QakCYHYaEeSNRvHXkk2GGA" name="login">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_QakCYXYaEeSNRvHXkk2GGA" name="u" type="_QaUx0HYaEeSNRvHXkk2GGA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_QakCYnYaEeSNRvHXkk2GGA" name="hotelManager" type="_QaiNMXYaEeSNRvHXkk2GGA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_QakCY3YaEeSNRvHXkk2GGA" name="Lifeline" represents="_QakCYXYaEeSNRvHXkk2GGA" coveredBy="_QakCZnYaEeSNRvHXkk2GGA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_QakCZHYaEeSNRvHXkk2GGA" name="Lifeline0" represents="_QakCYnYaEeSNRvHXkk2GGA" coveredBy="_QakCZXYaEeSNRvHXkk2GGA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_QakCZXYaEeSNRvHXkk2GGA" name="login_MessageRecv" covered="_QakCZHYaEeSNRvHXkk2GGA" message="_QakCZ3YaEeSNRvHXkk2GGA"/>
-    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_QakCZnYaEeSNRvHXkk2GGA" name="login_MessageSend" covered="_QakCY3YaEeSNRvHXkk2GGA" message="_QakCZ3YaEeSNRvHXkk2GGA"/>
-    <message xmi:type="uml:Message" xmi:id="_QakCZ3YaEeSNRvHXkk2GGA" name="login_Message" messageSort="asynchCall" receiveEvent="_QakCZXYaEeSNRvHXkk2GGA" sendEvent="_QakCZnYaEeSNRvHXkk2GGA" signature="_QaiNMnYaEeSNRvHXkk2GGA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_QakCY3YaEeSNRvHXkk2GGA" name="Lifeline" represents="_QakCYXYaEeSNRvHXkk2GGA" coveredBy="_Xk5N8HbREeS_R5Dc7EA8ow _kbHdAHbSEeStp8eyZUfdUA"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_QakCZHYaEeSNRvHXkk2GGA" name="Lifeline0" represents="_QakCYnYaEeSNRvHXkk2GGA" coveredBy="_Xk6cEHbREeS_R5Dc7EA8ow _kbG18HbSEeStp8eyZUfdUA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kbHdAHbSEeStp8eyZUfdUA" name="MessageRecv" covered="_QakCY3YaEeSNRvHXkk2GGA" message="_kbFn0HbSEeStp8eyZUfdUA"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Xk5N8HbREeS_R5Dc7EA8ow" name="login_Message0Send" covered="_QakCY3YaEeSNRvHXkk2GGA" message="_Xk2xsHbREeS_R5Dc7EA8ow"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Xk6cEHbREeS_R5Dc7EA8ow" name="login_Message0Recv" covered="_QakCZHYaEeSNRvHXkk2GGA" message="_Xk2xsHbREeS_R5Dc7EA8ow"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kbG18HbSEeStp8eyZUfdUA" name="MessageSend" covered="_QakCZHYaEeSNRvHXkk2GGA" message="_kbFn0HbSEeStp8eyZUfdUA"/>
+    <message xmi:type="uml:Message" xmi:id="_Xk2xsHbREeS_R5Dc7EA8ow" name="login_Message0" messageSort="asynchCall" receiveEvent="_Xk6cEHbREeS_R5Dc7EA8ow" sendEvent="_Xk5N8HbREeS_R5Dc7EA8ow" signature="_QaiNMnYaEeSNRvHXkk2GGA"/>
+    <message xmi:type="uml:Message" xmi:id="_kbFn0HbSEeStp8eyZUfdUA" name="success" messageSort="asynchCall" receiveEvent="_kbHdAHbSEeStp8eyZUfdUA" sendEvent="_kbG18HbSEeStp8eyZUfdUA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_d2I54HYeEeS6mLi5FsOguA" name="IBookingManagement" visibility="package">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_3FSC4HYeEeS6mLi5FsOguA" name="updateBooking"/>
@@ -660,4 +663,5 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_dE__UHa3EeSKk9bkKW7QkA" name="Component2"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_gA3fQHbSEeStp8eyZUfdUA" name="success"/>
 </uml:Model>
