@@ -672,6 +672,7 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_dE__UHa3EeSKk9bkKW7QkA" name="Component2"/>
   <packagedElement xmi:type="uml:Signal" xmi:id="_gA3fQHbSEeStp8eyZUfdUA" name="success"/>
   <packagedElement xmi:type="uml:Signal" xmi:id="_AfyLMHbfEeSheJiNqvd8mw" name="bookingID"/>
+  <packagedElement xmi:type="uml:Signal" xmi:id="_wI-44Hb_EeSlx-SIUE5Fhw" name="roomList"/>
   <packagedElement xmi:type="uml:Signal" xmi:id="_RlcroHbfEeSheJiNqvd8mw" name="bookingID"/>
   <packagedElement xmi:type="uml:Signal" xmi:id="_axPs0HbfEeSheJiNqvd8mw" name="boolean"/>
   <packagedElement xmi:type="uml:Signal" xmi:id="_jRKfcHbfEeSheJiNqvd8mw" name="boolean"/>
@@ -787,10 +788,14 @@
   <packagedElement xmi:type="uml:Interaction" xmi:id="_s68lsHb2EeSlx-SIUE5Fhw" name="Interaction1">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_P7D5gHb3EeSlx-SIUE5Fhw" name="bookingMnagement" type="_d2I54HYeEeS6mLi5FsOguA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_RQEkoHb3EeSlx-SIUE5Fhw" name="u" type="_QaUx0HYaEeSNRvHXkk2GGA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_P7CEUHb3EeSlx-SIUE5Fhw" name="" represents="_P7D5gHb3EeSlx-SIUE5Fhw" coveredBy="_ic-1MHb6EeSlx-SIUE5Fhw"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_RQDWgHb3EeSlx-SIUE5Fhw" name="" represents="_RQEkoHb3EeSlx-SIUE5Fhw" coveredBy="_ic8Y8Hb6EeSlx-SIUE5Fhw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_P7CEUHb3EeSlx-SIUE5Fhw" name="" represents="_P7D5gHb3EeSlx-SIUE5Fhw" coveredBy="_ic-1MHb6EeSlx-SIUE5Fhw _3gNlIHb_EeSlx-SIUE5Fhw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_RQDWgHb3EeSlx-SIUE5Fhw" name="" represents="_RQEkoHb3EeSlx-SIUE5Fhw" coveredBy="_ic8Y8Hb6EeSlx-SIUE5Fhw _3gPaUHb_EeSlx-SIUE5Fhw"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ic8Y8Hb6EeSlx-SIUE5Fhw" name="searchRoom_MessageSend" covered="_RQDWgHb3EeSlx-SIUE5Fhw" message="_ic0dIHb6EeSlx-SIUE5Fhw"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ic-1MHb6EeSlx-SIUE5Fhw" name="searchRoom_MessageRecv" covered="_P7CEUHb3EeSlx-SIUE5Fhw" message="_ic0dIHb6EeSlx-SIUE5Fhw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3gNlIHb_EeSlx-SIUE5Fhw" name="roomList_MessageSend" covered="_P7CEUHb3EeSlx-SIUE5Fhw" message="_3gKh0Hb_EeSlx-SIUE5Fhw"/>
+    <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3gPaUHb_EeSlx-SIUE5Fhw" name="roomList_MessageRecv" covered="_RQDWgHb3EeSlx-SIUE5Fhw" message="_3gKh0Hb_EeSlx-SIUE5Fhw"/>
     <message xmi:type="uml:Message" xmi:id="_ic0dIHb6EeSlx-SIUE5Fhw" name="searchRoom_Message" messageSort="asynchCall" receiveEvent="_ic-1MHb6EeSlx-SIUE5Fhw" sendEvent="_ic8Y8Hb6EeSlx-SIUE5Fhw" signature="_KIB7EHYfEeS6mLi5FsOguA"/>
+    <message xmi:type="uml:Message" xmi:id="_3gKh0Hb_EeSlx-SIUE5Fhw" name="roomList_Message" messageSort="asynchSignal" receiveEvent="_3gPaUHb_EeSlx-SIUE5Fhw" sendEvent="_3gNlIHb_EeSlx-SIUE5Fhw" signature="_wI-44Hb_EeSlx-SIUE5Fhw"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Actor" xmi:id="_imZ6IHb-EeSlx-SIUE5Fhw" name="Actor1"/>
 </uml:Model>
