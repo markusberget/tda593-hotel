@@ -784,6 +784,13 @@
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BRgY0HV7EeSOC7DG65-e3w" name="MessageSend" covered="_2H_GsHV6EeSOC7DG65-e3w"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_BRgY0XV7EeSOC7DG65-e3w" name="MessageRecv" covered="_33-doHV6EeSOC7DG65-e3w"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Interaction" xmi:id="_6Hx5gHedEeSLSZ7tZq0LGA" name="addStaffMemberInteraction">
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_CRekgHeeEeSLSZ7tZq0LGA" name="u" represents="_QakCYXYaEeSNRvHXkk2GGA" coveredBy="_Pb0e4HeeEeSLSZ7tZq0LGA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_CiajgHeeEeSLSZ7tZq0LGA" name="hotelManager" represents="_QakCYnYaEeSNRvHXkk2GGA" coveredBy="_Pb1tAHeeEeSLSZ7tZq0LGA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Pb0e4HeeEeSLSZ7tZq0LGA" name="addStaffMember_MessageSend" covered="_CRekgHeeEeSLSZ7tZq0LGA" message="_PbMMwHeeEeSLSZ7tZq0LGA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Pb1tAHeeEeSLSZ7tZq0LGA" name="addStaffMember_MessageRecv" covered="_CiajgHeeEeSLSZ7tZq0LGA" message="_PbMMwHeeEeSLSZ7tZq0LGA"/>
+      <message xmi:type="uml:Message" xmi:id="_PbMMwHeeEeSLSZ7tZq0LGA" name="addStaffMember_Message" messageSort="asynchCall" receiveEvent="_Pb1tAHeeEeSLSZ7tZq0LGA" sendEvent="_Pb0e4HeeEeSLSZ7tZq0LGA" signature="_yR3MoHYdEeS6mLi5FsOguA"/>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Interaction" xmi:id="_s68lsHb2EeSlx-SIUE5Fhw" name="Interaction1">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_P7D5gHb3EeSlx-SIUE5Fhw" name="bookingMnagement" type="_d2I54HYeEeS6mLi5FsOguA"/>
