@@ -343,7 +343,6 @@
     <packagedElement xmi:type="uml:Component" xmi:id="_QaiNNHYaEeSNRvHXkk2GGA" name="HotelManager">
       <packagedElement xmi:type="uml:Class" xmi:id="_QaiNQHYaEeSNRvHXkk2GGA" name="IHotelManagerImpl" visibility="package">
         <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QaiNQXYaEeSNRvHXkk2GGA" client="_QaiNQHYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA" contract="_QaiNMXYaEeSNRvHXkk2GGA"/>
-        <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_qAv6IHZhEeSBRfeA9UETiw" client="_QaiNQHYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA" contract="_QaiNMXYaEeSNRvHXkk2GGA"/>
         <ownedOperation xmi:type="uml:Operation" xmi:id="_ySKuoHYdEeS6mLi5FsOguA" name="login">
           <ownedParameter xmi:type="uml:Parameter" xmi:id="_ySPAEHYdEeS6mLi5FsOguA" name="username">
             <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
