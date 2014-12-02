@@ -381,6 +381,26 @@
         </ownedOperation>
       </packagedElement>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_fOOUkHn3EeSXl-11lZMmcA" memberEnd="_fOOUkXn3EeSXl-11lZMmcA _fOMfYHn3EeSXl-11lZMmcA">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_fOOUkXn3EeSXl-11lZMmcA" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_fOOUkHn3EeSXl-11lZMmcA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fOOUknn3EeSXl-11lZMmcA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fOOUk3n3EeSXl-11lZMmcA" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_fOMfYHn3EeSXl-11lZMmcA" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_fOOUkHn3EeSXl-11lZMmcA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fOMfYXn3EeSXl-11lZMmcA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fOMfYnn3EeSXl-11lZMmcA" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_vTH7kHn3EeSXl-11lZMmcA" memberEnd="_vTH7kXn3EeSXl-11lZMmcA _vTHUgHn3EeSXl-11lZMmcA">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_vTH7kXn3EeSXl-11lZMmcA" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_vTH7kHn3EeSXl-11lZMmcA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vTH7knn3EeSXl-11lZMmcA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vTH7k3n3EeSXl-11lZMmcA" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_vTHUgHn3EeSXl-11lZMmcA" name="room" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_vTH7kHn3EeSXl-11lZMmcA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vTHUgXn3EeSXl-11lZMmcA"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vTHUgnn3EeSXl-11lZMmcA" value="*"/>
+      </ownedEnd>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_d2I54HYeEeS6mLi5FsOguA" name="IBookingManagement" visibility="package">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_3FSC4HYeEeS6mLi5FsOguA" name="updateBooking"/>
