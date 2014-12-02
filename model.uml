@@ -859,4 +859,14 @@
     <message xmi:type="uml:Message" xmi:id="_3gKh0Hb_EeSlx-SIUE5Fhw" name="roomList_Message" messageSort="asynchSignal" receiveEvent="_3gPaUHb_EeSlx-SIUE5Fhw" sendEvent="_3gNlIHb_EeSlx-SIUE5Fhw" signature="_wI-44Hb_EeSlx-SIUE5Fhw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_imZ6IHb-EeSlx-SIUE5Fhw" name="Actor1"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_r-_t0Hn2EeSXl-11lZMmcA" memberEnd="_r-_t0Xn2EeSXl-11lZMmcA _r-8DcHn2EeSXl-11lZMmcA">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_r-_t0Xn2EeSXl-11lZMmcA" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_r-_t0Hn2EeSXl-11lZMmcA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r-_t0nn2EeSXl-11lZMmcA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r-_t03n2EeSXl-11lZMmcA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_r-8DcHn2EeSXl-11lZMmcA" name="room" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_r-_t0Hn2EeSXl-11lZMmcA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r-8DcXn2EeSXl-11lZMmcA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r-8Dcnn2EeSXl-11lZMmcA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Model>

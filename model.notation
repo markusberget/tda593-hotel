@@ -1636,6 +1636,29 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fmgrQHbiEeSCOPdredPf6w" id="(1.0,0.54)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_fmgrQXbiEeSCOPdredPf6w" id="(0.0,0.45)"/>
     </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_r_NJMHn2EeSXl-11lZMmcA" type="4001" source="_qunK4HZPEeSiQcRa0VNXAQ" target="_l3w7QHZQEeSiQcRa0VNXAQ">
+      <children xmi:type="notation:DecorationNode" xmi:id="_r_OXUHn2EeSXl-11lZMmcA" type="6001">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_r_O-YHn2EeSXl-11lZMmcA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_r_PlcHn2EeSXl-11lZMmcA" type="6002">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_r_PlcXn2EeSXl-11lZMmcA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_r_Plcnn2EeSXl-11lZMmcA" type="6003">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_r_QMgHn2EeSXl-11lZMmcA" y="-20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_r_QMgXn2EeSXl-11lZMmcA" type="6005">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_r_QMgnn2EeSXl-11lZMmcA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_r_QzkHn2EeSXl-11lZMmcA" type="6033">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_r_QzkXn2EeSXl-11lZMmcA" y="20"/>
+      </children>
+      <children xmi:type="notation:DecorationNode" xmi:id="_r_Qzknn2EeSXl-11lZMmcA" type="6034">
+        <layoutConstraint xmi:type="notation:Location" xmi:id="_r_RaoHn2EeSXl-11lZMmcA" y="-20"/>
+      </children>
+      <styles xmi:type="notation:FontStyle" xmi:id="_r_NJMXn2EeSXl-11lZMmcA"/>
+      <element xmi:type="uml:Association" href="model.uml#_r-_t0Hn2EeSXl-11lZMmcA"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_r_NJMnn2EeSXl-11lZMmcA" points="[67, 1, -455, -10]$[472, 11, -50, 0]"/>
+    </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_KtsgkHamEeSKk9bkKW7QkA" type="PapyrusUMLSequenceDiagram" name="PaymentSequence" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_KtsgkXamEeSKk9bkKW7QkA" type="2001">
