@@ -281,7 +281,7 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_yR3MoHYdEeS6mLi5FsOguA" name="addStaffMember" visibility="protected" concurrency="concurrent">
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_yR3MoHYdEeS6mLi5FsOguA" name="addStaffMember" visibility="public" concurrency="concurrent">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_GzN4kHZlEeSBRfeA9UETiw" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         </ownedParameter>
