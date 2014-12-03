@@ -625,5 +625,36 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" href="Classes.uml#_49dQQHpiEeSOqIzpWDGINg"/>
-  <packagedElement xmi:type="uml:Package" xmi:id="_0KAmwHsPEeSXcqnzxUEL_w" name="Component Diagram"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0KAmwHsPEeSXcqnzxUEL_w" name="Component Diagram">
+    <packagedElement xmi:type="uml:Component" xmi:id="_QW-KwHsbEeSh4-XBGg9AIQ" name="Booking System"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_UBxokHsbEeSh4-XBGg9AIQ" name="Realization0" client="_QW-KwHsbEeSh4-XBGg9AIQ">
+      <supplier xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzZ0cHO_EeSgC_3iHN4p8A"/>
+      <contract xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzZ0cHO_EeSgC_3iHN4p8A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_Vu7G4HsbEeSh4-XBGg9AIQ" name="Realization1" client="_QW-KwHsbEeSh4-XBGg9AIQ">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
+      <contract xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_WZz28HsbEeSh4-XBGg9AIQ" name="Realization2" client="_QW-KwHsbEeSh4-XBGg9AIQ">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_d2I54HYeEeS6mLi5FsOguA"/>
+      <contract xmi:type="uml:Interface" href="Classes.uml#_d2I54HYeEeS6mLi5FsOguA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_XnSWsHsbEeSh4-XBGg9AIQ" name="Customer"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_Zo8FYHsbEeSh4-XBGg9AIQ" name="Usage0" client="_XnSWsHsbEeSh4-XBGg9AIQ">
+      <supplier xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYmUXO_EeSgC_3iHN4p8A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_aEkRcHsbEeSh4-XBGg9AIQ" name="Usage1" client="_XnSWsHsbEeSh4-XBGg9AIQ">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_d2I54HYeEeS6mLi5FsOguA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_bIvEMHsbEeSh4-XBGg9AIQ" name="Staff"/>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_cXf9YHsbEeSh4-XBGg9AIQ" name="Usage2" client="_bIvEMHsbEeSh4-XBGg9AIQ">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_dK_P0HsbEeSh4-XBGg9AIQ" name="Usage3" client="_bIvEMHsbEeSh4-XBGg9AIQ">
+      <supplier xmi:type="uml:Interface" href="Classes.uml#_d2I54HYeEeS6mLi5FsOguA"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Usage" xmi:id="_eVAL4HsbEeSh4-XBGg9AIQ" name="Usage4" client="_bIvEMHsbEeSh4-XBGg9AIQ">
+      <supplier xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYmUXO_EeSgC_3iHN4p8A"/>
+    </packagedElement>
+  </packagedElement>
 </uml:Model>
