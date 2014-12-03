@@ -625,4 +625,5 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" href="Classes.uml#_49dQQHpiEeSOqIzpWDGINg"/>
+  <packagedElement xmi:type="uml:Package" xmi:id="_0KAmwHsPEeSXcqnzxUEL_w" name="Component Diagram"/>
 </uml:Model>

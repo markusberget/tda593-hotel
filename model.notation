@@ -2542,4 +2542,90 @@
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_4YZvQXsOEeSXcqnzxUEL_w" id="(1.0,0.8231292517006803){R}"/>
     </edges>
   </notation:Diagram>
+  <notation:Diagram xmi:id="_4s9NgHsPEeSXcqnzxUEL_w" type="PapyrusUMLComponentDiagram" name="Component" measurementUnit="Pixel">
+    <children xmi:type="notation:Shape" xmi:id="_0If8IHsVEeSORuI72ssS0A" type="3205">
+      <children xmi:type="notation:DecorationNode" xmi:id="_0If8InsVEeSORuI72ssS0A" type="5266"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_0IgjMHsVEeSORuI72ssS0A" type="7008">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_0IgjMXsVEeSORuI72ssS0A"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_0IgjMnsVEeSORuI72ssS0A"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_0IgjM3sVEeSORuI72ssS0A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0IgjNHsVEeSORuI72ssS0A"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_0IgjNXsVEeSORuI72ssS0A" type="7009">
+        <children xmi:type="notation:Shape" xmi:id="_0yhwkHsVEeSORuI72ssS0A" type="5">
+          <element xmi:type="uml:Operation" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYmUnO_EeSgC_3iHN4p8A"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_0yhwkXsVEeSORuI72ssS0A" x="49" y="12"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_1NLsQHsVEeSORuI72ssS0A" type="5">
+          <element xmi:type="uml:Operation" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYmW3O_EeSgC_3iHN4p8A"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_1NLsQXsVEeSORuI72ssS0A" x="141" y="23"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_2Uw_YHsVEeSORuI72ssS0A" type="5">
+          <element xmi:type="uml:Operation" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYmY3O_EeSgC_3iHN4p8A"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_2Uw_YXsVEeSORuI72ssS0A" x="79" y="40"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_2pmm8HsVEeSORuI72ssS0A" type="5">
+          <element xmi:type="uml:Operation" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYma3O_EeSgC_3iHN4p8A"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_2pmm8XsVEeSORuI72ssS0A" x="119" y="46"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_0IgjNnsVEeSORuI72ssS0A"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_0IgjN3sVEeSORuI72ssS0A"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_0IgjOHsVEeSORuI72ssS0A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0IgjOXsVEeSORuI72ssS0A"/>
+      </children>
+      <element xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYmUXO_EeSgC_3iHN4p8A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_0If8IXsVEeSORuI72ssS0A" x="-4" y="195" width="536"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_6S96UHsVEeSORuI72ssS0A" type="2002">
+      <children xmi:type="notation:DecorationNode" xmi:id="_6S-hYHsVEeSORuI72ssS0A" type="5004"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_6S-hYXsVEeSORuI72ssS0A" type="7001">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_6S-hYnsVEeSORuI72ssS0A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6S-hY3sVEeSORuI72ssS0A"/>
+      </children>
+      <element xmi:type="uml:Component" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzXYMHO_EeSgC_3iHN4p8A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_6S96UXsVEeSORuI72ssS0A" x="244" y="87"/>
+    </children>
+    <children xmi:type="notation:Shape" xmi:id="_BZw94HsWEeSORuI72ssS0A" type="3205">
+      <children xmi:type="notation:DecorationNode" xmi:id="_BZw94nsWEeSORuI72ssS0A" type="5266"/>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_BZxk8HsWEeSORuI72ssS0A" type="7008">
+        <styles xmi:type="notation:TitleStyle" xmi:id="_BZxk8XsWEeSORuI72ssS0A"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_BZxk8nsWEeSORuI72ssS0A"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_BZxk83sWEeSORuI72ssS0A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BZxk9HsWEeSORuI72ssS0A"/>
+      </children>
+      <children xmi:type="notation:BasicCompartment" xmi:id="_BZxk9XsWEeSORuI72ssS0A" type="7009">
+        <children xmi:type="notation:Shape" xmi:id="_B0WoIHsWEeSORuI72ssS0A" type="5">
+          <element xmi:type="uml:Operation" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzZ0cXO_EeSgC_3iHN4p8A"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_B0WoIXsWEeSORuI72ssS0A" x="70" y="8"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_CLMa0HsWEeSORuI72ssS0A" type="5">
+          <element xmi:type="uml:Operation" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzZ0enO_EeSgC_3iHN4p8A"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_CLMa0XsWEeSORuI72ssS0A" x="76" y="25"/>
+        </children>
+        <styles xmi:type="notation:TitleStyle" xmi:id="_BZxk9nsWEeSORuI72ssS0A"/>
+        <styles xmi:type="notation:SortingStyle" xmi:id="_BZxk93sWEeSORuI72ssS0A"/>
+        <styles xmi:type="notation:FilteringStyle" xmi:id="_BZxk-HsWEeSORuI72ssS0A"/>
+        <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BZxk-XsWEeSORuI72ssS0A"/>
+      </children>
+      <element xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzZ0cHO_EeSgC_3iHN4p8A"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_BZw94XsWEeSORuI72ssS0A" x="-50" y="-60" width="563"/>
+    </children>
+    <styles xmi:type="notation:StringValueStyle" xmi:id="_4s9NgXsPEeSXcqnzxUEL_w" name="diagram_compatibility_version" stringValue="1.0.0"/>
+    <styles xmi:type="notation:DiagramStyle" xmi:id="_4s9NgnsPEeSXcqnzxUEL_w"/>
+    <styles xmi:type="style:PapyrusViewStyle" xmi:id="_4s9Ng3sPEeSXcqnzxUEL_w">
+      <owner xmi:type="uml:Package" href="model.uml#_0KAmwHsPEeSXcqnzxUEL_w"/>
+    </styles>
+    <element xmi:type="uml:Package" href="model.uml#_0KAmwHsPEeSXcqnzxUEL_w"/>
+    <edges xmi:type="notation:Connector" xmi:id="_PEY60HsWEeSORuI72ssS0A" type="4006" source="_6S96UHsVEeSORuI72ssS0A" target="_BZw94HsWEeSORuI72ssS0A">
+      <styles xmi:type="notation:FontStyle" xmi:id="_PEY60XsWEeSORuI72ssS0A"/>
+      <element xmi:type="uml:InterfaceRealization" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_M5r90HsWEeSORuI72ssS0A"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_PEY60nsWEeSORuI72ssS0A" points="[3, -35, 91, 87]$[148, -62, 236, 60]"/>
+    </edges>
+    <edges xmi:type="notation:Connector" xmi:id="_RIC0oHsWEeSORuI72ssS0A" type="4006" source="_6S96UHsVEeSORuI72ssS0A" target="_0If8IHsVEeSORuI72ssS0A">
+      <styles xmi:type="notation:FontStyle" xmi:id="_RIC0oXsWEeSORuI72ssS0A"/>
+      <element xmi:type="uml:InterfaceRealization" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_RH_KQHsWEeSORuI72ssS0A"/>
+      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_RIC0onsWEeSORuI72ssS0A" points="[-7, 15, 38, -114]$[75, 205, 120, 76]"/>
+      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_RIJiUHsWEeSORuI72ssS0A" id="(0.43333333333333335,0.7857142857142857)"/>
+    </edges>
+  </notation:Diagram>
 </xmi:XMI>

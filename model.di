@@ -18,7 +18,7 @@
     <windows>
       <children xsi:type="di:TabFolder">
         <children>
-          <emfPageIdentifier href="model.notation#_Zxm3AHsMEeSXcqnzxUEL_w"/>
+          <emfPageIdentifier href="model.notation#_4s9NgHsPEeSXcqnzxUEL_w"/>
         </children>
       </children>
     </windows>
