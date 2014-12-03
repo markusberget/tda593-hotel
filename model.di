@@ -21,25 +21,10 @@
           <emfPageIdentifier href="model.notation#_QrJugHTaEeSOC7DG65-e3w"/>
         </children>
         <children>
-          <emfPageIdentifier href="model.notation#_KtsgkHamEeSKk9bkKW7QkA"/>
-        </children>
-        <children>
           <emfPageIdentifier href="model.notation#_nIIMYHZPEeSiQcRa0VNXAQ"/>
         </children>
         <children>
-          <emfPageIdentifier href="model.notation#_wfUEUHb2EeSlx-SIUE5Fhw"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_vsRukHbaEeSheJiNqvd8mw"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_cOycMHYLEeSMx7vuKDnJZg"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_QatzYHYaEeSNRvHXkk2GGA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_84cqUHedEeSLSZ7tZq0LGA"/>
+          <emfPageIdentifier href="model.notation#_95d4AHr2EeSXcqnzxUEL_w"/>
         </children>
       </children>
     </windows>
