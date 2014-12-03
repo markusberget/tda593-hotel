@@ -4,14 +4,10 @@ package Classes.impl;
 
 import Classes.ClassesPackage;
 import Classes.HotelManager_IHotelManagerImpl;
-
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -42,6 +38,7 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 	protected EClass eStaticClass() {
 		return ClassesPackage.Literals.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL;
 	}
+	
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -71,12 +68,33 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isPasswordSecure(String password) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO: Test this method. 
+		
+		int numDigits = 0;
+		int numLetters = 0;
+		
+		for(char ch : password.toCharArray()) {
+			if(!(ch > 32 && ch < 127)) {
+				
+				// we won't allow unprintable ascii characters nor spaces.
+				// For more information: http://www.asciitable.com/
+				return false;
+			} 
+			
+			// if digit.
+			if(ch >= 48 && ch <= 57) {
+				++numDigits;
+			} else if(( 65 <= ch && ch <= 90) || ( 97 <= ch && ch <= 122)) {
+				++numLetters;
+			}
+			
+		}
+		
+		// does the string fulfill the requirements?
+		return (numDigits > 2) && (numLetters > 3);
 	}
 
 	/**
