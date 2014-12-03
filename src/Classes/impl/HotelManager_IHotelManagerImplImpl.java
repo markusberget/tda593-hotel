@@ -76,6 +76,11 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 		int numDigits = 0;
 		int numLetters = 0;
 		
+		if(password.length() < 6) {
+			// password is not long enough, so early exit. 
+			return false;
+		}
+		
 		for(char ch : password.toCharArray()) {
 			if(!(ch > 32 && ch < 127)) {
 				
