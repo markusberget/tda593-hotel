@@ -105,12 +105,21 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isValidUsername(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(char ch : username.toCharArray()) {
+			if(!( 
+					(48 <= ch && ch <= 57) ||
+					( 65 <= ch && ch <= 90) || 
+					( 97 <= ch && ch <= 122))) {
+				
+				// characters that are not ASCII letters nor digits are not allowed:			
+				return false;
+			} 
+		}
+		
+		return true;
 	}
 
 	/**
