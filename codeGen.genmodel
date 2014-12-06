@@ -145,8 +145,6 @@
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Booking/checkOut"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Booking/bookingID"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Booking/numberOfGuests"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//Booking/Operation1"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//Booking/updateBooking"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Staff">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Staff/admin"/>

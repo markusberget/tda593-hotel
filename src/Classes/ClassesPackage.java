@@ -768,31 +768,13 @@ public interface ClassesPackage extends EPackage {
 	int BOOKING_FEATURE_COUNT = 4;
 
 	/**
-	 * The operation id for the '<em>Operation1</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING___OPERATION1 = 0;
-
-	/**
-	 * The operation id for the '<em>Update Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING___UPDATE_BOOKING = 1;
-
-	/**
 	 * The number of operations of the '<em>Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_OPERATION_COUNT = 2;
+	int BOOKING_OPERATION_COUNT = 0;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.StaffImpl <em>Staff</em>}' class.
@@ -1283,26 +1265,6 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getBooking_NumberOfGuests();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.Booking#Operation1() <em>Operation1</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Operation1</em>' operation.
-	 * @see Classes.Booking#Operation1()
-	 * @generated
-	 */
-	EOperation getBooking__Operation1();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.Booking#updateBooking() <em>Update Booking</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Update Booking</em>' operation.
-	 * @see Classes.Booking#updateBooking()
-	 * @generated
-	 */
-	EOperation getBooking__UpdateBooking();
-
-	/**
 	 * Returns the meta object for class '{@link Classes.Staff <em>Staff</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1720,22 +1682,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BOOKING__NUMBER_OF_GUESTS = eINSTANCE.getBooking_NumberOfGuests();
-
-		/**
-		 * The meta object literal for the '<em><b>Operation1</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING___OPERATION1 = eINSTANCE.getBooking__Operation1();
-
-		/**
-		 * The meta object literal for the '<em><b>Update Booking</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation BOOKING___UPDATE_BOOKING = eINSTANCE.getBooking__UpdateBooking();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.StaffImpl <em>Staff</em>}' class.

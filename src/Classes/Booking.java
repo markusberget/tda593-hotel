@@ -128,20 +128,4 @@ public interface Booking extends EObject {
 	 */
 	void setNumberOfGuests(int value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void Operation1();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void updateBooking();
-
 } // Booking

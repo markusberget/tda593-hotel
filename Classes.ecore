@@ -118,8 +118,6 @@
   <eClassifiers xsi:type="ecore:EClass" name="HotelManager_IHotelManagerImpl" eSuperTypes="#//IHotelManager"/>
   <eClassifiers xsi:type="ecore:EClass" name="IFinanceImpl" eSuperTypes="#//IFinance"/>
   <eClassifiers xsi:type="ecore:EClass" name="Booking">
-    <eOperations name="Operation1" ordered="false" lowerBound="1"/>
-    <eOperations name="updateBooking" ordered="false" lowerBound="1"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkIn" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkOut" ordered="false"

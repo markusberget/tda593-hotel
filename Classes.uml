@@ -339,8 +339,6 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_VsR0IHTcEeSOC7DG65-e3w" name="numberOfGuests">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_3FT4EHYeEeS6mLi5FsOguA" name="Operation1"/>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_3pdG8HYeEeS6mLi5FsOguA" name="updateBooking"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_NLnlMHTdEeSOC7DG65-e3w" name="Staff" visibility="package">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_PKOm8HTdEeSOC7DG65-e3w" name="admin">
