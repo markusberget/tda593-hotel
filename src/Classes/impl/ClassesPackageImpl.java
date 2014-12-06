@@ -578,15 +578,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getCustomer__Submit() {
-		return customerEClass.getEOperations().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public ClassesFactory getClassesFactory() {
 		return (ClassesFactory)getEFactoryInstance();
 	}
@@ -664,7 +655,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		customerEClass = createEClass(CUSTOMER);
 		createEAttribute(customerEClass, CUSTOMER__PERSONAL_INFO);
-		createEOperation(customerEClass, CUSTOMER___SUBMIT);
 	}
 
 	/**
@@ -831,8 +821,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomer_PersonalInfo(), theTypesPackage.getString(), "personalInfo", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEOperation(getCustomer__Submit(), null, "submit", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

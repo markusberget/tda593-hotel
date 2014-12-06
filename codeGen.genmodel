@@ -153,7 +153,6 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Customer">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Customer/personalInfo"/>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//Customer/submit"/>
     </genClasses>
   </genPackages>
   <genPackages xsi:type="genmodel:GenPackage" prefix="Types" basePackage="org.eclipse.uml2"

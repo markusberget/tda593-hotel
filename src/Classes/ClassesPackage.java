@@ -860,22 +860,13 @@ public interface ClassesPackage extends EPackage {
 	int CUSTOMER_FEATURE_COUNT = 1;
 
 	/**
-	 * The operation id for the '<em>Submit</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER___SUBMIT = 0;
-
-	/**
 	 * The number of operations of the '<em>Customer</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_OPERATION_COUNT = 1;
+	int CUSTOMER_OPERATION_COUNT = 0;
 
 
 	/**
@@ -1329,16 +1320,6 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getCustomer_PersonalInfo();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.Customer#submit() <em>Submit</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Submit</em>' operation.
-	 * @see Classes.Customer#submit()
-	 * @generated
-	 */
-	EOperation getCustomer__Submit();
-
-	/**
 	 * Returns the factory that creates the instances of the model.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1734,14 +1715,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CUSTOMER__PERSONAL_INFO = eINSTANCE.getCustomer_PersonalInfo();
-
-		/**
-		 * The meta object literal for the '<em><b>Submit</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation CUSTOMER___SUBMIT = eINSTANCE.getCustomer__Submit();
 
 	}
 

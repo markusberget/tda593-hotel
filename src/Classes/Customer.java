@@ -47,12 +47,4 @@ public interface Customer extends EObject {
 	 */
 	void setPersonalInfo(String value);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void submit();
-
 } // Customer
