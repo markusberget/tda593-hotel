@@ -11,7 +11,8 @@ import org.junit.Test;
  * both valid and invalid uses of the system (based
  * on our use cases, among other things). At the moment
  * the class only contains test stubs for methods a user
- * of the system is allowed to invoke. 
+ * of the system is allowed to invoke (some of which only
+ * a staff member are allowed to invoke). 
  *
  */
 public class UserTests {
@@ -29,8 +30,6 @@ public class UserTests {
 	@After
 	public void tearDown() throws Exception {
 	}
-
-	
 	
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#updateBooking()}.
@@ -149,6 +148,54 @@ public class UserTests {
 	 */
 	@Test
 	public void testBankSendInvoice() {
+		fail("Not yet implemented");
+	}
+	
+	/**
+	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#login(java.lang.String, java.lang.String)}.
+	 */
+	@Test
+	public void testLogin() {
+		fail("Not yet implemented");
+	}
+	
+	/**
+	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#addStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+	 */
+	@Test
+	public void testAddStaffMember() {
+		fail("Not yet implemented");
+	}
+	
+	/**
+	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#isPasswordSecure(java.lang.String)}.
+	 */
+	@Test
+	public void testIsPasswordSecure() {
+		fail("Not yet implemented");
+	}
+	
+	/**
+	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#isValidUsername(java.lang.String)}.
+	 */
+	@Test
+	public void testIsValidUsername() {
+		fail("Not yet implemented");
+	}
+	
+	/**
+	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#ChangeStatusOfRoom(int, Enum)}.
+	 */
+	@Test
+	public void testChangeStatusOfRoom() {
+		fail("Not yet implemented");
+	}
+	
+	/**
+	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#getPossibleRoomStatuses()}.
+	 */
+	@Test
+	public void testgetPossibleRoomStatuses() {
 		fail("Not yet implemented");
 	}
 
