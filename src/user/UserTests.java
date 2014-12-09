@@ -1,9 +1,10 @@
 package user;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.fail;
 
 import org.junit.After;
 import org.junit.Before;
+import org.junit.BeforeClass;
 import org.junit.Test;
 
 /**
@@ -17,6 +18,15 @@ import org.junit.Test;
  */
 public class UserTests {
 
+	/**
+	 * Used to create an instance of the system which
+	 * is used during tests.
+	 */
+	 @BeforeClass
+	 public static void oneTimeSetUp() {
+	 // one-time initialization code
+	 }
+	 
 	/**
 	 * @throws java.lang.Exception
 	 */
