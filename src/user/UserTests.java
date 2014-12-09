@@ -190,8 +190,8 @@ public class UserTests {
 		
 		// TEST 2:also, non-ascii passwords will not be allowed.
 		
-		assertFalse(hm.isPasswordSecure("innebandymålvaktsskyddsförsäljare"));
-		assertFalse(hm.isPasswordSecure("笑うかどには福来る"));
+		assertFalse(hm.isPasswordSecure(Util.NON_ASCII_STRING1));
+		assertFalse(hm.isPasswordSecure(Util.NON_ASCII_STRING2));
 		
 		////////////////////////////////////////////////////////////////////////
 		
@@ -215,7 +215,29 @@ public class UserTests {
 	 */
 	@Test
 	public void testIsValidUsername() {
-		fail("Not yet implemented");
+	
+		IHotelManagerImpl hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		
+		
+		// Only ASCII letters and digits are allowed in user names.
+		
+		assertFalse(hm.isValidUsername(Util.NON_ASCII_STRING1));
+		assertFalse(hm.isValidUsername(Util.NON_ASCII_STRING2));
+		
+		// Unprintable ASCII characters are not allowed.
+		for(int i = 0; i <= 32; ++i) {
+			
+			// The password has to be long enough, otherwise isPasswordSecure() will simply do an early exit, 
+			// doing no further processing. Since we want to test whether it accepts unprintable characters or not, 
+			// we need the password to be long enough.
+			assertFalse(hm.isValidUsername(Util.toChar(i)));
+		}
+		// ASCII character number 127 is DEL. 
+		assertFalse(hm.isValidUsername(Util.toChar(127)));
+		
+		assertTrue(hm.isValidUsername("eric44"));
+		assertTrue(hm.isValidUsername("hunter2"));
+		assertTrue(hm.isValidUsername("name23242"));
 	}
 	
 	/**

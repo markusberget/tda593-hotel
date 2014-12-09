@@ -14,4 +14,9 @@ class Util {
 		  sb.append(c);
 		return sb.toString();
 	}
+	
+	// Used in the test cases. 
+	public final static String NON_ASCII_STRING1 = "innebandymålvaktsskyddsförsäljare";
+	public final static String NON_ASCII_STRING2 = "笑うかどには福来る";
+	
 }
