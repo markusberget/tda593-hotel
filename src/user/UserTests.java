@@ -163,18 +163,7 @@ public class UserTests {
 		fail("Not yet implemented");
 	}
 	
-	// convert a number to its corresponding unicode character.
-	String toChar(int c) {
-		return Character.toString((char)c);
-	}
-	
-	// repeat the character c exactly n times.
-	String repeatChar(char c, int n) {
-		StringBuilder sb = new StringBuilder(n);
-		while (n-- > 0)
-		  sb.append(c);
-		return sb.toString();
-	}
+
 	
 	/**
 	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#isPasswordSecure(java.lang.String)}.
@@ -191,10 +180,10 @@ public class UserTests {
 			// The password has to be long enough, otherwise isPasswordSecure() will simply do an early exit, 
 			// doing no further processing. Since we want to test whether it accepts unprintable characters or not, 
 			// we need the password to be long enough.
-			assertFalse(hm.isPasswordSecure(toChar(i) + repeatChar('A', 10)));
+			assertFalse(hm.isPasswordSecure(Util.toChar(i) + Util.repeatChar('A', 10)));
 		}
 		// ASCII character number 127 is DEL. 
-		assertFalse(hm.isPasswordSecure(toChar(127) + repeatChar('A', 10)));
+		assertFalse(hm.isPasswordSecure(Util.toChar(127) + Util.repeatChar('A', 10)));
 		
 		////////////////////////////////////////////////////////////////////////
 		
@@ -211,14 +200,14 @@ public class UserTests {
 		// have at least 2 digits and 3 letters. 
 		
 		// too short
-		assertFalse(hm.isPasswordSecure( repeatChar('c', 3)+  repeatChar('1', 2) ));
+		assertFalse(hm.isPasswordSecure( Util.repeatChar('c', 3)+  Util.repeatChar('1', 2) ));
 		// correct length, enough letters and digits.
-		assertTrue(hm.isPasswordSecure( repeatChar('c', 3)+  repeatChar('1', 3)));
-		assertTrue(hm.isPasswordSecure( repeatChar('c', 4)+  repeatChar('1', 2)));
+		assertTrue(hm.isPasswordSecure( Util.repeatChar('c', 3)+  Util.repeatChar('1', 3)));
+		assertTrue(hm.isPasswordSecure( Util.repeatChar('c', 4)+  Util.repeatChar('1', 2)));
 		//  not enough letters, but enough digits
-		assertFalse(hm.isPasswordSecure( repeatChar('c', 2)+  repeatChar('1', 4)));
+		assertFalse(hm.isPasswordSecure( Util.repeatChar('c', 2)+  Util.repeatChar('1', 4)));
 		// enough letters, but not enough digits.
-		assertFalse(hm.isPasswordSecure( repeatChar('c', 5)+  repeatChar('1', 1)));
+		assertFalse(hm.isPasswordSecure( Util.repeatChar('c', 5)+  Util.repeatChar('1', 1)));
 	}
 	
 	/**
