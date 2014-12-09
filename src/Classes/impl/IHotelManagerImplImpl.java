@@ -68,23 +68,58 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isPasswordSecure(String password) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO: Test this method. 
+		
+		int numDigits = 0;
+		int numLetters = 0;
+		
+		if(password.length() < 6) {
+			// password is not long enough, so early exit. 
+			return false;
+		}
+		
+		for(char ch : password.toCharArray()) {
+			if(!(ch > 32 && ch < 127)) {
+				
+				// we won't allow unprintable ascii characters nor spaces.
+				// For more information: http://www.asciitable.com/
+				return false;
+			} 
+			
+			// if digit.
+			if(ch >= 48 && ch <= 57) {
+				++numDigits;
+			} else if(( 65 <= ch && ch <= 90) || ( 97 <= ch && ch <= 122)) {
+				++numLetters;
+			}
+			
+		}
+		
+		// does the string fulfill the requirements?
+		return (numDigits > 2) && (numLetters > 3);
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isValidUsername(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		for(char ch : username.toCharArray()) {
+			if(!( 
+					(48 <= ch && ch <= 57) ||
+					( 65 <= ch && ch <= 90) || 
+					( 97 <= ch && ch <= 122))) {
+				
+				// characters that are not ASCII letters nor digits are not allowed:			
+				return false;
+			} 
+		}
+		
+		return true;
 	}
 
 	/**
