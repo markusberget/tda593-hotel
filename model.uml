@@ -223,11 +223,6 @@
   <packagedElement xmi:type="uml:TimeObservation" xmi:id="_k82s4HV5EeSOC7DG65-e3w" name="TimeObservation1"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_sVMfEHYLEeSMx7vuKDnJZg" name="Staff"/>
   <packagedElement xmi:type="uml:Component" xmi:id="_QaUx0HYaEeSNRvHXkk2GGA" name="User"/>
-  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_QahmIHYaEeSNRvHXkk2GGA" name="Realization0">
-    <client xmi:type="uml:Component" href="Classes.uml#_QaiNNHYaEeSNRvHXkk2GGA"/>
-    <supplier xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
-    <contract xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
-  </packagedElement>
   <packagedElement xmi:type="uml:Usage" xmi:id="_QahmIXYaEeSNRvHXkk2GGA" name="Usage0" client="_QaUx0HYaEeSNRvHXkk2GGA">
     <supplier xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
   </packagedElement>

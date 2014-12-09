@@ -6,10 +6,9 @@ import Classes.Booking;
 import Classes.ClassesFactory;
 import Classes.ClassesPackage;
 import Classes.Customer;
-import Classes.HotelManager;
-import Classes.HotelManager_IHotelManagerImpl;
 import Classes.IBookingManagementImpl;
 import Classes.IFinanceImpl;
+import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomType;
 import Classes.Staff;
@@ -69,12 +68,11 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 			case ClassesPackage.ROOM: return createRoom();
 			case ClassesPackage.ROOM_TYPE: return createRoomType();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: return createIBookingManagementImpl();
-			case ClassesPackage.HOTEL_MANAGER: return createHotelManager();
-			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL: return createHotelManager_IHotelManagerImpl();
 			case ClassesPackage.IFINANCE_IMPL: return createIFinanceImpl();
 			case ClassesPackage.BOOKING: return createBooking();
 			case ClassesPackage.STAFF: return createStaff();
 			case ClassesPackage.CUSTOMER: return createCustomer();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL: return createIHotelManagerImpl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -115,26 +113,6 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public HotelManager createHotelManager() {
-		HotelManagerImpl hotelManager = new HotelManagerImpl();
-		return hotelManager;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public HotelManager_IHotelManagerImpl createHotelManager_IHotelManagerImpl() {
-		HotelManager_IHotelManagerImplImpl hotelManager_IHotelManagerImpl = new HotelManager_IHotelManagerImplImpl();
-		return hotelManager_IHotelManagerImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public IFinanceImpl createIFinanceImpl() {
 		IFinanceImplImpl iFinanceImpl = new IFinanceImplImpl();
 		return iFinanceImpl;
@@ -168,6 +146,16 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	public Customer createCustomer() {
 		CustomerImpl customer = new CustomerImpl();
 		return customer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IHotelManagerImpl createIHotelManagerImpl() {
+		IHotelManagerImplImpl iHotelManagerImpl = new IHotelManagerImplImpl();
+		return iHotelManagerImpl;
 	}
 
 	/**

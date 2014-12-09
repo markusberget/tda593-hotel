@@ -6,13 +6,12 @@ import Classes.Booking;
 import Classes.ClassesFactory;
 import Classes.ClassesPackage;
 import Classes.Customer;
-import Classes.HotelManager;
-import Classes.HotelManager_IHotelManagerImpl;
 import Classes.IBookingManagement;
 import Classes.IBookingManagementImpl;
 import Classes.IFinance;
 import Classes.IFinanceImpl;
 import Classes.IHotelManager;
+import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomType;
 import Classes.Staff;
@@ -21,8 +20,8 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.EReference;
+
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.eclipse.uml2.types.TypesPackage;
@@ -83,20 +82,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass hotelManagerEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass hotelManager_IHotelManagerImplEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	private EClass iFinanceImplEClass = null;
 
 	/**
@@ -119,6 +104,13 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * @generated
 	 */
 	private EClass customerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iHotelManagerImplEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -524,24 +516,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getHotelManager() {
-		return hotelManagerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getHotelManager_IHotelManagerImpl() {
-		return hotelManager_IHotelManagerImplEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getIFinanceImpl() {
 		return iFinanceImplEClass;
 	}
@@ -650,6 +624,15 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIHotelManagerImpl() {
+		return iHotelManagerImplEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ClassesFactory getClassesFactory() {
 		return (ClassesFactory)getEFactoryInstance();
 	}
@@ -716,10 +699,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES);
 
-		hotelManagerEClass = createEClass(HOTEL_MANAGER);
-
-		hotelManager_IHotelManagerImplEClass = createEClass(HOTEL_MANAGER_IHOTEL_MANAGER_IMPL);
-
 		iFinanceImplEClass = createEClass(IFINANCE_IMPL);
 
 		bookingEClass = createEClass(BOOKING);
@@ -735,6 +714,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		customerEClass = createEClass(CUSTOMER);
 		createEAttribute(customerEClass, CUSTOMER__PERSONAL_INFO);
+
+		iHotelManagerImplEClass = createEClass(IHOTEL_MANAGER_IMPL);
 	}
 
 	/**
@@ -769,8 +750,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		// Add supertypes to classes
 		iBookingManagementImplEClass.getESuperTypes().add(this.getIBookingManagement());
-		hotelManager_IHotelManagerImplEClass.getESuperTypes().add(this.getIHotelManager());
 		iFinanceImplEClass.getESuperTypes().add(this.getIFinance());
+		iHotelManagerImplEClass.getESuperTypes().add(this.getIHotelManager());
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -890,10 +871,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		initEOperation(getIHotelManager__GetPossibleRoomStatuses(), ecorePackage.getEEList(), "getPossibleRoomStatuses", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(hotelManagerEClass, HotelManager.class, "HotelManager", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(hotelManager_IHotelManagerImplEClass, HotelManager_IHotelManagerImpl.class, "HotelManager_IHotelManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
 		initEClass(iFinanceImplEClass, IFinanceImpl.class, "IFinanceImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(bookingEClass, Booking.class, "Booking", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -909,6 +886,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomer_PersonalInfo(), theTypesPackage.getString(), "personalInfo", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(iHotelManagerImplEClass, IHotelManagerImpl.class, "IHotelManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		// Create resource
 		createResource(eNS_URI);
