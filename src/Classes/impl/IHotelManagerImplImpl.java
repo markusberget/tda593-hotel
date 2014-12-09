@@ -73,7 +73,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			
 			// TODO: persist object within runtime somewhere!		
 			StaffImpl newStaffMember = new StaffImpl();
-			newStaffMember.setUserID(username);
+			newStaffMember.setUserId(username);
 			newStaffMember.setPassword(password);
 			// TODO: set firstName, secondName, email, phoneNumber
 			
@@ -142,12 +142,21 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean changeStatusOfRoom(int roomId, Enumerator status) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO: lookup roomId (findRoom is not implemented or defined anywhere)
+		RoomImpl room = findRoom( roomId );
+		
+		if ( room != null ) {
+			
+			room.setStatusoccupiedreadypending(status);
+			return true;
+			
+		} else {
+			return false;
+		}
+		
 	}
 
 	/**
