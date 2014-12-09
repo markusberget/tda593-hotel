@@ -6,6 +6,7 @@ import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.emf.ecore.EReference;
 
 /**
  * <!-- begin-user-doc -->
@@ -85,13 +86,22 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__ROOM_NUMBER = 1;
 
 	/**
+	 * The feature id for the '<em><b>Room Type</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__ROOM_TYPE = 2;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 2;
+	int ROOM_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -103,6 +113,79 @@ public interface ClassesPackage extends EPackage {
 	int ROOM_OPERATION_COUNT = 0;
 
 	/**
+	 * The meta object id for the '{@link Classes.impl.RoomTypeImpl <em>Room Type</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.impl.RoomTypeImpl
+	 * @see Classes.impl.ClassesPackageImpl#getRoomType()
+	 * @generated
+	 */
+	int ROOM_TYPE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__FEATURES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__NUMBER_OF_GUESTS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__DESCRIPTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__PRICE = 4;
+
+	/**
+	 * The number of structural features of the '<em>Room Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Room Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link Classes.IBookingManagement <em>IBooking Management</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,7 +193,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagement()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT = 2;
+	int IBOOKING_MANAGEMENT = 3;
 
 	/**
 	 * The number of structural features of the '<em>IBooking Management</em>' class.
@@ -246,7 +329,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagementImpl()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT_IMPL = 1;
+	int IBOOKING_MANAGEMENT_IMPL = 2;
 
 	/**
 	 * The number of structural features of the '<em>IBooking Management Impl</em>' class.
@@ -382,7 +465,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinance()
 	 * @generated
 	 */
-	int IFINANCE = 3;
+	int IFINANCE = 4;
 
 	/**
 	 * The number of structural features of the '<em>IFinance</em>' class.
@@ -455,7 +538,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIHotelManager()
 	 * @generated
 	 */
-	int IHOTEL_MANAGER = 4;
+	int IHOTEL_MANAGER = 5;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Manager</em>' class.
@@ -537,7 +620,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getHotelManager()
 	 * @generated
 	 */
-	int HOTEL_MANAGER = 5;
+	int HOTEL_MANAGER = 6;
 
 	/**
 	 * The number of structural features of the '<em>Hotel Manager</em>' class.
@@ -565,7 +648,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getHotelManager_IHotelManagerImpl()
 	 * @generated
 	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL = 6;
+	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL = 7;
 
 	/**
 	 * The number of structural features of the '<em>Hotel Manager IHotel Manager Impl</em>' class.
@@ -647,7 +730,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinanceImpl()
 	 * @generated
 	 */
-	int IFINANCE_IMPL = 7;
+	int IFINANCE_IMPL = 8;
 
 	/**
 	 * The number of structural features of the '<em>IFinance Impl</em>' class.
@@ -720,7 +803,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBooking()
 	 * @generated
 	 */
-	int BOOKING = 8;
+	int BOOKING = 9;
 
 	/**
 	 * The feature id for the '<em><b>Check In</b></em>' attribute.
@@ -784,7 +867,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getStaff()
 	 * @generated
 	 */
-	int STAFF = 9;
+	int STAFF = 10;
 
 	/**
 	 * The feature id for the '<em><b>Admin</b></em>' attribute.
@@ -839,7 +922,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCustomer()
 	 * @generated
 	 */
-	int CUSTOMER = 10;
+	int CUSTOMER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Personal Info</b></em>' attribute.
@@ -900,6 +983,82 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRoom_RoomNumber();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Room#getRoomType <em>Room Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Room Type</em>'.
+	 * @see Classes.Room#getRoomType()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_RoomType();
+
+	/**
+	 * Returns the meta object for class '{@link Classes.RoomType <em>Room Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Room Type</em>'.
+	 * @see Classes.RoomType
+	 * @generated
+	 */
+	EClass getRoomType();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.RoomType#getName <em>Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Name</em>'.
+	 * @see Classes.RoomType#getName()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Name();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.RoomType#getFeatures <em>Features</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Features</em>'.
+	 * @see Classes.RoomType#getFeatures()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Features();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.RoomType#getNumberOfGuests <em>Number Of Guests</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Number Of Guests</em>'.
+	 * @see Classes.RoomType#getNumberOfGuests()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_NumberOfGuests();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.RoomType#getDescription <em>Description</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Description</em>'.
+	 * @see Classes.RoomType#getDescription()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Description();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.RoomType#getPrice <em>Price</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Price</em>'.
+	 * @see Classes.RoomType#getPrice()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EAttribute getRoomType_Price();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IBookingManagementImpl <em>IBooking Management Impl</em>}'.
@@ -1367,6 +1526,64 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM__ROOM_NUMBER = eINSTANCE.getRoom_RoomNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Room Type</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
+
+		/**
+		 * The meta object literal for the '{@link Classes.impl.RoomTypeImpl <em>Room Type</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.impl.RoomTypeImpl
+		 * @see Classes.impl.ClassesPackageImpl#getRoomType()
+		 * @generated
+		 */
+		EClass ROOM_TYPE = eINSTANCE.getRoomType();
+
+		/**
+		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__NAME = eINSTANCE.getRoomType_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Features</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__FEATURES = eINSTANCE.getRoomType_Features();
+
+		/**
+		 * The meta object literal for the '<em><b>Number Of Guests</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__NUMBER_OF_GUESTS = eINSTANCE.getRoomType_NumberOfGuests();
+
+		/**
+		 * The meta object literal for the '<em><b>Description</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__DESCRIPTION = eINSTANCE.getRoomType_Description();
+
+		/**
+		 * The meta object literal for the '<em><b>Price</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM_TYPE__PRICE = eINSTANCE.getRoomType_Price();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.IBookingManagementImplImpl <em>IBooking Management Impl</em>}' class.

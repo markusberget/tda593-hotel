@@ -5,10 +5,12 @@ package Classes.impl;
 import Classes.ClassesPackage;
 import Classes.Room;
 
+import Classes.RoomType;
 import org.eclipse.emf.common.notify.Notification;
 
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -21,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link Classes.impl.RoomImpl#isStatusoccupiedreadypending <em>Statusoccupiedreadypending</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
+ *   <li>{@link Classes.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
  * </ul>
  * </p>
  *
@@ -66,6 +69,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected int roomNumber = ROOM_NUMBER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoomType() <em>Room Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomType()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoomType roomType;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -133,6 +146,44 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoomType getRoomType() {
+		if (roomType != null && roomType.eIsProxy()) {
+			InternalEObject oldRoomType = (InternalEObject)roomType;
+			roomType = (RoomType)eResolveProxy(oldRoomType);
+			if (roomType != oldRoomType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
+			}
+		}
+		return roomType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomType basicGetRoomType() {
+		return roomType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoomType(RoomType newRoomType) {
+		RoomType oldRoomType = roomType;
+		roomType = newRoomType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -140,6 +191,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return isStatusoccupiedreadypending();
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				return getRoomNumber();
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				if (resolve) return getRoomType();
+				return basicGetRoomType();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -157,6 +211,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber((Integer)newValue);
+				return;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				setRoomType((RoomType)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -176,6 +233,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber(ROOM_NUMBER_EDEFAULT);
 				return;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				setRoomType((RoomType)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -192,6 +252,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return statusoccupiedreadypending != STATUSOCCUPIEDREADYPENDING_EDEFAULT;
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				return roomType != null;
 		}
 		return super.eIsSet(featureID);
 	}

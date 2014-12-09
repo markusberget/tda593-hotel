@@ -72,6 +72,10 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createRoomAdapter();
 			}
 			@Override
+			public Adapter caseRoomType(RoomType object) {
+				return createRoomTypeAdapter();
+			}
+			@Override
 			public Adapter caseIBookingManagementImpl(IBookingManagementImpl object) {
 				return createIBookingManagementImplAdapter();
 			}
@@ -142,6 +146,20 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createRoomAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.RoomType <em>Room Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.RoomType
+	 * @generated
+	 */
+	public Adapter createRoomTypeAdapter() {
 		return null;
 	}
 

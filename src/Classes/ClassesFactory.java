@@ -31,6 +31,15 @@ public interface ClassesFactory extends EFactory {
 	Room createRoom();
 
 	/**
+	 * Returns a new object of class '<em>Room Type</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Room Type</em>'.
+	 * @generated
+	 */
+	RoomType createRoomType();
+
+	/**
 	 * Returns a new object of class '<em>IBooking Management Impl</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

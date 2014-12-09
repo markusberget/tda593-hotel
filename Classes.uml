@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_49dQQHpiEeSOqIzpWDGINg" name="Classes">
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_49dQQHpiEeSOqIzpWDGINg" name="Classes">
   <packagedElement xmi:type="uml:Class" xmi:id="_Y1EUkHTdEeSOC7DG65-e3w" name="Room">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_bij1kHTdEeSOC7DG65-e3w" name="status(occupied, ready, pending)">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_hZMRwHTdEeSOC7DG65-e3w" name="roomNumber">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_yPT4QH97EeSGQvz0Zrfl-Q" name="roomType" type="_c1EbwHTcEeSOC7DG65-e3w" association="_yPWUgH97EeSGQvz0Zrfl-Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yPT4QX97EeSGQvz0Zrfl-Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yPT4Qn97EeSGQvz0Zrfl-Q" value="1"/>
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_queoAHZPEeSiQcRa0VNXAQ" name="IBookingManagementImpl">
@@ -355,5 +359,29 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_iUZdIHTaEeSOC7DG65-e3w" name="personalInfo">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_c1EbwHTcEeSOC7DG65-e3w" name="RoomType">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fmASUHTcEeSOC7DG65-e3w" name="name">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_jeHMUHTcEeSOC7DG65-e3w" name="features">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_ngqbwHTcEeSOC7DG65-e3w" name="numberOfGuests">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_tFIw8HTcEeSOC7DG65-e3w" name="description">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_xzgkkHTcEeSOC7DG65-e3w" name="price">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_yPWUgH97EeSGQvz0Zrfl-Q" memberEnd="_yPWUgX97EeSGQvz0Zrfl-Q _yPT4QH97EeSGQvz0Zrfl-Q">
+    <name xsi:nil="true"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_yPWUgX97EeSGQvz0Zrfl-Q" name="room" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_yPWUgH97EeSGQvz0Zrfl-Q">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yPWUgn97EeSGQvz0Zrfl-Q" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yPWUg397EeSGQvz0Zrfl-Q" value="1"/>
+    </ownedEnd>
   </packagedElement>
 </uml:Package>

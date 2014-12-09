@@ -11,6 +11,7 @@ import Classes.HotelManager_IHotelManagerImpl;
 import Classes.IBookingManagementImpl;
 import Classes.IFinanceImpl;
 import Classes.Room;
+import Classes.RoomType;
 import Classes.Staff;
 
 import org.eclipse.emf.ecore.EClass;
@@ -66,6 +67,7 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ClassesPackage.ROOM: return createRoom();
+			case ClassesPackage.ROOM_TYPE: return createRoomType();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: return createIBookingManagementImpl();
 			case ClassesPackage.HOTEL_MANAGER: return createHotelManager();
 			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL: return createHotelManager_IHotelManagerImpl();
@@ -86,6 +88,16 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	public Room createRoom() {
 		RoomImpl room = new RoomImpl();
 		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomType createRoomType() {
+		RoomTypeImpl roomType = new RoomTypeImpl();
+		return roomType;
 	}
 
 	/**
