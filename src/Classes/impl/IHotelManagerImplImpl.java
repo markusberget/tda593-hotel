@@ -57,12 +57,30 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		// TODO: lookup adminUsername and check admin privileges (findStaff is not implemented or defined anywhere)
+		
+		StaffImpl adminStaffMember = findStaff(adminUsername);
+		
+		if ( adminStaffMember == null ) {
+			return false;
+		} else if ( adminStaffMember.isAdmin() ) {
+			return false;
+		} else {
+			
+			// TODO: persist object within runtime somewhere!		
+			StaffImpl newStaffMember = new StaffImpl();
+			newStaffMember.setUserID(username);
+			newStaffMember.setPassword(password);
+			// TODO: set firstName, secondName, email, phoneNumber
+			
+			return true;
+			
+		}
+
 	}
 
 	/**
