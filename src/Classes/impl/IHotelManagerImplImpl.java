@@ -71,7 +71,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean isPasswordSecure(String password) {
-		// TODO: Test this method. 
 		
 		int numDigits = 0;
 		int numLetters = 0;
