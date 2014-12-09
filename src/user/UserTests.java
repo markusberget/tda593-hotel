@@ -19,27 +19,12 @@ import org.junit.Test;
 public class UserTests {
 
 	/**
-	 * Used to create an instance of the system which
-	 * is used during tests.
+	 * Used to set up the system for use throughout all test cases.
 	 */
 	 @BeforeClass
 	 public static void oneTimeSetUp() {
 	 // one-time initialization code
 	 }
-	 
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@Before
-	public void setUp() throws Exception {
-	}
-
-	/**
-	 * @throws java.lang.Exception
-	 */
-	@After
-	public void tearDown() throws Exception {
-	}
 	
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#updateBooking()}.
