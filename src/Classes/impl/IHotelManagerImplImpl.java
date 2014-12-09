@@ -89,7 +89,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean isPasswordSecure(String password) {
-		// TODO: Test this method. 
 		
 		int numDigits = 0;
 		int numLetters = 0;
@@ -117,7 +116,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		}
 		
 		// does the string fulfill the requirements?
-		return (numDigits > 2) && (numLetters > 3);
+		return (numDigits >= 2) && (numLetters >= 3);
 	}
 
 	/**
