@@ -5,6 +5,9 @@ package Classes.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -24,9 +27,16 @@ import Classes.IBookingManagementImpl;
  */
 public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container implements IBookingManagementImpl {
 	
-	// The arrays are used for storing temporary data while performing tests.
+	// These data structures are used for storing temporary data while performing tests.
 	ArrayList<BookingImpl> pendingBookings = new ArrayList<>();
 	ArrayList<BookingImpl> confirmedBookings = new ArrayList<>();
+	ArrayList<RoomImpl> availableRooms = new ArrayList<>();
+	ArrayList<RoomImpl> occupiedRooms = new ArrayList<>();
+	
+	// A list of rooms is used as the value in the HashMap because a customer should be
+	// able to have several rooms in a booking.
+	Map<Integer, List<RoomImpl>> pendingRooms = new HashMap<Integer, List<RoomImpl>>();
+	
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -81,14 +91,20 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Removes an available room from the list of available rooms to the
+	 * list of pending rooms after a user has chosen to add the room
+	 * to his/her pending booking. By using the bookingID as the key in
+	 * the HashMap the now pending room will be associated with the
+	 * correct booking.
+	 * 
+	 * @generated NOT
 	 */
+	@SuppressWarnings("unchecked")
 	public int addRoomPending(int room, int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		RoomImpl chosenRoom = availableRooms.remove(room);
+		chosenRoom.setStatusoccupiedreadypending(true);		// should be set to pending
+		pendingRooms.put(bookingID, (List<RoomImpl>) chosenRoom);
+		return bookingID;
 	}
 
 	/**

@@ -180,8 +180,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	}
 
 	/**
-	 * The bookingID is incremented for each created pending booking.
-	 * 
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setBookingID(int newBookingID) {
