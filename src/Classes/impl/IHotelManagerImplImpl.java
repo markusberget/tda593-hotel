@@ -66,8 +66,23 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber) {
 		
-		Staff adminStaffMember = (Staff)findStaffMember(adminUsername, null, null, null, null).get(0);
+		EList searchResult = findStaffMember(adminUsername, null, null, null, null);
 		
+		if(searchResult.size() > 1) {
+			// we messed up somewhere, so:
+			String message = "Oops, something went very wrong in the system:" +
+					"There are " + searchResult.size() + " staff members with the username " + adminUsername;
+			throw new IllegalStateException(message);
+		}
+		
+		// admin not found:
+		if(searchResult.size() == 0) {
+			return 
+		}
+		
+		Staff adminStaffMember = (Staff)searchResult.get(0);
+		
+		// TODO: check whether admin is logged in.
 		if ( adminStaffMember == null ) {
 			return false;
 		} else if ( adminStaffMember.isAdmin() ) {
