@@ -3,6 +3,7 @@
 package Classes.impl;
 
 import Classes.Booking;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -16,6 +17,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import Classes.ClassesPackage;
 import Classes.IBookingManagementImpl;
+import Classes.Room;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,15 +31,15 @@ import Classes.IBookingManagementImpl;
 public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container implements IBookingManagementImpl {
 	
 	// These data structures are used for storing temporary data while performing tests.
-	private ArrayList<BookingImpl> pendingBookings = new ArrayList<>();
-	private ArrayList<BookingImpl> confirmedBookings = new ArrayList<>();
-	private ArrayList<RoomImpl> availableRooms = new ArrayList<>();
-	private ArrayList<RoomImpl> occupiedRooms = new ArrayList<>();
-	private ArrayList<BookingImpl> bookingHistory = new ArrayList<>();
+	private ArrayList<Booking> pendingBookings = new ArrayList<>();
+	private ArrayList<Booking> confirmedBookings = new ArrayList<>();
+	private ArrayList<Room> availableRooms = new ArrayList<>();
+	private ArrayList<Room> occupiedRooms = new ArrayList<>();
+	private ArrayList<Booking> bookingHistory = new ArrayList<>();
 	
 	// A list of rooms is used as the value in the HashMap because a customer should be
 	// able to have several rooms in a booking. The key part is the bookingID.
-	private Map<Integer, List<RoomImpl>> pendingRooms = new HashMap<Integer, List<RoomImpl>>();
+	private Map<Integer, List<Room>> pendingRooms = new HashMap<Integer, List<Room>>();
 	
 	
 	/**
@@ -114,9 +116,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	@SuppressWarnings("unchecked")
 	public int addRoomPending(int room, int bookingID) {
-		RoomImpl chosenRoom = availableRooms.remove(room);
+		Room chosenRoom = availableRooms.remove(room);
 		chosenRoom.setStatusoccupiedreadypending(true);		// should be set to pending
-		pendingRooms.put(bookingID, (List<RoomImpl>) chosenRoom);
+		pendingRooms.put(bookingID, (List<Room>) chosenRoom);
 		return bookingID;
 	}
 
