@@ -608,8 +608,9 @@
       <type xmi:type="uml:Interface" href="Classes.uml#_d2I54HYeEeS6mLi5FsOguA"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_RQEkoHb3EeSlx-SIUE5Fhw" name="u" type="_QaUx0HYaEeSNRvHXkk2GGA"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_P7CEUHb3EeSlx-SIUE5Fhw" name="" represents="_P7D5gHb3EeSlx-SIUE5Fhw" coveredBy="_ic-1MHb6EeSlx-SIUE5Fhw _3gNlIHb_EeSlx-SIUE5Fhw"/>
-    <lifeline xmi:type="uml:Lifeline" xmi:id="_RQDWgHb3EeSlx-SIUE5Fhw" name="" represents="_RQEkoHb3EeSlx-SIUE5Fhw" coveredBy="_ic8Y8Hb6EeSlx-SIUE5Fhw _3gPaUHb_EeSlx-SIUE5Fhw"/>
+    <nestedClassifier xmi:type="uml:PrimitiveType" xmi:id="_l5CcEIBgEeSgrrn-H6mlpQ" name="int[]"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_P7CEUHb3EeSlx-SIUE5Fhw" name="IBookingManagement" represents="_P7D5gHb3EeSlx-SIUE5Fhw" coveredBy="_ic-1MHb6EeSlx-SIUE5Fhw _3gNlIHb_EeSlx-SIUE5Fhw"/>
+    <lifeline xmi:type="uml:Lifeline" xmi:id="_RQDWgHb3EeSlx-SIUE5Fhw" name="User" represents="_RQEkoHb3EeSlx-SIUE5Fhw" coveredBy="_ic8Y8Hb6EeSlx-SIUE5Fhw _3gPaUHb_EeSlx-SIUE5Fhw"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ic8Y8Hb6EeSlx-SIUE5Fhw" name="searchRoom_MessageSend" covered="_RQDWgHb3EeSlx-SIUE5Fhw" message="_ic0dIHb6EeSlx-SIUE5Fhw"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_ic-1MHb6EeSlx-SIUE5Fhw" name="searchRoom_MessageRecv" covered="_P7CEUHb3EeSlx-SIUE5Fhw" message="_ic0dIHb6EeSlx-SIUE5Fhw"/>
     <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3gNlIHb_EeSlx-SIUE5Fhw" name="roomList_MessageSend" covered="_P7CEUHb3EeSlx-SIUE5Fhw" message="_3gKh0Hb_EeSlx-SIUE5Fhw"/>
