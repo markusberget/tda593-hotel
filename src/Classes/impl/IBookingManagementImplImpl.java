@@ -212,11 +212,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public synchronized boolean addCustomerInformationToBooking(int bookingID, String firstName, String lastName, String email, String ph) {
-		// Need to regenerate model to get firstname, lastname, email or phonenumber variables in BookingImpl
-		// pendingBookings.get(bookingID).setFirstName(firstName);
-		// pendingBookings.get(bookingID).setLastName(lastName);
-		// pendingBookings.get(bookingID).setEmail(email);
-		// pendingBookings.get(bookingID).setPhoneNumber(ph);
+		pendingBookings.get(bookingID).setFirstName(firstName);
+		pendingBookings.get(bookingID).setLastName(lastName);
+		pendingBookings.get(bookingID).setEmail(email);
+		pendingBookings.get(bookingID).setPhoneNumber(ph);
 		return true;
 	}
 
