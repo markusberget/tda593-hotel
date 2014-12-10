@@ -119,6 +119,13 @@ public class ClassesSwitch<T> extends Switch<T> {
 			case ClassesPackage.STAFF: {
 				Staff staff = (Staff)theEObject;
 				T result = caseStaff(staff);
+				if (result == null) result = caseIPerson(staff);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.IPERSON: {
+				IPerson iPerson = (IPerson)theEObject;
+				T result = caseIPerson(iPerson);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -271,6 +278,21 @@ public class ClassesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseStaff(Staff object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IPerson</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IPerson</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIPerson(IPerson object) {
 		return null;
 	}
 

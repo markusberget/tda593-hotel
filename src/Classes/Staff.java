@@ -2,7 +2,6 @@
  */
 package Classes;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Staff extends EObject {
+public interface Staff extends IPerson {
 	/**
 	 * Returns the value of the '<em><b>Admin</b></em>' attribute.
 	 * <!-- begin-user-doc -->

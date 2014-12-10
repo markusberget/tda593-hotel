@@ -12,6 +12,7 @@ import Classes.IFinance;
 import Classes.IFinanceImpl;
 import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
+import Classes.IPerson;
 import Classes.Room;
 import Classes.RoomType;
 import Classes.Staff;
@@ -97,6 +98,13 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * @generated
 	 */
 	private EClass staffEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EClass iPersonEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -651,6 +659,51 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EClass getIPerson() {
+		return iPersonEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIPerson_FirstName() {
+		return (EAttribute)iPersonEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIPerson_LastName() {
+		return (EAttribute)iPersonEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIPerson_Address() {
+		return (EAttribute)iPersonEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EAttribute getIPerson_Email() {
+		return (EAttribute)iPersonEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getCustomer() {
 		return customerEClass;
 	}
@@ -762,6 +815,12 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEAttribute(staffEClass, STAFF__USER_ID);
 		createEAttribute(staffEClass, STAFF__PASSWORD);
 
+		iPersonEClass = createEClass(IPERSON);
+		createEAttribute(iPersonEClass, IPERSON__FIRST_NAME);
+		createEAttribute(iPersonEClass, IPERSON__LAST_NAME);
+		createEAttribute(iPersonEClass, IPERSON__ADDRESS);
+		createEAttribute(iPersonEClass, IPERSON__EMAIL);
+
 		customerEClass = createEClass(CUSTOMER);
 		createEAttribute(customerEClass, CUSTOMER__PERSONAL_INFO);
 
@@ -801,6 +860,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		// Add supertypes to classes
 		iBookingManagementImplEClass.getESuperTypes().add(this.getIBookingManagement());
 		iFinanceImplEClass.getESuperTypes().add(this.getIFinance());
+		staffEClass.getESuperTypes().add(this.getIPerson());
 		iHotelManagerImplEClass.getESuperTypes().add(this.getIHotelManager());
 
 		// Initialize classes, features, and operations; add parameters
@@ -946,6 +1006,12 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEAttribute(getStaff_Admin(), theTypesPackage.getBoolean(), "admin", null, 1, 1, Staff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStaff_UserId(), theTypesPackage.getString(), "userId", null, 1, 1, Staff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStaff_Password(), theTypesPackage.getString(), "password", null, 1, 1, Staff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(iPersonEClass, IPerson.class, "IPerson", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getIPerson_FirstName(), ecorePackage.getEString(), "firstName", null, 1, 1, IPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIPerson_LastName(), ecorePackage.getEString(), "lastName", null, 1, 1, IPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIPerson_Address(), ecorePackage.getEString(), "address", null, 1, 1, IPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getIPerson_Email(), ecorePackage.getEString(), "email", null, 1, 1, IPerson.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomer_PersonalInfo(), theTypesPackage.getString(), "personalInfo", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

@@ -104,6 +104,10 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createStaffAdapter();
 			}
 			@Override
+			public Adapter caseIPerson(IPerson object) {
+				return createIPersonAdapter();
+			}
+			@Override
 			public Adapter caseCustomer(Customer object) {
 				return createCustomerAdapter();
 			}
@@ -254,6 +258,20 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createStaffAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.IPerson <em>IPerson</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.IPerson
+	 * @generated
+	 */
+	public Adapter createIPersonAdapter() {
 		return null;
 	}
 

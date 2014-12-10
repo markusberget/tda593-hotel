@@ -795,6 +795,70 @@ public interface ClassesPackage extends EPackage {
 	int IFINANCE_IMPL_OPERATION_COUNT = IFINANCE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link Classes.IPerson <em>IPerson</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.IPerson
+	 * @see Classes.impl.ClassesPackageImpl#getIPerson()
+	 * @generated
+	 */
+	int IPERSON = 9;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__FIRST_NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__LAST_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__ADDRESS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__EMAIL = 3;
+
+	/**
+	 * The number of structural features of the '<em>IPerson</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON_FEATURE_COUNT = 4;
+
+	/**
+	 * The number of operations of the '<em>IPerson</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON_OPERATION_COUNT = 0;
+
+	/**
 	 * The meta object id for the '{@link Classes.impl.StaffImpl <em>Staff</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -805,13 +869,49 @@ public interface ClassesPackage extends EPackage {
 	int STAFF = 8;
 
 	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF__FIRST_NAME = IPERSON__FIRST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF__LAST_NAME = IPERSON__LAST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF__ADDRESS = IPERSON__ADDRESS;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF__EMAIL = IPERSON__EMAIL;
+
+	/**
 	 * The feature id for the '<em><b>Admin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__ADMIN = 0;
+	int STAFF__ADMIN = IPERSON_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>User Id</b></em>' attribute.
@@ -820,7 +920,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__USER_ID = 1;
+	int STAFF__USER_ID = IPERSON_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -829,7 +929,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__PASSWORD = 2;
+	int STAFF__PASSWORD = IPERSON_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Staff</em>' class.
@@ -838,7 +938,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF_FEATURE_COUNT = 3;
+	int STAFF_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Staff</em>' class.
@@ -847,7 +947,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF_OPERATION_COUNT = 0;
+	int STAFF_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.CustomerImpl <em>Customer</em>}' class.
@@ -857,7 +957,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCustomer()
 	 * @generated
 	 */
-	int CUSTOMER = 9;
+	int CUSTOMER = 10;
 
 	/**
 	 * The feature id for the '<em><b>Personal Info</b></em>' attribute.
@@ -894,7 +994,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIHotelManagerImpl()
 	 * @generated
 	 */
-	int IHOTEL_MANAGER_IMPL = 10;
+	int IHOTEL_MANAGER_IMPL = 11;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Manager Impl</em>' class.
@@ -1518,6 +1618,60 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getStaff_Password();
 
 	/**
+	 * Returns the meta object for class '{@link Classes.IPerson <em>IPerson</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IPerson</em>'.
+	 * @see Classes.IPerson
+	 * @generated
+	 */
+	EClass getIPerson();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.IPerson#getFirstName <em>First Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>First Name</em>'.
+	 * @see Classes.IPerson#getFirstName()
+	 * @see #getIPerson()
+	 * @generated
+	 */
+	EAttribute getIPerson_FirstName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.IPerson#getLastName <em>Last Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Last Name</em>'.
+	 * @see Classes.IPerson#getLastName()
+	 * @see #getIPerson()
+	 * @generated
+	 */
+	EAttribute getIPerson_LastName();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.IPerson#getAddress <em>Address</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Address</em>'.
+	 * @see Classes.IPerson#getAddress()
+	 * @see #getIPerson()
+	 * @generated
+	 */
+	EAttribute getIPerson_Address();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.IPerson#getEmail <em>Email</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Email</em>'.
+	 * @see Classes.IPerson#getEmail()
+	 * @see #getIPerson()
+	 * @generated
+	 */
+	EAttribute getIPerson_Email();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Customer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2004,6 +2158,48 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STAFF__PASSWORD = eINSTANCE.getStaff_Password();
+
+		/**
+		 * The meta object literal for the '{@link Classes.IPerson <em>IPerson</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.IPerson
+		 * @see Classes.impl.ClassesPackageImpl#getIPerson()
+		 * @generated
+		 */
+		EClass IPERSON = eINSTANCE.getIPerson();
+
+		/**
+		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IPERSON__FIRST_NAME = eINSTANCE.getIPerson_FirstName();
+
+		/**
+		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IPERSON__LAST_NAME = eINSTANCE.getIPerson_LastName();
+
+		/**
+		 * The meta object literal for the '<em><b>Address</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IPERSON__ADDRESS = eINSTANCE.getIPerson_Address();
+
+		/**
+		 * The meta object literal for the '<em><b>Email</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IPERSON__EMAIL = eINSTANCE.getIPerson_Email();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.CustomerImpl <em>Customer</em>}' class.

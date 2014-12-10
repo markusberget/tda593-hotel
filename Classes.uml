@@ -391,6 +391,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_U7xHwHTdEeSOC7DG65-e3w" name="password">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
+    <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_6V6hkICwEeSsA-OdcGH-zg" name="staff_IPerson_realization" client="_NLnlMHTdEeSOC7DG65-e3w" supplier="_HH40sICwEeSsA-OdcGH-zg" contract="_HH40sICwEeSsA-OdcGH-zg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_SwfqYHTaEeSOC7DG65-e3w" name="Customer">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_iUZdIHTaEeSOC7DG65-e3w" name="personalInfo">
@@ -443,5 +444,19 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r-8DcXn2EeSXl-11lZMmcA"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r-8Dcnn2EeSXl-11lZMmcA" value="*"/>
     </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Interface" xmi:id="_HH40sICwEeSsA-OdcGH-zg" name="IPerson">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_SLEOQICwEeSsA-OdcGH-zg" name="firstName" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Wdj-MICwEeSsA-OdcGH-zg" name="lastName" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_jdAQIICwEeSsA-OdcGH-zg" name="address">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_m9THEICwEeSsA-OdcGH-zg" name="email">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
   </packagedElement>
 </uml:Package>

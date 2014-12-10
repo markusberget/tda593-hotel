@@ -19,6 +19,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link Classes.impl.StaffImpl#getFirstName <em>First Name</em>}</li>
+ *   <li>{@link Classes.impl.StaffImpl#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link Classes.impl.StaffImpl#getAddress <em>Address</em>}</li>
+ *   <li>{@link Classes.impl.StaffImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#isAdmin <em>Admin</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getUserId <em>User Id</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getPassword <em>Password</em>}</li>
@@ -28,6 +32,86 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
+	/**
+	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FIRST_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String firstName = FIRST_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LAST_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String lastName = LAST_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String ADDRESS_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getAddress() <em>Address</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAddress()
+	 * @generated
+	 * @ordered
+	 */
+	protected String address = ADDRESS_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EMAIL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected String email = EMAIL_EDEFAULT;
+
 	/**
 	 * The default value of the '{@link #isAdmin() <em>Admin</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -112,6 +196,90 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getFirstName() {
+		return firstName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFirstName(String newFirstName) {
+		String oldFirstName = firstName;
+		firstName = newFirstName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__FIRST_NAME, oldFirstName, firstName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLastName(String newLastName) {
+		String oldLastName = lastName;
+		lastName = newLastName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__LAST_NAME, oldLastName, lastName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getAddress() {
+		return address;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAddress(String newAddress) {
+		String oldAddress = address;
+		address = newAddress;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__ADDRESS, oldAddress, address));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmail(String newEmail) {
+		String oldEmail = email;
+		email = newEmail;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__EMAIL, oldEmail, email));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isAdmin() {
 		return admin;
 	}
@@ -178,6 +346,14 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ClassesPackage.STAFF__FIRST_NAME:
+				return getFirstName();
+			case ClassesPackage.STAFF__LAST_NAME:
+				return getLastName();
+			case ClassesPackage.STAFF__ADDRESS:
+				return getAddress();
+			case ClassesPackage.STAFF__EMAIL:
+				return getEmail();
 			case ClassesPackage.STAFF__ADMIN:
 				return isAdmin();
 			case ClassesPackage.STAFF__USER_ID:
@@ -196,6 +372,18 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ClassesPackage.STAFF__FIRST_NAME:
+				setFirstName((String)newValue);
+				return;
+			case ClassesPackage.STAFF__LAST_NAME:
+				setLastName((String)newValue);
+				return;
+			case ClassesPackage.STAFF__ADDRESS:
+				setAddress((String)newValue);
+				return;
+			case ClassesPackage.STAFF__EMAIL:
+				setEmail((String)newValue);
+				return;
 			case ClassesPackage.STAFF__ADMIN:
 				setAdmin((Boolean)newValue);
 				return;
@@ -217,6 +405,18 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ClassesPackage.STAFF__FIRST_NAME:
+				setFirstName(FIRST_NAME_EDEFAULT);
+				return;
+			case ClassesPackage.STAFF__LAST_NAME:
+				setLastName(LAST_NAME_EDEFAULT);
+				return;
+			case ClassesPackage.STAFF__ADDRESS:
+				setAddress(ADDRESS_EDEFAULT);
+				return;
+			case ClassesPackage.STAFF__EMAIL:
+				setEmail(EMAIL_EDEFAULT);
+				return;
 			case ClassesPackage.STAFF__ADMIN:
 				setAdmin(ADMIN_EDEFAULT);
 				return;
@@ -238,6 +438,14 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ClassesPackage.STAFF__FIRST_NAME:
+				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
+			case ClassesPackage.STAFF__LAST_NAME:
+				return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
+			case ClassesPackage.STAFF__ADDRESS:
+				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
+			case ClassesPackage.STAFF__EMAIL:
+				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 			case ClassesPackage.STAFF__ADMIN:
 				return admin != ADMIN_EDEFAULT;
 			case ClassesPackage.STAFF__USER_ID:
@@ -258,7 +466,15 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (admin: ");
+		result.append(" (firstName: ");
+		result.append(firstName);
+		result.append(", lastName: ");
+		result.append(lastName);
+		result.append(", address: ");
+		result.append(address);
+		result.append(", email: ");
+		result.append(email);
+		result.append(", admin: ");
 		result.append(admin);
 		result.append(", userId: ");
 		result.append(userId);
