@@ -5,8 +5,11 @@ package Classes.impl;
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
 import Classes.Staff;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
@@ -184,12 +187,21 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		EList<Staff> searchResult = new BasicEList<Staff>();
+		
+		for(int i = 0; i  < this.staffMembers.size(); ++i) {
+			Staff s = this.staffMembers.get(i);
+			
+		}
+		
+		return searchResult;
+		
 	}
 
 	/**
