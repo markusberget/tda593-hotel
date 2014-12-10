@@ -3,29 +3,33 @@
 package Classes.impl;
 
 import Classes.ClassesPackage;
-import Classes.HotelManager_IHotelManagerImpl;
+import Classes.IHotelManagerImpl;
+
 import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
+
 import org.eclipse.emf.ecore.EClass;
+
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Hotel Manager IHotel Manager Impl</b></em>'.
+ * An implementation of the model object '<em><b>IHotel Manager Impl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * </p>
  *
  * @generated
  */
-public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Container implements HotelManager_IHotelManagerImpl {
+public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implements IHotelManagerImpl {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected HotelManager_IHotelManagerImplImpl() {
+	protected IHotelManagerImplImpl() {
 		super();
 	}
 
@@ -36,22 +40,7 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ClassesPackage.Literals.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL;
-	}
-	
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean login(String username, String password) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		
-		// hello world. 
-		
-		throw new UnsupportedOperationException();
+		return ClassesPackage.Literals.IHOTEL_MANAGER_IMPL;
 	}
 
 	/**
@@ -59,10 +48,39 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber) {
+	public boolean login(String username, String password) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber) {
+		
+		// TODO: lookup adminUsername and check admin privileges (findStaff is not implemented or defined anywhere)
+		
+		StaffImpl adminStaffMember = findStaff(adminUsername);
+		
+		if ( adminStaffMember == null ) {
+			return false;
+		} else if ( adminStaffMember.isAdmin() ) {
+			return false;
+		} else {
+			
+			// TODO: persist object within runtime somewhere!		
+			StaffImpl newStaffMember = new StaffImpl();
+			newStaffMember.setUserId(username);
+			newStaffMember.setPassword(password);
+			// TODO: set firstName, secondName, email, phoneNumber
+			
+			return true;
+			
+		}
+
 	}
 
 	/**
@@ -71,7 +89,6 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 	 * @generated NOT
 	 */
 	public boolean isPasswordSecure(String password) {
-		// TODO: Test this method. 
 		
 		int numDigits = 0;
 		int numLetters = 0;
@@ -99,7 +116,7 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 		}
 		
 		// does the string fulfill the requirements?
-		return (numDigits > 2) && (numLetters > 3);
+		return (numDigits >= 2) && (numLetters >= 3);
 	}
 
 	/**
@@ -125,12 +142,21 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean changeStatusOfRoom(int roomId, Enumerator status) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		// TODO: lookup roomId (findRoom is not implemented or defined anywhere)
+		RoomImpl room = findRoom( roomId );
+		
+		if ( room != null ) {
+			
+			room.setStatusoccupiedreadypending(status);
+			return true;
+			
+		} else {
+			return false;
+		}
+		
 	}
 
 	/**
@@ -152,20 +178,20 @@ public class HotelManager_IHotelManagerImplImpl extends MinimalEObjectImpl.Conta
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
-			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING:
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING:
 				return login((String)arguments.get(0), (String)arguments.get(1));
-			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING:
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING:
 				return addStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (String)arguments.get(6));
-			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING:
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING:
 				return isPasswordSecure((String)arguments.get(0));
-			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
 				return isValidUsername((String)arguments.get(0));
-			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR:
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR:
 				return changeStatusOfRoom((Integer)arguments.get(0), (Enumerator)arguments.get(1));
-			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES:
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES:
 				return getPossibleRoomStatuses();
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
-} //HotelManager_IHotelManagerImplImpl
+} //IHotelManagerImplImpl

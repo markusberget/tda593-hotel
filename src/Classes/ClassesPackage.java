@@ -613,116 +613,6 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER_OPERATION_COUNT = 6;
 
 	/**
-	 * The meta object id for the '{@link Classes.impl.HotelManagerImpl <em>Hotel Manager</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Classes.impl.HotelManagerImpl
-	 * @see Classes.impl.ClassesPackageImpl#getHotelManager()
-	 * @generated
-	 */
-	int HOTEL_MANAGER = 6;
-
-	/**
-	 * The number of structural features of the '<em>Hotel Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_FEATURE_COUNT = 0;
-
-	/**
-	 * The number of operations of the '<em>Hotel Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '{@link Classes.impl.HotelManager_IHotelManagerImplImpl <em>Hotel Manager IHotel Manager Impl</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see Classes.impl.HotelManager_IHotelManagerImplImpl
-	 * @see Classes.impl.ClassesPackageImpl#getHotelManager_IHotelManagerImpl()
-	 * @generated
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL = 7;
-
-	/**
-	 * The number of structural features of the '<em>Hotel Manager IHotel Manager Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL_FEATURE_COUNT = IHOTEL_MANAGER_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Login</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING = IHOTEL_MANAGER___LOGIN__STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Add Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING = IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Is Password Secure</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING = IHOTEL_MANAGER___IS_PASSWORD_SECURE__STRING;
-
-	/**
-	 * The operation id for the '<em>Is Valid Username</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING = IHOTEL_MANAGER___IS_VALID_USERNAME__STRING;
-
-	/**
-	 * The operation id for the '<em>Change Status Of Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR;
-
-	/**
-	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES = IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES;
-
-	/**
-	 * The number of operations of the '<em>Hotel Manager IHotel Manager Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int HOTEL_MANAGER_IHOTEL_MANAGER_IMPL_OPERATION_COUNT = IHOTEL_MANAGER_OPERATION_COUNT + 0;
-
-	/**
 	 * The meta object id for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -730,7 +620,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinanceImpl()
 	 * @generated
 	 */
-	int IFINANCE_IMPL = 8;
+	int IFINANCE_IMPL = 6;
 
 	/**
 	 * The number of structural features of the '<em>IFinance Impl</em>' class.
@@ -803,7 +693,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBooking()
 	 * @generated
 	 */
-	int BOOKING = 9;
+	int BOOKING = 7;
 
 	/**
 	 * The feature id for the '<em><b>Check In</b></em>' attribute.
@@ -867,7 +757,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getStaff()
 	 * @generated
 	 */
-	int STAFF = 10;
+	int STAFF = 8;
 
 	/**
 	 * The feature id for the '<em><b>Admin</b></em>' attribute.
@@ -922,7 +812,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCustomer()
 	 * @generated
 	 */
-	int CUSTOMER = 11;
+	int CUSTOMER = 9;
 
 	/**
 	 * The feature id for the '<em><b>Personal Info</b></em>' attribute.
@@ -950,6 +840,88 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int CUSTOMER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link Classes.impl.IHotelManagerImplImpl <em>IHotel Manager Impl</em>}' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.impl.IHotelManagerImplImpl
+	 * @see Classes.impl.ClassesPackageImpl#getIHotelManagerImpl()
+	 * @generated
+	 */
+	int IHOTEL_MANAGER_IMPL = 10;
+
+	/**
+	 * The number of structural features of the '<em>IHotel Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL_FEATURE_COUNT = IHOTEL_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Login</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING = IHOTEL_MANAGER___LOGIN__STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Add Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING = IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Password Secure</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING = IHOTEL_MANAGER___IS_PASSWORD_SECURE__STRING;
+
+	/**
+	 * The operation id for the '<em>Is Valid Username</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING = IHOTEL_MANAGER___IS_VALID_USERNAME__STRING;
+
+	/**
+	 * The operation id for the '<em>Change Status Of Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR;
+
+	/**
+	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES = IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES;
+
+	/**
+	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL_OPERATION_COUNT = IHOTEL_MANAGER_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1331,26 +1303,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__GetPossibleRoomStatuses();
 
 	/**
-	 * Returns the meta object for class '{@link Classes.HotelManager <em>Hotel Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hotel Manager</em>'.
-	 * @see Classes.HotelManager
-	 * @generated
-	 */
-	EClass getHotelManager();
-
-	/**
-	 * Returns the meta object for class '{@link Classes.HotelManager_IHotelManagerImpl <em>Hotel Manager IHotel Manager Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Hotel Manager IHotel Manager Impl</em>'.
-	 * @see Classes.HotelManager_IHotelManagerImpl
-	 * @generated
-	 */
-	EClass getHotelManager_IHotelManagerImpl();
-
-	/**
 	 * Returns the meta object for class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1477,6 +1429,16 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCustomer_PersonalInfo();
+
+	/**
+	 * Returns the meta object for class '{@link Classes.IHotelManagerImpl <em>IHotel Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>IHotel Manager Impl</em>'.
+	 * @see Classes.IHotelManagerImpl
+	 * @generated
+	 */
+	EClass getIHotelManagerImpl();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1810,26 +1772,6 @@ public interface ClassesPackage extends EPackage {
 		EOperation IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES = eINSTANCE.getIHotelManager__GetPossibleRoomStatuses();
 
 		/**
-		 * The meta object literal for the '{@link Classes.impl.HotelManagerImpl <em>Hotel Manager</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Classes.impl.HotelManagerImpl
-		 * @see Classes.impl.ClassesPackageImpl#getHotelManager()
-		 * @generated
-		 */
-		EClass HOTEL_MANAGER = eINSTANCE.getHotelManager();
-
-		/**
-		 * The meta object literal for the '{@link Classes.impl.HotelManager_IHotelManagerImplImpl <em>Hotel Manager IHotel Manager Impl</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Classes.impl.HotelManager_IHotelManagerImplImpl
-		 * @see Classes.impl.ClassesPackageImpl#getHotelManager_IHotelManagerImpl()
-		 * @generated
-		 */
-		EClass HOTEL_MANAGER_IHOTEL_MANAGER_IMPL = eINSTANCE.getHotelManager_IHotelManagerImpl();
-
-		/**
 		 * The meta object literal for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -1932,6 +1874,16 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CUSTOMER__PERSONAL_INFO = eINSTANCE.getCustomer_PersonalInfo();
+
+		/**
+		 * The meta object literal for the '{@link Classes.impl.IHotelManagerImplImpl <em>IHotel Manager Impl</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.impl.IHotelManagerImplImpl
+		 * @see Classes.impl.ClassesPackageImpl#getIHotelManagerImpl()
+		 * @generated
+		 */
+		EClass IHOTEL_MANAGER_IMPL = eINSTANCE.getIHotelManagerImpl();
 
 	}
 

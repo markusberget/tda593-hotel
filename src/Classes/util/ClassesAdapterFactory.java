@@ -92,14 +92,6 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createIHotelManagerAdapter();
 			}
 			@Override
-			public Adapter caseHotelManager(HotelManager object) {
-				return createHotelManagerAdapter();
-			}
-			@Override
-			public Adapter caseHotelManager_IHotelManagerImpl(HotelManager_IHotelManagerImpl object) {
-				return createHotelManager_IHotelManagerImplAdapter();
-			}
-			@Override
 			public Adapter caseIFinanceImpl(IFinanceImpl object) {
 				return createIFinanceImplAdapter();
 			}
@@ -114,6 +106,10 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCustomer(Customer object) {
 				return createCustomerAdapter();
+			}
+			@Override
+			public Adapter caseIHotelManagerImpl(IHotelManagerImpl object) {
+				return createIHotelManagerImplAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -220,34 +216,6 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link Classes.HotelManager <em>Hotel Manager</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Classes.HotelManager
-	 * @generated
-	 */
-	public Adapter createHotelManagerAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Classes.HotelManager_IHotelManagerImpl <em>Hotel Manager IHotel Manager Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Classes.HotelManager_IHotelManagerImpl
-	 * @generated
-	 */
-	public Adapter createHotelManager_IHotelManagerImplAdapter() {
-		return null;
-	}
-
-	/**
 	 * Creates a new adapter for an object of class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -300,6 +268,20 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCustomerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.IHotelManagerImpl <em>IHotel Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.IHotelManagerImpl
+	 * @generated
+	 */
+	public Adapter createIHotelManagerImplAdapter() {
 		return null;
 	}
 

@@ -49,24 +49,6 @@ public interface ClassesFactory extends EFactory {
 	IBookingManagementImpl createIBookingManagementImpl();
 
 	/**
-	 * Returns a new object of class '<em>Hotel Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hotel Manager</em>'.
-	 * @generated
-	 */
-	HotelManager createHotelManager();
-
-	/**
-	 * Returns a new object of class '<em>Hotel Manager IHotel Manager Impl</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Hotel Manager IHotel Manager Impl</em>'.
-	 * @generated
-	 */
-	HotelManager_IHotelManagerImpl createHotelManager_IHotelManagerImpl();
-
-	/**
 	 * Returns a new object of class '<em>IFinance Impl</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -101,6 +83,15 @@ public interface ClassesFactory extends EFactory {
 	 * @generated
 	 */
 	Customer createCustomer();
+
+	/**
+	 * Returns a new object of class '<em>IHotel Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>IHotel Manager Impl</em>'.
+	 * @generated
+	 */
+	IHotelManagerImpl createIHotelManagerImpl();
 
 	/**
 	 * Returns the package supported by this factory.

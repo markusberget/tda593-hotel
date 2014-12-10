@@ -128,8 +128,6 @@
     </eOperations>
     <eOperations name="getPossibleRoomStatuses" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EEList"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="HotelManager"/>
-  <eClassifiers xsi:type="ecore:EClass" name="HotelManager_IHotelManagerImpl" eSuperTypes="#//IHotelManager"/>
   <eClassifiers xsi:type="ecore:EClass" name="IFinanceImpl" eSuperTypes="#//IFinance"/>
   <eClassifiers xsi:type="ecore:EClass" name="Booking">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkIn" ordered="false"
@@ -153,4 +151,5 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="personalInfo" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IHotelManagerImpl" eSuperTypes="#//IHotelManager"/>
 </ecore:EPackage>

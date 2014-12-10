@@ -103,19 +103,6 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.HOTEL_MANAGER: {
-				HotelManager hotelManager = (HotelManager)theEObject;
-				T result = caseHotelManager(hotelManager);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.HOTEL_MANAGER_IHOTEL_MANAGER_IMPL: {
-				HotelManager_IHotelManagerImpl hotelManager_IHotelManagerImpl = (HotelManager_IHotelManagerImpl)theEObject;
-				T result = caseHotelManager_IHotelManagerImpl(hotelManager_IHotelManagerImpl);
-				if (result == null) result = caseIHotelManager(hotelManager_IHotelManagerImpl);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ClassesPackage.IFINANCE_IMPL: {
 				IFinanceImpl iFinanceImpl = (IFinanceImpl)theEObject;
 				T result = caseIFinanceImpl(iFinanceImpl);
@@ -138,6 +125,13 @@ public class ClassesSwitch<T> extends Switch<T> {
 			case ClassesPackage.CUSTOMER: {
 				Customer customer = (Customer)theEObject;
 				T result = caseCustomer(customer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.IHOTEL_MANAGER_IMPL: {
+				IHotelManagerImpl iHotelManagerImpl = (IHotelManagerImpl)theEObject;
+				T result = caseIHotelManagerImpl(iHotelManagerImpl);
+				if (result == null) result = caseIHotelManager(iHotelManagerImpl);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -236,36 +230,6 @@ public class ClassesSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hotel Manager</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hotel Manager</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHotelManager(HotelManager object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Hotel Manager IHotel Manager Impl</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Hotel Manager IHotel Manager Impl</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseHotelManager_IHotelManagerImpl(HotelManager_IHotelManagerImpl object) {
-		return null;
-	}
-
-	/**
 	 * Returns the result of interpreting the object as an instance of '<em>IFinance Impl</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -322,6 +286,21 @@ public class ClassesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCustomer(Customer object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>IHotel Manager Impl</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>IHotel Manager Impl</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseIHotelManagerImpl(IHotelManagerImpl object) {
 		return null;
 	}
 

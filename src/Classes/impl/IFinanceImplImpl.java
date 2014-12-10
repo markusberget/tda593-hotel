@@ -45,23 +45,56 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void calculatePayment(int bookingID) {
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+		
+		BookingImpl booking = findBooking(bookingId);
+		
+		// TODO: the booking object doesn't have any room(s)
+		
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void payBill(int bookingID) {
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		
+		int amount = calculatePayment(bookingId);
+		
+		if (amount > 0) {
+		
+			/* prompt user to fill in customer information here */
+			/* check validity of customer information */
+			/* if(!isValid()) { failed payment }*/
+			
+			/* prompt user to select payment method */		
+			/* if( no selection ) { failed payment }*/
+			/* else if( selection is invoice ) { bankSendInvoice() }*/
+			/* else */
+		
+			/* prompt user to fill in ccNumber:String, ccv:String, expiryMonth:int,
+			expiryYear:int, firstName:String, lastName:String */
+			if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
+				/* failed payment */
+			}
+			
+			/* use case says: "The customer confirms the information."*/
+			/* if( no confirmation ) { failed payment }*/
+
+			bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+			/* if( bank says payment failed ) { failed payment }*/
+			
+		}
+				
+		/* register payment as done */
+		/* show confirmation to user */
+		
 	}
 
 	/**
