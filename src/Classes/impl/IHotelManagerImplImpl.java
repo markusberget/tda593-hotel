@@ -2,11 +2,13 @@
  */
 package Classes.impl;
 
+import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
 import Classes.Staff;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.ArrayList;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
@@ -23,6 +25,10 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implements IHotelManagerImpl {
+
+	private ArrayList<Staff> staffMembers;
+	
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -30,6 +36,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	protected IHotelManagerImplImpl() {
 		super();
+		
+		this.staffMembers = new ArrayList<>();
+		
 	}
 
 	/**
