@@ -2055,7 +2055,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wfUEVHb2EeSlx-SIUE5Fhw"/>
       </children>
       <element xmi:type="uml:Interaction" href="model.uml#_s68lsHb2EeSlx-SIUE5Fhw"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wfUEVXb2EeSlx-SIUE5Fhw" y="8" width="956"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_wfUEVXb2EeSlx-SIUE5Fhw" y="8" width="957"/>
     </children>
     <styles xmi:type="notation:StringValueStyle" xmi:id="_wfUEVnb2EeSlx-SIUE5Fhw" name="diagram_compatibility_version" stringValue="1.0.0"/>
     <styles xmi:type="notation:DiagramStyle" xmi:id="_wfUEV3b2EeSlx-SIUE5Fhw"/>
