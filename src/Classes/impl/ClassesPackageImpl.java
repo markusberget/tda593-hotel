@@ -861,6 +861,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		iBookingManagementImplEClass.getESuperTypes().add(this.getIBookingManagement());
 		iFinanceImplEClass.getESuperTypes().add(this.getIFinance());
 		staffEClass.getESuperTypes().add(this.getIPerson());
+		customerEClass.getESuperTypes().add(this.getIPerson());
 		iHotelManagerImplEClass.getESuperTypes().add(this.getIHotelManager());
 
 		// Initialize classes, features, and operations; add parameters

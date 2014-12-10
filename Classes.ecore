@@ -174,7 +174,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="email" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Customer">
+  <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//IPerson">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="personalInfo" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
   </eClassifiers>

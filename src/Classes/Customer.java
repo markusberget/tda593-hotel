@@ -2,7 +2,6 @@
  */
 package Classes;
 
-import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
@@ -20,7 +19,7 @@ import org.eclipse.emf.ecore.EObject;
  * @model
  * @generated
  */
-public interface Customer extends EObject {
+public interface Customer extends IPerson {
 	/**
 	 * Returns the value of the '<em><b>Personal Info</b></em>' attribute.
 	 * <!-- begin-user-doc -->

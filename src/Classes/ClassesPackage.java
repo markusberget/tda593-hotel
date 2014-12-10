@@ -960,13 +960,49 @@ public interface ClassesPackage extends EPackage {
 	int CUSTOMER = 10;
 
 	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__FIRST_NAME = IPERSON__FIRST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__LAST_NAME = IPERSON__LAST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__ADDRESS = IPERSON__ADDRESS;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__EMAIL = IPERSON__EMAIL;
+
+	/**
 	 * The feature id for the '<em><b>Personal Info</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER__PERSONAL_INFO = 0;
+	int CUSTOMER__PERSONAL_INFO = IPERSON_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Customer</em>' class.
@@ -975,7 +1011,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_FEATURE_COUNT = 1;
+	int CUSTOMER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Customer</em>' class.
@@ -984,7 +1020,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_OPERATION_COUNT = 0;
+	int CUSTOMER_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IHotelManagerImplImpl <em>IHotel Manager Impl</em>}' class.

@@ -132,6 +132,7 @@ public class ClassesSwitch<T> extends Switch<T> {
 			case ClassesPackage.CUSTOMER: {
 				Customer customer = (Customer)theEObject;
 				T result = caseCustomer(customer);
+				if (result == null) result = caseIPerson(customer);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
