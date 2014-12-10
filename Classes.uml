@@ -73,6 +73,9 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_rcgDQHZdEeSiQcRa0VNXAQ" name="maximumPrice">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_kpTvAIBfEeSgrrn-H6mlpQ" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="model.uml#_l5CcEIBgEeSgrrn-H6mlpQ"/>
+      </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Lw8ZoHYfEeS6mLi5FsOguA" name="cancelBooking">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tpy4gHZcEeSiQcRa0VNXAQ" name="bookingID">
