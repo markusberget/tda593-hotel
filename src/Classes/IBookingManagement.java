@@ -4,6 +4,7 @@ package Classes;
 
 import java.util.Date;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -28,10 +29,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingNumberRequired="true" bookingNumberOrdered="false"
+	 * @model bookingNumberRequired="true" bookingNumberOrdered="false" _Required="true" _Ordered="false"
 	 * @generated
 	 */
-	void getBooking(int bookingNumber);
+	void getBooking(int bookingNumber, Booking _);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -68,18 +69,18 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model checkInRequired="true" checkInOrdered="false" checkOutRequired="true" checkOutOrdered="false" featureListRequired="true" featureListOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" roomTypeRequired="true" roomTypeOrdered="false" maximumPriceRequired="true" maximumPriceOrdered="false"
+	 * @model required="true" many="false" ordered="false" checkInRequired="true" checkInOrdered="false" checkOutRequired="true" checkOutOrdered="false" featureListRequired="true" featureListOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" roomTypeRequired="true" roomTypeOrdered="false" maximumPriceRequired="true" maximumPriceOrdered="false"
 	 * @generated
 	 */
-	void searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice);
+	EList searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingIDRequired="true" bookingIDOrdered="false"
+	 * @model bookingIDRequired="true" bookingIDOrdered="false" _DataType="org.eclipse.uml2.types.Boolean" _Required="true" _Ordered="false"
 	 * @generated
 	 */
-	void cancelBooking(int bookingID);
+	void cancelBooking(int bookingID, boolean _);
 
 	/**
 	 * <!-- begin-user-doc -->

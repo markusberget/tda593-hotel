@@ -68,8 +68,8 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 			case ClassesPackage.ROOM: return createRoom();
 			case ClassesPackage.ROOM_TYPE: return createRoomType();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: return createIBookingManagementImpl();
-			case ClassesPackage.IFINANCE_IMPL: return createIFinanceImpl();
 			case ClassesPackage.BOOKING: return createBooking();
+			case ClassesPackage.IFINANCE_IMPL: return createIFinanceImpl();
 			case ClassesPackage.STAFF: return createStaff();
 			case ClassesPackage.CUSTOMER: return createCustomer();
 			case ClassesPackage.IHOTEL_MANAGER_IMPL: return createIHotelManagerImpl();

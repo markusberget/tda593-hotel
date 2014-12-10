@@ -91,6 +91,12 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ClassesPackage.BOOKING: {
+				Booking booking = (Booking)theEObject;
+				T result = caseBooking(booking);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ClassesPackage.IFINANCE: {
 				IFinance iFinance = (IFinance)theEObject;
 				T result = caseIFinance(iFinance);
@@ -107,12 +113,6 @@ public class ClassesSwitch<T> extends Switch<T> {
 				IFinanceImpl iFinanceImpl = (IFinanceImpl)theEObject;
 				T result = caseIFinanceImpl(iFinanceImpl);
 				if (result == null) result = caseIFinance(iFinanceImpl);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.BOOKING: {
-				Booking booking = (Booking)theEObject;
-				T result = caseBooking(booking);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

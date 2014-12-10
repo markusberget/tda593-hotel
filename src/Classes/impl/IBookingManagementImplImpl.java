@@ -2,6 +2,7 @@
  */
 package Classes.impl;
 
+import Classes.Booking;
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
@@ -64,6 +65,17 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public void updateBooking() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void getBooking(int bookingNumber, Booking _) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -135,7 +147,18 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice) {
+	public EList searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void cancelBooking(int bookingID, boolean _) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -228,8 +251,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING:
 				updateBooking();
 				return null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT:
-				getBooking((Integer)arguments.get(0));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_BOOKING:
+				getBooking((Integer)arguments.get(0), (Booking)arguments.get(1));
 				return null;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_DATE:
 				getBooking((Integer)arguments.get(0), (Date)arguments.get(1));
@@ -242,10 +265,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				addCancelationFee((Class)arguments.get(0));
 				return null;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT:
-				searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Class)arguments.get(2), (Integer)arguments.get(3), (Integer)arguments.get(4), (Integer)arguments.get(5));
-				return null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT:
-				cancelBooking((Integer)arguments.get(0));
+				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Class)arguments.get(2), (Integer)arguments.get(3), (Integer)arguments.get(4), (Integer)arguments.get(5));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT_BOOLEAN:
+				cancelBooking((Integer)arguments.get(0), (Boolean)arguments.get(1));
 				return null;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__CLASS:
 				checkIn((Class)arguments.get(0));

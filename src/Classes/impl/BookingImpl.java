@@ -23,6 +23,10 @@ import Classes.ClassesPackage;
  *   <li>{@link Classes.impl.BookingImpl#getCheckOut <em>Check Out</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getBookingID <em>Booking ID</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getFirstName <em>First Name</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getEmail <em>Email</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getPhoneNumber <em>Phone Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,7 +41,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int CHECK_IN_EDEFAULT = 0;
+	protected static final Date CHECK_IN_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getCheckIn() <em>Check In</em>}' attribute.
@@ -47,7 +51,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 * @ordered
 	 */
-	protected int checkIn = CHECK_IN_EDEFAULT;
+	protected Date checkIn = CHECK_IN_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getCheckOut() <em>Check Out</em>}' attribute.
@@ -57,7 +61,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int CHECK_OUT_EDEFAULT = 0;
+	protected static final Date CHECK_OUT_EDEFAULT = null;
 
 	/**
 	 * The cached value of the '{@link #getCheckOut() <em>Check Out</em>}' attribute.
@@ -67,7 +71,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 * @ordered
 	 */
-	protected int checkOut = CHECK_OUT_EDEFAULT;
+	protected Date checkOut = CHECK_OUT_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getBookingID() <em>Booking ID</em>}' attribute.
@@ -110,6 +114,86 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected int numberOfGuests = NUMBER_OF_GUESTS_EDEFAULT;
 
 	/**
+	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String FIRST_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getFirstName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String firstName = FIRST_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastName()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String LAST_NAME_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getLastName() <em>Last Name</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getLastName()
+	 * @generated
+	 * @ordered
+	 */
+	protected String lastName = LAST_NAME_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String EMAIL_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getEmail() <em>Email</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getEmail()
+	 * @generated
+	 * @ordered
+	 */
+	protected String email = EMAIL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhoneNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PHONE_NUMBER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhoneNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected String phoneNumber = PHONE_NUMBER_EDEFAULT;
+
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -133,7 +217,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getCheckIn() {
+	public Date getCheckIn() {
 		return checkIn;
 	}
 
@@ -154,7 +238,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getCheckOut() {
+	public Date getCheckOut() {
 		return checkOut;
 	}
 
@@ -227,6 +311,90 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getFirstName() {
+		return firstName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setFirstName(String newFirstName) {
+		String oldFirstName = firstName;
+		firstName = newFirstName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__FIRST_NAME, oldFirstName, firstName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getLastName() {
+		return lastName;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setLastName(String newLastName) {
+		String oldLastName = lastName;
+		lastName = newLastName;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__LAST_NAME, oldLastName, lastName));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getEmail() {
+		return email;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setEmail(String newEmail) {
+		String oldEmail = email;
+		email = newEmail;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__EMAIL, oldEmail, email));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPhoneNumber(String newPhoneNumber) {
+		String oldPhoneNumber = phoneNumber;
+		phoneNumber = newPhoneNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__PHONE_NUMBER, oldPhoneNumber, phoneNumber));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -238,6 +406,14 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return getBookingID();
 			case ClassesPackage.BOOKING__NUMBER_OF_GUESTS:
 				return getNumberOfGuests();
+			case ClassesPackage.BOOKING__FIRST_NAME:
+				return getFirstName();
+			case ClassesPackage.BOOKING__LAST_NAME:
+				return getLastName();
+			case ClassesPackage.BOOKING__EMAIL:
+				return getEmail();
+			case ClassesPackage.BOOKING__PHONE_NUMBER:
+				return getPhoneNumber();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -251,16 +427,28 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case ClassesPackage.BOOKING__CHECK_IN:
-				setCheckIn((Integer)newValue);
+				setCheckIn((Date)newValue);
 				return;
 			case ClassesPackage.BOOKING__CHECK_OUT:
-				setCheckOut((Integer)newValue);
+				setCheckOut((Date)newValue);
 				return;
 			case ClassesPackage.BOOKING__BOOKING_ID:
 				setBookingID((Integer)newValue);
 				return;
 			case ClassesPackage.BOOKING__NUMBER_OF_GUESTS:
 				setNumberOfGuests((Integer)newValue);
+				return;
+			case ClassesPackage.BOOKING__FIRST_NAME:
+				setFirstName((String)newValue);
+				return;
+			case ClassesPackage.BOOKING__LAST_NAME:
+				setLastName((String)newValue);
+				return;
+			case ClassesPackage.BOOKING__EMAIL:
+				setEmail((String)newValue);
+				return;
+			case ClassesPackage.BOOKING__PHONE_NUMBER:
+				setPhoneNumber((String)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -286,6 +474,18 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__NUMBER_OF_GUESTS:
 				setNumberOfGuests(NUMBER_OF_GUESTS_EDEFAULT);
 				return;
+			case ClassesPackage.BOOKING__FIRST_NAME:
+				setFirstName(FIRST_NAME_EDEFAULT);
+				return;
+			case ClassesPackage.BOOKING__LAST_NAME:
+				setLastName(LAST_NAME_EDEFAULT);
+				return;
+			case ClassesPackage.BOOKING__EMAIL:
+				setEmail(EMAIL_EDEFAULT);
+				return;
+			case ClassesPackage.BOOKING__PHONE_NUMBER:
+				setPhoneNumber(PHONE_NUMBER_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -299,13 +499,21 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case ClassesPackage.BOOKING__CHECK_IN:
-				return checkIn != CHECK_IN_EDEFAULT;
+				return CHECK_IN_EDEFAULT == null ? checkIn != null : !CHECK_IN_EDEFAULT.equals(checkIn);
 			case ClassesPackage.BOOKING__CHECK_OUT:
-				return checkOut != CHECK_OUT_EDEFAULT;
+				return CHECK_OUT_EDEFAULT == null ? checkOut != null : !CHECK_OUT_EDEFAULT.equals(checkOut);
 			case ClassesPackage.BOOKING__BOOKING_ID:
 				return bookingID != BOOKING_ID_EDEFAULT;
 			case ClassesPackage.BOOKING__NUMBER_OF_GUESTS:
 				return numberOfGuests != NUMBER_OF_GUESTS_EDEFAULT;
+			case ClassesPackage.BOOKING__FIRST_NAME:
+				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
+			case ClassesPackage.BOOKING__LAST_NAME:
+				return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
+			case ClassesPackage.BOOKING__EMAIL:
+				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
+			case ClassesPackage.BOOKING__PHONE_NUMBER:
+				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
 		}
 		return super.eIsSet(featureID);
 	}
@@ -328,6 +536,14 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		result.append(bookingID);
 		result.append(", numberOfGuests: ");
 		result.append(numberOfGuests);
+		result.append(", firstName: ");
+		result.append(firstName);
+		result.append(", lastName: ");
+		result.append(lastName);
+		result.append(", email: ");
+		result.append(email);
+		result.append(", phoneNumber: ");
+		result.append(phoneNumber);
 		result.append(')');
 		return result.toString();
 	}
