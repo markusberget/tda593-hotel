@@ -77,9 +77,12 @@
         <type xmi:type="uml:PrimitiveType" href="model.uml#_l5CcEIBgEeSgrrn-H6mlpQ"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Lw8ZoHYfEeS6mLi5FsOguA" name="cancelBooking">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Lw8ZoHYfEeS6mLi5FsOguA" name="cancelBooking" visibility="public">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_Tpy4gHZcEeSiQcRa0VNXAQ" name="bookingID">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ImfKYICUEeSFes4IcS1MiA" direction="out">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Boolean"/>
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_40Ht0HYfEeS6mLi5FsOguA" name="checkIn">

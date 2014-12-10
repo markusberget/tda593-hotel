@@ -32,9 +32,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	ArrayList<BookingImpl> confirmedBookings = new ArrayList<>();
 	ArrayList<RoomImpl> availableRooms = new ArrayList<>();
 	ArrayList<RoomImpl> occupiedRooms = new ArrayList<>();
+	ArrayList<BookingImpl> bookingHistory = new ArrayList<>();
 	
 	// A list of rooms is used as the value in the HashMap because a customer should be
-	// able to have several rooms in a booking.
+	// able to have several rooms in a booking. The key part is the bookingID.
 	Map<Integer, List<RoomImpl>> pendingRooms = new HashMap<Integer, List<RoomImpl>>();
 	
 	
@@ -141,14 +142,19 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * A booking can be cancelled while it is pending and also when it is
+	 * in the confirmed state. 
+	 * 
+	 * @generated NOT
 	 */
-	public void cancelBooking(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean cancelBooking(int bookingID) {
+		if (pendingBookings.get(bookingID) != null) {
+			return bookingHistory.add(pendingBookings.remove(bookingID));
+		}
+		else if (confirmedBookings.get(bookingID) != null) {
+			return bookingHistory.add(confirmedBookings.remove(bookingID));
+		}
+		return false;
 	}
 
 	/**
