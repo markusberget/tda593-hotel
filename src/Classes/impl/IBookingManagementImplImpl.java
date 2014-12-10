@@ -174,14 +174,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This method is synchronized to avoid some problems when
+	 * different threads invoke the method at the same time.
+	 *
+	 * @generated NOT
 	 */
-	public boolean addCustomerInformationToBooking(int bookingID, String firstName, String lastName, String email, String ph) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public synchronized boolean addCustomerInformationToBooking(int bookingID, String firstName, String lastName, String email, String ph) {
+		pendingBookings.get(bookingID);
+		// There are no firstname, lastname, email or phonenumber instance variables in BookingImpl
+		return true;
 	}
 
 	/**
@@ -200,7 +201,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		booking.setCheckOut(checkOut);
 		booking.setNumberOfGuests(guestCount);
 		booking.setBookingID();
-		pendingBookings.add(booking);
+		pendingBookings.add(booking.getBookingID() , booking);
 		return booking.getBookingID();
 	}
 
