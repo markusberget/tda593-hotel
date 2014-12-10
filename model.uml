@@ -226,18 +226,6 @@
   <packagedElement xmi:type="uml:Usage" xmi:id="_QahmIXYaEeSNRvHXkk2GGA" name="Usage0" client="_QaUx0HYaEeSNRvHXkk2GGA">
     <supplier xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_1FSzYHZmEeSBRfeA9UETiw" memberEnd="_1FSzYXZmEeSBRfeA9UETiw _1FSMUHZmEeSBRfeA9UETiw">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_1FSzYXZmEeSBRfeA9UETiw" name="iFinanceImpl" association="_1FSzYHZmEeSBRfeA9UETiw">
-      <type xmi:type="uml:Class" href="Classes.uml#_wFeDYHZmEeSBRfeA9UETiw"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1FSzYnZmEeSBRfeA9UETiw" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1FSzY3ZmEeSBRfeA9UETiw" value="1"/>
-    </ownedEnd>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_1FSMUHZmEeSBRfeA9UETiw" name="booking" association="_1FSzYHZmEeSBRfeA9UETiw">
-      <type xmi:type="uml:Class" href="Classes.uml#_NNrFkHTbEeSOC7DG65-e3w"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1FSMUXZmEeSBRfeA9UETiw"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1FSMUnZmEeSBRfeA9UETiw" value="*"/>
-    </ownedEnd>
-  </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_HeqlgHa2EeSKk9bkKW7QkA" name="CustomerProvides">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_UmN4UHa7EeSKk9bkKW7QkA" name="makePayment" concurrency="concurrent">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_UmN4UXa7EeSKk9bkKW7QkA" name="ccNumber">
@@ -621,18 +609,6 @@
     <message xmi:type="uml:Message" xmi:id="_3gKh0Hb_EeSlx-SIUE5Fhw" name="roomList_Message" messageSort="asynchSignal" receiveEvent="_3gPaUHb_EeSlx-SIUE5Fhw" sendEvent="_3gNlIHb_EeSlx-SIUE5Fhw" signature="_wI-44Hb_EeSlx-SIUE5Fhw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Actor" xmi:id="_imZ6IHb-EeSlx-SIUE5Fhw" name="Actor1"/>
-  <packagedElement xmi:type="uml:Association" xmi:id="_r-_t0Hn2EeSXl-11lZMmcA" memberEnd="_r-_t0Xn2EeSXl-11lZMmcA _r-8DcHn2EeSXl-11lZMmcA">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_r-_t0Xn2EeSXl-11lZMmcA" name="iBookingManagementImpl" association="_r-_t0Hn2EeSXl-11lZMmcA">
-      <type xmi:type="uml:Class" href="Classes.uml#_queoAHZPEeSiQcRa0VNXAQ"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r-_t0nn2EeSXl-11lZMmcA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r-_t03n2EeSXl-11lZMmcA" value="1"/>
-    </ownedEnd>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_r-8DcHn2EeSXl-11lZMmcA" name="room" association="_r-_t0Hn2EeSXl-11lZMmcA">
-      <type xmi:type="uml:Class" href="Classes.uml#_Y1EUkHTdEeSOC7DG65-e3w"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r-8DcXn2EeSXl-11lZMmcA"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r-8Dcnn2EeSXl-11lZMmcA" value="*"/>
-    </ownedEnd>
-  </packagedElement>
   <packagedElement xmi:type="uml:Package" href="Classes.uml#_49dQQHpiEeSOqIzpWDGINg"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_0KAmwHsPEeSXcqnzxUEL_w" name="Component Diagram">
     <packagedElement xmi:type="uml:Component" xmi:id="_QW-KwHsbEeSh4-XBGg9AIQ" name="Booking System"/>
