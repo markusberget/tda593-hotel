@@ -70,14 +70,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Returns the booking object with the corresponding bookingNumber
+	 * containing its information. Only the list of confirmed bookings is
+	 * checked because a pending booking is already "active".
+	 *
+	 * @generated NOT
 	 */
-	public void getBooking(int bookingNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public Booking getBooking(int bookingNumber) {
+		return confirmedBookings.get(bookingNumber);
 	}
 
 	/**
