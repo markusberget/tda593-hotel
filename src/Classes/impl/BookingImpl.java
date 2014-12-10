@@ -142,8 +142,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCheckIn(int newCheckIn) {
-		int oldCheckIn = checkIn;
+	public void setCheckIn(Date newCheckIn) {
+		Date oldCheckIn = checkIn;
 		checkIn = newCheckIn;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__CHECK_IN, oldCheckIn, checkIn));
@@ -164,7 +164,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @generated
 	 */
 	public void setCheckOut(Date newCheckOut) {
-		int oldCheckOut = checkOut;
+		Date oldCheckOut = checkOut;
 		checkOut = newCheckOut;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__CHECK_OUT, oldCheckOut, checkOut));
@@ -182,13 +182,23 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * The bookingID is incremented for each created pending booking.
 	 * 
+	 * @generated
+	 */
+	public void setBookingID(int newBookingID) {
+		int oldBookingID = bookingID;
+		bookingID = newBookingID;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__BOOKING_ID, oldBookingID, bookingID));
+	}
+	
+	/**
+	 * The bookingID is incremented for each created pending booking.
+	 * 
 	 * @generated NOT
 	 */
 	public void setBookingID() {
 		int oldBookingID = bookingID;
 		bookingID = oldBookingID++;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__BOOKING_ID, oldBookingID, bookingID));
 	}
 
 	/**

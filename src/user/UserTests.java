@@ -1,12 +1,13 @@
 package user;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Classes.IHotelManagerImpl;
-import Classes.impl.BookingImpl;
 import Classes.impl.ClassesFactoryImpl;
 
 /**

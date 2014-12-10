@@ -173,6 +173,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * are stored in the pendingBookings array. The method is synchronized to avoid
 	 * several threads interfering, setting wrong attributes for each other and so on.
 	 * 
+	 * The bookingID is returned for use when invoking the contains method on the
+	 * pendingBooking array (if necessary, depends on how we implement it).
+	 * 
 	 * @generated NOT
 	 */
 	public synchronized int createPendingBooking(Date checkIn, Date checkOut, int guestCount) {
@@ -182,6 +185,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		booking.setNumberOfGuests(guestCount);
 		booking.setBookingID();
 		pendingBookings.add(booking);
+		return booking.getBookingID();
 	}
 
 	/**
