@@ -108,14 +108,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Confirms a booking by removing the booking from the pending bookings list
+	 * and adding it to the confirmed bookings list instead.
+	 * 
+	 * @generated NOT
 	 */
 	public boolean confirmBooking(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		confirmedBookings.add(bookingID, pendingBookings.remove(bookingID));
+		return true;
 	}
 
 	/**
@@ -175,12 +175,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 
 	/**
 	 * This method is synchronized to avoid some problems when
-	 * different threads invoke the method at the same time.
+	 * different threads invoke the method at the same time. The
+	 * first name, last name, email and phone number of the customer
+	 * is added to a given pending booking. In case some of these fields
+	 * have not been filled in by the customer, they are null.
 	 *
 	 * @generated NOT
 	 */
 	public synchronized boolean addCustomerInformationToBooking(int bookingID, String firstName, String lastName, String email, String ph) {
-		// There are no firstname, lastname, email or phonenumber instance variables in BookingImpl
+		// Need to regenerate model to get firstname, lastname, email or phonenumber variables in BookingImpl
 		// pendingBookings.get(bookingID).setFirstName(firstName);
 		// pendingBookings.get(bookingID).setLastName(lastName);
 		// pendingBookings.get(bookingID).setEmail(email);
