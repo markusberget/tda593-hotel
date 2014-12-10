@@ -2,15 +2,13 @@
  */
 package Classes.impl;
 
-import Classes.Booking;
-import Classes.ClassesPackage;
-
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import Classes.Booking;
+import Classes.ClassesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -180,13 +178,13 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * The bookingID is incremented for each created pending booking.
+	 * 
+	 * @generated NOT
 	 */
-	public void setBookingID(int newBookingID) {
+	public void setBookingID() {
 		int oldBookingID = bookingID;
-		bookingID = newBookingID;
+		bookingID = oldBookingID++;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__BOOKING_ID, oldBookingID, bookingID));
 	}

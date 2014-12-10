@@ -2,18 +2,16 @@
  */
 package Classes.impl;
 
-import Classes.ClassesPackage;
-import Classes.IBookingManagementImpl;
-
 import java.lang.reflect.InvocationTargetException;
-
+import java.util.ArrayList;
 import java.util.Date;
 
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
+import Classes.ClassesPackage;
+import Classes.IBookingManagementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +23,11 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container implements IBookingManagementImpl {
+	
+	// The arrays are used for storing temporary data while performing tests.
+	ArrayList<BookingImpl> pendingBookings = new ArrayList<>();
+	ArrayList<BookingImpl> confirmedBookings = new ArrayList<>();
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,14 +169,19 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * A pending booking has not yet been stored in the system. The pending bookings
+	 * are stored in the pendingBookings array. The method is synchronized to avoid
+	 * several threads interfering, setting wrong attributes for each other and so on.
+	 * 
+	 * @generated NOT
 	 */
-	public int createPendingBooking(Date checkIn, Date checkOut, int guestCount) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public synchronized int createPendingBooking(Date checkIn, Date checkOut, int guestCount) {
+		BookingImpl booking = new BookingImpl();
+		booking.setCheckIn(checkIn);
+		booking.setCheckOut(checkOut);
+		booking.setNumberOfGuests(guestCount);
+		booking.setBookingID();
+		pendingBookings.add(booking);
 	}
 
 	/**

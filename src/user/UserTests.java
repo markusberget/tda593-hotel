@@ -6,6 +6,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Classes.IHotelManagerImpl;
+import Classes.impl.BookingImpl;
 import Classes.impl.ClassesFactoryImpl;
 
 /**

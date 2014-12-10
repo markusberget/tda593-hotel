@@ -23,21 +23,6 @@
         <children>
           <emfPageIdentifier href="model.notation#_95d4AHr2EeSXcqnzxUEL_w"/>
         </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_Zxm3AHsMEeSXcqnzxUEL_w"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_nIIMYHZPEeSiQcRa0VNXAQ"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_QrJugHTaEeSOC7DG65-e3w"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_KtsgkHamEeSKk9bkKW7QkA"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_wfUEUHb2EeSlx-SIUE5Fhw"/>
-        </children>
       </children>
     </windows>
   </sashModel>
