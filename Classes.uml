@@ -403,4 +403,24 @@
   <packagedElement xmi:type="uml:Class" xmi:id="_QaiNQHYaEeSNRvHXkk2GGA" name="IHotelManagerImpl" visibility="package">
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_QaiNQXYaEeSNRvHXkk2GGA" client="_QaiNQHYaEeSNRvHXkk2GGA" supplier="_QaiNMXYaEeSNRvHXkk2GGA" contract="_QaiNMXYaEeSNRvHXkk2GGA"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_1FSzYHZmEeSBRfeA9UETiw" memberEnd="_1FSzYXZmEeSBRfeA9UETiw _1FSMUHZmEeSBRfeA9UETiw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_1FSzYXZmEeSBRfeA9UETiw" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_1FSzYHZmEeSBRfeA9UETiw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1FSzYnZmEeSBRfeA9UETiw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1FSzY3ZmEeSBRfeA9UETiw" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_1FSMUHZmEeSBRfeA9UETiw" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_1FSzYHZmEeSBRfeA9UETiw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1FSMUXZmEeSBRfeA9UETiw"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1FSMUnZmEeSBRfeA9UETiw" value="*"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_r-_t0Hn2EeSXl-11lZMmcA" memberEnd="_r-_t0Xn2EeSXl-11lZMmcA _r-8DcHn2EeSXl-11lZMmcA">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_r-_t0Xn2EeSXl-11lZMmcA" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_r-_t0Hn2EeSXl-11lZMmcA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r-_t0nn2EeSXl-11lZMmcA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r-_t03n2EeSXl-11lZMmcA" value="1"/>
+    </ownedEnd>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_r-8DcHn2EeSXl-11lZMmcA" name="room" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_r-_t0Hn2EeSXl-11lZMmcA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_r-8DcXn2EeSXl-11lZMmcA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_r-8Dcnn2EeSXl-11lZMmcA" value="*"/>
+    </ownedEnd>
+  </packagedElement>
 </uml:Package>
