@@ -714,13 +714,22 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES = 5;
 
 	/**
+	 * The operation id for the '<em>Find Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = 6;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 6;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 7;
 
 	/**
 	 * The number of structural features of the '<em>IFinance Impl</em>' class.
@@ -949,6 +958,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES = IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES;
+
+	/**
+	 * The operation id for the '<em>Find Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
@@ -1337,6 +1355,16 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIHotelManager__GetPossibleRoomStatuses();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#findStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String) <em>Find Staff Member</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Find Staff Member</em>' operation.
+	 * @see Classes.IHotelManager#findStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__FindStaffMember__String_String_String_String_String();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
@@ -1850,6 +1878,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES = eINSTANCE.getIHotelManager__GetPossibleRoomStatuses();
+
+		/**
+		 * The meta object literal for the '<em><b>Find Staff Member</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = eINSTANCE.getIHotelManager__FindStaffMember__String_String_String_String_String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.

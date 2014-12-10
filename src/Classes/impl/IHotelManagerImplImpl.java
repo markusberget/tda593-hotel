@@ -2,14 +2,11 @@
  */
 package Classes.impl;
 
-import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
 import Classes.Staff;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
@@ -36,9 +33,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	protected IHotelManagerImplImpl() {
 		super();
-		
-		this.staffMembers = new ArrayList<>();
-		
 	}
 
 	/**
@@ -192,6 +186,17 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -207,6 +212,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return changeStatusOfRoom((Integer)arguments.get(0), (Enumerator)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES:
 				return getPossibleRoomStatuses();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING:
+				return findStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
