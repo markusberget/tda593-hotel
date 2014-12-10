@@ -2,6 +2,8 @@
  */
 package Classes.impl;
 
+import java.util.Date;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -161,7 +163,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCheckOut(int newCheckOut) {
+	public void setCheckOut(Date newCheckOut) {
 		int oldCheckOut = checkOut;
 		checkOut = newCheckOut;
 		if (eNotificationRequired())
