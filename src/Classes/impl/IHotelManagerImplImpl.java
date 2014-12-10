@@ -4,14 +4,13 @@ package Classes.impl;
 
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
+import Classes.Staff;
 
 import java.lang.reflect.InvocationTargetException;
 
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -62,8 +61,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber) {
 		
 		// TODO: lookup adminUsername and check admin privileges (findStaff is not implemented or defined anywhere)
-		
-		StaffImpl adminStaffMember = findStaff(adminUsername);
+		StaffImpl adminStaffMember = null; /*findStaff(adminUsername)*/;
 		
 		if ( adminStaffMember == null ) {
 			return false;
@@ -71,8 +69,13 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			return false;
 		} else {
 			
+			if(isPasswordSecure(password) || isValidUsername(username)) {
+				return false;
+			}
+			
 			// TODO: persist object within runtime somewhere!		
-			StaffImpl newStaffMember = new StaffImpl();
+			Staff newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaff();
+			
 			newStaffMember.setUserId(username);
 			newStaffMember.setPassword(password);
 			// TODO: set firstName, secondName, email, phoneNumber
@@ -146,11 +149,16 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public boolean changeStatusOfRoom(int roomId, Enumerator status) {
 		// TODO: lookup roomId (findRoom is not implemented or defined anywhere)
-		RoomImpl room = findRoom( roomId );
+		RoomImpl room = null;/*findRoom( roomId )*/;
 		
 		if ( room != null ) {
 			
-			room.setStatusoccupiedreadypending(status);
+			// TODO: setStatusoccupiedreadypending takes a boolean that specifies whether
+			// the status of the room is pending.
+			// However, changeStatusOfRoom is supposed to set whether the room is occupied, under maintenance, and so on.
+			// So the method setStatusoccupiedreadypending should probably not be used here.
+			
+			//room.setStatusoccupiedreadypending(status);
 			return true;
 			
 		} else {

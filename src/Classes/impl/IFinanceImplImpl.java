@@ -4,13 +4,9 @@ package Classes.impl;
 
 import Classes.ClassesPackage;
 import Classes.IFinanceImpl;
-
 import java.lang.reflect.InvocationTargetException;
-
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
@@ -47,10 +43,10 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void calculatePayment(int bookingID) {
-		// TODO: implement this method
+	public int calculatePayment(int bookingID) {
+		// TODO: implement the method findBooking.
 		
-		BookingImpl booking = findBooking(bookingId);
+		//Booking booking = findBooking(bookingId);
 		
 		// TODO: the booking object doesn't have any room(s)
 		
@@ -65,7 +61,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	public void payBill(int bookingID) {
 		// TODO: implement this method
 		
-		int amount = calculatePayment(bookingId);
+		int amount = calculatePayment(bookingID);
 		
 		if (amount > 0) {
 		
@@ -80,14 +76,14 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		
 			/* prompt user to fill in ccNumber:String, ccv:String, expiryMonth:int,
 			expiryYear:int, firstName:String, lastName:String */
-			if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
+			//if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
 				/* failed payment */
-			}
+			//}
 			
 			/* use case says: "The customer confirms the information."*/
 			/* if( no confirmation ) { failed payment }*/
 
-			bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+			//bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
 			/* if( bank says payment failed ) { failed payment }*/
 			
 		}
@@ -139,8 +135,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case ClassesPackage.IFINANCE_IMPL___CALCULATE_PAYMENT__INT:
-				calculatePayment((Integer)arguments.get(0));
-				return null;
+				return calculatePayment((Integer)arguments.get(0));
 			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__INT:
 				payBill((Integer)arguments.get(0));
 				return null;
