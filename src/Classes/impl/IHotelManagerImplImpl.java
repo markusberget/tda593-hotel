@@ -183,25 +183,45 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
+	
+	/**
+	 * If substr can be found in s, return true. The comparison is case insensitive. 
+	 */
+	private static boolean contains(String s, String substr) {
+		return s.toLowerCase().contains(substr.toLowerCase());
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
+	 * The search works as following: If a parameter is null, that parameter ignored. If a parameter is non-null,
+	 * then the search will match all staff members whose corresponding attribute contains a substring of that parameter.
+	 * If several parameters are non-null, then all the non-null parameters must match. Only staff members for which
+	 * all the non-null parameters match will be returned by this function.
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
 		
 		EList<Staff> searchResult = new BasicEList<Staff>();
 		
 		for(int i = 0; i  < this.staffMembers.size(); ++i) {
 			Staff s = this.staffMembers.get(i);
 			
+			if(username != null) {
+				if(!contains(s.getUserId(), username)) {
+					// this parameter didn't match, so this staff member won't be returned.
+					// try for the next staff member in the list!
+					continue;
+				}
+			}
+			// TODO: also test for firstName, SecondName, email and phoneNumber.
+			
+			
+			// Passed all the tests, so add
+			searchResult.add(s);
 		}
 		
 		return searchResult;
-		
 	}
 
 	/**
