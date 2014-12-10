@@ -2,8 +2,6 @@ package user;
 
 import static org.junit.Assert.fail;
 
-import org.junit.After;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -13,7 +11,7 @@ import org.junit.Test;
  * on our use cases, among other things). At the moment
  * the class only contains test stubs for methods a user
  * of the system is allowed to invoke (some of which only
- * a staff member are allowed to invoke). 
+ * a staff member is allowed to invoke). 
  *
  */
 public class UserTests {
