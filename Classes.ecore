@@ -78,7 +78,7 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IFinance" abstract="true" interface="true">
-    <eOperations name="calculatePayment" ordered="false" lowerBound="1">
+    <eOperations name="calculatePayment" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt">
       <eParameters name="bookingID" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eOperations>
     <eOperations name="payBill" ordered="false" lowerBound="1">

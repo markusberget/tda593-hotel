@@ -157,6 +157,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			// the status of the room is pending.
 			// However, changeStatusOfRoom is supposed to set whether the room is occupied, under maintenance, and so on.
 			// So the method setStatusoccupiedreadypending should probably not be used here.
+			
 			//room.setStatusoccupiedreadypending(status);
 			return true;
 			

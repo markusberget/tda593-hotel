@@ -18,10 +18,10 @@ public interface IFinance extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingIDRequired="true" bookingIDOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	void calculatePayment(int bookingID);
+	int calculatePayment(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->
