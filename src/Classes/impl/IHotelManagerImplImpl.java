@@ -66,8 +66,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber) {
 		
-		// TODO: lookup adminUsername and check admin privileges (findStaff is not implemented or defined anywhere)
-		StaffImpl adminStaffMember = null; /*findStaff(adminUsername)*/;
+		Staff adminStaffMember = (Staff)findStaffMember(adminUsername, null, null, null, null).get(0);
 		
 		if ( adminStaffMember == null ) {
 			return false;
