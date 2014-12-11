@@ -177,7 +177,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public boolean checkOut(int bookingID) {
 		Booking booking = confirmedBookings.get(bookingID);
-		if (booking.status == payed) {		// payed is set to true after payment method has succeeded
+		if (booking.isFullyPayed()) {		// payed is set to true after payment method has succeeded
 			List<Room> rooms = occupiedRooms.remove(bookingID);
 			for(Room room : rooms) {
 				room.setStatusoccupiedreadypending(true);		// should be set to cleaning

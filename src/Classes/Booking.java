@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.Booking#getLastName <em>Last Name</em>}</li>
  *   <li>{@link Classes.Booking#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.Booking#getPhoneNumber <em>Phone Number</em>}</li>
+ *   <li>{@link Classes.Booking#isFullyPayed <em>Fully Payed</em>}</li>
  * </ul>
  * </p>
  *
@@ -236,5 +237,31 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void setPhoneNumber(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Fully Payed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Fully Payed</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Fully Payed</em>' attribute.
+	 * @see #setFullyPayed(boolean)
+	 * @see Classes.ClassesPackage#getBooking_FullyPayed()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isFullyPayed();
+
+	/**
+	 * Sets the value of the '{@link Classes.Booking#isFullyPayed <em>Fully Payed</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Fully Payed</em>' attribute.
+	 * @see #isFullyPayed()
+	 * @generated
+	 */
+	void setFullyPayed(boolean value);
 
 } // Booking
