@@ -29,10 +29,10 @@ public interface IHotelManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" adminUsernameRequired="true" adminUsernameOrdered="false" usernameRequired="true" usernameOrdered="false" passwordRequired="true" passwordOrdered="false" firstNameRequired="true" firstNameOrdered="false" secondNameRequired="true" secondNameOrdered="false" emailRequired="true" emailOrdered="false" phoneNumberRequired="true" phoneNumberOrdered="false" adminRequired="true" adminOrdered="false"
+	 * @model required="true" ordered="false" adminUsernameRequired="true" adminUsernameOrdered="false" usernameRequired="true" usernameOrdered="false" passwordRequired="true" passwordOrdered="false" firstNameRequired="true" firstNameOrdered="false" lastNameRequired="true" lastNameOrdered="false" emailRequired="true" emailOrdered="false" phoneNumberRequired="true" phoneNumberOrdered="false" adminRequired="true" adminOrdered="false"
 	 * @generated
 	 */
-	boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber, boolean admin);
+	boolean addStaffMember(String adminUsername, String username, String password, String firstName, String lastName, String email, String phoneNumber, boolean admin);
 
 	/**
 	 * <!-- begin-user-doc -->

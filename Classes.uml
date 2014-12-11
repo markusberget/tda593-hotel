@@ -225,7 +225,7 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_Ud_mgHZlEeSBRfeA9UETiw" name="firstName">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_WBpKkHZlEeSBRfeA9UETiw" name="secondName">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_WBpKkHZlEeSBRfeA9UETiw" name="lastName">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_X8XK0HZlEeSBRfeA9UETiw" name="email">

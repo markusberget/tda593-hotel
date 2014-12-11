@@ -65,7 +65,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber, boolean admin) {
+	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String lastName, String email, String phoneNumber, boolean admin) {
 
 		// is the adding user logged in?
 		if(!isStaffMemberLoggedIn(adminUsername)) {
@@ -101,7 +101,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 
-}
 
 	/**
 	 * <!-- begin-user-doc -->
