@@ -1,8 +1,11 @@
 package user;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
+
+import java.util.Date;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -103,10 +106,23 @@ public class UserTests {
 
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#createPendingBooking(java.util.Date, java.util.Date, int)}.
+	 * 
+	 * Tests so that a pending booking is created when the pendingBookings array is empty.
+	 * The parameters checkIn, CheckOut, bookingID, and numberOfGuests are also checked
+	 * to see if they are correct.
 	 */
 	@Test
 	public void testCreatePendingBooking() {
-		fail("Not yet implemented");
+		Classes.impl.IBookingManagementImplImpl pendingBooking = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		assertEquals(0, pendingBooking.pendingBookings.size());
+		Date checkIn = new Date();
+		Date checkOut = new Date();
+		int bookingID = pendingBooking.createPendingBooking(checkIn, checkOut, 6);
+		assertTrue(1 == bookingID);
+		assertEquals(1, pendingBooking.pendingBookings.size());
+		assertEquals(checkIn, pendingBooking.pendingBookings.get(bookingID).getCheckIn());
+		assertEquals(checkOut, pendingBooking.pendingBookings.get(bookingID).getCheckOut());
+		assertEquals(6, pendingBooking.pendingBookings.get(bookingID).getNumberOfGuests());
 	}
 
 	/**

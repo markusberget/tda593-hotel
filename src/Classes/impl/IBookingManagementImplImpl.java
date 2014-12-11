@@ -27,7 +27,7 @@ import Classes.Room;
 public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container implements IBookingManagementImpl {
 	
 	// These data structures are used for storing temporary data while performing tests.
-	private ArrayList<Booking> pendingBookings;
+	public ArrayList<Booking> pendingBookings = new ArrayList<Booking>();
 	private ArrayList<Booking> confirmedBookings;
 	private ArrayList<Room> availableRooms;
 	private ArrayList<Booking> bookingHistory;
@@ -45,6 +45,16 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected IBookingManagementImplImpl() {
 		super();
+	}
+	
+	/**
+	 * This method is just temporary for early testing, will be
+	 * removed shortly.
+	 * 
+	 * @return 		a new object of the class
+	 */
+	public static IBookingManagementImplImpl instantiateForTest() {
+		return new IBookingManagementImplImpl();
 	}
 
 	/**
