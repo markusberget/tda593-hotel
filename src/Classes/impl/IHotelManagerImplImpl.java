@@ -64,9 +64,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
-	 */
-	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String lastName, String email, String phoneNumber, boolean admin) {
-
+	 */	
+	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String lastName, String email, String phoneNumber, String address, boolean admin) {
+			
 		// is the adding user logged in?
 		if(!isStaffMemberLoggedIn(adminUsername)) {
 			return false;
@@ -95,6 +95,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		newStaffMember.setFirstName(firstName);
 		newStaffMember.setLastName(lastName);
 		newStaffMember.setEmail(email);
+		newStaffMember.setPhoneNumber(phoneNumber);
 		
 		//newStaffMember.setAddress(value);
 		
@@ -267,8 +268,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		switch (operationID) {
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING:
 				return login((String)arguments.get(0), (String)arguments.get(1));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN:
-				return addStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (String)arguments.get(6), (Boolean)arguments.get(7));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN:
+				return addStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (String)arguments.get(6), (String)arguments.get(7), (Boolean)arguments.get(8));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING:
 				return isPasswordSecure((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:

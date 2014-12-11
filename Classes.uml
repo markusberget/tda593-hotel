@@ -234,6 +234,9 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_dEbQ0HZlEeSBRfeA9UETiw" name="phoneNumber">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_tm3d0IE5EeSwU_XjQWSZvw" name="address">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_RE69wIEtEeSGJLVvPxMiKg" name="admin">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>

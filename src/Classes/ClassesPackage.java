@@ -684,7 +684,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = 1;
+	int IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = 1;
 
 	/**
 	 * The operation id for the '<em>Is Password Secure</em>' operation.
@@ -1120,7 +1120,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN;
+	int IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN;
 
 	/**
 	 * The operation id for the '<em>Is Password Secure</em>' operation.
@@ -1524,14 +1524,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__Login__String_String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#addStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean) <em>Add Staff Member</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IHotelManager#addStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean) <em>Add Staff Member</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Staff Member</em>' operation.
-	 * @see Classes.IHotelManager#addStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean)
+	 * @see Classes.IHotelManager#addStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, boolean)
 	 * @generated
 	 */
-	EOperation getIHotelManager__AddStaffMember__String_String_String_String_String_String_String_boolean();
+	EOperation getIHotelManager__AddStaffMember__String_String_String_String_String_String_String_String_boolean();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IHotelManager#isPasswordSecure(java.lang.String) <em>Is Password Secure</em>}' operation.
@@ -2169,7 +2169,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = eINSTANCE.getIHotelManager__AddStaffMember__String_String_String_String_String_String_String_boolean();
+		EOperation IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = eINSTANCE.getIHotelManager__AddStaffMember__String_String_String_String_String_String_String_String_boolean();
 
 		/**
 		 * The meta object literal for the '<em><b>Is Password Secure</b></em>' operation.
