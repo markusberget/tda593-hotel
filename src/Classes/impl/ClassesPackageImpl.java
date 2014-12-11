@@ -542,6 +542,15 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIHotelManager__IsStaffMemberAdmin__String() {
+		return iHotelManagerEClass.getEOperations().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIFinanceImpl() {
 		return iFinanceImplEClass;
 	}
@@ -836,6 +845,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING);
+		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING);
 
 		iFinanceImplEClass = createEClass(IFINANCE_IMPL);
 
@@ -1032,6 +1042,9 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEParameter(op, ecorePackage.getEString(), "phoneNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIHotelManager__IsStaffMemberLoggedIn__String(), ecorePackage.getEBoolean(), "isStaffMemberLoggedIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIHotelManager__IsStaffMemberAdmin__String(), ecorePackage.getEBoolean(), "isStaffMemberAdmin", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iFinanceImplEClass, IFinanceImpl.class, "IFinanceImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);

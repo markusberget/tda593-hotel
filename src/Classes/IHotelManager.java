@@ -82,4 +82,12 @@ public interface IHotelManager extends EObject {
 	 */
 	boolean isStaffMemberLoggedIn(String username);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	boolean isStaffMemberAdmin(String username);
+
 } // IHotelManager
