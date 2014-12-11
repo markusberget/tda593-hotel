@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.Booking#getLastName <em>Last Name</em>}</li>
  *   <li>{@link Classes.Booking#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.Booking#getPhoneNumber <em>Phone Number</em>}</li>
- *   <li>{@link Classes.Booking#isFullyPayed <em>Fully Payed</em>}</li>
+ *   <li>{@link Classes.Booking#isFullyPaid <em>Fully Paid</em>}</li>
  * </ul>
  * </p>
  *
@@ -239,29 +239,29 @@ public interface Booking extends EObject {
 	void setPhoneNumber(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Fully Payed</b></em>' attribute.
+	 * Returns the value of the '<em><b>Fully Paid</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Fully Payed</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Fully Paid</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Fully Payed</em>' attribute.
-	 * @see #setFullyPayed(boolean)
-	 * @see Classes.ClassesPackage#getBooking_FullyPayed()
+	 * @return the value of the '<em>Fully Paid</em>' attribute.
+	 * @see #setFullyPaid(boolean)
+	 * @see Classes.ClassesPackage#getBooking_FullyPaid()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	boolean isFullyPayed();
+	boolean isFullyPaid();
 
 	/**
-	 * Sets the value of the '{@link Classes.Booking#isFullyPayed <em>Fully Payed</em>}' attribute.
+	 * Sets the value of the '{@link Classes.Booking#isFullyPaid <em>Fully Paid</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Fully Payed</em>' attribute.
-	 * @see #isFullyPayed()
+	 * @param value the new value of the '<em>Fully Paid</em>' attribute.
+	 * @see #isFullyPaid()
 	 * @generated
 	 */
-	void setFullyPayed(boolean value);
+	void setFullyPaid(boolean value);
 
 } // Booking

@@ -27,7 +27,7 @@ import Classes.ClassesPackage;
  *   <li>{@link Classes.impl.BookingImpl#getLastName <em>Last Name</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getPhoneNumber <em>Phone Number</em>}</li>
- *   <li>{@link Classes.impl.BookingImpl#isFullyPayed <em>Fully Payed</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#isFullyPaid <em>Fully Paid</em>}</li>
  * </ul>
  * </p>
  *
@@ -195,24 +195,24 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected String phoneNumber = PHONE_NUMBER_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #isFullyPayed() <em>Fully Payed</em>}' attribute.
+	 * The default value of the '{@link #isFullyPaid() <em>Fully Paid</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isFullyPayed()
+	 * @see #isFullyPaid()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean FULLY_PAYED_EDEFAULT = false;
+	protected static final boolean FULLY_PAID_EDEFAULT = false;
 
 	/**
-	 * The cached value of the '{@link #isFullyPayed() <em>Fully Payed</em>}' attribute.
+	 * The cached value of the '{@link #isFullyPaid() <em>Fully Paid</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isFullyPayed()
+	 * @see #isFullyPaid()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean fullyPayed = FULLY_PAYED_EDEFAULT;
+	protected boolean fullyPaid = FULLY_PAID_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -416,8 +416,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isFullyPayed() {
-		return fullyPayed;
+	public boolean isFullyPaid() {
+		return fullyPaid;
 	}
 
 	/**
@@ -425,11 +425,11 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setFullyPayed(boolean newFullyPayed) {
-		boolean oldFullyPayed = fullyPayed;
-		fullyPayed = newFullyPayed;
+	public void setFullyPaid(boolean newFullyPaid) {
+		boolean oldFullyPaid = fullyPaid;
+		fullyPaid = newFullyPaid;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__FULLY_PAYED, oldFullyPayed, fullyPayed));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__FULLY_PAID, oldFullyPaid, fullyPaid));
 	}
 
 	/**
@@ -456,8 +456,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return getEmail();
 			case ClassesPackage.BOOKING__PHONE_NUMBER:
 				return getPhoneNumber();
-			case ClassesPackage.BOOKING__FULLY_PAYED:
-				return isFullyPayed();
+			case ClassesPackage.BOOKING__FULLY_PAID:
+				return isFullyPaid();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -494,8 +494,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__PHONE_NUMBER:
 				setPhoneNumber((String)newValue);
 				return;
-			case ClassesPackage.BOOKING__FULLY_PAYED:
-				setFullyPayed((Boolean)newValue);
+			case ClassesPackage.BOOKING__FULLY_PAID:
+				setFullyPaid((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -533,8 +533,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__PHONE_NUMBER:
 				setPhoneNumber(PHONE_NUMBER_EDEFAULT);
 				return;
-			case ClassesPackage.BOOKING__FULLY_PAYED:
-				setFullyPayed(FULLY_PAYED_EDEFAULT);
+			case ClassesPackage.BOOKING__FULLY_PAID:
+				setFullyPaid(FULLY_PAID_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -564,8 +564,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 			case ClassesPackage.BOOKING__PHONE_NUMBER:
 				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
-			case ClassesPackage.BOOKING__FULLY_PAYED:
-				return fullyPayed != FULLY_PAYED_EDEFAULT;
+			case ClassesPackage.BOOKING__FULLY_PAID:
+				return fullyPaid != FULLY_PAID_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -596,8 +596,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		result.append(email);
 		result.append(", phoneNumber: ");
 		result.append(phoneNumber);
-		result.append(", fullyPayed: ");
-		result.append(fullyPayed);
+		result.append(", fullyPaid: ");
+		result.append(fullyPaid);
 		result.append(')');
 		return result.toString();
 	}

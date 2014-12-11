@@ -632,7 +632,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBooking_FullyPayed() {
+	public EAttribute getBooking_FullyPaid() {
 		return (EAttribute)bookingEClass.getEStructuralFeatures().get(8);
 	}
 
@@ -818,7 +818,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEAttribute(bookingEClass, BOOKING__LAST_NAME);
 		createEAttribute(bookingEClass, BOOKING__EMAIL);
 		createEAttribute(bookingEClass, BOOKING__PHONE_NUMBER);
-		createEAttribute(bookingEClass, BOOKING__FULLY_PAYED);
+		createEAttribute(bookingEClass, BOOKING__FULLY_PAID);
 
 		iFinanceEClass = createEClass(IFINANCE);
 		createEOperation(iFinanceEClass, IFINANCE___CALCULATE_PAYMENT__INT);
@@ -968,7 +968,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEAttribute(getBooking_LastName(), theTypesPackage.getString(), "lastName", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_Email(), theTypesPackage.getString(), "email", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getBooking_PhoneNumber(), theTypesPackage.getString(), "phoneNumber", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getBooking_FullyPayed(), ecorePackage.getEBoolean(), "fullyPayed", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getBooking_FullyPaid(), ecorePackage.getEBoolean(), "fullyPaid", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iFinanceEClass, IFinance.class, "IFinance", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
