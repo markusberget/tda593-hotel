@@ -8,6 +8,7 @@ import Classes.Staff;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -220,12 +221,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber) {
-		
 		EList<Staff> searchResult = new BasicEList<Staff>();
 		
-		for(int i = 0; i  < this.staffMembers.size(); ++i) {
-			Staff s = this.staffMembers.get(i);
-			
+		for(Staff s: this.staffMembers.values()) {
+		
 			if(username != null) {
 				if(!contains(s.getUserId(), username)) {
 					// this parameter didn't match, so this staff member won't be returned.
