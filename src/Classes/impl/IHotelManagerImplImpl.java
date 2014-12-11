@@ -62,10 +62,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
-	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber) {
-		
+	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber, boolean admin) {
+
 		EList searchResult = findStaffMember(adminUsername, null, null, null, null);
 		
 		if(searchResult.size() > 1) {
@@ -248,8 +248,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		switch (operationID) {
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING:
 				return login((String)arguments.get(0), (String)arguments.get(1));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING:
-				return addStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (String)arguments.get(6));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN:
+				return addStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (String)arguments.get(6), (Boolean)arguments.get(7));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING:
 				return isPasswordSecure((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
