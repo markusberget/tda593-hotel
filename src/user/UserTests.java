@@ -107,7 +107,8 @@ public class UserTests {
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#createPendingBooking(java.util.Date, java.util.Date, int)}.
 	 * 
-	 * Tests so that a pending booking is created when the pendingBookings array is empty.
+	 * Tests so that a pending booking is created when the pendingBookings array is empty, and
+	 * also when there already exists one pendingBooking.
 	 * The parameters checkIn, CheckOut, bookingID, and numberOfGuests are also checked
 	 * to see if they are correct.
 	 */
@@ -117,12 +118,18 @@ public class UserTests {
 		assertEquals(0, pendingBooking.pendingBookings.size());
 		Date checkIn = new Date();
 		Date checkOut = new Date();
-		int bookingID = pendingBooking.createPendingBooking(checkIn, checkOut, 6);
-		assertTrue(1 == bookingID);
+		int bookingID1 = pendingBooking.createPendingBooking(checkIn, checkOut, 6);
+		assertTrue(1 == bookingID1);
 		assertEquals(1, pendingBooking.pendingBookings.size());
-		assertEquals(checkIn, pendingBooking.pendingBookings.get(bookingID).getCheckIn());
-		assertEquals(checkOut, pendingBooking.pendingBookings.get(bookingID).getCheckOut());
-		assertEquals(6, pendingBooking.pendingBookings.get(bookingID).getNumberOfGuests());
+		assertEquals(checkIn, pendingBooking.pendingBookings.get(bookingID1).getCheckIn());
+		assertEquals(checkOut, pendingBooking.pendingBookings.get(bookingID1).getCheckOut());
+		assertEquals(6, pendingBooking.pendingBookings.get(bookingID1).getNumberOfGuests());
+		int bookingID2 = pendingBooking.createPendingBooking(checkIn, checkOut, 4);
+		assertTrue(2 == bookingID2);
+		assertEquals(2, pendingBooking.pendingBookings.size());
+		assertEquals(checkIn, pendingBooking.pendingBookings.get(bookingID2).getCheckIn());
+		assertEquals(checkOut, pendingBooking.pendingBookings.get(bookingID2).getCheckOut());
+		assertEquals(4, pendingBooking.pendingBookings.get(bookingID2).getNumberOfGuests());
 	}
 
 	/**
