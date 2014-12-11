@@ -37,6 +37,19 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		super();
 		
 		this.staffMembers = new HashMap<String, StaffMember>();	
+		
+		// add an admin for testing purposes. 
+		StaffMember newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaffMember();
+		newStaffMember.setUsername("pelle");
+		newStaffMember.setPassword("hunter2");
+		newStaffMember.setFirstName("Pelle");
+		newStaffMember.setLastName("Svantesson");
+		newStaffMember.setEmail("pelle2@hotmail.com");
+		newStaffMember.setPhoneNumber("33449");
+		newStaffMember.setAddress("Aprilvägen 12");
+		newStaffMember.setAdmin(true);
+		
+		this.staffMembers.put(newStaffMember.getUsername(), newStaffMember);
 	}
 
 	/**
@@ -52,12 +65,19 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean login(String username, String password) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StaffMember s = this.staffMembers.get(username);
+		
+		if(s == null) return false;
+		
+		if(s.getPassword().equals(password)) {
+			s.setIsLoggedIn(true);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
@@ -246,10 +266,20 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
-	 */
+	 */	
 	public boolean isStaffMemberAdmin(String username) {
 		StaffMember s = this.staffMembers.get(username);
 		return s == null ? false : s.isAdmin();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public String getStaffMemberPassword(String username) {
+		StaffMember s = this.staffMembers.get(username);
+		return  s == null ? null : s.getPassword();
 	}
 
 	/**
@@ -278,6 +308,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return isStaffMemberLoggedIn((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_ADMIN__STRING:
 				return isStaffMemberAdmin((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PASSWORD__STRING:
+				return getStaffMemberPassword((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -90,4 +90,12 @@ public interface IHotelManager extends EObject {
 	 */
 	boolean isStaffMemberAdmin(String username);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	String getStaffMemberPassword(String username);
+
 } // IHotelManager

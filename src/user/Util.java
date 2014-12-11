@@ -19,4 +19,7 @@ class Util {
 	public final static String NON_ASCII_STRING1 = "innebandymålvaktsskyddsförsäljare";
 	public final static String NON_ASCII_STRING2 = "笑うかどには福来る";
 	
+	public final static String adminUsername = "pelle";
+	public final static String adminPassword = "hunter2";
+	
 }

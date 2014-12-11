@@ -165,20 +165,30 @@ public class UserTests {
 		fail("Not yet implemented");
 	}
 	
-	/**
-	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#login(java.lang.String, java.lang.String)}.
-	 */
+	
 	@Test
 	public void testLogin() {
-		fail("Not yet implemented");
+		
+		IHotelManagerImpl hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
+		
+		assertTrue(hm.isStaffMemberLoggedIn(Util.adminUsername));
+		
+		// TODO: next,  add a new user, and test whether you can login with this new user.
 	}
 	
-	/**
-	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#addStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
-	 */
 	@Test
 	public void testAddStaffMember() {
-		fail("Not yet implemented");
+		IHotelManagerImpl hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		
+		// first the admin logs in. 
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
+		
+		assertTrue(hm.addStaffMember(Util.adminUsername, "alex4", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
+				"552219", "Tomtebacken 14", false));
+		
+		// TODO: next, make sure that all the data of the new user was properly saved in the system.	
 	}
 	
 
