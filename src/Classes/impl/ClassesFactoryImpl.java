@@ -11,14 +11,11 @@ import Classes.IFinanceImpl;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomType;
-import Classes.Staff;
-
+import Classes.StaffMember;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
-
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
-
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
 /**
@@ -70,7 +67,7 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: return createIBookingManagementImpl();
 			case ClassesPackage.BOOKING: return createBooking();
 			case ClassesPackage.IFINANCE_IMPL: return createIFinanceImpl();
-			case ClassesPackage.STAFF: return createStaff();
+			case ClassesPackage.STAFF_MEMBER: return createStaffMember();
 			case ClassesPackage.CUSTOMER: return createCustomer();
 			case ClassesPackage.IHOTEL_MANAGER_IMPL: return createIHotelManagerImpl();
 			default:
@@ -123,9 +120,9 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Booking createBooking() {
-		BookingImpl booking = new BookingImpl();
-		return booking;
+	public StaffMember createStaffMember() {
+		StaffMemberImpl staffMember = new StaffMemberImpl();
+		return staffMember;
 	}
 
 	/**
@@ -133,9 +130,9 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Staff createStaff() {
-		StaffImpl staff = new StaffImpl();
-		return staff;
+	public Booking createBooking() {
+		BookingImpl booking = new BookingImpl();
+		return booking;
 	}
 
 	/**

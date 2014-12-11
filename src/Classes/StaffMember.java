@@ -5,24 +5,24 @@ package Classes;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Staff</b></em>'.
+ * A representation of the model object '<em><b>Staff Member</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.Staff#isAdmin <em>Admin</em>}</li>
- *   <li>{@link Classes.Staff#getUsername <em>Username</em>}</li>
- *   <li>{@link Classes.Staff#getPassword <em>Password</em>}</li>
- *   <li>{@link Classes.Staff#isLoggedIn <em>Is Logged In</em>}</li>
+ *   <li>{@link Classes.StaffMember#isAdmin <em>Admin</em>}</li>
+ *   <li>{@link Classes.StaffMember#getUsername <em>Username</em>}</li>
+ *   <li>{@link Classes.StaffMember#getPassword <em>Password</em>}</li>
+ *   <li>{@link Classes.StaffMember#isLoggedIn <em>Is Logged In</em>}</li>
  * </ul>
  * </p>
  *
- * @see Classes.ClassesPackage#getStaff()
+ * @see Classes.ClassesPackage#getStaffMember()
  * @model
  * @generated
  */
-public interface Staff extends IPerson {
+public interface StaffMember extends IPerson {
 	/**
 	 * Returns the value of the '<em><b>Admin</b></em>' attribute.
 	 * <!-- begin-user-doc -->
@@ -33,14 +33,14 @@ public interface Staff extends IPerson {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Admin</em>' attribute.
 	 * @see #setAdmin(boolean)
-	 * @see Classes.ClassesPackage#getStaff_Admin()
+	 * @see Classes.ClassesPackage#getStaffMember_Admin()
 	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isAdmin();
 
 	/**
-	 * Sets the value of the '{@link Classes.Staff#isAdmin <em>Admin</em>}' attribute.
+	 * Sets the value of the '{@link Classes.StaffMember#isAdmin <em>Admin</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Admin</em>' attribute.
@@ -59,14 +59,14 @@ public interface Staff extends IPerson {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Username</em>' attribute.
 	 * @see #setUsername(String)
-	 * @see Classes.ClassesPackage#getStaff_Username()
+	 * @see Classes.ClassesPackage#getStaffMember_Username()
 	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getUsername();
 
 	/**
-	 * Sets the value of the '{@link Classes.Staff#getUsername <em>Username</em>}' attribute.
+	 * Sets the value of the '{@link Classes.StaffMember#getUsername <em>Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Username</em>' attribute.
@@ -85,14 +85,14 @@ public interface Staff extends IPerson {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Password</em>' attribute.
 	 * @see #setPassword(String)
-	 * @see Classes.ClassesPackage#getStaff_Password()
+	 * @see Classes.ClassesPackage#getStaffMember_Password()
 	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
 	String getPassword();
 
 	/**
-	 * Sets the value of the '{@link Classes.Staff#getPassword <em>Password</em>}' attribute.
+	 * Sets the value of the '{@link Classes.StaffMember#getPassword <em>Password</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Password</em>' attribute.
@@ -111,14 +111,14 @@ public interface Staff extends IPerson {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Is Logged In</em>' attribute.
 	 * @see #setIsLoggedIn(boolean)
-	 * @see Classes.ClassesPackage#getStaff_IsLoggedIn()
+	 * @see Classes.ClassesPackage#getStaffMember_IsLoggedIn()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	boolean isLoggedIn();
 
 	/**
-	 * Sets the value of the '{@link Classes.Staff#isLoggedIn <em>Is Logged In</em>}' attribute.
+	 * Sets the value of the '{@link Classes.StaffMember#isLoggedIn <em>Is Logged In</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @param value the new value of the '<em>Is Logged In</em>' attribute.
@@ -127,4 +127,4 @@ public interface Staff extends IPerson {
 	 */
 	void setIsLoggedIn(boolean value);
 
-} // Staff
+} // StaffMember

@@ -164,7 +164,7 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IFinanceImpl" eSuperTypes="#//IFinance"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Staff" eSuperTypes="#//IPerson">
+  <eClassifiers xsi:type="ecore:EClass" name="StaffMember" eSuperTypes="#//IPerson">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="admin" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"

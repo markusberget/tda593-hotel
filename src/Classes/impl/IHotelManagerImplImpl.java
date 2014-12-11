@@ -4,7 +4,7 @@ package Classes.impl;
 
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
-import Classes.Staff;
+import Classes.StaffMember;
 import java.lang.reflect.InvocationTargetException;
 import java.util.HashMap;
 import java.util.Map;
@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implements IHotelManagerImpl {
 
-	private Map<String, Staff> staffMembers;
+	private Map<String, StaffMember> staffMembers;
 	
 	
 	/**
@@ -36,7 +36,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	protected IHotelManagerImplImpl() {
 		super();
 		
-		this.staffMembers = new HashMap<String, Staff>();
+		this.staffMembers = new HashMap<String, StaffMember>();	
 	}
 
 	/**
@@ -85,7 +85,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		// Both the new username and password are fine! Create the new user:
 		
 
-		Staff newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaff();
+		StaffMember newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaffMember();
 
 		newStaffMember.setUsername(username);
 		newStaffMember.setPassword(password);
@@ -98,7 +98,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		
 		staffMembers.put(newStaffMember.getUsername(), newStaffMember);
 		return true;
-
 	}
 
 
@@ -212,9 +211,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber) {
-		EList<Staff> searchResult = new BasicEList<Staff>();
+		EList<StaffMember> searchResult = new BasicEList<StaffMember>();
 		
-		for(Staff s: this.staffMembers.values()) {
+		for(StaffMember s: this.staffMembers.values()) {
 		
 			if(username != null) {
 				if(!contains(s.getUsername(), username)) {
@@ -239,7 +238,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean isStaffMemberLoggedIn(String username) {
-		Staff s = this.staffMembers.get(username);
+		StaffMember s = this.staffMembers.get(username);
 		return s == null ? false : s.isLoggedIn();
 	}
 
@@ -249,7 +248,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean isStaffMemberAdmin(String username) {
-		Staff s = this.staffMembers.get(username);
+		StaffMember s = this.staffMembers.get(username);
 		return s == null ? false : s.isAdmin();
 	}
 

@@ -895,14 +895,14 @@ public interface ClassesPackage extends EPackage {
 	int IPERSON_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link Classes.impl.StaffImpl <em>Staff</em>}' class.
+	 * The meta object id for the '{@link Classes.impl.StaffMemberImpl <em>Staff Member</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see Classes.impl.StaffImpl
-	 * @see Classes.impl.ClassesPackageImpl#getStaff()
+	 * @see Classes.impl.StaffMemberImpl
+	 * @see Classes.impl.ClassesPackageImpl#getStaffMember()
 	 * @generated
 	 */
-	int STAFF = 8;
+	int STAFF_MEMBER = 8;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -911,7 +911,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__FIRST_NAME = IPERSON__FIRST_NAME;
+	int STAFF_MEMBER__FIRST_NAME = IPERSON__FIRST_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
@@ -920,7 +920,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__LAST_NAME = IPERSON__LAST_NAME;
+	int STAFF_MEMBER__LAST_NAME = IPERSON__LAST_NAME;
 
 	/**
 	 * The feature id for the '<em><b>Address</b></em>' attribute.
@@ -929,7 +929,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__ADDRESS = IPERSON__ADDRESS;
+	int STAFF_MEMBER__ADDRESS = IPERSON__ADDRESS;
 
 	/**
 	 * The feature id for the '<em><b>Email</b></em>' attribute.
@@ -938,7 +938,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__EMAIL = IPERSON__EMAIL;
+	int STAFF_MEMBER__EMAIL = IPERSON__EMAIL;
 
 	/**
 	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
@@ -947,7 +947,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
+	int STAFF_MEMBER__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Admin</b></em>' attribute.
@@ -956,7 +956,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__ADMIN = IPERSON_FEATURE_COUNT + 0;
+	int STAFF_MEMBER__ADMIN = IPERSON_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Username</b></em>' attribute.
@@ -965,7 +965,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__USERNAME = IPERSON_FEATURE_COUNT + 1;
+	int STAFF_MEMBER__USERNAME = IPERSON_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -974,7 +974,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__PASSWORD = IPERSON_FEATURE_COUNT + 2;
+	int STAFF_MEMBER__PASSWORD = IPERSON_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Is Logged In</b></em>' attribute.
@@ -983,25 +983,25 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__IS_LOGGED_IN = IPERSON_FEATURE_COUNT + 3;
+	int STAFF_MEMBER__IS_LOGGED_IN = IPERSON_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of structural features of the '<em>Staff</em>' class.
+	 * The number of structural features of the '<em>Staff Member</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 4;
+	int STAFF_MEMBER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 4;
 
 	/**
-	 * The number of operations of the '<em>Staff</em>' class.
+	 * The number of operations of the '<em>Staff Member</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
+	int STAFF_MEMBER_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.CustomerImpl <em>Customer</em>}' class.
@@ -1614,6 +1614,60 @@ public interface ClassesPackage extends EPackage {
 	EClass getIFinanceImpl();
 
 	/**
+	 * Returns the meta object for class '{@link Classes.StaffMember <em>Staff Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for class '<em>Staff Member</em>'.
+	 * @see Classes.StaffMember
+	 * @generated
+	 */
+	EClass getStaffMember();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.StaffMember#isAdmin <em>Admin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Admin</em>'.
+	 * @see Classes.StaffMember#isAdmin()
+	 * @see #getStaffMember()
+	 * @generated
+	 */
+	EAttribute getStaffMember_Admin();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.StaffMember#getUsername <em>Username</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Username</em>'.
+	 * @see Classes.StaffMember#getUsername()
+	 * @see #getStaffMember()
+	 * @generated
+	 */
+	EAttribute getStaffMember_Username();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.StaffMember#getPassword <em>Password</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Password</em>'.
+	 * @see Classes.StaffMember#getPassword()
+	 * @see #getStaffMember()
+	 * @generated
+	 */
+	EAttribute getStaffMember_Password();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.StaffMember#isLoggedIn <em>Is Logged In</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Logged In</em>'.
+	 * @see Classes.StaffMember#isLoggedIn()
+	 * @see #getStaffMember()
+	 * @generated
+	 */
+	EAttribute getStaffMember_IsLoggedIn();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Booking <em>Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1721,60 +1775,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getBooking_FullyPaid();
-
-	/**
-	 * Returns the meta object for class '{@link Classes.Staff <em>Staff</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Staff</em>'.
-	 * @see Classes.Staff
-	 * @generated
-	 */
-	EClass getStaff();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Classes.Staff#isAdmin <em>Admin</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Admin</em>'.
-	 * @see Classes.Staff#isAdmin()
-	 * @see #getStaff()
-	 * @generated
-	 */
-	EAttribute getStaff_Admin();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Classes.Staff#getUsername <em>Username</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Username</em>'.
-	 * @see Classes.Staff#getUsername()
-	 * @see #getStaff()
-	 * @generated
-	 */
-	EAttribute getStaff_Username();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Classes.Staff#getPassword <em>Password</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Password</em>'.
-	 * @see Classes.Staff#getPassword()
-	 * @see #getStaff()
-	 * @generated
-	 */
-	EAttribute getStaff_Password();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Classes.Staff#isLoggedIn <em>Is Logged In</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Is Logged In</em>'.
-	 * @see Classes.Staff#isLoggedIn()
-	 * @see #getStaff()
-	 * @generated
-	 */
-	EAttribute getStaff_IsLoggedIn();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IPerson <em>IPerson</em>}'.
@@ -2238,6 +2238,48 @@ public interface ClassesPackage extends EPackage {
 		EClass IFINANCE_IMPL = eINSTANCE.getIFinanceImpl();
 
 		/**
+		 * The meta object literal for the '{@link Classes.impl.StaffMemberImpl <em>Staff Member</em>}' class.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.impl.StaffMemberImpl
+		 * @see Classes.impl.ClassesPackageImpl#getStaffMember()
+		 * @generated
+		 */
+		EClass STAFF_MEMBER = eINSTANCE.getStaffMember();
+
+		/**
+		 * The meta object literal for the '<em><b>Admin</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAFF_MEMBER__ADMIN = eINSTANCE.getStaffMember_Admin();
+
+		/**
+		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAFF_MEMBER__USERNAME = eINSTANCE.getStaffMember_Username();
+
+		/**
+		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAFF_MEMBER__PASSWORD = eINSTANCE.getStaffMember_Password();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Logged In</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAFF_MEMBER__IS_LOGGED_IN = eINSTANCE.getStaffMember_IsLoggedIn();
+
+		/**
 		 * The meta object literal for the '{@link Classes.impl.BookingImpl <em>Booking</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2318,48 +2360,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BOOKING__FULLY_PAID = eINSTANCE.getBooking_FullyPaid();
-
-		/**
-		 * The meta object literal for the '{@link Classes.impl.StaffImpl <em>Staff</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see Classes.impl.StaffImpl
-		 * @see Classes.impl.ClassesPackageImpl#getStaff()
-		 * @generated
-		 */
-		EClass STAFF = eINSTANCE.getStaff();
-
-		/**
-		 * The meta object literal for the '<em><b>Admin</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STAFF__ADMIN = eINSTANCE.getStaff_Admin();
-
-		/**
-		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STAFF__USERNAME = eINSTANCE.getStaff_Username();
-
-		/**
-		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STAFF__PASSWORD = eINSTANCE.getStaff_Password();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Logged In</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute STAFF__IS_LOGGED_IN = eINSTANCE.getStaff_IsLoggedIn();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IPerson <em>IPerson</em>}' class.

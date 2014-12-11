@@ -3,7 +3,7 @@
 package Classes.impl;
 
 import Classes.ClassesPackage;
-import Classes.Staff;
+import Classes.StaffMember;
 
 import org.eclipse.emf.common.notify.Notification;
 
@@ -14,26 +14,26 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Staff</b></em>'.
+ * An implementation of the model object '<em><b>Staff Member</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.impl.StaffImpl#getFirstName <em>First Name</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#getLastName <em>Last Name</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#getAddress <em>Address</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#getEmail <em>Email</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#getPhoneNumber <em>Phone Number</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#isAdmin <em>Admin</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#getUsername <em>Username</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#getPassword <em>Password</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#isLoggedIn <em>Is Logged In</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#getFirstName <em>First Name</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#getLastName <em>Last Name</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#getAddress <em>Address</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#getEmail <em>Email</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#getPhoneNumber <em>Phone Number</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#isAdmin <em>Admin</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#getUsername <em>Username</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#isLoggedIn <em>Is Logged In</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
+public class StaffMemberImpl extends MinimalEObjectImpl.Container implements StaffMember {
 	/**
 	 * The default value of the '{@link #getFirstName() <em>First Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
@@ -219,7 +219,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	protected StaffImpl() {
+	protected StaffMemberImpl() {
 		super();
 	}
 
@@ -230,7 +230,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 */
 	@Override
 	protected EClass eStaticClass() {
-		return ClassesPackage.Literals.STAFF;
+		return ClassesPackage.Literals.STAFF_MEMBER;
 	}
 
 	/**
@@ -251,7 +251,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		String oldFirstName = firstName;
 		firstName = newFirstName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__FIRST_NAME, oldFirstName, firstName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__FIRST_NAME, oldFirstName, firstName));
 	}
 
 	/**
@@ -272,7 +272,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		String oldLastName = lastName;
 		lastName = newLastName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__LAST_NAME, oldLastName, lastName));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__LAST_NAME, oldLastName, lastName));
 	}
 
 	/**
@@ -293,7 +293,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		String oldAddress = address;
 		address = newAddress;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__ADDRESS, oldAddress, address));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__ADDRESS, oldAddress, address));
 	}
 
 	/**
@@ -314,7 +314,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		String oldEmail = email;
 		email = newEmail;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__EMAIL, oldEmail, email));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__EMAIL, oldEmail, email));
 	}
 
 	/**
@@ -335,7 +335,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		String oldPhoneNumber = phoneNumber;
 		phoneNumber = newPhoneNumber;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__PHONE_NUMBER, oldPhoneNumber, phoneNumber));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__PHONE_NUMBER, oldPhoneNumber, phoneNumber));
 	}
 
 	/**
@@ -356,7 +356,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		boolean oldAdmin = admin;
 		admin = newAdmin;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__ADMIN, oldAdmin, admin));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__ADMIN, oldAdmin, admin));
 	}
 
 	/**
@@ -377,7 +377,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		String oldUsername = username;
 		username = newUsername;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__USERNAME, oldUsername, username));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__USERNAME, oldUsername, username));
 	}
 
 	/**
@@ -398,7 +398,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		String oldPassword = password;
 		password = newPassword;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__PASSWORD, oldPassword, password));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__PASSWORD, oldPassword, password));
 	}
 
 	/**
@@ -419,7 +419,7 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		boolean oldIsLoggedIn = isLoggedIn;
 		isLoggedIn = newIsLoggedIn;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__IS_LOGGED_IN, oldIsLoggedIn, isLoggedIn));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN, oldIsLoggedIn, isLoggedIn));
 	}
 
 	/**
@@ -430,23 +430,23 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClassesPackage.STAFF__FIRST_NAME:
+			case ClassesPackage.STAFF_MEMBER__FIRST_NAME:
 				return getFirstName();
-			case ClassesPackage.STAFF__LAST_NAME:
+			case ClassesPackage.STAFF_MEMBER__LAST_NAME:
 				return getLastName();
-			case ClassesPackage.STAFF__ADDRESS:
+			case ClassesPackage.STAFF_MEMBER__ADDRESS:
 				return getAddress();
-			case ClassesPackage.STAFF__EMAIL:
+			case ClassesPackage.STAFF_MEMBER__EMAIL:
 				return getEmail();
-			case ClassesPackage.STAFF__PHONE_NUMBER:
+			case ClassesPackage.STAFF_MEMBER__PHONE_NUMBER:
 				return getPhoneNumber();
-			case ClassesPackage.STAFF__ADMIN:
+			case ClassesPackage.STAFF_MEMBER__ADMIN:
 				return isAdmin();
-			case ClassesPackage.STAFF__USERNAME:
+			case ClassesPackage.STAFF_MEMBER__USERNAME:
 				return getUsername();
-			case ClassesPackage.STAFF__PASSWORD:
+			case ClassesPackage.STAFF_MEMBER__PASSWORD:
 				return getPassword();
-			case ClassesPackage.STAFF__IS_LOGGED_IN:
+			case ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN:
 				return isLoggedIn();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -460,31 +460,31 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassesPackage.STAFF__FIRST_NAME:
+			case ClassesPackage.STAFF_MEMBER__FIRST_NAME:
 				setFirstName((String)newValue);
 				return;
-			case ClassesPackage.STAFF__LAST_NAME:
+			case ClassesPackage.STAFF_MEMBER__LAST_NAME:
 				setLastName((String)newValue);
 				return;
-			case ClassesPackage.STAFF__ADDRESS:
+			case ClassesPackage.STAFF_MEMBER__ADDRESS:
 				setAddress((String)newValue);
 				return;
-			case ClassesPackage.STAFF__EMAIL:
+			case ClassesPackage.STAFF_MEMBER__EMAIL:
 				setEmail((String)newValue);
 				return;
-			case ClassesPackage.STAFF__PHONE_NUMBER:
+			case ClassesPackage.STAFF_MEMBER__PHONE_NUMBER:
 				setPhoneNumber((String)newValue);
 				return;
-			case ClassesPackage.STAFF__ADMIN:
+			case ClassesPackage.STAFF_MEMBER__ADMIN:
 				setAdmin((Boolean)newValue);
 				return;
-			case ClassesPackage.STAFF__USERNAME:
+			case ClassesPackage.STAFF_MEMBER__USERNAME:
 				setUsername((String)newValue);
 				return;
-			case ClassesPackage.STAFF__PASSWORD:
+			case ClassesPackage.STAFF_MEMBER__PASSWORD:
 				setPassword((String)newValue);
 				return;
-			case ClassesPackage.STAFF__IS_LOGGED_IN:
+			case ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN:
 				setIsLoggedIn((Boolean)newValue);
 				return;
 		}
@@ -499,31 +499,31 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.STAFF__FIRST_NAME:
+			case ClassesPackage.STAFF_MEMBER__FIRST_NAME:
 				setFirstName(FIRST_NAME_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__LAST_NAME:
+			case ClassesPackage.STAFF_MEMBER__LAST_NAME:
 				setLastName(LAST_NAME_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__ADDRESS:
+			case ClassesPackage.STAFF_MEMBER__ADDRESS:
 				setAddress(ADDRESS_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__EMAIL:
+			case ClassesPackage.STAFF_MEMBER__EMAIL:
 				setEmail(EMAIL_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__PHONE_NUMBER:
+			case ClassesPackage.STAFF_MEMBER__PHONE_NUMBER:
 				setPhoneNumber(PHONE_NUMBER_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__ADMIN:
+			case ClassesPackage.STAFF_MEMBER__ADMIN:
 				setAdmin(ADMIN_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__USERNAME:
+			case ClassesPackage.STAFF_MEMBER__USERNAME:
 				setUsername(USERNAME_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__PASSWORD:
+			case ClassesPackage.STAFF_MEMBER__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__IS_LOGGED_IN:
+			case ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN:
 				setIsLoggedIn(IS_LOGGED_IN_EDEFAULT);
 				return;
 		}
@@ -538,23 +538,23 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.STAFF__FIRST_NAME:
+			case ClassesPackage.STAFF_MEMBER__FIRST_NAME:
 				return FIRST_NAME_EDEFAULT == null ? firstName != null : !FIRST_NAME_EDEFAULT.equals(firstName);
-			case ClassesPackage.STAFF__LAST_NAME:
+			case ClassesPackage.STAFF_MEMBER__LAST_NAME:
 				return LAST_NAME_EDEFAULT == null ? lastName != null : !LAST_NAME_EDEFAULT.equals(lastName);
-			case ClassesPackage.STAFF__ADDRESS:
+			case ClassesPackage.STAFF_MEMBER__ADDRESS:
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
-			case ClassesPackage.STAFF__EMAIL:
+			case ClassesPackage.STAFF_MEMBER__EMAIL:
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
-			case ClassesPackage.STAFF__PHONE_NUMBER:
+			case ClassesPackage.STAFF_MEMBER__PHONE_NUMBER:
 				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
-			case ClassesPackage.STAFF__ADMIN:
+			case ClassesPackage.STAFF_MEMBER__ADMIN:
 				return admin != ADMIN_EDEFAULT;
-			case ClassesPackage.STAFF__USERNAME:
+			case ClassesPackage.STAFF_MEMBER__USERNAME:
 				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
-			case ClassesPackage.STAFF__PASSWORD:
+			case ClassesPackage.STAFF_MEMBER__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
-			case ClassesPackage.STAFF__IS_LOGGED_IN:
+			case ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN:
 				return isLoggedIn != IS_LOGGED_IN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
@@ -592,4 +592,4 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		return result.toString();
 	}
 
-} //StaffImpl
+} //StaffMemberImpl

@@ -58,6 +58,15 @@ public interface ClassesFactory extends EFactory {
 	IFinanceImpl createIFinanceImpl();
 
 	/**
+	 * Returns a new object of class '<em>Staff Member</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Staff Member</em>'.
+	 * @generated
+	 */
+	StaffMember createStaffMember();
+
+	/**
 	 * Returns a new object of class '<em>Booking</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -65,15 +74,6 @@ public interface ClassesFactory extends EFactory {
 	 * @generated
 	 */
 	Booking createBooking();
-
-	/**
-	 * Returns a new object of class '<em>Staff</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Staff</em>'.
-	 * @generated
-	 */
-	Staff createStaff();
 
 	/**
 	 * Returns a new object of class '<em>Customer</em>'.

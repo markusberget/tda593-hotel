@@ -116,10 +116,10 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.STAFF: {
-				Staff staff = (Staff)theEObject;
-				T result = caseStaff(staff);
-				if (result == null) result = caseIPerson(staff);
+			case ClassesPackage.STAFF_MEMBER: {
+				StaffMember staffMember = (StaffMember)theEObject;
+				T result = caseStaffMember(staffMember);
+				if (result == null) result = caseIPerson(staffMember);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -253,6 +253,21 @@ public class ClassesSwitch<T> extends Switch<T> {
 	}
 
 	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Staff Member</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Staff Member</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseStaffMember(StaffMember object) {
+		return null;
+	}
+
+	/**
 	 * Returns the result of interpreting the object as an instance of '<em>Booking</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
@@ -264,21 +279,6 @@ public class ClassesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseBooking(Booking object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Staff</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Staff</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseStaff(Staff object) {
 		return null;
 	}
 

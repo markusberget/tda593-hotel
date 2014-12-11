@@ -100,8 +100,8 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createIFinanceImplAdapter();
 			}
 			@Override
-			public Adapter caseStaff(Staff object) {
-				return createStaffAdapter();
+			public Adapter caseStaffMember(StaffMember object) {
+				return createStaffMemberAdapter();
 			}
 			@Override
 			public Adapter caseIPerson(IPerson object) {
@@ -234,6 +234,20 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
+	 * Creates a new adapter for an object of class '{@link Classes.StaffMember <em>Staff Member</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.StaffMember
+	 * @generated
+	 */
+	public Adapter createStaffMemberAdapter() {
+		return null;
+	}
+
+	/**
 	 * Creates a new adapter for an object of class '{@link Classes.Booking <em>Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
@@ -244,20 +258,6 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createBookingAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link Classes.Staff <em>Staff</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see Classes.Staff
-	 * @generated
-	 */
-	public Adapter createStaffAdapter() {
 		return null;
 	}
 
