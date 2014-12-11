@@ -149,12 +149,17 @@ public class UserTests {
 		fail("Not yet implemented");
 	}
 	
-	/**
-	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#login(java.lang.String, java.lang.String)}.
-	 */
+	
 	@Test
 	public void testLogin() {
-		fail("Not yet implemented");
+		
+		IHotelManagerImpl hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		
+		hm.login("pelle", "hunter2");
+		
+		assertTrue(hm.isStaffMemberLoggedIn("pelle"));
+		
+		// TODO: next,  add a new user, and test whether you can login with this new user.
 	}
 	
 	/**

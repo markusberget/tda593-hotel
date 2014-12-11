@@ -48,6 +48,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		newStaffMember.setPhoneNumber("33449");
 		newStaffMember.setAddress("Aprilvägen 12");
 		newStaffMember.setAdmin(true);
+		
+		this.staffMembers.put(newStaffMember.getUsername(), newStaffMember);
 	}
 
 	/**
