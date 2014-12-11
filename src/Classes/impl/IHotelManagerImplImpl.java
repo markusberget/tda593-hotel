@@ -246,7 +246,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isStaffMemberLoggedIn(String username) {
 		return this.staffMembers.get(username).isLoggedIn();
