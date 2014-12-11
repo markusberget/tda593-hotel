@@ -26,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link Classes.impl.StaffImpl#isAdmin <em>Admin</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getUserId <em>User Id</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getPassword <em>Password</em>}</li>
+ *   <li>{@link Classes.impl.StaffImpl#isLoggedIn <em>Is Logged In</em>}</li>
  * </ul>
  * </p>
  *
@@ -171,6 +172,26 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 * @ordered
 	 */
 	protected String password = PASSWORD_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isLoggedIn() <em>Is Logged In</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isLoggedIn()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean IS_LOGGED_IN_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isLoggedIn() <em>Is Logged In</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #isLoggedIn()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean isLoggedIn = IS_LOGGED_IN_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -343,6 +364,27 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isLoggedIn() {
+		return isLoggedIn;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIsLoggedIn(boolean newIsLoggedIn) {
+		boolean oldIsLoggedIn = isLoggedIn;
+		isLoggedIn = newIsLoggedIn;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__IS_LOGGED_IN, oldIsLoggedIn, isLoggedIn));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -360,6 +402,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 				return getUserId();
 			case ClassesPackage.STAFF__PASSWORD:
 				return getPassword();
+			case ClassesPackage.STAFF__IS_LOGGED_IN:
+				return isLoggedIn();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -392,6 +436,9 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 				return;
 			case ClassesPackage.STAFF__PASSWORD:
 				setPassword((String)newValue);
+				return;
+			case ClassesPackage.STAFF__IS_LOGGED_IN:
+				setIsLoggedIn((Boolean)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -426,6 +473,9 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 			case ClassesPackage.STAFF__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
 				return;
+			case ClassesPackage.STAFF__IS_LOGGED_IN:
+				setIsLoggedIn(IS_LOGGED_IN_EDEFAULT);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -452,6 +502,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 				return USER_ID_EDEFAULT == null ? userId != null : !USER_ID_EDEFAULT.equals(userId);
 			case ClassesPackage.STAFF__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
+			case ClassesPackage.STAFF__IS_LOGGED_IN:
+				return isLoggedIn != IS_LOGGED_IN_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -480,6 +532,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		result.append(userId);
 		result.append(", password: ");
 		result.append(password);
+		result.append(", isLoggedIn: ");
+		result.append(isLoggedIn);
 		result.append(')');
 		return result.toString();
 	}

@@ -932,13 +932,22 @@ public interface ClassesPackage extends EPackage {
 	int STAFF__PASSWORD = IPERSON_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Is Logged In</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF__IS_LOGGED_IN = IPERSON_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Staff</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 3;
+	int STAFF_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Staff</em>' class.
@@ -1654,6 +1663,17 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getStaff_Password();
 
 	/**
+	 * Returns the meta object for the attribute '{@link Classes.Staff#isLoggedIn <em>Is Logged In</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Is Logged In</em>'.
+	 * @see Classes.Staff#isLoggedIn()
+	 * @see #getStaff()
+	 * @generated
+	 */
+	EAttribute getStaff_IsLoggedIn();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IPerson <em>IPerson</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2194,6 +2214,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STAFF__PASSWORD = eINSTANCE.getStaff_Password();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Logged In</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute STAFF__IS_LOGGED_IN = eINSTANCE.getStaff_IsLoggedIn();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IPerson <em>IPerson</em>}' class.

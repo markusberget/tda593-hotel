@@ -14,6 +14,7 @@ package Classes;
  *   <li>{@link Classes.Staff#isAdmin <em>Admin</em>}</li>
  *   <li>{@link Classes.Staff#getUserId <em>User Id</em>}</li>
  *   <li>{@link Classes.Staff#getPassword <em>Password</em>}</li>
+ *   <li>{@link Classes.Staff#isLoggedIn <em>Is Logged In</em>}</li>
  * </ul>
  * </p>
  *
@@ -99,5 +100,31 @@ public interface Staff extends IPerson {
 	 * @generated
 	 */
 	void setPassword(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Is Logged In</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Is Logged In</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Is Logged In</em>' attribute.
+	 * @see #setIsLoggedIn(boolean)
+	 * @see Classes.ClassesPackage#getStaff_IsLoggedIn()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	boolean isLoggedIn();
+
+	/**
+	 * Sets the value of the '{@link Classes.Staff#isLoggedIn <em>Is Logged In</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Is Logged In</em>' attribute.
+	 * @see #isLoggedIn()
+	 * @generated
+	 */
+	void setIsLoggedIn(boolean value);
 
 } // Staff
