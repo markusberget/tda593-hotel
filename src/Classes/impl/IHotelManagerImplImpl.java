@@ -5,12 +5,9 @@ package Classes.impl;
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
 import Classes.Staff;
-
 import java.lang.reflect.InvocationTargetException;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
-
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;

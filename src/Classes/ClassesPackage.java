@@ -570,13 +570,22 @@ public interface ClassesPackage extends EPackage {
 	int BOOKING__PHONE_NUMBER = 7;
 
 	/**
+	 * The feature id for the '<em><b>Fully Payed</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__FULLY_PAYED = 8;
+
+	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 8;
+	int BOOKING_FEATURE_COUNT = 9;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -1648,6 +1657,17 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getBooking_PhoneNumber();
 
 	/**
+	 * Returns the meta object for the attribute '{@link Classes.Booking#isFullyPayed <em>Fully Payed</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Fully Payed</em>'.
+	 * @see Classes.Booking#isFullyPayed()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EAttribute getBooking_FullyPayed();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Staff <em>Staff</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2216,6 +2236,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BOOKING__PHONE_NUMBER = eINSTANCE.getBooking_PhoneNumber();
+
+		/**
+		 * The meta object literal for the '<em><b>Fully Payed</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute BOOKING__FULLY_PAYED = eINSTANCE.getBooking_FullyPayed();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.StaffImpl <em>Staff</em>}' class.
