@@ -31,15 +31,15 @@ import Classes.Room;
 public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container implements IBookingManagementImpl {
 	
 	// These data structures are used for storing temporary data while performing tests.
-	private ArrayList<Booking> pendingBookings = new ArrayList<>();
-	private ArrayList<Booking> confirmedBookings = new ArrayList<>();
-	private ArrayList<Room> availableRooms = new ArrayList<>();
-	private ArrayList<Room> occupiedRooms = new ArrayList<>();
-	private ArrayList<Booking> bookingHistory = new ArrayList<>();
+	private ArrayList<Booking> pendingBookings;
+	private ArrayList<Booking> confirmedBookings;
+	private ArrayList<Room> availableRooms;
+	private ArrayList<Room> occupiedRooms;
+	private ArrayList<Booking> bookingHistory;
 	
 	// A list of rooms is used as the value in the HashMap because a customer should be
 	// able to have several rooms in a booking. The key part is the bookingID.
-	private Map<Integer, List<Room>> pendingRooms = new HashMap<Integer, List<Room>>();
+	private HashMap<Integer, List<Room>> pendingRooms;
 	
 	
 	/**
@@ -168,7 +168,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 
 	/**
 	 * A booking can be cancelled while it is pending and also when it is
-	 * in the confirmed state. 
+	 * in the confirmed state. For the moment, a cancelled booking is
+	 * placed in the history list.
 	 * 
 	 * @generated NOT
 	 */
