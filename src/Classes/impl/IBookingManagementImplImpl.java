@@ -35,7 +35,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	// A list of rooms is used as the value in the HashMap because a customer should be
 	// able to have several rooms in a booking. The key part is the bookingID.
 	private HashMap<Integer, List<Room>> pendingRooms;
-	private HashMap<Integer, List<Room>> occupiedRooms;
+	private HashMap<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	
 	
 	/**
@@ -158,14 +158,23 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * The customer is checked in by setting the status of the rooms
+	 * in the booking to occupied.
+	 * 
+	 * Note: There should be some check when it is allowed to check-in.
+	 * 
+	 * @generated NOT
 	 */
 	public boolean checkIn(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Booking booking = confirmedBookings.get(bookingID);
+		if (booking != null) {
+			List<Room> rooms = occupiedRooms.get(bookingID);
+			for(Room room : rooms) {
+				room.setStatusoccupiedreadypending(true);		// should be set to occupied
+			}
+			return true;
+		}
+		return false;
 	}
 
 	/**
