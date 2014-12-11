@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link Classes.impl.StaffImpl#getLastName <em>Last Name</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getEmail <em>Email</em>}</li>
+ *   <li>{@link Classes.impl.StaffImpl#getPhoneNumber <em>Phone Number</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#isAdmin <em>Admin</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getUserId <em>User Id</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getPassword <em>Password</em>}</li>
@@ -112,6 +113,26 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 * @ordered
 	 */
 	protected String email = EMAIL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhoneNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PHONE_NUMBER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhoneNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected String phoneNumber = PHONE_NUMBER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #isAdmin() <em>Admin</em>}' attribute.
@@ -301,6 +322,27 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPhoneNumber(String newPhoneNumber) {
+		String oldPhoneNumber = phoneNumber;
+		phoneNumber = newPhoneNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__PHONE_NUMBER, oldPhoneNumber, phoneNumber));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public boolean isAdmin() {
 		return admin;
 	}
@@ -396,6 +438,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 				return getAddress();
 			case ClassesPackage.STAFF__EMAIL:
 				return getEmail();
+			case ClassesPackage.STAFF__PHONE_NUMBER:
+				return getPhoneNumber();
 			case ClassesPackage.STAFF__ADMIN:
 				return isAdmin();
 			case ClassesPackage.STAFF__USER_ID:
@@ -427,6 +471,9 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 				return;
 			case ClassesPackage.STAFF__EMAIL:
 				setEmail((String)newValue);
+				return;
+			case ClassesPackage.STAFF__PHONE_NUMBER:
+				setPhoneNumber((String)newValue);
 				return;
 			case ClassesPackage.STAFF__ADMIN:
 				setAdmin((Boolean)newValue);
@@ -464,6 +511,9 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 			case ClassesPackage.STAFF__EMAIL:
 				setEmail(EMAIL_EDEFAULT);
 				return;
+			case ClassesPackage.STAFF__PHONE_NUMBER:
+				setPhoneNumber(PHONE_NUMBER_EDEFAULT);
+				return;
 			case ClassesPackage.STAFF__ADMIN:
 				setAdmin(ADMIN_EDEFAULT);
 				return;
@@ -496,6 +546,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
 			case ClassesPackage.STAFF__EMAIL:
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
+			case ClassesPackage.STAFF__PHONE_NUMBER:
+				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
 			case ClassesPackage.STAFF__ADMIN:
 				return admin != ADMIN_EDEFAULT;
 			case ClassesPackage.STAFF__USER_ID:
@@ -526,6 +578,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		result.append(address);
 		result.append(", email: ");
 		result.append(email);
+		result.append(", phoneNumber: ");
+		result.append(phoneNumber);
 		result.append(", admin: ");
 		result.append(admin);
 		result.append(", userId: ");

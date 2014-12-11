@@ -490,5 +490,8 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_m9THEICwEeSsA-OdcGH-zg" name="email" visibility="private">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_RJ1cgIE5EeSwU_XjQWSZvw" name="phoneNumber" visibility="private">
+      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+    </ownedAttribute>
   </packagedElement>
 </uml:Package>

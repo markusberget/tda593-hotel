@@ -23,6 +23,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link Classes.impl.CustomerImpl#getLastName <em>Last Name</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getEmail <em>Email</em>}</li>
+ *   <li>{@link Classes.impl.CustomerImpl#getPhoneNumber <em>Phone Number</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getPersonalInfo <em>Personal Info</em>}</li>
  * </ul>
  * </p>
@@ -109,6 +110,26 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * @ordered
 	 */
 	protected String email = EMAIL_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhoneNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final String PHONE_NUMBER_EDEFAULT = null;
+
+	/**
+	 * The cached value of the '{@link #getPhoneNumber() <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPhoneNumber()
+	 * @generated
+	 * @ordered
+	 */
+	protected String phoneNumber = PHONE_NUMBER_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPersonalInfo() <em>Personal Info</em>}' attribute.
@@ -238,6 +259,27 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setPhoneNumber(String newPhoneNumber) {
+		String oldPhoneNumber = phoneNumber;
+		phoneNumber = newPhoneNumber;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.CUSTOMER__PHONE_NUMBER, oldPhoneNumber, phoneNumber));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public String getPersonalInfo() {
 		return personalInfo;
 	}
@@ -270,6 +312,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return getAddress();
 			case ClassesPackage.CUSTOMER__EMAIL:
 				return getEmail();
+			case ClassesPackage.CUSTOMER__PHONE_NUMBER:
+				return getPhoneNumber();
 			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
 				return getPersonalInfo();
 		}
@@ -295,6 +339,9 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return;
 			case ClassesPackage.CUSTOMER__EMAIL:
 				setEmail((String)newValue);
+				return;
+			case ClassesPackage.CUSTOMER__PHONE_NUMBER:
+				setPhoneNumber((String)newValue);
 				return;
 			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
 				setPersonalInfo((String)newValue);
@@ -323,6 +370,9 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			case ClassesPackage.CUSTOMER__EMAIL:
 				setEmail(EMAIL_EDEFAULT);
 				return;
+			case ClassesPackage.CUSTOMER__PHONE_NUMBER:
+				setPhoneNumber(PHONE_NUMBER_EDEFAULT);
+				return;
 			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
 				setPersonalInfo(PERSONAL_INFO_EDEFAULT);
 				return;
@@ -346,6 +396,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return ADDRESS_EDEFAULT == null ? address != null : !ADDRESS_EDEFAULT.equals(address);
 			case ClassesPackage.CUSTOMER__EMAIL:
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
+			case ClassesPackage.CUSTOMER__PHONE_NUMBER:
+				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
 			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
 				return PERSONAL_INFO_EDEFAULT == null ? personalInfo != null : !PERSONAL_INFO_EDEFAULT.equals(personalInfo);
 		}
@@ -370,6 +422,8 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 		result.append(address);
 		result.append(", email: ");
 		result.append(email);
+		result.append(", phoneNumber: ");
+		result.append(phoneNumber);
 		result.append(", personalInfo: ");
 		result.append(personalInfo);
 		result.append(')');

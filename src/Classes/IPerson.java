@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.IPerson#getLastName <em>Last Name</em>}</li>
  *   <li>{@link Classes.IPerson#getAddress <em>Address</em>}</li>
  *   <li>{@link Classes.IPerson#getEmail <em>Email</em>}</li>
+ *   <li>{@link Classes.IPerson#getPhoneNumber <em>Phone Number</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,5 +128,31 @@ public interface IPerson extends EObject {
 	 * @generated
 	 */
 	void setEmail(String value);
+
+	/**
+	 * Returns the value of the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Phone Number</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Phone Number</em>' attribute.
+	 * @see #setPhoneNumber(String)
+	 * @see Classes.ClassesPackage#getIPerson_PhoneNumber()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	String getPhoneNumber();
+
+	/**
+	 * Sets the value of the '{@link Classes.IPerson#getPhoneNumber <em>Phone Number</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Phone Number</em>' attribute.
+	 * @see #getPhoneNumber()
+	 * @generated
+	 */
+	void setPhoneNumber(String value);
 
 } // IPerson

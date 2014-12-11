@@ -95,7 +95,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		newStaffMember.setFirstName(firstName);
 		newStaffMember.setLastName(lastName);
 		newStaffMember.setEmail(email);
-		//newStaffMember.set
+		
+		//newStaffMember.setAddress(value);
+		
 		//newStaffMember.set
 		// TODO: set firstName, secondName, email, phoneNumber
 

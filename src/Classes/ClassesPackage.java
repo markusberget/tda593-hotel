@@ -868,13 +868,22 @@ public interface ClassesPackage extends EPackage {
 	int IPERSON__EMAIL = 3;
 
 	/**
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__PHONE_NUMBER = 4;
+
+	/**
 	 * The number of structural features of the '<em>IPerson</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IPERSON_FEATURE_COUNT = 4;
+	int IPERSON_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>IPerson</em>' class.
@@ -930,6 +939,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int STAFF__EMAIL = IPERSON__EMAIL;
+
+	/**
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Admin</b></em>' attribute.
@@ -1030,6 +1048,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int CUSTOMER__EMAIL = IPERSON__EMAIL;
+
+	/**
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
 
 	/**
 	 * The feature id for the '<em><b>Personal Info</b></em>' attribute.
@@ -1804,6 +1831,17 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getIPerson_Email();
 
 	/**
+	 * Returns the meta object for the attribute '{@link Classes.IPerson#getPhoneNumber <em>Phone Number</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Phone Number</em>'.
+	 * @see Classes.IPerson#getPhoneNumber()
+	 * @see #getIPerson()
+	 * @generated
+	 */
+	EAttribute getIPerson_PhoneNumber();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Customer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2364,6 +2402,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute IPERSON__EMAIL = eINSTANCE.getIPerson_Email();
+
+		/**
+		 * The meta object literal for the '<em><b>Phone Number</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute IPERSON__PHONE_NUMBER = eINSTANCE.getIPerson_PhoneNumber();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.CustomerImpl <em>Customer</em>}' class.
