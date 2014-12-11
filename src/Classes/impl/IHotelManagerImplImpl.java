@@ -37,6 +37,17 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		super();
 		
 		this.staffMembers = new HashMap<String, StaffMember>();	
+		
+		// add an admin for testing purposes. 
+		StaffMember newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaffMember();
+		newStaffMember.setUsername("pelle");
+		newStaffMember.setPassword("hunter2");
+		newStaffMember.setFirstName("Pelle");
+		newStaffMember.setLastName("Svantesson");
+		newStaffMember.setEmail("pelle2@hotmail.com");
+		newStaffMember.setPhoneNumber("33449");
+		newStaffMember.setAddress("Aprilvägen 12");
+		newStaffMember.setAdmin(true);
 	}
 
 	/**
@@ -246,7 +257,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
-	 */
+	 */	
 	public boolean isStaffMemberAdmin(String username) {
 		StaffMember s = this.staffMembers.get(username);
 		return s == null ? false : s.isAdmin();
