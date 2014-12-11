@@ -30,12 +30,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	private ArrayList<Booking> pendingBookings;
 	private ArrayList<Booking> confirmedBookings;
 	private ArrayList<Room> availableRooms;
-	private ArrayList<Room> occupiedRooms;
 	private ArrayList<Booking> bookingHistory;
 	
 	// A list of rooms is used as the value in the HashMap because a customer should be
 	// able to have several rooms in a booking. The key part is the bookingID.
 	private HashMap<Integer, List<Room>> pendingRooms;
+	private HashMap<Integer, List<Room>> occupiedRooms;
 	
 	
 	/**
@@ -169,14 +169,22 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * This method checks the customer out from the hotel, but first the status
+	 * of the booking is checked if it is payed. A customer cannot check out
+	 * before the booking is payed for.
+	 * 
+	 * @generated NOT
 	 */
 	public boolean checkOut(int bookingID) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		Booking booking = confirmedBookings.get(bookingID);
+		if (booking.status == payed) {		// payed is set to true after payment method has succeeded
+			List<Room> rooms = occupiedRooms.remove(bookingID);
+			for(Room room : rooms) {
+				room.setStatusoccupiedreadypending(true);		// should be set to cleaning
+			}
+			return true;
+		}
+		return false;
 	}
 
 	/**
