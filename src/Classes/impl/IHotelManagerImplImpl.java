@@ -66,47 +66,42 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber, boolean admin) {
-	
-	EList searchResult = findStaffMember(adminUsername, null, null, null, null);
-		
-		if(searchResult.size() > 1) {
-			// we messed up somewhere, so:
-			String message = "Oops, something went very wrong in the system:" +
-					"There are " + searchResult.size() + " staff members with the username " + adminUsername;
-			throw new IllegalStateException(message);
-		}
-		
-		// admin not found:
-		if(searchResult.size() == 0) {
+
+		// is the adding user logged in?
+		if(!isStaffMemberLoggedIn(adminUsername)) {
 			return false;
 		}
 		
-		Staff adminStaffMember = (Staff)searchResult.get(0);
-		
-		// TODO: check whether admin is logged in.
-		if ( adminStaffMember == null ) {
+		// is the adding user actualy an admin?
+		if(!isStaffMemberAdmin(adminUsername)) {
 			return false;
-		} else if ( adminStaffMember.isAdmin() ) {
-			return false;
-		} else {
-			
-			if(isPasswordSecure(password) || isValidUsername(username)) {
-				return false;
-			}
-			
-			// TODO: persist object within runtime somewhere!		
-			Staff newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaff();
-			
-			newStaffMember.setUserId(username);
-			newStaffMember.setPassword(password);
-			// TODO: set firstName, secondName, email, phoneNumber
-			
-			return true;
-			
 		}
 		
-	
+		
+		
+		if(!isPasswordSecure(password) || !isValidUsername(username)) {
+			return false;
+		
+		}
+		
+		// Both the new username and password are fine! Create the new user:
+		
+
+		// TODO: persist object within runtime somewhere!		
+		Staff newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaff();
+
+		newStaffMember.setUserId(username);
+		newStaffMember.setPassword(password);
+		newStaffMember.setFirstName(firstName);
+		newStaffMember.setLastName(secondName);
+		// TODO: set firstName, secondName, email, phoneNumber
+
+		return true;
+
 	}
+
+
+}
 
 	/**
 	 * <!-- begin-user-doc -->
