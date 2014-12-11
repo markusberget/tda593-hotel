@@ -65,10 +65,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean login(String username, String password) {
-		
 		StaffMember s = this.staffMembers.get(username);
 		
 		if(s == null) return false;
@@ -278,6 +277,17 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public String getStaffMemberPassword(String username) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -299,6 +309,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return isStaffMemberLoggedIn((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_ADMIN__STRING:
 				return isStaffMemberAdmin((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PASSWORD__STRING:
+				return getStaffMemberPassword((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

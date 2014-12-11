@@ -750,13 +750,22 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING = 8;
 
 	/**
+	 * The operation id for the '<em>Get Staff Member Password</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = 9;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 9;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 10;
 
 	/**
 	 * The number of structural features of the '<em>IFinance Impl</em>' class.
@@ -1186,6 +1195,15 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_ADMIN__STRING = IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Staff Member Password</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PASSWORD__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1602,6 +1620,16 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIHotelManager__IsStaffMemberAdmin__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#getStaffMemberPassword(java.lang.String) <em>Get Staff Member Password</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Staff Member Password</em>' operation.
+	 * @see Classes.IHotelManager#getStaffMemberPassword(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__GetStaffMemberPassword__String();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
@@ -2226,6 +2254,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING = eINSTANCE.getIHotelManager__IsStaffMemberAdmin__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Staff Member Password</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = eINSTANCE.getIHotelManager__GetStaffMemberPassword__String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.
