@@ -74,4 +74,12 @@ public interface IHotelManager extends EObject {
 	 */
 	EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	boolean isStaffMemberLoggedIn(String username);
+
 } // IHotelManager

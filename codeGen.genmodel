@@ -163,6 +163,9 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/findStaffMember/email"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/findStaffMember/phoneNumber"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/isStaffMemberLoggedIn">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/isStaffMemberLoggedIn/username"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//IFinanceImpl"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Staff">
