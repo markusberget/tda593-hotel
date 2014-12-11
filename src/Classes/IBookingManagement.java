@@ -29,10 +29,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingNumberRequired="true" bookingNumberOrdered="false" _Required="true" _Ordered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	void getBooking(int bookingNumber, Booking _);
+	Booking getBooking(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -77,26 +77,26 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model bookingIDRequired="true" bookingIDOrdered="false" _DataType="org.eclipse.uml2.types.Boolean" _Required="true" _Ordered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	void cancelBooking(int bookingID, boolean _);
+	boolean cancelBooking(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model TODORequired="true" TODOOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	void checkIn(Class TODO);
+	boolean checkIn(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model TODORequired="true" TODOOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	void checkOut(Class TODO);
+	boolean checkOut(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->

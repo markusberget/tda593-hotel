@@ -3,18 +3,14 @@
 package Classes.impl;
 
 import Classes.Booking;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
-
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import Classes.ClassesPackage;
 import Classes.IBookingManagementImpl;
 import Classes.Room;
@@ -67,17 +63,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 */
 	public void updateBooking() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void getBooking(int bookingNumber, Booking _) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -156,17 +141,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void cancelBooking(int bookingID, boolean _) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
 	 * A booking can be cancelled while it is pending and also when it is
 	 * in the confirmed state. For the moment, a cancelled booking is
 	 * placed in the history list.
@@ -188,7 +162,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkIn(Class TODO) {
+	public boolean checkIn(int bookingID) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -199,7 +173,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void checkOut(Class TODO) {
+	public boolean checkOut(int bookingID) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -253,9 +227,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING:
 				updateBooking();
 				return null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_BOOKING:
-				getBooking((Integer)arguments.get(0), (Booking)arguments.get(1));
-				return null;
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT:
+				return getBooking((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_DATE:
 				getBooking((Integer)arguments.get(0), (Date)arguments.get(1));
 				return null;
@@ -268,15 +241,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				return null;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT:
 				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Class)arguments.get(2), (Integer)arguments.get(3), (Integer)arguments.get(4), (Integer)arguments.get(5));
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT_BOOLEAN:
-				cancelBooking((Integer)arguments.get(0), (Boolean)arguments.get(1));
-				return null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__CLASS:
-				checkIn((Class)arguments.get(0));
-				return null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_OUT__CLASS:
-				checkOut((Class)arguments.get(0));
-				return null;
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT:
+				return cancelBooking((Integer)arguments.get(0));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT:
+				return checkIn((Integer)arguments.get(0));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_OUT__INT:
+				return checkOut((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING:
 				return addCustomerInformationToBooking((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT:

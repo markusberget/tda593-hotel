@@ -220,7 +220,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___GET_BOOKING__INT_BOOKING = 1;
+	int IBOOKING_MANAGEMENT___GET_BOOKING__INT = 1;
 
 	/**
 	 * The operation id for the '<em>Get Booking</em>' operation.
@@ -274,7 +274,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT_BOOLEAN = 7;
+	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 7;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -283,7 +283,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHECK_IN__CLASS = 8;
+	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 8;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -292,7 +292,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHECK_OUT__CLASS = 9;
+	int IBOOKING_MANAGEMENT___CHECK_OUT__INT = 9;
 
 	/**
 	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
@@ -356,7 +356,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_BOOKING = IBOOKING_MANAGEMENT___GET_BOOKING__INT_BOOKING;
+	int IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT = IBOOKING_MANAGEMENT___GET_BOOKING__INT;
 
 	/**
 	 * The operation id for the '<em>Get Booking</em>' operation.
@@ -410,7 +410,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT_BOOLEAN = IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT_BOOLEAN;
+	int IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT = IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -419,7 +419,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___CHECK_IN__CLASS = IBOOKING_MANAGEMENT___CHECK_IN__CLASS;
+	int IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT = IBOOKING_MANAGEMENT___CHECK_IN__INT;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -428,7 +428,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___CHECK_OUT__CLASS = IBOOKING_MANAGEMENT___CHECK_OUT__CLASS;
+	int IBOOKING_MANAGEMENT_IMPL___CHECK_OUT__INT = IBOOKING_MANAGEMENT___CHECK_OUT__INT;
 
 	/**
 	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
@@ -1253,14 +1253,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__UpdateBooking();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#getBooking(int, Classes.Booking) <em>Get Booking</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#getBooking(int) <em>Get Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Get Booking</em>' operation.
-	 * @see Classes.IBookingManagement#getBooking(int, Classes.Booking)
+	 * @see Classes.IBookingManagement#getBooking(int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__GetBooking__int_Booking();
+	EOperation getIBookingManagement__GetBooking__int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#getBooking(int, java.util.Date) <em>Get Booking</em>}' operation.
@@ -1313,34 +1313,34 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__SearchRoom__Date_Date_Class_int_int_int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#cancelBooking(int, boolean) <em>Cancel Booking</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#cancelBooking(int) <em>Cancel Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Cancel Booking</em>' operation.
-	 * @see Classes.IBookingManagement#cancelBooking(int, boolean)
+	 * @see Classes.IBookingManagement#cancelBooking(int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__CancelBooking__int_boolean();
+	EOperation getIBookingManagement__CancelBooking__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#checkIn(java.lang.Class) <em>Check In</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#checkIn(int) <em>Check In</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check In</em>' operation.
-	 * @see Classes.IBookingManagement#checkIn(java.lang.Class)
+	 * @see Classes.IBookingManagement#checkIn(int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__CheckIn__Class();
+	EOperation getIBookingManagement__CheckIn__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#checkOut(java.lang.Class) <em>Check Out</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#checkOut(int) <em>Check Out</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check Out</em>' operation.
-	 * @see Classes.IBookingManagement#checkOut(java.lang.Class)
+	 * @see Classes.IBookingManagement#checkOut(int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__CheckOut__Class();
+	EOperation getIBookingManagement__CheckOut__int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#addCustomerInformationToBooking(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String) <em>Add Customer Information To Booking</em>}' operation.
@@ -1879,7 +1879,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___GET_BOOKING__INT_BOOKING = eINSTANCE.getIBookingManagement__GetBooking__int_Booking();
+		EOperation IBOOKING_MANAGEMENT___GET_BOOKING__INT = eINSTANCE.getIBookingManagement__GetBooking__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
@@ -1927,7 +1927,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT_BOOLEAN = eINSTANCE.getIBookingManagement__CancelBooking__int_boolean();
+		EOperation IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = eINSTANCE.getIBookingManagement__CancelBooking__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
@@ -1935,7 +1935,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___CHECK_IN__CLASS = eINSTANCE.getIBookingManagement__CheckIn__Class();
+		EOperation IBOOKING_MANAGEMENT___CHECK_IN__INT = eINSTANCE.getIBookingManagement__CheckIn__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.
@@ -1943,7 +1943,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___CHECK_OUT__CLASS = eINSTANCE.getIBookingManagement__CheckOut__Class();
+		EOperation IBOOKING_MANAGEMENT___CHECK_OUT__INT = eINSTANCE.getIBookingManagement__CheckOut__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Customer Information To Booking</b></em>' operation.
