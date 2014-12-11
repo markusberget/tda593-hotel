@@ -249,9 +249,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public boolean isStaffMemberLoggedIn(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return this.staffMembers.get(username).isLoggedIn();
 	}
 
 	/**
