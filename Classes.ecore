@@ -167,7 +167,7 @@
   <eClassifiers xsi:type="ecore:EClass" name="Staff" eSuperTypes="#//IPerson">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="admin" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="userId" ordered="false"
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>

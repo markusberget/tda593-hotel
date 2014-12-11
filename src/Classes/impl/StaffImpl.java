@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link Classes.impl.StaffImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getPhoneNumber <em>Phone Number</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#isAdmin <em>Admin</em>}</li>
- *   <li>{@link Classes.impl.StaffImpl#getUserId <em>User Id</em>}</li>
+ *   <li>{@link Classes.impl.StaffImpl#getUsername <em>Username</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#getPassword <em>Password</em>}</li>
  *   <li>{@link Classes.impl.StaffImpl#isLoggedIn <em>Is Logged In</em>}</li>
  * </ul>
@@ -155,24 +155,24 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	protected boolean admin = ADMIN_EDEFAULT;
 
 	/**
-	 * The default value of the '{@link #getUserId() <em>User Id</em>}' attribute.
+	 * The default value of the '{@link #getUsername() <em>Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUserId()
+	 * @see #getUsername()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String USER_ID_EDEFAULT = null;
+	protected static final String USERNAME_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getUserId() <em>User Id</em>}' attribute.
+	 * The cached value of the '{@link #getUsername() <em>Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUserId()
+	 * @see #getUsername()
 	 * @generated
 	 * @ordered
 	 */
-	protected String userId = USER_ID_EDEFAULT;
+	protected String username = USERNAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getPassword() <em>Password</em>}' attribute.
@@ -364,8 +364,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getUserId() {
-		return userId;
+	public String getUsername() {
+		return username;
 	}
 
 	/**
@@ -373,11 +373,11 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUserId(String newUserId) {
-		String oldUserId = userId;
-		userId = newUserId;
+	public void setUsername(String newUsername) {
+		String oldUsername = username;
+		username = newUsername;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__USER_ID, oldUserId, userId));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF__USERNAME, oldUsername, username));
 	}
 
 	/**
@@ -442,8 +442,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 				return getPhoneNumber();
 			case ClassesPackage.STAFF__ADMIN:
 				return isAdmin();
-			case ClassesPackage.STAFF__USER_ID:
-				return getUserId();
+			case ClassesPackage.STAFF__USERNAME:
+				return getUsername();
 			case ClassesPackage.STAFF__PASSWORD:
 				return getPassword();
 			case ClassesPackage.STAFF__IS_LOGGED_IN:
@@ -478,8 +478,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 			case ClassesPackage.STAFF__ADMIN:
 				setAdmin((Boolean)newValue);
 				return;
-			case ClassesPackage.STAFF__USER_ID:
-				setUserId((String)newValue);
+			case ClassesPackage.STAFF__USERNAME:
+				setUsername((String)newValue);
 				return;
 			case ClassesPackage.STAFF__PASSWORD:
 				setPassword((String)newValue);
@@ -517,8 +517,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 			case ClassesPackage.STAFF__ADMIN:
 				setAdmin(ADMIN_EDEFAULT);
 				return;
-			case ClassesPackage.STAFF__USER_ID:
-				setUserId(USER_ID_EDEFAULT);
+			case ClassesPackage.STAFF__USERNAME:
+				setUsername(USERNAME_EDEFAULT);
 				return;
 			case ClassesPackage.STAFF__PASSWORD:
 				setPassword(PASSWORD_EDEFAULT);
@@ -550,8 +550,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
 			case ClassesPackage.STAFF__ADMIN:
 				return admin != ADMIN_EDEFAULT;
-			case ClassesPackage.STAFF__USER_ID:
-				return USER_ID_EDEFAULT == null ? userId != null : !USER_ID_EDEFAULT.equals(userId);
+			case ClassesPackage.STAFF__USERNAME:
+				return USERNAME_EDEFAULT == null ? username != null : !USERNAME_EDEFAULT.equals(username);
 			case ClassesPackage.STAFF__PASSWORD:
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
 			case ClassesPackage.STAFF__IS_LOGGED_IN:
@@ -582,8 +582,8 @@ public class StaffImpl extends MinimalEObjectImpl.Container implements Staff {
 		result.append(phoneNumber);
 		result.append(", admin: ");
 		result.append(admin);
-		result.append(", userId: ");
-		result.append(userId);
+		result.append(", username: ");
+		result.append(username);
 		result.append(", password: ");
 		result.append(password);
 		result.append(", isLoggedIn: ");

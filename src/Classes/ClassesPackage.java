@@ -959,13 +959,13 @@ public interface ClassesPackage extends EPackage {
 	int STAFF__ADMIN = IPERSON_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>User Id</b></em>' attribute.
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF__USER_ID = IPERSON_FEATURE_COUNT + 1;
+	int STAFF__USERNAME = IPERSON_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Password</b></em>' attribute.
@@ -1744,15 +1744,15 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getStaff_Admin();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Classes.Staff#getUserId <em>User Id</em>}'.
+	 * Returns the meta object for the attribute '{@link Classes.Staff#getUsername <em>Username</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>User Id</em>'.
-	 * @see Classes.Staff#getUserId()
+	 * @return the meta object for the attribute '<em>Username</em>'.
+	 * @see Classes.Staff#getUsername()
 	 * @see #getStaff()
 	 * @generated
 	 */
-	EAttribute getStaff_UserId();
+	EAttribute getStaff_Username();
 
 	/**
 	 * Returns the meta object for the attribute '{@link Classes.Staff#getPassword <em>Password</em>}'.
@@ -2338,12 +2338,12 @@ public interface ClassesPackage extends EPackage {
 		EAttribute STAFF__ADMIN = eINSTANCE.getStaff_Admin();
 
 		/**
-		 * The meta object literal for the '<em><b>User Id</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Username</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute STAFF__USER_ID = eINSTANCE.getStaff_UserId();
+		EAttribute STAFF__USERNAME = eINSTANCE.getStaff_Username();
 
 		/**
 		 * The meta object literal for the '<em><b>Password</b></em>' attribute feature.

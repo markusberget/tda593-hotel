@@ -12,7 +12,7 @@ package Classes;
  * The following features are supported:
  * <ul>
  *   <li>{@link Classes.Staff#isAdmin <em>Admin</em>}</li>
- *   <li>{@link Classes.Staff#getUserId <em>User Id</em>}</li>
+ *   <li>{@link Classes.Staff#getUsername <em>Username</em>}</li>
  *   <li>{@link Classes.Staff#getPassword <em>Password</em>}</li>
  *   <li>{@link Classes.Staff#isLoggedIn <em>Is Logged In</em>}</li>
  * </ul>
@@ -50,30 +50,30 @@ public interface Staff extends IPerson {
 	void setAdmin(boolean value);
 
 	/**
-	 * Returns the value of the '<em><b>User Id</b></em>' attribute.
+	 * Returns the value of the '<em><b>Username</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>User Id</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Username</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>User Id</em>' attribute.
-	 * @see #setUserId(String)
-	 * @see Classes.ClassesPackage#getStaff_UserId()
+	 * @return the value of the '<em>Username</em>' attribute.
+	 * @see #setUsername(String)
+	 * @see Classes.ClassesPackage#getStaff_Username()
 	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
 	 * @generated
 	 */
-	String getUserId();
+	String getUsername();
 
 	/**
-	 * Sets the value of the '{@link Classes.Staff#getUserId <em>User Id</em>}' attribute.
+	 * Sets the value of the '{@link Classes.Staff#getUsername <em>Username</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>User Id</em>' attribute.
-	 * @see #getUserId()
+	 * @param value the new value of the '<em>Username</em>' attribute.
+	 * @see #getUsername()
 	 * @generated
 	 */
-	void setUserId(String value);
+	void setUsername(String value);
 
 	/**
 	 * Returns the value of the '<em><b>Password</b></em>' attribute.

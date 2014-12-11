@@ -668,7 +668,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getStaff_UserId() {
+	public EAttribute getStaff_Username() {
 		return (EAttribute)staffEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -860,7 +860,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		staffEClass = createEClass(STAFF);
 		createEAttribute(staffEClass, STAFF__ADMIN);
-		createEAttribute(staffEClass, STAFF__USER_ID);
+		createEAttribute(staffEClass, STAFF__USERNAME);
 		createEAttribute(staffEClass, STAFF__PASSWORD);
 		createEAttribute(staffEClass, STAFF__IS_LOGGED_IN);
 
@@ -1062,7 +1062,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		initEClass(staffEClass, Staff.class, "Staff", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStaff_Admin(), theTypesPackage.getBoolean(), "admin", null, 1, 1, Staff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEAttribute(getStaff_UserId(), theTypesPackage.getString(), "userId", null, 1, 1, Staff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getStaff_Username(), theTypesPackage.getString(), "username", null, 1, 1, Staff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStaff_Password(), theTypesPackage.getString(), "password", null, 1, 1, Staff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStaff_IsLoggedIn(), ecorePackage.getEBoolean(), "isLoggedIn", null, 1, 1, Staff.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 

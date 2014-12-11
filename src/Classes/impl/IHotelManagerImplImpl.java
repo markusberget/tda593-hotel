@@ -77,8 +77,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			return false;
 		}
 		
-		
-		
 		if(!isPasswordSecure(password) || !isValidUsername(username)) {
 			return false;
 		
@@ -87,10 +85,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		// Both the new username and password are fine! Create the new user:
 		
 
-		// TODO: persist object within runtime somewhere!		
 		Staff newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaff();
 
-		newStaffMember.setUserId(username);
+		newStaffMember.setUsername(username);
 		newStaffMember.setPassword(password);
 		newStaffMember.setFirstName(firstName);
 		newStaffMember.setLastName(lastName);
@@ -99,7 +96,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		newStaffMember.setAddress(address);
 		newStaffMember.setAdmin(admin);
 		
-		staffMembers.put(newStaffMember.getUserId(), newStaffMember);
+		staffMembers.put(newStaffMember.getUsername(), newStaffMember);
 		return true;
 
 	}

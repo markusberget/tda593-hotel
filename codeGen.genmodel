@@ -175,7 +175,7 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//IFinanceImpl"/>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Staff">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Staff/admin"/>
-      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Staff/userId"/>
+      <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Staff/username"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Staff/password"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Staff/isLoggedIn"/>
     </genClasses>
