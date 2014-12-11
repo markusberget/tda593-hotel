@@ -8,6 +8,8 @@ import Classes.Staff;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -26,16 +28,18 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  */
 public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implements IHotelManagerImpl {
 
-	private ArrayList<Staff> staffMembers;
+	private Map<String, Staff> staffMembers;
 	
 	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IHotelManagerImplImpl() {
 		super();
+		
+		this.staffMembers = new HashMap<String, Staff>();
 	}
 
 	/**
@@ -62,12 +66,49 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean addStaffMember(String adminUsername, String username, String password, String firstName, String secondName, String email, String phoneNumber, boolean admin) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	
+	EList searchResult = findStaffMember(adminUsername, null, null, null, null);
+		
+		if(searchResult.size() > 1) {
+			// we messed up somewhere, so:
+			String message = "Oops, something went very wrong in the system:" +
+					"There are " + searchResult.size() + " staff members with the username " + adminUsername;
+			throw new IllegalStateException(message);
+		}
+		
+		// admin not found:
+		if(searchResult.size() == 0) {
+			return false;
+		}
+		
+		Staff adminStaffMember = (Staff)searchResult.get(0);
+		
+		// TODO: check whether admin is logged in.
+		if ( adminStaffMember == null ) {
+			return false;
+		} else if ( adminStaffMember.isAdmin() ) {
+			return false;
+		} else {
+			
+			if(isPasswordSecure(password) || isValidUsername(username)) {
+				return false;
+			}
+			
+			// TODO: persist object within runtime somewhere!		
+			Staff newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaff();
+			
+			newStaffMember.setUserId(username);
+			newStaffMember.setPassword(password);
+			// TODO: set firstName, secondName, email, phoneNumber
+			
+			return true;
+			
+		}
+		
+	
 	}
 
 	/**
