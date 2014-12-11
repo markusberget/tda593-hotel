@@ -217,7 +217,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		for(Staff s: this.staffMembers.values()) {
 		
 			if(username != null) {
-				if(!contains(s.getUserId(), username)) {
+				if(!contains(s.getUsername(), username)) {
 					// this parameter didn't match, so this staff member won't be returned.
 					// try for the next staff member in the list!
 					continue;
