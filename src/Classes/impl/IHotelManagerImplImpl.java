@@ -77,7 +77,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		
 		// admin not found:
 		if(searchResult.size() == 0) {
-			return 
+			return false;
 		}
 		
 		Staff adminStaffMember = (Staff)searchResult.get(0);
