@@ -290,6 +290,14 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_8JrA8IEuEeSGJLVvPxMiKg" name="isStaffMemberLoggedIn" visibility="public" concurrency="concurrent">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_C5cEkIEvEeSGJLVvPxMiKg" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ItzP4IEvEeSGJLVvPxMiKg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_fOOUkHn3EeSXl-11lZMmcA" memberEnd="_fOOUkXn3EeSXl-11lZMmcA _fOMfYHn3EeSXl-11lZMmcA">
     <ownedEnd xmi:type="uml:Property" xmi:id="_fOOUkXn3EeSXl-11lZMmcA" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_fOOUkHn3EeSXl-11lZMmcA">
