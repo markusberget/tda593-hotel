@@ -65,7 +65,20 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<Room> room;
-	private Map<String, StaffMember> staffMembers;
+	//private Map<String, StaffMember> staffMembers;
+	
+	
+	/**
+	 * If you don't know what you're doing, don't FUCKING change these methods. 
+	 */
+	private void internal_addStaffMember(StaffMember staff) {
+		
+	}
+	private void internal_lookupStaffMember(String username) {
+		
+	}
+	
+	
 	
 	
 	/**
@@ -91,6 +104,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		
 		this.staffMembers.put(newStaffMember.getUsername(), newStaffMember);
 	}
+	
+	
 
 	/**
 	 * <!-- begin-user-doc -->
