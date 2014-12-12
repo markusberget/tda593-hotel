@@ -137,7 +137,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			expiryYear = 16;*/
 /*			
 			if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
-				return "Payment failed: Invalid credit card information"
+				return "Payment failed: Invalid credit card information";
 			}
 			
 			

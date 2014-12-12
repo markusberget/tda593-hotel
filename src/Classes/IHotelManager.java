@@ -3,8 +3,6 @@
 package Classes;
 
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.Enumerator;
-
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -56,7 +54,7 @@ public interface IHotelManager extends EObject {
 	 * @model required="true" ordered="false" roomIdRequired="true" roomIdOrdered="false" statusRequired="true" statusOrdered="false"
 	 * @generated
 	 */
-	boolean changeStatusOfRoom(int roomId, Enumerator status);
+	boolean changeStatusOfRoom(int roomId, String status);
 
 	/**
 	 * <!-- begin-user-doc -->

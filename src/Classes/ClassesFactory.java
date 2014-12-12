@@ -58,24 +58,6 @@ public interface ClassesFactory extends EFactory {
 	IFinanceImpl createIFinanceImpl();
 
 	/**
-	 * Returns a new object of class '<em>Bill</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Bill</em>'.
-	 * @generated
-	 */
-	Bill createBill();
-
-	/**
-	 * Returns a new object of class '<em>Charge</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Charge</em>'.
-	 * @generated
-	 */
-	Charge createCharge();
-
-	/**
 	 * Returns a new object of class '<em>Staff Member</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
