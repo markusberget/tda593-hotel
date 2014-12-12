@@ -46,8 +46,6 @@ public class HotelManagerTests {
 		assertEquals( "Tomtebacken 14", hm.getStaffMemberAddress("alex4"));
 		assertEquals( false, hm.isStaffMemberAdmin("alex4"));
 		
-		
-		
 		// Next, make sure that it fails if the admin tries to add a new staff member while being logged out. 
 		
 		

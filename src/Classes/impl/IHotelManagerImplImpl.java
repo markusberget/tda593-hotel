@@ -466,12 +466,19 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean logout(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StaffMember s = this.internal_lookupStaffMember(username);
+		
+		if(s == null) return false;
+		
+		if(s.isLoggedIn()) {
+			s.setIsLoggedIn(false);
+			return true;
+		} else {
+			return false;
+		}
 	}
 
 	/**
