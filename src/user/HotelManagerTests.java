@@ -30,9 +30,22 @@ public class HotelManagerTests {
 				null, null, false));
 		
 		assertTrue(hm.login("alex4", "ankeborg4444"));
-		assertTrue(hm.isStaffMemberLoggedIn("alex4"));
+		assertTrue(hm.isStaffMemberLoggedIn("alex4"));	
+	}
+	
+	@Test
+	public void testLogout() {
 		
+		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
 		
+		// logout before being log in.
+		assertFalse(hm.logout(Util.adminUsername));
+		
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
+		assertTrue(hm.logout(Util.adminUsername));
+		
+		// successfully logged out?
+		assertFalse(hm.isStaffMemberLoggedIn(Util.adminUsername));	
 	}
 	
 	@Test
