@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_49dQQHpiEeSOqIzpWDGINg" name="Classes">
   <packagedElement xmi:type="uml:Class" xmi:id="_Y1EUkHTdEeSOC7DG65-e3w" name="Room">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_bij1kHTdEeSOC7DG65-e3w" name="status">
-      <type xmi:type="uml:Enumeration" href="model.uml#_Cw_8MIHdEeSiLMRkmJ4pCA"/>
-    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_bij1kHTdEeSOC7DG65-e3w" name="status" type="_Cw_8MIHdEeSiLMRkmJ4pCA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_hZMRwHTdEeSOC7DG65-e3w" name="roomNumber">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
@@ -565,4 +563,9 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_N5GugIHcEeSiLMRkmJ4pCA" memberEnd="_N5GugYHcEeSiLMRkmJ4pCA _N5GHcIHcEeSiLMRkmJ4pCA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_dMKB0IHcEeSiLMRkmJ4pCA" memberEnd="_dMKB0YHcEeSiLMRkmJ4pCA _dMIMoIHcEeSiLMRkmJ4pCA"/>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_Cw_8MIHdEeSiLMRkmJ4pCA" name="RoomStatus">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Fek8wIHdEeSiLMRkmJ4pCA" name="Occupied"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_H6ciQIHdEeSiLMRkmJ4pCA" name="Available"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KskroIHdEeSiLMRkmJ4pCA" name="Cleaning"/>
+  </packagedElement>
 </uml:Package>

@@ -4,6 +4,7 @@ package Classes;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -68,13 +69,13 @@ public interface ClassesPackage extends EPackage {
 	int ROOM = 0;
 
 	/**
-	 * The feature id for the '<em><b>Statusoccupiedreadypending</b></em>' attribute.
+	 * The feature id for the '<em><b>Status</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__STATUSOCCUPIEDREADYPENDING = 0;
+	int ROOM__STATUS = 0;
 
 	/**
 	 * The feature id for the '<em><b>Room Number</b></em>' attribute.
@@ -1576,6 +1577,17 @@ public interface ClassesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.RoomStatus
+	 * @see Classes.impl.ClassesPackageImpl#getRoomStatus()
+	 * @generated
+	 */
+	int ROOM_STATUS = 14;
+
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Room <em>Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1586,15 +1598,15 @@ public interface ClassesPackage extends EPackage {
 	EClass getRoom();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Classes.Room#isStatusoccupiedreadypending <em>Statusoccupiedreadypending</em>}'.
+	 * Returns the meta object for the attribute '{@link Classes.Room#getStatus <em>Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Statusoccupiedreadypending</em>'.
-	 * @see Classes.Room#isStatusoccupiedreadypending()
+	 * @return the meta object for the attribute '<em>Status</em>'.
+	 * @see Classes.Room#getStatus()
 	 * @see #getRoom()
 	 * @generated
 	 */
-	EAttribute getRoom_Statusoccupiedreadypending();
+	EAttribute getRoom_Status();
 
 	/**
 	 * Returns the meta object for the attribute '{@link Classes.Room#getRoomNumber <em>Room Number</em>}'.
@@ -2173,6 +2185,16 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__Logout__String();
 
 	/**
+	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Room Status</em>'.
+	 * @see Classes.RoomStatus
+	 * @generated
+	 */
+	EEnum getRoomStatus();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2618,12 +2640,12 @@ public interface ClassesPackage extends EPackage {
 		EClass ROOM = eINSTANCE.getRoom();
 
 		/**
-		 * The meta object literal for the '<em><b>Statusoccupiedreadypending</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Status</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROOM__STATUSOCCUPIEDREADYPENDING = eINSTANCE.getRoom_Statusoccupiedreadypending();
+		EAttribute ROOM__STATUS = eINSTANCE.getRoom_Status();
 
 		/**
 		 * The meta object literal for the '<em><b>Room Number</b></em>' attribute feature.
@@ -3086,6 +3108,16 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___LOGOUT__STRING = eINSTANCE.getIHotelManager__Logout__String();
+
+		/**
+		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.RoomStatus
+		 * @see Classes.impl.ClassesPackageImpl#getRoomStatus()
+		 * @generated
+		 */
+		EEnum ROOM_STATUS = eINSTANCE.getRoomStatus();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.

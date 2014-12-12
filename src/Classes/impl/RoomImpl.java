@@ -6,6 +6,7 @@ import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
+import Classes.RoomStatus;
 import Classes.RoomType;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
@@ -25,7 +26,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.impl.RoomImpl#isStatusoccupiedreadypending <em>Statusoccupiedreadypending</em>}</li>
+ *   <li>{@link Classes.impl.RoomImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
@@ -37,24 +38,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	/**
-	 * The default value of the '{@link #isStatusoccupiedreadypending() <em>Statusoccupiedreadypending</em>}' attribute.
+	 * The default value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isStatusoccupiedreadypending()
+	 * @see #getStatus()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final boolean STATUSOCCUPIEDREADYPENDING_EDEFAULT = false;
+	protected static final RoomStatus STATUS_EDEFAULT = RoomStatus.OCCUPIED;
 
 	/**
-	 * The cached value of the '{@link #isStatusoccupiedreadypending() <em>Statusoccupiedreadypending</em>}' attribute.
+	 * The cached value of the '{@link #getStatus() <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #isStatusoccupiedreadypending()
+	 * @see #getStatus()
 	 * @generated
 	 * @ordered
 	 */
-	protected boolean statusoccupiedreadypending = STATUSOCCUPIEDREADYPENDING_EDEFAULT;
+	protected RoomStatus status = STATUS_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getRoomNumber() <em>Room Number</em>}' attribute.
@@ -130,8 +131,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean isStatusoccupiedreadypending() {
-		return statusoccupiedreadypending;
+	public RoomStatus getStatus() {
+		return status;
 	}
 
 	/**
@@ -139,11 +140,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setStatusoccupiedreadypending(boolean newStatusoccupiedreadypending) {
-		boolean oldStatusoccupiedreadypending = statusoccupiedreadypending;
-		statusoccupiedreadypending = newStatusoccupiedreadypending;
+	public void setStatus(RoomStatus newStatus) {
+		RoomStatus oldStatus = status;
+		status = newStatus == null ? STATUS_EDEFAULT : newStatus;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__STATUSOCCUPIEDREADYPENDING, oldStatusoccupiedreadypending, statusoccupiedreadypending));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__STATUS, oldStatus, status));
 	}
 
 	/**
@@ -348,8 +349,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClassesPackage.ROOM__STATUSOCCUPIEDREADYPENDING:
-				return isStatusoccupiedreadypending();
+			case ClassesPackage.ROOM__STATUS:
+				return getStatus();
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				return getRoomNumber();
 			case ClassesPackage.ROOM__ROOM_TYPE:
@@ -373,8 +374,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassesPackage.ROOM__STATUSOCCUPIEDREADYPENDING:
-				setStatusoccupiedreadypending((Boolean)newValue);
+			case ClassesPackage.ROOM__STATUS:
+				setStatus((RoomStatus)newValue);
 				return;
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber((Integer)newValue);
@@ -401,8 +402,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.ROOM__STATUSOCCUPIEDREADYPENDING:
-				setStatusoccupiedreadypending(STATUSOCCUPIEDREADYPENDING_EDEFAULT);
+			case ClassesPackage.ROOM__STATUS:
+				setStatus(STATUS_EDEFAULT);
 				return;
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber(ROOM_NUMBER_EDEFAULT);
@@ -428,8 +429,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.ROOM__STATUSOCCUPIEDREADYPENDING:
-				return statusoccupiedreadypending != STATUSOCCUPIEDREADYPENDING_EDEFAULT;
+			case ClassesPackage.ROOM__STATUS:
+				return status != STATUS_EDEFAULT;
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
 			case ClassesPackage.ROOM__ROOM_TYPE:
@@ -452,8 +453,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (statusoccupiedreadypending: ");
-		result.append(statusoccupiedreadypending);
+		result.append(" (status: ");
+		result.append(status);
 		result.append(", roomNumber: ");
 		result.append(roomNumber);
 		result.append(')');

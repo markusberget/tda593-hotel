@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.Room#isStatusoccupiedreadypending <em>Statusoccupiedreadypending</em>}</li>
+ *   <li>{@link Classes.Room#getStatus <em>Status</em>}</li>
  *   <li>{@link Classes.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link Classes.Room#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link Classes.Room#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
@@ -27,31 +27,33 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface Room extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Statusoccupiedreadypending</b></em>' attribute.
+	 * Returns the value of the '<em><b>Status</b></em>' attribute.
+	 * The literals are from the enumeration {@link Classes.RoomStatus}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Statusoccupiedreadypending</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Status</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Statusoccupiedreadypending</em>' attribute.
-	 * @see #setStatusoccupiedreadypending(boolean)
-	 * @see Classes.ClassesPackage#getRoom_Statusoccupiedreadypending()
-	 * @model dataType="org.eclipse.uml2.types.Boolean" required="true" ordered="false"
-	 *        annotation="http://www.eclipse.org/uml2/2.0.0/UML originalName='status(occupied, ready, pending)'"
+	 * @return the value of the '<em>Status</em>' attribute.
+	 * @see Classes.RoomStatus
+	 * @see #setStatus(RoomStatus)
+	 * @see Classes.ClassesPackage#getRoom_Status()
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	boolean isStatusoccupiedreadypending();
+	RoomStatus getStatus();
 
 	/**
-	 * Sets the value of the '{@link Classes.Room#isStatusoccupiedreadypending <em>Statusoccupiedreadypending</em>}' attribute.
+	 * Sets the value of the '{@link Classes.Room#getStatus <em>Status</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Statusoccupiedreadypending</em>' attribute.
-	 * @see #isStatusoccupiedreadypending()
+	 * @param value the new value of the '<em>Status</em>' attribute.
+	 * @see Classes.RoomStatus
+	 * @see #getStatus()
 	 * @generated
 	 */
-	void setStatusoccupiedreadypending(boolean value);
+	void setStatus(RoomStatus value);
 
 	/**
 	 * Returns the value of the '<em><b>Room Number</b></em>' attribute.

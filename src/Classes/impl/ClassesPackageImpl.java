@@ -16,10 +16,12 @@ import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
 import Classes.IPerson;
 import Classes.Room;
+import Classes.RoomStatus;
 import Classes.RoomType;
 import Classes.StaffMember;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -89,6 +91,13 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * @generated
 	 */
 	private EClass iHotelManagerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum roomStatusEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -212,7 +221,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoom_Statusoccupiedreadypending() {
+	public EAttribute getRoom_Status() {
 		return (EAttribute)roomEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -725,6 +734,15 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getRoomStatus() {
+		return roomStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIFinanceImpl() {
 		return iFinanceImplEClass;
 	}
@@ -1091,7 +1109,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		// Create classes and their features
 		roomEClass = createEClass(ROOM);
-		createEAttribute(roomEClass, ROOM__STATUSOCCUPIEDREADYPENDING);
+		createEAttribute(roomEClass, ROOM__STATUS);
 		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
 		createEReference(roomEClass, ROOM__ROOM_TYPE);
 		createEReference(roomEClass, ROOM__IHOTEL_MANAGER_IMPL);
@@ -1199,6 +1217,9 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___LOGOUT__STRING);
+
+		// Create enums
+		roomStatusEEnum = createEEnum(ROOM_STATUS);
 	}
 
 	/**
@@ -1240,7 +1261,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		// Initialize classes, features, and operations; add parameters
 		initEClass(roomEClass, Room.class, "Room", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoom_Statusoccupiedreadypending(), theTypesPackage.getBoolean(), "statusoccupiedreadypending", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoom_Status(), this.getRoomStatus(), "status", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_RoomNumber(), theTypesPackage.getInteger(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_RoomType(), this.getRoomType(), this.getRoomType_Room(), "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_IHotelManagerImpl(), this.getIHotelManagerImpl(), this.getIHotelManagerImpl_Room(), "iHotelManagerImpl", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1449,28 +1470,14 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIHotelManager__Logout__String(), ecorePackage.getEBoolean(), "logout", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
+		// Initialize enums and add enum literals
+		initEEnum(roomStatusEEnum, RoomStatus.class, "RoomStatus");
+		addEEnumLiteral(roomStatusEEnum, RoomStatus.OCCUPIED);
+		addEEnumLiteral(roomStatusEEnum, RoomStatus.AVAILABLE);
+		addEEnumLiteral(roomStatusEEnum, RoomStatus.CLEANING);
+
 		// Create resource
 		createResource(eNS_URI);
-
-		// Create annotations
-		// http://www.eclipse.org/uml2/2.0.0/UML
-		createUMLAnnotations();
-	}
-
-	/**
-	 * Initializes the annotations for <b>http://www.eclipse.org/uml2/2.0.0/UML</b>.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	protected void createUMLAnnotations() {
-		String source = "http://www.eclipse.org/uml2/2.0.0/UML";	
-		addAnnotation
-		  (getRoom_Statusoccupiedreadypending(), 
-		   source, 
-		   new String[] {
-			 "originalName", "status(occupied, ready, pending)"
-		   });
 	}
 
 } //ClassesPackageImpl

@@ -2,12 +2,8 @@
 <ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="Classes" nsURI="http:///Classes.ecore" nsPrefix="Classes">
   <eClassifiers xsi:type="ecore:EClass" name="Room">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="statusoccupiedreadypending"
-        ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean">
-      <eAnnotations source="http://www.eclipse.org/uml2/2.0.0/UML">
-        <details key="originalName" value="status(occupied, ready, pending)"/>
-      </eAnnotations>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="status" ordered="false"
+        lowerBound="1" eType="#//RoomStatus"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomNumber" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
@@ -16,6 +12,11 @@
         lowerBound="1" eType="#//IHotelManagerImpl" eOpposite="#//IHotelManagerImpl/room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="booking" ordered="false"
         upperBound="-1" eType="#//Booking" eOpposite="#//Booking/room"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoomStatus">
+    <eLiterals name="Occupied"/>
+    <eLiterals name="Available" value="1"/>
+    <eLiterals name="Cleaning" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"

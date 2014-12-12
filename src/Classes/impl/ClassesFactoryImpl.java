@@ -12,9 +12,11 @@ import Classes.IBookingManagementImpl;
 import Classes.IFinanceImpl;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
+import Classes.RoomStatus;
 import Classes.RoomType;
 import Classes.StaffMember;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
@@ -76,6 +78,36 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 			case ClassesPackage.STAFF_MEMBER: return createStaffMember();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object createFromString(EDataType eDataType, String initialValue) {
+		switch (eDataType.getClassifierID()) {
+			case ClassesPackage.ROOM_STATUS:
+				return createRoomStatusFromString(eDataType, initialValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+		}
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String convertToString(EDataType eDataType, Object instanceValue) {
+		switch (eDataType.getClassifierID()) {
+			case ClassesPackage.ROOM_STATUS:
+				return convertRoomStatusToString(eDataType, instanceValue);
+			default:
+				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
 	}
 
@@ -147,6 +179,26 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	public StaffMember createStaffMember() {
 		StaffMemberImpl staffMember = new StaffMemberImpl();
 		return staffMember;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomStatus createRoomStatusFromString(EDataType eDataType, String initialValue) {
+		RoomStatus result = RoomStatus.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRoomStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**

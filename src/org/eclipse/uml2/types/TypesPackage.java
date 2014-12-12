@@ -62,7 +62,7 @@ public interface TypesPackage extends EPackage {
 	 * @see org.eclipse.uml2.types.impl.TypesPackageImpl#getInteger()
 	 * @generated
 	 */
-	int INTEGER = 0;
+	int INTEGER = 4;
 
 	/**
 	 * The meta object id for the '<em>Real</em>' data type.
@@ -99,7 +99,7 @@ public interface TypesPackage extends EPackage {
 	 * @see org.eclipse.uml2.types.impl.TypesPackageImpl#getBoolean()
 	 * @generated
 	 */
-	int BOOLEAN = 4;
+	int BOOLEAN = 0;
 
 
 	/**
