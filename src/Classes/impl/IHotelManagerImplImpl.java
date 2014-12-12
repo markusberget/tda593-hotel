@@ -327,7 +327,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getStaffMemberEmail(String username) {
 		StaffMember s = this.staffMembers.get(username);
