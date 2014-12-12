@@ -446,9 +446,13 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1FSzYnZmEeSBRfeA9UETiw" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1FSzY3ZmEeSBRfeA9UETiw" value="1"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_dMKB0YHcEeSiLMRkmJ4pCA" name="bill" type="_HebxIIHcEeSiLMRkmJ4pCA" association="_dMKB0IHcEeSiLMRkmJ4pCA">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_dMKB0YHcEeSiLMRkmJ4pCA" name="bill" type="_HebxIIHcEeSiLMRkmJ4pCA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dMKB0oHcEeSiLMRkmJ4pCA" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dMKB04HcEeSiLMRkmJ4pCA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_suh4oIHeEeSevLp9H7wykQ" name="bill" type="_HebxIIHcEeSiLMRkmJ4pCA" association="_suh4o4HeEeSevLp9H7wykQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_suh4oYHeEeSevLp9H7wykQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_suh4ooHeEeSevLp9H7wykQ" value="1"/>
     </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_NLnlMHTdEeSOC7DG65-e3w" name="StaffMember" visibility="package">
@@ -546,26 +550,33 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_HebxIIHcEeSiLMRkmJ4pCA" name="Bill">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_N5GHcIHcEeSiLMRkmJ4pCA" name="charge" type="_Jx5okIHcEeSiLMRkmJ4pCA" association="_N5GugIHcEeSiLMRkmJ4pCA">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_N5GHcIHcEeSiLMRkmJ4pCA" name="charge">
+      <type xmi:type="uml:Class" href="model.uml#_Jx5okIHcEeSiLMRkmJ4pCA"/>
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N5GHcYHcEeSiLMRkmJ4pCA"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N5GHcoHcEeSiLMRkmJ4pCA" value="*"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_dMIMoIHcEeSiLMRkmJ4pCA" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_dMKB0IHcEeSiLMRkmJ4pCA">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_dMIMoIHcEeSiLMRkmJ4pCA" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dMIMoYHcEeSiLMRkmJ4pCA" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dMIMooHcEeSiLMRkmJ4pCA" value="1"/>
     </ownedAttribute>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_Jx5okIHcEeSiLMRkmJ4pCA" name="Charge">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_N5GugYHcEeSiLMRkmJ4pCA" name="bill" type="_HebxIIHcEeSiLMRkmJ4pCA" association="_N5GugIHcEeSiLMRkmJ4pCA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N5GugoHcEeSiLMRkmJ4pCA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N5Gug4HcEeSiLMRkmJ4pCA" value="1"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_m5cUkIHeEeSevLp9H7wykQ" name="charge" association="_m5fX4IHeEeSevLp9H7wykQ">
+      <type xmi:type="uml:Class" href="model.uml#_Jx5okIHcEeSiLMRkmJ4pCA"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_m5cUkYHeEeSevLp9H7wykQ"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5cUkoHeEeSevLp9H7wykQ" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_suh4pIHeEeSevLp9H7wykQ" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_suh4o4HeEeSevLp9H7wykQ">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_suh4pYHeEeSevLp9H7wykQ" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_suh4poHeEeSevLp9H7wykQ" value="1"/>
     </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_N5GugIHcEeSiLMRkmJ4pCA" memberEnd="_N5GugYHcEeSiLMRkmJ4pCA _N5GHcIHcEeSiLMRkmJ4pCA"/>
-  <packagedElement xmi:type="uml:Association" xmi:id="_dMKB0IHcEeSiLMRkmJ4pCA" memberEnd="_dMKB0YHcEeSiLMRkmJ4pCA _dMIMoIHcEeSiLMRkmJ4pCA"/>
   <packagedElement xmi:type="uml:Enumeration" xmi:id="_Cw_8MIHdEeSiLMRkmJ4pCA" name="RoomStatus">
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Fek8wIHdEeSiLMRkmJ4pCA" name="Occupied"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_H6ciQIHdEeSiLMRkmJ4pCA" name="Available"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KskroIHdEeSiLMRkmJ4pCA" name="Cleaning"/>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_m5fX4IHeEeSevLp9H7wykQ" name="stfu">
+    <memberEnd xmi:type="uml:Property" href="model.uml#_m5fX4YHeEeSevLp9H7wykQ"/>
+    <memberEnd xmi:type="uml:Property" href="#_m5cUkIHeEeSevLp9H7wykQ"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_suh4o4HeEeSevLp9H7wykQ" name="stfu2" memberEnd="_suh4pIHeEeSevLp9H7wykQ _suh4oIHeEeSevLp9H7wykQ"/>
 </uml:Package>
