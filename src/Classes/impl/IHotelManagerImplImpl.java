@@ -250,7 +250,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			}
 			
 			if(secondName != null) {
-				if(!contains(s.getSecondName(), secondName)) {
+				if(!contains(s.getLastName(), secondName)) {
 					continue;
 				}
 			}
