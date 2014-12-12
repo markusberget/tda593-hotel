@@ -20,11 +20,18 @@ public class HotelManagerTests {
 		
 		assertTrue(hm.isStaffMemberLoggedIn(Util.adminUsername));
 		
+		// you can't login twice!
+		assertFalse(hm.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		// now add a new staff member, and try to login.
+		
 		assertTrue(hm.addStaffMember(Util.adminUsername, "alex4", "ankeborg4444", null, null,null,
 				null, null, false));
 		
 		assertTrue(hm.login("alex4", "ankeborg4444"));
 		assertTrue(hm.isStaffMemberLoggedIn("alex4"));
+		
 		
 	}
 	
