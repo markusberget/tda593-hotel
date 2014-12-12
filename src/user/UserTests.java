@@ -98,9 +98,10 @@ public class UserTests {
 	 */
 	@Test
 	public void testAddCustomerInformationToBooking() {
-		fail("Not yet implemented");
+		Classes.impl.IBookingManagementImplImpl pendingBooking = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		
 	}
-
+	
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#createPendingBooking(java.util.Date, java.util.Date, int)}.
 	 * 
