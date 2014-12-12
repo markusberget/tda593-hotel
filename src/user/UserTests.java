@@ -196,8 +196,15 @@ public class UserTests {
 				"552219", "Tomtebacken 14", false));
 		
 		assertEquals( "ankeborg4444", hm.getStaffMemberPassword("alex4"));
+		assertEquals( "Alexander", hm.getStaffMemberFirstName("alex4"));
+		assertEquals( "Lukas", hm.getStaffMemberLastName("alex4"));
+		assertEquals( "alex4@hotmail.com", hm.getStaffMemberEmail("alex4"));
+		assertEquals( "552219", hm.getStaffMemberPhoneNumber("alex4"));
+		assertEquals( "Tomtebacken 14", hm.getStaffMemberAddress("alex4"));
+		assertEquals( false, hm.isStaffMemberAdmin("alex4"));
 		
-		// TODO: next, make sure that all the data of the new user was properly saved in the system.	
+		
+		// Next, make sure that it fails when alex4 tries to add a new staff member, since he's not an admin. 	
 	}
 	
 
