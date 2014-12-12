@@ -67,6 +67,11 @@ public class HotelManagerTests {
 		assertEquals( false, hm.isStaffMemberAdmin("alex4"));
 		
 		// Next, make sure that it fails if the admin tries to add a new staff member while being logged out. 
+		assertTrue(hm.logout(Util.adminUsername));
+		
+		assertFalse(hm.addStaffMember(Util.adminUsername, "alex5", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
+				"552219", "Tomtebacken 14", false));
+		
 		
 		
 		// Next, make sure that it fails when alex4 tries to add a new staff member, since he's not an admin. 	
