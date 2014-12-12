@@ -644,4 +644,9 @@
       </ownedEnd>
     </packagedElement>
   </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_Cw_8MIHdEeSiLMRkmJ4pCA" name="RoomStatus">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Fek8wIHdEeSiLMRkmJ4pCA" name="Occupied"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_H6ciQIHdEeSiLMRkmJ4pCA" name="Available"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_KskroIHdEeSiLMRkmJ4pCA" name="Cleaning"/>
+  </packagedElement>
 </uml:Model>
