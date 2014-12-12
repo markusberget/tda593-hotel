@@ -9,6 +9,7 @@
 *.jar
 *.war
 .mtj.tmp/
+/bin/
+/master
 /model.notation
 hs_err_pid*
-/bin/
