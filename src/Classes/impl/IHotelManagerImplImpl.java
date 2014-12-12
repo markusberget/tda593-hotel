@@ -65,17 +65,23 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<Room> room;
-	private Map<String, StaffMember> staffMembers;
+	//private Map<String, StaffMember> staffMembers;
 	
 	
 	/**
 	 * If you don't know what you're doing, don't FUCKING change these methods. 
 	 */
-	private void internal_addStaffMember(StaffMember staff) {
-		
+	private void internal_addStaffMember(StaffMember newStaff) {
+		staff.add(newStaff);
 	}
-	private void internal_lookupStaffMember(String username) {
+	private StaffMember internal_lookupStaffMember(String username) {
+		for(StaffMember s : staff) {
+			if(s.getUsername().equals(username)) {
+				return s;
+			}
+		}
 		
+		return null;
 	}
 	
 	
@@ -89,7 +95,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	protected IHotelManagerImplImpl() {
 		super();
 		
-		this.staffMembers = new HashMap<String, StaffMember>();	
+		//this.staffMembers = new HashMap<String, StaffMember>();	
+		this.staff = new BasicEList<StaffMember>();
 		
 		// add an admin for testing purposes. 
 		StaffMember newStaffMember = ClassesFactoryImpl.eINSTANCE.createStaffMember();
@@ -102,7 +109,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		newStaffMember.setAddress("Aprilvägen 12");
 		newStaffMember.setAdmin(true);
 		
-		this.staffMembers.put(newStaffMember.getUsername(), newStaffMember);
+		this.internal_addStaffMember(newStaffMember);
 	}
 	
 	
@@ -159,8 +166,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean login(String username, String password) {
-		StaffMember s = this.staffMembers.get(username);
-		
+		StaffMember s = this.internal_lookupStaffMember(username);
+			
 		if(s == null) return false;
 		
 		if(s.getPassword().equals(password)) {
@@ -207,7 +214,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		newStaffMember.setAddress(address);
 		newStaffMember.setAdmin(admin);
 		
-		staffMembers.put(newStaffMember.getUsername(), newStaffMember);
+		this.internal_addStaffMember(newStaffMember);
 		return true;
 	}
 
@@ -334,7 +341,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	public EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber) {
 		EList<StaffMember> searchResult = new BasicEList<StaffMember>();
 		
-		for(StaffMember s: this.staffMembers.values()) {
+		for(StaffMember s: this.staff) {
 		
 			if(username != null) {
 				if(!contains(s.getUsername(), username)) {
@@ -381,7 +388,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public boolean isStaffMemberLoggedIn(String username) {
-		StaffMember s = this.staffMembers.get(username);
+		StaffMember s = this.internal_lookupStaffMember(username);
 		return s == null ? false : s.isLoggedIn();
 	}
 
@@ -391,7 +398,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */	
 	public boolean isStaffMemberAdmin(String username) {
-		StaffMember s = this.staffMembers.get(username);
+		StaffMember s = this.internal_lookupStaffMember(username);
 		return s == null ? false : s.isAdmin();
 	}
 
@@ -401,7 +408,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public String getStaffMemberPassword(String username) {
-		StaffMember s = this.staffMembers.get(username);
+		StaffMember s = this.internal_lookupStaffMember(username);
 		return  s == null ? null : s.getPassword();
 	}
 
@@ -411,7 +418,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public String getStaffMemberFirstName(String username) {
-		StaffMember s = this.staffMembers.get(username);
+		StaffMember s = this.internal_lookupStaffMember(username);
 		return  s == null ? null : s.getFirstName();
 	}
 
@@ -421,7 +428,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public String getStaffMemberLastName(String username) {
-		StaffMember s = this.staffMembers.get(username);
+		StaffMember s = this.internal_lookupStaffMember(username);
 		return  s == null ? null : s.getLastName();
 	}
 
@@ -431,7 +438,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public String getStaffMemberEmail(String username) {
-		StaffMember s = this.staffMembers.get(username);
+		StaffMember s = this.internal_lookupStaffMember(username);
 		return  s == null ? null : s.getEmail();
 	}
 
@@ -441,7 +448,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public String getStaffMemberPhoneNumber(String username) {
-		StaffMember s = this.staffMembers.get(username);
+		StaffMember s = this.internal_lookupStaffMember(username);
 		return  s == null ? null : s.getPhoneNumber();
 	}
 
@@ -451,7 +458,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public String getStaffMemberAddress(String username) {
-		StaffMember s = this.staffMembers.get(username);
+		StaffMember s = this.internal_lookupStaffMember(username);
 		return  s == null ? null : s.getAddress();
 
 	}
