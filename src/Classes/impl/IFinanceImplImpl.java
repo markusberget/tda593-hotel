@@ -97,10 +97,10 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	public void payBill(int bookingId) {
 		// TODO: implement this method
 		
-		Booking b = booking.getBookingById(bookingId);
+		//Booking b = booking.getBookingById(bookingId);
 		
 		int amount = calculatePayment(bookingId);
-		
+	/*	
 		if (amount > 0) {
 		
 			String customerFirstName;
@@ -110,8 +110,8 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			/* prompt user to fill in customer information here */
 			/* check validity of customer information */
 			
-			customerFirstName = "Pellefjant";
-			customerLastName = "Stenskog";
+			//customerFirstName = "Pellefjant";
+			//customerLastName = "Stenskog";
 			
 			/* if(! 	customerFirstName == b.getCustomer().getFirstName() 
 			 			&& 	customerLastName == b.getCustomer().getLastName() ) { 
@@ -123,19 +123,19 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			/* else if( selection is invoice ) { bankSendInvoice() }*/
 			/* else */
 		
-			String ccNumber, ccv, firstName, lastName;
-			int expiryMonth, expiryYear;
+			//String ccNumber, ccv, firstName, lastName;
+			//int expiryMonth, expiryYear;
 			
 			/* prompt user to fill in ccNumber:String, ccv:String, expiryMonth:int,
 			expiryYear:int, firstName:String, lastName:String */
-			
+	/*		
 			ccNumber = "1111-1111-1111-1111";
 			ccv = "345";
 			firstName = customerFirstName;
 			lastName = customerLastName;
 			expiryMonth = 12;
-			expiryYear = 16;
-			
+			expiryYear = 16;*/
+/*			
 			if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
 				return "Payment failed: Invalid credit card information";
 			}
@@ -143,7 +143,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			
 			boolean customerConfirm;
 			/* use case says: "The customer confirms the information."*/
-			
+		/*	
 			customerConfirm = true;
 			if( !customerConfirm ) { 
 				return "Payment failed"; 
@@ -160,7 +160,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 				
 		/* register payment as done */
 		
-		return "Successful payment completed!";
+	//	return "Successful payment completed!";
 		
 	}
 
