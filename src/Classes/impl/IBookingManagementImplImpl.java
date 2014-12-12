@@ -3,14 +3,18 @@
 package Classes.impl;
 
 import Classes.Booking;
+
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+
 import Classes.ClassesPackage;
 import Classes.IBookingManagementImpl;
 import Classes.Room;
@@ -34,8 +38,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	
 	// A list of rooms is used as the value in the HashMap because a customer should be
 	// able to have several rooms in a booking. The key part is the bookingID.
-	private HashMap<Integer, List<Room>> pendingRooms;
-	private HashMap<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
+	private Map<Integer, List<Room>> pendingRooms;
+	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	
 	
 	/**
