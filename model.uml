@@ -28,17 +28,6 @@
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
     </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_GA6ckHTeEeSOC7DG65-e3w" name="Charge">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_NnfzcHTeEeSOC7DG65-e3w" name="name">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Q5w1cHTeEeSOC7DG65-e3w" name="amount">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-    </ownedAttribute>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_cbOGcHTeEeSOC7DG65-e3w" name="Bill">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_eipF8HTeEeSOC7DG65-e3w" name="sum"/>
-  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_kGS7wHTeEeSOC7DG65-e3w" name="Person">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_mDQ-wHTeEeSOC7DG65-e3w" name="firstName">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -622,40 +611,6 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wPuZcnTjEeSOC7DG65-e3w" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_8IORcHTjEeSOC7DG65-e3w" name="bill_booking_1" memberEnd="_8IORcXTjEeSOC7DG65-e3w _8INqYHTjEeSOC7DG65-e3w">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_8IORcXTjEeSOC7DG65-e3w" name="bill" type="_cbOGcHTeEeSOC7DG65-e3w" association="_8IORcHTjEeSOC7DG65-e3w">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8IORcnTjEeSOC7DG65-e3w" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8IORc3TjEeSOC7DG65-e3w" value="1"/>
-      </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_8INqYHTjEeSOC7DG65-e3w" name="booking" association="_8IORcHTjEeSOC7DG65-e3w">
-        <type xmi:type="uml:Class" href="Classes.uml#_NNrFkHTbEeSOC7DG65-e3w"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_8INqYXTjEeSOC7DG65-e3w" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_8INqYnTjEeSOC7DG65-e3w" value="1"/>
-      </ownedEnd>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_HYo1wHTkEeSOC7DG65-e3w" name="charge_bill_1" memberEnd="_HYo1wXTkEeSOC7DG65-e3w _HYoOsHTkEeSOC7DG65-e3w">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_HYo1wXTkEeSOC7DG65-e3w" name="charge" type="_GA6ckHTeEeSOC7DG65-e3w" association="_HYo1wHTkEeSOC7DG65-e3w">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HYo1wnTkEeSOC7DG65-e3w"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HYo1w3TkEeSOC7DG65-e3w" value="*"/>
-      </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_HYoOsHTkEeSOC7DG65-e3w" name="bill" type="_cbOGcHTeEeSOC7DG65-e3w" association="_HYo1wHTkEeSOC7DG65-e3w">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HYoOsXTkEeSOC7DG65-e3w" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HYoOsnTkEeSOC7DG65-e3w" value="1"/>
-      </ownedEnd>
-    </packagedElement>
-  </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_Jx5okIHcEeSiLMRkmJ4pCA" name="Charge">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_N5GugYHcEeSiLMRkmJ4pCA" name="bill">
-      <type xmi:type="uml:Class" href="Classes.uml#_HebxIIHcEeSiLMRkmJ4pCA"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N5GugoHcEeSiLMRkmJ4pCA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N5Gug4HcEeSiLMRkmJ4pCA" value="1"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_m5fX4YHeEeSevLp9H7wykQ" name="bill">
-      <type xmi:type="uml:Class" href="Classes.uml#_HebxIIHcEeSiLMRkmJ4pCA"/>
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_m5fX4oHeEeSevLp9H7wykQ" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_m5fX44HeEeSevLp9H7wykQ" value="1"/>
-      <association xmi:type="uml:Association" href="Classes.uml#_m5fX4IHeEeSevLp9H7wykQ"/>
-    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_n7OFMIHfEeSMdr2cPLX2Nw" name="Banking">
     <packagedElement xmi:type="uml:Component" xmi:id="_pd1HcIHfEeSMdr2cPLX2Nw" name="BankComponent"/>
