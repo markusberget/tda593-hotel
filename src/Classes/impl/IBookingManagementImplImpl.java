@@ -6,15 +6,21 @@ import Classes.Booking;
 
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import Classes.ClassesPackage;
+import Classes.Customer;
 import Classes.IBookingManagementImpl;
 import Classes.Room;
 
@@ -23,12 +29,45 @@ import Classes.Room;
  * An implementation of the model object '<em><b>IBooking Management Impl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link Classes.impl.IBookingManagementImplImpl#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.impl.IBookingManagementImplImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link Classes.impl.IBookingManagementImplImpl#getCustomer <em>Customer</em>}</li>
+ * </ul>
  * </p>
  *
  * @generated
  */
 public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container implements IBookingManagementImpl {
 	
+	/**
+	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBooking()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Booking> booking;
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Room> room;
+	/**
+	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomer()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Customer> customer;
 	// These data structures are used for storing temporary data while performing tests.
 	public ArrayList<Booking> pendingBookings = new ArrayList<Booking>();
 	private ArrayList<Booking> confirmedBookings;
@@ -68,6 +107,42 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	@Override
 	protected EClass eStaticClass() {
 		return ClassesPackage.Literals.IBOOKING_MANAGEMENT_IMPL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Booking> getBooking() {
+		if (booking == null) {
+			booking = new EObjectWithInverseResolvingEList<Booking>(Booking.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING, ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL);
+		}
+		return booking;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Room> getRoom() {
+		if (room == null) {
+			room = new EObjectWithInverseResolvingEList<Room>(Room.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM, ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL);
+		}
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Customer> getCustomer() {
+		if (customer == null) {
+			customer = new EObjectWithInverseResolvingEList<Customer>(Customer.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER, ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL);
+		}
+		return customer;
 	}
 
 	/**
@@ -244,6 +319,125 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		booking.setBookingID();
 		pendingBookings.add(booking.getBookingID() , booking);
 		return booking.getBookingID();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoom()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCustomer()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING:
+				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
+				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
+				return ((InternalEList<?>)getCustomer()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING:
+				return getBooking();
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
+				return getRoom();
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
+				return getCustomer();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING:
+				getBooking().clear();
+				getBooking().addAll((Collection<? extends Booking>)newValue);
+				return;
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
+				getRoom().clear();
+				getRoom().addAll((Collection<? extends Room>)newValue);
+				return;
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
+				getCustomer().clear();
+				getCustomer().addAll((Collection<? extends Customer>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING:
+				getBooking().clear();
+				return;
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
+				getRoom().clear();
+				return;
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
+				getCustomer().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING:
+				return booking != null && !booking.isEmpty();
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
+				return room != null && !room.isEmpty();
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
+				return customer != null && !customer.isEmpty();
+		}
+		return super.eIsSet(featureID);
 	}
 
 	/**

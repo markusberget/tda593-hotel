@@ -78,6 +78,26 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ClassesPackage.IHOTEL_MANAGER_IMPL: {
+				IHotelManagerImpl iHotelManagerImpl = (IHotelManagerImpl)theEObject;
+				T result = caseIHotelManagerImpl(iHotelManagerImpl);
+				if (result == null) result = caseIHotelManager(iHotelManagerImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.BOOKING: {
+				Booking booking = (Booking)theEObject;
+				T result = caseBooking(booking);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.CUSTOMER: {
+				Customer customer = (Customer)theEObject;
+				T result = caseCustomer(customer);
+				if (result == null) result = caseIPerson(customer);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: {
 				IBookingManagementImpl iBookingManagementImpl = (IBookingManagementImpl)theEObject;
 				T result = caseIBookingManagementImpl(iBookingManagementImpl);
@@ -91,21 +111,9 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.BOOKING: {
-				Booking booking = (Booking)theEObject;
-				T result = caseBooking(booking);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.IFINANCE: {
-				IFinance iFinance = (IFinance)theEObject;
-				T result = caseIFinance(iFinance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.IHOTEL_MANAGER: {
-				IHotelManager iHotelManager = (IHotelManager)theEObject;
-				T result = caseIHotelManager(iHotelManager);
+			case ClassesPackage.IPERSON: {
+				IPerson iPerson = (IPerson)theEObject;
+				T result = caseIPerson(iPerson);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -116,6 +124,12 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ClassesPackage.IFINANCE: {
+				IFinance iFinance = (IFinance)theEObject;
+				T result = caseIFinance(iFinance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ClassesPackage.STAFF_MEMBER: {
 				StaffMember staffMember = (StaffMember)theEObject;
 				T result = caseStaffMember(staffMember);
@@ -123,23 +137,9 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.IPERSON: {
-				IPerson iPerson = (IPerson)theEObject;
-				T result = caseIPerson(iPerson);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.CUSTOMER: {
-				Customer customer = (Customer)theEObject;
-				T result = caseCustomer(customer);
-				if (result == null) result = caseIPerson(customer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.IHOTEL_MANAGER_IMPL: {
-				IHotelManagerImpl iHotelManagerImpl = (IHotelManagerImpl)theEObject;
-				T result = caseIHotelManagerImpl(iHotelManagerImpl);
-				if (result == null) result = caseIHotelManager(iHotelManagerImpl);
+			case ClassesPackage.IHOTEL_MANAGER: {
+				IHotelManager iHotelManager = (IHotelManager)theEObject;
+				T result = caseIHotelManager(iHotelManager);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

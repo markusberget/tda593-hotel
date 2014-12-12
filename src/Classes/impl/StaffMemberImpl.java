@@ -3,12 +3,15 @@
 package Classes.impl;
 
 import Classes.ClassesPackage;
+import Classes.IHotelManagerImpl;
 import Classes.StaffMember;
 
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
@@ -28,6 +31,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link Classes.impl.StaffMemberImpl#getUsername <em>Username</em>}</li>
  *   <li>{@link Classes.impl.StaffMemberImpl#getPassword <em>Password</em>}</li>
  *   <li>{@link Classes.impl.StaffMemberImpl#isLoggedIn <em>Is Logged In</em>}</li>
+ *   <li>{@link Classes.impl.StaffMemberImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
  * </ul>
  * </p>
  *
@@ -213,6 +217,16 @@ public class StaffMemberImpl extends MinimalEObjectImpl.Container implements Sta
 	 * @ordered
 	 */
 	protected boolean isLoggedIn = IS_LOGGED_IN_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getIHotelManagerImpl() <em>IHotel Manager Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIHotelManagerImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IHotelManagerImpl iHotelManagerImpl;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -427,6 +441,96 @@ public class StaffMemberImpl extends MinimalEObjectImpl.Container implements Sta
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public IHotelManagerImpl getIHotelManagerImpl() {
+		if (iHotelManagerImpl != null && iHotelManagerImpl.eIsProxy()) {
+			InternalEObject oldIHotelManagerImpl = (InternalEObject)iHotelManagerImpl;
+			iHotelManagerImpl = (IHotelManagerImpl)eResolveProxy(oldIHotelManagerImpl);
+			if (iHotelManagerImpl != oldIHotelManagerImpl) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, iHotelManagerImpl));
+			}
+		}
+		return iHotelManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IHotelManagerImpl basicGetIHotelManagerImpl() {
+		return iHotelManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIHotelManagerImpl(IHotelManagerImpl newIHotelManagerImpl, NotificationChain msgs) {
+		IHotelManagerImpl oldIHotelManagerImpl = iHotelManagerImpl;
+		iHotelManagerImpl = newIHotelManagerImpl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, newIHotelManagerImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIHotelManagerImpl(IHotelManagerImpl newIHotelManagerImpl) {
+		if (newIHotelManagerImpl != iHotelManagerImpl) {
+			NotificationChain msgs = null;
+			if (iHotelManagerImpl != null)
+				msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF, IHotelManagerImpl.class, msgs);
+			if (newIHotelManagerImpl != null)
+				msgs = ((InternalEObject)newIHotelManagerImpl).eInverseAdd(this, ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF, IHotelManagerImpl.class, msgs);
+			msgs = basicSetIHotelManagerImpl(newIHotelManagerImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL, newIHotelManagerImpl, newIHotelManagerImpl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL:
+				if (iHotelManagerImpl != null)
+					msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF, IHotelManagerImpl.class, msgs);
+				return basicSetIHotelManagerImpl((IHotelManagerImpl)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL:
+				return basicSetIHotelManagerImpl(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -448,6 +552,9 @@ public class StaffMemberImpl extends MinimalEObjectImpl.Container implements Sta
 				return getPassword();
 			case ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN:
 				return isLoggedIn();
+			case ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL:
+				if (resolve) return getIHotelManagerImpl();
+				return basicGetIHotelManagerImpl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -486,6 +593,9 @@ public class StaffMemberImpl extends MinimalEObjectImpl.Container implements Sta
 				return;
 			case ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN:
 				setIsLoggedIn((Boolean)newValue);
+				return;
+			case ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL:
+				setIHotelManagerImpl((IHotelManagerImpl)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -526,6 +636,9 @@ public class StaffMemberImpl extends MinimalEObjectImpl.Container implements Sta
 			case ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN:
 				setIsLoggedIn(IS_LOGGED_IN_EDEFAULT);
 				return;
+			case ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL:
+				setIHotelManagerImpl((IHotelManagerImpl)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -556,6 +669,8 @@ public class StaffMemberImpl extends MinimalEObjectImpl.Container implements Sta
 				return PASSWORD_EDEFAULT == null ? password != null : !PASSWORD_EDEFAULT.equals(password);
 			case ClassesPackage.STAFF_MEMBER__IS_LOGGED_IN:
 				return isLoggedIn != IS_LOGGED_IN_EDEFAULT;
+			case ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL:
+				return iHotelManagerImpl != null;
 		}
 		return super.eIsSet(featureID);
 	}

@@ -2,15 +2,23 @@
  */
 package Classes.impl;
 
+import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.Customer;
 
+import Classes.IBookingManagementImpl;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,6 +33,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link Classes.impl.CustomerImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getPhoneNumber <em>Phone Number</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getPersonalInfo <em>Personal Info</em>}</li>
+ *   <li>{@link Classes.impl.CustomerImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
+ *   <li>{@link Classes.impl.CustomerImpl#getBooking <em>Booking</em>}</li>
  * </ul>
  * </p>
  *
@@ -150,6 +160,26 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * @ordered
 	 */
 	protected String personalInfo = PERSONAL_INFO_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBookingManagementImpl iBookingManagementImpl;
+
+	/**
+	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBooking()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Booking> booking;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -301,6 +331,113 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public IBookingManagementImpl getIBookingManagementImpl() {
+		if (iBookingManagementImpl != null && iBookingManagementImpl.eIsProxy()) {
+			InternalEObject oldIBookingManagementImpl = (InternalEObject)iBookingManagementImpl;
+			iBookingManagementImpl = (IBookingManagementImpl)eResolveProxy(oldIBookingManagementImpl);
+			if (iBookingManagementImpl != oldIBookingManagementImpl) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
+			}
+		}
+		return iBookingManagementImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBookingManagementImpl basicGetIBookingManagementImpl() {
+		return iBookingManagementImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl, NotificationChain msgs) {
+		IBookingManagementImpl oldIBookingManagementImpl = iBookingManagementImpl;
+		iBookingManagementImpl = newIBookingManagementImpl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, newIBookingManagementImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+		if (newIBookingManagementImpl != iBookingManagementImpl) {
+			NotificationChain msgs = null;
+			if (iBookingManagementImpl != null)
+				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER, IBookingManagementImpl.class, msgs);
+			if (newIBookingManagementImpl != null)
+				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER, IBookingManagementImpl.class, msgs);
+			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL, newIBookingManagementImpl, newIBookingManagementImpl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Booking> getBooking() {
+		if (booking == null) {
+			booking = new EObjectWithInverseResolvingEList<Booking>(Booking.class, this, ClassesPackage.CUSTOMER__BOOKING, ClassesPackage.BOOKING__CUSTOMER);
+		}
+		return booking;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
+				if (iBookingManagementImpl != null)
+					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER, IBookingManagementImpl.class, msgs);
+				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
+			case ClassesPackage.CUSTOMER__BOOKING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
+				return basicSetIBookingManagementImpl(null, msgs);
+			case ClassesPackage.CUSTOMER__BOOKING:
+				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -316,6 +453,11 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return getPhoneNumber();
 			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
 				return getPersonalInfo();
+			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
+				if (resolve) return getIBookingManagementImpl();
+				return basicGetIBookingManagementImpl();
+			case ClassesPackage.CUSTOMER__BOOKING:
+				return getBooking();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -325,6 +467,7 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -345,6 +488,13 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return;
 			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
 				setPersonalInfo((String)newValue);
+				return;
+			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)newValue);
+				return;
+			case ClassesPackage.CUSTOMER__BOOKING:
+				getBooking().clear();
+				getBooking().addAll((Collection<? extends Booking>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -376,6 +526,12 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
 				setPersonalInfo(PERSONAL_INFO_EDEFAULT);
 				return;
+			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)null);
+				return;
+			case ClassesPackage.CUSTOMER__BOOKING:
+				getBooking().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -400,6 +556,10 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
 			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
 				return PERSONAL_INFO_EDEFAULT == null ? personalInfo != null : !PERSONAL_INFO_EDEFAULT.equals(personalInfo);
+			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
+				return iBookingManagementImpl != null;
+			case ClassesPackage.CUSTOMER__BOOKING:
+				return booking != null && !booking.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

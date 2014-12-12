@@ -138,4 +138,12 @@ public interface IHotelManager extends EObject {
 	 */
 	String getStaffMemberAddress(String username);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	boolean logout(String username);
+
 } // IHotelManager

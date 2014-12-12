@@ -2,29 +2,69 @@
  */
 package Classes.impl;
 
+import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
+import Classes.Room;
 import Classes.StaffMember;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>IHotel Manager Impl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link Classes.impl.IHotelManagerImplImpl#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.impl.IHotelManagerImplImpl#getStaff <em>Staff</em>}</li>
+ *   <li>{@link Classes.impl.IHotelManagerImplImpl#getRoom <em>Room</em>}</li>
+ * </ul>
  * </p>
  *
  * @generated
  */
 public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implements IHotelManagerImpl {
 
+	/**
+	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBooking()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Booking> booking;
+	/**
+	 * The cached value of the '{@link #getStaff() <em>Staff</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getStaff()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<StaffMember> staff;
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Room> room;
 	private Map<String, StaffMember> staffMembers;
 	
 	
@@ -60,6 +100,42 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	@Override
 	protected EClass eStaticClass() {
 		return ClassesPackage.Literals.IHOTEL_MANAGER_IMPL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Booking> getBooking() {
+		if (booking == null) {
+			booking = new EObjectWithInverseResolvingEList<Booking>(Booking.class, this, ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING, ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL);
+		}
+		return booking;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<StaffMember> getStaff() {
+		if (staff == null) {
+			staff = new EObjectWithInverseResolvingEList<StaffMember>(StaffMember.class, this, ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF, ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL);
+		}
+		return staff;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Room> getRoom() {
+		if (room == null) {
+			room = new EObjectWithInverseResolvingEList<Room>(Room.class, this, ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM, ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL);
+		}
+		return room;
 	}
 
 	/**
@@ -360,6 +436,136 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean logout(String username) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStaff()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoom()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING:
+				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				return ((InternalEList<?>)getStaff()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
+				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING:
+				return getBooking();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				return getStaff();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
+				return getRoom();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING:
+				getBooking().clear();
+				getBooking().addAll((Collection<? extends Booking>)newValue);
+				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				getStaff().clear();
+				getStaff().addAll((Collection<? extends StaffMember>)newValue);
+				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
+				getRoom().clear();
+				getRoom().addAll((Collection<? extends Room>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING:
+				getBooking().clear();
+				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				getStaff().clear();
+				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
+				getRoom().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING:
+				return booking != null && !booking.isEmpty();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				return staff != null && !staff.isEmpty();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
+				return room != null && !room.isEmpty();
+		}
+		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
@@ -393,6 +599,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getStaffMemberPhoneNumber((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_ADDRESS__STRING:
 				return getStaffMemberAddress((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
+				return logout((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

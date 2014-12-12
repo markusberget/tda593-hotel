@@ -3,6 +3,7 @@
 package Classes;
 
 import java.util.Date;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -22,6 +23,11 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.Booking#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.Booking#getPhoneNumber <em>Phone Number</em>}</li>
  *   <li>{@link Classes.Booking#isFullyPaid <em>Fully Paid</em>}</li>
+ *   <li>{@link Classes.Booking#getCustomer <em>Customer</em>}</li>
+ *   <li>{@link Classes.Booking#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
+ *   <li>{@link Classes.Booking#getRoom <em>Room</em>}</li>
+ *   <li>{@link Classes.Booking#getIFinanceImpl <em>IFinance Impl</em>}</li>
+ *   <li>{@link Classes.Booking#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
  * </ul>
  * </p>
  *
@@ -263,5 +269,135 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void setFullyPaid(boolean value);
+
+	/**
+	 * Returns the value of the '<em><b>Customer</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link Classes.Customer#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Customer</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Customer</em>' reference.
+	 * @see #setCustomer(Customer)
+	 * @see Classes.ClassesPackage#getBooking_Customer()
+	 * @see Classes.Customer#getBooking
+	 * @model opposite="booking" required="true" ordered="false"
+	 * @generated
+	 */
+	Customer getCustomer();
+
+	/**
+	 * Sets the value of the '{@link Classes.Booking#getCustomer <em>Customer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>Customer</em>' reference.
+	 * @see #getCustomer()
+	 * @generated
+	 */
+	void setCustomer(Customer value);
+
+	/**
+	 * Returns the value of the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link Classes.IBookingManagementImpl#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>IBooking Management Impl</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>IBooking Management Impl</em>' reference.
+	 * @see #setIBookingManagementImpl(IBookingManagementImpl)
+	 * @see Classes.ClassesPackage#getBooking_IBookingManagementImpl()
+	 * @see Classes.IBookingManagementImpl#getBooking
+	 * @model opposite="booking" required="true" ordered="false"
+	 * @generated
+	 */
+	IBookingManagementImpl getIBookingManagementImpl();
+
+	/**
+	 * Sets the value of the '{@link Classes.Booking#getIBookingManagementImpl <em>IBooking Management Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>IBooking Management Impl</em>' reference.
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 */
+	void setIBookingManagementImpl(IBookingManagementImpl value);
+
+	/**
+	 * Returns the value of the '<em><b>Room</b></em>' reference list.
+	 * The list contents are of type {@link Classes.Room}.
+	 * It is bidirectional and its opposite is '{@link Classes.Room#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Room</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Room</em>' reference list.
+	 * @see Classes.ClassesPackage#getBooking_Room()
+	 * @see Classes.Room#getBooking
+	 * @model opposite="booking" required="true" ordered="false"
+	 * @generated
+	 */
+	EList<Room> getRoom();
+
+	/**
+	 * Returns the value of the '<em><b>IFinance Impl</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link Classes.IFinanceImpl#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>IFinance Impl</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>IFinance Impl</em>' reference.
+	 * @see #setIFinanceImpl(IFinanceImpl)
+	 * @see Classes.ClassesPackage#getBooking_IFinanceImpl()
+	 * @see Classes.IFinanceImpl#getBooking
+	 * @model opposite="booking" required="true" ordered="false"
+	 * @generated
+	 */
+	IFinanceImpl getIFinanceImpl();
+
+	/**
+	 * Sets the value of the '{@link Classes.Booking#getIFinanceImpl <em>IFinance Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>IFinance Impl</em>' reference.
+	 * @see #getIFinanceImpl()
+	 * @generated
+	 */
+	void setIFinanceImpl(IFinanceImpl value);
+
+	/**
+	 * Returns the value of the '<em><b>IHotel Manager Impl</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link Classes.IHotelManagerImpl#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>IHotel Manager Impl</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>IHotel Manager Impl</em>' reference.
+	 * @see #setIHotelManagerImpl(IHotelManagerImpl)
+	 * @see Classes.ClassesPackage#getBooking_IHotelManagerImpl()
+	 * @see Classes.IHotelManagerImpl#getBooking
+	 * @model opposite="booking" required="true" ordered="false"
+	 * @generated
+	 */
+	IHotelManagerImpl getIHotelManagerImpl();
+
+	/**
+	 * Sets the value of the '{@link Classes.Booking#getIHotelManagerImpl <em>IHotel Manager Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>IHotel Manager Impl</em>' reference.
+	 * @see #getIHotelManagerImpl()
+	 * @generated
+	 */
+	void setIHotelManagerImpl(IHotelManagerImpl value);
 
 } // Booking

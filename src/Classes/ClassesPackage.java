@@ -95,13 +95,40 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__ROOM_TYPE = 2;
 
 	/**
+	 * The feature id for the '<em><b>IHotel Manager Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__IHOTEL_MANAGER_IMPL = 3;
+
+	/**
+	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__IBOOKING_MANAGEMENT_IMPL = 4;
+
+	/**
+	 * The feature id for the '<em><b>Booking</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__BOOKING = 5;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 3;
+	int ROOM_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -168,13 +195,22 @@ public interface ClassesPackage extends EPackage {
 	int ROOM_TYPE__PRICE = 4;
 
 	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__ROOM = 5;
+
+	/**
 	 * The number of structural features of the '<em>Room Type</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE_FEATURE_COUNT = 5;
+	int ROOM_TYPE_FEATURE_COUNT = 6;
 
 	/**
 	 * The number of operations of the '<em>Room Type</em>' class.
@@ -193,133 +229,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagement()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT = 3;
-
-	/**
-	 * The number of structural features of the '<em>IBooking Management</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Update Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___UPDATE_BOOKING = 0;
-
-	/**
-	 * The operation id for the '<em>Get Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___GET_BOOKING__INT = 1;
-
-	/**
-	 * The operation id for the '<em>Get Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE = 2;
-
-	/**
-	 * The operation id for the '<em>Add Room Pending</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT = 3;
-
-	/**
-	 * The operation id for the '<em>Confirm Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT = 4;
-
-	/**
-	 * The operation id for the '<em>Add Cancelation Fee</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS = 5;
-
-	/**
-	 * The operation id for the '<em>Search Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT = 6;
-
-	/**
-	 * The operation id for the '<em>Cancel Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 7;
-
-	/**
-	 * The operation id for the '<em>Check In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 8;
-
-	/**
-	 * The operation id for the '<em>Check Out</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___CHECK_OUT__INT = 9;
-
-	/**
-	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 10;
-
-	/**
-	 * The operation id for the '<em>Create Pending Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 11;
-
-	/**
-	 * The number of operations of the '<em>IBooking Management</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 12;
+	int IBOOKING_MANAGEMENT = 6;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IBookingManagementImplImpl <em>IBooking Management Impl</em>}' class.
@@ -329,133 +239,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagementImpl()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT_IMPL = 2;
-
-	/**
-	 * The number of structural features of the '<em>IBooking Management Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL_FEATURE_COUNT = IBOOKING_MANAGEMENT_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Update Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING = IBOOKING_MANAGEMENT___UPDATE_BOOKING;
-
-	/**
-	 * The operation id for the '<em>Get Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT = IBOOKING_MANAGEMENT___GET_BOOKING__INT;
-
-	/**
-	 * The operation id for the '<em>Get Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_DATE = IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE;
-
-	/**
-	 * The operation id for the '<em>Add Room Pending</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___ADD_ROOM_PENDING__INT_INT = IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT;
-
-	/**
-	 * The operation id for the '<em>Confirm Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___CONFIRM_BOOKING__INT = IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT;
-
-	/**
-	 * The operation id for the '<em>Add Cancelation Fee</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___ADD_CANCELATION_FEE__CLASS = IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS;
-
-	/**
-	 * The operation id for the '<em>Search Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT;
-
-	/**
-	 * The operation id for the '<em>Cancel Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT = IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT;
-
-	/**
-	 * The operation id for the '<em>Check In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT = IBOOKING_MANAGEMENT___CHECK_IN__INT;
-
-	/**
-	 * The operation id for the '<em>Check Out</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___CHECK_OUT__INT = IBOOKING_MANAGEMENT___CHECK_OUT__INT;
-
-	/**
-	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Create Pending Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT = IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT;
-
-	/**
-	 * The number of operations of the '<em>IBooking Management Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL_OPERATION_COUNT = IBOOKING_MANAGEMENT_OPERATION_COUNT + 0;
+	int IBOOKING_MANAGEMENT_IMPL = 5;
 
 	/**
 	 * The meta object id for the '{@link Classes.IFinance <em>IFinance</em>}' class.
@@ -465,7 +249,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinance()
 	 * @generated
 	 */
-	int IFINANCE = 5;
+	int IFINANCE = 9;
 
 	/**
 	 * The meta object id for the '{@link Classes.IHotelManager <em>IHotel Manager</em>}' class.
@@ -475,7 +259,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIHotelManager()
 	 * @generated
 	 */
-	int IHOTEL_MANAGER = 6;
+	int IHOTEL_MANAGER = 11;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.
@@ -485,7 +269,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinanceImpl()
 	 * @generated
 	 */
-	int IFINANCE_IMPL = 7;
+	int IFINANCE_IMPL = 8;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.BookingImpl <em>Booking</em>}' class.
@@ -495,169 +279,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBooking()
 	 * @generated
 	 */
-	int BOOKING = 4;
-
-	/**
-	 * The feature id for the '<em><b>Check In</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__CHECK_IN = 0;
-
-	/**
-	 * The feature id for the '<em><b>Check Out</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__CHECK_OUT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Booking ID</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__BOOKING_ID = 2;
-
-	/**
-	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__NUMBER_OF_GUESTS = 3;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__FIRST_NAME = 4;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__LAST_NAME = 5;
-
-	/**
-	 * The feature id for the '<em><b>Email</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__EMAIL = 6;
-
-	/**
-	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__PHONE_NUMBER = 7;
-
-	/**
-	 * The feature id for the '<em><b>Fully Paid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__FULLY_PAID = 8;
-
-	/**
-	 * The number of structural features of the '<em>Booking</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_FEATURE_COUNT = 9;
-
-	/**
-	 * The number of operations of the '<em>Booking</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING_OPERATION_COUNT = 0;
-
-	/**
-	 * The number of structural features of the '<em>IFinance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Calculate Payment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___CALCULATE_PAYMENT__INT = 0;
-
-	/**
-	 * The operation id for the '<em>Pay Bill</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___PAY_BILL__INT = 1;
-
-	/**
-	 * The operation id for the '<em>Validate With Bank</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = 2;
-
-	/**
-	 * The operation id for the '<em>Bank Transfer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = 3;
-
-	/**
-	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___BANK_SEND_INVOICE = 4;
-
-	/**
-	 * The number of operations of the '<em>IFinance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_OPERATION_COUNT = 5;
+	int BOOKING = 3;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Manager</em>' class.
@@ -804,76 +426,22 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = 14;
 
 	/**
+	 * The operation id for the '<em>Logout</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___LOGOUT__STRING = 15;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 15;
-
-	/**
-	 * The number of structural features of the '<em>IFinance Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL_FEATURE_COUNT = IFINANCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The operation id for the '<em>Calculate Payment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___CALCULATE_PAYMENT__INT = IFINANCE___CALCULATE_PAYMENT__INT;
-
-	/**
-	 * The operation id for the '<em>Pay Bill</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___PAY_BILL__INT = IFINANCE___PAY_BILL__INT;
-
-	/**
-	 * The operation id for the '<em>Validate With Bank</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Bank Transfer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___BANK_SEND_INVOICE = IFINANCE___BANK_SEND_INVOICE;
-
-	/**
-	 * The number of operations of the '<em>IFinance Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL_OPERATION_COUNT = IFINANCE_OPERATION_COUNT + 0;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
 
 	/**
 	 * The meta object id for the '{@link Classes.IPerson <em>IPerson</em>}' class.
@@ -883,70 +451,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIPerson()
 	 * @generated
 	 */
-	int IPERSON = 9;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPERSON__FIRST_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPERSON__LAST_NAME = 1;
-
-	/**
-	 * The feature id for the '<em><b>Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPERSON__ADDRESS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Email</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPERSON__EMAIL = 3;
-
-	/**
-	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPERSON__PHONE_NUMBER = 4;
-
-	/**
-	 * The number of structural features of the '<em>IPerson</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPERSON_FEATURE_COUNT = 5;
-
-	/**
-	 * The number of operations of the '<em>IPerson</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IPERSON_OPERATION_COUNT = 0;
+	int IPERSON = 7;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.StaffMemberImpl <em>Staff Member</em>}' class.
@@ -956,106 +461,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getStaffMember()
 	 * @generated
 	 */
-	int STAFF_MEMBER = 8;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__FIRST_NAME = IPERSON__FIRST_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__LAST_NAME = IPERSON__LAST_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__ADDRESS = IPERSON__ADDRESS;
-
-	/**
-	 * The feature id for the '<em><b>Email</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__EMAIL = IPERSON__EMAIL;
-
-	/**
-	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
-
-	/**
-	 * The feature id for the '<em><b>Admin</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__ADMIN = IPERSON_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Username</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__USERNAME = IPERSON_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Password</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__PASSWORD = IPERSON_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Is Logged In</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__IS_LOGGED_IN = IPERSON_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>Staff Member</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 4;
-
-	/**
-	 * The number of operations of the '<em>Staff Member</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
+	int STAFF_MEMBER = 10;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.CustomerImpl <em>Customer</em>}' class.
@@ -1065,79 +471,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCustomer()
 	 * @generated
 	 */
-	int CUSTOMER = 10;
-
-	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__FIRST_NAME = IPERSON__FIRST_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__LAST_NAME = IPERSON__LAST_NAME;
-
-	/**
-	 * The feature id for the '<em><b>Address</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__ADDRESS = IPERSON__ADDRESS;
-
-	/**
-	 * The feature id for the '<em><b>Email</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__EMAIL = IPERSON__EMAIL;
-
-	/**
-	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
-
-	/**
-	 * The feature id for the '<em><b>Personal Info</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__PERSONAL_INFO = IPERSON_FEATURE_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Customer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>Customer</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
+	int CUSTOMER = 4;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IHotelManagerImplImpl <em>IHotel Manager Impl</em>}' class.
@@ -1147,7 +481,34 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIHotelManagerImpl()
 	 * @generated
 	 */
-	int IHOTEL_MANAGER_IMPL = 11;
+	int IHOTEL_MANAGER_IMPL = 2;
+
+	/**
+	 * The feature id for the '<em><b>Booking</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL__BOOKING = IHOTEL_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Staff</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL__STAFF = IHOTEL_MANAGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL__ROOM = IHOTEL_MANAGER_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Manager Impl</em>' class.
@@ -1156,7 +517,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL_FEATURE_COUNT = IHOTEL_MANAGER_FEATURE_COUNT + 0;
+	int IHOTEL_MANAGER_IMPL_FEATURE_COUNT = IHOTEL_MANAGER_FEATURE_COUNT + 3;
 
 	/**
 	 * The operation id for the '<em>Login</em>' operation.
@@ -1294,6 +655,15 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_ADDRESS__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING;
 
 	/**
+	 * The operation id for the '<em>Logout</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___LOGOUT__STRING = IHOTEL_MANAGER___LOGOUT__STRING;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1301,6 +671,825 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL_OPERATION_COUNT = IHOTEL_MANAGER_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Check In</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__CHECK_IN = 0;
+
+	/**
+	 * The feature id for the '<em><b>Check Out</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__CHECK_OUT = 1;
+
+	/**
+	 * The feature id for the '<em><b>Booking ID</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__BOOKING_ID = 2;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__NUMBER_OF_GUESTS = 3;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__FIRST_NAME = 4;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__LAST_NAME = 5;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__EMAIL = 6;
+
+	/**
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__PHONE_NUMBER = 7;
+
+	/**
+	 * The feature id for the '<em><b>Fully Paid</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__FULLY_PAID = 8;
+
+	/**
+	 * The feature id for the '<em><b>Customer</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__CUSTOMER = 9;
+
+	/**
+	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__IBOOKING_MANAGEMENT_IMPL = 10;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__ROOM = 11;
+
+	/**
+	 * The feature id for the '<em><b>IFinance Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__IFINANCE_IMPL = 12;
+
+	/**
+	 * The feature id for the '<em><b>IHotel Manager Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING__IHOTEL_MANAGER_IMPL = 13;
+
+	/**
+	 * The number of structural features of the '<em>Booking</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_FEATURE_COUNT = 14;
+
+	/**
+	 * The number of operations of the '<em>Booking</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BOOKING_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__FIRST_NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__LAST_NAME = 1;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__ADDRESS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__EMAIL = 3;
+
+	/**
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON__PHONE_NUMBER = 4;
+
+	/**
+	 * The number of structural features of the '<em>IPerson</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>IPerson</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IPERSON_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__FIRST_NAME = IPERSON__FIRST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__LAST_NAME = IPERSON__LAST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__ADDRESS = IPERSON__ADDRESS;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__EMAIL = IPERSON__EMAIL;
+
+	/**
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Personal Info</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__PERSONAL_INFO = IPERSON_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__IBOOKING_MANAGEMENT_IMPL = IPERSON_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Booking</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER__BOOKING = IPERSON_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Customer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Customer</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IBooking Management</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Update Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___UPDATE_BOOKING = 0;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___GET_BOOKING__INT = 1;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE = 2;
+
+	/**
+	 * The operation id for the '<em>Add Room Pending</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT = 3;
+
+	/**
+	 * The operation id for the '<em>Confirm Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT = 4;
+
+	/**
+	 * The operation id for the '<em>Add Cancelation Fee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS = 5;
+
+	/**
+	 * The operation id for the '<em>Search Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT = 6;
+
+	/**
+	 * The operation id for the '<em>Cancel Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 7;
+
+	/**
+	 * The operation id for the '<em>Check In</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 8;
+
+	/**
+	 * The operation id for the '<em>Check Out</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___CHECK_OUT__INT = 9;
+
+	/**
+	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 10;
+
+	/**
+	 * The operation id for the '<em>Create Pending Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 11;
+
+	/**
+	 * The number of operations of the '<em>IBooking Management</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 12;
+
+	/**
+	 * The feature id for the '<em><b>Booking</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL__BOOKING = IBOOKING_MANAGEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Room</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL__ROOM = IBOOKING_MANAGEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Customer</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL__CUSTOMER = IBOOKING_MANAGEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>IBooking Management Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL_FEATURE_COUNT = IBOOKING_MANAGEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The operation id for the '<em>Update Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING = IBOOKING_MANAGEMENT___UPDATE_BOOKING;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT = IBOOKING_MANAGEMENT___GET_BOOKING__INT;
+
+	/**
+	 * The operation id for the '<em>Get Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_DATE = IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE;
+
+	/**
+	 * The operation id for the '<em>Add Room Pending</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___ADD_ROOM_PENDING__INT_INT = IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT;
+
+	/**
+	 * The operation id for the '<em>Confirm Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___CONFIRM_BOOKING__INT = IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT;
+
+	/**
+	 * The operation id for the '<em>Add Cancelation Fee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___ADD_CANCELATION_FEE__CLASS = IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS;
+
+	/**
+	 * The operation id for the '<em>Search Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT;
+
+	/**
+	 * The operation id for the '<em>Cancel Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT = IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT;
+
+	/**
+	 * The operation id for the '<em>Check In</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT = IBOOKING_MANAGEMENT___CHECK_IN__INT;
+
+	/**
+	 * The operation id for the '<em>Check Out</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___CHECK_OUT__INT = IBOOKING_MANAGEMENT___CHECK_OUT__INT;
+
+	/**
+	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Create Pending Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT = IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT;
+
+	/**
+	 * The number of operations of the '<em>IBooking Management Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL_OPERATION_COUNT = IBOOKING_MANAGEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IFinance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Calculate Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE___CALCULATE_PAYMENT__INT = 0;
+
+	/**
+	 * The operation id for the '<em>Pay Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE___PAY_BILL__INT = 1;
+
+	/**
+	 * The operation id for the '<em>Validate With Bank</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = 2;
+
+	/**
+	 * The operation id for the '<em>Bank Transfer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = 3;
+
+	/**
+	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE___BANK_SEND_INVOICE = 4;
+
+	/**
+	 * The number of operations of the '<em>IFinance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_OPERATION_COUNT = 5;
+
+	/**
+	 * The feature id for the '<em><b>Booking</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL__BOOKING = IFINANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>IFinance Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL_FEATURE_COUNT = IFINANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Calculate Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL___CALCULATE_PAYMENT__INT = IFINANCE___CALCULATE_PAYMENT__INT;
+
+	/**
+	 * The operation id for the '<em>Pay Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL___PAY_BILL__INT = IFINANCE___PAY_BILL__INT;
+
+	/**
+	 * The operation id for the '<em>Validate With Bank</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Bank Transfer</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL___BANK_SEND_INVOICE = IFINANCE___BANK_SEND_INVOICE;
+
+	/**
+	 * The number of operations of the '<em>IFinance Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL_OPERATION_COUNT = IFINANCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>First Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__FIRST_NAME = IPERSON__FIRST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__LAST_NAME = IPERSON__LAST_NAME;
+
+	/**
+	 * The feature id for the '<em><b>Address</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__ADDRESS = IPERSON__ADDRESS;
+
+	/**
+	 * The feature id for the '<em><b>Email</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__EMAIL = IPERSON__EMAIL;
+
+	/**
+	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
+
+	/**
+	 * The feature id for the '<em><b>Admin</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__ADMIN = IPERSON_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Username</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__USERNAME = IPERSON_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Password</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__PASSWORD = IPERSON_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Is Logged In</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__IS_LOGGED_IN = IPERSON_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>IHotel Manager Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER__IHOTEL_MANAGER_IMPL = IPERSON_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of structural features of the '<em>Staff Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 5;
+
+	/**
+	 * The number of operations of the '<em>Staff Member</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STAFF_MEMBER_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
 
 
 	/**
@@ -1345,6 +1534,39 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoom_RoomType();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Room#getIHotelManagerImpl <em>IHotel Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IHotel Manager Impl</em>'.
+	 * @see Classes.Room#getIHotelManagerImpl()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_IHotelManagerImpl();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Room#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IBooking Management Impl</em>'.
+	 * @see Classes.Room#getIBookingManagementImpl()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_IBookingManagementImpl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.Room#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Booking</em>'.
+	 * @see Classes.Room#getBooking()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_Booking();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.RoomType <em>Room Type</em>}'.
@@ -1412,6 +1634,17 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getRoomType_Price();
 
 	/**
+	 * Returns the meta object for the reference list '{@link Classes.RoomType#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Room</em>'.
+	 * @see Classes.RoomType#getRoom()
+	 * @see #getRoomType()
+	 * @generated
+	 */
+	EReference getRoomType_Room();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IBookingManagementImpl <em>IBooking Management Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1420,6 +1653,39 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIBookingManagementImpl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Booking</em>'.
+	 * @see Classes.IBookingManagementImpl#getBooking()
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 */
+	EReference getIBookingManagementImpl_Booking();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Room</em>'.
+	 * @see Classes.IBookingManagementImpl#getRoom()
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 */
+	EReference getIBookingManagementImpl_Room();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getCustomer <em>Customer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Customer</em>'.
+	 * @see Classes.IBookingManagementImpl#getCustomer()
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 */
+	EReference getIBookingManagementImpl_Customer();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IBookingManagement <em>IBooking Management</em>}'.
@@ -1772,6 +2038,16 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__GetStaffMemberAddress__String();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#logout(java.lang.String) <em>Logout</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Logout</em>' operation.
+	 * @see Classes.IHotelManager#logout(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__Logout__String();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1780,6 +2056,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIFinanceImpl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IFinanceImpl#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Booking</em>'.
+	 * @see Classes.IFinanceImpl#getBooking()
+	 * @see #getIFinanceImpl()
+	 * @generated
+	 */
+	EReference getIFinanceImpl_Booking();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.StaffMember <em>Staff Member</em>}'.
@@ -1834,6 +2121,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStaffMember_IsLoggedIn();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.StaffMember#getIHotelManagerImpl <em>IHotel Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IHotel Manager Impl</em>'.
+	 * @see Classes.StaffMember#getIHotelManagerImpl()
+	 * @see #getStaffMember()
+	 * @generated
+	 */
+	EReference getStaffMember_IHotelManagerImpl();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Booking <em>Booking</em>}'.
@@ -1945,6 +2243,61 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getBooking_FullyPaid();
 
 	/**
+	 * Returns the meta object for the reference '{@link Classes.Booking#getCustomer <em>Customer</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Customer</em>'.
+	 * @see Classes.Booking#getCustomer()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EReference getBooking_Customer();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Booking#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IBooking Management Impl</em>'.
+	 * @see Classes.Booking#getIBookingManagementImpl()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EReference getBooking_IBookingManagementImpl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.Booking#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Room</em>'.
+	 * @see Classes.Booking#getRoom()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EReference getBooking_Room();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Booking#getIFinanceImpl <em>IFinance Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IFinance Impl</em>'.
+	 * @see Classes.Booking#getIFinanceImpl()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EReference getBooking_IFinanceImpl();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Booking#getIHotelManagerImpl <em>IHotel Manager Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IHotel Manager Impl</em>'.
+	 * @see Classes.Booking#getIHotelManagerImpl()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EReference getBooking_IHotelManagerImpl();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IPerson <em>IPerson</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2031,6 +2384,28 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getCustomer_PersonalInfo();
 
 	/**
+	 * Returns the meta object for the reference '{@link Classes.Customer#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IBooking Management Impl</em>'.
+	 * @see Classes.Customer#getIBookingManagementImpl()
+	 * @see #getCustomer()
+	 * @generated
+	 */
+	EReference getCustomer_IBookingManagementImpl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.Customer#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Booking</em>'.
+	 * @see Classes.Customer#getBooking()
+	 * @see #getCustomer()
+	 * @generated
+	 */
+	EReference getCustomer_Booking();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IHotelManagerImpl <em>IHotel Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2039,6 +2414,39 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getIHotelManagerImpl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IHotelManagerImpl#getBooking <em>Booking</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Booking</em>'.
+	 * @see Classes.IHotelManagerImpl#getBooking()
+	 * @see #getIHotelManagerImpl()
+	 * @generated
+	 */
+	EReference getIHotelManagerImpl_Booking();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IHotelManagerImpl#getStaff <em>Staff</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Staff</em>'.
+	 * @see Classes.IHotelManagerImpl#getStaff()
+	 * @see #getIHotelManagerImpl()
+	 * @generated
+	 */
+	EReference getIHotelManagerImpl_Staff();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IHotelManagerImpl#getRoom <em>Room</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Room</em>'.
+	 * @see Classes.IHotelManagerImpl#getRoom()
+	 * @see #getIHotelManagerImpl()
+	 * @generated
+	 */
+	EReference getIHotelManagerImpl_Room();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2098,6 +2506,30 @@ public interface ClassesPackage extends EPackage {
 		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
 
 		/**
+		 * The meta object literal for the '<em><b>IHotel Manager Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__IHOTEL_MANAGER_IMPL = eINSTANCE.getRoom_IHotelManagerImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>IBooking Management Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getRoom_IBookingManagementImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__BOOKING = eINSTANCE.getRoom_Booking();
+
+		/**
 		 * The meta object literal for the '{@link Classes.impl.RoomTypeImpl <em>Room Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2148,6 +2580,14 @@ public interface ClassesPackage extends EPackage {
 		EAttribute ROOM_TYPE__PRICE = eINSTANCE.getRoomType_Price();
 
 		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM_TYPE__ROOM = eINSTANCE.getRoomType_Room();
+
+		/**
 		 * The meta object literal for the '{@link Classes.impl.IBookingManagementImplImpl <em>IBooking Management Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2156,6 +2596,30 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getIBookingManagementImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IBOOKING_MANAGEMENT_IMPL__BOOKING = eINSTANCE.getIBookingManagementImpl_Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IBOOKING_MANAGEMENT_IMPL__ROOM = eINSTANCE.getIBookingManagementImpl_Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Customer</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IBOOKING_MANAGEMENT_IMPL__CUSTOMER = eINSTANCE.getIBookingManagementImpl_Customer();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IBookingManagement <em>IBooking Management</em>}' class.
@@ -2444,6 +2908,14 @@ public interface ClassesPackage extends EPackage {
 		EOperation IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = eINSTANCE.getIHotelManager__GetStaffMemberAddress__String();
 
 		/**
+		 * The meta object literal for the '<em><b>Logout</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___LOGOUT__STRING = eINSTANCE.getIHotelManager__Logout__String();
+
+		/**
 		 * The meta object literal for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2452,6 +2924,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IFINANCE_IMPL = eINSTANCE.getIFinanceImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IFINANCE_IMPL__BOOKING = eINSTANCE.getIFinanceImpl_Booking();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.StaffMemberImpl <em>Staff Member</em>}' class.
@@ -2494,6 +2974,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STAFF_MEMBER__IS_LOGGED_IN = eINSTANCE.getStaffMember_IsLoggedIn();
+
+		/**
+		 * The meta object literal for the '<em><b>IHotel Manager Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference STAFF_MEMBER__IHOTEL_MANAGER_IMPL = eINSTANCE.getStaffMember_IHotelManagerImpl();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.BookingImpl <em>Booking</em>}' class.
@@ -2578,6 +3066,46 @@ public interface ClassesPackage extends EPackage {
 		EAttribute BOOKING__FULLY_PAID = eINSTANCE.getBooking_FullyPaid();
 
 		/**
+		 * The meta object literal for the '<em><b>Customer</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING__CUSTOMER = eINSTANCE.getBooking_Customer();
+
+		/**
+		 * The meta object literal for the '<em><b>IBooking Management Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING__IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getBooking_IBookingManagementImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING__ROOM = eINSTANCE.getBooking_Room();
+
+		/**
+		 * The meta object literal for the '<em><b>IFinance Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING__IFINANCE_IMPL = eINSTANCE.getBooking_IFinanceImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>IHotel Manager Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING__IHOTEL_MANAGER_IMPL = eINSTANCE.getBooking_IHotelManagerImpl();
+
+		/**
 		 * The meta object literal for the '{@link Classes.IPerson <em>IPerson</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2646,6 +3174,22 @@ public interface ClassesPackage extends EPackage {
 		EAttribute CUSTOMER__PERSONAL_INFO = eINSTANCE.getCustomer_PersonalInfo();
 
 		/**
+		 * The meta object literal for the '<em><b>IBooking Management Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTOMER__IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getCustomer_IBookingManagementImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference CUSTOMER__BOOKING = eINSTANCE.getCustomer_Booking();
+
+		/**
 		 * The meta object literal for the '{@link Classes.impl.IHotelManagerImplImpl <em>IHotel Manager Impl</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2654,6 +3198,30 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass IHOTEL_MANAGER_IMPL = eINSTANCE.getIHotelManagerImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IHOTEL_MANAGER_IMPL__BOOKING = eINSTANCE.getIHotelManagerImpl_Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Staff</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IHOTEL_MANAGER_IMPL__STAFF = eINSTANCE.getIHotelManagerImpl_Staff();
+
+		/**
+		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IHOTEL_MANAGER_IMPL__ROOM = eINSTANCE.getIHotelManagerImpl_Room();
 
 	}
 

@@ -2,23 +2,43 @@
  */
 package Classes.impl;
 
+import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.IFinanceImpl;
 import java.lang.reflect.InvocationTargetException;
+import java.util.Collection;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
  * An implementation of the model object '<em><b>IFinance Impl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
+ * The following features are implemented:
+ * <ul>
+ *   <li>{@link Classes.impl.IFinanceImplImpl#getBooking <em>Booking</em>}</li>
+ * </ul>
  * </p>
  *
  * @generated
  */
 public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IFinanceImpl {
+	/**
+	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBooking()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Booking> booking;
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -36,6 +56,18 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	@Override
 	protected EClass eStaticClass() {
 		return ClassesPackage.Literals.IFINANCE_IMPL;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Booking> getBooking() {
+		if (booking == null) {
+			booking = new EObjectWithInverseResolvingEList<Booking>(Booking.class, this, ClassesPackage.IFINANCE_IMPL__BOOKING, ClassesPackage.BOOKING__IFINANCE_IMPL);
+		}
+		return booking;
 	}
 
 	/**
@@ -124,6 +156,95 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__BOOKING:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__BOOKING:
+				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__BOOKING:
+				return getBooking();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public void eSet(int featureID, Object newValue) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__BOOKING:
+				getBooking().clear();
+				getBooking().addAll((Collection<? extends Booking>)newValue);
+				return;
+		}
+		super.eSet(featureID, newValue);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public void eUnset(int featureID) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__BOOKING:
+				getBooking().clear();
+				return;
+		}
+		super.eUnset(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(int featureID) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__BOOKING:
+				return booking != null && !booking.isEmpty();
+		}
+		return super.eIsSet(featureID);
 	}
 
 	/**

@@ -5,12 +5,23 @@ package Classes.impl;
 import java.util.Date;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 import Classes.Booking;
 import Classes.ClassesPackage;
+import Classes.Customer;
+import Classes.IBookingManagementImpl;
+import Classes.IFinanceImpl;
+import Classes.IHotelManagerImpl;
+import Classes.Room;
+import java.util.Collection;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,6 +39,11 @@ import Classes.ClassesPackage;
  *   <li>{@link Classes.impl.BookingImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getPhoneNumber <em>Phone Number</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#isFullyPaid <em>Fully Paid</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getCustomer <em>Customer</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getIFinanceImpl <em>IFinance Impl</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
  * </ul>
  * </p>
  *
@@ -213,6 +229,56 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @ordered
 	 */
 	protected boolean fullyPaid = FULLY_PAID_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getCustomer()
+	 * @generated
+	 * @ordered
+	 */
+	protected Customer customer;
+
+	/**
+	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBookingManagementImpl iBookingManagementImpl;
+
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Room> room;
+
+	/**
+	 * The cached value of the '{@link #getIFinanceImpl() <em>IFinance Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIFinanceImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IFinanceImpl iFinanceImpl;
+
+	/**
+	 * The cached value of the '{@link #getIHotelManagerImpl() <em>IHotel Manager Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIHotelManagerImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IHotelManagerImpl iHotelManagerImpl;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -437,6 +503,311 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public Customer getCustomer() {
+		if (customer != null && customer.eIsProxy()) {
+			InternalEObject oldCustomer = (InternalEObject)customer;
+			customer = (Customer)eResolveProxy(oldCustomer);
+			if (customer != oldCustomer) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.BOOKING__CUSTOMER, oldCustomer, customer));
+			}
+		}
+		return customer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Customer basicGetCustomer() {
+		return customer;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetCustomer(Customer newCustomer, NotificationChain msgs) {
+		Customer oldCustomer = customer;
+		customer = newCustomer;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__CUSTOMER, oldCustomer, newCustomer);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setCustomer(Customer newCustomer) {
+		if (newCustomer != customer) {
+			NotificationChain msgs = null;
+			if (customer != null)
+				msgs = ((InternalEObject)customer).eInverseRemove(this, ClassesPackage.CUSTOMER__BOOKING, Customer.class, msgs);
+			if (newCustomer != null)
+				msgs = ((InternalEObject)newCustomer).eInverseAdd(this, ClassesPackage.CUSTOMER__BOOKING, Customer.class, msgs);
+			msgs = basicSetCustomer(newCustomer, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__CUSTOMER, newCustomer, newCustomer));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBookingManagementImpl getIBookingManagementImpl() {
+		if (iBookingManagementImpl != null && iBookingManagementImpl.eIsProxy()) {
+			InternalEObject oldIBookingManagementImpl = (InternalEObject)iBookingManagementImpl;
+			iBookingManagementImpl = (IBookingManagementImpl)eResolveProxy(oldIBookingManagementImpl);
+			if (iBookingManagementImpl != oldIBookingManagementImpl) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
+			}
+		}
+		return iBookingManagementImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBookingManagementImpl basicGetIBookingManagementImpl() {
+		return iBookingManagementImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl, NotificationChain msgs) {
+		IBookingManagementImpl oldIBookingManagementImpl = iBookingManagementImpl;
+		iBookingManagementImpl = newIBookingManagementImpl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, newIBookingManagementImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+		if (newIBookingManagementImpl != iBookingManagementImpl) {
+			NotificationChain msgs = null;
+			if (iBookingManagementImpl != null)
+				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING, IBookingManagementImpl.class, msgs);
+			if (newIBookingManagementImpl != null)
+				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING, IBookingManagementImpl.class, msgs);
+			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL, newIBookingManagementImpl, newIBookingManagementImpl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Room> getRoom() {
+		if (room == null) {
+			room = new EObjectWithInverseResolvingEList.ManyInverse<Room>(Room.class, this, ClassesPackage.BOOKING__ROOM, ClassesPackage.ROOM__BOOKING);
+		}
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IFinanceImpl getIFinanceImpl() {
+		if (iFinanceImpl != null && iFinanceImpl.eIsProxy()) {
+			InternalEObject oldIFinanceImpl = (InternalEObject)iFinanceImpl;
+			iFinanceImpl = (IFinanceImpl)eResolveProxy(oldIFinanceImpl);
+			if (iFinanceImpl != oldIFinanceImpl) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.BOOKING__IFINANCE_IMPL, oldIFinanceImpl, iFinanceImpl));
+			}
+		}
+		return iFinanceImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IFinanceImpl basicGetIFinanceImpl() {
+		return iFinanceImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIFinanceImpl(IFinanceImpl newIFinanceImpl, NotificationChain msgs) {
+		IFinanceImpl oldIFinanceImpl = iFinanceImpl;
+		iFinanceImpl = newIFinanceImpl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__IFINANCE_IMPL, oldIFinanceImpl, newIFinanceImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIFinanceImpl(IFinanceImpl newIFinanceImpl) {
+		if (newIFinanceImpl != iFinanceImpl) {
+			NotificationChain msgs = null;
+			if (iFinanceImpl != null)
+				msgs = ((InternalEObject)iFinanceImpl).eInverseRemove(this, ClassesPackage.IFINANCE_IMPL__BOOKING, IFinanceImpl.class, msgs);
+			if (newIFinanceImpl != null)
+				msgs = ((InternalEObject)newIFinanceImpl).eInverseAdd(this, ClassesPackage.IFINANCE_IMPL__BOOKING, IFinanceImpl.class, msgs);
+			msgs = basicSetIFinanceImpl(newIFinanceImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__IFINANCE_IMPL, newIFinanceImpl, newIFinanceImpl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IHotelManagerImpl getIHotelManagerImpl() {
+		if (iHotelManagerImpl != null && iHotelManagerImpl.eIsProxy()) {
+			InternalEObject oldIHotelManagerImpl = (InternalEObject)iHotelManagerImpl;
+			iHotelManagerImpl = (IHotelManagerImpl)eResolveProxy(oldIHotelManagerImpl);
+			if (iHotelManagerImpl != oldIHotelManagerImpl) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, iHotelManagerImpl));
+			}
+		}
+		return iHotelManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IHotelManagerImpl basicGetIHotelManagerImpl() {
+		return iHotelManagerImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIHotelManagerImpl(IHotelManagerImpl newIHotelManagerImpl, NotificationChain msgs) {
+		IHotelManagerImpl oldIHotelManagerImpl = iHotelManagerImpl;
+		iHotelManagerImpl = newIHotelManagerImpl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, newIHotelManagerImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIHotelManagerImpl(IHotelManagerImpl newIHotelManagerImpl) {
+		if (newIHotelManagerImpl != iHotelManagerImpl) {
+			NotificationChain msgs = null;
+			if (iHotelManagerImpl != null)
+				msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING, IHotelManagerImpl.class, msgs);
+			if (newIHotelManagerImpl != null)
+				msgs = ((InternalEObject)newIHotelManagerImpl).eInverseAdd(this, ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING, IHotelManagerImpl.class, msgs);
+			msgs = basicSetIHotelManagerImpl(newIHotelManagerImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL, newIHotelManagerImpl, newIHotelManagerImpl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.BOOKING__CUSTOMER:
+				if (customer != null)
+					msgs = ((InternalEObject)customer).eInverseRemove(this, ClassesPackage.CUSTOMER__BOOKING, Customer.class, msgs);
+				return basicSetCustomer((Customer)otherEnd, msgs);
+			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
+				if (iBookingManagementImpl != null)
+					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING, IBookingManagementImpl.class, msgs);
+				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
+			case ClassesPackage.BOOKING__ROOM:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoom()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.BOOKING__IFINANCE_IMPL:
+				if (iFinanceImpl != null)
+					msgs = ((InternalEObject)iFinanceImpl).eInverseRemove(this, ClassesPackage.IFINANCE_IMPL__BOOKING, IFinanceImpl.class, msgs);
+				return basicSetIFinanceImpl((IFinanceImpl)otherEnd, msgs);
+			case ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL:
+				if (iHotelManagerImpl != null)
+					msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING, IHotelManagerImpl.class, msgs);
+				return basicSetIHotelManagerImpl((IHotelManagerImpl)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.BOOKING__CUSTOMER:
+				return basicSetCustomer(null, msgs);
+			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
+				return basicSetIBookingManagementImpl(null, msgs);
+			case ClassesPackage.BOOKING__ROOM:
+				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.BOOKING__IFINANCE_IMPL:
+				return basicSetIFinanceImpl(null, msgs);
+			case ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL:
+				return basicSetIHotelManagerImpl(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -458,6 +829,20 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return getPhoneNumber();
 			case ClassesPackage.BOOKING__FULLY_PAID:
 				return isFullyPaid();
+			case ClassesPackage.BOOKING__CUSTOMER:
+				if (resolve) return getCustomer();
+				return basicGetCustomer();
+			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
+				if (resolve) return getIBookingManagementImpl();
+				return basicGetIBookingManagementImpl();
+			case ClassesPackage.BOOKING__ROOM:
+				return getRoom();
+			case ClassesPackage.BOOKING__IFINANCE_IMPL:
+				if (resolve) return getIFinanceImpl();
+				return basicGetIFinanceImpl();
+			case ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL:
+				if (resolve) return getIHotelManagerImpl();
+				return basicGetIHotelManagerImpl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -467,6 +852,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -496,6 +882,22 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case ClassesPackage.BOOKING__FULLY_PAID:
 				setFullyPaid((Boolean)newValue);
+				return;
+			case ClassesPackage.BOOKING__CUSTOMER:
+				setCustomer((Customer)newValue);
+				return;
+			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)newValue);
+				return;
+			case ClassesPackage.BOOKING__ROOM:
+				getRoom().clear();
+				getRoom().addAll((Collection<? extends Room>)newValue);
+				return;
+			case ClassesPackage.BOOKING__IFINANCE_IMPL:
+				setIFinanceImpl((IFinanceImpl)newValue);
+				return;
+			case ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL:
+				setIHotelManagerImpl((IHotelManagerImpl)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -536,6 +938,21 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__FULLY_PAID:
 				setFullyPaid(FULLY_PAID_EDEFAULT);
 				return;
+			case ClassesPackage.BOOKING__CUSTOMER:
+				setCustomer((Customer)null);
+				return;
+			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)null);
+				return;
+			case ClassesPackage.BOOKING__ROOM:
+				getRoom().clear();
+				return;
+			case ClassesPackage.BOOKING__IFINANCE_IMPL:
+				setIFinanceImpl((IFinanceImpl)null);
+				return;
+			case ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL:
+				setIHotelManagerImpl((IHotelManagerImpl)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -566,6 +983,16 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
 			case ClassesPackage.BOOKING__FULLY_PAID:
 				return fullyPaid != FULLY_PAID_EDEFAULT;
+			case ClassesPackage.BOOKING__CUSTOMER:
+				return customer != null;
+			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
+				return iBookingManagementImpl != null;
+			case ClassesPackage.BOOKING__ROOM:
+				return room != null && !room.isEmpty();
+			case ClassesPackage.BOOKING__IFINANCE_IMPL:
+				return iFinanceImpl != null;
+			case ClassesPackage.BOOKING__IHOTEL_MANAGER_IMPL:
+				return iHotelManagerImpl != null;
 		}
 		return super.eIsSet(featureID);
 	}

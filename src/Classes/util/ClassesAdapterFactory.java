@@ -76,6 +76,18 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createRoomTypeAdapter();
 			}
 			@Override
+			public Adapter caseIHotelManagerImpl(IHotelManagerImpl object) {
+				return createIHotelManagerImplAdapter();
+			}
+			@Override
+			public Adapter caseBooking(Booking object) {
+				return createBookingAdapter();
+			}
+			@Override
+			public Adapter caseCustomer(Customer object) {
+				return createCustomerAdapter();
+			}
+			@Override
 			public Adapter caseIBookingManagementImpl(IBookingManagementImpl object) {
 				return createIBookingManagementImplAdapter();
 			}
@@ -84,36 +96,24 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createIBookingManagementAdapter();
 			}
 			@Override
-			public Adapter caseBooking(Booking object) {
-				return createBookingAdapter();
-			}
-			@Override
-			public Adapter caseIFinance(IFinance object) {
-				return createIFinanceAdapter();
-			}
-			@Override
-			public Adapter caseIHotelManager(IHotelManager object) {
-				return createIHotelManagerAdapter();
+			public Adapter caseIPerson(IPerson object) {
+				return createIPersonAdapter();
 			}
 			@Override
 			public Adapter caseIFinanceImpl(IFinanceImpl object) {
 				return createIFinanceImplAdapter();
 			}
 			@Override
+			public Adapter caseIFinance(IFinance object) {
+				return createIFinanceAdapter();
+			}
+			@Override
 			public Adapter caseStaffMember(StaffMember object) {
 				return createStaffMemberAdapter();
 			}
 			@Override
-			public Adapter caseIPerson(IPerson object) {
-				return createIPersonAdapter();
-			}
-			@Override
-			public Adapter caseCustomer(Customer object) {
-				return createCustomerAdapter();
-			}
-			@Override
-			public Adapter caseIHotelManagerImpl(IHotelManagerImpl object) {
-				return createIHotelManagerImplAdapter();
+			public Adapter caseIHotelManager(IHotelManager object) {
+				return createIHotelManagerAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
