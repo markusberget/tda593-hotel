@@ -448,6 +448,10 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1FSzYnZmEeSBRfeA9UETiw" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_1FSzY3ZmEeSBRfeA9UETiw" value="1"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_dMKB0YHcEeSiLMRkmJ4pCA" name="bill" type="_HebxIIHcEeSiLMRkmJ4pCA" association="_dMKB0IHcEeSiLMRkmJ4pCA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dMKB0oHcEeSiLMRkmJ4pCA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dMKB04HcEeSiLMRkmJ4pCA" value="1"/>
+    </ownedAttribute>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_NLnlMHTdEeSOC7DG65-e3w" name="StaffMember" visibility="package">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_PKOm8HTdEeSOC7DG65-e3w" name="admin">
@@ -543,4 +547,22 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bHcNg4HbEeSiLMRkmJ4pCA" value="1"/>
     </ownedEnd>
   </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_HebxIIHcEeSiLMRkmJ4pCA" name="Bill">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_N5GHcIHcEeSiLMRkmJ4pCA" name="charge" type="_Jx5okIHcEeSiLMRkmJ4pCA" association="_N5GugIHcEeSiLMRkmJ4pCA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N5GHcYHcEeSiLMRkmJ4pCA"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N5GHcoHcEeSiLMRkmJ4pCA" value="*"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_dMIMoIHcEeSiLMRkmJ4pCA" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_dMKB0IHcEeSiLMRkmJ4pCA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_dMIMoYHcEeSiLMRkmJ4pCA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dMIMooHcEeSiLMRkmJ4pCA" value="1"/>
+    </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_Jx5okIHcEeSiLMRkmJ4pCA" name="Charge"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_N5GugIHcEeSiLMRkmJ4pCA" memberEnd="_N5GugYHcEeSiLMRkmJ4pCA _N5GHcIHcEeSiLMRkmJ4pCA" navigableOwnedEnd="_N5GugYHcEeSiLMRkmJ4pCA">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_N5GugYHcEeSiLMRkmJ4pCA" name="bill" type="_HebxIIHcEeSiLMRkmJ4pCA" association="_N5GugIHcEeSiLMRkmJ4pCA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N5GugoHcEeSiLMRkmJ4pCA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N5Gug4HcEeSiLMRkmJ4pCA" value="1"/>
+    </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_dMKB0IHcEeSiLMRkmJ4pCA" memberEnd="_dMKB0YHcEeSiLMRkmJ4pCA _dMIMoIHcEeSiLMRkmJ4pCA"/>
 </uml:Package>
