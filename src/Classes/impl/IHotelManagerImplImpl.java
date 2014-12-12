@@ -487,12 +487,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public boolean isExistingStaffMember(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		return this.internal_lookupStaffMember(username) != null;
 	}
 	/**
 	 * <!-- begin-user-doc -->
