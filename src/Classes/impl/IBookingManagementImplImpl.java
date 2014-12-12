@@ -16,14 +16,15 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import Classes.ClassesPackage;
 import Classes.Customer;
 import Classes.IBookingManagementImpl;
 import Classes.Room;
+import Classes.RoomStatus;
 
 /**
  * <!-- begin-user-doc -->
@@ -284,18 +285,17 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 
 	/**
 	 * This method checks the customer out from the hotel, but first the status
-	 * of the booking is checked if it is payed. A customer cannot check out
-	 * before the booking is payed for.
+	 * of the booking is checked if it is paid. A customer cannot check out
+	 * before the booking is paid for.
 	 * 
 	 * @generated NOT
 	 */
 	public boolean checkOut(int bookingID) {
 		Booking booking = confirmedBookings.get(bookingID);
-		if (booking.isFullyPaid()) {		// payed is set to true after payment method has succeeded
+		if (booking.isFullyPaid()) {		// paid is set to true after payment method has succeeded
 			List<Room> rooms = occupiedRooms.remove(bookingID);
 			for(Room room : rooms) {
-				// TODO: fix this, joel.
-				//room.setStatusoccupiedreadypending(true);		// should be set to cleaning
+				room.setStatus(RoomStatus.CLEANING);
 			}
 			return true;
 		}

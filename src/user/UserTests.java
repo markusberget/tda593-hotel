@@ -97,6 +97,11 @@ public class UserTests {
 	}
 
 	/**
+	 * First tests that a (existing) pending booking has its default values for the
+	 * firstName, lastName. email, and ph instance variables. Thereafter the method
+	 * addCustomerInformationToBooking() adds desired values for these variables, which
+	 * are checked if assigned correctly.
+	 * 
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#addCustomerInformationToBooking(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
 	 */
 	@Test
