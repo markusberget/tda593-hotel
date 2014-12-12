@@ -2,7 +2,9 @@
  */
 package Classes.impl;
 
+import Classes.Bill;
 import Classes.Booking;
+import Classes.Charge;
 import Classes.ClassesFactory;
 import Classes.ClassesPackage;
 import Classes.Customer;
@@ -69,6 +71,8 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 			case ClassesPackage.CUSTOMER: return createCustomer();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: return createIBookingManagementImpl();
 			case ClassesPackage.IFINANCE_IMPL: return createIFinanceImpl();
+			case ClassesPackage.BILL: return createBill();
+			case ClassesPackage.CHARGE: return createCharge();
 			case ClassesPackage.STAFF_MEMBER: return createStaffMember();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
@@ -113,6 +117,26 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	public IFinanceImpl createIFinanceImpl() {
 		IFinanceImplImpl iFinanceImpl = new IFinanceImplImpl();
 		return iFinanceImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Bill createBill() {
+		BillImpl bill = new BillImpl();
+		return bill;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Charge createCharge() {
+		ChargeImpl charge = new ChargeImpl();
+		return charge;
 	}
 
 	/**

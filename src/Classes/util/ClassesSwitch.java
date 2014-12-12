@@ -130,6 +130,18 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ClassesPackage.BILL: {
+				Bill bill = (Bill)theEObject;
+				T result = caseBill(bill);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.CHARGE: {
+				Charge charge = (Charge)theEObject;
+				T result = caseCharge(charge);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ClassesPackage.STAFF_MEMBER: {
 				StaffMember staffMember = (StaffMember)theEObject;
 				T result = caseStaffMember(staffMember);
@@ -219,6 +231,36 @@ public class ClassesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIFinance(IFinance object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Bill</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Bill</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseBill(Bill object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Charge</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Charge</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCharge(Charge object) {
 		return null;
 	}
 

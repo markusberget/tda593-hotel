@@ -108,6 +108,14 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createIFinanceAdapter();
 			}
 			@Override
+			public Adapter caseBill(Bill object) {
+				return createBillAdapter();
+			}
+			@Override
+			public Adapter caseCharge(Charge object) {
+				return createChargeAdapter();
+			}
+			@Override
 			public Adapter caseStaffMember(StaffMember object) {
 				return createStaffMemberAdapter();
 			}
@@ -202,6 +210,34 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIFinanceAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.Bill <em>Bill</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.Bill
+	 * @generated
+	 */
+	public Adapter createBillAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.Charge <em>Charge</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.Charge
+	 * @generated
+	 */
+	public Adapter createChargeAdapter() {
 		return null;
 	}
 

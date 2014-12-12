@@ -557,12 +557,12 @@
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_dMIMooHcEeSiLMRkmJ4pCA" value="1"/>
     </ownedAttribute>
   </packagedElement>
-  <packagedElement xmi:type="uml:Class" xmi:id="_Jx5okIHcEeSiLMRkmJ4pCA" name="Charge"/>
-  <packagedElement xmi:type="uml:Association" xmi:id="_N5GugIHcEeSiLMRkmJ4pCA" memberEnd="_N5GugYHcEeSiLMRkmJ4pCA _N5GHcIHcEeSiLMRkmJ4pCA" navigableOwnedEnd="_N5GugYHcEeSiLMRkmJ4pCA">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_N5GugYHcEeSiLMRkmJ4pCA" name="bill" type="_HebxIIHcEeSiLMRkmJ4pCA" association="_N5GugIHcEeSiLMRkmJ4pCA">
+  <packagedElement xmi:type="uml:Class" xmi:id="_Jx5okIHcEeSiLMRkmJ4pCA" name="Charge">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_N5GugYHcEeSiLMRkmJ4pCA" name="bill" type="_HebxIIHcEeSiLMRkmJ4pCA" association="_N5GugIHcEeSiLMRkmJ4pCA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_N5GugoHcEeSiLMRkmJ4pCA" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_N5Gug4HcEeSiLMRkmJ4pCA" value="1"/>
-    </ownedEnd>
+    </ownedAttribute>
   </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_N5GugIHcEeSiLMRkmJ4pCA" memberEnd="_N5GugYHcEeSiLMRkmJ4pCA _N5GHcIHcEeSiLMRkmJ4pCA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_dMKB0IHcEeSiLMRkmJ4pCA" memberEnd="_dMKB0YHcEeSiLMRkmJ4pCA _dMIMoIHcEeSiLMRkmJ4pCA"/>
 </uml:Package>
