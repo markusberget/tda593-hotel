@@ -170,6 +170,11 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			
 		if(s == null) return false;
 		
+		if(s.isLoggedIn()) {
+			// can't login twice! 
+			return false;
+		}
+		
 		if(s.getPassword().equals(password)) {
 			s.setIsLoggedIn(true);
 			return true;
