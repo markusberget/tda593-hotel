@@ -272,6 +272,16 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public boolean changeStatusOfRoom(int roomId, String status) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public boolean changeStatusOfRoom(int roomId, Enumerator status) {
@@ -592,8 +602,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return isPasswordSecure((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
 				return isValidUsername((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR:
-				return changeStatusOfRoom((Integer)arguments.get(0), (Enumerator)arguments.get(1));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:
+				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES:
 				return getPossibleRoomStatuses();
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING:

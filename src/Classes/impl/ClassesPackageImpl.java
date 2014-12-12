@@ -2,9 +2,7 @@
  */
 package Classes.impl;
 
-import Classes.Bill;
 import Classes.Booking;
-import Classes.Charge;
 import Classes.ClassesFactory;
 import Classes.ClassesPackage;
 import Classes.Customer;
@@ -70,20 +68,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * @generated
 	 */
 	private EClass iFinanceEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass billEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass chargeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -536,51 +520,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBill() {
-		return billEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBill_Charge() {
-		return (EReference)billEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getBill_Booking() {
-		return (EReference)billEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getCharge() {
-		return chargeEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getCharge_Bill() {
-		return (EReference)chargeEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EClass getIHotelManager() {
 		return iHotelManagerEClass;
 	}
@@ -626,7 +565,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__ChangeStatusOfRoom__int_Enumerator() {
+	public EOperation getIHotelManager__ChangeStatusOfRoom__int_String() {
 		return iHotelManagerEClass.getEOperations().get(4);
 	}
 
@@ -941,17 +880,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBooking_Bill() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(13);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EReference getBooking_IHotelManagerImpl() {
-		return (EReference)bookingEClass.getEStructuralFeatures().get(14);
+		return (EReference)bookingEClass.getEStructuralFeatures().get(13);
 	}
 
 	/**
@@ -1142,7 +1072,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEReference(bookingEClass, BOOKING__IBOOKING_MANAGEMENT_IMPL);
 		createEReference(bookingEClass, BOOKING__ROOM);
 		createEReference(bookingEClass, BOOKING__IFINANCE_IMPL);
-		createEReference(bookingEClass, BOOKING__BILL);
 		createEReference(bookingEClass, BOOKING__IHOTEL_MANAGER_IMPL);
 
 		customerEClass = createEClass(CUSTOMER);
@@ -1186,13 +1115,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iFinanceEClass, IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING);
 		createEOperation(iFinanceEClass, IFINANCE___BANK_SEND_INVOICE);
 
-		billEClass = createEClass(BILL);
-		createEReference(billEClass, BILL__CHARGE);
-		createEReference(billEClass, BILL__BOOKING);
-
-		chargeEClass = createEClass(CHARGE);
-		createEReference(chargeEClass, CHARGE__BILL);
-
 		staffMemberEClass = createEClass(STAFF_MEMBER);
 		createEAttribute(staffMemberEClass, STAFF_MEMBER__ADMIN);
 		createEAttribute(staffMemberEClass, STAFF_MEMBER__USERNAME);
@@ -1205,7 +1127,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_PASSWORD_SECURE__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_VALID_USERNAME__STRING);
-		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ENUMERATOR);
+		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING);
@@ -1294,7 +1216,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEReference(getBooking_IBookingManagementImpl(), this.getIBookingManagementImpl(), this.getIBookingManagementImpl_Booking(), "iBookingManagementImpl", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Room(), this.getRoom(), this.getRoom_Booking(), "room", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_IFinanceImpl(), this.getIFinanceImpl(), this.getIFinanceImpl_Booking(), "iFinanceImpl", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBooking_Bill(), this.getBill(), this.getBill_Booking(), "bill", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_IHotelManagerImpl(), this.getIHotelManagerImpl(), this.getIHotelManagerImpl_Booking(), "iHotelManagerImpl", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1393,13 +1314,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		initEOperation(getIFinance__BankSendInvoice(), null, "bankSendInvoice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBill_Charge(), this.getCharge(), this.getCharge_Bill(), "charge", null, 0, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBill_Booking(), this.getBooking(), this.getBooking_Bill(), "booking", null, 1, 1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(chargeEClass, Charge.class, "Charge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCharge_Bill(), this.getBill(), this.getBill_Charge(), "bill", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
 		initEClass(staffMemberEClass, StaffMember.class, "StaffMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStaffMember_Admin(), theTypesPackage.getBoolean(), "admin", null, 1, 1, StaffMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getStaffMember_Username(), theTypesPackage.getString(), "username", null, 1, 1, StaffMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1430,9 +1344,9 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIHotelManager__IsValidUsername__String(), ecorePackage.getEBoolean(), "isValidUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelManager__ChangeStatusOfRoom__int_Enumerator(), ecorePackage.getEBoolean(), "changeStatusOfRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelManager__ChangeStatusOfRoom__int_String(), ecorePackage.getEBoolean(), "changeStatusOfRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomId", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEEnumerator(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIHotelManager__GetPossibleRoomStatuses(), ecorePackage.getEEList(), "getPossibleRoomStatuses", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
