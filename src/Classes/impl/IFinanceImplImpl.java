@@ -75,10 +75,14 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public int calculatePayment(int bookingID) {
-		// TODO: implement a method to find Booking by ID.
+	public int calculatePayment(int bookingId) {
 		
-		//Booking booking = findBooking(bookingId);
+		// int sum = 0;
+		// for (Charge charge : this.booking.getBookingById(bookingId).getBill().getCharges()) {
+		//			sum += charge;
+		// }
+		// return sum
+		
 		
 		// TODO: the booking object doesn't have any room(s)
 		
@@ -90,38 +94,73 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void payBill(int bookingID) {
+	public void payBill(int bookingId) {
 		// TODO: implement this method
 		
-		int amount = calculatePayment(bookingID);
+		Booking b = booking.getBookingById(bookingId);
+		
+		int amount = calculatePayment(bookingId);
 		
 		if (amount > 0) {
 		
+			String customerFirstName;
+			String customerLastName;
+			
+			
 			/* prompt user to fill in customer information here */
 			/* check validity of customer information */
-			/* if(!isValid()) { failed payment }*/
+			
+			customerFirstName = "Pellefjant";
+			customerLastName = "Stenskog";
+			
+			/* if(! 	customerFirstName == b.getCustomer().getFirstName() 
+			 			&& 	customerLastName == b.getCustomer().getLastName() ) { 
+			 				return "Payment failed: customer information invalid" 
+			}*/
 			
 			/* prompt user to select payment method */		
-			/* if( no selection ) { failed payment }*/
+			/* if( no selection ) { return "Payment failed: No payment option was selected" }*/
 			/* else if( selection is invoice ) { bankSendInvoice() }*/
 			/* else */
 		
+			String ccNumber, ccv, firstName, lastName;
+			int expiryMonth, expiryYear;
+			
 			/* prompt user to fill in ccNumber:String, ccv:String, expiryMonth:int,
 			expiryYear:int, firstName:String, lastName:String */
-			//if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
-				/* failed payment */
-			//}
 			
+			ccNumber = "1111-1111-1111-1111";
+			ccv = "345";
+			firstName = customerFirstName;
+			lastName = customerLastName;
+			expiryMonth = 12;
+			expiryYear = 16;
+			
+			if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
+				return "Payment failed: Invalid credit card information"
+			}
+			
+			
+			boolean customerConfirm;
 			/* use case says: "The customer confirms the information."*/
-			/* if( no confirmation ) { failed payment }*/
+			
+			customerConfirm = true;
+			if( !customerConfirm ) { 
+				return "Payment failed"; 
+			}
 
-			//bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
-			/* if( bank says payment failed ) { failed payment }*/
+			boolean bankTransferSuccess;
+			
+			bankTransferSuccess = bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+			if( !bankTransferSuccess ) { 
+				return "Payment failed: Something went wrong with bank transfer";
+			}
 			
 		}
 				
 		/* register payment as done */
-		/* show confirmation to user */
+		
+		return "Successful payment completed!";
 		
 	}
 
