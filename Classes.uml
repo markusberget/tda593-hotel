@@ -333,6 +333,22 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_JWMFUIHOEeSthJVoxiOn-Q" name="getStaffMemberEmail">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_JWMFUYHOEeSthJVoxiOn-Q" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_JWMFUoHOEeSthJVoxiOn-Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+    </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_L80wYIHOEeSthJVoxiOn-Q" name="getStaffMemberPhoneNumber">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_L80wYYHOEeSthJVoxiOn-Q" name="username">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_L80wYoHOEeSthJVoxiOn-Q" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_fOOUkHn3EeSXl-11lZMmcA" memberEnd="_fOOUkXn3EeSXl-11lZMmcA _fOMfYHn3EeSXl-11lZMmcA">
     <ownedEnd xmi:type="uml:Property" xmi:id="_fOOUkXn3EeSXl-11lZMmcA" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_fOOUkHn3EeSXl-11lZMmcA">
