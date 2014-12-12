@@ -337,23 +337,22 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getStaffMemberPhoneNumber(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StaffMember s = this.staffMembers.get(username);
+		return  s == null ? null : s.getPhoneNumber();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getStaffMemberAddress(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StaffMember s = this.staffMembers.get(username);
+		return  s == null ? null : s.getAddress();
+
 	}
 
 	/**
