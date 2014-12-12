@@ -307,23 +307,21 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getStaffMemberFirstName(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StaffMember s = this.staffMembers.get(username);
+		return  s == null ? null : s.getFirstName();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public String getStaffMemberLastName(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StaffMember s = this.staffMembers.get(username);
+		return  s == null ? null : s.getLastName();
 	}
 
 	/**
@@ -332,9 +330,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public String getStaffMemberEmail(String username) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+		StaffMember s = this.staffMembers.get(username);
+		return  s == null ? null : s.getEmail();
 	}
 
 	/**
