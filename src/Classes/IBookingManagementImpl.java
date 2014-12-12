@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link Classes.IBookingManagementImpl#getBooking <em>Booking</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link Classes.IBookingManagementImpl#getPendingBookings <em>Pending Bookings</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getCustomer <em>Customer</em>}</li>
  * </ul>
  * </p>
@@ -58,6 +59,22 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	 * @generated
 	 */
 	EList<Room> getRoom();
+
+	/**
+	 * Returns the value of the '<em><b>Pending Bookings</b></em>' reference list.
+	 * The list contents are of type {@link Classes.Booking}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Pending Bookings</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Pending Bookings</em>' reference list.
+	 * @see Classes.ClassesPackage#getIBookingManagementImpl_PendingBookings()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Booking> getPendingBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Customer</b></em>' reference list.

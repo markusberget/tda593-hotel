@@ -85,6 +85,8 @@
         upperBound="-1" eType="#//Booking" eOpposite="#//Booking/iBookingManagementImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
         eType="#//Room"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="pendingBookings" ordered="false"
+        upperBound="-1" eType="#//Booking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"
         upperBound="-1" eType="#//Customer" eOpposite="#//Customer/iBookingManagementImpl"/>
   </eClassifiers>

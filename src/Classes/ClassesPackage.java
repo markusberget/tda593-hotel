@@ -1115,13 +1115,22 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT_IMPL__ROOM = IBOOKING_MANAGEMENT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Pending Bookings</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL__PENDING_BOOKINGS = IBOOKING_MANAGEMENT_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Customer</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL__CUSTOMER = IBOOKING_MANAGEMENT_FEATURE_COUNT + 2;
+	int IBOOKING_MANAGEMENT_IMPL__CUSTOMER = IBOOKING_MANAGEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>IBooking Management Impl</em>' class.
@@ -1130,7 +1139,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL_FEATURE_COUNT = IBOOKING_MANAGEMENT_FEATURE_COUNT + 3;
+	int IBOOKING_MANAGEMENT_IMPL_FEATURE_COUNT = IBOOKING_MANAGEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Update Booking</em>' operation.
@@ -1759,6 +1768,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIBookingManagementImpl_Room();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getPendingBookings <em>Pending Bookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Pending Bookings</em>'.
+	 * @see Classes.IBookingManagementImpl#getPendingBookings()
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 */
+	EReference getIBookingManagementImpl_PendingBookings();
 
 	/**
 	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getCustomer <em>Customer</em>}'.
@@ -2762,6 +2782,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IBOOKING_MANAGEMENT_IMPL__ROOM = eINSTANCE.getIBookingManagementImpl_Room();
+
+		/**
+		 * The meta object literal for the '<em><b>Pending Bookings</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IBOOKING_MANAGEMENT_IMPL__PENDING_BOOKINGS = eINSTANCE.getIBookingManagementImpl_PendingBookings();
 
 		/**
 		 * The meta object literal for the '<em><b>Customer</b></em>' reference list feature.

@@ -34,6 +34,7 @@ import Classes.Room;
  * <ul>
  *   <li>{@link Classes.impl.IBookingManagementImplImpl#getBooking <em>Booking</em>}</li>
  *   <li>{@link Classes.impl.IBookingManagementImplImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link Classes.impl.IBookingManagementImplImpl#getPendingBookings <em>Pending Bookings</em>}</li>
  *   <li>{@link Classes.impl.IBookingManagementImplImpl#getCustomer <em>Customer</em>}</li>
  * </ul>
  * </p>
@@ -60,6 +61,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Room> room;
+	// These data structures are used for storing temporary data while performing tests.
+	public ArrayList<Booking> pendingBookings = new ArrayList<Booking>();
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -69,8 +72,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Customer> customer;
-	// These data structures are used for storing temporary data while performing tests.
-	public ArrayList<Booking> pendingBookings = new ArrayList<Booking>();
 	private ArrayList<Booking> confirmedBookings;
 	private ArrayList<Room> availableRooms;
 	private ArrayList<Booking> bookingHistory;
@@ -132,6 +133,18 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			room = new EObjectResolvingEList<Room>(Room.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM);
 		}
 		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EList<Booking> getPendingBookings() {
+		if (pendingBookings == null) {
+			pendingBookings = new EObjectResolvingEList<Booking>(Booking.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__PENDING_BOOKINGS);
+		}
+		return pendingBookings;
 	}
 
 	/**
@@ -371,6 +384,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				return getBooking();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
 				return getRoom();
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__PENDING_BOOKINGS:
+				return getPendingBookings();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
 				return getCustomer();
 		}
@@ -394,6 +409,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				getRoom().clear();
 				getRoom().addAll((Collection<? extends Room>)newValue);
 				return;
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__PENDING_BOOKINGS:
+				getPendingBookings().clear();
+				getPendingBookings().addAll((Collection<? extends Booking>)newValue);
+				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
 				getCustomer().clear();
 				getCustomer().addAll((Collection<? extends Customer>)newValue);
@@ -416,6 +435,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
 				getRoom().clear();
 				return;
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__PENDING_BOOKINGS:
+				getPendingBookings().clear();
+				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
 				getCustomer().clear();
 				return;
@@ -435,6 +457,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				return booking != null && !booking.isEmpty();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
 				return room != null && !room.isEmpty();
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__PENDING_BOOKINGS:
+				return pendingBookings != null && !pendingBookings.isEmpty();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
 				return customer != null && !customer.isEmpty();
 		}
