@@ -195,6 +195,8 @@ public class UserTests {
 		assertTrue(hm.addStaffMember(Util.adminUsername, "alex4", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
 				"552219", "Tomtebacken 14", false));
 		
+		assertEquals( "ankeborg4444", hm.getStaffMemberPassword("alex4"));
+		
 		// TODO: next, make sure that all the data of the new user was properly saved in the system.	
 	}
 	
