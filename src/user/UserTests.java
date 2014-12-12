@@ -1,6 +1,7 @@
 package user;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -8,6 +9,8 @@ import java.util.Date;
 
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import Classes.Customer;
 
 
 /**
@@ -98,8 +101,19 @@ public class UserTests {
 	 */
 	@Test
 	public void testAddCustomerInformationToBooking() {
+		int bookingID = 5;
+		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
 		Classes.impl.IBookingManagementImplImpl pendingBooking = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-		
+		Customer customer = pendingBooking.pendingBookings.get(bookingID).getCustomer();
+		assertNull(customer.getFirstName());
+		assertNull(customer.getLastName());
+		assertNull(customer.getEmail());
+		assertNull(customer.getPhoneNumber());
+		pendingBooking.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
+		assertEquals(firstName, customer.getFirstName());
+		assertEquals(lastName, customer.getLastName());
+		assertEquals(email, customer.getEmail());
+		assertEquals(ph, customer.getPhoneNumber());
 	}
 	
 	/**
