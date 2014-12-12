@@ -3,6 +3,7 @@
   <packagedElement xmi:type="uml:Component" xmi:id="_FzXYMHO_EeSgC_3iHN4p8A" name="BankComponent"/>
   <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_FzX_QHO_EeSgC_3iHN4p8A" name="Realization1" client="_FzXYMHO_EeSgC_3iHN4p8A" supplier="_FzYmUXO_EeSgC_3iHN4p8A" contract="_FzYmUXO_EeSgC_3iHN4p8A"/>
   <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_FzYmUHO_EeSgC_3iHN4p8A" name="Realization0" client="_FzXYMHO_EeSgC_3iHN4p8A" supplier="_FzZ0cHO_EeSgC_3iHN4p8A" contract="_FzZ0cHO_EeSgC_3iHN4p8A"/>
+  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_RH_KQHsWEeSORuI72ssS0A" name="Realization3" client="_FzXYMHO_EeSgC_3iHN4p8A" supplier="_FzYmUXO_EeSgC_3iHN4p8A" contract="_FzYmUXO_EeSgC_3iHN4p8A"/>
   <packagedElement xmi:type="uml:Interface" xmi:id="_FzYmUXO_EeSgC_3iHN4p8A" name="AdministratorProvides">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_FzYmUnO_EeSgC_3iHN4p8A" name="makeDeposit">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_FzYmU3O_EeSgC_3iHN4p8A" name="ccNumber">
@@ -152,5 +153,4 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_M5r90HsWEeSORuI72ssS0A" name="Realization2" client="_FzXYMHO_EeSgC_3iHN4p8A" supplier="_FzZ0cHO_EeSgC_3iHN4p8A" contract="_FzZ0cHO_EeSgC_3iHN4p8A"/>
-  <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_RH_KQHsWEeSORuI72ssS0A" name="Realization3" client="_FzXYMHO_EeSgC_3iHN4p8A" supplier="_FzYmUXO_EeSgC_3iHN4p8A" contract="_FzYmUXO_EeSgC_3iHN4p8A"/>
 </uml:Model>
