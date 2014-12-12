@@ -759,13 +759,58 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = 9;
 
 	/**
+	 * The operation id for the '<em>Get Staff Member First Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING = 10;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Last Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING = 11;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING = 12;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Phone Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = 13;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Address</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = 14;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 10;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 15;
 
 	/**
 	 * The number of structural features of the '<em>IFinance Impl</em>' class.
@@ -1204,6 +1249,51 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PASSWORD__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING;
 
 	/**
+	 * The operation id for the '<em>Get Staff Member First Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_FIRST_NAME__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Last Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_LAST_NAME__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_EMAIL__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Phone Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Address</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_ADDRESS__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1630,6 +1720,56 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIHotelManager__GetStaffMemberPassword__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#getStaffMemberFirstName(java.lang.String) <em>Get Staff Member First Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Staff Member First Name</em>' operation.
+	 * @see Classes.IHotelManager#getStaffMemberFirstName(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__GetStaffMemberFirstName__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#getStaffMemberLastName(java.lang.String) <em>Get Staff Member Last Name</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Staff Member Last Name</em>' operation.
+	 * @see Classes.IHotelManager#getStaffMemberLastName(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__GetStaffMemberLastName__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#getStaffMemberEmail(java.lang.String) <em>Get Staff Member Email</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Staff Member Email</em>' operation.
+	 * @see Classes.IHotelManager#getStaffMemberEmail(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__GetStaffMemberEmail__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#getStaffMemberPhoneNumber(java.lang.String) <em>Get Staff Member Phone Number</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Staff Member Phone Number</em>' operation.
+	 * @see Classes.IHotelManager#getStaffMemberPhoneNumber(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__GetStaffMemberPhoneNumber__String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#getStaffMemberAddress(java.lang.String) <em>Get Staff Member Address</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Staff Member Address</em>' operation.
+	 * @see Classes.IHotelManager#getStaffMemberAddress(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__GetStaffMemberAddress__String();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
@@ -2262,6 +2402,46 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = eINSTANCE.getIHotelManager__GetStaffMemberPassword__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Staff Member First Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING = eINSTANCE.getIHotelManager__GetStaffMemberFirstName__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Staff Member Last Name</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING = eINSTANCE.getIHotelManager__GetStaffMemberLastName__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Staff Member Email</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING = eINSTANCE.getIHotelManager__GetStaffMemberEmail__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Staff Member Phone Number</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = eINSTANCE.getIHotelManager__GetStaffMemberPhoneNumber__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Staff Member Address</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = eINSTANCE.getIHotelManager__GetStaffMemberAddress__String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.

@@ -98,4 +98,44 @@ public interface IHotelManager extends EObject {
 	 */
 	String getStaffMemberPassword(String username);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	String getStaffMemberFirstName(String username);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	String getStaffMemberLastName(String username);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	String getStaffMemberEmail(String username);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	String getStaffMemberPhoneNumber(String username);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
+	 * @generated
+	 */
+	String getStaffMemberAddress(String username);
+
 } // IHotelManager
