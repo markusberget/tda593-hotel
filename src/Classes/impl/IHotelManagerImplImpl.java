@@ -9,8 +9,6 @@ import Classes.Room;
 import Classes.StaffMember;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
-import java.util.HashMap;
-import java.util.Map;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
@@ -491,6 +489,16 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public boolean isExistingStaffMember(String username) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -645,6 +653,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getStaffMemberAddress((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
 				return logout((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_EXISTING_STAFF_MEMBER__STRING:
+				return isExistingStaffMember((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

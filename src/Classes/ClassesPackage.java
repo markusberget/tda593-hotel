@@ -427,13 +427,22 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___LOGOUT__STRING = 15;
 
 	/**
+	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 16;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 17;
 
 	/**
 	 * The meta object id for the '{@link Classes.IPerson <em>IPerson</em>}' class.
@@ -654,6 +663,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___LOGOUT__STRING = IHOTEL_MANAGER___LOGOUT__STRING;
+
+	/**
+	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___IS_EXISTING_STAFF_MEMBER__STRING = IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
@@ -2205,6 +2223,16 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__Logout__String();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#isExistingStaffMember(java.lang.String) <em>Is Existing Staff Member</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Is Existing Staff Member</em>' operation.
+	 * @see Classes.IHotelManager#isExistingStaffMember(java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__IsExistingStaffMember__String();
+
+	/**
 	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3136,6 +3164,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___LOGOUT__STRING = eINSTANCE.getIHotelManager__Logout__String();
+
+		/**
+		 * The meta object literal for the '<em><b>Is Existing Staff Member</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = eINSTANCE.getIHotelManager__IsExistingStaffMember__String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.
