@@ -65,7 +65,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<Room> room;
-	//private Map<String, StaffMember> staffMembers;
+	private Map<String, StaffMember> staffMembers;
 	
 	
 	/**
