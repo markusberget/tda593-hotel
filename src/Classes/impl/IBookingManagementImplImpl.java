@@ -191,7 +191,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	@SuppressWarnings("unchecked")
 	public int addRoomPending(int room, int bookingID) {
 		Room chosenRoom = availableRooms.remove(room);
-		chosenRoom.setStatusoccupiedreadypending(true);		// should be set to pending
+		
+		// TODO: fix this, joel. 
+		//chosenRoom.setStatusoccupiedreadypending(true);		// should be set to pending
 		pendingRooms.put(bookingID, (List<Room>) chosenRoom);
 		return bookingID;
 	}
@@ -259,7 +261,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		if (booking != null) {
 			List<Room> rooms = occupiedRooms.get(bookingID);
 			for(Room room : rooms) {
-				room.setStatusoccupiedreadypending(true);		// should be set to occupied
+				// TODO: fix this, joel.
+				//room.setStatusoccupiedreadypending(true);		// should be set to occupied
 			}
 			return true;
 		}
@@ -278,7 +281,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		if (booking.isFullyPaid()) {		// payed is set to true after payment method has succeeded
 			List<Room> rooms = occupiedRooms.remove(bookingID);
 			for(Room room : rooms) {
-				room.setStatusoccupiedreadypending(true);		// should be set to cleaning
+				// TODO: fix this, joel.
+				//room.setStatusoccupiedreadypending(true);		// should be set to cleaning
 			}
 			return true;
 		}

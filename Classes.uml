@@ -31,6 +31,10 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bHaYUYHbEeSiLMRkmJ4pCA"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bHaYUoHbEeSiLMRkmJ4pCA" value="*"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_Ly3EoIHlEeS837TtIXY58g" name="pendingBookings" type="_NNrFkHTbEeSOC7DG65-e3w" association="_Ly3rsIHlEeS837TtIXY58g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ly3EoYHlEeS837TtIXY58g"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ly3EooHlEeS837TtIXY58g" value="*"/>
+    </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_tf2jcHZPEeSiQcRa0VNXAQ" client="_queoAHZPEeSiQcRa0VNXAQ" supplier="_d2I54HYeEeS6mLi5FsOguA" contract="_d2I54HYeEeS6mLi5FsOguA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_d2I54HYeEeS6mLi5FsOguA" name="IBookingManagement">
@@ -567,5 +571,11 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9ksLMoHjEeS837TtIXY58g" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9ksLM4HjEeS837TtIXY58g" value="1"/>
     </ownedAttribute>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_Ly3rsIHlEeS837TtIXY58g" name="pendingBooking" memberEnd="_Ly3rsYHlEeS837TtIXY58g _Ly3EoIHlEeS837TtIXY58g">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_Ly3rsYHlEeS837TtIXY58g" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_Ly3rsIHlEeS837TtIXY58g">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Ly3rsoHlEeS837TtIXY58g" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Ly3rs4HlEeS837TtIXY58g" value="1"/>
+    </ownedEnd>
   </packagedElement>
 </uml:Package>
