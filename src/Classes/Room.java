@@ -17,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link Classes.Room#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link Classes.Room#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
- *   <li>{@link Classes.Room#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.Room#getBooking <em>Booking</em>}</li>
  * </ul>
  * </p>
@@ -135,34 +134,6 @@ public interface Room extends EObject {
 	 * @generated
 	 */
 	void setIHotelManagerImpl(IHotelManagerImpl value);
-
-	/**
-	 * Returns the value of the '<em><b>IBooking Management Impl</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link Classes.IBookingManagementImpl#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>IBooking Management Impl</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>IBooking Management Impl</em>' reference.
-	 * @see #setIBookingManagementImpl(IBookingManagementImpl)
-	 * @see Classes.ClassesPackage#getRoom_IBookingManagementImpl()
-	 * @see Classes.IBookingManagementImpl#getRoom
-	 * @model opposite="room" required="true" ordered="false"
-	 * @generated
-	 */
-	IBookingManagementImpl getIBookingManagementImpl();
-
-	/**
-	 * Sets the value of the '{@link Classes.Room#getIBookingManagementImpl <em>IBooking Management Impl</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>IBooking Management Impl</em>' reference.
-	 * @see #getIBookingManagementImpl()
-	 * @generated
-	 */
-	void setIBookingManagementImpl(IBookingManagementImpl value);
 
 	/**
 	 * Returns the value of the '<em><b>Booking</b></em>' reference list.

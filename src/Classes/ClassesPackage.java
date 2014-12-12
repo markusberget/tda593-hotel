@@ -104,22 +104,13 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__IHOTEL_MANAGER_IMPL = 3;
 
 	/**
-	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__IBOOKING_MANAGEMENT_IMPL = 4;
-
-	/**
 	 * The feature id for the '<em><b>Booking</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__BOOKING = 5;
+	int ROOM__BOOKING = 4;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -128,7 +119,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 6;
+	int ROOM_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1547,17 +1538,6 @@ public interface ClassesPackage extends EPackage {
 	EReference getRoom_IHotelManagerImpl();
 
 	/**
-	 * Returns the meta object for the reference '{@link Classes.Room#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>IBooking Management Impl</em>'.
-	 * @see Classes.Room#getIBookingManagementImpl()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EReference getRoom_IBookingManagementImpl();
-
-	/**
 	 * Returns the meta object for the reference list '{@link Classes.Room#getBooking <em>Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2512,14 +2492,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM__IHOTEL_MANAGER_IMPL = eINSTANCE.getRoom_IHotelManagerImpl();
-
-		/**
-		 * The meta object literal for the '<em><b>IBooking Management Impl</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM__IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getRoom_IBookingManagementImpl();
 
 		/**
 		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.

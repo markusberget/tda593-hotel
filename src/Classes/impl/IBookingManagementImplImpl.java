@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 import Classes.ClassesPackage;
@@ -128,7 +129,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public EList<Room> getRoom() {
 		if (room == null) {
-			room = new EObjectWithInverseResolvingEList<Room>(Room.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM, ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL);
+			room = new EObjectResolvingEList<Room>(Room.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM);
 		}
 		return room;
 	}
@@ -332,8 +333,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		switch (featureID) {
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoom()).basicAdd(otherEnd, msgs);
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCustomer()).basicAdd(otherEnd, msgs);
 		}
@@ -350,8 +349,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		switch (featureID) {
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING:
 				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
-				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
 				return ((InternalEList<?>)getCustomer()).basicRemove(otherEnd, msgs);
 		}
