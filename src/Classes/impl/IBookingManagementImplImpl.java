@@ -275,8 +275,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		if (booking != null) {
 			List<Room> rooms = occupiedRooms.get(bookingID);
 			for(Room room : rooms) {
-				// TODO: fix this, joel.
-				//room.setStatusoccupiedreadypending(true);		// should be set to occupied
+				room.setStatus(RoomStatus.OCCUPIED);
 			}
 			return true;
 		}
