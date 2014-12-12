@@ -62,7 +62,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected EList<Room> room;
 	// These data structures are used for storing temporary data while performing tests.
-	public ArrayList<Booking> pendingBookings = new ArrayList<Booking>();
+	public EList<Booking> pendingBookings;
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference list.
 	 * <!-- begin-user-doc -->
