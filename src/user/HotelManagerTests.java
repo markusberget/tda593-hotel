@@ -6,7 +6,7 @@ import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 
-import Classes.IHotelManagerImpl;
+import Classes.IHotelManager;
 import Classes.impl.ClassesFactoryImpl;
 
 public class HotelManagerTests {
@@ -14,7 +14,7 @@ public class HotelManagerTests {
 	@Test
 	public void testLogin() {
 		
-		IHotelManagerImpl hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
 		
 		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
 		
@@ -32,8 +32,8 @@ public class HotelManagerTests {
 	
 	@Test
 	public void testAddStaffMember() {
-		IHotelManagerImpl hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
-		
+		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+	
 		// first the admin logs in. 
 		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
 		
@@ -60,7 +60,7 @@ public class HotelManagerTests {
 	@Test
 	public void testIsPasswordSecure() {
 		
-		IHotelManagerImpl hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
 		
 		// TEST 1:unprintable characters, and spaces, are not allowed. 
 		
@@ -105,7 +105,7 @@ public class HotelManagerTests {
 	@Test
 	public void testIsValidUsername() {
 	
-		IHotelManagerImpl hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
 		
 		
 		// Only ASCII letters and digits are allowed in user names.
