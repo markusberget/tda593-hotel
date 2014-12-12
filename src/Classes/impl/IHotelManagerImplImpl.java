@@ -92,7 +92,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			return false;
 		}
 		
-		// is the adding user actualy an admin?
+		// is the adding user actually an admin?
 		if(!isStaffMemberAdmin(adminUsername)) {
 			return false;
 		}
@@ -242,8 +242,30 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 					continue;
 				}
 			}
-			// TODO: also test for firstName, SecondName, email and phoneNumber.
 			
+			if(firstName != null) {
+				if(!contains(s.getFirstName(), firstName)) {
+					continue;
+				}
+			}
+			
+			if(secondName != null) {
+				if(!contains(s.getSecondName(), secondName)) {
+					continue;
+				}
+			}
+			
+			if(email != null) {
+				if(!contains(s.getEmail(), email)) {
+					continue;
+				}
+			}
+			
+			if(phoneNumber != null) {
+				if(!contains(s.getPhoneNumber(), phoneNumber)) {
+					continue;
+				}
+			}
 			
 			// Passed all the tests, so add
 			searchResult.add(s);

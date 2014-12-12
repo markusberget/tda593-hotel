@@ -44,7 +44,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * @generated NOT
 	 */
 	public int calculatePayment(int bookingID) {
-		// TODO: implement the method findBooking.
+		// TODO: implement a method to find Booking by ID.
 		
 		//Booking booking = findBooking(bookingId);
 		
