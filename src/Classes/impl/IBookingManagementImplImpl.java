@@ -205,9 +205,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	@SuppressWarnings("unchecked")
 	public int addRoomPending(int room, int bookingID) {
 		Room chosenRoom = availableRooms.remove(room);
-		
-		// TODO: fix this, joel. 
-		//chosenRoom.setStatusoccupiedreadypending(true);		// should be set to pending
+		chosenRoom.setStatus(RoomStatus.OCCUPIED);
 		pendingRooms.put(bookingID, (List<Room>) chosenRoom);
 		return bookingID;
 	}
