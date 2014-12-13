@@ -66,9 +66,11 @@ public class UserTests {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		Date checkIn = new Date();
 		Date checkOut = new Date();
-		int bookingID1 = bookingManagement.createPendingBooking(checkIn, checkOut, 6);
+		int numberOfGuests1 = 6;
+		int numberOfGuests2 = 4;
+		int bookingID1 = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests1);
 		assertEquals(0, bookingID1);
-		int bookingID2 = bookingManagement.createPendingBooking(checkIn, checkOut, 4);
+		int bookingID2 = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests2);
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingManagement.testPendingBookings.size());
 		assertEquals(0, bookingManagement.testConfirmedBookings.size());
@@ -78,7 +80,8 @@ public class UserTests {
 		assertTrue(bookingManagement.confirmBooking(bookingID1));
 		assertEquals(0, bookingManagement.testPendingBookings.size());
 		assertEquals(2, bookingManagement.testConfirmedBookings.size());
-		assertEquals(4, bookingManagement.testConfirmedBookings.get(bookingID2).getNumberOfGuests());
+		assertEquals(numberOfGuests2, bookingManagement.testConfirmedBookings.get(bookingID2).getNumberOfGuests());
+		assertEquals(numberOfGuests1, bookingManagement.testConfirmedBookings.get(bookingID1).getNumberOfGuests());
 	}
 
 	/**
