@@ -72,7 +72,7 @@ public class UserTests {
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingManagement.testPendingBookings.size());
 		assertEquals(0, bookingManagement.testConfirmedBookings.size());
-		bookingManagement.confirmBooking(bookingID2);
+		assertTrue(bookingManagement.confirmBooking(bookingID2));
 		assertEquals(1, bookingManagement.testPendingBookings.size());
 		assertEquals(1, bookingManagement.testConfirmedBookings.size());
 	}
