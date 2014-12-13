@@ -2,23 +2,23 @@
  */
 package Classes.impl;
 
-import Classes.Booking;
-import Classes.ClassesPackage;
-import Classes.Customer;
-
-import Classes.IBookingManagementImpl;
+import java.util.ArrayList;
 import java.util.Collection;
-import org.eclipse.emf.common.notify.Notification;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
-
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import Classes.Booking;
+import Classes.ClassesPackage;
+import Classes.Customer;
+import Classes.IBookingManagementImpl;
 
 /**
  * <!-- begin-user-doc -->
@@ -180,6 +180,9 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * @ordered
 	 */
 	protected EList<Booking> booking;
+	
+	// For testing purposes because I do not know yet how to use these ELists...
+	protected ArrayList<Booking> testBookings;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -188,6 +191,12 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 */
 	protected CustomerImpl() {
 		super();
+	}
+	
+	protected CustomerImpl(Booking booking) {
+		super();
+		testBookings = new ArrayList<Booking>();
+		testBookings.add(booking);
 	}
 
 	/**
