@@ -1311,7 +1311,7 @@
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CxCYdYHdEeSiLMRkmJ4pCA"/>
       </children>
       <element xmi:type="uml:Enumeration" href="Classes.uml#_Cw_8MIHdEeSiLMRkmJ4pCA"/>
-      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CxBxYYHdEeSiLMRkmJ4pCA" x="800" y="428"/>
+      <layoutConstraint xmi:type="notation:Bounds" xmi:id="_CxBxYYHdEeSiLMRkmJ4pCA" x="908" y="269"/>
     </children>
     <children xmi:type="notation:Shape" xmi:id="_1h71sIHjEeS837TtIXY58g" type="2008">
       <children xmi:type="notation:DecorationNode" xmi:id="_1h9D0IHjEeS837TtIXY58g" type="5029"/>
