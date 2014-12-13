@@ -223,8 +223,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean confirmBooking(int bookingID) {
-		testConfirmedBookings.add(bookingID, pendingBookings.remove(bookingID));
-		return true;
+		if ( testPendingBookings.contains(bookingID) ) {
+			int index = testPendingBookings.lastIndexOf(bookingID);
+			testConfirmedBookings.add(bookingID, testPendingBookings.remove(index));
+			return true;
+		}
+		return false;
 	}
 
 	/**
