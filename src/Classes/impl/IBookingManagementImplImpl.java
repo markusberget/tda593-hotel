@@ -89,7 +89,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
 	protected IBookingManagementImplImpl() {
 		super();
 		testPendingBookings = new ArrayList<Booking>();
@@ -346,7 +345,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		booking.setCheckOut(checkOut);
 		booking.setNumberOfGuests(guestCount);
 		booking.setBookingID();
-		pendingBookings.add(booking.getBookingID() , booking);
+		testPendingBookings.add(booking.getBookingID(), booking);
 		return booking.getBookingID();
 	}
 
