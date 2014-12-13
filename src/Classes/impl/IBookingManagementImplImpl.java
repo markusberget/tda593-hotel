@@ -333,6 +333,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * A pending booking has not yet been stored in the system. The pending bookings
 	 * are stored in the pendingBookings array. The method is synchronized to avoid
 	 * several threads interfering, setting wrong attributes for each other and so on.
+	 * A "place holder object" for the customer is created and referenced to from this
+	 * pending booking.
 	 * 
 	 * The bookingID is returned for use when invoking the contains method on the
 	 * pendingBooking array (if necessary, depends on how we implement it).
@@ -341,6 +343,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public synchronized int createPendingBooking(Date checkIn, Date checkOut, int guestCount) {
 		BookingImpl booking = new BookingImpl();
+		CustomerImpl customer = new CustomerImpl();
+		booking.setCustomer(customer);
 		booking.setCheckIn(checkIn);
 		booking.setCheckOut(checkOut);
 		booking.setNumberOfGuests(guestCount);
