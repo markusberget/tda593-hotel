@@ -1453,7 +1453,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		op = initEOperation(getIHotelManager__ChangeStatusOfRoom__int_String(), ecorePackage.getEBoolean(), "changeStatusOfRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomId", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomStatus(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEOperation(getIHotelManager__GetPossibleRoomStatuses(), ecorePackage.getEEList(), "getPossibleRoomStatuses", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

@@ -54,7 +54,7 @@ public interface IHotelManager extends EObject {
 	 * @model required="true" ordered="false" roomIdRequired="true" roomIdOrdered="false" statusRequired="true" statusOrdered="false"
 	 * @generated
 	 */
-	boolean changeStatusOfRoom(int roomId, String status);
+	boolean changeStatusOfRoom(int roomId, RoomStatus status);
 
 	/**
 	 * <!-- begin-user-doc -->

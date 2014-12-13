@@ -6,6 +6,7 @@ import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
+import Classes.RoomStatus;
 import Classes.StaffMember;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -284,7 +285,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public boolean changeStatusOfRoom(int roomId, String status) {
+	public boolean changeStatusOfRoom(int roomId, RoomStatus status) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -628,7 +629,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
 				return isValidUsername((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:
-				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1));
+				return changeStatusOfRoom((Integer)arguments.get(0), (RoomStatus)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES:
 				return getPossibleRoomStatuses();
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING:

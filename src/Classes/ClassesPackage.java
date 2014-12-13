@@ -2103,11 +2103,11 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__IsValidUsername__String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String) <em>Change Status Of Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IHotelManager#changeStatusOfRoom(int, Classes.RoomStatus) <em>Change Status Of Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Change Status Of Room</em>' operation.
-	 * @see Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String)
+	 * @see Classes.IHotelManager#changeStatusOfRoom(int, Classes.RoomStatus)
 	 * @generated
 	 */
 	EOperation getIHotelManager__ChangeStatusOfRoom__int_String();

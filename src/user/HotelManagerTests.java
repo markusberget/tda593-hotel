@@ -80,7 +80,7 @@ public class HotelManagerTests {
 		assertFalse(hm.addStaffMember("alex4", "alex5", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
 				"552219", "Tomtebacken 14", false));
 		assertFalse(hm.isExistingStaffMember("alex5"));
-		
+
 	}
 	
 
