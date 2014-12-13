@@ -2,12 +2,11 @@
  */
 package Classes.impl;
 
-import Classes.Booking;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Hashtable;
 import java.util.List;
 import java.util.Map;
 
@@ -20,6 +19,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.Customer;
 import Classes.IBookingManagementImpl;
@@ -74,7 +74,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Customer> customer;
-	public ArrayList<Booking> testConfirmedBookings;		// public for lazy testing purposes
+	public Map<Integer, Booking> testConfirmedBookings;		// public for lazy testing purposes
 	private ArrayList<Room> availableRooms;
 	private ArrayList<Booking> bookingHistory;
 	
@@ -92,8 +92,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	protected IBookingManagementImplImpl() {
 		super();
 		testPendingBookings = new ArrayList<Booking>();
-		testConfirmedBookings = new ArrayList<Booking>();
-
+		testConfirmedBookings = new Hashtable<Integer, Booking>();
 	}
 	
 	/**
@@ -183,7 +182,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingNumber) {
-		if (testConfirmedBookings.contains(bookingNumber)) {
+		if (testConfirmedBookings.containsKey(bookingNumber)) {
 			return testConfirmedBookings.get(bookingNumber);
 		}
 		return null;
@@ -225,7 +224,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public boolean confirmBooking(int bookingID) {
 		if ( testPendingBookings.get(bookingID) != null ) {
-			testConfirmedBookings.add(testConfirmedBookings.size(), testPendingBookings.remove(bookingID));
+			testConfirmedBookings.put(bookingID, testPendingBookings.remove(bookingID));
 			return true;
 		}
 		return false;
