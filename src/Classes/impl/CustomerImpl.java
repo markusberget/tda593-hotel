@@ -193,6 +193,12 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 		super();
 	}
 	
+	/**
+	 * This constructor is used for testing purposes. It relates
+	 * a Customer to a newly created booking.
+	 * 
+	 * @param booking		the newly created booking to be associated with.
+	 */
 	protected CustomerImpl(Booking booking) {
 		super();
 		testBookings = new ArrayList<Booking>();
