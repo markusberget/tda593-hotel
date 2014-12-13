@@ -98,8 +98,11 @@ public class UserTests {
 	 */
 	@Test
 	public void testCheckOut() {
-		// 1) Retrieve booking information using getBooking(room, currentDate).
+		// Set up an existing booking first and check in, before being able to check out. It's a precondition.
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 3);
 		
+		// 1) Retrieve booking information using getBooking(bookingID).
 		// 2) Choose room(s) to checkout from.
 		// 2a) A precondition for doing a checkout is that a checkin has been done, this must be checked first.
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).
@@ -116,10 +119,10 @@ public class UserTests {
 	 */
 	@Test
 	public void testAddCustomerInformationToBooking() {
-		int bookingID = 5;
-		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-		Customer customer = bookingManagement.pendingBookings.get(bookingID).getCustomer();
+		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 3);
+		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
+		Customer customer = bookingManagement.testPendingBookings.get(bookingID).getCustomer();
 		assertNull(customer.getFirstName());
 		assertNull(customer.getLastName());
 		assertNull(customer.getEmail());
@@ -142,21 +145,21 @@ public class UserTests {
 	@Test
 	public void testCreatePendingBooking() {
 		Classes.impl.IBookingManagementImplImpl pendingBooking = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-		assertEquals(0, pendingBooking.pendingBookings.size());
+		assertEquals(0, pendingBooking.testPendingBookings.size());
 		Date checkIn = new Date();
 		Date checkOut = new Date();
 		int bookingID1 = pendingBooking.createPendingBooking(checkIn, checkOut, 6);
 		assertTrue(1 == bookingID1);
-		assertEquals(1, pendingBooking.pendingBookings.size());
-		assertEquals(checkIn, pendingBooking.pendingBookings.get(bookingID1).getCheckIn());
-		assertEquals(checkOut, pendingBooking.pendingBookings.get(bookingID1).getCheckOut());
-		assertEquals(6, pendingBooking.pendingBookings.get(bookingID1).getNumberOfGuests());
+		assertEquals(1, pendingBooking.testPendingBookings.size());
+		assertEquals(checkIn, pendingBooking.testPendingBookings.get(bookingID1).getCheckIn());
+		assertEquals(checkOut, pendingBooking.testPendingBookings.get(bookingID1).getCheckOut());
+		assertEquals(6, pendingBooking.testPendingBookings.get(bookingID1).getNumberOfGuests());
 		int bookingID2 = pendingBooking.createPendingBooking(checkIn, checkOut, 4);
 		assertTrue(2 == bookingID2);
-		assertEquals(2, pendingBooking.pendingBookings.size());
-		assertEquals(checkIn, pendingBooking.pendingBookings.get(bookingID2).getCheckIn());
-		assertEquals(checkOut, pendingBooking.pendingBookings.get(bookingID2).getCheckOut());
-		assertEquals(4, pendingBooking.pendingBookings.get(bookingID2).getNumberOfGuests());
+		assertEquals(2, pendingBooking.testPendingBookings.size());
+		assertEquals(checkIn, pendingBooking.testPendingBookings.get(bookingID2).getCheckIn());
+		assertEquals(checkOut, pendingBooking.testPendingBookings.get(bookingID2).getCheckOut());
+		assertEquals(4, pendingBooking.testPendingBookings.get(bookingID2).getNumberOfGuests());
 	}
 
 	/**
