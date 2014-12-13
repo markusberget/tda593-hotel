@@ -400,7 +400,12 @@
   <packagedElement xmi:type="uml:Association" xmi:id="_UjloQHZREeSiQcRa0VNXAQ" memberEnd="_UjloQXZREeSiQcRa0VNXAQ _Ujik8HZREeSiQcRa0VNXAQ"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_X5WqMHZREeSiQcRa0VNXAQ" memberEnd="_X5WqMXZREeSiQcRa0VNXAQ _X5UN8HZREeSiQcRa0VNXAQ"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_cqW-QHZVEeSiQcRa0VNXAQ" memberEnd="_cqW-QXZVEeSiQcRa0VNXAQ _cqWXMHZVEeSiQcRa0VNXAQ"/>
-  <packagedElement xmi:type="uml:Association" xmi:id="_0HI7UHZhEeSBRfeA9UETiw" memberEnd="_0HI7UXZhEeSBRfeA9UETiw _0HIUQHZhEeSBRfeA9UETiw"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_0HI7UHZhEeSBRfeA9UETiw" memberEnd="_0HI7UXZhEeSBRfeA9UETiw _0HIUQHZhEeSBRfeA9UETiw">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_0HIUQHZhEeSBRfeA9UETiw" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_0HI7UHZhEeSBRfeA9UETiw">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0HIUQXZhEeSBRfeA9UETiw" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0HIUQnZhEeSBRfeA9UETiw" value="1"/>
+    </ownedEnd>
+  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_wFeDYHZmEeSBRfeA9UETiw" name="IFinanceImpl">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_1FSMUHZmEeSBRfeA9UETiw" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_1FSzYHZmEeSBRfeA9UETiw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_1FSMUXZmEeSBRfeA9UETiw"/>
@@ -473,10 +478,6 @@
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_PnA_4IEuEeSGJLVvPxMiKg" name="isLoggedIn">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_0HIUQHZhEeSBRfeA9UETiw" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_0HI7UHZhEeSBRfeA9UETiw">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0HIUQXZhEeSBRfeA9UETiw" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0HIUQnZhEeSBRfeA9UETiw" value="1"/>
     </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_6V6hkICwEeSsA-OdcGH-zg" name="staff_IPerson_realization" client="_NLnlMHTdEeSOC7DG65-e3w" supplier="_HH40sICwEeSsA-OdcGH-zg" contract="_HH40sICwEeSsA-OdcGH-zg"/>
   </packagedElement>

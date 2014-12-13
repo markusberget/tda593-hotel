@@ -36,7 +36,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="booking" ordered="false"
         upperBound="-1" eType="#//Booking" eOpposite="#//Booking/iHotelManagerImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="staff" ordered="false"
-        upperBound="-1" eType="#//StaffMember" eOpposite="#//StaffMember/iHotelManagerImpl"/>
+        upperBound="-1" eType="#//StaffMember"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
         eType="#//Room" eOpposite="#//Room/iHotelManagerImpl"/>
   </eClassifiers>
@@ -201,8 +201,6 @@
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLoggedIn" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iHotelManagerImpl" ordered="false"
-        lowerBound="1" eType="#//IHotelManagerImpl" eOpposite="#//IHotelManagerImpl/staff"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IHotelManager" abstract="true" interface="true">
     <eOperations name="login" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

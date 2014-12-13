@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -141,7 +142,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public EList<StaffMember> getStaff() {
 		if (staff == null) {
-			staff = new EObjectWithInverseResolvingEList<StaffMember>(StaffMember.class, this, ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF, ClassesPackage.STAFF_MEMBER__IHOTEL_MANAGER_IMPL);
+			staff = new EObjectResolvingEList<StaffMember>(StaffMember.class, this, ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF);
 		}
 		return staff;
 	}
@@ -285,23 +286,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public boolean changeStatusOfRoom(int roomId, RoomStatus status) {
-		// TODO: lookup roomId (findRoom is not implemented or defined anywhere)
-		RoomImpl room = null;/*findRoom( roomId )*/;
-		
-		if ( room != null ) {
-			
-			// TODO: setStatusoccupiedreadypending takes a boolean that specifies whether
-			// the status of the room is pending.
-			// However, changeStatusOfRoom is supposed to set whether the room is occupied, under maintenance, and so on.
-			// So the method setStatusoccupiedreadypending should probably not be used here.
-			
-			//room.setStatusoccupiedreadypending(status);
-			return true;
-			
-		} else {
-			return false;
-		}
-		
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -493,8 +480,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
-			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getStaff()).basicAdd(otherEnd, msgs);
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoom()).basicAdd(otherEnd, msgs);
 		}
@@ -511,8 +496,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__BOOKING:
 				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
-			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
-				return ((InternalEList<?>)getStaff()).basicRemove(otherEnd, msgs);
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
 				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
 		}
@@ -617,7 +600,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return isPasswordSecure((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
 				return isValidUsername((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS:
 				return changeStatusOfRoom((Integer)arguments.get(0), (RoomStatus)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES:
 				return getPossibleRoomStatuses();

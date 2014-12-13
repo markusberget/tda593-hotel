@@ -46,7 +46,6 @@ public interface IHotelManagerImpl extends IHotelManager {
 	/**
 	 * Returns the value of the '<em><b>Staff</b></em>' reference list.
 	 * The list contents are of type {@link Classes.StaffMember}.
-	 * It is bidirectional and its opposite is '{@link Classes.StaffMember#getIHotelManagerImpl <em>IHotel Manager Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Staff</em>' reference list isn't clear,
@@ -55,8 +54,7 @@ public interface IHotelManagerImpl extends IHotelManager {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Staff</em>' reference list.
 	 * @see Classes.ClassesPackage#getIHotelManagerImpl_Staff()
-	 * @see Classes.StaffMember#getIHotelManagerImpl
-	 * @model opposite="iHotelManagerImpl" ordered="false"
+	 * @model ordered="false"
 	 * @generated
 	 */
 	EList<StaffMember> getStaff();

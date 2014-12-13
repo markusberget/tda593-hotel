@@ -325,7 +325,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING = 4;
+	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = 4;
 
 	/**
 	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
@@ -563,7 +563,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING;
+	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS;
 
 	/**
 	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
@@ -1576,22 +1576,13 @@ public interface ClassesPackage extends EPackage {
 	int STAFF_MEMBER__IS_LOGGED_IN = IPERSON_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>IHotel Manager Impl</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int STAFF_MEMBER__IHOTEL_MANAGER_IMPL = IPERSON_FEATURE_COUNT + 4;
-
-	/**
 	 * The number of structural features of the '<em>Staff Member</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int STAFF_MEMBER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 5;
+	int STAFF_MEMBER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Staff Member</em>' class.
@@ -2110,7 +2101,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.IHotelManager#changeStatusOfRoom(int, Classes.RoomStatus)
 	 * @generated
 	 */
-	EOperation getIHotelManager__ChangeStatusOfRoom__int_String();
+	EOperation getIHotelManager__ChangeStatusOfRoom__int_RoomStatus();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IHotelManager#getPossibleRoomStatuses() <em>Get Possible Room Statuses</em>}' operation.
@@ -2316,17 +2307,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getStaffMember_IsLoggedIn();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.StaffMember#getIHotelManagerImpl <em>IHotel Manager Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>IHotel Manager Impl</em>'.
-	 * @see Classes.StaffMember#getIHotelManagerImpl()
-	 * @see #getStaffMember()
-	 * @generated
-	 */
-	EReference getStaffMember_IHotelManagerImpl();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Booking <em>Booking</em>}'.
@@ -3075,7 +3055,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING = eINSTANCE.getIHotelManager__ChangeStatusOfRoom__int_String();
+		EOperation IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = eINSTANCE.getIHotelManager__ChangeStatusOfRoom__int_RoomStatus();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Possible Room Statuses</b></em>' operation.
@@ -3242,14 +3222,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute STAFF_MEMBER__IS_LOGGED_IN = eINSTANCE.getStaffMember_IsLoggedIn();
-
-		/**
-		 * The meta object literal for the '<em><b>IHotel Manager Impl</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference STAFF_MEMBER__IHOTEL_MANAGER_IMPL = eINSTANCE.getStaffMember_IHotelManagerImpl();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.BookingImpl <em>Booking</em>}' class.
