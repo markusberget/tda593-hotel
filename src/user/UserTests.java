@@ -89,11 +89,20 @@ public class UserTests {
 	}
 
 	/**
+	 * Test for the check out process when considering valid behavior, which includes
+	 * retrieving the booking information, choosing which room(s) to check out, pay for them
+	 * and change the status of the room(s) to CLEANING. This is the flow according to the
+	 * check out use case and sequence diagram.
+	 * 
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#checkOut(java.lang.Class)}.
 	 */
 	@Test
 	public void testCheckOut() {
-		fail("Not yet implemented");
+		// 1) Retrieve booking information using getBooking(room, currentDate).
+		// 2) Choose room(s) to checkout from.
+		// 2a) A precondition for doing a checkout is that a checkin has been done, this must be checked first.
+		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).
+		// 4) Change status of room(s) to CLEANING (which is done when payment is a success).
 	}
 
 	/**

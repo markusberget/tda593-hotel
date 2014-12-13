@@ -300,11 +300,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * This method is synchronized to avoid some problems when
-	 * different threads invoke the method at the same time. The
-	 * first name, last name, email and phone number of the customer
+	 * This method is synchronized to avoid problems with assigning wrong values
+	 * to instance variables when different threads invoke the method at the same
+	 * time. The first name, last name, email and phone number of the customer
 	 * is added to a given pending booking. In case some of these fields
 	 * have not been filled in by the customer, they are null.
+	 * 
+	 * Because the createPendingBooking() method is also synchronized, the
+	 * bookingID should be unique for each booking.
 	 *
 	 * @generated NOT
 	 */

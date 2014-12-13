@@ -438,9 +438,6 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_jPES4ICREeSFes4IcS1MiA" name="phoneNumber">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_cpGEMIEwEeSCL7M-NBZUsg" name="fullyPaid">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_fOOUkXn3EeSXl-11lZMmcA" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_fOOUkHn3EeSXl-11lZMmcA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fOOUknn3EeSXl-11lZMmcA" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fOOUk3n3EeSXl-11lZMmcA" value="1"/>
