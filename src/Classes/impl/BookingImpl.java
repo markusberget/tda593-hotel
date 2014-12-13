@@ -37,7 +37,6 @@ import java.util.Collection;
  *   <li>{@link Classes.impl.BookingImpl#getLastName <em>Last Name</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getPhoneNumber <em>Phone Number</em>}</li>
- *   <li>{@link Classes.impl.BookingImpl#isFullyPaid <em>Fully Paid</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getRoom <em>Room</em>}</li>
@@ -209,26 +208,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @ordered
 	 */
 	protected String phoneNumber = PHONE_NUMBER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #isFullyPaid() <em>Fully Paid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFullyPaid()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final boolean FULLY_PAID_EDEFAULT = false;
-
-	/**
-	 * The cached value of the '{@link #isFullyPaid() <em>Fully Paid</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #isFullyPaid()
-	 * @generated
-	 * @ordered
-	 */
-	protected boolean fullyPaid = FULLY_PAID_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference.
@@ -485,27 +464,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		phoneNumber = newPhoneNumber;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__PHONE_NUMBER, oldPhoneNumber, phoneNumber));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean isFullyPaid() {
-		return fullyPaid;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setFullyPaid(boolean newFullyPaid) {
-		boolean oldFullyPaid = fullyPaid;
-		fullyPaid = newFullyPaid;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__FULLY_PAID, oldFullyPaid, fullyPaid));
 	}
 
 	/**
@@ -903,8 +861,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return getEmail();
 			case ClassesPackage.BOOKING__PHONE_NUMBER:
 				return getPhoneNumber();
-			case ClassesPackage.BOOKING__FULLY_PAID:
-				return isFullyPaid();
 			case ClassesPackage.BOOKING__CUSTOMER:
 				if (resolve) return getCustomer();
 				return basicGetCustomer();
@@ -958,9 +914,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case ClassesPackage.BOOKING__PHONE_NUMBER:
 				setPhoneNumber((String)newValue);
-				return;
-			case ClassesPackage.BOOKING__FULLY_PAID:
-				setFullyPaid((Boolean)newValue);
 				return;
 			case ClassesPackage.BOOKING__CUSTOMER:
 				setCustomer((Customer)newValue);
@@ -1017,9 +970,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__PHONE_NUMBER:
 				setPhoneNumber(PHONE_NUMBER_EDEFAULT);
 				return;
-			case ClassesPackage.BOOKING__FULLY_PAID:
-				setFullyPaid(FULLY_PAID_EDEFAULT);
-				return;
 			case ClassesPackage.BOOKING__CUSTOMER:
 				setCustomer((Customer)null);
 				return;
@@ -1066,8 +1016,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 			case ClassesPackage.BOOKING__PHONE_NUMBER:
 				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
-			case ClassesPackage.BOOKING__FULLY_PAID:
-				return fullyPaid != FULLY_PAID_EDEFAULT;
 			case ClassesPackage.BOOKING__CUSTOMER:
 				return customer != null;
 			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
@@ -1110,8 +1058,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		result.append(email);
 		result.append(", phoneNumber: ");
 		result.append(phoneNumber);
-		result.append(", fullyPaid: ");
-		result.append(fullyPaid);
 		result.append(')');
 		return result.toString();
 	}

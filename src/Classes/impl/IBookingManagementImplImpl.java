@@ -288,7 +288,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean checkOut(int bookingID) {
-		Booking booking = confirmedBookings.get(bookingID);
+		
+		// isFullyPaid was removed in the code generation, so I'm commenting out this for now.
+		
+		/*Booking booking = confirmedBookings.get(bookingID);
 		if (booking.isFullyPaid()) {		// paid is set to true after payment method has succeeded
 			List<Room> rooms = occupiedRooms.remove(bookingID);
 			for(Room room : rooms) {
@@ -296,6 +299,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			}
 			return true;
 		}
+		return false;*/
 		return false;
 	}
 

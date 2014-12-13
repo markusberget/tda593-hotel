@@ -4,17 +4,20 @@ package Classes.impl;
 
 import Classes.Booking;
 import Classes.ClassesPackage;
+import Classes.IBookingManagementImpl;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.StaffMember;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
@@ -29,6 +32,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link Classes.impl.IHotelManagerImplImpl#getBooking <em>Booking</em>}</li>
  *   <li>{@link Classes.impl.IHotelManagerImplImpl#getStaff <em>Staff</em>}</li>
+ *   <li>{@link Classes.impl.IHotelManagerImplImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.impl.IHotelManagerImplImpl#getRoom <em>Room</em>}</li>
  * </ul>
  * </p>
@@ -55,6 +59,15 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 	protected EList<StaffMember> staff;
+	/**
+	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBookingManagementImpl iBookingManagementImpl;
 	/**
 	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -147,6 +160,41 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		return staff;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBookingManagementImpl getIBookingManagementImpl() {
+		if (iBookingManagementImpl != null && iBookingManagementImpl.eIsProxy()) {
+			InternalEObject oldIBookingManagementImpl = (InternalEObject)iBookingManagementImpl;
+			iBookingManagementImpl = (IBookingManagementImpl)eResolveProxy(oldIBookingManagementImpl);
+			if (iBookingManagementImpl != oldIBookingManagementImpl) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
+			}
+		}
+		return iBookingManagementImpl;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBookingManagementImpl basicGetIBookingManagementImpl() {
+		return iBookingManagementImpl;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+		IBookingManagementImpl oldIBookingManagementImpl = iBookingManagementImpl;
+		iBookingManagementImpl = newIBookingManagementImpl;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -514,6 +562,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getBooking();
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
 				return getStaff();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				if (resolve) return getIBookingManagementImpl();
+				return basicGetIBookingManagementImpl();
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
 				return getRoom();
 		}
@@ -537,6 +588,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				getStaff().clear();
 				getStaff().addAll((Collection<? extends StaffMember>)newValue);
 				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)newValue);
+				return;
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
 				getRoom().clear();
 				getRoom().addAll((Collection<? extends Room>)newValue);
@@ -559,6 +613,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
 				getStaff().clear();
 				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)null);
+				return;
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
 				getRoom().clear();
 				return;
@@ -578,6 +635,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return booking != null && !booking.isEmpty();
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
 				return staff != null && !staff.isEmpty();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return iBookingManagementImpl != null;
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM:
 				return room != null && !room.isEmpty();
 		}
