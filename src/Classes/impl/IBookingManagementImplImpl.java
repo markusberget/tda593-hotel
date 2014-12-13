@@ -348,7 +348,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		booking.setCheckIn(checkIn);
 		booking.setCheckOut(checkOut);
 		booking.setNumberOfGuests(guestCount);
-		booking.setBookingID();
+		booking.setBookingID(testPendingBookings.size());
 		testPendingBookings.add(booking.getBookingID(), booking);
 		return booking.getBookingID();
 	}

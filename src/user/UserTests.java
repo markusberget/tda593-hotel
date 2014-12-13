@@ -121,6 +121,7 @@ public class UserTests {
 	public void testAddCustomerInformationToBooking() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 3);
+		assertEquals(0, bookingID);
 		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
 		Customer customer = bookingManagement.testPendingBookings.get(bookingID).getCustomer();
 		assertNull(customer.getFirstName());
@@ -149,13 +150,13 @@ public class UserTests {
 		Date checkIn = new Date();
 		Date checkOut = new Date();
 		int bookingID1 = pendingBooking.createPendingBooking(checkIn, checkOut, 6);
-		assertTrue(1 == bookingID1);
+		assertTrue(0 == bookingID1);
 		assertEquals(1, pendingBooking.testPendingBookings.size());
 		assertEquals(checkIn, pendingBooking.testPendingBookings.get(bookingID1).getCheckIn());
 		assertEquals(checkOut, pendingBooking.testPendingBookings.get(bookingID1).getCheckOut());
 		assertEquals(6, pendingBooking.testPendingBookings.get(bookingID1).getNumberOfGuests());
 		int bookingID2 = pendingBooking.createPendingBooking(checkIn, checkOut, 4);
-		assertTrue(2 == bookingID2);
+		assertTrue(1 == bookingID2);
 		assertEquals(2, pendingBooking.testPendingBookings.size());
 		assertEquals(checkIn, pendingBooking.testPendingBookings.get(bookingID2).getCheckIn());
 		assertEquals(checkOut, pendingBooking.testPendingBookings.get(bookingID2).getCheckOut());

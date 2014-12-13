@@ -350,16 +350,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__BOOKING_ID, oldBookingID, bookingID));
 	}
-	
-	/**
-	 * The bookingID is incremented for each created pending booking.
-	 * 
-	 * @generated NOT
-	 */
-	public void setBookingID() {
-		int oldBookingID = bookingID;
-		bookingID = oldBookingID++;
-	}
 
 	/**
 	 * <!-- begin-user-doc -->
