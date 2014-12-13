@@ -57,11 +57,24 @@ public class UserTests {
 	}
 
 	/**
+	 * First two pending bookings are created, and then the second one is confirmed.
+	 * 
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#confirmBooking(int)}.
 	 */
 	@Test
 	public void testConfirmBooking() {
-		fail("Not yet implemented");
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		Date checkIn = new Date();
+		Date checkOut = new Date();
+		int bookingID1 = bookingManagement.createPendingBooking(checkIn, checkOut, 6);
+		assertEquals(0, bookingID1);
+		int bookingID2 = bookingManagement.createPendingBooking(checkIn, checkOut, 4);
+		assertEquals(1, bookingID2);
+		assertEquals(2, bookingManagement.testPendingBookings.size());
+		assertEquals(0, bookingManagement.testConfirmedBookings.size());
+		bookingManagement.confirmBooking(bookingID2);
+		assertEquals(1, bookingManagement.testPendingBookings.size());
+		assertEquals(1, bookingManagement.testConfirmedBookings.size());
 	}
 
 	/**
@@ -101,8 +114,8 @@ public class UserTests {
 		// Set up an existing booking first and check in, before being able to check out. It's a precondition.
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 3);
-		
-		// 1) Retrieve booking information using getBooking(bookingID).
+	// 1) Retrieve booking information using getBooking(bookingID).
+		bookingManagement.getBooking(bookingID);
 		// 2) Choose room(s) to checkout from.
 		// 2a) A precondition for doing a checkout is that a checkin has been done, this must be checked first.
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).

@@ -64,7 +64,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	protected EList<Room> room;
 	// These data structures are used for storing temporary data while performing tests.
 	private EList<Booking> pendingBookings;
-	public ArrayList<Booking> testPendingBookings;
+	public ArrayList<Booking> testPendingBookings;		// public for lazy testing purposes
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -74,7 +74,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Customer> customer;
-	private ArrayList<Booking> confirmedBookings;
+	public ArrayList<Booking> testConfirmedBookings;		// public for lazy testing purposes
 	private ArrayList<Room> availableRooms;
 	private ArrayList<Booking> bookingHistory;
 	
@@ -92,6 +92,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	protected IBookingManagementImplImpl() {
 		super();
 		testPendingBookings = new ArrayList<Booking>();
+		testConfirmedBookings = new ArrayList<Booking>();
 	}
 	
 	/**
@@ -181,8 +182,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingNumber) {
-		if (confirmedBookings.contains(bookingNumber)) {
-			return confirmedBookings.get(bookingNumber);
+		if (testConfirmedBookings.contains(bookingNumber)) {
+			return testConfirmedBookings.get(bookingNumber);
 		}
 		return null;
 	}
@@ -222,7 +223,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean confirmBooking(int bookingID) {
-		confirmedBookings.add(bookingID, pendingBookings.remove(bookingID));
+		testConfirmedBookings.add(bookingID, pendingBookings.remove(bookingID));
 		return true;
 	}
 
@@ -259,8 +260,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		if (pendingBookings.get(bookingID) != null) {
 			return bookingHistory.add(pendingBookings.remove(bookingID));
 		}
-		else if (confirmedBookings.get(bookingID) != null) {
-			return bookingHistory.add(confirmedBookings.remove(bookingID));
+		else if (testConfirmedBookings.get(bookingID) != null) {
+			return bookingHistory.add(testConfirmedBookings.remove(bookingID));
 		}
 		return false;
 	}
@@ -274,7 +275,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean checkIn(int bookingID) {
-		Booking booking = confirmedBookings.get(bookingID);
+		Booking booking = testConfirmedBookings.get(bookingID);
 		if (booking != null) {
 			List<Room> rooms = occupiedRooms.get(bookingID);
 			for(Room room : rooms) {
