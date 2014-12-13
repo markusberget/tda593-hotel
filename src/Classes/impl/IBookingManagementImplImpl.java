@@ -93,6 +93,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		super();
 		testPendingBookings = new ArrayList<Booking>();
 		testConfirmedBookings = new ArrayList<Booking>();
+
 	}
 	
 	/**
