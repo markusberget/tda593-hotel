@@ -179,13 +179,16 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingNumber) {
-		return confirmedBookings.get(bookingNumber);
+		if (confirmedBookings.contains(bookingNumber)) {
+			return confirmedBookings.get(bookingNumber);
+		}
+		return null;
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void getBooking(int roomID, Date date) {
 		// TODO: implement this method

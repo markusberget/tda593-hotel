@@ -99,6 +99,7 @@ public class UserTests {
 	@Test
 	public void testCheckOut() {
 		// 1) Retrieve booking information using getBooking(room, currentDate).
+		
 		// 2) Choose room(s) to checkout from.
 		// 2a) A precondition for doing a checkout is that a checkin has been done, this must be checked first.
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).
