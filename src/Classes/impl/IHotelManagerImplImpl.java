@@ -286,16 +286,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated
 	 */
 	public boolean changeStatusOfRoom(int roomId, RoomStatus status) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean changeStatusOfRoom(int roomId, Enumerator status) {
 		// TODO: lookup roomId (findRoom is not implemented or defined anywhere)
 		RoomImpl room = null;/*findRoom( roomId )*/;
 		
@@ -314,6 +304,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		}
 		
 	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
