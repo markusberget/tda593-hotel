@@ -87,12 +87,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected IBookingManagementImplImpl() {
 		super();
 		testPendingBookings = new ArrayList<Booking>();
 		testConfirmedBookings = new ArrayList<Booking>();
+
 	}
 	
 	/**
