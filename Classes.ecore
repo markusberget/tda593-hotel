@@ -37,6 +37,8 @@
         upperBound="-1" eType="#//Booking" eOpposite="#//Booking/iHotelManagerImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="staff" ordered="false"
         upperBound="-1" eType="#//StaffMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iBookingManagementImpl"
+        ordered="false" lowerBound="1" eType="#//IBookingManagementImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
         eType="#//Room" eOpposite="#//Room/iHotelManagerImpl"/>
   </eClassifiers>
@@ -57,8 +59,6 @@
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="phoneNumber" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fullyPaid" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"
         lowerBound="1" eType="#//Customer" eOpposite="#//Customer/booking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iBookingManagementImpl"

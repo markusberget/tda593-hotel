@@ -503,13 +503,22 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER_IMPL__STAFF = IHOTEL_MANAGER_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL = IHOTEL_MANAGER_FEATURE_COUNT + 2;
+
+	/**
 	 * The feature id for the '<em><b>Room</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL__ROOM = IHOTEL_MANAGER_FEATURE_COUNT + 2;
+	int IHOTEL_MANAGER_IMPL__ROOM = IHOTEL_MANAGER_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Manager Impl</em>' class.
@@ -518,7 +527,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL_FEATURE_COUNT = IHOTEL_MANAGER_FEATURE_COUNT + 3;
+	int IHOTEL_MANAGER_IMPL_FEATURE_COUNT = IHOTEL_MANAGER_FEATURE_COUNT + 4;
 
 	/**
 	 * The operation id for the '<em>Login</em>' operation.
@@ -755,22 +764,13 @@ public interface ClassesPackage extends EPackage {
 	int BOOKING__PHONE_NUMBER = 7;
 
 	/**
-	 * The feature id for the '<em><b>Fully Paid</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__FULLY_PAID = 8;
-
-	/**
 	 * The feature id for the '<em><b>Customer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__CUSTOMER = 9;
+	int BOOKING__CUSTOMER = 8;
 
 	/**
 	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
@@ -779,7 +779,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__IBOOKING_MANAGEMENT_IMPL = 10;
+	int BOOKING__IBOOKING_MANAGEMENT_IMPL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Room</b></em>' reference list.
@@ -788,7 +788,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__ROOM = 11;
+	int BOOKING__ROOM = 10;
 
 	/**
 	 * The feature id for the '<em><b>IFinance Impl</b></em>' reference.
@@ -797,7 +797,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__IFINANCE_IMPL = 12;
+	int BOOKING__IFINANCE_IMPL = 11;
 
 	/**
 	 * The feature id for the '<em><b>Bill</b></em>' reference.
@@ -806,7 +806,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BILL = 13;
+	int BOOKING__BILL = 12;
 
 	/**
 	 * The feature id for the '<em><b>IHotel Manager Impl</b></em>' reference.
@@ -815,7 +815,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__IHOTEL_MANAGER_IMPL = 14;
+	int BOOKING__IHOTEL_MANAGER_IMPL = 13;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -824,7 +824,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 15;
+	int BOOKING_FEATURE_COUNT = 14;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -2407,17 +2407,6 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getBooking_PhoneNumber();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Classes.Booking#isFullyPaid <em>Fully Paid</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Fully Paid</em>'.
-	 * @see Classes.Booking#isFullyPaid()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EAttribute getBooking_FullyPaid();
-
-	/**
 	 * Returns the meta object for the reference '{@link Classes.Booking#getCustomer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2622,6 +2611,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIHotelManagerImpl_Staff();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.IHotelManagerImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IBooking Management Impl</em>'.
+	 * @see Classes.IHotelManagerImpl#getIBookingManagementImpl()
+	 * @see #getIHotelManagerImpl()
+	 * @generated
+	 */
+	EReference getIHotelManagerImpl_IBookingManagementImpl();
 
 	/**
 	 * Returns the meta object for the reference list '{@link Classes.IHotelManagerImpl#getRoom <em>Room</em>}'.
@@ -3298,14 +3298,6 @@ public interface ClassesPackage extends EPackage {
 		EAttribute BOOKING__PHONE_NUMBER = eINSTANCE.getBooking_PhoneNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Fully Paid</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOKING__FULLY_PAID = eINSTANCE.getBooking_FullyPaid();
-
-		/**
 		 * The meta object literal for the '<em><b>Customer</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3462,6 +3454,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IHOTEL_MANAGER_IMPL__STAFF = eINSTANCE.getIHotelManagerImpl_Staff();
+
+		/**
+		 * The meta object literal for the '<em><b>IBooking Management Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getIHotelManagerImpl_IBookingManagementImpl();
 
 		/**
 		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.

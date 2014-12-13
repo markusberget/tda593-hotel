@@ -291,7 +291,24 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean checkOut(int bookingID) {
-		Booking booking = confirmedBookings.get(bookingID);
+		
+		// isFullyPaid was removed in the code generation, so I'm commenting out this for now.
+		
+		/**
+		 
+		 MESSAGE TO JOEL:
+
+There are some methods named isFullyPaid() and setFullyPaid(), and
+these methods get deleted when I regenerate the code. So in my latest
+commit these methods were removed. If you want them back, you should
+make sure to add these two methods to the model, or something.
+
+The methods that were deleted can be recovered from this commit:
+		 https://github.com/markusberget/tda593-hotel/commit/cff0c75b3863b613b603559654db559146f99070
+		 
+		 */
+		
+		/*Booking booking = confirmedBookings.get(bookingID);
 		if (booking.isFullyPaid()) {		// paid is set to true after payment method has succeeded
 			List<Room> rooms = occupiedRooms.remove(bookingID);
 			for(Room room : rooms) {
@@ -299,6 +316,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			}
 			return true;
 		}
+		return false;*/
 		return false;
 	}
 
