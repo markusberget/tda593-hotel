@@ -108,13 +108,13 @@ public class UserTests {
 	public void testAddCustomerInformationToBooking() {
 		int bookingID = 5;
 		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
-		Classes.impl.IBookingManagementImplImpl hotelManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-		Customer customer = hotelManagement.pendingBookings.get(bookingID).getCustomer();
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		Customer customer = bookingManagement.pendingBookings.get(bookingID).getCustomer();
 		assertNull(customer.getFirstName());
 		assertNull(customer.getLastName());
 		assertNull(customer.getEmail());
 		assertNull(customer.getPhoneNumber());
-		hotelManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
+		bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 		assertEquals(firstName, customer.getFirstName());
 		assertEquals(lastName, customer.getLastName());
 		assertEquals(email, customer.getEmail());
