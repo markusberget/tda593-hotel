@@ -635,7 +635,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__GetPossibleRoomStatuses() {
+	public EOperation getIHotelManager__FindStaffMember__String_String_String_String_String() {
 		return iHotelManagerEClass.getEOperations().get(5);
 	}
 
@@ -644,7 +644,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__FindStaffMember__String_String_String_String_String() {
+	public EOperation getIHotelManager__IsStaffMemberLoggedIn__String() {
 		return iHotelManagerEClass.getEOperations().get(6);
 	}
 
@@ -653,7 +653,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__IsStaffMemberLoggedIn__String() {
+	public EOperation getIHotelManager__IsStaffMemberAdmin__String() {
 		return iHotelManagerEClass.getEOperations().get(7);
 	}
 
@@ -662,7 +662,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__IsStaffMemberAdmin__String() {
+	public EOperation getIHotelManager__GetStaffMemberPassword__String() {
 		return iHotelManagerEClass.getEOperations().get(8);
 	}
 
@@ -671,7 +671,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__GetStaffMemberPassword__String() {
+	public EOperation getIHotelManager__GetStaffMemberFirstName__String() {
 		return iHotelManagerEClass.getEOperations().get(9);
 	}
 
@@ -680,7 +680,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__GetStaffMemberFirstName__String() {
+	public EOperation getIHotelManager__GetStaffMemberLastName__String() {
 		return iHotelManagerEClass.getEOperations().get(10);
 	}
 
@@ -689,7 +689,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__GetStaffMemberLastName__String() {
+	public EOperation getIHotelManager__GetStaffMemberEmail__String() {
 		return iHotelManagerEClass.getEOperations().get(11);
 	}
 
@@ -698,7 +698,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__GetStaffMemberEmail__String() {
+	public EOperation getIHotelManager__GetStaffMemberPhoneNumber__String() {
 		return iHotelManagerEClass.getEOperations().get(12);
 	}
 
@@ -707,7 +707,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__GetStaffMemberPhoneNumber__String() {
+	public EOperation getIHotelManager__GetStaffMemberAddress__String() {
 		return iHotelManagerEClass.getEOperations().get(13);
 	}
 
@@ -716,7 +716,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__GetStaffMemberAddress__String() {
+	public EOperation getIHotelManager__Logout__String() {
 		return iHotelManagerEClass.getEOperations().get(14);
 	}
 
@@ -725,17 +725,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__Logout__String() {
-		return iHotelManagerEClass.getEOperations().get(15);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getIHotelManager__IsExistingStaffMember__String() {
-		return iHotelManagerEClass.getEOperations().get(16);
+		return iHotelManagerEClass.getEOperations().get(15);
 	}
 
 	/**
@@ -1165,7 +1156,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_PASSWORD_SECURE__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_VALID_USERNAME__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS);
-		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING);
@@ -1389,8 +1379,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIHotelManager__ChangeStatusOfRoom__int_RoomStatus(), ecorePackage.getEBoolean(), "changeStatusOfRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoomStatus(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getIHotelManager__GetPossibleRoomStatuses(), ecorePackage.getEEList(), "getPossibleRoomStatuses", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIHotelManager__FindStaffMember__String_String_String_String_String(), ecorePackage.getEEList(), "findStaffMember", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);

@@ -1153,22 +1153,13 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = 4;
 
 	/**
-	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES = 5;
-
-	/**
 	 * The operation id for the '<em>Find Staff Member</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = 6;
+	int IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = 5;
 
 	/**
 	 * The operation id for the '<em>Is Staff Member Logged In</em>' operation.
@@ -1177,7 +1168,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING = 7;
+	int IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING = 6;
 
 	/**
 	 * The operation id for the '<em>Is Staff Member Admin</em>' operation.
@@ -1186,7 +1177,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING = 8;
+	int IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING = 7;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Password</em>' operation.
@@ -1195,7 +1186,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = 9;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = 8;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member First Name</em>' operation.
@@ -1204,7 +1195,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING = 10;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING = 9;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Last Name</em>' operation.
@@ -1213,7 +1204,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING = 11;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING = 10;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Email</em>' operation.
@@ -1222,7 +1213,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING = 12;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING = 11;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Phone Number</em>' operation.
@@ -1231,7 +1222,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = 13;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = 12;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Address</em>' operation.
@@ -1240,7 +1231,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = 14;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = 13;
 
 	/**
 	 * The operation id for the '<em>Logout</em>' operation.
@@ -1249,7 +1240,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___LOGOUT__STRING = 15;
+	int IHOTEL_MANAGER___LOGOUT__STRING = 14;
 
 	/**
 	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
@@ -1258,7 +1249,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 16;
+	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 15;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
@@ -1267,7 +1258,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 17;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -1439,15 +1430,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS;
-
-	/**
-	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES = IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES;
 
 	/**
 	 * The operation id for the '<em>Find Staff Member</em>' operation.
@@ -2055,16 +2037,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIHotelManager__ChangeStatusOfRoom__int_RoomStatus();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#getPossibleRoomStatuses() <em>Get Possible Room Statuses</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Possible Room Statuses</em>' operation.
-	 * @see Classes.IHotelManager#getPossibleRoomStatuses()
-	 * @generated
-	 */
-	EOperation getIHotelManager__GetPossibleRoomStatuses();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IHotelManager#findStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String) <em>Find Staff Member</em>}' operation.
@@ -2968,14 +2940,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = eINSTANCE.getIHotelManager__ChangeStatusOfRoom__int_RoomStatus();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Possible Room Statuses</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES = eINSTANCE.getIHotelManager__GetPossibleRoomStatuses();
 
 		/**
 		 * The meta object literal for the '<em><b>Find Staff Member</b></em>' operation.

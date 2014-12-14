@@ -291,17 +291,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList getPossibleRoomStatuses() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-	
-	/**
 	 * If substr can be found in s, return true. The comparison is case insensitive. 
 	 */
 	private static boolean contains(String s, String substr) {
@@ -557,8 +546,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return isValidUsername((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS:
 				return changeStatusOfRoom((Integer)arguments.get(0), (RoomStatus)arguments.get(1));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES:
-				return getPossibleRoomStatuses();
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING:
 				return findStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_LOGGED_IN__STRING:

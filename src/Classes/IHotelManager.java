@@ -59,14 +59,6 @@ public interface IHotelManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model kind="operation" required="true" many="false" ordered="false"
-	 * @generated
-	 */
-	EList getPossibleRoomStatuses();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" many="false" ordered="false" usernameRequired="true" usernameOrdered="false" firstNameRequired="true" firstNameOrdered="false" secondNameRequired="true" secondNameOrdered="false" emailRequired="true" emailOrdered="false" phoneNumberRequired="true" phoneNumberOrdered="false"
 	 * @generated
 	 */

@@ -284,11 +284,6 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_vYG8wHbXEeSheJiNqvd8mw" name="getPossibleRoomStatuses">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_KQWKgHbYEeSheJiNqvd8mw" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
-      </ownedParameter>
-    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_L2JiUICqEeSsA-OdcGH-zg" name="findStaffMember" visibility="public" concurrency="concurrent">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_L2JiUYCqEeSsA-OdcGH-zg" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
