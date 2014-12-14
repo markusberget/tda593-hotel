@@ -25,6 +25,7 @@ import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.Customer;
 import Classes.IBookingManagementImpl;
+import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
@@ -422,7 +423,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean changeStatusOfRoom(int roomId, RoomStatus status) {
+	public boolean changeStatusOfRoom(String staffMemberUsername, int roomId, RoomStatus status) {
+		IHotelManager hm  = getIHotelManagerImpl();
+		
 		return true;
 	}
 
@@ -598,8 +601,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				return addCustomerInformationToBooking((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT:
 				return createPendingBooking((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2));
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS:
-				return changeStatusOfRoom((Integer)arguments.get(0), (RoomStatus)arguments.get(1));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS:
+				return changeStatusOfRoom((String)arguments.get(0), (Integer)arguments.get(1), (RoomStatus)arguments.get(2));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -219,6 +219,7 @@
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/createPendingBooking/guestCount"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IBookingManagement/changeStatusOfRoom">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/changeStatusOfRoom/staffMemberUsername"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/changeStatusOfRoom/roomId"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/changeStatusOfRoom/status"/>
       </genOperations>

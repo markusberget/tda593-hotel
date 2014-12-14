@@ -716,7 +716,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = 12;
+	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 12;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
@@ -896,7 +896,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS;
+	int IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management Impl</em>' class.
@@ -1877,14 +1877,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#changeStatusOfRoom(int, Classes.RoomStatus) <em>Change Status Of Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#changeStatusOfRoom(java.lang.String, int, Classes.RoomStatus) <em>Change Status Of Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Change Status Of Room</em>' operation.
-	 * @see Classes.IBookingManagement#changeStatusOfRoom(int, Classes.RoomStatus)
+	 * @see Classes.IBookingManagement#changeStatusOfRoom(java.lang.String, int, Classes.RoomStatus)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__ChangeStatusOfRoom__int_RoomStatus();
+	EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IFinance <em>IFinance</em>}'.
@@ -2811,7 +2811,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = eINSTANCE.getIBookingManagement__ChangeStatusOfRoom__int_RoomStatus();
+		EOperation IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = eINSTANCE.getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IFinance <em>IFinance</em>}' class.

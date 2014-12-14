@@ -491,7 +491,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__ChangeStatusOfRoom__int_RoomStatus() {
+	public EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus() {
 		return iBookingManagementEClass.getEOperations().get(12);
 	}
 
@@ -1159,7 +1159,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CHECK_OUT__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS);
+		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS);
 
 		iFinanceImplEClass = createEClass(IFINANCE_IMPL);
 		createEReference(iFinanceImplEClass, IFINANCE_IMPL__BOOKING);
@@ -1387,7 +1387,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEParameter(op, ecorePackage.getEDate(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "guestCount", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIBookingManagement__ChangeStatusOfRoom__int_RoomStatus(), ecorePackage.getEBoolean(), "changeStatusOfRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus(), ecorePackage.getEBoolean(), "changeStatusOfRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "staffMemberUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomId", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, this.getRoomStatus(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
