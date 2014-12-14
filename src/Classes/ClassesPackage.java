@@ -96,22 +96,13 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__ROOM_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>IHotel Manager Impl</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__IHOTEL_MANAGER_IMPL = 3;
-
-	/**
 	 * The feature id for the '<em><b>Booking</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__BOOKING = 4;
+	int ROOM__BOOKING = 3;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -120,7 +111,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 5;
+	int ROOM_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -221,7 +212,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagement()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT = 6;
+	int IBOOKING_MANAGEMENT = 5;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IBookingManagementImplImpl <em>IBooking Management Impl</em>}' class.
@@ -231,7 +222,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagementImpl()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT_IMPL = 5;
+	int IBOOKING_MANAGEMENT_IMPL = 4;
 
 	/**
 	 * The meta object id for the '{@link Classes.IFinance <em>IFinance</em>}' class.
@@ -241,7 +232,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinance()
 	 * @generated
 	 */
-	int IFINANCE = 9;
+	int IFINANCE = 8;
 
 	/**
 	 * The meta object id for the '{@link Classes.IHotelManager <em>IHotel Manager</em>}' class.
@@ -251,7 +242,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIHotelManager()
 	 * @generated
 	 */
-	int IHOTEL_MANAGER = 13;
+	int IHOTEL_MANAGER = 11;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.
@@ -261,7 +252,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinanceImpl()
 	 * @generated
 	 */
-	int IFINANCE_IMPL = 8;
+	int IFINANCE_IMPL = 7;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.BookingImpl <em>Booking</em>}' class.
@@ -271,178 +262,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBooking()
 	 * @generated
 	 */
-	int BOOKING = 3;
-
-	/**
-	 * The number of structural features of the '<em>IHotel Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Login</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___LOGIN__STRING_STRING = 0;
-
-	/**
-	 * The operation id for the '<em>Add Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = 1;
-
-	/**
-	 * The operation id for the '<em>Is Password Secure</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___IS_PASSWORD_SECURE__STRING = 2;
-
-	/**
-	 * The operation id for the '<em>Is Valid Username</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___IS_VALID_USERNAME__STRING = 3;
-
-	/**
-	 * The operation id for the '<em>Change Status Of Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = 4;
-
-	/**
-	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES = 5;
-
-	/**
-	 * The operation id for the '<em>Find Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = 6;
-
-	/**
-	 * The operation id for the '<em>Is Staff Member Logged In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING = 7;
-
-	/**
-	 * The operation id for the '<em>Is Staff Member Admin</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING = 8;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Password</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = 9;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member First Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING = 10;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Last Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING = 11;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Email</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING = 12;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Phone Number</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = 13;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Address</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = 14;
-
-	/**
-	 * The operation id for the '<em>Logout</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___LOGOUT__STRING = 15;
-
-	/**
-	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 16;
-
-	/**
-	 * The number of operations of the '<em>IHotel Manager</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 17;
+	int BOOKING = 2;
 
 	/**
 	 * The meta object id for the '{@link Classes.IPerson <em>IPerson</em>}' class.
@@ -452,7 +272,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIPerson()
 	 * @generated
 	 */
-	int IPERSON = 7;
+	int IPERSON = 6;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.StaffMemberImpl <em>Staff Member</em>}' class.
@@ -472,7 +292,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCustomer()
 	 * @generated
 	 */
-	int CUSTOMER = 4;
+	int CUSTOMER = 3;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IHotelManagerImplImpl <em>IHotel Manager Impl</em>}' class.
@@ -482,214 +302,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIHotelManagerImpl()
 	 * @generated
 	 */
-	int IHOTEL_MANAGER_IMPL = 2;
-
-	/**
-	 * The feature id for the '<em><b>Booking</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL__BOOKING = IHOTEL_MANAGER_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Staff</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL__STAFF = IHOTEL_MANAGER_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL = IHOTEL_MANAGER_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL__ROOM = IHOTEL_MANAGER_FEATURE_COUNT + 3;
-
-	/**
-	 * The number of structural features of the '<em>IHotel Manager Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL_FEATURE_COUNT = IHOTEL_MANAGER_FEATURE_COUNT + 4;
-
-	/**
-	 * The operation id for the '<em>Login</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING = IHOTEL_MANAGER___LOGIN__STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Add Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN;
-
-	/**
-	 * The operation id for the '<em>Is Password Secure</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING = IHOTEL_MANAGER___IS_PASSWORD_SECURE__STRING;
-
-	/**
-	 * The operation id for the '<em>Is Valid Username</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING = IHOTEL_MANAGER___IS_VALID_USERNAME__STRING;
-
-	/**
-	 * The operation id for the '<em>Change Status Of Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS;
-
-	/**
-	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES = IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES;
-
-	/**
-	 * The operation id for the '<em>Find Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Is Staff Member Logged In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_LOGGED_IN__STRING = IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING;
-
-	/**
-	 * The operation id for the '<em>Is Staff Member Admin</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_ADMIN__STRING = IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Password</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PASSWORD__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member First Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_FIRST_NAME__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Last Name</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_LAST_NAME__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Email</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_EMAIL__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Phone Number</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING;
-
-	/**
-	 * The operation id for the '<em>Get Staff Member Address</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_ADDRESS__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING;
-
-	/**
-	 * The operation id for the '<em>Logout</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___LOGOUT__STRING = IHOTEL_MANAGER___LOGOUT__STRING;
-
-	/**
-	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___IS_EXISTING_STAFF_MEMBER__STRING = IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING;
-
-	/**
-	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL_OPERATION_COUNT = IHOTEL_MANAGER_OPERATION_COUNT + 0;
+	int IHOTEL_MANAGER_IMPL = 13;
 
 	/**
 	 * The feature id for the '<em><b>Check In</b></em>' attribute.
@@ -782,22 +395,13 @@ public interface ClassesPackage extends EPackage {
 	int BOOKING__IBOOKING_MANAGEMENT_IMPL = 9;
 
 	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__ROOM = 10;
-
-	/**
 	 * The feature id for the '<em><b>IFinance Impl</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__IFINANCE_IMPL = 11;
+	int BOOKING__IFINANCE_IMPL = 10;
 
 	/**
 	 * The feature id for the '<em><b>Bill</b></em>' reference.
@@ -806,16 +410,16 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BILL = 12;
+	int BOOKING__BILL = 11;
 
 	/**
-	 * The feature id for the '<em><b>IHotel Manager Impl</b></em>' reference.
+	 * The feature id for the '<em><b>Room</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__IHOTEL_MANAGER_IMPL = 13;
+	int BOOKING__ROOM = 12;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -824,7 +428,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 14;
+	int BOOKING_FEATURE_COUNT = 13;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -1419,7 +1023,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBill()
 	 * @generated
 	 */
-	int BILL = 10;
+	int BILL = 9;
 
 	/**
 	 * The feature id for the '<em><b>Charge</b></em>' reference list.
@@ -1465,7 +1069,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCharge()
 	 * @generated
 	 */
-	int CHARGE = 11;
+	int CHARGE = 10;
 
 	/**
 	 * The feature id for the '<em><b>Bill</b></em>' reference.
@@ -1493,6 +1097,177 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHARGE_OPERATION_COUNT = 0;
+
+	/**
+	 * The number of structural features of the '<em>IHotel Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Login</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___LOGIN__STRING_STRING = 0;
+
+	/**
+	 * The operation id for the '<em>Add Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = 1;
+
+	/**
+	 * The operation id for the '<em>Is Password Secure</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___IS_PASSWORD_SECURE__STRING = 2;
+
+	/**
+	 * The operation id for the '<em>Is Valid Username</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___IS_VALID_USERNAME__STRING = 3;
+
+	/**
+	 * The operation id for the '<em>Change Status Of Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = 4;
+
+	/**
+	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES = 5;
+
+	/**
+	 * The operation id for the '<em>Find Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = 6;
+
+	/**
+	 * The operation id for the '<em>Is Staff Member Logged In</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING = 7;
+
+	/**
+	 * The operation id for the '<em>Is Staff Member Admin</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING = 8;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Password</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = 9;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member First Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING = 10;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Last Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING = 11;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING = 12;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Phone Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = 13;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Address</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = 14;
+
+	/**
+	 * The operation id for the '<em>Logout</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___LOGOUT__STRING = 15;
+
+	/**
+	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 16;
+
+	/**
+	 * The number of operations of the '<em>IHotel Manager</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_OPERATION_COUNT = 17;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -1593,6 +1368,195 @@ public interface ClassesPackage extends EPackage {
 	 */
 	int STAFF_MEMBER_OPERATION_COUNT = IPERSON_OPERATION_COUNT + 0;
 
+	/**
+	 * The feature id for the '<em><b>Staff</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL__STAFF = IHOTEL_MANAGER_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL = IHOTEL_MANAGER_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>IHotel Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL_FEATURE_COUNT = IHOTEL_MANAGER_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Login</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING = IHOTEL_MANAGER___LOGIN__STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Add Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN = IHOTEL_MANAGER___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN;
+
+	/**
+	 * The operation id for the '<em>Is Password Secure</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING = IHOTEL_MANAGER___IS_PASSWORD_SECURE__STRING;
+
+	/**
+	 * The operation id for the '<em>Is Valid Username</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING = IHOTEL_MANAGER___IS_VALID_USERNAME__STRING;
+
+	/**
+	 * The operation id for the '<em>Change Status Of Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS;
+
+	/**
+	 * The operation id for the '<em>Get Possible Room Statuses</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_POSSIBLE_ROOM_STATUSES = IHOTEL_MANAGER___GET_POSSIBLE_ROOM_STATUSES;
+
+	/**
+	 * The operation id for the '<em>Find Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING;
+
+	/**
+	 * The operation id for the '<em>Is Staff Member Logged In</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_LOGGED_IN__STRING = IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING;
+
+	/**
+	 * The operation id for the '<em>Is Staff Member Admin</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_ADMIN__STRING = IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Password</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PASSWORD__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member First Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_FIRST_NAME__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Last Name</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_LAST_NAME__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Email</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_EMAIL__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Phone Number</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING;
+
+	/**
+	 * The operation id for the '<em>Get Staff Member Address</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_ADDRESS__STRING = IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING;
+
+	/**
+	 * The operation id for the '<em>Logout</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___LOGOUT__STRING = IHOTEL_MANAGER___LOGOUT__STRING;
+
+	/**
+	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___IS_EXISTING_STAFF_MEMBER__STRING = IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING;
+
+	/**
+	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL_OPERATION_COUNT = IHOTEL_MANAGER_OPERATION_COUNT + 0;
+
 
 	/**
 	 * The meta object id for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.
@@ -1647,17 +1611,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoom_RoomType();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.Room#getIHotelManagerImpl <em>IHotel Manager Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>IHotel Manager Impl</em>'.
-	 * @see Classes.Room#getIHotelManagerImpl()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EReference getRoom_IHotelManagerImpl();
 
 	/**
 	 * Returns the meta object for the reference list '{@link Classes.Room#getBooking <em>Booking</em>}'.
@@ -2462,17 +2415,6 @@ public interface ClassesPackage extends EPackage {
 	EReference getBooking_Bill();
 
 	/**
-	 * Returns the meta object for the reference '{@link Classes.Booking#getIHotelManagerImpl <em>IHotel Manager Impl</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>IHotel Manager Impl</em>'.
-	 * @see Classes.Booking#getIHotelManagerImpl()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EReference getBooking_IHotelManagerImpl();
-
-	/**
 	 * Returns the meta object for class '{@link Classes.IPerson <em>IPerson</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2591,17 +2533,6 @@ public interface ClassesPackage extends EPackage {
 	EClass getIHotelManagerImpl();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.IHotelManagerImpl#getBooking <em>Booking</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Booking</em>'.
-	 * @see Classes.IHotelManagerImpl#getBooking()
-	 * @see #getIHotelManagerImpl()
-	 * @generated
-	 */
-	EReference getIHotelManagerImpl_Booking();
-
-	/**
 	 * Returns the meta object for the reference list '{@link Classes.IHotelManagerImpl#getStaff <em>Staff</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2622,17 +2553,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIHotelManagerImpl_IBookingManagementImpl();
-
-	/**
-	 * Returns the meta object for the reference list '{@link Classes.IHotelManagerImpl#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Room</em>'.
-	 * @see Classes.IHotelManagerImpl#getRoom()
-	 * @see #getIHotelManagerImpl()
-	 * @generated
-	 */
-	EReference getIHotelManagerImpl_Room();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2690,14 +2610,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
-
-		/**
-		 * The meta object literal for the '<em><b>IHotel Manager Impl</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM__IHOTEL_MANAGER_IMPL = eINSTANCE.getRoom_IHotelManagerImpl();
 
 		/**
 		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
@@ -3338,14 +3250,6 @@ public interface ClassesPackage extends EPackage {
 		EReference BOOKING__BILL = eINSTANCE.getBooking_Bill();
 
 		/**
-		 * The meta object literal for the '<em><b>IHotel Manager Impl</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BOOKING__IHOTEL_MANAGER_IMPL = eINSTANCE.getBooking_IHotelManagerImpl();
-
-		/**
 		 * The meta object literal for the '{@link Classes.IPerson <em>IPerson</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3440,14 +3344,6 @@ public interface ClassesPackage extends EPackage {
 		EClass IHOTEL_MANAGER_IMPL = eINSTANCE.getIHotelManagerImpl();
 
 		/**
-		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IHOTEL_MANAGER_IMPL__BOOKING = eINSTANCE.getIHotelManagerImpl_Booking();
-
-		/**
 		 * The meta object literal for the '<em><b>Staff</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3462,14 +3358,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getIHotelManagerImpl_IBookingManagementImpl();
-
-		/**
-		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IHOTEL_MANAGER_IMPL__ROOM = eINSTANCE.getIHotelManagerImpl_Room();
 
 	}
 

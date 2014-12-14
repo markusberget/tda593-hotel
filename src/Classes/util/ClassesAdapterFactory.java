@@ -76,10 +76,6 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createRoomTypeAdapter();
 			}
 			@Override
-			public Adapter caseIHotelManagerImpl(IHotelManagerImpl object) {
-				return createIHotelManagerImplAdapter();
-			}
-			@Override
 			public Adapter caseBooking(Booking object) {
 				return createBookingAdapter();
 			}
@@ -116,12 +112,16 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createChargeAdapter();
 			}
 			@Override
+			public Adapter caseIHotelManager(IHotelManager object) {
+				return createIHotelManagerAdapter();
+			}
+			@Override
 			public Adapter caseStaffMember(StaffMember object) {
 				return createStaffMemberAdapter();
 			}
 			@Override
-			public Adapter caseIHotelManager(IHotelManager object) {
-				return createIHotelManagerAdapter();
+			public Adapter caseIHotelManagerImpl(IHotelManagerImpl object) {
+				return createIHotelManagerImplAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

@@ -9,10 +9,6 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yPT4QX97EeSGQvz0Zrfl-Q" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yPT4Qn97EeSGQvz0Zrfl-Q" value="1"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_vTH7kXn3EeSXl-11lZMmcA" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_vTH7kHn3EeSXl-11lZMmcA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vTH7knn3EeSXl-11lZMmcA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vTH7k3n3EeSXl-11lZMmcA" value="1"/>
-    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_cqW-QXZVEeSiQcRa0VNXAQ" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_cqW-QHZVEeSiQcRa0VNXAQ">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cqW-QnZVEeSiQcRa0VNXAQ"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cqW-Q3ZVEeSiQcRa0VNXAQ" value="*"/>
@@ -394,8 +390,6 @@
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_fOOUkHn3EeSXl-11lZMmcA" memberEnd="_fOOUkXn3EeSXl-11lZMmcA _fOMfYHn3EeSXl-11lZMmcA"/>
-  <packagedElement xmi:type="uml:Association" xmi:id="_vTH7kHn3EeSXl-11lZMmcA" memberEnd="_vTH7kXn3EeSXl-11lZMmcA _vTHUgHn3EeSXl-11lZMmcA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_wlzyUHZQEeSiQcRa0VNXAQ" memberEnd="_wlzyUXZQEeSiQcRa0VNXAQ _wlxWEHZQEeSiQcRa0VNXAQ"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_UjloQHZREeSiQcRa0VNXAQ" memberEnd="_UjloQXZREeSiQcRa0VNXAQ _Ujik8HZREeSiQcRa0VNXAQ"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_X5WqMHZREeSiQcRa0VNXAQ" memberEnd="_X5WqMXZREeSiQcRa0VNXAQ _X5UN8HZREeSiQcRa0VNXAQ"/>
@@ -437,10 +431,6 @@
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_jPES4ICREeSFes4IcS1MiA" name="phoneNumber">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_fOOUkXn3EeSXl-11lZMmcA" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_fOOUkHn3EeSXl-11lZMmcA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fOOUknn3EeSXl-11lZMmcA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fOOUk3n3EeSXl-11lZMmcA" value="1"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_UjloQXZREeSiQcRa0VNXAQ" name="customer" type="_SwfqYHTaEeSOC7DG65-e3w" association="_UjloQHZREeSiQcRa0VNXAQ">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UjloQnZREeSiQcRa0VNXAQ" value="1"/>
@@ -515,14 +505,6 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_yPWUgH97EeSGQvz0Zrfl-Q" memberEnd="_yPWUgX97EeSGQvz0Zrfl-Q _yPT4QH97EeSGQvz0Zrfl-Q"/>
   <packagedElement xmi:type="uml:Class" xmi:id="_QaiNQHYaEeSNRvHXkk2GGA" name="IHotelManagerImpl" visibility="package">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_fOMfYHn3EeSXl-11lZMmcA" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_fOOUkHn3EeSXl-11lZMmcA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_fOMfYXn3EeSXl-11lZMmcA"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_fOMfYnn3EeSXl-11lZMmcA" value="*"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_vTHUgHn3EeSXl-11lZMmcA" name="room" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_vTH7kHn3EeSXl-11lZMmcA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_vTHUgXn3EeSXl-11lZMmcA"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_vTHUgnn3EeSXl-11lZMmcA" value="*"/>
-    </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_0HI7UXZhEeSBRfeA9UETiw" name="staff" type="_NLnlMHTdEeSOC7DG65-e3w" association="_0HI7UHZhEeSBRfeA9UETiw">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0HI7UnZhEeSBRfeA9UETiw"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_0HI7U3ZhEeSBRfeA9UETiw" value="*"/>

@@ -68,7 +68,6 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 		switch (eClass.getClassifierID()) {
 			case ClassesPackage.ROOM: return createRoom();
 			case ClassesPackage.ROOM_TYPE: return createRoomType();
-			case ClassesPackage.IHOTEL_MANAGER_IMPL: return createIHotelManagerImpl();
 			case ClassesPackage.BOOKING: return createBooking();
 			case ClassesPackage.CUSTOMER: return createCustomer();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: return createIBookingManagementImpl();
@@ -76,6 +75,7 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 			case ClassesPackage.BILL: return createBill();
 			case ClassesPackage.CHARGE: return createCharge();
 			case ClassesPackage.STAFF_MEMBER: return createStaffMember();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL: return createIHotelManagerImpl();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}

@@ -8,8 +8,6 @@
         lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
         lowerBound="1" eType="#//RoomType" eOpposite="#//RoomType/room"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iHotelManagerImpl" ordered="false"
-        lowerBound="1" eType="#//IHotelManagerImpl" eOpposite="#//IHotelManagerImpl/room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="booking" ordered="false"
         upperBound="-1" eType="#//Booking" eOpposite="#//Booking/room"/>
   </eClassifiers>
@@ -32,16 +30,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
         eType="#//Room" eOpposite="#//Room/roomType"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="IHotelManagerImpl" eSuperTypes="#//IHotelManager">
-    <eStructuralFeatures xsi:type="ecore:EReference" name="booking" ordered="false"
-        upperBound="-1" eType="#//Booking" eOpposite="#//Booking/iHotelManagerImpl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="staff" ordered="false"
-        upperBound="-1" eType="#//StaffMember"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iBookingManagementImpl"
-        ordered="false" lowerBound="1" eType="#//IBookingManagementImpl"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
-        eType="#//Room" eOpposite="#//Room/iHotelManagerImpl"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Booking">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkIn" ordered="false"
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
@@ -63,14 +51,12 @@
         lowerBound="1" eType="#//Customer" eOpposite="#//Customer/booking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iBookingManagementImpl"
         ordered="false" lowerBound="1" eType="#//IBookingManagementImpl" eOpposite="#//IBookingManagementImpl/booking"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" lowerBound="1"
-        upperBound="-1" eType="#//Room" eOpposite="#//Room/booking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iFinanceImpl" ordered="false"
         lowerBound="1" eType="#//IFinanceImpl" eOpposite="#//IFinanceImpl/booking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" lowerBound="1"
         eType="#//Bill" eOpposite="#//Bill/booking"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="iHotelManagerImpl" ordered="false"
-        lowerBound="1" eType="#//IHotelManagerImpl" eOpposite="#//IHotelManagerImpl/booking"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" lowerBound="1"
+        upperBound="-1" eType="#//Room" eOpposite="#//Room/booking"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//IPerson">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="personalInfo" ordered="false"
@@ -192,16 +178,6 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" lowerBound="1"
         eType="#//Bill" eOpposite="#//Bill/charge"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="StaffMember" eSuperTypes="#//IPerson">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="admin" ordered="false"
-        lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"
-        lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"
-        lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLoggedIn" ordered="false"
-        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
-  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IHotelManager" abstract="true" interface="true">
     <eOperations name="login" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="username" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
@@ -266,5 +242,21 @@
     <eOperations name="isExistingStaffMember" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="username" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="StaffMember" eSuperTypes="#//IPerson">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="admin" ordered="false"
+        lowerBound="1" eType="ecore:EDataType types.ecore#//Boolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="username" ordered="false"
+        lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="password" ordered="false"
+        lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="isLoggedIn" ordered="false"
+        lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="IHotelManagerImpl" eSuperTypes="#//IHotelManager">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="staff" ordered="false"
+        upperBound="-1" eType="#//StaffMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iBookingManagementImpl"
+        ordered="false" lowerBound="1" eType="#//IBookingManagementImpl"/>
   </eClassifiers>
 </ecore:EPackage>

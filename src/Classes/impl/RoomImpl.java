@@ -4,7 +4,6 @@ package Classes.impl;
 
 import Classes.Booking;
 import Classes.ClassesPackage;
-import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomType;
@@ -29,7 +28,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Classes.impl.RoomImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link Classes.impl.RoomImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getBooking <em>Booking</em>}</li>
  * </ul>
  * </p>
@@ -86,16 +84,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected RoomType roomType;
-
-	/**
-	 * The cached value of the '{@link #getIHotelManagerImpl() <em>IHotel Manager Impl</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIHotelManagerImpl()
-	 * @generated
-	 * @ordered
-	 */
-	protected IHotelManagerImpl iHotelManagerImpl;
 
 	/**
 	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference list.
@@ -233,66 +221,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IHotelManagerImpl getIHotelManagerImpl() {
-		if (iHotelManagerImpl != null && iHotelManagerImpl.eIsProxy()) {
-			InternalEObject oldIHotelManagerImpl = (InternalEObject)iHotelManagerImpl;
-			iHotelManagerImpl = (IHotelManagerImpl)eResolveProxy(oldIHotelManagerImpl);
-			if (iHotelManagerImpl != oldIHotelManagerImpl) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, iHotelManagerImpl));
-			}
-		}
-		return iHotelManagerImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IHotelManagerImpl basicGetIHotelManagerImpl() {
-		return iHotelManagerImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetIHotelManagerImpl(IHotelManagerImpl newIHotelManagerImpl, NotificationChain msgs) {
-		IHotelManagerImpl oldIHotelManagerImpl = iHotelManagerImpl;
-		iHotelManagerImpl = newIHotelManagerImpl;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, newIHotelManagerImpl);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIHotelManagerImpl(IHotelManagerImpl newIHotelManagerImpl) {
-		if (newIHotelManagerImpl != iHotelManagerImpl) {
-			NotificationChain msgs = null;
-			if (iHotelManagerImpl != null)
-				msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM, IHotelManagerImpl.class, msgs);
-			if (newIHotelManagerImpl != null)
-				msgs = ((InternalEObject)newIHotelManagerImpl).eInverseAdd(this, ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM, IHotelManagerImpl.class, msgs);
-			msgs = basicSetIHotelManagerImpl(newIHotelManagerImpl, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL, newIHotelManagerImpl, newIHotelManagerImpl));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EList<Booking> getBooking() {
 		if (booking == null) {
 			booking = new EObjectWithInverseResolvingEList.ManyInverse<Booking>(Booking.class, this, ClassesPackage.ROOM__BOOKING, ClassesPackage.BOOKING__ROOM);
@@ -313,10 +241,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				if (roomType != null)
 					msgs = ((InternalEObject)roomType).eInverseRemove(this, ClassesPackage.ROOM_TYPE__ROOM, RoomType.class, msgs);
 				return basicSetRoomType((RoomType)otherEnd, msgs);
-			case ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL:
-				if (iHotelManagerImpl != null)
-					msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__ROOM, IHotelManagerImpl.class, msgs);
-				return basicSetIHotelManagerImpl((IHotelManagerImpl)otherEnd, msgs);
 			case ClassesPackage.ROOM__BOOKING:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
 		}
@@ -333,8 +257,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		switch (featureID) {
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				return basicSetRoomType(null, msgs);
-			case ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL:
-				return basicSetIHotelManagerImpl(null, msgs);
 			case ClassesPackage.ROOM__BOOKING:
 				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
 		}
@@ -356,9 +278,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				if (resolve) return getRoomType();
 				return basicGetRoomType();
-			case ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL:
-				if (resolve) return getIHotelManagerImpl();
-				return basicGetIHotelManagerImpl();
 			case ClassesPackage.ROOM__BOOKING:
 				return getBooking();
 		}
@@ -382,9 +301,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				setRoomType((RoomType)newValue);
-				return;
-			case ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL:
-				setIHotelManagerImpl((IHotelManagerImpl)newValue);
 				return;
 			case ClassesPackage.ROOM__BOOKING:
 				getBooking().clear();
@@ -411,9 +327,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				setRoomType((RoomType)null);
 				return;
-			case ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL:
-				setIHotelManagerImpl((IHotelManagerImpl)null);
-				return;
 			case ClassesPackage.ROOM__BOOKING:
 				getBooking().clear();
 				return;
@@ -435,8 +348,6 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				return roomType != null;
-			case ClassesPackage.ROOM__IHOTEL_MANAGER_IMPL:
-				return iHotelManagerImpl != null;
 			case ClassesPackage.ROOM__BOOKING:
 				return booking != null && !booking.isEmpty();
 		}
