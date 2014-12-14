@@ -57,9 +57,9 @@ public class UserTests {
 	}
 
 	/**
-	 * First two pending bookings are created, and then the second one is confirmed.
-	 * 
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#confirmBooking(int)}.
+	 * 
+	 * First two pending bookings are created, and then they are confirmed in reverse order.
 	 */
 	@Test
 	public void testConfirmBooking() {
@@ -109,19 +109,27 @@ public class UserTests {
 	}
 
 	/**
+	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#checkOut(java.lang.Class)}.
+	 * 
 	 * Test for the check out process when considering valid behavior, which includes
 	 * retrieving the booking information, choosing which room(s) to check out, pay for them
 	 * and change the status of the room(s) to CLEANING. This is the flow according to the
 	 * check out use case and sequence diagram.
-	 * 
-	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#checkOut(java.lang.Class)}.
 	 */
 	@Test
 	public void testCheckOut() {
 		// Set up an existing booking first and check in, before being able to check out. It's a precondition.
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 3);
-	// 1) Retrieve booking information using getBooking(bookingID).
+		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
+		bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
+		bookingManagement.confirmBooking(bookingID);
+		
+		
+		// 0) Need to add a couple of rooms to the booking in order to be able to calculate payment and such.
+		
+		
+		// 1) Retrieve booking information using getBooking(bookingID).
 		bookingManagement.getBooking(bookingID);
 		// 2) Choose room(s) to checkout from.
 		// 2a) A precondition for doing a checkout is that a checkin has been done, this must be checked first.
@@ -130,12 +138,12 @@ public class UserTests {
 	}
 
 	/**
+	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#addCustomerInformationToBooking(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
+	 * 
 	 * First tests that a (existing) pending booking has its default values for the
 	 * firstName, lastName. email, and ph instance variables. Thereafter the method
 	 * addCustomerInformationToBooking() adds desired values for these variables, which
 	 * are checked if assigned correctly.
-	 * 
-	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#addCustomerInformationToBooking(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String)}.
 	 */
 	@Test
 	public void testAddCustomerInformationToBooking() {
