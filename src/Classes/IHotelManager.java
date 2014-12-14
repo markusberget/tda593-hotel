@@ -2,7 +2,6 @@
  */
 package Classes;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -47,14 +46,6 @@ public interface IHotelManager extends EObject {
 	 * @generated
 	 */
 	boolean isValidUsername(String username);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" many="false" ordered="false" usernameRequired="true" usernameOrdered="false" firstNameRequired="true" firstNameOrdered="false" secondNameRequired="true" secondNameOrdered="false" emailRequired="true" emailOrdered="false" phoneNumberRequired="true" phoneNumberOrdered="false"
-	 * @generated
-	 */
-	EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber);
 
 	/**
 	 * <!-- begin-user-doc -->

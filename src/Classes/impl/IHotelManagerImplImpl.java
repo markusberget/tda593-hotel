@@ -230,66 +230,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * If substr can be found in s, return true. The comparison is case insensitive. 
-	 */
-	private static boolean contains(String s, String substr) {
-		return s.toLowerCase().contains(substr.toLowerCase());
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * The search works as following: If a parameter is null, that parameter ignored. If a parameter is non-null,
-	 * then the search will match all staff members whose corresponding attribute contains a substring of that parameter.
-	 * If several parameters are non-null, then all the non-null parameters must match. Only staff members for which
-	 * all the non-null parameters match will be returned by this function.
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public EList findStaffMember(String username, String firstName, String secondName, String email, String phoneNumber) {
-		EList<StaffMember> searchResult = new BasicEList<StaffMember>();
-		
-		for(StaffMember s: this.staff) {
-		
-			if(username != null) {
-				if(!contains(s.getUsername(), username)) {
-					// this parameter didn't match, so this staff member won't be returned.
-					// try for the next staff member in the list!
-					continue;
-				}
-			}
-			
-			if(firstName != null) {
-				if(!contains(s.getFirstName(), firstName)) {
-					continue;
-				}
-			}
-			
-			if(secondName != null) {
-				if(!contains(s.getLastName(), secondName)) {
-					continue;
-				}
-			}
-			
-			if(email != null) {
-				if(!contains(s.getEmail(), email)) {
-					continue;
-				}
-			}
-			
-			if(phoneNumber != null) {
-				if(!contains(s.getPhoneNumber(), phoneNumber)) {
-					continue;
-				}
-			}
-			
-			// Passed all the tests, so add
-			searchResult.add(s);
-		}
-		
-		return searchResult;
-	}
-
-	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
@@ -472,8 +412,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return isPasswordSecure((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
 				return isValidUsername((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING:
-				return findStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_LOGGED_IN__STRING:
 				return isStaffMemberLoggedIn((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_ADMIN__STRING:
