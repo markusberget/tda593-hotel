@@ -114,4 +114,12 @@ public interface IBookingManagement extends EObject {
 	 */
 	int createPendingBooking(Date checkIn, Date checkOut, int guestCount);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomIdRequired="true" roomIdOrdered="false" statusRequired="true" statusOrdered="false"
+	 * @generated
+	 */
+	boolean changeStatusOfRoom(int roomId, RoomStatus status);
+
 } // IBookingManagement

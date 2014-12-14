@@ -51,14 +51,6 @@ public interface IHotelManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomIdRequired="true" roomIdOrdered="false" statusRequired="true" statusOrdered="false"
-	 * @generated
-	 */
-	boolean changeStatusOfRoom(int roomId, RoomStatus status);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" many="false" ordered="false" usernameRequired="true" usernameOrdered="false" firstNameRequired="true" firstNameOrdered="false" secondNameRequired="true" secondNameOrdered="false" emailRequired="true" emailOrdered="false" phoneNumberRequired="true" phoneNumberOrdered="false"
 	 * @generated
 	 */

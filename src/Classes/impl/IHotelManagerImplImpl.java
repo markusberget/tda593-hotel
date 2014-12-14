@@ -5,7 +5,6 @@ package Classes.impl;
 import Classes.ClassesPackage;
 import Classes.IBookingManagementImpl;
 import Classes.IHotelManagerImpl;
-import Classes.RoomStatus;
 import Classes.StaffMember;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
@@ -280,17 +279,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean changeStatusOfRoom(int roomId, RoomStatus status) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
 	 * If substr can be found in s, return true. The comparison is case insensitive. 
 	 */
 	private static boolean contains(String s, String substr) {
@@ -544,8 +532,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return isPasswordSecure((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
 				return isValidUsername((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS:
-				return changeStatusOfRoom((Integer)arguments.get(0), (RoomStatus)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING:
 				return findStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_LOGGED_IN__STRING:

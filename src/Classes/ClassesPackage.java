@@ -710,13 +710,22 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 11;
 
 	/**
+	 * The operation id for the '<em>Change Status Of Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = 12;
+
+	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 12;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Booking</b></em>' reference list.
@@ -870,6 +879,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT = IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT;
+
+	/**
+	 * The operation id for the '<em>Change Status Of Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management Impl</em>' class.
@@ -1144,22 +1162,13 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___IS_VALID_USERNAME__STRING = 3;
 
 	/**
-	 * The operation id for the '<em>Change Status Of Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = 4;
-
-	/**
 	 * The operation id for the '<em>Find Staff Member</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = 5;
+	int IHOTEL_MANAGER___FIND_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING = 4;
 
 	/**
 	 * The operation id for the '<em>Is Staff Member Logged In</em>' operation.
@@ -1168,7 +1177,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING = 6;
+	int IHOTEL_MANAGER___IS_STAFF_MEMBER_LOGGED_IN__STRING = 5;
 
 	/**
 	 * The operation id for the '<em>Is Staff Member Admin</em>' operation.
@@ -1177,7 +1186,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING = 7;
+	int IHOTEL_MANAGER___IS_STAFF_MEMBER_ADMIN__STRING = 6;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Password</em>' operation.
@@ -1186,7 +1195,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = 8;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PASSWORD__STRING = 7;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member First Name</em>' operation.
@@ -1195,7 +1204,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING = 9;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_FIRST_NAME__STRING = 8;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Last Name</em>' operation.
@@ -1204,7 +1213,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING = 10;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_LAST_NAME__STRING = 9;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Email</em>' operation.
@@ -1213,7 +1222,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING = 11;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_EMAIL__STRING = 10;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Phone Number</em>' operation.
@@ -1222,7 +1231,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = 12;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING = 11;
 
 	/**
 	 * The operation id for the '<em>Get Staff Member Address</em>' operation.
@@ -1231,7 +1240,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = 13;
+	int IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING = 12;
 
 	/**
 	 * The operation id for the '<em>Logout</em>' operation.
@@ -1240,7 +1249,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___LOGOUT__STRING = 14;
+	int IHOTEL_MANAGER___LOGOUT__STRING = 13;
 
 	/**
 	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
@@ -1249,7 +1258,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 15;
+	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 14;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
@@ -1258,7 +1267,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 15;
 
 	/**
 	 * The feature id for the '<em><b>First Name</b></em>' attribute.
@@ -1421,15 +1430,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING = IHOTEL_MANAGER___IS_VALID_USERNAME__STRING;
-
-	/**
-	 * The operation id for the '<em>Change Status Of Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS;
 
 	/**
 	 * The operation id for the '<em>Find Staff Member</em>' operation.
@@ -1866,6 +1866,16 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#changeStatusOfRoom(int, Classes.RoomStatus) <em>Change Status Of Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Change Status Of Room</em>' operation.
+	 * @see Classes.IBookingManagement#changeStatusOfRoom(int, Classes.RoomStatus)
+	 * @generated
+	 */
+	EOperation getIBookingManagement__ChangeStatusOfRoom__int_RoomStatus();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IFinance <em>IFinance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2027,16 +2037,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIHotelManager__IsValidUsername__String();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#changeStatusOfRoom(int, Classes.RoomStatus) <em>Change Status Of Room</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Change Status Of Room</em>' operation.
-	 * @see Classes.IHotelManager#changeStatusOfRoom(int, Classes.RoomStatus)
-	 * @generated
-	 */
-	EOperation getIHotelManager__ChangeStatusOfRoom__int_RoomStatus();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IHotelManager#findStaffMember(java.lang.String, java.lang.String, java.lang.String, java.lang.String, java.lang.String) <em>Find Staff Member</em>}' operation.
@@ -2798,6 +2798,14 @@ public interface ClassesPackage extends EPackage {
 		EOperation IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = eINSTANCE.getIBookingManagement__CreatePendingBooking__Date_Date_int();
 
 		/**
+		 * The meta object literal for the '<em><b>Change Status Of Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = eINSTANCE.getIBookingManagement__ChangeStatusOfRoom__int_RoomStatus();
+
+		/**
 		 * The meta object literal for the '{@link Classes.IFinance <em>IFinance</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2932,14 +2940,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___IS_VALID_USERNAME__STRING = eINSTANCE.getIHotelManager__IsValidUsername__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Change Status Of Room</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_ROOMSTATUS = eINSTANCE.getIHotelManager__ChangeStatusOfRoom__int_RoomStatus();
 
 		/**
 		 * The meta object literal for the '<em><b>Find Staff Member</b></em>' operation.
