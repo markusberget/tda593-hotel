@@ -117,9 +117,9 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomIdRequired="true" roomIdOrdered="false" statusRequired="true" statusOrdered="false"
+	 * @model required="true" ordered="false" staffMemberUsernameRequired="true" staffMemberUsernameOrdered="false" roomIdRequired="true" roomIdOrdered="false" statusRequired="true" statusOrdered="false"
 	 * @generated
 	 */
-	boolean changeStatusOfRoom(int roomId, RoomStatus status);
+	boolean changeStatusOfRoom(String staffMemberUsername, int roomId, RoomStatus status);
 
 } // IBookingManagement
