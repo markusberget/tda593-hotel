@@ -243,7 +243,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
 	public void getBooking(int roomID, Date date) {
 		// TODO: implement this method
@@ -257,6 +257,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * to his/her pending booking. By using the bookingID as the key in
 	 * the HashMap the now pending room will be associated with the
 	 * correct booking.
+	 * 
+	 * NOTE: At the moment it is the room objects that are moved backed and
+	 * forth between the arrays. It is only between chosen dates that a room
+	 * should be unavailable so the current implementation will be changed
+	 * later.
 	 * 
 	 * @generated NOT
 	 */
@@ -308,6 +313,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * A booking can be cancelled while it is pending and also when it is
 	 * in the confirmed state. For the moment, a cancelled booking is
 	 * placed in the history list.
+	 * 
+	 * NOTE: A cancelled booking should make the associated rooms available
+	 * for booking again which is not the case at the moment. This will be
+	 * implemented later.
 	 * 
 	 * @generated NOT
 	 */
