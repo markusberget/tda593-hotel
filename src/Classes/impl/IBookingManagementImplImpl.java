@@ -285,6 +285,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			testConfirmedBookings.put(bookingID, testPendingBookings.remove(bookingID));
 			BillImpl bill = new BillImpl();
 			testConfirmedBookings.get(bookingID).setBill(bill);
+			// Also, there should be Charges added to the Bill for the room(s)
 			return true;
 		}
 		return false;

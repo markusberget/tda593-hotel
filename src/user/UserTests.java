@@ -5,15 +5,20 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 import javax.xml.soap.SOAPException;
 
+import org.eclipse.emf.common.util.BasicEList;
+import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Classes.Booking;
 import Classes.Customer;
+import Classes.Room;
 
 
 /**
@@ -151,7 +156,11 @@ public class UserTests {
 		Booking booking = bookingManagement.getBooking(bookingID);
 		// 2) Choose room(s) to checkout from.
 		// 2a) A precondition for doing a checkout is that a checkin has been done, this must be checked first.
+		EList<Room> rooms = new BasicEList<Room>();
+		//rooms = bookingManagement.getBooking(bookingID).getRoom();
+		//rooms.add(new Room());
 		
+		//bookingManagement.checkOut(rooms);
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).
 		
 		// 4) Change status of room(s) to CLEANING/AVAILABLE? (which is done when payment is a success).

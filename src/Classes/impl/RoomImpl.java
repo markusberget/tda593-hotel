@@ -7,7 +7,9 @@ import Classes.ClassesPackage;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomType;
+
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -103,7 +105,30 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected RoomImpl() {
 		super();
 	}
+	
+	/**
+	 * This constructor is used for testing purposes.
+	 * 
+	 * @generated NOT
+	 */
+	protected RoomImpl(int roomNumber, RoomType roomType) {
+		super();
+		this.roomNumber = roomNumber;
+		this.roomType = roomType;
+	}
 
+	/**
+	 * Instantiation method for Room used for testing.
+	 * 
+	 * @param roomNumber		desired room number
+	 * @param roomType			desired room type
+	 * @return							a newly created room
+	 * @generated NOT
+	 */
+	public static RoomImpl instantiateForTest(int roomNumber, RoomType roomType) {
+		return new RoomImpl(roomNumber, roomType);
+	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
