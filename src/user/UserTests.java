@@ -128,7 +128,7 @@ public class UserTests {
 	public void testCheckOut() {
 		// Set up a credit card account for use when paying for the booking/rooms.
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
-		String ccNumber = "12345678", ccv = "123", firstName = "Karl", lastName = "urban";
+		String ccNumber = "1_12345678", ccv = "123", firstName = "Karl", lastName = "urban";
 		int expiryMonth = 10, expiryYear = 17;
 		try {
 			bankingAdmin = se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires
