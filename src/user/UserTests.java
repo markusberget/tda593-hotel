@@ -12,7 +12,6 @@ import javax.xml.soap.SOAPException;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires;
 import Classes.Booking;
 import Classes.Customer;
 
@@ -126,7 +125,7 @@ public class UserTests {
 	 */
 	@Test
 	public void testCheckOut() {
-		// Set up a credit card account for use when paying for the booking/rooms.
+		// Set up of a credit card account for use when paying for the booking/room(s).
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
 		String ccNumber = "1_12345678", ccv = "123", firstName = "Karl", lastName = "urban";
 		int expiryMonth = 10, expiryYear = 17;

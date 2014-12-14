@@ -275,13 +275,16 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 
 	/**
 	 * Confirms a booking by removing the booking from the pending bookings list
-	 * and adding it to the confirmed bookings list instead.
+	 * and adding it to the confirmed bookings list instead. A bill is associated
+	 * with a booking when the booking is confirmed.
 	 * 
 	 * @generated NOT
 	 */
 	public boolean confirmBooking(int bookingID) {
 		if ( testPendingBookings.get(bookingID) != null ) {
 			testConfirmedBookings.put(bookingID, testPendingBookings.remove(bookingID));
+			BillImpl bill = new BillImpl();
+			testConfirmedBookings.get(bookingID).setBill(bill);
 			return true;
 		}
 		return false;
@@ -407,8 +410,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public synchronized int createPendingBooking(Date checkIn, Date checkOut, int guestCount) {
-		BookingImpl booking = new BookingImpl();
-		CustomerImpl customer = new CustomerImpl();
+		Customer customer = new CustomerImpl();
+		Booking booking = new BookingImpl();
 		booking.setCustomer(customer);
 		booking.setCheckIn(checkIn);
 		booking.setCheckOut(checkOut);
