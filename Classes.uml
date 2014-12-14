@@ -159,6 +159,9 @@
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_Fyy08INsEeS6A76lna5sjg" name="changeStatusOfRoom">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_jgIqwINwEeSGTaIE8hxUxQ" name="staffMemberUsername">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_JowZ4INsEeS6A76lna5sjg" name="roomId">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedParameter>

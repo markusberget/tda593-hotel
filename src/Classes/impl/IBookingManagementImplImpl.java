@@ -25,6 +25,7 @@ import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.Customer;
 import Classes.IBookingManagementImpl;
+import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
@@ -414,6 +415,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean changeStatusOfRoom(int roomId, RoomStatus status) {
+		
+		IHotelManager hm  = getIHotelManagerImpl();
+		
 		return true;
 	}
 
