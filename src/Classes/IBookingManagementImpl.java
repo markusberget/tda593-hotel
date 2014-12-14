@@ -16,6 +16,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link Classes.IBookingManagementImpl#getBooking <em>Booking</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getRoom <em>Room</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getPendingBookings <em>Pending Bookings</em>}</li>
+ *   <li>{@link Classes.IBookingManagementImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getCustomer <em>Customer</em>}</li>
  * </ul>
  * </p>
@@ -75,6 +76,32 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	 * @generated
 	 */
 	EList<Booking> getPendingBookings();
+
+	/**
+	 * Returns the value of the '<em><b>IHotel Manager Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>IHotel Manager Impl</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>IHotel Manager Impl</em>' reference.
+	 * @see #setIHotelManagerImpl(IHotelManagerImpl)
+	 * @see Classes.ClassesPackage#getIBookingManagementImpl_IHotelManagerImpl()
+	 * @model required="true" ordered="false"
+	 * @generated
+	 */
+	IHotelManagerImpl getIHotelManagerImpl();
+
+	/**
+	 * Sets the value of the '{@link Classes.IBookingManagementImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>IHotel Manager Impl</em>' reference.
+	 * @see #getIHotelManagerImpl()
+	 * @generated
+	 */
+	void setIHotelManagerImpl(IHotelManagerImpl value);
 
 	/**
 	 * Returns the value of the '<em><b>Customer</b></em>' reference list.
