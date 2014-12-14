@@ -5,9 +5,7 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.util.ArrayList;
 import java.util.Date;
-import java.util.List;
 
 import javax.xml.soap.SOAPException;
 
@@ -50,10 +48,20 @@ public class UserTests {
 
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#getBooking(int)}.
+	 * 
+	 * Test if correct bookings are retrieved using the corresponding bookingID.
 	 */
 	@Test
 	public void testGetBookingInt() {
-		fail("Not yet implemented");
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		int bookingID1 = bookingManagement.createPendingBooking(new Date(), new Date(), 4);
+		int bookingID2 = bookingManagement.createPendingBooking(new Date(), new Date(), 2);
+		assertEquals(0, bookingID1);
+		assertEquals(1, bookingID2);
+		bookingManagement.confirmBooking(bookingID1);
+		bookingManagement.confirmBooking(bookingID2);
+		assertEquals(bookingID2, bookingManagement.getBooking(bookingID2).getBookingID());
+		assertEquals(bookingID1, bookingManagement.getBooking(bookingID1).getBookingID());
 	}
 
 	/**
@@ -150,16 +158,15 @@ public class UserTests {
 		
 		
 		// 0) Need to add a couple of rooms to the booking in order to be able to calculate payment and such.
-		
+		EList<Room> rooms = new BasicEList<Room>();
+		//rooms = bookingManagement.getBooking(bookingID).getRoom();
+		//rooms.add(new Room());
 		
 		// 1) Retrieve booking information using getBooking(bookingID).
 		Booking booking = bookingManagement.getBooking(bookingID);
 		// 2) Choose room(s) to checkout from.
 		// 2a) A precondition for doing a checkout is that a checkin has been done, this must be checked first.
-		EList<Room> rooms = new BasicEList<Room>();
-		//rooms = bookingManagement.getBooking(bookingID).getRoom();
-		//rooms.add(new Room());
-		
+
 		//bookingManagement.checkOut(rooms);
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).
 		

@@ -78,7 +78,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected IHotelManagerImpl iHotelManagerImpl;
-	public ArrayList<Booking> testPendingBookings;		// public for lazy testing purposes
+	public Map<Integer, Booking> testPendingBookings;		// public for lazy testing purposes
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -105,7 +105,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected IBookingManagementImplImpl() {
 		super();
-		testPendingBookings = new ArrayList<Booking>();
+		testPendingBookings = new Hashtable<Integer, Booking>();
 		testConfirmedBookings = new Hashtable<Integer, Booking>();
 	}
 	
@@ -418,7 +418,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		booking.setCheckOut(checkOut);
 		booking.setNumberOfGuests(guestCount);
 		booking.setBookingID(testPendingBookings.size());
-		testPendingBookings.add(booking.getBookingID(), booking);
+		testPendingBookings.put(booking.getBookingID(), booking);
 		return booking.getBookingID();
 	}
 
