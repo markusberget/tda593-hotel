@@ -290,20 +290,39 @@
       </message>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_QakCYHYaEeSNRvHXkk2GGA" name="loginInteractionDiagram">
+      <ownedComment xmi:type="uml:Comment" xmi:id="_Nc9mIIN-EeS5AMyElmde3Q">
+        <body> if user has already logged in</body>
+      </ownedComment>
+      <ownedComment xmi:type="uml:Comment" xmi:id="_hkeG8IN-EeS5AMyElmde3Q">
+        <body> now return whether the password and username was correct
+</body>
+      </ownedComment>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_QakCYXYaEeSNRvHXkk2GGA" name="u" type="_QaUx0HYaEeSNRvHXkk2GGA"/>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_QakCYnYaEeSNRvHXkk2GGA" name="hotelManager">
         <type xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
       </ownedAttribute>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_QakCY3YaEeSNRvHXkk2GGA" name="Lifeline" represents="_QakCYXYaEeSNRvHXkk2GGA" coveredBy="_Xk5N8HbREeS_R5Dc7EA8ow _kbHdAHbSEeStp8eyZUfdUA"/>
-      <lifeline xmi:type="uml:Lifeline" xmi:id="_QakCZHYaEeSNRvHXkk2GGA" name="Lifeline0" represents="_QakCYnYaEeSNRvHXkk2GGA" coveredBy="_Xk6cEHbREeS_R5Dc7EA8ow _kbG18HbSEeStp8eyZUfdUA"/>
-      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kbHdAHbSEeStp8eyZUfdUA" name="MessageRecv" covered="_QakCY3YaEeSNRvHXkk2GGA" message="_kbFn0HbSEeStp8eyZUfdUA"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_QakCY3YaEeSNRvHXkk2GGA" name="Lifeline" represents="_QakCYXYaEeSNRvHXkk2GGA" coveredBy="_Xk5N8HbREeS_R5Dc7EA8ow _kbHdAHbSEeStp8eyZUfdUA _a9vDgIN-EeS5AMyElmde3Q _a9w4sIN-EeS5AMyElmde3Q"/>
+      <lifeline xmi:type="uml:Lifeline" xmi:id="_QakCZHYaEeSNRvHXkk2GGA" name="Lifeline0" represents="_QakCYnYaEeSNRvHXkk2GGA" coveredBy="_Xk6cEHbREeS_R5Dc7EA8ow _kbG18HbSEeStp8eyZUfdUA _a9vDgIN-EeS5AMyElmde3Q _a9w4sIN-EeS5AMyElmde3Q"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Xk5N8HbREeS_R5Dc7EA8ow" name="login_Message0Send" covered="_QakCY3YaEeSNRvHXkk2GGA" message="_Xk2xsHbREeS_R5Dc7EA8ow"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_Xk6cEHbREeS_R5Dc7EA8ow" name="login_Message0Recv" covered="_QakCZHYaEeSNRvHXkk2GGA" message="_Xk2xsHbREeS_R5Dc7EA8ow"/>
+      <fragment xmi:type="uml:CombinedFragment" xmi:id="_a9vDgIN-EeS5AMyElmde3Q" name="CombinedFragment" covered="_QakCY3YaEeSNRvHXkk2GGA _QakCZHYaEeSNRvHXkk2GGA" interactionOperator="opt">
+        <operand xmi:type="uml:InteractionOperand" xmi:id="_a9w4sIN-EeS5AMyElmde3Q" name="InteractionOperand" covered="_QakCY3YaEeSNRvHXkk2GGA _QakCZHYaEeSNRvHXkk2GGA">
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_T2IHoIN-EeS5AMyElmde3Q" name="MessageSend0" message="_T2GScIN-EeS5AMyElmde3Q"/>
+          <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_T2IusIN-EeS5AMyElmde3Q" name="MessageRecv0" message="_T2GScIN-EeS5AMyElmde3Q"/>
+          <guard xmi:type="uml:InteractionConstraint" xmi:id="_a9xfwIN-EeS5AMyElmde3Q">
+            <specification xmi:type="uml:LiteralString" xmi:id="_a9xfwYN-EeS5AMyElmde3Q" value="undefined"/>
+            <maxint xmi:type="uml:LiteralInteger" xmi:id="_a9xfw4N-EeS5AMyElmde3Q" value="1"/>
+            <minint xmi:type="uml:LiteralInteger" xmi:id="_a9xfwoN-EeS5AMyElmde3Q"/>
+          </guard>
+        </operand>
+      </fragment>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kbG18HbSEeStp8eyZUfdUA" name="MessageSend" covered="_QakCZHYaEeSNRvHXkk2GGA" message="_kbFn0HbSEeStp8eyZUfdUA"/>
+      <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_kbHdAHbSEeStp8eyZUfdUA" name="MessageRecv" covered="_QakCY3YaEeSNRvHXkk2GGA" message="_kbFn0HbSEeStp8eyZUfdUA"/>
       <message xmi:type="uml:Message" xmi:id="_Xk2xsHbREeS_R5Dc7EA8ow" name="login_Message0" messageSort="asynchCall" receiveEvent="_Xk6cEHbREeS_R5Dc7EA8ow" sendEvent="_Xk5N8HbREeS_R5Dc7EA8ow">
         <signature xmi:type="uml:Operation" href="Classes.uml#_QaiNMnYaEeSNRvHXkk2GGA"/>
       </message>
       <message xmi:type="uml:Message" xmi:id="_kbFn0HbSEeStp8eyZUfdUA" name="success" messageSort="asynchCall" receiveEvent="_kbHdAHbSEeStp8eyZUfdUA" sendEvent="_kbG18HbSEeStp8eyZUfdUA"/>
+      <message xmi:type="uml:Message" xmi:id="_T2GScIN-EeS5AMyElmde3Q" name="false" messageSort="asynchCall" receiveEvent="_T2IusIN-EeS5AMyElmde3Q" sendEvent="_T2IHoIN-EeS5AMyElmde3Q"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_beckYHYLEeSMx7vuKDnJZg" name="ChangeStatusOfRoom">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_TVVSwHYMEeSMx7vuKDnJZg" name="a" type="_sVMfEHYLEeSMx7vuKDnJZg"/>
