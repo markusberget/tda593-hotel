@@ -1,6 +1,7 @@
 package user;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
@@ -110,10 +111,33 @@ public class UserTests {
 
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#cancelBooking(int)}.
+	 * 
+	 * Tests if a booking is cancelled by checking that the booking is removed from the
+	 * booking list (pending or confirmed) and added to the history list. It is also
+	 * tested what happens when a non-existing bookingID is used as an argument.
 	 */
 	@Test
 	public void testCancelBooking() {
-		fail("Not yet implemented");
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		int bookingID1 = bookingManagement.createPendingBooking(new Date(), new Date(), 4);
+		int bookingID2 = bookingManagement.createPendingBooking(new Date(), new Date(), 2);
+		int bookingID3 = bookingManagement.createPendingBooking(new Date(), new Date(), 5);
+		assertEquals(0, bookingID1);
+		assertEquals(1, bookingID2);
+		assertEquals(2, bookingID3);
+		assertFalse(bookingManagement.cancelBooking(3));
+		assertEquals(3, bookingManagement.testPendingBookings.size());
+		assertTrue(bookingManagement.cancelBooking(2));
+		assertEquals(2, bookingManagement.testBookingHistory.get(bookingID3).getBookingID());
+		assertEquals(1, bookingManagement.testBookingHistory.size());
+		assertEquals(2, bookingManagement.testPendingBookings.size());
+		bookingManagement.confirmBooking(bookingID1);
+		bookingManagement.confirmBooking(bookingID2);
+		assertTrue(bookingManagement.cancelBooking(0));
+		assertEquals(0, bookingManagement.testPendingBookings.size());
+		assertEquals(1, bookingManagement.testConfirmedBookings.size());
+		assertEquals(2, bookingManagement.testBookingHistory.size());
+		assertEquals(0, bookingManagement.testBookingHistory.get(bookingID1).getBookingID());
 	}
 
 	/**

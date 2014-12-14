@@ -90,7 +90,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	protected EList<Customer> customer;
 	public Map<Integer, Booking> testConfirmedBookings;		// public for lazy testing purposes
 	private ArrayList<Room> availableRooms;
-	private ArrayList<Booking> bookingHistory;
+	public Map<Integer, Booking> testBookingHistory;
 	
 	// A list of rooms is used as the value in the HashMap because a customer should be
 	// able to have several rooms in a booking. The key part is the bookingID.
@@ -107,6 +107,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		super();
 		testPendingBookings = new Hashtable<Integer, Booking>();
 		testConfirmedBookings = new Hashtable<Integer, Booking>();
+		testBookingHistory = new Hashtable<Integer, Booking>();
 	}
 	
 	/**
@@ -325,11 +326,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean cancelBooking(int bookingID) {
-		if (pendingBookings.get(bookingID) != null) {
-			return bookingHistory.add(pendingBookings.remove(bookingID));
+		if (testPendingBookings.get(bookingID) != null) {
+			testBookingHistory.put(bookingID, testPendingBookings.remove(bookingID));
+			return true;
 		}
 		else if (testConfirmedBookings.get(bookingID) != null) {
-			return bookingHistory.add(testConfirmedBookings.remove(bookingID));
+			testBookingHistory.put(bookingID, testConfirmedBookings.remove(bookingID));
+			return true;
 		}
 		return false;
 	}
