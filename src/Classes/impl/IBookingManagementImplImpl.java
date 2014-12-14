@@ -414,8 +414,30 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean changeStatusOfRoom(String staffMemberUsername, int roomId, RoomStatus status) {
+	public boolean changeStatusOfRoom(String staffMemberUsername, int roomId, RoomStatus status) {	
 		IHotelManager hm  = getIHotelManagerImpl();
+		
+		if(!hm.isStaffMemberLoggedIn(staffMemberUsername)) return false; // not logged in!
+		
+		// TODO: now change the status of the Room. Joel understands the workings of this class better than me,
+		// so it's probably best if Joel implements the rest.
+		/*
+		 MESSAGE TO JOEL FROM ERIC:
+		 
+		 Implement the rest, please. 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 
+		 */
 		
 		return true;
 	}
