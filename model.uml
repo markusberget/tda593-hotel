@@ -323,9 +323,7 @@
         </operand>
       </fragment>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_CvxDEHbaEeSheJiNqvd8mw" name="changeStatusOfRoom_MessageSend" covered="_3AnqgHYMEeSMx7vuKDnJZg" message="_Cvt_wHbaEeSheJiNqvd8mw"/>
-      <message xmi:type="uml:Message" xmi:id="_Cvt_wHbaEeSheJiNqvd8mw" name="changeStatusOfRoom_Message" messageSort="asynchCall" receiveEvent="_CvxqIHbaEeSheJiNqvd8mw" sendEvent="_CvxDEHbaEeSheJiNqvd8mw">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_K80rcHbXEeSheJiNqvd8mw"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="_Cvt_wHbaEeSheJiNqvd8mw" name="changeStatusOfRoom_Message" messageSort="asynchCall" receiveEvent="_CvxqIHbaEeSheJiNqvd8mw" sendEvent="_CvxDEHbaEeSheJiNqvd8mw"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_0aGTcHV4EeSOC7DG65-e3w" name="CheckInInteractionDiagram">
       <lifeline xmi:type="uml:Lifeline" xmi:id="_2H_GsHV6EeSOC7DG65-e3w" name="Staff" coveredBy="_BRgY0HV7EeSOC7DG65-e3w"/>

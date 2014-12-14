@@ -154,6 +154,15 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedParameter>
     </ownedOperation>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_Fyy08INsEeS6A76lna5sjg" name="changeStatusOfRoom">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_JowZ4INsEeS6A76lna5sjg" name="roomId">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_MaeTkINsEeS6A76lna5sjg" name="status" type="_Cw_8MIHdEeSiLMRkmJ4pCA"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_N66yoINsEeS6A76lna5sjg" direction="return">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+      </ownedParameter>
+    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_bD0GwHYfEeS6mLi5FsOguA" name="IFinance">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_e5Z4QHYfEeS6mLi5FsOguA" name="calculatePayment">
@@ -273,15 +282,6 @@
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_lhrJcHejEeSX3q4aJ6qcXQ" name="username">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_K80rcHbXEeSheJiNqvd8mw" name="changeStatusOfRoom">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Y3Zv8HbXEeSheJiNqvd8mw" name="roomId">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_n2EHoHbXEeSheJiNqvd8mw" name="status" type="_Cw_8MIHdEeSiLMRkmJ4pCA"/>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BgISEHbYEeSheJiNqvd8mw" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_L2JiUICqEeSsA-OdcGH-zg" name="findStaffMember" visibility="public" concurrency="concurrent">
