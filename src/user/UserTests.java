@@ -109,9 +109,10 @@ public class UserTests {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		Thread user1 = new Thread(new User(bookingManagement, "Karl", "Urban", "karl.urban@gmail.com", "047663", new Date(), new Date(), 4));
 		Thread user2 = new Thread(new User(bookingManagement, "Didrik", "Didier", "didrik.didier@gmail.com", "34466", new Date(), new Date(), 2));
-		//Thread customer3 = new Thread(new User(bookingManagement, "Henn", "Venn", "henn.venn@gmail.com", "123456", new Date(), new Date(), 3));
-		//Thread customer4 = new Thread(new User(bookingManagement, "Lauder", "Dale", "lauder.dale@gmail.com", "056232", new Date(), new Date(), 1));
+		//Thread user3 = new Thread(new User(bookingManagement, "Henn", "Venn", "henn.venn@gmail.com", "123456", new Date(), new Date(), 3));
+		//Thread user4 = new Thread(new User(bookingManagement, "Lauder", "Dale", "lauder.dale@gmail.com", "056232", new Date(), new Date(), 1));
 		
+		// Perform booking
 		user1.start();
 		user2.start();
 		//user3.start();
@@ -153,7 +154,7 @@ public class UserTests {
 	 */
 	class User implements Runnable {
 		
-		Classes.impl.IBookingManagementImplImpl bookingManagement;
+		Classes.impl.IBookingManagementImplImpl bookingManagement;		// Represents the system
 		String firstName, lastName, email, ph;
 		Date checkIn, checkOut;
 		int bookingID, numberOfGuests;
@@ -171,6 +172,7 @@ public class UserTests {
 
 		@Override
 		public void run() {
+			// Perform the booking procedure (the currently implemented parts)
 			int bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests);
 			assertTrue(bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph));
 			assertTrue(bookingManagement.confirmBooking(bookingID));
@@ -183,7 +185,7 @@ public class UserTests {
 			assertEquals(email, bookingManagement.getBooking(bookingID).getEmail());
 			assertEquals(ph, bookingManagement.getBooking(bookingID).getPhoneNumber());
 		}
-	}
+	} // end inner class User
 
 
-}
+} // end class UserTests
