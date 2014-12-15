@@ -1,8 +1,6 @@
 package user;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -16,7 +14,6 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Classes.Booking;
-import Classes.Customer;
 import Classes.Room;
 
 
@@ -40,7 +37,7 @@ public class UserTests {
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#checkIn(java.lang.Class)}.
 	 */
 	@Test
-	public void testCheckIn() {
+	public void test_CheckIn() {
 		fail("Not yet implemented");
 	}
 
@@ -57,7 +54,7 @@ public class UserTests {
 	 * room(s) for which payment is to be done.
 	 */
 	@Test
-	public void testCheckOut() {
+	public void test_valid_CheckOut() {
 		// Set up of a credit card account for use when paying for the booking/room(s).
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
 		String ccNumber = "1_12345678", ccv = "123", firstName = "Karl", lastName = "urban";
@@ -98,6 +95,80 @@ public class UserTests {
 			System.err
 			.println("Error occurred while communicating with the bank administration");
 			e.printStackTrace();
+		}
+	}
+	
+	/**
+	 * Tests if two users (having a processor with only two cores in mind) can book at
+	 * the same time without experiencing race conditions etc. Uncomment user3 and user4
+	 * to let 4 users book at the same time. The single bookingManagement object represents
+	 * the system, and each user interacts with the same object (system).
+	 */
+	@Test
+	public void test_valid_TwoUsersBookingConcurrently() {
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		Thread user1 = new Thread(new User(bookingManagement, "Karl", "Urban", "karl.urban@gmail.com", "047663", new Date(), new Date(), 4));
+		Thread user2 = new Thread(new User(bookingManagement, "Didrik", "Didier", "didrik.didier@gmail.com", "34466", new Date(), new Date(), 2));
+		//Thread customer3 = new Thread(new User(bookingManagement, "Henn", "Venn", "henn.venn@gmail.com", "123456", new Date(), new Date(), 3));
+		//Thread customer4 = new Thread(new User(bookingManagement, "Lauder", "Dale", "lauder.dale@gmail.com", "056232", new Date(), new Date(), 1));
+		
+		user1.start();
+		user2.start();
+		//user3.start();
+		//user4.start();
+		
+		// Wait for threads to finish
+		try {
+			user1.join();
+			user2.join();
+			//user3.join();
+			//user4.join();
+		} catch (InterruptedException e) {
+			System.err
+			.println("Thread was interrupted while executing");
+			e.printStackTrace();
+		}
+		
+		//assertEquals(2, bookingManagement.testConfirmedBookings.size());
+		
+	}
+	
+	/**
+	 * This inner class is used for simulating users that perform bookings
+	 * at the same time.
+	 *
+	 */
+	class User implements Runnable {
+		
+		Classes.impl.IBookingManagementImplImpl bookingManagement;
+		String firstName, lastName, email, ph;
+		Date checkIn, checkOut;
+		int bookingID, numberOfGuests;
+		
+		public User(Classes.impl.IBookingManagementImplImpl bookingManagement, String firstName, String lastName, String email, String ph, Date checkIn, Date checkOut, int numberOfGuests) {
+			this.bookingManagement = bookingManagement;
+			this.firstName = firstName;
+			this.lastName = lastName;
+			this.email = email;
+			this.ph = ph;
+			this.checkIn = checkIn;
+			this.checkOut = checkOut;
+			this.numberOfGuests = numberOfGuests;
+		}
+
+		@Override
+		public void run() {
+			int bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests);
+			assertTrue(bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph));
+			assertTrue(bookingManagement.confirmBooking(bookingID));
+			
+			// Check after confirming a booking that the data is correct
+			assertEquals(numberOfGuests, bookingManagement.getBooking(bookingID).getNumberOfGuests());
+			assertEquals(bookingID, bookingManagement.getBooking(bookingID).getBookingID());
+			assertEquals(firstName, bookingManagement.getBooking(bookingID).getFirstName());
+			assertEquals(lastName, bookingManagement.getBooking(bookingID).getLastName());
+			assertEquals(email, bookingManagement.getBooking(bookingID).getEmail());
+			assertEquals(ph, bookingManagement.getBooking(bookingID).getPhoneNumber());
 		}
 	}
 
