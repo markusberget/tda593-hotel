@@ -6,6 +6,7 @@ import Classes.Bill;
 import Classes.Charge;
 import Classes.ClassesPackage;
 
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 
@@ -22,6 +23,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link Classes.impl.ChargeImpl#getAmount <em>Amount</em>}</li>
+ *   <li>{@link Classes.impl.ChargeImpl#getDate <em>Date</em>}</li>
  *   <li>{@link Classes.impl.ChargeImpl#getBill <em>Bill</em>}</li>
  * </ul>
  * </p>
@@ -29,6 +32,42 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * @generated
  */
 public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
+	/**
+	 * The default value of the '{@link #getAmount() <em>Amount</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmount()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final int AMOUNT_EDEFAULT = 0;
+	/**
+	 * The cached value of the '{@link #getAmount() <em>Amount</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getAmount()
+	 * @generated
+	 * @ordered
+	 */
+	protected int amount = AMOUNT_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getDate() <em>Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final Date DATE_EDEFAULT = null;
+	/**
+	 * The cached value of the '{@link #getDate() <em>Date</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getDate()
+	 * @generated
+	 * @ordered
+	 */
+	protected Date date = DATE_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getBill() <em>Bill</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -56,6 +95,48 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 	@Override
 	protected EClass eStaticClass() {
 		return ClassesPackage.Literals.CHARGE;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public int getAmount() {
+		return amount;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setAmount(int newAmount) {
+		int oldAmount = amount;
+		amount = newAmount;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.CHARGE__AMOUNT, oldAmount, amount));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Date getDate() {
+		return date;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDate(Date newDate) {
+		Date oldDate = date;
+		date = newDate;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.CHARGE__DATE, oldDate, date));
 	}
 
 	/**
@@ -156,6 +237,10 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
+			case ClassesPackage.CHARGE__AMOUNT:
+				return getAmount();
+			case ClassesPackage.CHARGE__DATE:
+				return getDate();
 			case ClassesPackage.CHARGE__BILL:
 				if (resolve) return getBill();
 				return basicGetBill();
@@ -171,6 +256,12 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
+			case ClassesPackage.CHARGE__AMOUNT:
+				setAmount((Integer)newValue);
+				return;
+			case ClassesPackage.CHARGE__DATE:
+				setDate((Date)newValue);
+				return;
 			case ClassesPackage.CHARGE__BILL:
 				setBill((Bill)newValue);
 				return;
@@ -186,6 +277,12 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+			case ClassesPackage.CHARGE__AMOUNT:
+				setAmount(AMOUNT_EDEFAULT);
+				return;
+			case ClassesPackage.CHARGE__DATE:
+				setDate(DATE_EDEFAULT);
+				return;
 			case ClassesPackage.CHARGE__BILL:
 				setBill((Bill)null);
 				return;
@@ -201,10 +298,32 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
+			case ClassesPackage.CHARGE__AMOUNT:
+				return amount != AMOUNT_EDEFAULT;
+			case ClassesPackage.CHARGE__DATE:
+				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
 			case ClassesPackage.CHARGE__BILL:
 				return bill != null;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (amount: ");
+		result.append(amount);
+		result.append(", date: ");
+		result.append(date);
+		result.append(')');
+		return result.toString();
 	}
 
 } //ChargeImpl

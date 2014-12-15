@@ -130,19 +130,6 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.IFINANCE_IMPL: {
-				IFinanceImpl iFinanceImpl = (IFinanceImpl)theEObject;
-				T result = caseIFinanceImpl(iFinanceImpl);
-				if (result == null) result = caseIFinance(iFinanceImpl);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.IFINANCE: {
-				IFinance iFinance = (IFinance)theEObject;
-				T result = caseIFinance(iFinance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ClassesPackage.BILL: {
 				Bill bill = (Bill)theEObject;
 				T result = caseBill(bill);
@@ -152,6 +139,31 @@ public class ClassesSwitch<T> extends Switch<T> {
 			case ClassesPackage.CHARGE: {
 				Charge charge = (Charge)theEObject;
 				T result = caseCharge(charge);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.IFINANCE: {
+				IFinance iFinance = (IFinance)theEObject;
+				T result = caseIFinance(iFinance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.IFINANCE_IMPL: {
+				IFinanceImpl iFinanceImpl = (IFinanceImpl)theEObject;
+				T result = caseIFinanceImpl(iFinanceImpl);
+				if (result == null) result = caseIFinance(iFinanceImpl);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.ADMINISTRATOR_PROVIDES: {
+				AdministratorProvides administratorProvides = (AdministratorProvides)theEObject;
+				T result = caseAdministratorProvides(administratorProvides);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.CUSTOMER_PROVIDES: {
+				CustomerProvides customerProvides = (CustomerProvides)theEObject;
+				T result = caseCustomerProvides(customerProvides);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -291,6 +303,36 @@ public class ClassesSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseIFinanceImpl(IFinanceImpl object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Administrator Provides</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Administrator Provides</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseAdministratorProvides(AdministratorProvides object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '<em>Customer Provides</em>'.
+	 * <!-- begin-user-doc -->
+	 * This implementation returns null;
+	 * returning a non-null result will terminate the switch.
+	 * <!-- end-user-doc -->
+	 * @param object the target of the switch.
+	 * @return the result of interpreting the object as an instance of '<em>Customer Provides</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseCustomerProvides(CustomerProvides object) {
 		return null;
 	}
 

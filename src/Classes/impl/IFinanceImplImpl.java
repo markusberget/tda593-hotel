@@ -20,25 +20,11 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * An implementation of the model object '<em><b>IFinance Impl</b></em>'.
  * <!-- end-user-doc -->
  * <p>
- * The following features are implemented:
- * <ul>
- *   <li>{@link Classes.impl.IFinanceImplImpl#getBooking <em>Booking</em>}</li>
- * </ul>
  * </p>
  *
  * @generated
  */
 public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IFinanceImpl {
-	/**
-	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getBooking()
-	 * @generated
-	 * @ordered
-	 */
-	protected EList<Booking> booking;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -61,32 +47,17 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EList<Booking> getBooking() {
-		if (booking == null) {
-			booking = new EObjectWithInverseResolvingEList<Booking>(Booking.class, this, ClassesPackage.IFINANCE_IMPL__BOOKING, ClassesPackage.BOOKING__IFINANCE_IMPL);
-		}
-		return booking;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public int calculatePayment(int bookingId) {
 		
-		// int sum = 0;
-		// for (Charge charge : this.booking.getBookingById(bookingId).getBill().getCharges()) {
-		//			sum += charge;
-		// }
-		// return sum
+		int sum = 0;
+		//for (Charge charge : this.booking.getBookingById(bookingId).getBill().getCharges()) {
+		//		sum += charge;
+		//}
+		return sum;
 		
-		
-		// TODO: the booking object doesn't have any room(s)
-		
-		throw new UnsupportedOperationException();
+
 	}
 
 	/**
@@ -94,7 +65,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public void payBill(int bookingId) {
+	public String payBill(int bookingId) {
 		// TODO: implement this method
 		
 		//Booking b = booking.getBookingById(bookingId);
@@ -167,22 +138,20 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void validateWithBank(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+	public boolean validateWithBank(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
+		// return customerProvides = isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
 		throw new UnsupportedOperationException();
 	}
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void bankTransfer(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+	public boolean bankTransfer(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
+		// return customerProvides = makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
 		throw new UnsupportedOperationException();
 	}
 
@@ -202,109 +171,17 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__BOOKING:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
-		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__BOOKING:
-				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
-		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__BOOKING:
-				return getBooking();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(int featureID, Object newValue) {
-		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__BOOKING:
-				getBooking().clear();
-				getBooking().addAll((Collection<? extends Booking>)newValue);
-				return;
-		}
-		super.eSet(featureID, newValue);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public void eUnset(int featureID) {
-		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__BOOKING:
-				getBooking().clear();
-				return;
-		}
-		super.eUnset(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(int featureID) {
-		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__BOOKING:
-				return booking != null && !booking.isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments) throws InvocationTargetException {
 		switch (operationID) {
 			case ClassesPackage.IFINANCE_IMPL___CALCULATE_PAYMENT__INT:
 				return calculatePayment((Integer)arguments.get(0));
 			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__INT:
-				payBill((Integer)arguments.get(0));
-				return null;
+				return payBill((Integer)arguments.get(0));
 			case ClassesPackage.IFINANCE_IMPL___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING:
-				validateWithBank((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
-				return null;
+				return validateWithBank((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
 			case ClassesPackage.IFINANCE_IMPL___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING:
-				bankTransfer((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
-				return null;
+				return bankTransfer((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
 			case ClassesPackage.IFINANCE_IMPL___BANK_SEND_INVOICE:
 				bankSendInvoice();
 				return null;

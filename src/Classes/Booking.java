@@ -24,7 +24,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.Booking#getPhoneNumber <em>Phone Number</em>}</li>
  *   <li>{@link Classes.Booking#getCustomer <em>Customer</em>}</li>
  *   <li>{@link Classes.Booking#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
- *   <li>{@link Classes.Booking#getIFinanceImpl <em>IFinance Impl</em>}</li>
  *   <li>{@link Classes.Booking#getBill <em>Bill</em>}</li>
  *   <li>{@link Classes.Booking#getRoom <em>Room</em>}</li>
  * </ul>
@@ -316,34 +315,6 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	EList<Room> getRoom();
-
-	/**
-	 * Returns the value of the '<em><b>IFinance Impl</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link Classes.IFinanceImpl#getBooking <em>Booking</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>IFinance Impl</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>IFinance Impl</em>' reference.
-	 * @see #setIFinanceImpl(IFinanceImpl)
-	 * @see Classes.ClassesPackage#getBooking_IFinanceImpl()
-	 * @see Classes.IFinanceImpl#getBooking
-	 * @model opposite="booking" required="true" ordered="false"
-	 * @generated
-	 */
-	IFinanceImpl getIFinanceImpl();
-
-	/**
-	 * Sets the value of the '{@link Classes.Booking#getIFinanceImpl <em>IFinance Impl</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>IFinance Impl</em>' reference.
-	 * @see #getIFinanceImpl()
-	 * @generated
-	 */
-	void setIFinanceImpl(IFinanceImpl value);
 
 	/**
 	 * Returns the value of the '<em><b>Bill</b></em>' reference.
