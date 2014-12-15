@@ -129,9 +129,9 @@ public class UserTests {
 			e.printStackTrace();
 		}
 		
-		// Let threads sleep for 1000ms so that the size of arrays can be tested properly
+		// Let threads sleep for 500ms so that the size of arrays can be tested properly
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(500);
 		} catch (InterruptedException e) {
 			System.err
 			.println("Thread was interrupted while sleeping");
@@ -140,6 +140,9 @@ public class UserTests {
 		
 		assertEquals(0, bookingManagement.testPendingBookings.size());
 		assertEquals(2, bookingManagement.testConfirmedBookings.size());
+		int testBookingID1 = bookingManagement.getBooking(0).getBookingID();
+		int testBookingID2 = bookingManagement.getBooking(1).getBookingID();
+		assertTrue(testBookingID1 != testBookingID2);
 		
 	}
 	
