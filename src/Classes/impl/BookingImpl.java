@@ -17,7 +17,6 @@ import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.Customer;
 import Classes.IBookingManagementImpl;
-import Classes.IFinanceImpl;
 import Classes.Room;
 import java.util.Collection;
 
