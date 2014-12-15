@@ -129,7 +129,17 @@ public class UserTests {
 			e.printStackTrace();
 		}
 		
-		//assertEquals(2, bookingManagement.testConfirmedBookings.size());
+		// Let threads sleep for 1000ms so that the size of arrays can be tested properly
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			System.err
+			.println("Thread was interrupted while sleeping");
+			e.printStackTrace();
+		}
+		
+		assertEquals(0, bookingManagement.testPendingBookings.size());
+		assertEquals(2, bookingManagement.testConfirmedBookings.size());
 		
 	}
 	
