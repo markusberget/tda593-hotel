@@ -129,7 +129,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			/* prompt user to fill in ccNumber:String, ccv:String, expiryMonth:int,
 			expiryYear:int, firstName:String, lastName:String */
 	/*		
-			ccNumber = "1111-1111-1111-1111";
+			ccNumber = "1-1111-1111-1111-1111";
 			ccv = "345";
 			firstName = customerFirstName;
 			lastName = customerLastName;
