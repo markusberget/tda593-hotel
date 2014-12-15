@@ -38,7 +38,6 @@ import java.util.Collection;
  *   <li>{@link Classes.impl.BookingImpl#getPhoneNumber <em>Phone Number</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
- *   <li>{@link Classes.impl.BookingImpl#getIFinanceImpl <em>IFinance Impl</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getBill <em>Bill</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getRoom <em>Room</em>}</li>
  * </ul>
@@ -226,16 +225,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * @ordered
 	 */
 	protected IBookingManagementImpl iBookingManagementImpl;
-
-	/**
-	 * The cached value of the '{@link #getIFinanceImpl() <em>IFinance Impl</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIFinanceImpl()
-	 * @generated
-	 * @ordered
-	 */
-	protected IFinanceImpl iFinanceImpl;
 
 	/**
 	 * The cached value of the '{@link #getBill() <em>Bill</em>}' reference.
@@ -581,66 +570,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IFinanceImpl getIFinanceImpl() {
-		if (iFinanceImpl != null && iFinanceImpl.eIsProxy()) {
-			InternalEObject oldIFinanceImpl = (InternalEObject)iFinanceImpl;
-			iFinanceImpl = (IFinanceImpl)eResolveProxy(oldIFinanceImpl);
-			if (iFinanceImpl != oldIFinanceImpl) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.BOOKING__IFINANCE_IMPL, oldIFinanceImpl, iFinanceImpl));
-			}
-		}
-		return iFinanceImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IFinanceImpl basicGetIFinanceImpl() {
-		return iFinanceImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public NotificationChain basicSetIFinanceImpl(IFinanceImpl newIFinanceImpl, NotificationChain msgs) {
-		IFinanceImpl oldIFinanceImpl = iFinanceImpl;
-		iFinanceImpl = newIFinanceImpl;
-		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__IFINANCE_IMPL, oldIFinanceImpl, newIFinanceImpl);
-			if (msgs == null) msgs = notification; else msgs.add(notification);
-		}
-		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIFinanceImpl(IFinanceImpl newIFinanceImpl) {
-		if (newIFinanceImpl != iFinanceImpl) {
-			NotificationChain msgs = null;
-			if (iFinanceImpl != null)
-				msgs = ((InternalEObject)iFinanceImpl).eInverseRemove(this, ClassesPackage.IFINANCE_IMPL__BOOKING, IFinanceImpl.class, msgs);
-			if (newIFinanceImpl != null)
-				msgs = ((InternalEObject)newIFinanceImpl).eInverseAdd(this, ClassesPackage.IFINANCE_IMPL__BOOKING, IFinanceImpl.class, msgs);
-			msgs = basicSetIFinanceImpl(newIFinanceImpl, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__IFINANCE_IMPL, newIFinanceImpl, newIFinanceImpl));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Bill getBill() {
 		if (bill != null && bill.eIsProxy()) {
 			InternalEObject oldBill = (InternalEObject)bill;
@@ -713,10 +642,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				if (iBookingManagementImpl != null)
 					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING, IBookingManagementImpl.class, msgs);
 				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
-			case ClassesPackage.BOOKING__IFINANCE_IMPL:
-				if (iFinanceImpl != null)
-					msgs = ((InternalEObject)iFinanceImpl).eInverseRemove(this, ClassesPackage.IFINANCE_IMPL__BOOKING, IFinanceImpl.class, msgs);
-				return basicSetIFinanceImpl((IFinanceImpl)otherEnd, msgs);
 			case ClassesPackage.BOOKING__BILL:
 				if (bill != null)
 					msgs = ((InternalEObject)bill).eInverseRemove(this, ClassesPackage.BILL__BOOKING, Bill.class, msgs);
@@ -739,8 +664,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return basicSetCustomer(null, msgs);
 			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
 				return basicSetIBookingManagementImpl(null, msgs);
-			case ClassesPackage.BOOKING__IFINANCE_IMPL:
-				return basicSetIFinanceImpl(null, msgs);
 			case ClassesPackage.BOOKING__BILL:
 				return basicSetBill(null, msgs);
 			case ClassesPackage.BOOKING__ROOM:
@@ -779,9 +702,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
 				if (resolve) return getIBookingManagementImpl();
 				return basicGetIBookingManagementImpl();
-			case ClassesPackage.BOOKING__IFINANCE_IMPL:
-				if (resolve) return getIFinanceImpl();
-				return basicGetIFinanceImpl();
 			case ClassesPackage.BOOKING__BILL:
 				if (resolve) return getBill();
 				return basicGetBill();
@@ -829,9 +749,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return;
 			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
 				setIBookingManagementImpl((IBookingManagementImpl)newValue);
-				return;
-			case ClassesPackage.BOOKING__IFINANCE_IMPL:
-				setIFinanceImpl((IFinanceImpl)newValue);
 				return;
 			case ClassesPackage.BOOKING__BILL:
 				setBill((Bill)newValue);
@@ -882,9 +799,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
 				setIBookingManagementImpl((IBookingManagementImpl)null);
 				return;
-			case ClassesPackage.BOOKING__IFINANCE_IMPL:
-				setIFinanceImpl((IFinanceImpl)null);
-				return;
 			case ClassesPackage.BOOKING__BILL:
 				setBill((Bill)null);
 				return;
@@ -923,8 +837,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return customer != null;
 			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
 				return iBookingManagementImpl != null;
-			case ClassesPackage.BOOKING__IFINANCE_IMPL:
-				return iFinanceImpl != null;
 			case ClassesPackage.BOOKING__BILL:
 				return bill != null;
 			case ClassesPackage.BOOKING__ROOM:

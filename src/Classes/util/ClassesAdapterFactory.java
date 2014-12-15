@@ -108,20 +108,28 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createIBookingManagementAdapter();
 			}
 			@Override
-			public Adapter caseIFinanceImpl(IFinanceImpl object) {
-				return createIFinanceImplAdapter();
-			}
-			@Override
-			public Adapter caseIFinance(IFinance object) {
-				return createIFinanceAdapter();
-			}
-			@Override
 			public Adapter caseBill(Bill object) {
 				return createBillAdapter();
 			}
 			@Override
 			public Adapter caseCharge(Charge object) {
 				return createChargeAdapter();
+			}
+			@Override
+			public Adapter caseIFinance(IFinance object) {
+				return createIFinanceAdapter();
+			}
+			@Override
+			public Adapter caseIFinanceImpl(IFinanceImpl object) {
+				return createIFinanceImplAdapter();
+			}
+			@Override
+			public Adapter caseAdministratorProvides(AdministratorProvides object) {
+				return createAdministratorProvidesAdapter();
+			}
+			@Override
+			public Adapter caseCustomerProvides(CustomerProvides object) {
+				return createCustomerProvidesAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {
@@ -266,6 +274,34 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createIFinanceImplAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.AdministratorProvides <em>Administrator Provides</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.AdministratorProvides
+	 * @generated
+	 */
+	public Adapter createAdministratorProvidesAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link Classes.CustomerProvides <em>Customer Provides</em>}'.
+	 * <!-- begin-user-doc -->
+	 * This default implementation returns null so that we can easily ignore cases;
+	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * @return the new adapter.
+	 * @see Classes.CustomerProvides
+	 * @generated
+	 */
+	public Adapter createCustomerProvidesAdapter() {
 		return null;
 	}
 
