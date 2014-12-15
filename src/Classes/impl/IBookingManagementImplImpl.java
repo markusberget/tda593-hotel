@@ -7,11 +7,13 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Hashtable;
+import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -29,6 +31,7 @@ import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
+import Classes.RoomType;
 
 /**
  * <!-- begin-user-doc -->
@@ -117,7 +120,28 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @return 		a new object of the class
 	 */
 	public static IBookingManagementImplImpl instantiateForTest() {
-		return new IBookingManagementImplImpl();
+		IBookingManagementImplImpl bookingManagement = new IBookingManagementImplImpl();
+		
+		RoomType standardRoomType = new RoomTypeImpl();
+		standardRoomType.setName("single");
+		standardRoomType.setDescription("A single room");
+		standardRoomType.setNumberOfGuests(1);
+		standardRoomType.setPrice(100);
+		standardRoomType.setFeatures("View");
+		
+		
+		Room room = new RoomImpl();
+		room.setRoomNumber(1);
+		room.setRoomType(standardRoomType);
+		room.setStatus(RoomStatus.AVAILABLE);
+	
+		bookingManagement.room = new BasicEList<Room>();
+		bookingManagement.room.add(room);
+		
+		bookingManagement.booking = new BasicEList<Booking>();
+		bookingManagement.pendingBookings = new BasicEList<Booking>();
+		
+		return bookingManagement;
 	}
 
 	/**
@@ -238,6 +262,16 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		if (testConfirmedBookings.containsKey(bookingNumber)) {
 			return testConfirmedBookings.get(bookingNumber);
 		}
+		
+		EList<Booking> tmpList = new BasicEList<Booking>(this.pendingBookings);
+		tmpList.addAll(this.booking);
+		
+		for (int i = 0; i < tmpList.size(); i++) {
+			if (tmpList.get(i).getBookingID() == bookingNumber) {
+				return tmpList.get(i);
+			}
+		}
+		
 		return null;
 	}
 
@@ -264,14 +298,33 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * should be unavailable so the current implementation will be changed
 	 * later.
 	 * 
+	 * NOTE: Added real room support
+	 * 
 	 * @generated NOT
 	 */
 	@SuppressWarnings("unchecked")
 	public int addRoomPending(int room, int bookingID) {
-		Room chosenRoom = availableRooms.remove(room);
-		chosenRoom.setStatus(RoomStatus.OCCUPIED);
-		pendingRooms.put(bookingID, (List<Room>) chosenRoom);
-		return bookingID;
+		//Room chosenRoom = availableRooms.remove(room);
+		//chosenRoom.setStatus(RoomStatus.OCCUPIED);
+		//pendingRooms.put(bookingID, (List<Room>) chosenRoom);
+		Room tmpRoom = this.getRoomByID(room);
+		Booking tmpBooking = this.getBooking(bookingID);
+		tmpBooking.getRoom().add(tmpRoom);
+		return tmpBooking.getBookingID();
+	}
+	
+	/**
+	 * Searches in the array of rooms by room number
+	 * @param id
+	 * @return
+	 */
+	private Room getRoomByID(int roomNumber){
+		for (int i = 0; i < this.room.size(); i++) {
+			if(this.room.get(i).getRoomNumber() == roomNumber) {
+				return this.room.get(i);
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -424,6 +477,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		booking.setNumberOfGuests(guestCount);
 		booking.setBookingID(testPendingBookings.size());
 		testPendingBookings.put(booking.getBookingID(), booking);
+		this.pendingBookings.add(booking);
 		return booking.getBookingID();
 	}
 
@@ -452,7 +506,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		 
 		 
 		 
-		 
+
 		 
 		 
 		 */

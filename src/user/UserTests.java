@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.util.Calendar;
 import java.util.Date;
 
 import javax.xml.soap.SOAPException;
@@ -15,6 +16,7 @@ import org.junit.Test;
 
 import Classes.Booking;
 import Classes.Room;
+import Classes.impl.IBookingManagementImplImpl;
 
 
 /**
@@ -96,6 +98,33 @@ public class UserTests {
 			.println("Error occurred while communicating with the bank administration");
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Test a valid booking case
+	 */
+	@Test
+	public void test_valid_booking(){
+		IBookingManagementImplImpl bookingManagement = IBookingManagementImplImpl.instantiateForTest();
+		
+		Calendar cal = Calendar.getInstance();
+	
+		Date checkIn = cal.getTime();
+		cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
+		Date checkOut = cal.getTime();
+	
+		int guestCount = 1;
+
+		int bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, guestCount);
+		//Should search here but needs to be implemented so for now just return the first room		
+		int room = bookingManagement.getRoom().get(0).getRoomNumber();
+		
+		bookingManagement.addRoomPending(room, bookingID);
+		
+		
+		bookingManagement.addCustomerInformationToBooking(bookingID, "John", "Doe", "john@doe.se", "0123-2131312");
+		
+		assertTrue(bookingManagement.confirmBooking(bookingID));
 	}
 	
 	/**
