@@ -68,8 +68,17 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Room> room;
+	/**
+	 * The cached value of the '{@link #getPendingBookings() <em>Pending Bookings</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getPendingBookings()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Booking> pendingBookings;
 	// These data structures are used for storing temporary data while performing tests.
-	private EList<Booking> pendingBookings;
+	//private EList<Booking> pendingBookings;
 	/**
 	 * The cached value of the '{@link #getIHotelManagerImpl() <em>IHotel Manager Impl</em>}' reference.
 	 * <!-- begin-user-doc -->
