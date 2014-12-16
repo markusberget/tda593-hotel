@@ -415,11 +415,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice) {
+		EList <Integer> availableRooms = null;
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+		
+		if(availableRooms != null){
+			return availableRooms;
+		}
 		throw new UnsupportedOperationException();
 	}
 
