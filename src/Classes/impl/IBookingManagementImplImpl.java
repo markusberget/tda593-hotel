@@ -312,8 +312,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			return testConfirmedBookings.get(bookingNumber);
 		}
 		
-		EList<Booking> tmpList = new BasicEList<Booking>(this.pendingBookings);
-		tmpList.addAll(this.booking);
+		EList<Booking> tmpList = new BasicEList<Booking>(pendingBookings);
+		tmpList.addAll(booking);
 		
 		for (int i = 0; i < tmpList.size(); i++) {
 			if (tmpList.get(i).getBookingID() == bookingNumber) {
@@ -341,8 +341,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public int addRoomPending(int room, int bookingID) {
-		Room tmpRoom = this.getRoomByID(room);
-		Booking tmpBooking = this.getBooking(bookingID);		// Supposed to be this.getPendingBookings(bookingID)?
+		Room tmpRoom = getRoomByID(room);
+		Booking tmpBooking = getBooking(bookingID);		// Supposed to be this.getPendingBookings(bookingID)?
 		tmpBooking.getRoom().add(tmpRoom);
 		return tmpBooking.getBookingID();
 	}
@@ -353,9 +353,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @return
 	 */
 	private Room getRoomByID(int roomNumber){
-		for (int i = 0; i < this.room.size(); i++) {
-			if(this.room.get(i).getRoomNumber() == roomNumber) {
-				return this.room.get(i);
+		for (int i = 0; i < room.size(); i++) {
+			if(room.get(i).getRoomNumber() == roomNumber) {
+				return room.get(i);
 			}
 		}
 		return null;
