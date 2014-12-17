@@ -10,6 +10,7 @@ import org.junit.Test;
 import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
+import Classes.RoomStatus;
 
 /**
  * This class contains unit tests for the BookingManager interface.
@@ -228,12 +229,26 @@ public class BookingManagerTests {
 		
 		
 		
-		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-		IHotelManager hotelManager = bookingManagement.getIHotelManagerImpl();
+		Classes.impl.IBookingManagementImplImpl bm = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		IHotelManager hm = bm.getIHotelManagerImpl();
 		
-		assertNotNull(hotelManager);
+		assertNotNull(hm);
 		
-		//getRoomByID
+		
+		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
+		
+		// try to change status when admin is logged out:
+		assertFalse(bm.changeStatusOfRoom(Util.adminUsername, 1, RoomStatus.CLEANING));
+		// status should be unchanged.
+		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
+		
+		// now login and try again!
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
+		assertTrue(bm.changeStatusOfRoom(Util.adminUsername, 1, RoomStatus.CLEANING));
+		assertEquals(RoomStatus.CLEANING, bm.getRoomByID(1).getStatus());
+		
+		
+		// Next, make sure that a staff member that is not admin can also change status of room. 
 	}
 
 

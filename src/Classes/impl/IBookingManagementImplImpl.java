@@ -154,6 +154,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		room1.setRoomType(standardRoomType);
 		room1.setStatus(RoomStatus.AVAILABLE);
 		
+		
 		Room room2 = new RoomImpl();
 		room2.setRoomNumber(2);
 		room2.setRoomType(standardRoomType);
