@@ -104,7 +104,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Customer> customer;
-	private ArrayList<Booking> testBookingHistory;
+	private EList<Booking> testBookingHistory;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
 	
@@ -748,11 +748,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public ArrayList<Booking> getTestBookingHistory() {
+	public EList<Booking> getTestBookingHistory() {
 		return testBookingHistory;
 	}
 
-	public void setTestBookingHistory(ArrayList<Booking> testBookingHistory) {
+	public void setTestBookingHistory(EList<Booking> testBookingHistory) {
 		this.testBookingHistory = testBookingHistory;
 	}
 
