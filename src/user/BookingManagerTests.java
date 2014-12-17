@@ -227,8 +227,7 @@ public class BookingManagerTests {
 	@Test
 	public void testChangeStatusOfRoom() {
 		
-		
-		
+	
 		Classes.impl.IBookingManagementImplImpl bm = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		IHotelManager hm = bm.getIHotelManagerImpl();
 		
@@ -249,6 +248,11 @@ public class BookingManagerTests {
 		
 		
 		// Next, make sure that a staff member that is not admin can also change status of room. 
+		assertTrue(hm.addStaffMember(Util.adminUsername, "alex4", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
+				"552219", "Tomtebacken 14", false));
+		assertTrue(hm.login("alex4", "ankeborg4444"));
+		assertTrue(bm.changeStatusOfRoom("alex4", 1, RoomStatus.AVAILABLE));
+		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
 	}
 
 
