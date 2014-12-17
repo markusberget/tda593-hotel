@@ -8,6 +8,8 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Classes.Customer;
+import Classes.IHotelManager;
+import Classes.IHotelManagerImpl;
 
 /**
  * This class contains unit tests for the BookingManager interface.
@@ -223,9 +225,13 @@ public class BookingManagerTests {
 	 */
 	@Test
 	public void testChangeStatusOfRoom() {
-		Classes.impl.IBookingManagementImplImpl hotelManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		
 		
+		
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		IHotelManager hotelManager = bookingManagement.getIHotelManagerImpl();
+		
+		assertNotNull(hotelManager);
 		
 		//getRoomByID
 	}
