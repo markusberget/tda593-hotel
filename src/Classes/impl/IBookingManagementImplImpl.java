@@ -24,6 +24,7 @@ import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.Customer;
 import Classes.IBookingManagementImpl;
+import Classes.IFinanceImpl;
 import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
@@ -95,7 +96,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated
 	 * @ordered
 	 */
-	protected IBookingManagementImpl iFinanceImpl;
+	protected IFinanceImpl iFinanceImpl;
 	/**
 	 * The cached value of the '{@link #getBookingHistory() <em>Booking History</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -256,10 +257,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IBookingManagementImpl getIFinanceImpl() {
+	public IFinanceImpl getIFinanceImpl() {
 		if (iFinanceImpl != null && iFinanceImpl.eIsProxy()) {
 			InternalEObject oldIFinanceImpl = (InternalEObject)iFinanceImpl;
-			iFinanceImpl = (IBookingManagementImpl)eResolveProxy(oldIFinanceImpl);
+			iFinanceImpl = (IFinanceImpl)eResolveProxy(oldIFinanceImpl);
 			if (iFinanceImpl != oldIFinanceImpl) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, oldIFinanceImpl, iFinanceImpl));
@@ -273,7 +274,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public IBookingManagementImpl basicGetIFinanceImpl() {
+	public IFinanceImpl basicGetIFinanceImpl() {
 		return iFinanceImpl;
 	}
 
@@ -282,8 +283,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIFinanceImpl(IBookingManagementImpl newIFinanceImpl) {
-		IBookingManagementImpl oldIFinanceImpl = iFinanceImpl;
+	public void setIFinanceImpl(IFinanceImpl newIFinanceImpl) {
+		IFinanceImpl oldIFinanceImpl = iFinanceImpl;
 		iFinanceImpl = newIFinanceImpl;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, oldIFinanceImpl, iFinanceImpl));
@@ -419,12 +420,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	
-	
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated NOT
+	 * @generated
 	 */
+<<<<<<< HEAD
 	public EList searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice) {
 		
 		EList<Room> rooms  = this.getRoom();
@@ -445,8 +447,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		}
 		
 		return searchResult;
+=======
+	public int searchRoom(Date checkIn, Date checkOut, int numberOfGuests, int roomType, int maximumPrice) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+>>>>>>> c0759116a23220b7839abd7f950822b52b4d8a24
 	}
-	
 
 	/**
 	 * A booking can be cancelled while it is pending and also when it is
@@ -679,7 +686,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				setIHotelManagerImpl((IHotelManagerImpl)newValue);
 				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:
-				setIFinanceImpl((IBookingManagementImpl)newValue);
+				setIFinanceImpl((IFinanceImpl)newValue);
 				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY:
 				getBookingHistory().clear();
@@ -714,7 +721,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				setIHotelManagerImpl((IHotelManagerImpl)null);
 				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:
-				setIFinanceImpl((IBookingManagementImpl)null);
+				setIFinanceImpl((IFinanceImpl)null);
 				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY:
 				getBookingHistory().clear();
@@ -775,8 +782,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CANCELATION_FEE__CLASS:
 				addCancelationFee((Class)arguments.get(0));
 				return null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT:
-				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Class)arguments.get(2), (Integer)arguments.get(3), (Integer)arguments.get(4), (Integer)arguments.get(5));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_INT_INT:
+				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (Integer)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT:
 				return cancelBooking((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT:
