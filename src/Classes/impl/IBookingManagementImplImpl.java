@@ -97,7 +97,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected IBookingManagementImpl iFinanceImpl;
-	public Map<Integer, Booking> testPendingBookings;		// public for lazy testing purposes
 	/**
 	 * The cached value of the '{@link #getCustomer() <em>Customer</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -305,10 +304,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingNumber) {
-		if (testConfirmedBookings.containsKey(bookingNumber)) {
-			return testConfirmedBookings.get(bookingNumber);
-		}
-		
+		// pendingBookings is merged with booking to be able to retrieve also pending bookings.
 		EList<Booking> tmpList = new BasicEList<Booking>(pendingBookings);
 		tmpList.addAll(booking);
 		

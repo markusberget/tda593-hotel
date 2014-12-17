@@ -70,13 +70,13 @@ public class BookingManagerTests {
 		assertEquals(0, bookingID1);
 		int bookingID2 = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests2);
 		assertEquals(1, bookingID2);
-		assertEquals(2, bookingManagement.testPendingBookings.size());
+		assertEquals(2, bookingManagement.getPendingBookings().size());
 		assertEquals(0, bookingManagement.testConfirmedBookings.size());
 		assertTrue(bookingManagement.confirmBooking(bookingID2));
-		assertEquals(1, bookingManagement.testPendingBookings.size());
+		assertEquals(1, bookingManagement.getPendingBookings().size());
 		assertEquals(1, bookingManagement.testConfirmedBookings.size());
 		assertTrue(bookingManagement.confirmBooking(bookingID1));
-		assertEquals(0, bookingManagement.testPendingBookings.size());
+		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(2, bookingManagement.testConfirmedBookings.size());
 		assertEquals(numberOfGuests2, bookingManagement.testConfirmedBookings.get(bookingID2).getNumberOfGuests());
 		assertEquals(numberOfGuests1, bookingManagement.testConfirmedBookings.get(bookingID1).getNumberOfGuests());
@@ -107,15 +107,15 @@ public class BookingManagerTests {
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingID3);
 		assertFalse(bookingManagement.cancelBooking(3));
-		assertEquals(3, bookingManagement.testPendingBookings.size());
+		assertEquals(3, bookingManagement.getPendingBookings().size());
 		assertTrue(bookingManagement.cancelBooking(2));
 		assertEquals(2, bookingManagement.testBookingHistory.get(bookingID3).getBookingID());
 		assertEquals(1, bookingManagement.testBookingHistory.size());
-		assertEquals(2, bookingManagement.testPendingBookings.size());
+		assertEquals(2, bookingManagement.getPendingBookings().size());
 		bookingManagement.confirmBooking(bookingID1);
 		bookingManagement.confirmBooking(bookingID2);
 		assertTrue(bookingManagement.cancelBooking(0));
-		assertEquals(0, bookingManagement.testPendingBookings.size());
+		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(1, bookingManagement.testConfirmedBookings.size());
 		assertEquals(2, bookingManagement.testBookingHistory.size());
 		assertEquals(0, bookingManagement.testBookingHistory.get(bookingID1).getBookingID());
@@ -136,7 +136,7 @@ public class BookingManagerTests {
 		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 3);
 		assertEquals(0, bookingID);
 		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
-		Customer customer = bookingManagement.testPendingBookings.get(bookingID).getCustomer();
+		Customer customer = bookingManagement.getPendingBookings().get(bookingID).getCustomer();
 		assertNull(customer.getFirstName());
 		assertNull(customer.getLastName());
 		assertNull(customer.getEmail());
@@ -159,21 +159,21 @@ public class BookingManagerTests {
 	@Test
 	public void testCreatePendingBooking() {
 		Classes.impl.IBookingManagementImplImpl pendingBooking = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-		assertEquals(0, pendingBooking.testPendingBookings.size());
+		assertEquals(0, pendingBooking.getPendingBookings().size());
 		Date checkIn = new Date();
 		Date checkOut = new Date();
 		int bookingID1 = pendingBooking.createPendingBooking(checkIn, checkOut, 6);
 		assertTrue(0 == bookingID1);
-		assertEquals(1, pendingBooking.testPendingBookings.size());
-		assertEquals(checkIn, pendingBooking.testPendingBookings.get(bookingID1).getCheckIn());
-		assertEquals(checkOut, pendingBooking.testPendingBookings.get(bookingID1).getCheckOut());
-		assertEquals(6, pendingBooking.testPendingBookings.get(bookingID1).getNumberOfGuests());
+		assertEquals(1, pendingBooking.getPendingBookings().size());
+		assertEquals(checkIn, pendingBooking.getPendingBookings().get(bookingID1).getCheckIn());
+		assertEquals(checkOut, pendingBooking.getPendingBookings().get(bookingID1).getCheckOut());
+		assertEquals(6, pendingBooking.getPendingBookings().get(bookingID1).getNumberOfGuests());
 		int bookingID2 = pendingBooking.createPendingBooking(checkIn, checkOut, 4);
 		assertTrue(1 == bookingID2);
-		assertEquals(2, pendingBooking.testPendingBookings.size());
-		assertEquals(checkIn, pendingBooking.testPendingBookings.get(bookingID2).getCheckIn());
-		assertEquals(checkOut, pendingBooking.testPendingBookings.get(bookingID2).getCheckOut());
-		assertEquals(4, pendingBooking.testPendingBookings.get(bookingID2).getNumberOfGuests());
+		assertEquals(2, pendingBooking.getPendingBookings().size());
+		assertEquals(checkIn, pendingBooking.getPendingBookings().get(bookingID2).getCheckIn());
+		assertEquals(checkOut, pendingBooking.getPendingBookings().get(bookingID2).getCheckOut());
+		assertEquals(4, pendingBooking.getPendingBookings().get(bookingID2).getNumberOfGuests());
 	}
 
 	/**
