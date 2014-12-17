@@ -432,7 +432,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		for(Room r: rooms) {
 			
 			/*
-			if(numberOfGuests == r.getNumberOfGuests()) {
+			if(numberOfGuests != r.getNumberOfGuests()) {
 					continue;
 			
 			}
