@@ -421,13 +421,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean cancelBooking(int bookingID) {
-		if (testPendingBookings.get(bookingID) != null) {
-			testBookingHistory.put(bookingID, testPendingBookings.remove(bookingID));
-			return true;
-		}
-		else if (testConfirmedBookings.get(bookingID) != null) {
-			testBookingHistory.put(bookingID, testConfirmedBookings.remove(bookingID));
-			return true;
+		for (int i = 0; i < booking.size(); i++) {
+			if (booking.get(i).getBookingID() == bookingID) {
+				testBookingHistory.put(bookingID, booking.remove(i));
+				return true;
+			}
 		}
 		return false;
 	}
