@@ -428,7 +428,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	public EList searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice) {
 		
 		EList<Room> rooms  = this.getRoom();
-		EList<Room> searchResult = new BasicEList<Room>();
+		EList<Integer> searchResult = new BasicEList<Integer>();
 
 		for(Room r: rooms) {
 			
@@ -441,7 +441,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			// TODO: do the same thing for the rest of the parameters. 
 			
 			// Passed all the tests, so add
-			searchResult.add(r);
+			searchResult.add(r.getRoomNumber());
 		}
 		
 		return searchResult;
