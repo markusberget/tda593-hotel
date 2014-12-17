@@ -64,7 +64,7 @@ public class UserTests {
 		try {
 			bankingAdmin = se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires
 					.instance();
-			
+		bankingAdmin.removeCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
 		assertTrue(bankingAdmin.addCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName));
 		assertEquals(0.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 0.0);
 		assertEquals(2343.0, bankingAdmin.makeDeposit(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 2343.0), 2343.0);
@@ -75,7 +75,6 @@ public class UserTests {
 		String email = "karl.urban@gmail.com", ph = "0843322";
 		bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 		bookingManagement.confirmBooking(bookingID);
-		
 		
 		// 0) Need to add a couple of rooms to the booking in order to be able to calculate payment and such.
 		EList<Room> rooms = new BasicEList<Room>();
