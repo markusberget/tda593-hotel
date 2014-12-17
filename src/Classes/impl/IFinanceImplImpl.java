@@ -27,6 +27,15 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	protected IFinanceImplImpl() {
 		super();
 	}
+	
+	/**
+	 * Instantiates the implementation of the IFinance interface.
+	 * 
+	 * @return	the IFinance object
+	 */
+	public static IFinanceImplImpl instantiateForTest() {
+		return new IFinanceImplImpl();
+	}
 
 	/**
 	 * <!-- begin-user-doc -->
