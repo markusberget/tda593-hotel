@@ -272,7 +272,7 @@ public interface Booking extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>IBooking Management Impl</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link Classes.IBookingManagementImpl#getBooking <em>Booking</em>}'.
+	 * It is bidirectional and its opposite is '{@link Classes.IBookingManagementImpl#getConfirmedBookings <em>Confirmed Bookings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>IBooking Management Impl</em>' reference isn't clear,
@@ -282,8 +282,8 @@ public interface Booking extends EObject {
 	 * @return the value of the '<em>IBooking Management Impl</em>' reference.
 	 * @see #setIBookingManagementImpl(IBookingManagementImpl)
 	 * @see Classes.ClassesPackage#getBooking_IBookingManagementImpl()
-	 * @see Classes.IBookingManagementImpl#getBooking
-	 * @model opposite="booking" required="true" ordered="false"
+	 * @see Classes.IBookingManagementImpl#getConfirmedBookings
+	 * @model opposite="confirmedBookings" required="true" ordered="false"
 	 * @generated
 	 */
 	IBookingManagementImpl getIBookingManagementImpl();

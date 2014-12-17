@@ -81,7 +81,7 @@
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//IBookingManagementImpl">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IBookingManagementImpl/booking"/>
+          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IBookingManagementImpl/confirmedBookings"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IBookingManagementImpl/room"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
@@ -90,6 +90,8 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IBookingManagementImpl/iHotelManagerImpl"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IBookingManagementImpl/iFinanceImpl"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IBookingManagementImpl/bookingHistory"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IBookingManagementImpl/customer"/>
     </genClasses>

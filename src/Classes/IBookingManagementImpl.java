@@ -13,11 +13,12 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.IBookingManagementImpl#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.IBookingManagementImpl#getConfirmedBookings <em>Confirmed Bookings</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getRoom <em>Room</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getPendingBookings <em>Pending Bookings</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getIFinanceImpl <em>IFinance Impl</em>}</li>
+ *   <li>{@link Classes.IBookingManagementImpl#getBookingHistory <em>Booking History</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getCustomer <em>Customer</em>}</li>
  * </ul>
  * </p>
@@ -29,22 +30,22 @@ import org.eclipse.emf.common.util.EList;
 public interface IBookingManagementImpl extends IBookingManagement {
 
 	/**
-	 * Returns the value of the '<em><b>Booking</b></em>' reference list.
+	 * Returns the value of the '<em><b>Confirmed Bookings</b></em>' reference list.
 	 * The list contents are of type {@link Classes.Booking}.
 	 * It is bidirectional and its opposite is '{@link Classes.Booking#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Booking</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Confirmed Bookings</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booking</em>' reference list.
-	 * @see Classes.ClassesPackage#getIBookingManagementImpl_Booking()
+	 * @return the value of the '<em>Confirmed Bookings</em>' reference list.
+	 * @see Classes.ClassesPackage#getIBookingManagementImpl_ConfirmedBookings()
 	 * @see Classes.Booking#getIBookingManagementImpl
 	 * @model opposite="iBookingManagementImpl" ordered="false"
 	 * @generated
 	 */
-	EList<Booking> getBooking();
+	EList<Booking> getConfirmedBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Room</b></em>' reference list.
@@ -129,6 +130,22 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	 * @generated
 	 */
 	void setIFinanceImpl(IBookingManagementImpl value);
+
+	/**
+	 * Returns the value of the '<em><b>Booking History</b></em>' reference list.
+	 * The list contents are of type {@link Classes.Booking}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Booking History</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Booking History</em>' reference list.
+	 * @see Classes.ClassesPackage#getIBookingManagementImpl_BookingHistory()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Booking> getBookingHistory();
 
 	/**
 	 * Returns the value of the '<em><b>Customer</b></em>' reference list.

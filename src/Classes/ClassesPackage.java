@@ -719,13 +719,13 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 13;
 
 	/**
-	 * The feature id for the '<em><b>Booking</b></em>' reference list.
+	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL__BOOKING = IBOOKING_MANAGEMENT_FEATURE_COUNT + 0;
+	int IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS = IBOOKING_MANAGEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Room</b></em>' reference list.
@@ -764,13 +764,22 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL = IBOOKING_MANAGEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>Booking History</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY = IBOOKING_MANAGEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Customer</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL__CUSTOMER = IBOOKING_MANAGEMENT_FEATURE_COUNT + 5;
+	int IBOOKING_MANAGEMENT_IMPL__CUSTOMER = IBOOKING_MANAGEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>IBooking Management Impl</em>' class.
@@ -779,7 +788,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL_FEATURE_COUNT = IBOOKING_MANAGEMENT_FEATURE_COUNT + 6;
+	int IBOOKING_MANAGEMENT_IMPL_FEATURE_COUNT = IBOOKING_MANAGEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Update Booking</em>' operation.
@@ -1811,15 +1820,15 @@ public interface ClassesPackage extends EPackage {
 	EClass getIBookingManagementImpl();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getBooking <em>Booking</em>}'.
+	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getConfirmedBookings <em>Confirmed Bookings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Booking</em>'.
-	 * @see Classes.IBookingManagementImpl#getBooking()
+	 * @return the meta object for the reference list '<em>Confirmed Bookings</em>'.
+	 * @see Classes.IBookingManagementImpl#getConfirmedBookings()
 	 * @see #getIBookingManagementImpl()
 	 * @generated
 	 */
-	EReference getIBookingManagementImpl_Booking();
+	EReference getIBookingManagementImpl_ConfirmedBookings();
 
 	/**
 	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getRoom <em>Room</em>}'.
@@ -1864,6 +1873,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIBookingManagementImpl_IFinanceImpl();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getBookingHistory <em>Booking History</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Booking History</em>'.
+	 * @see Classes.IBookingManagementImpl#getBookingHistory()
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 */
+	EReference getIBookingManagementImpl_BookingHistory();
 
 	/**
 	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getCustomer <em>Customer</em>}'.
@@ -2882,12 +2902,12 @@ public interface ClassesPackage extends EPackage {
 		EClass IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getIBookingManagementImpl();
 
 		/**
-		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Confirmed Bookings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference IBOOKING_MANAGEMENT_IMPL__BOOKING = eINSTANCE.getIBookingManagementImpl_Booking();
+		EReference IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS = eINSTANCE.getIBookingManagementImpl_ConfirmedBookings();
 
 		/**
 		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
@@ -2920,6 +2940,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL = eINSTANCE.getIBookingManagementImpl_IFinanceImpl();
+
+		/**
+		 * The meta object literal for the '<em><b>Booking History</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY = eINSTANCE.getIBookingManagementImpl_BookingHistory();
 
 		/**
 		 * The meta object literal for the '<em><b>Customer</b></em>' reference list feature.

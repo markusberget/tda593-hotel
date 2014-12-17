@@ -542,9 +542,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 		if (newIBookingManagementImpl != iBookingManagementImpl) {
 			NotificationChain msgs = null;
 			if (iBookingManagementImpl != null)
-				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING, IBookingManagementImpl.class, msgs);
+				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS, IBookingManagementImpl.class, msgs);
 			if (newIBookingManagementImpl != null)
-				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING, IBookingManagementImpl.class, msgs);
+				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS, IBookingManagementImpl.class, msgs);
 			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -639,7 +639,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return basicSetCustomer((Customer)otherEnd, msgs);
 			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
 				if (iBookingManagementImpl != null)
-					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING, IBookingManagementImpl.class, msgs);
+					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS, IBookingManagementImpl.class, msgs);
 				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
 			case ClassesPackage.BOOKING__BILL:
 				if (bill != null)
