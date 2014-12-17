@@ -113,7 +113,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected EList<Customer> customer;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
-	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
+	private int bookingsEver;		// used for current implementation to make the bookingIDs unique
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -143,7 +143,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		standardRoomType.setNumberOfGuests(1);
 		standardRoomType.setPrice(100);
 		standardRoomType.setFeatures("View");
-		
 		
 		Room room = new RoomImpl();
 		room.setRoomNumber(1);

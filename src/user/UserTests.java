@@ -77,7 +77,7 @@ public class UserTests {
 		bookingManagement.confirmBooking(bookingID);
 		
 		// 0) Need to add a couple of rooms to the booking in order to be able to calculate payment and such.
-		EList<Room> rooms = new BasicEList<Room>();
+		
 		//rooms = bookingManagement.getBooking(bookingID).getRoom();
 		//rooms.add(new Room());
 		
