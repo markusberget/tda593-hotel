@@ -426,8 +426,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public EList searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice) {
 		
-		// MOVE HERE
-		
 		EList<Room> rooms  = this.getRoom();
 		EList<Room> searchResult = new BasicEList<Room>();
 
