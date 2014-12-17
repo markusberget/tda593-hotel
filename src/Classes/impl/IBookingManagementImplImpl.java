@@ -106,7 +106,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Customer> customer;
-	private EList<Booking> testBookingHistory;
+	private ArrayList<Booking> testBookingHistory;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
 	
@@ -366,8 +366,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
 				booking.add(pendingBookings.remove(i));
-				BillImpl bill = new BillImpl();
-				booking.get(bookingID).setBill(bill);
+				//BillImpl bill = new BillImpl();
+				//booking.get(i).setBill(bill);
 			// Also, there should be Charges added to the Bill for the room(s)
 				return true;
 			}
@@ -413,12 +413,25 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean cancelBooking(int bookingID) {
-		for (int i = 0; i < booking.size(); i++) {
+		int listSize;		// Save current size of list because concurrent activity may change sizes
+		listSize = pendingBookings.size();
+		
+		// The lists are traversed separately because the bookings should be removed from the correct list
+		for (int i = 0; i < listSize; i++) {
+			if (pendingBookings.get(i).getBookingID() == bookingID) {
+				getTestBookingHistory().add(pendingBookings.remove(i));
+				return true;
+			}
+		}
+		
+		listSize = booking.size();
+		for (int i = 0; i < listSize; i++) {
 			if (booking.get(i).getBookingID() == bookingID) {
 				getTestBookingHistory().add(booking.remove(i));
 				return true;
 			}
 		}
+		
 		return false;
 	}
 
@@ -737,11 +750,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		return super.eInvoke(operationID, arguments);
 	}
 
-	public EList<Booking> getTestBookingHistory() {
+	public ArrayList<Booking> getTestBookingHistory() {
 		return testBookingHistory;
 	}
 
-	public void setTestBookingHistory(EList<Booking> testBookingHistory) {
+	public void setTestBookingHistory(ArrayList<Booking> testBookingHistory) {
 		this.testBookingHistory = testBookingHistory;
 	}
 

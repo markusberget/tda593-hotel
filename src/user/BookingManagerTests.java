@@ -78,8 +78,8 @@ public class BookingManagerTests {
 		assertTrue(bookingManagement.confirmBooking(bookingID1));
 		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(2, bookingManagement.getBooking().size());
-		assertEquals(numberOfGuests2, bookingManagement.getBooking().get(bookingID2).getNumberOfGuests());
-		assertEquals(numberOfGuests1, bookingManagement.getBooking().get(bookingID1).getNumberOfGuests());
+		assertEquals(numberOfGuests2, bookingManagement.getBooking(bookingID2).getNumberOfGuests());
+		assertEquals(numberOfGuests1, bookingManagement.getBooking(bookingID1).getNumberOfGuests());
 	}
 
 	/**
