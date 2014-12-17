@@ -76,10 +76,7 @@ public class UserTests {
 		bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 		bookingManagement.confirmBooking(bookingID);
 		
-		// 0) Need to add a couple of rooms to the booking in order to be able to calculate payment and such.
-		
-		//rooms = bookingManagement.getBooking(bookingID).getRoom();
-		//rooms.add(new Room());
+		assertEquals(2, bookingManagement.getRoom().size());
 		
 		// 1) Retrieve booking information using getBooking(bookingID).
 		Booking booking = bookingManagement.getBooking(bookingID);
