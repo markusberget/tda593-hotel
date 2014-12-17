@@ -336,7 +336,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * Adds a pending room to 
+	 * Adds a pending room to booking (should be pendingBookings?)
 	 * 
 	 * @generated NOT
 	 */
@@ -371,12 +371,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public synchronized boolean confirmBooking(int bookingID) {
-		if ( testPendingBookings.get(bookingID) != null ) {
-			testConfirmedBookings.put(bookingID, testPendingBookings.remove(bookingID));
-			BillImpl bill = new BillImpl();
-			testConfirmedBookings.get(bookingID).setBill(bill);
+		for (int i = 0; i < pendingBookings.size(); i++) {
+			if (pendingBookings.get(i).getBookingID() == bookingID) {
+				booking.add(pendingBookings.remove(i));
+				BillImpl bill = new BillImpl();
+				booking.get(bookingID).setBill(bill);
 			// Also, there should be Charges added to the Bill for the room(s)
-			return true;
+				return true;
+			}
 		}
 		return false;
 	}
