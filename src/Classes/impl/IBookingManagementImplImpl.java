@@ -127,6 +127,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		bookingHistory = new BasicEList<Booking>();
 		pendingBookings = new BasicEList<Booking>();
 		confirmedBookings = new BasicEList<Booking>();
+		room = new BasicEList<Room>();
 	}
 	
 	/**
@@ -150,8 +151,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		room.setRoomNumber(1);
 		room.setRoomType(standardRoomType);
 		room.setStatus(RoomStatus.AVAILABLE);
-	
-		bookingManagement.room = new BasicEList<Room>();
+
 		bookingManagement.room.add(room);
 		
 		
