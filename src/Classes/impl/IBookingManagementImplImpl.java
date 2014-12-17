@@ -565,25 +565,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		
 		if(!hm.isStaffMemberLoggedIn(staffMemberUsername)) return false; // not logged in!
 		
-		// TODO: now change the status of the Room. Joel understands the workings of this class better than me,
-		// so it's probably best if Joel implements the rest.
-		/*
-		 MESSAGE TO JOEL FROM ERIC:
-		 
-		 Implement the rest, please. 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-		 
-
-		 
-		 
-		 */
+		Room room = getRoomByID(roomId);
+		room.setStatus(status);
 		
 		return true;
 	}
