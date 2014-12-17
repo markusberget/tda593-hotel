@@ -108,7 +108,7 @@ public class BookingManagerTests {
 		assertEquals(2, bookingID3);
 		assertFalse(bookingManagement.cancelBooking(3));
 		assertEquals(3, bookingManagement.getPendingBookings().size());
-		assertTrue(bookingManagement.cancelBooking(2));
+		assertTrue(bookingManagement.cancelBooking(bookingID3));
 		assertEquals(2, bookingManagement.testBookingHistory.get(bookingID3).getBookingID());
 		assertEquals(1, bookingManagement.testBookingHistory.size());
 		assertEquals(2, bookingManagement.getPendingBookings().size());
