@@ -113,6 +113,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected EList<Customer> customer;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
+	
+	// TODO: what? why is this needed? Isn't calling bookingHistory.size() enough to get this information?
 	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
 	
 	/**
