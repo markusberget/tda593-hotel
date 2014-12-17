@@ -105,7 +105,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected EList<Customer> customer;
 	private EList<Booking> testBookingHistory;
-	private List<Booking> testH;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
 	
@@ -116,6 +115,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected IBookingManagementImplImpl() {
 		super();
+		testBookingHistory = new BasicEList<Booking>();
 	}
 	
 	/**
@@ -296,8 +296,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 
 	/**
 	 * Returns the booking object with the corresponding bookingNumber
-	 * containing its information. Only the list of confirmed bookings is
-	 * checked because a pending booking is already "active".
+	 * containing its information. At the moment all three lists of bookings
+	 * (pending, confirmed, history) are checked because all three types of bookings
+	 * could be interesting to retrieve.
 	 *
 	 * @generated NOT
 	 */
@@ -305,6 +306,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		// pendingBookings is merged with booking to be able to retrieve also pending bookings.
 		EList<Booking> tmpList = new BasicEList<Booking>(pendingBookings);
 		tmpList.addAll(booking);
+		tmpList.addAll(testBookingHistory);
 		
 		for (int i = 0; i < tmpList.size(); i++) {
 			if (tmpList.get(i).getBookingID() == bookingNumber) {
@@ -419,7 +421,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		// The lists are traversed separately because the bookings should be removed from the correct list
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				testBookingHistory.add(pendingBookings.remove(i));
+				Booking booking = pendingBookings.remove(i);
+				testBookingHistory.add(booking);
 				return true;
 			}
 		}
