@@ -426,7 +426,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-<<<<<<< HEAD
+
 	public EList searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice) {
 		
 		EList<Room> rooms  = this.getRoom();
@@ -447,12 +447,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		}
 		
 		return searchResult;
-=======
-	public int searchRoom(Date checkIn, Date checkOut, int numberOfGuests, int roomType, int maximumPrice) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
->>>>>>> c0759116a23220b7839abd7f950822b52b4d8a24
+
 	}
 
 	/**
