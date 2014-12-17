@@ -174,7 +174,7 @@ public class UserTests {
 		}
 		
 		//assertEquals(0, bookingManagement.pendingBookings.size());
-		assertEquals(2, bookingManagement.testConfirmedBookings.size());
+		assertEquals(2, bookingManagement.getBooking().size());
 		int testBookingID1 = bookingManagement.getBooking(0).getBookingID();
 		int testBookingID2 = bookingManagement.getBooking(1).getBookingID();
 		assertTrue(testBookingID1 != testBookingID2);

@@ -106,7 +106,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Customer> customer;
-	public Map<Integer, Booking> testConfirmedBookings;		// public for lazy testing purposes
 	public Map<Integer, Booking> testBookingHistory;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
@@ -432,7 +431,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public boolean checkIn(int bookingID) {
-		Booking booking = testConfirmedBookings.get(bookingID);
+		//Booking booking = bookings.get(bookingID);
 		if (booking != null) {
 			List<Room> rooms = occupiedRooms.get(bookingID);
 			for(Room room : rooms) {
