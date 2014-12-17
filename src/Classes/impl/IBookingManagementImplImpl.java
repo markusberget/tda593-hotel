@@ -396,10 +396,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	public synchronized boolean confirmBooking(int bookingID) {
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
+				BillImpl bill = new BillImpl();
+				// ChargeImpl charge = new ChargeImpl();
+				// bill.setCharge(charge);
+				pendingBookings.get(i).setBill(bill);
 				confirmedBookings.add(pendingBookings.remove(i));
-				//BillImpl bill = new BillImpl();
-				//booking.get(i).setBill(bill);
-			// Also, there should be Charges added to the Bill for the room(s)
 				return true;
 			}
 		}
