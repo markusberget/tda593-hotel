@@ -116,6 +116,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	protected IBookingManagementImplImpl() {
 		super();
 		testBookingHistory = new BasicEList<Booking>();
+		pendingBookings = new BasicEList<Booking>();
+		booking = new BasicEList<Booking>();
 	}
 	
 	/**
@@ -143,8 +145,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		bookingManagement.room = new BasicEList<Room>();
 		bookingManagement.room.add(room);
 		
-		bookingManagement.booking = new BasicEList<Booking>();
-		bookingManagement.pendingBookings = new BasicEList<Booking>();
 		
 		return bookingManagement;
 	}
