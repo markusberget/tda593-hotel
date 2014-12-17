@@ -173,8 +173,8 @@ public class UserTests {
 			e.printStackTrace();
 		}
 		
-		//assertEquals(0, bookingManagement.pendingBookings.size());
-		assertEquals(2, bookingManagement.getBooking().size());
+		assertEquals(0, bookingManagement.getPendingBookings().size());
+		assertEquals(2, bookingManagement.getConfirmedBookings().size());
 		int testBookingID1 = bookingManagement.getBooking(0).getBookingID();
 		int testBookingID2 = bookingManagement.getBooking(1).getBookingID();
 		assertTrue(testBookingID1 != testBookingID2);

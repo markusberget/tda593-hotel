@@ -76,8 +76,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Booking> pendingBookings;
-	// These data structures are used for storing temporary data while performing tests.
-	//private EList<Booking> pendingBookings;
 	/**
 	 * The cached value of the '{@link #getIHotelManagerImpl() <em>IHotel Manager Impl</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -114,7 +112,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected EList<Customer> customer;
-	private EList<Booking> testBookingHistory;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
 	
@@ -125,9 +122,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected IBookingManagementImplImpl() {
 		super();
-		testBookingHistory = new BasicEList<Booking>();
+		bookingHistory = new BasicEList<Booking>();
 		pendingBookings = new BasicEList<Booking>();
-		booking = new BasicEList<Booking>();
+		confirmedBookings = new BasicEList<Booking>();
 	}
 	
 	/**
@@ -327,8 +324,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	public Booking getBooking(int bookingNumber) {
 		// pendingBookings is merged with booking to be able to retrieve also pending bookings.
 		EList<Booking> tmpList = new BasicEList<Booking>(pendingBookings);
-		tmpList.addAll(booking);
-		tmpList.addAll(testBookingHistory);
+		tmpList.addAll(confirmedBookings);
+		tmpList.addAll(bookingHistory);
 		
 		for (int i = 0; i < tmpList.size(); i++) {
 			if (tmpList.get(i).getBookingID() == bookingNumber) {
@@ -388,7 +385,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	public synchronized boolean confirmBooking(int bookingID) {
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				booking.add(pendingBookings.remove(i));
+				confirmedBookings.add(pendingBookings.remove(i));
 				//BillImpl bill = new BillImpl();
 				//booking.get(i).setBill(bill);
 			// Also, there should be Charges added to the Bill for the room(s)
@@ -444,15 +441,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
 				Booking booking = pendingBookings.remove(i);
-				testBookingHistory.add(booking);
+				bookingHistory.add(booking);
 				return true;
 			}
 		}
 		
-		listSize = booking.size();
+		listSize = confirmedBookings.size();
 		for (int i = 0; i < listSize; i++) {
-			if (booking.get(i).getBookingID() == bookingID) {
-				testBookingHistory.add(booking.remove(i));
+			if (confirmedBookings.get(i).getBookingID() == bookingID) {
+				bookingHistory.add(confirmedBookings.remove(i));
 				return true;
 			}
 		}
@@ -470,7 +467,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	public boolean checkIn(int bookingID) {
 		//Booking booking = bookings.get(bookingID);
-		if (booking != null) {
+		if (confirmedBookings != null) {
 			List<Room> rooms = occupiedRooms.get(bookingID);
 			for(Room room : rooms) {
 				room.setStatus(RoomStatus.OCCUPIED);
@@ -784,14 +781,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				return changeStatusOfRoom((String)arguments.get(0), (Integer)arguments.get(1), (RoomStatus)arguments.get(2));
 		}
 		return super.eInvoke(operationID, arguments);
-	}
-
-	public EList<Booking> getTestBookingHistory() {
-		return testBookingHistory;
-	}
-
-	public void setTestBookingHistory(EList<Booking> testBookingHistory) {
-		this.testBookingHistory = testBookingHistory;
 	}
 
 } //IBookingManagementImplImpl

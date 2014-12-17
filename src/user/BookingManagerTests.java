@@ -71,13 +71,13 @@ public class BookingManagerTests {
 		int bookingID2 = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests2);
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingManagement.getPendingBookings().size());
-		assertEquals(0, bookingManagement.getBooking().size());
+		assertEquals(0, bookingManagement.getConfirmedBookings().size());
 		assertTrue(bookingManagement.confirmBooking(bookingID2));
 		assertEquals(1, bookingManagement.getPendingBookings().size());
-		assertEquals(1, bookingManagement.getBooking().size());
+		assertEquals(1, bookingManagement.getConfirmedBookings().size());
 		assertTrue(bookingManagement.confirmBooking(bookingID1));
 		assertEquals(0, bookingManagement.getPendingBookings().size());
-		assertEquals(2, bookingManagement.getBooking().size());
+		assertEquals(2, bookingManagement.getConfirmedBookings().size());
 		assertEquals(numberOfGuests2, bookingManagement.getBooking(bookingID2).getNumberOfGuests());
 		assertEquals(numberOfGuests1, bookingManagement.getBooking(bookingID1).getNumberOfGuests());
 	}
@@ -110,14 +110,14 @@ public class BookingManagerTests {
 		assertEquals(3, bookingManagement.getPendingBookings().size());
 		assertTrue(bookingManagement.cancelBooking(bookingID3));
 		assertEquals(2, bookingManagement.getBooking(bookingID3).getBookingID());
-		assertEquals(1, bookingManagement.getTestBookingHistory().size());
+		assertEquals(1, bookingManagement.getBookingHistory().size());
 		assertEquals(2, bookingManagement.getPendingBookings().size());
 		bookingManagement.confirmBooking(bookingID1);
 		bookingManagement.confirmBooking(bookingID2);
 		assertTrue(bookingManagement.cancelBooking(0));
 		assertEquals(0, bookingManagement.getPendingBookings().size());
-		assertEquals(1, bookingManagement.getBooking().size());
-		assertEquals(2, bookingManagement.getTestBookingHistory().size());
+		assertEquals(1, bookingManagement.getConfirmedBookings().size());
+		assertEquals(2, bookingManagement.getBookingHistory().size());
 		assertEquals(0, bookingManagement.getBooking(bookingID1).getBookingID());
 	}
 	
