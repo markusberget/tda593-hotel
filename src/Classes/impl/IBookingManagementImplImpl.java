@@ -336,28 +336,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	}
 
 	/**
-	 * Removes an available room from the list of available rooms to the
-	 * list of pending rooms after a user has chosen to add the room
-	 * to his/her pending booking. By using the bookingID as the key in
-	 * the HashMap the now pending room will be associated with the
-	 * correct booking.
-	 * 
-	 * NOTE: At the moment it is the room objects that are moved backed and
-	 * forth between the arrays. It is only between chosen dates that a room
-	 * should be unavailable so the current implementation will be changed
-	 * later.
-	 * 
-	 * NOTE: Added real room support
+	 * Adds a pending room to 
 	 * 
 	 * @generated NOT
 	 */
-	@SuppressWarnings("unchecked")
 	public int addRoomPending(int room, int bookingID) {
-		//Room chosenRoom = availableRooms.remove(room);
-		//chosenRoom.setStatus(RoomStatus.OCCUPIED);
-		//pendingRooms.put(bookingID, (List<Room>) chosenRoom);
 		Room tmpRoom = this.getRoomByID(room);
-		Booking tmpBooking = this.getBooking(bookingID);
+		Booking tmpBooking = this.getBooking(bookingID);		// Supposed to be this.getPendingBookings(bookingID)?
 		tmpBooking.getRoom().add(tmpRoom);
 		return tmpBooking.getBookingID();
 	}
