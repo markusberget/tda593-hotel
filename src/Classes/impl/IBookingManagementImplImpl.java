@@ -796,14 +796,5 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		return super.eInvoke(operationID, arguments);
 	}
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	protected EList <Room> getAvailableRooms(Date startDate, Date endDate) {
-		EList <Room> availableRooms = null;
-		return availableRooms;
-	}
 
 } //IBookingManagementImplImpl
