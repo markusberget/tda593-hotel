@@ -223,15 +223,12 @@ public class BookingManagerTests {
 	 */
 	@Test
 	public void testChangeStatusOfRoom() {
-		fail("Not yet implemented");
+		Classes.impl.IBookingManagementImplImpl hotelManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		
+		
+		
+		//getRoomByID
 	}
-	
-	/**
-	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#getPossibleRoomStatuses()}.
-	 */
-	@Test
-	public void testgetPossibleRoomStatuses() {
-		fail("Not yet implemented");
-	}
+
 
 }

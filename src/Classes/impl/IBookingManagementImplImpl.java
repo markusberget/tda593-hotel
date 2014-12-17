@@ -7,6 +7,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -18,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.Customer;
@@ -126,6 +128,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		pendingBookings = new BasicEList<Booking>();
 		confirmedBookings = new BasicEList<Booking>();
 		room = new BasicEList<Room>();
+		
+		this.setIHotelManagerImpl( ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl());
+		
 	}
 	
 	/**
@@ -369,7 +374,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @param id
 	 * @return
 	 */
-	private Room getRoomByID(int roomNumber){
+	public Room getRoomByID(int roomNumber){
 		for (int i = 0; i < room.size(); i++) {
 			if(room.get(i).getRoomNumber() == roomNumber) {
 				return room.get(i);
