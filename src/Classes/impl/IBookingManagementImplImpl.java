@@ -417,21 +417,39 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		throw new UnsupportedOperationException();
 	}
 
+	
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public EList searchRoom(Date checkIn, Date checkOut, Class featureList, int numberOfGuests, int roomType, int maximumPrice) {
+
 		EList <Integer> matchingRooms = null;
 		// TODO: implement this method
-		EList <Room> availableRooms = getAvailableRooms(checkIn, checkOut);
+
 		
-		if(availableRooms != null){
-			return availableRooms;
+		EList<Room> rooms  = this.getRoom();
+		EList<Room> searchResult = new BasicEList<Room>();
+
+		for(Room r: rooms) {
+			
+			/*
+			if(numberOfGuests != r.getNumberOfGuests()) {
+					continue;
+			
+			}
+			}*/
+			// TODO: do the same thing for the rest of the parameters. 
+			
+			// Passed all the tests, so add
+			searchResult.add(r);
 		}
-		throw new UnsupportedOperationException();
+		
+		return searchResult;
 	}
+	
 
 	/**
 	 * A booking can be cancelled while it is pending and also when it is
