@@ -417,7 +417,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		// The lists are traversed separately because the bookings should be removed from the correct list
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				getTestBookingHistory().add(pendingBookings.remove(i));
+				testBookingHistory.add(pendingBookings.remove(i));
 				return true;
 			}
 		}
@@ -425,7 +425,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		listSize = booking.size();
 		for (int i = 0; i < listSize; i++) {
 			if (booking.get(i).getBookingID() == bookingID) {
-				getTestBookingHistory().add(booking.remove(i));
+				testBookingHistory.add(booking.remove(i));
 				return true;
 			}
 		}
