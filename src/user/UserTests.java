@@ -88,7 +88,8 @@ public class UserTests {
 
 		//bookingManagement.checkOut(rooms);
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).
-		int checkOutSum = 555;		// Set to 555 until summation of bill's charges is implemented.
+		double checkOutSum = 555.5;		// Set to 555 until summation of bill's charges is implemented.
+		//validateWithBank();		// Performs the 2 method invocations below?
 		assertTrue(bankingCustomer.isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName));
 		assertTrue(bankingCustomer.makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
 		// 4) Change status of room(s) to CLEANING/AVAILABLE? (which is done when payment is a success).

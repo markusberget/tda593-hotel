@@ -41,7 +41,7 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oq9WooK8EeSqlq6tRo0Csg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oq9Wo4K8EeSqlq6tRo0Csg" value="1"/>
     </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_MWSwwYR1EeSz38BH1WnIsA" name="iFinanceImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_MWSwwIR1EeSz38BH1WnIsA">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_MWSwwYR1EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_MWSwwIR1EeSz38BH1WnIsA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MWSwwoR1EeSz38BH1WnIsA" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MWSww4R1EeSz38BH1WnIsA" value="1"/>
     </ownedAttribute>
