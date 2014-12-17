@@ -108,12 +108,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected EList<Customer> customer;
 	public Map<Integer, Booking> testConfirmedBookings;		// public for lazy testing purposes
-	private ArrayList<Room> availableRooms;
 	public Map<Integer, Booking> testBookingHistory;
-	
-	// A list of rooms is used as the value in the HashMap because a customer should be
-	// able to have several rooms in a booking. The key part is the bookingID.
-	private Map<Integer, List<Room>> pendingRooms;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	
 	
