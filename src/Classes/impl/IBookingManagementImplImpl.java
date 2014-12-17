@@ -42,7 +42,6 @@ import Classes.RoomType;
  *   <li>{@link Classes.impl.IBookingManagementImplImpl#getRoom <em>Room</em>}</li>
  *   <li>{@link Classes.impl.IBookingManagementImplImpl#getPendingBookings <em>Pending Bookings</em>}</li>
  *   <li>{@link Classes.impl.IBookingManagementImplImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
- *   <li>{@link Classes.impl.IBookingManagementImplImpl#getIFinanceImpl <em>IFinance Impl</em>}</li>
  *   <li>{@link Classes.impl.IBookingManagementImplImpl#getBookingHistory <em>Booking History</em>}</li>
  *   <li>{@link Classes.impl.IBookingManagementImplImpl#getCustomer <em>Customer</em>}</li>
  * </ul>
@@ -88,15 +87,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @ordered
 	 */
 	protected IHotelManagerImpl iHotelManagerImpl;
-	/**
-	 * The cached value of the '{@link #getIFinanceImpl() <em>IFinance Impl</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIFinanceImpl()
-	 * @generated
-	 * @ordered
-	 */
-	protected IFinanceImpl iFinanceImpl;
 	/**
 	 * The cached value of the '{@link #getBookingHistory() <em>Booking History</em>}' reference list.
 	 * <!-- begin-user-doc -->
@@ -250,44 +240,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		iHotelManagerImpl = newIHotelManagerImpl;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, iHotelManagerImpl));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IFinanceImpl getIFinanceImpl() {
-		if (iFinanceImpl != null && iFinanceImpl.eIsProxy()) {
-			InternalEObject oldIFinanceImpl = (InternalEObject)iFinanceImpl;
-			iFinanceImpl = (IFinanceImpl)eResolveProxy(oldIFinanceImpl);
-			if (iFinanceImpl != oldIFinanceImpl) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, oldIFinanceImpl, iFinanceImpl));
-			}
-		}
-		return iFinanceImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public IFinanceImpl basicGetIFinanceImpl() {
-		return iFinanceImpl;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setIFinanceImpl(IFinanceImpl newIFinanceImpl) {
-		IFinanceImpl oldIFinanceImpl = iFinanceImpl;
-		iFinanceImpl = newIFinanceImpl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, oldIFinanceImpl, iFinanceImpl));
 	}
 
 	/**
@@ -644,9 +596,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL:
 				if (resolve) return getIHotelManagerImpl();
 				return basicGetIHotelManagerImpl();
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:
-				if (resolve) return getIFinanceImpl();
-				return basicGetIFinanceImpl();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY:
 				return getBookingHistory();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
@@ -678,9 +627,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL:
 				setIHotelManagerImpl((IHotelManagerImpl)newValue);
-				return;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:
-				setIFinanceImpl((IFinanceImpl)newValue);
 				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY:
 				getBookingHistory().clear();
@@ -714,9 +660,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL:
 				setIHotelManagerImpl((IHotelManagerImpl)null);
 				return;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:
-				setIFinanceImpl((IFinanceImpl)null);
-				return;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY:
 				getBookingHistory().clear();
 				return;
@@ -743,8 +686,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				return pendingBookings != null && !pendingBookings.isEmpty();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL:
 				return iHotelManagerImpl != null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:
-				return iFinanceImpl != null;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY:
 				return bookingHistory != null && !bookingHistory.isEmpty();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:

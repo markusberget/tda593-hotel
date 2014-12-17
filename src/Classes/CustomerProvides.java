@@ -9,44 +9,12 @@ import org.eclipse.emf.ecore.EObject;
  * A representation of the model object '<em><b>Customer Provides</b></em>'.
  * <!-- end-user-doc -->
  *
- * <p>
- * The following features are supported:
- * <ul>
- *   <li>{@link Classes.CustomerProvides#getIFinanceImpl <em>IFinance Impl</em>}</li>
- * </ul>
- * </p>
  *
  * @see Classes.ClassesPackage#getCustomerProvides()
  * @model interface="true" abstract="true"
  * @generated
  */
 public interface CustomerProvides extends EObject {
-	/**
-	 * Returns the value of the '<em><b>IFinance Impl</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>IFinance Impl</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>IFinance Impl</em>' reference.
-	 * @see #setIFinanceImpl(IFinanceImpl)
-	 * @see Classes.ClassesPackage#getCustomerProvides_IFinanceImpl()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	IFinanceImpl getIFinanceImpl();
-
-	/**
-	 * Sets the value of the '{@link Classes.CustomerProvides#getIFinanceImpl <em>IFinance Impl</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>IFinance Impl</em>' reference.
-	 * @see #getIFinanceImpl()
-	 * @generated
-	 */
-	void setIFinanceImpl(IFinanceImpl value);
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

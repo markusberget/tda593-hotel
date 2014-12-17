@@ -104,14 +104,6 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createIHotelManagerAdapter();
 			}
 			@Override
-			public Adapter caseIFinanceImpl(IFinanceImpl object) {
-				return createIFinanceImplAdapter();
-			}
-			@Override
-			public Adapter caseIFinance(IFinance object) {
-				return createIFinanceAdapter();
-			}
-			@Override
 			public Adapter caseIBookingManagement(IBookingManagement object) {
 				return createIBookingManagementAdapter();
 			}
@@ -124,12 +116,20 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createChargeAdapter();
 			}
 			@Override
-			public Adapter caseAdministratorProvides(AdministratorProvides object) {
-				return createAdministratorProvidesAdapter();
+			public Adapter caseIFinance(IFinance object) {
+				return createIFinanceAdapter();
+			}
+			@Override
+			public Adapter caseIFinanceImpl(IFinanceImpl object) {
+				return createIFinanceImplAdapter();
 			}
 			@Override
 			public Adapter caseCustomerProvides(CustomerProvides object) {
 				return createCustomerProvidesAdapter();
+			}
+			@Override
+			public Adapter caseAdministratorProvides(AdministratorProvides object) {
+				return createAdministratorProvidesAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

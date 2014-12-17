@@ -124,19 +124,6 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.IFINANCE_IMPL: {
-				IFinanceImpl iFinanceImpl = (IFinanceImpl)theEObject;
-				T result = caseIFinanceImpl(iFinanceImpl);
-				if (result == null) result = caseIFinance(iFinanceImpl);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.IFINANCE: {
-				IFinance iFinance = (IFinance)theEObject;
-				T result = caseIFinance(iFinance);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ClassesPackage.IBOOKING_MANAGEMENT: {
 				IBookingManagement iBookingManagement = (IBookingManagement)theEObject;
 				T result = caseIBookingManagement(iBookingManagement);
@@ -155,15 +142,28 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.ADMINISTRATOR_PROVIDES: {
-				AdministratorProvides administratorProvides = (AdministratorProvides)theEObject;
-				T result = caseAdministratorProvides(administratorProvides);
+			case ClassesPackage.IFINANCE: {
+				IFinance iFinance = (IFinance)theEObject;
+				T result = caseIFinance(iFinance);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.IFINANCE_IMPL: {
+				IFinanceImpl iFinanceImpl = (IFinanceImpl)theEObject;
+				T result = caseIFinanceImpl(iFinanceImpl);
+				if (result == null) result = caseIFinance(iFinanceImpl);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
 			case ClassesPackage.CUSTOMER_PROVIDES: {
 				CustomerProvides customerProvides = (CustomerProvides)theEObject;
 				T result = caseCustomerProvides(customerProvides);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.ADMINISTRATOR_PROVIDES: {
+				AdministratorProvides administratorProvides = (AdministratorProvides)theEObject;
+				T result = caseAdministratorProvides(administratorProvides);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

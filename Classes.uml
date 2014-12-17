@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_49dQQHpiEeSOqIzpWDGINg" name="Classes">
+<uml:Package xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_49dQQHpiEeSOqIzpWDGINg" name="Classes">
   <packagedElement xmi:type="uml:Class" xmi:id="_Y1EUkHTdEeSOC7DG65-e3w" name="Room">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_bij1kHTdEeSOC7DG65-e3w" name="status" type="_Cw_8MIHdEeSiLMRkmJ4pCA"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_hZMRwHTdEeSOC7DG65-e3w" name="roomNumber">
@@ -40,10 +40,6 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_oq9WoYK8EeSqlq6tRo0Csg" name="iHotelManagerImpl" type="_QaiNQHYaEeSNRvHXkk2GGA" association="_oq9WoIK8EeSqlq6tRo0Csg">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_oq9WooK8EeSqlq6tRo0Csg" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_oq9Wo4K8EeSqlq6tRo0Csg" value="1"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_MWSwwYR1EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_MWSwwIR1EeSz38BH1WnIsA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MWSwwoR1EeSz38BH1WnIsA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MWSww4R1EeSz38BH1WnIsA" value="1"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_y7iMUIXiEeSdcNuEh5y6Rg" name="bookingHistory" type="_NNrFkHTbEeSOC7DG65-e3w">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_34nxYIXiEeSdcNuEh5y6Rg"/>
@@ -406,6 +402,18 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_wFeDYHZmEeSBRfeA9UETiw" name="IFinanceImpl">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_MWQUgIR1EeSz38BH1WnIsA" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_MWSwwIR1EeSz38BH1WnIsA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MWQUgYR1EeSz38BH1WnIsA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MWQUgoR1EeSz38BH1WnIsA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_HkcV5IR2EeSz38BH1WnIsA" name="customerProvides" type="_pd2VsoHfEeSMdr2cPLX2Nw" association="_HkcV4IR2EeSz38BH1WnIsA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HkcV5YR2EeSz38BH1WnIsA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HkcV5oR2EeSz38BH1WnIsA" value="1"/>
+    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_OgBA5IR2EeSz38BH1WnIsA" name="administratorProvides" type="_pd2VkIHfEeSMdr2cPLX2Nw" association="_OgBA4IR2EeSz38BH1WnIsA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OgBA5YR2EeSz38BH1WnIsA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgBA5oR2EeSz38BH1WnIsA" value="1"/>
+    </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_zGCRYHZmEeSBRfeA9UETiw" client="_wFeDYHZmEeSBRfeA9UETiw" supplier="_bD0GwHYfEeS6mLi5FsOguA" contract="_bD0GwHYfEeS6mLi5FsOguA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_NNrFkHTbEeSOC7DG65-e3w" name="Booking">
@@ -575,10 +583,6 @@
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_pd2VkIHfEeSMdr2cPLX2Nw" name="AdministratorProvides">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_OgBA4YR2EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_OgBA4IR2EeSz38BH1WnIsA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OgBA4oR2EeSz38BH1WnIsA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgBA44R2EeSz38BH1WnIsA" value="1"/>
-    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_pd2VkYHfEeSMdr2cPLX2Nw" name="makeDeposit">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_pd2VkoHfEeSMdr2cPLX2Nw" name="ccNumber">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -676,10 +680,6 @@
     </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_pd2VsoHfEeSMdr2cPLX2Nw" name="CustomerProvides">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_HkcV4YR2EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_HkcV4IR2EeSz38BH1WnIsA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HkcV4oR2EeSz38BH1WnIsA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HkcV44R2EeSz38BH1WnIsA" value="1"/>
-    </ownedAttribute>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_pd2Vs4HfEeSMdr2cPLX2Nw" name="makePayment">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_pd2VtIHfEeSMdr2cPLX2Nw" name="ccNumber">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -730,23 +730,22 @@
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_MWSwwIR1EeSz38BH1WnIsA" memberEnd="_MWSwwYR1EeSz38BH1WnIsA _MWQUgIR1EeSz38BH1WnIsA">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_MWQUgIR1EeSz38BH1WnIsA" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_MWSwwIR1EeSz38BH1WnIsA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MWQUgYR1EeSz38BH1WnIsA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MWQUgoR1EeSz38BH1WnIsA" value="1"/>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MWSwwIR1EeSz38BH1WnIsA" memberEnd="_MWSwwYR1EeSz38BH1WnIsA _MWQUgIR1EeSz38BH1WnIsA" navigableOwnedEnd="_MWSwwYR1EeSz38BH1WnIsA">
+    <ownedEnd xmi:type="uml:Property" xmi:id="_MWSwwYR1EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_MWSwwIR1EeSz38BH1WnIsA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MWSwwoR1EeSz38BH1WnIsA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MWSww4R1EeSz38BH1WnIsA" value="1"/>
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_HkcV4IR2EeSz38BH1WnIsA" memberEnd="_HkcV5IR2EeSz38BH1WnIsA _HkcV4YR2EeSz38BH1WnIsA">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_HkcV5IR2EeSz38BH1WnIsA" name="customerProvides" type="_pd2VsoHfEeSMdr2cPLX2Nw" association="_HkcV4IR2EeSz38BH1WnIsA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HkcV5YR2EeSz38BH1WnIsA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HkcV5oR2EeSz38BH1WnIsA" value="1"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_HkcV4YR2EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_HkcV4IR2EeSz38BH1WnIsA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HkcV4oR2EeSz38BH1WnIsA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HkcV44R2EeSz38BH1WnIsA" value="1"/>
     </ownedEnd>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_OgBA4IR2EeSz38BH1WnIsA" memberEnd="_OgBA5IR2EeSz38BH1WnIsA _OgBA4YR2EeSz38BH1WnIsA">
-    <name xsi:nil="true"/>
-    <ownedEnd xmi:type="uml:Property" xmi:id="_OgBA5IR2EeSz38BH1WnIsA" name="administratorProvides" type="_pd2VkIHfEeSMdr2cPLX2Nw" association="_OgBA4IR2EeSz38BH1WnIsA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OgBA5YR2EeSz38BH1WnIsA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgBA5oR2EeSz38BH1WnIsA" value="1"/>
+    <ownedEnd xmi:type="uml:Property" xmi:id="_OgBA4YR2EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_OgBA4IR2EeSz38BH1WnIsA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_OgBA4oR2EeSz38BH1WnIsA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_OgBA44R2EeSz38BH1WnIsA" value="1"/>
     </ownedEnd>
   </packagedElement>
 </uml:Package>
