@@ -322,7 +322,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public Booking getBooking(int bookingNumber) {
-		// pendingBookings is merged with booking to be able to retrieve also pending bookings.
+		// pendingBookings is merged with confirmedBookings and bookingHistory
 		EList<Booking> tmpList = new BasicEList<Booking>(pendingBookings);
 		tmpList.addAll(confirmedBookings);
 		tmpList.addAll(bookingHistory);

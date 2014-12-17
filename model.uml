@@ -119,52 +119,6 @@
   <packagedElement xmi:type="uml:Usage" xmi:id="_QahmIXYaEeSNRvHXkk2GGA" name="Usage0" client="_QaUx0HYaEeSNRvHXkk2GGA">
     <supplier xmi:type="uml:Interface" href="Classes.uml#_QaiNMXYaEeSNRvHXkk2GGA"/>
   </packagedElement>
-  <packagedElement xmi:type="uml:Component" xmi:id="_HeqlgHa2EeSKk9bkKW7QkA" name="CustomerProvides">
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_UmN4UHa7EeSKk9bkKW7QkA" name="makePayment" concurrency="concurrent">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_UmN4UXa7EeSKk9bkKW7QkA" name="ccNumber">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UmN4Una7EeSKk9bkKW7QkA" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UmN4U3a7EeSKk9bkKW7QkA" value="1"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_ncHx4Ha8EeSKk9bkKW7QkA" name="ccv">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_vZWuMHa8EeSKk9bkKW7QkA" name="expiryMonth">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_yt9SgHa8EeSKk9bkKW7QkA" name="expiryYear">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_1X2F4Ha8EeSKk9bkKW7QkA" name="firstName">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_3ZUOYHa8EeSKk9bkKW7QkA" name="lastName">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedParameter>
-    </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_5mWtsHa8EeSKk9bkKW7QkA" name="isCreditCardValid" concurrency="concurrent">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5mWtsXa8EeSKk9bkKW7QkA" name="ccNumber">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_5mWtsna8EeSKk9bkKW7QkA" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_5mWts3a8EeSKk9bkKW7QkA" value="1"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5mWttHa8EeSKk9bkKW7QkA" name="ccv">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5mWttXa8EeSKk9bkKW7QkA" name="expiryMonth">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5mWttna8EeSKk9bkKW7QkA" name="expiryYear">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5mWtt3a8EeSKk9bkKW7QkA" name="firstName">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_5mWtuHa8EeSKk9bkKW7QkA" name="lastName">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedParameter>
-    </ownedOperation>
-  </packagedElement>
   <packagedElement xmi:type="uml:Component" xmi:id="_dE__UHa3EeSKk9bkKW7QkA" name="Component2"/>
   <packagedElement xmi:type="uml:Package" xmi:id="_odI_oHbgEeSheJiNqvd8mw" name="Sequence Diagrams">
     <packagedElement xmi:type="uml:Interaction" xmi:id="_aqbFYHbaEeSheJiNqvd8mw" name="BookingInteractionDiagram">
@@ -235,7 +189,7 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_Qu0XsHa1EeSKk9bkKW7QkA" name="f" visibility="public">
         <type xmi:type="uml:Interface" href="Classes.uml#_bD0GwHYfEeS6mLi5FsOguA"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_xffGgHa3EeSKk9bkKW7QkA" name="b" visibility="public" type="_HeqlgHa2EeSKk9bkKW7QkA"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_xffGgHa3EeSKk9bkKW7QkA" name="b" visibility="public"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_OKdMQHavEeSKk9bkKW7QkA" name="Customer" visibility="public" represents="_yq8UYHa0EeSKk9bkKW7QkA" coveredBy="_sUK7YHa7EeSKk9bkKW7QkA _K-sH8Ha8EeSKk9bkKW7QkA _GCgyUHwhEeSp9f6OXZXhBA _GC7pEHwhEeSp9f6OXZXhBA _rLW3wHwiEeSp9f6OXZXhBA _WFulAHwmEeSp9f6OXZXhBA _WFxBQHwmEeSp9f6OXZXhBA"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_Kg8dAHaxEeSKk9bkKW7QkA" name="Lifeline0" represents="_Qu0XsHa1EeSKk9bkKW7QkA" coveredBy="_sUPz4Ha7EeSKk9bkKW7QkA _K-decHa8EeSKk9bkKW7QkA _GCgyUHwhEeSp9f6OXZXhBA _GC7pEHwhEeSp9f6OXZXhBA _rLbwQHwiEeSp9f6OXZXhBA _WFulAHwmEeSp9f6OXZXhBA _WFxBQHwmEeSp9f6OXZXhBA"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_msKt4Ha3EeSKk9bkKW7QkA" name="Lifeline1" visibility="public" represents="_xffGgHa3EeSKk9bkKW7QkA" coveredBy="_WFulAHwmEeSp9f6OXZXhBA _WFxBQHwmEeSp9f6OXZXhBA"/>
@@ -280,11 +234,11 @@
       <message xmi:type="uml:Message" xmi:id="_Rc9y8Ha8EeSKk9bkKW7QkA" name="validateWithBank_Message" messageSort="asynchCall" receiveEvent="_RdKAMHa8EeSKk9bkKW7QkA" sendEvent="_RdD5kHa8EeSKk9bkKW7QkA">
         <signature xmi:type="uml:Operation" href="Classes.uml#_iPfDQHYfEeS6mLi5FsOguA"/>
       </message>
-      <message xmi:type="uml:Message" xmi:id="_Jbn9QHa9EeSKk9bkKW7QkA" name="isCreditCardValid_Message" messageSort="asynchCall" receiveEvent="_Jb6RIHa9EeSKk9bkKW7QkA" sendEvent="_JbwgIHa9EeSKk9bkKW7QkA" signature="_5mWtsHa8EeSKk9bkKW7QkA"/>
+      <message xmi:type="uml:Message" xmi:id="_Jbn9QHa9EeSKk9bkKW7QkA" name="isCreditCardValid_Message" messageSort="asynchCall" receiveEvent="_Jb6RIHa9EeSKk9bkKW7QkA" sendEvent="_JbwgIHa9EeSKk9bkKW7QkA"/>
       <message xmi:type="uml:Message" xmi:id="_W7nXgHa9EeSKk9bkKW7QkA" name="bankTransfer_Message" messageSort="asynchCall" receiveEvent="_W79VwHa9EeSKk9bkKW7QkA" sendEvent="_W7yWoHa9EeSKk9bkKW7QkA">
         <signature xmi:type="uml:Operation" href="Classes.uml#_j-KLkHYfEeS6mLi5FsOguA"/>
       </message>
-      <message xmi:type="uml:Message" xmi:id="_Zzrw0Ha9EeSKk9bkKW7QkA" name="makePayment_Message" messageSort="asynchCall" receiveEvent="_Z0GAgHa9EeSKk9bkKW7QkA" sendEvent="_Zz_S0Ha9EeSKk9bkKW7QkA" signature="_UmN4UHa7EeSKk9bkKW7QkA"/>
+      <message xmi:type="uml:Message" xmi:id="_Zzrw0Ha9EeSKk9bkKW7QkA" name="makePayment_Message" messageSort="asynchCall" receiveEvent="_Z0GAgHa9EeSKk9bkKW7QkA" sendEvent="_Zz_S0Ha9EeSKk9bkKW7QkA"/>
       <message xmi:type="uml:Message" xmi:id="_rKofAHwiEeSp9f6OXZXhBA" name="bankSendInvoice_Message" messageSort="asynchCall" receiveEvent="_rLbwQHwiEeSp9f6OXZXhBA" sendEvent="_rLW3wHwiEeSp9f6OXZXhBA">
         <signature xmi:type="uml:Operation" href="Classes.uml#_lAB4QHYfEeS6mLi5FsOguA"/>
       </message>
@@ -628,9 +582,17 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wPuZcnTjEeSOC7DG65-e3w" value="1"/>
       </ownedEnd>
     </packagedElement>
+    <packagedElement xmi:type="uml:Component" xmi:id="_pd1HcIHfEeSMdr2cPLX2Nw" name="BankComponent"/>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_xKbSsIXwEeSYouzvBmvvJA" name="Realization0" client="_pd1HcIHfEeSMdr2cPLX2Nw">
+      <supplier xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzZ0cHO_EeSgC_3iHN4p8A"/>
+      <contract xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzZ0cHO_EeSgC_3iHN4p8A"/>
+    </packagedElement>
+    <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_zbum8IXwEeSYouzvBmvvJA" name="Realization1" client="_pd1HcIHfEeSMdr2cPLX2Nw">
+      <supplier xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYmUXO_EeSgC_3iHN4p8A"/>
+      <contract xmi:type="uml:Interface" href="file:/home/dlurk/workspace/tda593-hotel/BankingModel.uml#_FzYmUXO_EeSgC_3iHN4p8A"/>
+    </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_n7OFMIHfEeSMdr2cPLX2Nw" name="Banking">
-    <packagedElement xmi:type="uml:Component" xmi:id="_pd1HcIHfEeSMdr2cPLX2Nw" name="BankComponent"/>
     <packagedElement xmi:type="uml:InterfaceRealization" xmi:id="_pd1ugIHfEeSMdr2cPLX2Nw" name="Realization1" client="_pd1HcIHfEeSMdr2cPLX2Nw">
       <supplier xmi:type="uml:Interface" href="Classes.uml#_pd2VkIHfEeSMdr2cPLX2Nw"/>
       <contract xmi:type="uml:Interface" href="Classes.uml#_pd2VkIHfEeSMdr2cPLX2Nw"/>
