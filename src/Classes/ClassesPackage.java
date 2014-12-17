@@ -212,7 +212,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagement()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT = 9;
+	int IBOOKING_MANAGEMENT = 11;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IBookingManagementImplImpl <em>IBooking Management Impl</em>}' class.
@@ -232,7 +232,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinance()
 	 * @generated
 	 */
-	int IFINANCE = 12;
+	int IFINANCE = 10;
 
 	/**
 	 * The meta object id for the '{@link Classes.IHotelManager <em>IHotel Manager</em>}' class.
@@ -252,7 +252,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinanceImpl()
 	 * @generated
 	 */
-	int IFINANCE_IMPL = 13;
+	int IFINANCE_IMPL = 9;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.BookingImpl <em>Booking</em>}' class.
@@ -653,7 +653,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT = 6;
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT = 6;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -851,7 +851,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT;
+	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_INT_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -924,7 +924,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBill()
 	 * @generated
 	 */
-	int BILL = 10;
+	int BILL = 12;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.ChargeImpl <em>Charge</em>}' class.
@@ -934,7 +934,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCharge()
 	 * @generated
 	 */
-	int CHARGE = 11;
+	int CHARGE = 13;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Manager</em>' class.
@@ -1353,87 +1353,6 @@ public interface ClassesPackage extends EPackage {
 	int CUSTOMER_PROVIDES = 15;
 
 	/**
-	 * The feature id for the '<em><b>Charge</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL__CHARGE = 0;
-
-	/**
-	 * The feature id for the '<em><b>Booking</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL__BOOKING = 1;
-
-	/**
-	 * The number of structural features of the '<em>Bill</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>Bill</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL_OPERATION_COUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Amount</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARGE__AMOUNT = 0;
-
-	/**
-	 * The feature id for the '<em><b>Date</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARGE__DATE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Bill</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARGE__BILL = 2;
-
-	/**
-	 * The number of structural features of the '<em>Charge</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARGE_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Charge</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARGE_OPERATION_COUNT = 0;
-
-	/**
 	 * The number of structural features of the '<em>IFinance</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1558,6 +1477,87 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IFINANCE_IMPL_OPERATION_COUNT = IFINANCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Charge</b></em>' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL__CHARGE = 0;
+
+	/**
+	 * The feature id for the '<em><b>Booking</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL__BOOKING = 1;
+
+	/**
+	 * The number of structural features of the '<em>Bill</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Bill</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BILL_OPERATION_COUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Amount</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE__AMOUNT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Date</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE__DATE = 1;
+
+	/**
+	 * The feature id for the '<em><b>Bill</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE__BILL = 2;
+
+	/**
+	 * The number of structural features of the '<em>Charge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Charge</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE_OPERATION_COUNT = 0;
 
 	/**
 	 * The feature id for the '<em><b>IFinance Impl</b></em>' reference.
@@ -1967,14 +1967,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__AddCancelationFee__Class();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, java.lang.Class, int, int, int) <em>Search Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, int, int) <em>Search Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Search Room</em>' operation.
-	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, java.lang.Class, int, int, int)
+	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, int, int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__SearchRoom__Date_Date_Class_int_int_int();
+	EOperation getIBookingManagement__SearchRoom__Date_Date_int_int_int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#cancelBooking(int) <em>Cancel Booking</em>}' operation.
@@ -3021,7 +3021,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_CLASS_INT_INT_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_Class_int_int_int();
+		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_int_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.

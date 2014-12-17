@@ -114,12 +114,12 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>IFinance Impl</em>' reference.
-	 * @see #setIFinanceImpl(IBookingManagementImpl)
+	 * @see #setIFinanceImpl(IFinanceImpl)
 	 * @see Classes.ClassesPackage#getIBookingManagementImpl_IFinanceImpl()
 	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	IBookingManagementImpl getIFinanceImpl();
+	IFinanceImpl getIFinanceImpl();
 
 	/**
 	 * Sets the value of the '{@link Classes.IBookingManagementImpl#getIFinanceImpl <em>IFinance Impl</em>}' reference.
@@ -129,7 +129,7 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	 * @see #getIFinanceImpl()
 	 * @generated
 	 */
-	void setIFinanceImpl(IBookingManagementImpl value);
+	void setIFinanceImpl(IFinanceImpl value);
 
 	/**
 	 * Returns the value of the '<em><b>Booking History</b></em>' reference list.
