@@ -134,25 +134,25 @@ public class UserTests {
 	 * the system, and each user interacts with the same object (system).
 	 */
 	@Test
-	public void test_valid_TwoUsersBookingConcurrently() {
+	public void test_valid_FourUsersBookingConcurrently() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		Thread user1 = new Thread(new User(bookingManagement, "Karl", "Urban", "karl.urban@gmail.com", "047663", new Date(), new Date(), 4));
 		Thread user2 = new Thread(new User(bookingManagement, "Didrik", "Didier", "didrik.didier@gmail.com", "34466", new Date(), new Date(), 2));
-		//Thread user3 = new Thread(new User(bookingManagement, "Henn", "Venn", "henn.venn@gmail.com", "123456", new Date(), new Date(), 3));
-		//Thread user4 = new Thread(new User(bookingManagement, "Lauder", "Dale", "lauder.dale@gmail.com", "056232", new Date(), new Date(), 1));
+		Thread user3 = new Thread(new User(bookingManagement, "Henn", "Venn", "henn.venn@gmail.com", "123456", new Date(), new Date(), 3));
+		Thread user4 = new Thread(new User(bookingManagement, "Lauder", "Dale", "lauder.dale@gmail.com", "056232", new Date(), new Date(), 1));
 		
 		// Perform booking
 		user1.start();
 		user2.start();
-		//user3.start();
-		//user4.start();
+		user3.start();
+		user4.start();
 		
 		// Wait for threads to finish
 		try {
 			user1.join();
 			user2.join();
-			//user3.join();
-			//user4.join();
+			user3.join();
+			user4.join();
 		} catch (InterruptedException e) {
 			System.err
 			.println("Thread was interrupted while executing");
@@ -169,7 +169,7 @@ public class UserTests {
 		}
 		
 		assertEquals(0, bookingManagement.getPendingBookings().size());
-		assertEquals(2, bookingManagement.getConfirmedBookings().size());
+		assertEquals(4, bookingManagement.getConfirmedBookings().size());
 		int testBookingID1 = bookingManagement.getBooking(0).getBookingID();
 		int testBookingID2 = bookingManagement.getBooking(1).getBookingID();
 		assertTrue(testBookingID1 != testBookingID2);
