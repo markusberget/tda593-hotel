@@ -110,7 +110,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	public Map<Integer, Booking> testConfirmedBookings;		// public for lazy testing purposes
 	public Map<Integer, Booking> testBookingHistory;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
-	
+	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -119,9 +119,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected IBookingManagementImplImpl() {
 		super();
-		testPendingBookings = new Hashtable<Integer, Booking>();
-		testConfirmedBookings = new Hashtable<Integer, Booking>();
-		testBookingHistory = new Hashtable<Integer, Booking>();
 	}
 	
 	/**
@@ -518,7 +515,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		booking.setCheckIn(checkIn);
 		booking.setCheckOut(checkOut);
 		booking.setNumberOfGuests(guestCount);
-		booking.setBookingID(pendingBookings.size());
+		booking.setBookingID(bookingsEver++);
 		pendingBookings.add(booking);
 		return booking.getBookingID();
 	}
