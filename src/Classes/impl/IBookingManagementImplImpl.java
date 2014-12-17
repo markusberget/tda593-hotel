@@ -105,6 +105,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 */
 	protected EList<Customer> customer;
 	private EList<Booking> testBookingHistory;
+	private List<Booking> testH;
 	private Map<Integer, List<Room>> occupiedRooms;		// Contains booked rooms
 	private int bookingsEver;		// We should keep track of number of bookings ever made (simpler implementation)
 	
@@ -402,7 +403,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * A booking can be cancelled while it is pending and also when it is
 	 * in the confirmed state. For the moment, a cancelled booking is
-	 * placed in the history list.
+	 * placed in the history list. The method is synchronized to avoid race
+	 * conditions when removing bookings (and searching for the correct booking)
 	 * 
 	 * NOTE: A cancelled booking should make the associated rooms available
 	 * for booking again which is not the case at the moment. This will be
@@ -410,7 +412,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * 
 	 * @generated NOT
 	 */
-	public boolean cancelBooking(int bookingID) {
+	public synchronized boolean cancelBooking(int bookingID) {
 		int listSize;		// Save current size of list because concurrent activity may change sizes
 		listSize = pendingBookings.size();
 		
