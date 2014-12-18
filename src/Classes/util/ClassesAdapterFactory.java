@@ -124,12 +124,12 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createIFinanceImplAdapter();
 			}
 			@Override
-			public Adapter caseAdministratorProvides(AdministratorProvides object) {
-				return createAdministratorProvidesAdapter();
-			}
-			@Override
 			public Adapter caseCustomerProvides(CustomerProvides object) {
 				return createCustomerProvidesAdapter();
+			}
+			@Override
+			public Adapter caseAdministratorProvides(AdministratorProvides object) {
+				return createAdministratorProvidesAdapter();
 			}
 			@Override
 			public Adapter defaultCase(EObject object) {

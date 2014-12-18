@@ -155,15 +155,15 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.ADMINISTRATOR_PROVIDES: {
-				AdministratorProvides administratorProvides = (AdministratorProvides)theEObject;
-				T result = caseAdministratorProvides(administratorProvides);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ClassesPackage.CUSTOMER_PROVIDES: {
 				CustomerProvides customerProvides = (CustomerProvides)theEObject;
 				T result = caseCustomerProvides(customerProvides);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.ADMINISTRATOR_PROVIDES: {
+				AdministratorProvides administratorProvides = (AdministratorProvides)theEObject;
+				T result = caseAdministratorProvides(administratorProvides);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
