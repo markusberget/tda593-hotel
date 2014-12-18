@@ -123,14 +123,6 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_57GkAHYfEeS6mLi5FsOguA" name="checkOut">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2SlcAHZdEeSiQcRa0VNXAQ" name="bookingID">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_BVN1kIErEeSYU61HdQqqgQ" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-      </ownedParameter>
-    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_qQizwHbcEeSheJiNqvd8mw" name="addCustomerInformationToBooking">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_wVG-QHbcEeSheJiNqvd8mw" name="bookingID">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
