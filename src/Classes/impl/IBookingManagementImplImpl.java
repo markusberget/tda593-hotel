@@ -373,12 +373,29 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests, int roomType, int maximumPrice) {
+		EList<Room> rooms  = this.getRoom();
+				EList<Integer> searchResult = new BasicEList<Integer>();
+				for(Room r: rooms) {
+				
+					/*
+					if(numberOfGuests != r.getNumberOfGuests()) {
+							continue;
+					
+					}
+					}*/
+					// TODO: do the same thing for the rest of the parameters. 
+					
+					// Passed all the tests, so add
+					searchResult.add(r.getRoomNumber());
+				}
+				
+				return searchResult;
 		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
+		
 	}
 
 	/**
