@@ -376,26 +376,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests, int roomType, int maximumPrice) {
-		EList<Room> rooms  = this.getRoom();
-				EList<Integer> searchResult = new BasicEList<Integer>();
-				for(Room r: rooms) {
-				
-					/*
-					if(numberOfGuests != r.getNumberOfGuests()) {
-							continue;
-					
-					}
-					}*/
-					// TODO: do the same thing for the rest of the parameters. 
-					
-					// Passed all the tests, so add
-					searchResult.add(r.getRoomNumber());
-				}
-				
-				return searchResult;
 		// TODO: implement this method
-
-		
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -451,6 +434,29 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 			}
 			return true;
 		}
+		return false;
+	}
+
+	/**
+	 * This method checks the customer out from the hotel, but first the status
+	 * of the booking is checked if it is paid. A customer cannot check out
+	 * before the booking is paid for.
+	 * 
+	 * @generated NOT
+	 */
+	public boolean checkOut(int bookingID) {
+		
+		// isFullyPaid was removed in the code generation, so I'm commenting out this for now.
+		
+		/*Booking booking = confirmedBookings.get(bookingID);
+		if (booking.isFullyPaid()) {		// paid is set to true after payment method has succeeded
+			List<Room> rooms = occupiedRooms.remove(bookingID);
+			for(Room room : rooms) {
+				room.setStatus(RoomStatus.CLEANING);
+			}
+			return true;
+		}
+		return false;*/
 		return false;
 	}
 
@@ -697,6 +703,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 				return cancelBooking((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT:
 				return checkIn((Integer)arguments.get(0));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_OUT__INT:
+				return checkOut((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING:
 				return addCustomerInformationToBooking((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT:

@@ -37,7 +37,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 
-	// TODO: replace EList with Map, somehow.
 	
 	protected EList<StaffMember> staff;
 	//private Map<String, StaffMember> staffMembers;
@@ -156,8 +155,12 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 
 		}
 
-                // TODO: also, check whether the staff member doesn't already exist!
-
+         // also, check whether the staff member doesn't already exist!
+		if(this.internal_lookupStaffMember(username) != null) {
+			return false;
+		}
+		
+		
 		// Both the new username and password are fine! Create the new user:
 
 

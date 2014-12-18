@@ -1,6 +1,7 @@
 package user;
 
 import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
@@ -15,7 +16,9 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Classes.Booking;
+import Classes.IHotelManager;
 import Classes.Room;
+import Classes.impl.ClassesFactoryImpl;
 import Classes.impl.IBookingManagementImplImpl;
 
 
@@ -221,7 +224,37 @@ public class UserTests {
 	@Test
 	public void test_AddStaffMember() {
 		
-		fail("Not yet implemented");
+		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		
+		// first the admin logs in. 
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
+		
+		assertTrue(hm.addStaffMember(Util.adminUsername, "tom123", "wert4567", "Tom", "Washington", "tom_wash@hotmail.com",
+				"33333", "Fakestreet 123", false));
+		/*
+		assertEquals( "ankeborg4444", hm.getStaffMemberPassword("tom123"));
+		assertEquals( "Alexander", hm.getStaffMemberFirstName("alex4"));
+		assertEquals( "Lukas", hm.getStaffMemberLastName("alex4"));
+		assertEquals( "alex4@hotmail.com", hm.getStaffMemberEmail("alex4"));
+		assertEquals( "552219", hm.getStaffMemberPhoneNumber("alex4"));
+		assertEquals( "Tomtebacken 14", hm.getStaffMemberAddress("alex4"));
+		assertEquals( false, hm.isStaffMemberAdmin("alex4"));
+		
+		// Next, make sure that it fails if the admin tries to add a new staff member while being logged out. 
+		assertTrue(hm.logout(Util.adminUsername));
+		
+		assertFalse(hm.addStaffMember(Util.adminUsername, "alex5", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
+				"552219", "Tomtebacken 14", false));
+		assertFalse(hm.isExistingStaffMember("alex5"));
+		
+		
+		
+		// Next, make sure that it fails when alex4 tries to add a new staff member, since he's not an admin. 	
+		assertTrue(hm.login("alex4", "ankeborg4444"));
+		
+		assertFalse(hm.addStaffMember("alex4", "alex5", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
+				"552219", "Tomtebacken 14", false));
+		assertFalse(hm.isExistingStaffMember("alex5"));*/
 		
 	}
 	
