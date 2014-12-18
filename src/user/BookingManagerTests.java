@@ -219,7 +219,6 @@ public class BookingManagerTests {
 		fail("Not yet implemented");
 	}
 	
-	
 
 	/**
 	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#ChangeStatusOfRoom(int, Enum)}.
