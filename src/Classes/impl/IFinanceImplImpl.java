@@ -210,12 +210,14 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		
 		// Question: Are room prices added as charge or should they be added separately into the calculation?
 		
-		int sum = 0;
+		// TODO: fix this.
+		/*int sum = 0;
 		for (Charge charge : this.iBookingManagement.getBooking(bookingId).getBill().getCharges()) {
 				sum += charge.getAmount();
 		}
 		return sum;
-		
+		*/
+		return 0;
 
 	}
 
@@ -243,10 +245,11 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			customerLastName = "Stenskog";
 			
 			// Validate customer information
-			if(!customerFirstName == this.iBookingManagement.getBooking(bookingId).getCustomer().getFirstName() 
+			// TODO: fix this.
+			/*if(!customerFirstName == this.iBookingManagement.getBooking(bookingId).getCustomer().getFirstName() 
 			&& 	customerLastName == this.iBookingManagement.getBooking(bookingId).getCustomer().getLastName() ) { 
 				return "Payment failed: customer information invalid";
-			}
+			}*/
 			
 			//possibly enum
 			String paymentOption = "none";
@@ -313,7 +316,9 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * @generated NOT
 	 */
 	public boolean validateWithBank(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		return customerProvides = isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		return false;
+		// TODO: fix this.
+		//return customerProvides = isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
 	}
 
 	/**
@@ -322,7 +327,9 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * @generated NOT
 	 */
 	public boolean bankTransfer(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		return customerProvides = makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		// TODO: fix this.
+		//return customerProvides = makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		return false;
 	}
 
 	/**
