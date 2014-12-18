@@ -97,9 +97,7 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_WECQ4HZdEeSiQcRa0VNXAQ" name="numberOfGuests">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nKmJMHZdEeSiQcRa0VNXAQ" name="roomType">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nKmJMHZdEeSiQcRa0VNXAQ" name="roomType" type="_c1EbwHTcEeSOC7DG65-e3w"/>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_rcgDQHZdEeSiQcRa0VNXAQ" name="maximumPrice">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedParameter>

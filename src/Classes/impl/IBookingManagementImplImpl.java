@@ -410,7 +410,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		for (Room r : rooms) {
 
-			if (numberOfGuests != (r.getRoomType().getNumberOfGuests())) {
+			if (numberOfGuests != (r.getRoomType().getNumberOfGuests()) && roomType != (r.getRoomType())) {
 				continue;
 			}
 
@@ -421,8 +421,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 
 		return searchResult;
-		// TODO: implement this method
-
+	
 	}
 
 	/**
