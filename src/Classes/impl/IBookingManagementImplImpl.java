@@ -202,8 +202,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 		return room;
 	}
-	
-	
+
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -215,19 +214,18 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		for (Room r : rooms) {
 
-			if (numberOfGuests != (r.getRoomType().getNumberOfGuests())){
-//					&& roomType != (r.getRoomType())) {
-				continue;
+			if (numberOfGuests <= (r.getRoomType().getNumberOfGuests())
+					&& maximumPrice >= r.getRoomType().getPrice()) {
+				// || roomType != (r.getRoomType())) {
+				searchResult.add(r.getRoomNumber());
 			}
 
 			// TODO: do the same thing for the rest of the parameters.
-
 			// Passed all the tests, so add
-			searchResult.add(r.getRoomNumber());
 		}
 
 		return searchResult;
-	
+
 	}
 
 	/**
@@ -425,8 +423,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
-
-	
 
 	/**
 	 * A booking can be cancelled while it is pending and also when it is in the
@@ -760,7 +756,5 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 		return super.eInvoke(operationID, arguments);
 	}
-
-
 
 } // IBookingManagementImplImpl
