@@ -130,7 +130,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 		room = new BasicEList<Room>();
 		
 		this.setIHotelManagerImpl( ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl());
-		this.setIHotelManagerImpl( ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl());
 	}
 	
 	/**
