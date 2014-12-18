@@ -1479,7 +1479,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIBookingManagement__AddCancelationFee__Class(), null, "addCancelationFee", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaClass(), "TODO", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIBookingManagement__SearchRoom__Date_Date_int_int_int(), ecorePackage.getEInt(), "searchRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIBookingManagement__SearchRoom__Date_Date_int_int_int(), ecorePackage.getEEList(), "searchRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "numberOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);

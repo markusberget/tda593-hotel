@@ -3,6 +3,7 @@
 package Classes;
 
 import java.util.Date;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -67,10 +68,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" checkInRequired="true" checkInOrdered="false" checkOutRequired="true" checkOutOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" roomTypeRequired="true" roomTypeOrdered="false" maximumPriceRequired="true" maximumPriceOrdered="false"
+	 * @model required="true" many="false" ordered="false" checkInRequired="true" checkInOrdered="false" checkOutRequired="true" checkOutOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" roomTypeRequired="true" roomTypeOrdered="false" maximumPriceRequired="true" maximumPriceOrdered="false"
 	 * @generated
 	 */
-	int searchRoom(Date checkIn, Date checkOut, int numberOfGuests, int roomType, int maximumPrice);
+	EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests, int roomType, int maximumPrice);
 
 	/**
 	 * <!-- begin-user-doc -->
