@@ -124,7 +124,6 @@ public class UserTests {
 		
 		bookingManagement.addRoomPending(room, bookingID);
 		
-		
 		bookingManagement.addCustomerInformationToBooking(bookingID, "John", "Doe", "john@doe.se", "0123-2131312");
 		
 		assertTrue(bookingManagement.confirmBooking(bookingID));

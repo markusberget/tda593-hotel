@@ -674,22 +674,13 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 8;
 
 	/**
-	 * The operation id for the '<em>Check Out</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___CHECK_OUT__INT = 9;
-
-	/**
 	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 10;
+	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 9;
 
 	/**
 	 * The operation id for the '<em>Create Pending Booking</em>' operation.
@@ -698,7 +689,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 11;
+	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 10;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -707,7 +698,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 12;
+	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 11;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
@@ -716,7 +707,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 13;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 12;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -861,15 +852,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT = IBOOKING_MANAGEMENT___CHECK_IN__INT;
-
-	/**
-	 * The operation id for the '<em>Check Out</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___CHECK_OUT__INT = IBOOKING_MANAGEMENT___CHECK_OUT__INT;
 
 	/**
 	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
@@ -1986,16 +1968,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__CheckIn__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#checkOut(int) <em>Check Out</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Check Out</em>' operation.
-	 * @see Classes.IBookingManagement#checkOut(int)
-	 * @generated
-	 */
-	EOperation getIBookingManagement__CheckOut__int();
-
-	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#addCustomerInformationToBooking(int, java.lang.String, java.lang.String, java.lang.String, java.lang.String) <em>Add Customer Information To Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3030,14 +3002,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING_MANAGEMENT___CHECK_IN__INT = eINSTANCE.getIBookingManagement__CheckIn__int();
-
-		/**
-		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IBOOKING_MANAGEMENT___CHECK_OUT__INT = eINSTANCE.getIBookingManagement__CheckOut__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Customer Information To Booking</b></em>' operation.
