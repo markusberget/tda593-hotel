@@ -219,5 +219,10 @@ public class UserTests {
 		}
 	} // end inner class User
 
+	@Test
+	public void test_AddStaffMember() {
+		fail("Not yet implemented");
+	}
+	
 
 } // end class UserTests
