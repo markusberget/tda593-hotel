@@ -202,6 +202,33 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 		return room;
 	}
+	
+	
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 */
+	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
+			int roomType, int maximumPrice) {
+		EList<Room> rooms = this.getRoom();
+		EList<Integer> searchResult = new BasicEList<Integer>();
+		for (Room r : rooms) {
+
+			if (numberOfGuests != (r.getRoomType().getNumberOfGuests())){
+//					&& roomType != (r.getRoomType())) {
+				continue;
+			}
+
+			// TODO: do the same thing for the rest of the parameters.
+
+			// Passed all the tests, so add
+			searchResult.add(r.getRoomNumber());
+		}
+
+		return searchResult;
+	
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -399,30 +426,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		throw new UnsupportedOperationException();
 	}
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
-			int roomType, int maximumPrice) {
-		EList<Room> rooms = this.getRoom();
-		EList<Integer> searchResult = new BasicEList<Integer>();
-		for (Room r : rooms) {
-
-			if (numberOfGuests != (r.getRoomType().getNumberOfGuests()) && roomType != (r.getRoomType())) {
-				continue;
-			}
-
-			// TODO: do the same thing for the rest of the parameters.
-
-			// Passed all the tests, so add
-			searchResult.add(r.getRoomNumber());
-		}
-
-		return searchResult;
 	
-	}
 
 	/**
 	 * A booking can be cancelled while it is pending and also when it is in the
@@ -756,5 +760,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 		return super.eInvoke(operationID, arguments);
 	}
+
+
 
 } // IBookingManagementImplImpl
