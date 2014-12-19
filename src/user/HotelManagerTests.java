@@ -8,6 +8,7 @@ import org.junit.Test;
 
 import Classes.IHotelManager;
 import Classes.impl.ClassesFactoryImpl;
+import Classes.impl.IHotelManagerImplImpl;
 
 public class HotelManagerTests {
 
@@ -48,57 +49,7 @@ public class HotelManagerTests {
 		assertFalse(hm.isStaffMemberLoggedIn(Util.adminUsername));	
 	}
 	
-	@Test
-	public void testAddStaffMember() {
-		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
-	
-		// first the admin logs in. 
-		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
-		
-		assertTrue(hm.addStaffMember(Util.adminUsername, "alex4", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
-				"552219", "Tomtebacken 14", false));
-		
-		assertEquals( "ankeborg4444", hm.getStaffMemberPassword("alex4"));
-		assertEquals( "Alexander", hm.getStaffMemberFirstName("alex4"));
-		assertEquals( "Lukas", hm.getStaffMemberLastName("alex4"));
-		assertEquals( "alex4@hotmail.com", hm.getStaffMemberEmail("alex4"));
-		assertEquals( "552219", hm.getStaffMemberPhoneNumber("alex4"));
-		assertEquals( "Tomtebacken 14", hm.getStaffMemberAddress("alex4"));
-		assertEquals( false, hm.isStaffMemberAdmin("alex4"));
-		
-		// if you try to add a staff member with the same username, it should fail.
-		
-		assertFalse(hm.addStaffMember(Util.adminUsername, "alex4", "ankeborg4444", "Alexander ", "Lukasson", "alex4@hotmail.com",
-				"552219", "Tomtebacken 14", false));
-		
-		// make sure that the old user is unchagned:
-		assertEquals( "ankeborg4444", hm.getStaffMemberPassword("alex4"));
-		assertEquals( "Alexander", hm.getStaffMemberFirstName("alex4"));
-		assertEquals( "Lukas", hm.getStaffMemberLastName("alex4"));
-		assertEquals( "alex4@hotmail.com", hm.getStaffMemberEmail("alex4"));
-		assertEquals( "552219", hm.getStaffMemberPhoneNumber("alex4"));
-		assertEquals( "Tomtebacken 14", hm.getStaffMemberAddress("alex4"));
-		assertEquals( false, hm.isStaffMemberAdmin("alex4"));
-		
-		
-	
-		// Next, make sure that it fails if the admin tries to add a new staff member while being logged out. 
-		assertTrue(hm.logout(Util.adminUsername));
-		
-		assertFalse(hm.addStaffMember(Util.adminUsername, "alex5", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
-				"552219", "Tomtebacken 14", false));
-		assertFalse(hm.isExistingStaffMember("alex5"));
-		
-		
-		// Next, make sure that it fails when alex4 tries to add a new staff member, since he's not an admin. 	
-		assertTrue(hm.login("alex4", "ankeborg4444"));
-		
-		assertFalse(hm.addStaffMember("alex4", "alex5", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
-				"552219", "Tomtebacken 14", false));
-		assertFalse(hm.isExistingStaffMember("alex5"));
-		
-		
-	}
+
 	
 	/**
 	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#isPasswordSecure(java.lang.String)}.
@@ -174,6 +125,28 @@ public class HotelManagerTests {
 		assertTrue(hm.isValidUsername("hunter2"));
 		assertTrue(hm.isValidUsername("name23242"));
 	}
+	
+	@Test
+	public void testIsPasswordSecureCustom() {
+		
+		// By overriding isPasswordSecure, you can use a custom implementation for the password security validation. 
+		// in this test, we tests whether the hotel manager will actually use this implementation.
+	
+		IHotelManager hm =  new IHotelManagerImplImpl(){
+			
+			public boolean isPasswordSecure(String password) {
+				// only this password will be accepted :D 
+				return "hunter2".equals(password);
+			}
+		
+		};
+		
+		assertFalse(hm.isPasswordSecure("wert1234"));
+		assertTrue(hm.isPasswordSecure("hunter2"));
+		
+	}
+	
+
 	
 	
 }
