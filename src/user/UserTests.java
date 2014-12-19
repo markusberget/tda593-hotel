@@ -259,17 +259,15 @@ public class UserTests {
 		
 		assertFalse(hm.addStaffMember(Util.adminUsername, "alex5", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
 				"552219", "Tomtebacken 14", false));
-		assertFalse(hm.isExistingStaffMember("alex5"));
-		
+		// assert that "alex5" does not exist in the system. 
+		assertEquals(null, hm.getStaffMemberFirstName("alex5"));
 		
 		// Next, make sure that it fails when alex4 tries to add a new staff member, since he's not an admin. 	
 		assertTrue(hm.login("alex4", "ankeborg4444"));
 		
 		assertFalse(hm.addStaffMember("alex4", "alex5", "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
 				"552219", "Tomtebacken 14", false));
-		assertFalse(hm.isExistingStaffMember("alex5"));
-		
-		
+		assertEquals(null, hm.getStaffMemberFirstName("alex5"));	
 	}
 	
 
