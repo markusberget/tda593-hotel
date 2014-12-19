@@ -281,7 +281,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_0rMbgHYdEeS6mLi5FsOguA" name="isPasswordSecure">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_0rMbgHYdEeS6mLi5FsOguA" name="isPasswordSecure" visibility="protected">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_3iOawHZkEeSBRfeA9UETiw" name="password">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedParameter>
@@ -289,7 +289,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_1dxvAHYdEeS6mLi5FsOguA" name="isValidUsername" concurrency="concurrent">
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_1dxvAHYdEeS6mLi5FsOguA" name="isValidUsername" visibility="protected" concurrency="concurrent">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_BTv_MHZlEeSBRfeA9UETiw" direction="return">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
