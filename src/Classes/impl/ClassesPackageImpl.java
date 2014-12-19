@@ -1408,10 +1408,10 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIHotelManager__IsValidUsername__String(), ecorePackage.getEBoolean(), "isValidUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelManager__IsStaffMemberLoggedIn__String(), ecorePackage.getEBoolean(), "isStaffMemberLoggedIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelManager__IsStaffMemberLoggedIn__String(), ecorePackage.getEBooleanObject(), "isStaffMemberLoggedIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelManager__IsStaffMemberAdmin__String(), ecorePackage.getEBoolean(), "isStaffMemberAdmin", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelManager__IsStaffMemberAdmin__String(), ecorePackage.getEBooleanObject(), "isStaffMemberAdmin", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIHotelManager__GetStaffMemberPassword__String(), ecorePackage.getEString(), "getStaffMemberPassword", 1, 1, IS_UNIQUE, !IS_ORDERED);

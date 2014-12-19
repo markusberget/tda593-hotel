@@ -241,9 +241,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean isStaffMemberLoggedIn(String username) {
+	public Boolean isStaffMemberLoggedIn(String username) {
 		StaffMember s = this.internal_lookupStaffMember(username);
-		return s == null ? false : s.isLoggedIn();
+		return s == null ? null : s.isLoggedIn();
 	}
 
 	/**
@@ -251,9 +251,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean isStaffMemberAdmin(String username) {
+	public Boolean isStaffMemberAdmin(String username) {
 		StaffMember s = this.internal_lookupStaffMember(username);
-		return s == null ? false : s.isAdmin();
+		return s == null ? null : s.isAdmin();
 	}
 
 	/**
@@ -335,14 +335,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		}
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean isExistingStaffMember(String username) {
-		return this.internal_lookupStaffMember(username) != null;
-	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
