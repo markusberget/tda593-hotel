@@ -369,14 +369,6 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_ZD_xQIHqEeS837TtIXY58g" name="isExistingStaffMember">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_fvkRYIHqEeS837TtIXY58g" direction="return">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_hKNDYIHqEeS837TtIXY58g" name="username">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-      </ownedParameter>
-    </ownedOperation>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_wlzyUHZQEeSiQcRa0VNXAQ" memberEnd="_wlzyUXZQEeSiQcRa0VNXAQ _wlxWEHZQEeSiQcRa0VNXAQ"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_UjloQHZREeSiQcRa0VNXAQ" memberEnd="_UjloQXZREeSiQcRa0VNXAQ _Ujik8HZREeSiQcRa0VNXAQ"/>

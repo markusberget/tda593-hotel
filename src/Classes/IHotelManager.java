@@ -119,12 +119,4 @@ public interface IHotelManager extends EObject {
 	 */
 	boolean logout(String username);
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
-	 * @generated
-	 */
-	boolean isExistingStaffMember(String username);
-
 } // IHotelManager

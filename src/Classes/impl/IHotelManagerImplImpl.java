@@ -437,8 +437,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getStaffMemberAddress((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
 				return logout((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_EXISTING_STAFF_MEMBER__STRING:
-				return isExistingStaffMember((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

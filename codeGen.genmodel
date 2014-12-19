@@ -159,9 +159,6 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/logout">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/logout/username"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/isExistingStaffMember">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/isExistingStaffMember/username"/>
-      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Classes.ecore#//IBookingManagement">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IBookingManagement/updateBooking"/>
