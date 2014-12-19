@@ -50,6 +50,23 @@ public class HotelManagerTests {
 	}
 	
 
+	private boolean testCreateUser(String username, String password) {
+		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
+		
+		return hm.addStaffMember(Util.adminUsername, username, password, null,null, null, null,
+				null, false);
+	}
+	
+	private boolean validatePassword(String password) {
+		return testCreateUser("johan333", password);
+	}
+	
+	private boolean validateUsername(String username) {
+		return testCreateUser(username, "wert1234");
+	}
+		
 	
 	/**
 	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#isPasswordSecure(java.lang.String)}.
@@ -57,7 +74,7 @@ public class HotelManagerTests {
 	@Test
 	public void testIsPasswordSecure() {
 		
-		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		//IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
 		
 		// TEST 1:unprintable characters, and spaces, are not allowed. 
 		
@@ -66,18 +83,20 @@ public class HotelManagerTests {
 			// The password has to be long enough, otherwise isPasswordSecure() will simply do an early exit, 
 			// doing no further processing. Since we want to test whether it accepts unprintable characters or not, 
 			// we need the password to be long enough.
-			assertFalse(hm.isPasswordSecure(Util.toChar(i) + Util.repeatChar('A', 10)));
+			
+			
+			assertFalse(validatePassword(Util.toChar(i) + Util.repeatChar('A', 10)));
 		}
 		// ASCII character number 127 is DEL. 
-		assertFalse(hm.isPasswordSecure(Util.toChar(127) + Util.repeatChar('A', 10)));
+		assertFalse(validatePassword(Util.toChar(127) + Util.repeatChar('A', 10)));
 		
 		////////////////////////////////////////////////////////////////////////
 		
 		
 		// TEST 2:also, non-ascii passwords will not be allowed.
 		
-		assertFalse(hm.isPasswordSecure(Util.NON_ASCII_STRING1));
-		assertFalse(hm.isPasswordSecure(Util.NON_ASCII_STRING2));
+		assertFalse(validatePassword(Util.NON_ASCII_STRING1));
+		assertFalse(validatePassword(Util.NON_ASCII_STRING2));
 		
 		////////////////////////////////////////////////////////////////////////
 		
@@ -86,14 +105,14 @@ public class HotelManagerTests {
 		// have at least 2 digits and 3 letters. 
 		
 		// too short
-		assertFalse(hm.isPasswordSecure( Util.repeatChar('c', 3)+  Util.repeatChar('1', 2) ));
+		assertFalse(validatePassword( Util.repeatChar('c', 3)+  Util.repeatChar('1', 2) ));
 		// correct length, enough letters and digits.
-		assertTrue(hm.isPasswordSecure( Util.repeatChar('c', 3)+  Util.repeatChar('1', 3)));
-		assertTrue(hm.isPasswordSecure( Util.repeatChar('c', 4)+  Util.repeatChar('1', 2)));
+		assertTrue(validatePassword( Util.repeatChar('c', 3)+  Util.repeatChar('1', 3)));
+		assertTrue(validatePassword( Util.repeatChar('c', 4)+  Util.repeatChar('1', 2)));
 		//  not enough letters, but enough digits
-		assertFalse(hm.isPasswordSecure( Util.repeatChar('c', 2)+  Util.repeatChar('1', 4)));
+		assertFalse(validatePassword( Util.repeatChar('c', 2)+  Util.repeatChar('1', 4)));
 		// enough letters, but not enough digits.
-		assertFalse(hm.isPasswordSecure( Util.repeatChar('c', 5)+  Util.repeatChar('1', 1)));
+		assertFalse(validatePassword( Util.repeatChar('c', 5)+  Util.repeatChar('1', 1)));
 	}
 	
 	/**
@@ -102,13 +121,12 @@ public class HotelManagerTests {
 	@Test
 	public void testIsValidUsername() {
 	
-		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
 		
 		
 		// Only ASCII letters and digits are allowed in user names.
 		
-		assertFalse(hm.isValidUsername(Util.NON_ASCII_STRING1));
-		assertFalse(hm.isValidUsername(Util.NON_ASCII_STRING2));
+		assertFalse(validateUsername(Util.NON_ASCII_STRING1));
+		assertFalse(validateUsername(Util.NON_ASCII_STRING2));
 		
 		// Unprintable ASCII characters are not allowed.
 		for(int i = 0; i <= 32; ++i) {
@@ -116,20 +134,20 @@ public class HotelManagerTests {
 			// The password has to be long enough, otherwise isPasswordSecure() will simply do an early exit, 
 			// doing no further processing. Since we want to test whether it accepts unprintable characters or not, 
 			// we need the password to be long enough.
-			assertFalse(hm.isValidUsername(Util.toChar(i)));
+			assertFalse(validateUsername(Util.toChar(i)));
 		}
 		// ASCII character number 127 is DEL. 
-		assertFalse(hm.isValidUsername(Util.toChar(127)));
+		assertFalse(validateUsername(Util.toChar(127)));
 		
-		assertTrue(hm.isValidUsername("eric44"));
-		assertTrue(hm.isValidUsername("hunter2"));
-		assertTrue(hm.isValidUsername("name23242"));
+		assertTrue(validateUsername("eric44"));
+		assertTrue(validateUsername("hunter2"));
+		assertTrue(validateUsername("name23242"));
 	}
 	
 	@Test
 	public void testIsPasswordSecureCustom() {
 		
-		// By overriding isPasswordSecure, you can use a custom implementation for the password security validation. 
+		// By overriding isPasswordSecure, you provide use a custom implementation for the password security validation. 
 		// in this test, we tests whether the hotel manager will actually use this implementation.
 	
 		IHotelManager hm =  new IHotelManagerImplImpl(){
@@ -141,11 +159,39 @@ public class HotelManagerTests {
 		
 		};
 		
-		assertFalse(hm.isPasswordSecure("wert1234"));
-		assertTrue(hm.isPasswordSecure("hunter2"));
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
 		
+		
+		assertFalse(hm.addStaffMember(Util.adminUsername, "pelle4", "wert1234", null,null, null, null,
+				null, false));
+	
+		assertTrue(hm.addStaffMember(Util.adminUsername, "pelle4", "hunter2", null,null, null, null,
+				null, false));	
 	}
 	
+	@Test
+	public void testIsUsernameValidCustom() {
+		
+		// By overriding isUsernameSecure, you can provide a custom implementation for the username validation. 
+		// in this test, we tests whether the hotel manager will actually use this implementation.
+	
+		IHotelManager hm =  new IHotelManagerImplImpl(){
+			
+			public boolean isValidUsername(String password) {
+				// only this username will be accepted :D 
+				return "pelle78".equals(password);
+			}
+		
+		};
+		
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
+		
+		assertFalse(hm.addStaffMember(Util.adminUsername, "pelle79", "wert1234", null,null, null, null,
+				null, false));
+	
+		assertTrue(hm.addStaffMember(Util.adminUsername, "pelle78", "wert1234", null,null, null, null,
+				null, false));	
+	}
 
 	
 	
