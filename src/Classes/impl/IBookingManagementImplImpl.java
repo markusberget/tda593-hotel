@@ -236,31 +236,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
-			int roomType, int maximumPrice) {
-		EList<Room> rooms = this.getRoom();
-		EList<Integer> searchResult = new BasicEList<Integer>();
-		for (Room r : rooms) {
-
-			if (numberOfGuests <= (r.getRoomType().getNumberOfGuests())
-					&& maximumPrice >= r.getRoomType().getPrice()) {
-				&& roomType == (r.getRoomType().getName())) {
-				searchResult.add(r.getRoomNumber());
-			}
-
-			// TODO: do the same thing for the rest of the parameters.
-			// Passed all the tests, so add
-		}
-
-		return searchResult;
-
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public EList<Booking> getPendingBookings() {
@@ -496,7 +471,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests, RoomType roomType, int maximumPrice) {
+	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests, String roomType, int maximumPrice) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -814,8 +789,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CANCELATION_FEE__CLASS:
 				addCancelationFee((Class)arguments.get(0));
 				return null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPE_INT:
-				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2), (RoomType)arguments.get(3), (Integer)arguments.get(4));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_STRING_INT:
+				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2), (String)arguments.get(3), (Integer)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT:
 				return cancelBooking((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT:
