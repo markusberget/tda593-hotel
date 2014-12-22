@@ -2,6 +2,7 @@
  */
 package Classes.impl;
 
+import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.CustomerProvides;
 import Classes.IBookingManagementImpl;
@@ -179,23 +180,24 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Calculates the total cost of a bill by summing its associated charges.
+	 * 
 	 * @generated NOT
 	 */
-	public int calculatePayment(int bookingId) {
-		
-		// Question: Are room prices added as charge or should they be added separately into the calculation?
-		
-		// TODO: fix this.
-		/*int sum = 0;
-		for (Charge charge : this.iBookingManagement.getBooking(bookingId).getBill().getCharges()) {
-				sum += charge.getAmount();
+	public int calculatePayment(int bookingID) {
+		EList<ChargeImpl> charges;
+		int sum = 0;
+		EList<Booking> confirmedBookings = basicGetIBookingManagementImpl().getConfirmedBookings();
+		for (Booking booking : confirmedBookings) {
+			if (booking.getBookingID() == bookingID) {
+				charges = ((BillImpl) booking.getBill()).getChargeImpl();
+				for (ChargeImpl charge : charges) {
+					sum += charge.getAmount();
+				}
+				return sum;
+			}
 		}
 		return sum;
-		*/
-		return 0;
-
 	}
 
 	/**

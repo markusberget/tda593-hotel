@@ -129,9 +129,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * This method is just temporary for early testing, will be removed shortly.
+	 * This method is used for instantiating the system with some rooms and other
+	 * necessary objects for testing purposes.
 	 * 
-	 * @return a new object of the class
+	 * @return an instance of the system
 	 */
 	public static IBookingManagementImplImpl instantiateForTest() {
 		IBookingManagementImplImpl bookingManagement = new IBookingManagementImplImpl();
@@ -207,6 +208,19 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			confirmedBookings = new EObjectWithInverseResolvingEList<Booking>(Booking.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS, ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL);
 		}
 		return confirmedBookings;
+	}
+	
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	public Booking getConfirmedBooking(int bookingID) {
+		for (int i = 0; i < confirmedBookings.size(); i++) {
+			if (confirmedBookings.get(i).getBookingID() == bookingID) {
+				return confirmedBookings.get(i);
+			}
+		}
+		return null;
 	}
 
 	/**
@@ -457,8 +471,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
 				BillImpl bill = new BillImpl();
-				// ChargeImpl charge = new ChargeImpl();
-				// bill.setCharge(charge);
+				ChargeImpl charge = new ChargeImpl();
+				bill.setChargeImpl(charge);
 				pendingBookings.get(i).setBill(bill);
 				confirmedBookings.add(pendingBookings.remove(i));
 				return true;

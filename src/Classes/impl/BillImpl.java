@@ -48,6 +48,19 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	protected EList<Charge> charge;
 
+	// Why can't I use the Charge type in other classes?
+	protected EList<ChargeImpl> charges;
+	
+	//Why can't I use the Charge type in other classes?
+	public EList<ChargeImpl> getChargeImpl() {
+		return charges;
+	}
+	
+	//Why can't I use the Charge type in other classes?
+	public void setChargeImpl(ChargeImpl charge) {
+		charges.add(charge);
+	}
+	
 	/**
 	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference.
 	 * <!-- begin-user-doc -->
