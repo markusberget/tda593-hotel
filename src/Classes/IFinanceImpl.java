@@ -12,8 +12,8 @@ package Classes;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.IFinanceImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.IFinanceImpl#getCustomerProvides <em>Customer Provides</em>}</li>
+ *   <li>{@link Classes.IFinanceImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,6 +25,7 @@ public interface IFinanceImpl extends IFinance {
 
 	/**
 	 * Returns the value of the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link Classes.IBookingManagementImpl#getIFinanceImpl <em>IFinance Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>IBooking Management Impl</em>' reference isn't clear,
@@ -34,7 +35,8 @@ public interface IFinanceImpl extends IFinance {
 	 * @return the value of the '<em>IBooking Management Impl</em>' reference.
 	 * @see #setIBookingManagementImpl(IBookingManagementImpl)
 	 * @see Classes.ClassesPackage#getIFinanceImpl_IBookingManagementImpl()
-	 * @model required="true" ordered="false"
+	 * @see Classes.IBookingManagementImpl#getIFinanceImpl
+	 * @model opposite="iFinanceImpl" required="true" ordered="false"
 	 * @generated
 	 */
 	IBookingManagementImpl getIBookingManagementImpl();

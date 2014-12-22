@@ -12,6 +12,7 @@ import java.lang.reflect.InvocationTargetException;
 import javax.xml.soap.SOAPException;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -25,23 +26,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.impl.IFinanceImplImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.impl.IFinanceImplImpl#getCustomerProvides <em>Customer Provides</em>}</li>
+ *   <li>{@link Classes.impl.IFinanceImplImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IFinanceImpl {
-	/**
-	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIBookingManagementImpl()
-	 * @generated
-	 * @ordered
-	 */
-	protected IBookingManagementImpl iBookingManagementImpl;
 	/**
 	 * The cached value of the '{@link #getCustomerProvides() <em>Customer Provides</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -51,6 +43,15 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * @ordered
 	 */
 	protected CustomerProvides customerProvides;
+	/**
+	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBookingManagementImpl iBookingManagementImpl;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -110,11 +111,33 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+	public NotificationChain basicSetIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl, NotificationChain msgs) {
 		IBookingManagementImpl oldIBookingManagementImpl = iBookingManagementImpl;
 		iBookingManagementImpl = newIBookingManagementImpl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, newIBookingManagementImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+		if (newIBookingManagementImpl != iBookingManagementImpl) {
+			NotificationChain msgs = null;
+			if (iBookingManagementImpl != null)
+				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, IBookingManagementImpl.class, msgs);
+			if (newIBookingManagementImpl != null)
+				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, IBookingManagementImpl.class, msgs);
+			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL, newIBookingManagementImpl, newIBookingManagementImpl));
 	}
 
 	/**
@@ -225,14 +248,44 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
 			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
-				if (resolve) return getIBookingManagementImpl();
-				return basicGetIBookingManagementImpl();
+				if (iBookingManagementImpl != null)
+					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, IBookingManagementImpl.class, msgs);
+				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return basicSetIBookingManagementImpl(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+		switch (featureID) {
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				if (resolve) return getCustomerProvides();
 				return basicGetCustomerProvides();
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				if (resolve) return getIBookingManagementImpl();
+				return basicGetIBookingManagementImpl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -245,11 +298,11 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
-				setIBookingManagementImpl((IBookingManagementImpl)newValue);
-				return;
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				setCustomerProvides((CustomerProvides)newValue);
+				return;
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -263,11 +316,11 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
-				setIBookingManagementImpl((IBookingManagementImpl)null);
-				return;
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				setCustomerProvides((CustomerProvides)null);
+				return;
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -281,10 +334,10 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
-				return iBookingManagementImpl != null;
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				return customerProvides != null;
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return iBookingManagementImpl != null;
 		}
 		return super.eIsSet(featureID);
 	}

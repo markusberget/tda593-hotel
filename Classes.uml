@@ -45,6 +45,10 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_34nxYIXiEeSdcNuEh5y6Rg"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_34o_gIXiEeSdcNuEh5y6Rg" value="*"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_MWSwwYR1EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_MWSwwIR1EeSz38BH1WnIsA">
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MWSwwoR1EeSz38BH1WnIsA" value="1"/>
+      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MWSww4R1EeSz38BH1WnIsA" value="1"/>
+    </ownedAttribute>
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_tf2jcHZPEeSiQcRa0VNXAQ" client="_queoAHZPEeSiQcRa0VNXAQ" supplier="_d2I54HYeEeS6mLi5FsOguA" contract="_d2I54HYeEeS6mLi5FsOguA"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_d2I54HYeEeS6mLi5FsOguA" name="IBookingManagement">
@@ -673,12 +677,7 @@
       </ownedParameter>
     </ownedOperation>
   </packagedElement>
-  <packagedElement xmi:type="uml:Association" xmi:id="_MWSwwIR1EeSz38BH1WnIsA" memberEnd="_MWSwwYR1EeSz38BH1WnIsA _MWQUgIR1EeSz38BH1WnIsA" navigableOwnedEnd="_MWSwwYR1EeSz38BH1WnIsA">
-    <ownedEnd xmi:type="uml:Property" xmi:id="_MWSwwYR1EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_MWSwwIR1EeSz38BH1WnIsA">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_MWSwwoR1EeSz38BH1WnIsA" value="1"/>
-      <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_MWSww4R1EeSz38BH1WnIsA" value="1"/>
-    </ownedEnd>
-  </packagedElement>
+  <packagedElement xmi:type="uml:Association" xmi:id="_MWSwwIR1EeSz38BH1WnIsA" memberEnd="_MWSwwYR1EeSz38BH1WnIsA _MWQUgIR1EeSz38BH1WnIsA"/>
   <packagedElement xmi:type="uml:Association" xmi:id="_HkcV4IR2EeSz38BH1WnIsA" memberEnd="_HkcV5IR2EeSz38BH1WnIsA _HkcV4YR2EeSz38BH1WnIsA">
     <ownedEnd xmi:type="uml:Property" xmi:id="_HkcV4YR2EeSz38BH1WnIsA" name="iFinanceImpl" type="_wFeDYHZmEeSBRfeA9UETiw" association="_HkcV4IR2EeSz38BH1WnIsA">
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HkcV4oR2EeSz38BH1WnIsA" value="1"/>
