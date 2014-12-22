@@ -176,7 +176,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String payBill(int bookingID, int cost) {
+	public String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, int cost) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -258,10 +258,10 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 
 			boolean bankTransferSuccess;
 			
-			bankTransferSuccess = bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
-			if( !bankTransferSuccess ) { 
+			//bankTransferSuccess = bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+			//if( !bankTransferSuccess ) { 
 				return "Payment failed: Something went wrong with bank transfer";
-			}
+			//}
 			
 		}
 				
@@ -280,17 +280,6 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		return false;
 		// TODO: fix this.
 		//return customerProvides = isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean bankTransfer(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		// TODO: fix this.
-		//return customerProvides = makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
-		return false;
 	}
 
 	/**
@@ -384,8 +373,8 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		switch (operationID) {
 			case ClassesPackage.IFINANCE_IMPL___CALCULATE_PAYMENT__INT:
 				return calculatePayment((Integer)arguments.get(0));
-			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__INT_INT:
-				return payBill((Integer)arguments.get(0), (Integer)arguments.get(1));
+			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_INT:
+				return payBill((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (Integer)arguments.get(6));
 			case ClassesPackage.IFINANCE_IMPL___BANK_SEND_INVOICE:
 				bankSendInvoice();
 				return null;
