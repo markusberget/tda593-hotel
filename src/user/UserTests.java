@@ -136,6 +136,7 @@ public class UserTests {
 	 */
 	@Test
 	public void test_valid_FourUsersBookingConcurrently() {
+		String testName;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		Thread user1 = new Thread(new User(bookingManagement, "Karl", "Urban", "karl.urban@gmail.com", "047663", new Date(), new Date(), 4));
 		Thread user2 = new Thread(new User(bookingManagement, "Didrik", "Didier", "didrik.didier@gmail.com", "34466", new Date(), new Date(), 2));
@@ -173,7 +174,39 @@ public class UserTests {
 		assertEquals(4, bookingManagement.getConfirmedBookings().size());
 		int testBookingID1 = bookingManagement.getBooking(0).getBookingID();
 		int testBookingID2 = bookingManagement.getBooking(1).getBookingID();
-		assertTrue(testBookingID1 != testBookingID2);
+		int testBookingID3 = bookingManagement.getBooking(2).getBookingID();
+		int testBookingID4 = bookingManagement.getBooking(3).getBookingID();
+		assertTrue((testBookingID1 != testBookingID2) && (testBookingID1 != testBookingID3));
+		assertTrue((testBookingID3 != testBookingID4) && (testBookingID1 != testBookingID4));
+		assertTrue((testBookingID2 != testBookingID3) && (testBookingID2 != testBookingID4));
+		
+		// Check that the data is correct after confirmed bookings
+		for (int i = 0; i < 4; i++) {
+			testName = bookingManagement.getConfirmedBookings().get(i).getCustomer().getFirstName();
+			switch (testName) {
+				case "Karl":		assertEquals(4, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
+												assertEquals("Urban", bookingManagement.getConfirmedBookings().get(i).getCustomer().getLastName());
+												assertEquals("karl.urban@gmail.com", bookingManagement.getConfirmedBookings().get(i).getCustomer().getEmail());
+												assertEquals("047663", bookingManagement.getConfirmedBookings().get(i).getCustomer().getPhoneNumber());
+												break;
+				case "Didrik":	assertEquals(2, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
+												assertEquals("Didier", bookingManagement.getConfirmedBookings().get(i).getCustomer().getLastName());
+												assertEquals("didrik.didier@gmail.com", bookingManagement.getConfirmedBookings().get(i).getCustomer().getEmail());
+												assertEquals("34466", bookingManagement.getConfirmedBookings().get(i).getCustomer().getPhoneNumber());
+												break;
+				case "Henn":		assertEquals(3, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
+												assertEquals("Venn", bookingManagement.getConfirmedBookings().get(i).getCustomer().getLastName());
+												assertEquals("henn.venn@gmail.com", bookingManagement.getConfirmedBookings().get(i).getCustomer().getEmail());
+												assertEquals("123456", bookingManagement.getConfirmedBookings().get(i).getCustomer().getPhoneNumber());
+												break;
+				case "Lauder":	assertEquals(1, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
+												assertEquals("Dale", bookingManagement.getConfirmedBookings().get(i).getCustomer().getLastName());
+												assertEquals("lauder.dale@gmail.com", bookingManagement.getConfirmedBookings().get(i).getCustomer().getEmail());
+												assertEquals("056232", bookingManagement.getConfirmedBookings().get(i).getCustomer().getPhoneNumber());
+												break;
+			}
+		}
+
 		
 	}
 	
@@ -203,17 +236,9 @@ public class UserTests {
 		@Override
 		public void run() {
 			// Perform the booking procedure (the currently implemented parts)
-			int bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests);
-			assertTrue(bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph));
-			assertTrue(bookingManagement.confirmBooking(bookingID));
-			
-			// Check after confirming a booking that the data is correct
-			assertEquals(numberOfGuests, bookingManagement.getBooking(bookingID).getNumberOfGuests());
-			assertEquals(bookingID, bookingManagement.getBooking(bookingID).getBookingID());
-			assertEquals(firstName, bookingManagement.getBooking(bookingID).getFirstName());
-			assertEquals(lastName, bookingManagement.getBooking(bookingID).getLastName());
-			assertEquals(email, bookingManagement.getBooking(bookingID).getEmail());
-			assertEquals(ph, bookingManagement.getBooking(bookingID).getPhoneNumber());
+			bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests);
+			bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
+			bookingManagement.confirmBooking(bookingID);
 		}
 	} // end inner class User
 

@@ -529,7 +529,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @generated NOT
 	 */
 	public synchronized boolean addCustomerInformationToBooking(int bookingID,
-			String firstName, String lastName, String email, String ph) {
+		String firstName, String lastName, String email, String ph) {
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
 				Customer customer = pendingBookings.get(i).getCustomer();
