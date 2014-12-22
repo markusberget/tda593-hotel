@@ -100,7 +100,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @ordered
 	 */
 	protected EList<Customer> customer;
-	private Map<Integer, List<Room>> occupiedRooms; // Contains booked rooms
+
 	private int bookingsEver; // used in current implementation to make the
 								// bookingIDs unique
 
@@ -115,16 +115,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		pendingBookings = new BasicEList<Booking>();
 		confirmedBookings = new BasicEList<Booking>();
 		room = new BasicEList<Room>();
-<<<<<<< HEAD
-		
 		this.setIHotelManagerImpl( ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl());
-=======
-
-		this.setIHotelManagerImpl(ClassesFactoryImpl.eINSTANCE
-				.createIHotelManagerImpl());
-		this.setIHotelManagerImpl(ClassesFactoryImpl.eINSTANCE
-				.createIHotelManagerImpl());
->>>>>>> c8695712158f1cf1d1da0d1363d8a4cd240317a1
 	}
 
 	/**
@@ -446,10 +437,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public boolean checkIn(int bookingID) {
 		// Booking booking = bookings.get(bookingID);
 		if (confirmedBookings != null) {
-			List<Room> rooms = occupiedRooms.get(bookingID);
-			for (Room room : rooms) {
-				room.setStatus(RoomStatus.OCCUPIED);
-			}
+			//List<Room> rooms = rooms.get(bookingID);
+			//for (Room room : rooms) {
+				//room.setStatus(RoomStatus.OCCUPIED);
+			//}
 			return true;
 		}
 		return false;
