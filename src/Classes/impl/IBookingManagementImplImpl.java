@@ -125,6 +125,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		confirmedBookings = new BasicEList<Booking>();
 		room = new BasicEList<Room>();
 		this.setIHotelManagerImpl( ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl());
+		this.setIFinanceImpl( ClassesFactoryImpl.eINSTANCE.createIFinanceImpl());
 	}
 
 	/**

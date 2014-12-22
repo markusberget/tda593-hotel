@@ -204,7 +204,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * 
 	 * @generated NOT
 	 */
-	public String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, int cost) {
+	public String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, double cost) {
 		se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires bankingCustomer;
 		boolean valid;
 		try {
@@ -352,8 +352,8 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		switch (operationID) {
 			case ClassesPackage.IFINANCE_IMPL___CALCULATE_PAYMENT__INT:
 				return calculatePayment((Integer)arguments.get(0));
-			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_INT:
-				return payBill((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (Integer)arguments.get(6));
+			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE:
+				return payBill((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (Double)arguments.get(6));
 			case ClassesPackage.IFINANCE_IMPL___BANK_SEND_INVOICE:
 				bankSendInvoice();
 				return null;

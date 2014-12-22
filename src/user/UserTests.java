@@ -88,10 +88,9 @@ public class UserTests {
 
 		//bookingManagement.checkOut(rooms);
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).
-		double checkOutSum = 555.5;		// Set to 555 until summation of bill's charges is implemented.
-		//validateWithBank();		// Performs the 2 method invocations below?
-		//assertTrue(bankingCustomer.isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName));
-		//assertTrue(bankingCustomer.makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
+		double checkOutSum = 343.0;		// Set to 343.0 until summation of bill's charges is implemented.
+		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
+		assertEquals(2000.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 2000.0);
 		// 4) Change status of room(s) to CLEANING/AVAILABLE? (which is done when payment is a success).
 		
 		// Remove the credit card account from the banking component

@@ -29,7 +29,7 @@ public interface IFinance extends EObject {
 	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false" ccNumberRequired="true" ccNumberOrdered="false" ccvRequired="true" ccvOrdered="false" expiryMonthRequired="true" expiryMonthOrdered="false" expiryYearRequired="true" expiryYearOrdered="false" firstNameRequired="true" firstNameOrdered="false" lastNameRequired="true" lastNameOrdered="false" costRequired="true" costOrdered="false"
 	 * @generated
 	 */
-	String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, int cost);
+	String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, double cost);
 
 	/**
 	 * <!-- begin-user-doc -->
