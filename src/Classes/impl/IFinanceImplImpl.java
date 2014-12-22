@@ -2,7 +2,6 @@
  */
 package Classes.impl;
 
-import Classes.AdministratorProvides;
 import Classes.ClassesPackage;
 import Classes.CustomerProvides;
 import Classes.IBookingManagementImpl;
@@ -24,7 +23,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link Classes.impl.IFinanceImplImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.impl.IFinanceImplImpl#getCustomerProvides <em>Customer Provides</em>}</li>
- *   <li>{@link Classes.impl.IFinanceImplImpl#getAdministratorProvides <em>Administrator Provides</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,16 +47,6 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * @ordered
 	 */
 	protected CustomerProvides customerProvides;
-	/**
-	 * The cached value of the '{@link #getAdministratorProvides() <em>Administrator Provides</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getAdministratorProvides()
-	 * @generated
-	 * @ordered
-	 */
-	protected AdministratorProvides administratorProvides;
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -166,44 +154,6 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AdministratorProvides getAdministratorProvides() {
-		if (administratorProvides != null && administratorProvides.eIsProxy()) {
-			InternalEObject oldAdministratorProvides = (InternalEObject)administratorProvides;
-			administratorProvides = (AdministratorProvides)eResolveProxy(oldAdministratorProvides);
-			if (administratorProvides != oldAdministratorProvides) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES, oldAdministratorProvides, administratorProvides));
-			}
-		}
-		return administratorProvides;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AdministratorProvides basicGetAdministratorProvides() {
-		return administratorProvides;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAdministratorProvides(AdministratorProvides newAdministratorProvides) {
-		AdministratorProvides oldAdministratorProvides = administratorProvides;
-		administratorProvides = newAdministratorProvides;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES, oldAdministratorProvides, administratorProvides));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public int calculatePayment(int bookingId) {
@@ -219,6 +169,17 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		*/
 		return 0;
 
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String payBill(int bookingID, int cost) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -333,13 +294,13 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Unimplemented method since the bank's interface do not offer the services necessary
+	 * for this method.
+	 * 
+	 * @generated NOT
 	 */
 	public void bankSendInvoice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
+		// request that bank sends an invoice assigned to the customer to the customer’s address.
 		throw new UnsupportedOperationException();
 	}
 
@@ -357,9 +318,6 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				if (resolve) return getCustomerProvides();
 				return basicGetCustomerProvides();
-			case ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES:
-				if (resolve) return getAdministratorProvides();
-				return basicGetAdministratorProvides();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -377,9 +335,6 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 				return;
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				setCustomerProvides((CustomerProvides)newValue);
-				return;
-			case ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES:
-				setAdministratorProvides((AdministratorProvides)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -399,9 +354,6 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				setCustomerProvides((CustomerProvides)null);
 				return;
-			case ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES:
-				setAdministratorProvides((AdministratorProvides)null);
-				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -418,8 +370,6 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 				return iBookingManagementImpl != null;
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				return customerProvides != null;
-			case ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES:
-				return administratorProvides != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -434,12 +384,8 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		switch (operationID) {
 			case ClassesPackage.IFINANCE_IMPL___CALCULATE_PAYMENT__INT:
 				return calculatePayment((Integer)arguments.get(0));
-			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__INT:
-				return payBill((Integer)arguments.get(0));
-			case ClassesPackage.IFINANCE_IMPL___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING:
-				return validateWithBank((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
-			case ClassesPackage.IFINANCE_IMPL___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING:
-				return bankTransfer((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
+			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__INT_INT:
+				return payBill((Integer)arguments.get(0), (Integer)arguments.get(1));
 			case ClassesPackage.IFINANCE_IMPL___BANK_SEND_INVOICE:
 				bankSendInvoice();
 				return null;

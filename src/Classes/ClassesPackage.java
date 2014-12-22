@@ -1413,25 +1413,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IFINANCE___PAY_BILL__INT = 1;
-
-	/**
-	 * The operation id for the '<em>Validate With Bank</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = 2;
-
-	/**
-	 * The operation id for the '<em>Bank Transfer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = 3;
+	int IFINANCE___PAY_BILL__INT_INT = 1;
 
 	/**
 	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
@@ -1440,7 +1422,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IFINANCE___BANK_SEND_INVOICE = 4;
+	int IFINANCE___BANK_SEND_INVOICE = 2;
 
 	/**
 	 * The number of operations of the '<em>IFinance</em>' class.
@@ -1449,7 +1431,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IFINANCE_OPERATION_COUNT = 5;
+	int IFINANCE_OPERATION_COUNT = 3;
 
 	/**
 	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
@@ -1470,22 +1452,13 @@ public interface ClassesPackage extends EPackage {
 	int IFINANCE_IMPL__CUSTOMER_PROVIDES = IFINANCE_FEATURE_COUNT + 1;
 
 	/**
-	 * The feature id for the '<em><b>Administrator Provides</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL__ADMINISTRATOR_PROVIDES = IFINANCE_FEATURE_COUNT + 2;
-
-	/**
 	 * The number of structural features of the '<em>IFinance Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IFINANCE_IMPL_FEATURE_COUNT = IFINANCE_FEATURE_COUNT + 3;
+	int IFINANCE_IMPL_FEATURE_COUNT = IFINANCE_FEATURE_COUNT + 2;
 
 	/**
 	 * The operation id for the '<em>Calculate Payment</em>' operation.
@@ -1503,25 +1476,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IFINANCE_IMPL___PAY_BILL__INT = IFINANCE___PAY_BILL__INT;
-
-	/**
-	 * The operation id for the '<em>Validate With Bank</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Bank Transfer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING;
+	int IFINANCE_IMPL___PAY_BILL__INT_INT = IFINANCE___PAY_BILL__INT_INT;
 
 	/**
 	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
@@ -2000,34 +1955,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIFinance__CalculatePayment__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IFinance#payBill(int) <em>Pay Bill</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IFinance#payBill(int, int) <em>Pay Bill</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Pay Bill</em>' operation.
-	 * @see Classes.IFinance#payBill(int)
+	 * @see Classes.IFinance#payBill(int, int)
 	 * @generated
 	 */
-	EOperation getIFinance__PayBill__int();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IFinance#validateWithBank(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Validate With Bank</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Validate With Bank</em>' operation.
-	 * @see Classes.IFinance#validateWithBank(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
-	 * @generated
-	 */
-	EOperation getIFinance__ValidateWithBank__String_String_int_int_String_String();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IFinance#bankTransfer(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Bank Transfer</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Bank Transfer</em>' operation.
-	 * @see Classes.IFinance#bankTransfer(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
-	 * @generated
-	 */
-	EOperation getIFinance__BankTransfer__String_String_int_int_String_String();
+	EOperation getIFinance__PayBill__int_int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IFinance#bankSendInvoice() <em>Bank Send Invoice</em>}' operation.
@@ -2295,17 +2230,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIFinanceImpl_CustomerProvides();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.IFinanceImpl#getAdministratorProvides <em>Administrator Provides</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Administrator Provides</em>'.
-	 * @see Classes.IFinanceImpl#getAdministratorProvides()
-	 * @see #getIFinanceImpl()
-	 * @generated
-	 */
-	EReference getIFinanceImpl_AdministratorProvides();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.AdministratorProvides <em>Administrator Provides</em>}'.
@@ -3023,23 +2947,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IFINANCE___PAY_BILL__INT = eINSTANCE.getIFinance__PayBill__int();
-
-		/**
-		 * The meta object literal for the '<em><b>Validate With Bank</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getIFinance__ValidateWithBank__String_String_int_int_String_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Bank Transfer</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getIFinance__BankTransfer__String_String_int_int_String_String();
+		EOperation IFINANCE___PAY_BILL__INT_INT = eINSTANCE.getIFinance__PayBill__int_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Bank Send Invoice</b></em>' operation.
@@ -3258,14 +3166,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IFINANCE_IMPL__CUSTOMER_PROVIDES = eINSTANCE.getIFinanceImpl_CustomerProvides();
-
-		/**
-		 * The meta object literal for the '<em><b>Administrator Provides</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IFINANCE_IMPL__ADMINISTRATOR_PROVIDES = eINSTANCE.getIFinanceImpl_AdministratorProvides();
 
 		/**
 		 * The meta object literal for the '{@link Classes.AdministratorProvides <em>Administrator Provides</em>}' class.

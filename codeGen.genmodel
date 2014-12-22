@@ -228,22 +228,7 @@
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IFinance/payBill">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/payBill/bookingID"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IFinance/validateWithBank">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/validateWithBank/ccNumber"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/validateWithBank/ccv"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/validateWithBank/expiryMonth"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/validateWithBank/expiryYear"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/validateWithBank/firstName"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/validateWithBank/lastName"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IFinance/bankTransfer">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/bankTransfer/ccNumber"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/bankTransfer/ccv"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/bankTransfer/expiryMonth"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/bankTransfer/expiryYear"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/bankTransfer/firstName"/>
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/bankTransfer/lastName"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IFinance/payBill/cost"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IFinance/bankSendInvoice"/>
     </genClasses>
@@ -252,8 +237,6 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IFinanceImpl/iBookingManagementImpl"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IFinanceImpl/customerProvides"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IFinanceImpl/administratorProvides"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Classes.ecore#//CustomerProvides">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//CustomerProvides/makePayment">
