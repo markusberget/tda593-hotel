@@ -653,7 +653,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT = 6;
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPE_INT = 6;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -833,7 +833,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_INT_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT;
+	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPE_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPE_INT;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -1036,22 +1036,13 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___LOGOUT__STRING = 12;
 
 	/**
-	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 13;
-
-	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 14;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -1187,15 +1178,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___LOGOUT__STRING = IHOTEL_MANAGER___LOGOUT__STRING;
-
-	/**
-	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___IS_EXISTING_STAFF_MEMBER__STRING = IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
@@ -1938,14 +1920,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__AddCancelationFee__Class();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, int, int) <em>Search Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, Classes.RoomType, int) <em>Search Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Search Room</em>' operation.
-	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, int, int)
+	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, Classes.RoomType, int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__SearchRoom__Date_Date_int_int_int();
+	EOperation getIBookingManagement__SearchRoom__Date_Date_int_RoomType_int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#cancelBooking(int) <em>Cancel Booking</em>}' operation.
@@ -2271,16 +2253,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIHotelManager__Logout__String();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#isExistingStaffMember(java.lang.String) <em>Is Existing Staff Member</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Existing Staff Member</em>' operation.
-	 * @see Classes.IHotelManager#isExistingStaffMember(java.lang.String)
-	 * @generated
-	 */
-	EOperation getIHotelManager__IsExistingStaffMember__String();
 
 	/**
 	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
@@ -2985,7 +2957,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_int_int();
+		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPE_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_RoomType_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.
@@ -3250,14 +3222,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___LOGOUT__STRING = eINSTANCE.getIHotelManager__Logout__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Is Existing Staff Member</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = eINSTANCE.getIHotelManager__IsExistingStaffMember__String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.
