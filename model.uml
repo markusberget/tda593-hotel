@@ -231,13 +231,9 @@
       <message xmi:type="uml:Message" xmi:id="_K-WJsHa8EeSKk9bkKW7QkA" name="submit_Message" messageSort="asynchCall" receiveEvent="_K-sH8Ha8EeSKk9bkKW7QkA" sendEvent="_K-decHa8EeSKk9bkKW7QkA">
         <signature xmi:type="uml:Operation" href="Classes.uml#_HZ-rEHa8EeSKk9bkKW7QkA"/>
       </message>
-      <message xmi:type="uml:Message" xmi:id="_Rc9y8Ha8EeSKk9bkKW7QkA" name="validateWithBank_Message" messageSort="asynchCall" receiveEvent="_RdKAMHa8EeSKk9bkKW7QkA" sendEvent="_RdD5kHa8EeSKk9bkKW7QkA">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_iPfDQHYfEeS6mLi5FsOguA"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="_Rc9y8Ha8EeSKk9bkKW7QkA" name="validateWithBank_Message" messageSort="asynchCall" receiveEvent="_RdKAMHa8EeSKk9bkKW7QkA" sendEvent="_RdD5kHa8EeSKk9bkKW7QkA"/>
       <message xmi:type="uml:Message" xmi:id="_Jbn9QHa9EeSKk9bkKW7QkA" name="isCreditCardValid_Message" messageSort="asynchCall" receiveEvent="_Jb6RIHa9EeSKk9bkKW7QkA" sendEvent="_JbwgIHa9EeSKk9bkKW7QkA"/>
-      <message xmi:type="uml:Message" xmi:id="_W7nXgHa9EeSKk9bkKW7QkA" name="bankTransfer_Message" messageSort="asynchCall" receiveEvent="_W79VwHa9EeSKk9bkKW7QkA" sendEvent="_W7yWoHa9EeSKk9bkKW7QkA">
-        <signature xmi:type="uml:Operation" href="Classes.uml#_j-KLkHYfEeS6mLi5FsOguA"/>
-      </message>
+      <message xmi:type="uml:Message" xmi:id="_W7nXgHa9EeSKk9bkKW7QkA" name="bankTransfer_Message" messageSort="asynchCall" receiveEvent="_W79VwHa9EeSKk9bkKW7QkA" sendEvent="_W7yWoHa9EeSKk9bkKW7QkA"/>
       <message xmi:type="uml:Message" xmi:id="_Zzrw0Ha9EeSKk9bkKW7QkA" name="makePayment_Message" messageSort="asynchCall" receiveEvent="_Z0GAgHa9EeSKk9bkKW7QkA" sendEvent="_Zz_S0Ha9EeSKk9bkKW7QkA"/>
       <message xmi:type="uml:Message" xmi:id="_rKofAHwiEeSp9f6OXZXhBA" name="bankSendInvoice_Message" messageSort="asynchCall" receiveEvent="_rLbwQHwiEeSp9f6OXZXhBA" sendEvent="_rLW3wHwiEeSp9f6OXZXhBA">
         <signature xmi:type="uml:Operation" href="Classes.uml#_lAB4QHYfEeS6mLi5FsOguA"/>

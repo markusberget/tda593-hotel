@@ -24,12 +24,6 @@
           <emfPageIdentifier href="model.notation#_nIIMYHZPEeSiQcRa0VNXAQ"/>
         </children>
         <children>
-          <emfPageIdentifier href="model.notation#_QrJugHTaEeSOC7DG65-e3w"/>
-        </children>
-        <children>
-          <emfPageIdentifier href="model.notation#_QatzYHYaEeSNRvHXkk2GGA"/>
-        </children>
-        <children>
           <emfPageIdentifier href="model.notation#_wfUEUHb2EeSlx-SIUE5Fhw"/>
         </children>
       </children>

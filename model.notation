@@ -1852,31 +1852,6 @@
       <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Hk0wYIR2EeSz38BH1WnIsA" id="(0.7821782178217822,0.0)"/>
       <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_Hk0wYYR2EeSz38BH1WnIsA" id="(0.28,1.0)"/>
     </edges>
-    <edges xmi:type="notation:Connector" xmi:id="_OgIVoIR2EeSz38BH1WnIsA" type="4001" source="_ntw4MIR1EeSz38BH1WnIsA" target="_wFhGsHZmEeSBRfeA9UETiw">
-      <children xmi:type="notation:DecorationNode" xmi:id="_OgIVo4R2EeSz38BH1WnIsA" type="6001">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_OgIVpIR2EeSz38BH1WnIsA" y="-20"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_OgIVpYR2EeSz38BH1WnIsA" type="6002">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_OgIVpoR2EeSz38BH1WnIsA" y="20"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_OgIVp4R2EeSz38BH1WnIsA" type="6003">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_OgIVqIR2EeSz38BH1WnIsA" y="-20"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_OgIVqYR2EeSz38BH1WnIsA" type="6005">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_OgIVqoR2EeSz38BH1WnIsA" y="20"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_OgIVq4R2EeSz38BH1WnIsA" type="6033">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_OgIVrIR2EeSz38BH1WnIsA" y="20"/>
-      </children>
-      <children xmi:type="notation:DecorationNode" xmi:id="_OgIVrYR2EeSz38BH1WnIsA" type="6034">
-        <layoutConstraint xmi:type="notation:Location" xmi:id="_OgIVroR2EeSz38BH1WnIsA" y="-20"/>
-      </children>
-      <styles xmi:type="notation:FontStyle" xmi:id="_OgIVoYR2EeSz38BH1WnIsA"/>
-      <element xmi:type="uml:Association" href="Classes.uml#_OgBA4IR2EeSz38BH1WnIsA"/>
-      <bendpoints xmi:type="notation:RelativeBendpoints" xmi:id="_OgIVooR2EeSz38BH1WnIsA" points="[-35, -52, 111, 171]$[-140, -173, 6, 50]"/>
-      <sourceAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PhDAEIR2EeSz38BH1WnIsA" id="(0.3474576271186441,0.0)"/>
-      <targetAnchor xmi:type="notation:IdentityAnchor" xmi:id="_PhDAEYR2EeSz38BH1WnIsA" id="(0.71,1.0)"/>
-    </edges>
   </notation:Diagram>
   <notation:Diagram xmi:id="_KtsgkHamEeSKk9bkKW7QkA" type="PapyrusUMLSequenceDiagram" name="PaymentSequence" measurementUnit="Pixel">
     <children xmi:type="notation:Shape" xmi:id="_KtsgkXamEeSKk9bkKW7QkA" type="2001">
