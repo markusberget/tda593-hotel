@@ -194,31 +194,6 @@ public class BookingManagerTests {
 	public void testPayBill() {
 		fail("Not yet implemented");
 	}
-	
-	/**
-	 *  Test method for {@link Classes.impl.IFinanceImplImpl#validateWithBank(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)}.
-	 */
-	@Test
-	public void testValidateWithBank() {
-		fail("Not yet implemented");
-	}
-	
-	/**
-	 *  Test method for {@link Classes.impl.IFinanceImplImpl#bankTransfer(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)}.
-	 */
-	@Test
-	public void testBankTransfer() {
-		fail("Not yet implemented");
-	}
-	
-	/**
-	 *  Test method for {@link Classes.impl.IFinanceImplImpl#bankSendInvoice()}.
-	 */
-	@Test
-	public void testBankSendInvoice() {
-		fail("Not yet implemented");
-	}
-	
 
 	/**
 	 *  Test method for {@link Classes.impl.HotelManager_IHotelManagerImplImpl#ChangeStatusOfRoom(int, Enum)}.

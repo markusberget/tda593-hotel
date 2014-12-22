@@ -2,26 +2,23 @@
  */
 package Classes.impl;
 
-import Classes.Bill;
-import Classes.Booking;
-import Classes.Charge;
-import Classes.ClassesPackage;
-
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-
+import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
-
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
+import Classes.Bill;
+import Classes.Booking;
+import Classes.Charge;
+import Classes.ClassesPackage;
 
 /**
  * <!-- begin-user-doc -->
@@ -74,10 +71,12 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	protected BillImpl() {
 		super();
+		charge = new BasicEList<Charge>();
+		charges = new BasicEList<ChargeImpl>();
 	}
 
 	/**
