@@ -178,11 +178,26 @@
       </ownedParameter>
     </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_hGHncHYfEeS6mLi5FsOguA" name="payBill" visibility="public">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_oqI6QHZmEeSBRfeA9UETiw" name="bookingID">
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_oqI6QHZmEeSBRfeA9UETiw" name="ccNumber">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_A0MjYIRxEeSz38BH1WnIsA" name="PaymentOutcome" direction="return" effect="create">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2PukAInfEeSgKsQ-gK_oCw" name="ccv">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_9ZuFgInfEeSgKsQ-gK_oCw" name="expiryMonth">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_A0MjYIRxEeSz38BH1WnIsA" direction="return" effect="create">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_B3-ZgIngEeSgKsQ-gK_oCw" name="expiryYear">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_F4V3oIngEeSgKsQ-gK_oCw" name="firstName">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_Kbw_gIngEeSgKsQ-gK_oCw" name="lastName">
+        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedParameter>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_83is4IncEeSgKsQ-gK_oCw" name="cost">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
