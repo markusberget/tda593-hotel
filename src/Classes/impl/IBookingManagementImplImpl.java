@@ -142,6 +142,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		standardRoomType.setNumberOfGuests(1);
 		standardRoomType.setPrice(100);
 		standardRoomType.setFeatures("View");
+		
+		RoomType doubleRoomType = new RoomTypeImpl();
+		standardRoomType.setName("double");
+		standardRoomType.setDescription("A double room");
+		standardRoomType.setNumberOfGuests(2);
+		standardRoomType.setPrice(250);
+		standardRoomType.setFeatures(null);
 
 		Room room1 = new RoomImpl();
 		room1.setRoomNumber(1);
@@ -152,9 +159,32 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		room2.setRoomNumber(2);
 		room2.setRoomType(standardRoomType);
 		room2.setStatus(RoomStatus.AVAILABLE);
+		
+		Room room3 = new RoomImpl();
+		room3.setRoomNumber(3);
+		room3.setRoomType(standardRoomType);
+		room3.setStatus(RoomStatus.AVAILABLE);
+		
+		Room room6 = new RoomImpl();
+		room6.setRoomNumber(6);
+		room6.setRoomType(doubleRoomType);
+		room6.setStatus(RoomStatus.AVAILABLE);
+		
+		Room room7 = new RoomImpl();
+		room7.setRoomNumber(7);
+		room7.setRoomType(doubleRoomType);
+		room7.setStatus(RoomStatus.AVAILABLE);
 
+		standardRoomType.getRoom().add(room1);
+		standardRoomType.getRoom().add(room2);
+		standardRoomType.getRoom().add(room3);
+		doubleRoomType.getRoom().add(room6);
+		doubleRoomType.getRoom().add(room7);
 		bookingManagement.room.add(room1);
 		bookingManagement.room.add(room2);
+		bookingManagement.room.add(room3);
+		bookingManagement.room.add(room6);
+		bookingManagement.room.add(room7);
 
 		return bookingManagement;
 	}
