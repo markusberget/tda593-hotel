@@ -298,4 +298,9 @@
       <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     </eOperations>
   </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ChargeType">
+    <eLiterals name="CancellationFee"/>
+    <eLiterals name="Breakfast" value="1"/>
+    <eLiterals name="SingleRoom" value="2"/>
+  </eClassifiers>
 </ecore:EPackage>

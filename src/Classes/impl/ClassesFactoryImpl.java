@@ -5,6 +5,7 @@ package Classes.impl;
 import Classes.Bill;
 import Classes.Booking;
 import Classes.Charge;
+import Classes.ChargeType;
 import Classes.ClassesFactory;
 import Classes.ClassesPackage;
 import Classes.Customer;
@@ -91,6 +92,8 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 		switch (eDataType.getClassifierID()) {
 			case ClassesPackage.ROOM_STATUS:
 				return createRoomStatusFromString(eDataType, initialValue);
+			case ClassesPackage.CHARGE_TYPE:
+				return createChargeTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -106,6 +109,8 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 		switch (eDataType.getClassifierID()) {
 			case ClassesPackage.ROOM_STATUS:
 				return convertRoomStatusToString(eDataType, instanceValue);
+			case ClassesPackage.CHARGE_TYPE:
+				return convertChargeTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -198,6 +203,26 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	 * @generated
 	 */
 	public String convertRoomStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChargeType createChargeTypeFromString(EDataType eDataType, String initialValue) {
+		ChargeType result = ChargeType.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertChargeTypeToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

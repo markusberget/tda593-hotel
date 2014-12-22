@@ -1608,6 +1608,17 @@ public interface ClassesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link Classes.ChargeType <em>Charge Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.ChargeType
+	 * @see Classes.impl.ClassesPackageImpl#getChargeType()
+	 * @generated
+	 */
+	int CHARGE_TYPE = 17;
+
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Room <em>Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2218,6 +2229,16 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getRoomStatus();
+
+	/**
+	 * Returns the meta object for enum '{@link Classes.ChargeType <em>Charge Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Charge Type</em>'.
+	 * @see Classes.ChargeType
+	 * @generated
+	 */
+	EEnum getChargeType();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
@@ -3168,6 +3189,16 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ROOM_STATUS = eINSTANCE.getRoomStatus();
+
+		/**
+		 * The meta object literal for the '{@link Classes.ChargeType <em>Charge Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.ChargeType
+		 * @see Classes.impl.ClassesPackageImpl#getChargeType()
+		 * @generated
+		 */
+		EEnum CHARGE_TYPE = eINSTANCE.getChargeType();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.

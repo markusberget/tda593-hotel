@@ -6,6 +6,7 @@ import Classes.AdministratorProvides;
 import Classes.Bill;
 import Classes.Booking;
 import Classes.Charge;
+import Classes.ChargeType;
 import Classes.ClassesFactory;
 import Classes.ClassesPackage;
 import Classes.Customer;
@@ -100,6 +101,13 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * @generated
 	 */
 	private EEnum roomStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum chargeTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -759,6 +767,15 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EEnum getChargeType() {
+		return chargeTypeEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getIFinanceImpl() {
 		return iFinanceImplEClass;
 	}
@@ -1268,6 +1285,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		// Create enums
 		roomStatusEEnum = createEEnum(ROOM_STATUS);
+		chargeTypeEEnum = createEEnum(CHARGE_TYPE);
 	}
 
 	/**
@@ -1555,6 +1573,11 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.OCCUPIED);
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.AVAILABLE);
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.CLEANING);
+
+		initEEnum(chargeTypeEEnum, ChargeType.class, "ChargeType");
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.CANCELLATION_FEE);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.BREAKFAST);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.SINGLE_ROOM);
 
 		// Create resource
 		createResource(eNS_URI);

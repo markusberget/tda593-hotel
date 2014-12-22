@@ -10,14 +10,11 @@ import java.util.Date;
 
 import javax.xml.soap.SOAPException;
 
-import org.eclipse.emf.common.util.BasicEList;
-import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Classes.Booking;
 import Classes.IHotelManager;
-import Classes.Room;
 import Classes.impl.ClassesFactoryImpl;
 import Classes.impl.IBookingManagementImplImpl;
 
@@ -78,7 +75,6 @@ public class UserTests {
 		String email = "karl.urban@gmail.com", ph = "0843322";
 		bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 		bookingManagement.confirmBooking(bookingID);
-		
 		assertEquals(2, bookingManagement.getRoom().size());
 		
 		// 1) Retrieve booking information using getBooking(bookingID).
@@ -181,7 +177,7 @@ public class UserTests {
 		assertTrue((testBookingID2 != testBookingID3) && (testBookingID2 != testBookingID4));
 		
 		// Check that the data is correct after confirmed bookings
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < bookingManagement.getConfirmedBookings().size(); i++) {
 			testName = bookingManagement.getConfirmedBookings().get(i).getCustomer().getFirstName();
 			switch (testName) {
 				case "Karl":		assertEquals(4, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());

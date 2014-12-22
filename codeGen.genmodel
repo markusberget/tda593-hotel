@@ -37,6 +37,11 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//RoomStatus/Available"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//RoomStatus/Cleaning"/>
     </genEnums>
+    <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="Classes.ecore#//ChargeType">
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//ChargeType/CancellationFee"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//ChargeType/Breakfast"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//ChargeType/SingleRoom"/>
+    </genEnums>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Room">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Room/status"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Room/roomNumber"/>
