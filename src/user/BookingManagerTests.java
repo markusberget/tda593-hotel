@@ -4,6 +4,8 @@ import static org.junit.Assert.*;
 
 import java.util.Date;
 
+import javax.xml.soap.SOAPException;
+
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -11,6 +13,7 @@ import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
 import Classes.RoomStatus;
+import Classes.impl.IFinanceImplImpl;
 
 /**
  * This class contains unit tests for the BookingManager interface.
@@ -189,10 +192,36 @@ public class BookingManagerTests {
 	
 	/**
 	 *  Test method for {@link Classes.impl.IFinanceImplImpl#payBill(int)}.
+	 *  
+	 *  Tests if the credit card is valid and if the payment of a bill is successful.
 	 */
 	@Test
 	public void testPayBill() {
-		fail("Not yet implemented");
+		// Set up of a credit card account for use when paying for the booking/room(s).
+		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
+		String ccNumber = "01234567", ccv = "123", firstName = "Karl", lastName = "urban";
+		int expiryMonth = 10, expiryYear = 17;
+		try {
+			bankingAdmin = se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires
+					.instance();
+		bankingAdmin.removeCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		assertTrue(bankingAdmin.addCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName));
+		assertEquals(0.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 0.0);
+		assertEquals(2343.0, bankingAdmin.makeDeposit(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 2343.0), 2343.0);
+
+		Classes.impl.IFinanceImplImpl financeManagement = Classes.impl.IFinanceImplImpl.instantiateForTest();
+		assertEquals("Payment was successful", financeManagement.payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 343.0));
+		assertEquals(2000.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 2000.0);
+		assertEquals("Amount could not be withdrawn", financeManagement.payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 2343.0));
+		assertEquals("Credit Card is not valid", financeManagement.payBill("00234111", ccv, expiryMonth, expiryYear, firstName, lastName, 343.0));
+		
+		// Remove the credit card account from the banking component
+		assertTrue(bankingAdmin.removeCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName));
+		} catch (SOAPException e) {
+			System.err
+			.println("Error occurred while communicating with the bank administration");
+			e.printStackTrace();
+		}
 	}
 
 	/**

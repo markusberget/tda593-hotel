@@ -209,6 +209,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	public String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, double cost) {
 		se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires bankingCustomer;
 		boolean valid;
+		String message = null;
 		try {
 			bankingCustomer = se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires
 					.instance();
@@ -216,21 +217,21 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 			if (valid) {
 				valid = bankingCustomer.makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, cost);
 				if (valid) {
-					return "Payment was successful";
+					message = "Payment was successful";
 				}
 				else {
-					return "Amount could not be withdrawn";
+					message = "Amount could not be withdrawn";
 				}
 			}
 			else {
-				return "Credit Card is not valid";
+				message = "Credit Card is not valid";
 			}
 		} catch (SOAPException e) {
 			System.err
 			.println("Error occurred while communicating with the bank administration");
 			e.printStackTrace();
 		}
-		return "Payment was unsuccessful";
+		return message;
 	}
 
 	/**
