@@ -6,7 +6,11 @@ import Classes.ClassesPackage;
 import Classes.CustomerProvides;
 import Classes.IBookingManagementImpl;
 import Classes.IFinanceImpl;
+
 import java.lang.reflect.InvocationTargetException;
+
+import javax.xml.soap.SOAPException;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
@@ -172,114 +176,36 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
+	 * Performs the payment of a bill. First the credit card is checked if valid, and if valid the sum is withdrawn
+	 * form the credit card. This method contains the interaction with the bank.
+	 * 
+	 * @generated NOT
 	 */
 	public String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, int cost) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public String payBill(int bookingId) {
-		
-		int amount = calculatePayment(bookingId);
-		
-		// for now.
-		//return "";
-		
-		if (amount > 0) {
-		
-			String customerFirstName;
-			String customerLastName;
-			
-			
-			/* prompt user to fill in customer information here */
-			// for now
-			customerFirstName = "Pellefjant";
-			customerLastName = "Stenskog";
-			
-			// Validate customer information
-			// TODO: fix this.
-			/*if(!customerFirstName == this.iBookingManagement.getBooking(bookingId).getCustomer().getFirstName() 
-			&& 	customerLastName == this.iBookingManagement.getBooking(bookingId).getCustomer().getLastName() ) { 
-				return "Payment failed: customer information invalid";
-			}*/
-			
-			//possibly enum
-			String paymentOption = "none";
-			/* prompt user to select payment method */	
-			// for now
-			paymentOption = "CreditCard";
-			
-			// If selected option is not using credit card
-			if( paymentOption.equals("none") ) { 
-				return "Payment failed: No payment option was selected"; 
+		se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires bankingCustomer;
+		boolean valid;
+		try {
+			bankingCustomer = se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires
+					.instance();
+			valid = bankingCustomer.isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+			if (valid) {
+				valid = bankingCustomer.makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, cost);
+				if (valid) {
+					return "Payment was successful";
+				}
+				else {
+					return "Amount could not be withdrawn";
+				}
 			}
-			else if( paymentOption.equals("Invoice") ) { 
-				bankSendInvoice();
-				return "Success";
+			else {
+				return "Credit Card is not valid";
 			}
-		
-			String ccNumber, ccv, firstName, lastName;
-			int expiryMonth, expiryYear;
-			
-			/* prompt user to fill in ccNumber:String, ccv:String, expiryMonth:int,
-			expiryYear:int, firstName:String, lastName:String */
-			
-			// for now
-			ccNumber = "1-1111-1111-1111-1111";
-			ccv = "345";
-			firstName = customerFirstName;
-			lastName = customerLastName;
-			expiryMonth = 12;
-			expiryYear = 16;
-			
-			// If invalid
-			if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
-				return "Payment failed: Invalid credit card information";
-			}
-			
-			
-			boolean customerConfirm;
-			/* use case says: "The customer confirms the information."*/
-			// for now
-			customerConfirm = true;
-			
-			if( !customerConfirm ) { 
-				return "Payment failed: Aborted"; 
-			}
-
-			boolean bankTransferSuccess;
-			
-			//bankTransferSuccess = bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
-			//if( !bankTransferSuccess ) { 
-				return "Payment failed: Something went wrong with bank transfer";
-			//}
-			
+		} catch (SOAPException e) {
+			System.err
+			.println("Error occurred while communicating with the bank administration");
+			e.printStackTrace();
 		}
-				
-		/* register payment as done */
-		
-		return "Success";
-		
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean validateWithBank(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		return false;
-		// TODO: fix this.
-		//return customerProvides = isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+		return "Payment was unsuccessful";
 	}
 
 	/**
