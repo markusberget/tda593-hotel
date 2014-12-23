@@ -181,13 +181,15 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 
 	/**
 	 * Calculates the total cost of a bill by summing its associated charges.
+	 * At the moment calculatePayment sums all charges in a booking, and not
+	 * specific charges chosen beforehand.
 	 * 
 	 * @generated NOT
 	 */
 	public int calculatePayment(int bookingID) {
 		EList<ChargeImpl> charges;
 		int sum = 0;
-		EList<Booking> confirmedBookings = basicGetIBookingManagementImpl().getConfirmedBookings();
+		EList<Booking> confirmedBookings = getIBookingManagementImpl().getConfirmedBookings();
 		for (Booking booking : confirmedBookings) {
 			if (booking.getBookingID() == bookingID) {
 				charges = ((BillImpl) booking.getBill()).getChargeImpl();

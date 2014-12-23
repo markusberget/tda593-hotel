@@ -653,7 +653,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT = 6;
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = 6;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -842,7 +842,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT;
+	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -1925,14 +1925,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__AddCancelationFee__Class();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, Classes.RoomTypeName, int) <em>Search Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, java.lang.String, int) <em>Search Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Search Room</em>' operation.
-	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, Classes.RoomTypeName, int)
+	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, java.lang.String, int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__SearchRoom__Date_Date_int_RoomTypeName_int();
+	EOperation getIBookingManagement__SearchRoom__Date_Date_int_String_int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#cancelBooking(int) <em>Cancel Booking</em>}' operation.
@@ -2970,7 +2970,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_RoomTypeName_int();
+		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_String_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.

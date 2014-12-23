@@ -1,6 +1,11 @@
 package user;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import java.awt.List;
 import java.util.Date;
@@ -11,12 +16,15 @@ import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
+import Classes.Booking;
 import Classes.Customer;
 import Classes.IHotelManager;
-import Classes.IHotelManagerImpl;
 import Classes.RoomStatus;
 import Classes.RoomTypeName;
+<<<<<<< HEAD
 import Classes.impl.IFinanceImplImpl;
+=======
+>>>>>>> 48da637b538ea4c1bf2d260f8a2f3452830e05fb
 
 /**
  * This class contains unit tests for the BookingManager interface.
@@ -195,10 +203,27 @@ public class BookingManagerTests {
 
 	/**
 	 *  Test method for {@link Classes.impl.IFinanceImplImpl#calculatePayment(int)}.
+	 *  
+	 *  Calculates the sum of the bill of a booking containing three rooms.
 	 */
 	@Test
 	public void testCalculatePayment() {
-		fail("Not yet implemented");
+		
+		// Set up a booking and its corresponding bill so that tests can be performed.
+		Booking pendingBooking;
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 6);
+		pendingBooking = bookingManagement.getPendingBookings().get(0);
+		pendingBooking.getRoom().add(bookingManagement.getRoom().get(0));
+		pendingBooking.getRoom().add(bookingManagement.getRoom().get(1));
+		pendingBooking.getRoom().add(bookingManagement.getRoom().get(4));
+		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRoom().get(0).getRoomType().getRoomTypeName());
+		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRoom().get(1).getRoomType().getRoomTypeName());
+		assertEquals(RoomTypeName.DOUBLE_ROOM, pendingBooking.getRoom().get(2).getRoomType().getRoomTypeName());
+		assertTrue(bookingManagement.confirmBooking(bookingID));
+		
+		// Calculate the sum of the bill
+		assertEquals(450, bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 	}
 	
 	/**

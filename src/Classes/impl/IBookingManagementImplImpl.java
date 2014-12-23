@@ -10,7 +10,6 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -164,11 +163,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		standardRoomType.setFeatures("View");
 
 		RoomType doubleRoomType = new RoomTypeImpl();
-		standardRoomType.setRoomTypeName(RoomTypeName.DOUBLE_ROOM);
-		standardRoomType.setDescription("A double room");
-		standardRoomType.setNumberOfGuests(2);
-		standardRoomType.setPrice(250);
-		standardRoomType.setFeatures(null);
+		doubleRoomType.setRoomTypeName(RoomTypeName.DOUBLE_ROOM);
+		doubleRoomType.setDescription("A double room");
+		doubleRoomType.setNumberOfGuests(2);
+		doubleRoomType.setPrice(250);
+		doubleRoomType.setFeatures(null);
 
 		Room room1 = new RoomImpl();
 		room1.setRoomNumber(1);
@@ -554,34 +553,37 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
+
 	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
 			RoomTypeName roomType, int maximumPrice) {
 		EList<Room> rooms = this.getRoom();
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		for (Room r : rooms) {
-//			if (numberOfGuests <= (r.getRoomType().getNumberOfGuests())
-//					&& maximumPrice >= r.getRoomType().getPrice()
-//					&& roomType == (r.getRoomType().getRoomTypeName())) {
-				EList<Booking> bookings = r.getBooking();
+			// if (numberOfGuests <= (r.getRoomType().getNumberOfGuests())
+			// && maximumPrice >= r.getRoomType().getPrice()
+			// && roomType == (r.getRoomType().getRoomTypeName())) {
+			EList<Booking> bookings = r.getBooking();
 
-				if (bookings.isEmpty()) {
+			if (bookings.isEmpty()) {
+				searchResult.add(r.getRoomNumber());
+			} else {
+				boolean roomFree = true;
+				int listIterator = 0;
+				while (roomFree && listIterator < bookings.size()) {
+					Booking b = bookings.get(listIterator);
+					if (checkIn.after(b.getCheckOut())
+							|| checkOut.before(b.getCheckIn())) {
+						roomFree = true;
+					} else {
+						roomFree = false;
+					}
+					listIterator++;
+				}
+				if (roomFree) {
 					searchResult.add(r.getRoomNumber());
-				} else {
-					boolean roomFree = true;
-					int listIterator = 0;
-					while (roomFree && listIterator < bookings.size()) {
-						Booking b = bookings.get(listIterator);
-						if (checkIn.after(b.getCheckOut()) || checkOut.before(b.getCheckIn())) {
-							roomFree = true;
-						} else {
-							roomFree = false;
-						}
-						listIterator++;
-					}
-					if (roomFree) {
-						searchResult.add(r.getRoomNumber());
-					}
-//				}
+				}
+				// }
+
 			}
 
 			// TODO: do the same thing for the rest of the parameters.
@@ -906,6 +908,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public Object eInvoke(int operationID, EList<?> arguments)
 			throws InvocationTargetException {
 		switch (operationID) {
+
 		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING:
 			updateBooking();
 			return null;
@@ -922,10 +925,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CANCELATION_FEE__CLASS:
 			addCancelationFee((Class) arguments.get(0));
 			return null;
-		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT:
+		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_STRING_INT:
 			return searchRoom((Date) arguments.get(0), (Date) arguments.get(1),
-					(Integer) arguments.get(2),
-					(RoomTypeName) arguments.get(3), (Integer) arguments.get(4));
+					(Integer) arguments.get(2), (String) arguments.get(3),
+					(Integer) arguments.get(4));
 		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT:
 			return cancelBooking((Integer) arguments.get(0));
 		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT:
@@ -940,8 +943,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS:
 			return changeStatusOfRoom((String) arguments.get(0),
 					(Integer) arguments.get(1), (RoomStatus) arguments.get(2));
+
 		}
 		return super.eInvoke(operationID, arguments);
 	}
 
+	@Override
+	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
+			String roomType, int maximumPrice) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 } // IBookingManagementImplImpl
