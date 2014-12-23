@@ -7,7 +7,6 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
-import java.awt.List;
 import java.util.Date;
 
 import javax.xml.soap.SOAPException;
@@ -21,7 +20,6 @@ import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.RoomStatus;
 import Classes.RoomTypeName;
-import Classes.impl.IFinanceImplImpl;
 
 /**
  * This class contains unit tests for the BookingManager interface.
@@ -71,7 +69,7 @@ public class BookingManagerTests {
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#confirmBooking(int)}.
 	 * 
-	 * First two pending bookings are created, and then they are confirmed in reverse order.
+	 * Two pending bookings are created, and then they are confirmed in reverse order.
 	 */
 	@Test
 	public void testConfirmBooking() {
@@ -201,12 +199,15 @@ public class BookingManagerTests {
 	/**
 	 *  Test method for {@link Classes.impl.IFinanceImplImpl#calculatePayment(int)}.
 	 *  
-	 *  Calculates the sum of the bill of a booking containing three rooms.
+	 *  Calculates the sum of the bill of a booking containing three rooms. Two of
+	 *  the rooms in this test are single rooms, and one is a double room. Each single
+	 *  room costs 100 (at the moment) and a double room cost 250 (at the moment). The
+	 *  expected sum of the bill (since no other charges are added yet) is 450.
 	 */
 	@Test
 	public void testCalculatePayment() {
 		
-		// Set up a booking and its corresponding bill so that tests can be performed.
+		// Set up a pending booking and add three rooms to it
 		Booking pendingBooking;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 6);
@@ -215,10 +216,12 @@ public class BookingManagerTests {
 		pendingBooking.getRoom().add(bookingManagement.getRoom().get(1));
 		pendingBooking.getRoom().add(bookingManagement.getRoom().get(4));
 		
-		// Check that correct rooms were added to booking so expected sum of bill is correct.
+		// Check that correct rooms were added to booking so expected sum of bill is correct
 		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRoom().get(0).getRoomType().getRoomTypeName());
 		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRoom().get(1).getRoomType().getRoomTypeName());
 		assertEquals(RoomTypeName.DOUBLE_ROOM, pendingBooking.getRoom().get(2).getRoomType().getRoomTypeName());
+		
+		// Confirm the booking so that a Bill is instantiated and associated to the booking
 		assertTrue(bookingManagement.confirmBooking(bookingID));
 		
 		// Calculate the sum of the bill
@@ -228,11 +231,15 @@ public class BookingManagerTests {
 	/**
 	 *  Test method for {@link Classes.impl.IFinanceImplImpl#payBill(int)}.
 	 *  
-	 *  Tests if the credit card is valid and if the payment of a bill is successful.
+	 *  First a credit card account is created which contains enough money for paying
+	 *  the bill. Then the three scenarios of too low balance on account, invalid card,
+	 *  and valid card connected to an account with a large enough balance is tested
+	 *  for the method payBill(...). Method payBill is expected to handle these
+	 *  scenarios by returning appropriate strings.
 	 */
 	@Test
 	public void testPayBill() {
-		// Set up of a credit card account for use when paying for the booking/room(s).
+		// Set up of a credit card account for use when paying for the booking/room(s)
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
 		String ccNumber = "01234567", ccv = "123", firstName = "Karl", lastName = "urban";
 		int expiryMonth = 10, expiryYear = 17;
@@ -245,9 +252,17 @@ public class BookingManagerTests {
 		assertEquals(2343.0, bankingAdmin.makeDeposit(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 2343.0), 2343.0);
 
 		Classes.impl.IFinanceImplImpl financeManagement = Classes.impl.IFinanceImplImpl.instantiateForTest();
+		
+		// Pay the bill using a credit card account with a balance greater than the bill cost
 		assertEquals("Payment was successful", financeManagement.payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 343.0));
+		
+		// Check the balance of the credit card account to see if correct amount was withdrawn
 		assertEquals(2000.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 2000.0);
+		
+		// Check if payBill returns correct String if balance on account is lower than the cost of the bill
 		assertEquals("Amount could not be withdrawn", financeManagement.payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 2343.0));
+		
+		// Check if payBill returns correct String if credit card is not valid
 		assertEquals("Credit Card is not valid", financeManagement.payBill("00234111", ccv, expiryMonth, expiryYear, firstName, lastName, 343.0));
 		
 		// Remove the credit card account from the banking component
