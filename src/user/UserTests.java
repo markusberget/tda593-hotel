@@ -75,7 +75,7 @@ public class UserTests {
 		String email = "karl.urban@gmail.com", ph = "0843322";
 		bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 		bookingManagement.confirmBooking(bookingID);
-		assertEquals(2, bookingManagement.getRoom().size());
+		assertEquals(5, bookingManagement.getRoom().size());
 		
 		// 1) Retrieve booking information using getBooking(bookingID).
 		Booking booking = bookingManagement.getBooking(bookingID);
@@ -202,8 +202,6 @@ public class UserTests {
 												break;
 			}
 		}
-
-		
 	}
 	
 	/**
