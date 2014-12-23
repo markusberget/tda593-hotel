@@ -554,8 +554,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @generated NOT
 	 */
 
+	@Override
 	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
-			RoomTypeName roomType, int maximumPrice) {
+			String roomType, int maximumPrice) {
 		EList<Room> rooms = this.getRoom();
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		for (Room r : rooms) {
@@ -948,10 +949,5 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		return super.eInvoke(operationID, arguments);
 	}
 
-	@Override
-	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
-			String roomType, int maximumPrice) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 } // IBookingManagementImplImpl
