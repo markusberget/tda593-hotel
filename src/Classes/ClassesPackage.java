@@ -638,22 +638,13 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT = 4;
 
 	/**
-	 * The operation id for the '<em>Add Cancelation Fee</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS = 5;
-
-	/**
 	 * The operation id for the '<em>Search Room</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = 6;
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = 5;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -662,7 +653,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 7;
+	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 6;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -671,7 +662,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 8;
+	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 7;
 
 	/**
 	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
@@ -680,7 +671,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 9;
+	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 8;
 
 	/**
 	 * The operation id for the '<em>Create Pending Booking</em>' operation.
@@ -689,7 +680,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 10;
+	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 9;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -698,7 +689,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 11;
+	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 10;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
@@ -707,7 +698,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 12;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -825,15 +816,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___CONFIRM_BOOKING__INT = IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT;
-
-	/**
-	 * The operation id for the '<em>Add Cancelation Fee</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___ADD_CANCELATION_FEE__CLASS = IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS;
 
 	/**
 	 * The operation id for the '<em>Search Room</em>' operation.
@@ -1915,16 +1897,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__ConfirmBooking__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#addCancelationFee(java.lang.Class) <em>Add Cancelation Fee</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Cancelation Fee</em>' operation.
-	 * @see Classes.IBookingManagement#addCancelationFee(java.lang.Class)
-	 * @generated
-	 */
-	EOperation getIBookingManagement__AddCancelationFee__Class();
-
-	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, java.lang.String, int) <em>Search Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2955,14 +2927,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT = eINSTANCE.getIBookingManagement__ConfirmBooking__int();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Cancelation Fee</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS = eINSTANCE.getIBookingManagement__AddCancelationFee__Class();
 
 		/**
 		 * The meta object literal for the '<em><b>Search Room</b></em>' operation.

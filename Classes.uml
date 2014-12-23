@@ -86,11 +86,6 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_Fb6xQHYfEeS6mLi5FsOguA" name="addCancelationFee">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_vsvwcHZdEeSiQcRa0VNXAQ" name="TODO">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EJavaClass"/>
-      </ownedParameter>
-    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_KIB7EHYfEeS6mLi5FsOguA" name="searchRoom">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_iALvQHZcEeSiQcRa0VNXAQ" name="checkIn">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
