@@ -3,6 +3,7 @@
 package Classes.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 
@@ -475,14 +476,23 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * Adds a cancellation fee if the booking is canceled less than
-	 * 24 hours before check-in date.
+	 * The customer must pay a cancellation fee if the booking is canceled
+	 * less than 24 hours before check-in date. The difference between the
+	 * current date and the check in date of the booking is used when
+	 * deciding if the customer should pay for the whole booking (cancellation
+	 * fee is currently the cost of the whole booking). Because a booking
+	 * cannot be canceled after a check in, the difference of the current time
+	 * and the check in time of the booking will not be negative.
 	 * 
-	 * @param bill		the charge (cancellation fee) is added to this bill
-	 * @return				true if charge is added, false if no charge is added
+	 * @param checkIn		the check-in date of the booking
+	 * @return					true if the difference between dates are less than
+	 * 									24 hours, otherwise false
 	 */
-	private boolean addCancellationFee(BillImpl bill) {
-		
+	private boolean addCancellationFee(Calendar checkIn) {
+		Calendar currentDate = Calendar.getInstance();
+		if ((checkIn.compareTo(currentDate)) < 86400000) {
+			return true;
+		}
 		return false;
 	}
 
@@ -538,13 +548,16 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * history list. The method is synchronized to avoid race conditions when
 	 * removing bookings (and searching for the correct booking)
 	 * 
-	 * NOTE: A cancelled booking should make the associated rooms available for
+	 * NOTE1: A cancelled booking should make the associated rooms available for
 	 * booking again which is not the case at the moment. This will be
 	 * implemented later.
+	 * 
+	 * NOTE2: This method will be rewritten.
 	 * 
 	 * @generated NOT
 	 */
 	public synchronized boolean cancelBooking(int bookingID) {
+		boolean success = false;
 		int listSize; // Save current size of list because concurrent activity
 									// may change sizes
 		listSize = pendingBookings.size();
@@ -557,7 +570,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
 				bookingHistory.add(pendingBookings.remove(i));
-				return true;
+				success = true;
 			}
 		}
 
@@ -565,10 +578,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		for (int i = 0; i < listSize; i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
 				bookingHistory.add(confirmedBookings.remove(i));
-				return true;
+				success = true;
 			}
 		}
-		return false;
+		// addCancellationFee();
+		return success;
 	}
 
 	/**
