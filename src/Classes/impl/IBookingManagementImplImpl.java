@@ -10,6 +10,7 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import Classes.Booking;
+import Classes.ChargeType;
 import Classes.ClassesPackage;
 import Classes.Customer;
 import Classes.IBookingManagementImpl;
@@ -456,7 +458,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					ChargeImpl charge = new ChargeImpl();
 					charge.setDate(new Date());
 					charge.setAmount(room.getRoomType().getPrice());
-					//charge.setChargeType(room.getRoomType().getRoomTypeName());
+					if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
+						charge.setChargeType(ChargeType.SINGLE_ROOM);
+					} else if (room.getRoomType().getRoomTypeName() == RoomTypeName.DOUBLE_ROOM) {
+						charge.setChargeType(ChargeType.DOUBLE_ROOM);
+					} else {
+						charge.setChargeType(ChargeType.FAMILY_SUITE);
+					}
 					bill.setChargeImpl(charge);
 				}
 				pendingBookings.get(i).setBill(bill);
