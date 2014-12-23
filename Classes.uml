@@ -518,6 +518,7 @@
     <ownedAttribute xmi:type="uml:Property" xmi:id="_VHzxEIRyEeSz38BH1WnIsA" name="date">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
     </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_0FzLYIqVEeS8o4yzl3IjCQ" name="chargeType" type="_rVJOUIn2EeSgKsQ-gK_oCw"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Association" xmi:id="_Ly3rsIHlEeS837TtIXY58g" name="pendingBooking" memberEnd="_Ly3rsYHlEeS837TtIXY58g _Ly3EoIHlEeS837TtIXY58g">
     <ownedEnd xmi:type="uml:Property" xmi:id="_Ly3rsYHlEeS837TtIXY58g" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_Ly3rsIHlEeS837TtIXY58g">
@@ -632,6 +633,8 @@
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_ygFyEIn2EeSgKsQ-gK_oCw" name="CancellationFee"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_6HCVUIn2EeSgKsQ-gK_oCw" name="Breakfast"/>
     <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FnW94In3EeSgKsQ-gK_oCw" name="SingleRoom"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hIVb0IqVEeS8o4yzl3IjCQ" name="DoubleRoom"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_imrpIIqVEeS8o4yzl3IjCQ" name="FamilySuite"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Interface" xmi:id="_pd2VsoHfEeSMdr2cPLX2Nw" name="CustomerProvides">
     <ownedOperation xmi:type="uml:Operation" xmi:id="_pd2Vs4HfEeSMdr2cPLX2Nw" name="makePayment">

@@ -46,7 +46,23 @@ public enum ChargeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	SINGLE_ROOM(2, "SingleRoom", "SingleRoom");
+	SINGLE_ROOM(2, "SingleRoom", "SingleRoom"), /**
+	 * The '<em><b>Double Room</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #DOUBLE_ROOM_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	DOUBLE_ROOM(3, "DoubleRoom", "DoubleRoom"), /**
+	 * The '<em><b>Family Suite</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #FAMILY_SUITE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	FAMILY_SUITE(4, "FamilySuite", "FamilySuite");
 
 	/**
 	 * The '<em><b>Cancellation Fee</b></em>' literal value.
@@ -94,6 +110,36 @@ public enum ChargeType implements Enumerator {
 	public static final int SINGLE_ROOM_VALUE = 2;
 
 	/**
+	 * The '<em><b>Double Room</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Double Room</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #DOUBLE_ROOM
+	 * @model name="DoubleRoom"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int DOUBLE_ROOM_VALUE = 3;
+
+	/**
+	 * The '<em><b>Family Suite</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Family Suite</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #FAMILY_SUITE
+	 * @model name="FamilySuite"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int FAMILY_SUITE_VALUE = 4;
+
+	/**
 	 * An array of all the '<em><b>Charge Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +150,8 @@ public enum ChargeType implements Enumerator {
 			CANCELLATION_FEE,
 			BREAKFAST,
 			SINGLE_ROOM,
+			DOUBLE_ROOM,
+			FAMILY_SUITE,
 		};
 
 	/**
@@ -157,6 +205,8 @@ public enum ChargeType implements Enumerator {
 			case CANCELLATION_FEE_VALUE: return CANCELLATION_FEE;
 			case BREAKFAST_VALUE: return BREAKFAST;
 			case SINGLE_ROOM_VALUE: return SINGLE_ROOM;
+			case DOUBLE_ROOM_VALUE: return DOUBLE_ROOM;
+			case FAMILY_SUITE_VALUE: return FAMILY_SUITE;
 		}
 		return null;
 	}

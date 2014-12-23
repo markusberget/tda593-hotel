@@ -1465,6 +1465,14 @@
           <element xmi:type="uml:EnumerationLiteral" href="Classes.uml#_FnW94In3EeSgKsQ-gK_oCw"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_FnaBMYn3EeSgKsQ-gK_oCw"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_hSQM0IqVEeS8o4yzl3IjCQ" type="3017">
+          <element xmi:type="uml:EnumerationLiteral" href="Classes.uml#_hIVb0IqVEeS8o4yzl3IjCQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_hSQM0YqVEeS8o4yzl3IjCQ"/>
+        </children>
+        <children xmi:type="notation:Shape" xmi:id="_imv6kIqVEeS8o4yzl3IjCQ" type="3017">
+          <element xmi:type="uml:EnumerationLiteral" href="Classes.uml#_imrpIIqVEeS8o4yzl3IjCQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_imv6kYqVEeS8o4yzl3IjCQ"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_rVQjEon2EeSgKsQ-gK_oCw"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_rVQjE4n2EeSgKsQ-gK_oCw"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_rVQjFIn2EeSgKsQ-gK_oCw"/>

@@ -259,8 +259,17 @@
         lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="date" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="chargeType" ordered="false"
+        lowerBound="1" eType="#//ChargeType"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" lowerBound="1"
         eType="#//Bill" eOpposite="#//Bill/charge"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="ChargeType">
+    <eLiterals name="CancellationFee"/>
+    <eLiterals name="Breakfast" value="1"/>
+    <eLiterals name="SingleRoom" value="2"/>
+    <eLiterals name="DoubleRoom" value="3"/>
+    <eLiterals name="FamilySuite" value="4"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AdministratorProvides" abstract="true"
       interface="true">
@@ -297,10 +306,5 @@
       <eParameters name="firstName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
       <eParameters name="lastName" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     </eOperations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EEnum" name="ChargeType">
-    <eLiterals name="CancellationFee"/>
-    <eLiterals name="Breakfast" value="1"/>
-    <eLiterals name="SingleRoom" value="2"/>
   </eClassifiers>
 </ecore:EPackage>

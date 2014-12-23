@@ -4,6 +4,7 @@ package Classes.impl;
 
 import Classes.Bill;
 import Classes.Charge;
+import Classes.ChargeType;
 import Classes.ClassesPackage;
 
 import java.util.Date;
@@ -25,6 +26,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <ul>
  *   <li>{@link Classes.impl.ChargeImpl#getAmount <em>Amount</em>}</li>
  *   <li>{@link Classes.impl.ChargeImpl#getDate <em>Date</em>}</li>
+ *   <li>{@link Classes.impl.ChargeImpl#getChargeType <em>Charge Type</em>}</li>
  *   <li>{@link Classes.impl.ChargeImpl#getBill <em>Bill</em>}</li>
  * </ul>
  * </p>
@@ -68,6 +70,24 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 	 * @ordered
 	 */
 	protected Date date = DATE_EDEFAULT;
+	/**
+	 * The default value of the '{@link #getChargeType() <em>Charge Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChargeType()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final ChargeType CHARGE_TYPE_EDEFAULT = ChargeType.CANCELLATION_FEE;
+	/**
+	 * The cached value of the '{@link #getChargeType() <em>Charge Type</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getChargeType()
+	 * @generated
+	 * @ordered
+	 */
+	protected ChargeType chargeType = CHARGE_TYPE_EDEFAULT;
 	/**
 	 * The cached value of the '{@link #getBill() <em>Bill</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -137,6 +157,27 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 		date = newDate;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.CHARGE__DATE, oldDate, date));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public ChargeType getChargeType() {
+		return chargeType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setChargeType(ChargeType newChargeType) {
+		ChargeType oldChargeType = chargeType;
+		chargeType = newChargeType == null ? CHARGE_TYPE_EDEFAULT : newChargeType;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.CHARGE__CHARGE_TYPE, oldChargeType, chargeType));
 	}
 
 	/**
@@ -241,6 +282,8 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 				return getAmount();
 			case ClassesPackage.CHARGE__DATE:
 				return getDate();
+			case ClassesPackage.CHARGE__CHARGE_TYPE:
+				return getChargeType();
 			case ClassesPackage.CHARGE__BILL:
 				if (resolve) return getBill();
 				return basicGetBill();
@@ -261,6 +304,9 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 				return;
 			case ClassesPackage.CHARGE__DATE:
 				setDate((Date)newValue);
+				return;
+			case ClassesPackage.CHARGE__CHARGE_TYPE:
+				setChargeType((ChargeType)newValue);
 				return;
 			case ClassesPackage.CHARGE__BILL:
 				setBill((Bill)newValue);
@@ -283,6 +329,9 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 			case ClassesPackage.CHARGE__DATE:
 				setDate(DATE_EDEFAULT);
 				return;
+			case ClassesPackage.CHARGE__CHARGE_TYPE:
+				setChargeType(CHARGE_TYPE_EDEFAULT);
+				return;
 			case ClassesPackage.CHARGE__BILL:
 				setBill((Bill)null);
 				return;
@@ -302,6 +351,8 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 				return amount != AMOUNT_EDEFAULT;
 			case ClassesPackage.CHARGE__DATE:
 				return DATE_EDEFAULT == null ? date != null : !DATE_EDEFAULT.equals(date);
+			case ClassesPackage.CHARGE__CHARGE_TYPE:
+				return chargeType != CHARGE_TYPE_EDEFAULT;
 			case ClassesPackage.CHARGE__BILL:
 				return bill != null;
 		}
@@ -322,6 +373,8 @@ public class ChargeImpl extends MinimalEObjectImpl.Container implements Charge {
 		result.append(amount);
 		result.append(", date: ");
 		result.append(date);
+		result.append(", chargeType: ");
+		result.append(chargeType);
 		result.append(')');
 		return result.toString();
 	}

@@ -1515,13 +1515,22 @@ public interface ClassesPackage extends EPackage {
 	int CHARGE__DATE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Charge Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE__CHARGE_TYPE = 2;
+
+	/**
 	 * The feature id for the '<em><b>Bill</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHARGE__BILL = 2;
+	int CHARGE__BILL = 3;
 
 	/**
 	 * The number of structural features of the '<em>Charge</em>' class.
@@ -1530,7 +1539,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHARGE_FEATURE_COUNT = 3;
+	int CHARGE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Charge</em>' class.
@@ -2068,6 +2077,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCharge_Date();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.Charge#getChargeType <em>Charge Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Charge Type</em>'.
+	 * @see Classes.Charge#getChargeType()
+	 * @see #getCharge()
+	 * @generated
+	 */
+	EAttribute getCharge_ChargeType();
 
 	/**
 	 * Returns the meta object for the reference '{@link Classes.Charge#getBill <em>Bill</em>}'.
@@ -3057,6 +3077,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CHARGE__DATE = eINSTANCE.getCharge_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Charge Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHARGE__CHARGE_TYPE = eINSTANCE.getCharge_ChargeType();
 
 		/**
 		 * The meta object literal for the '<em><b>Bill</b></em>' reference feature.

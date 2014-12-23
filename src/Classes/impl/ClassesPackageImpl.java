@@ -623,8 +623,17 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCharge_ChargeType() {
+		return (EAttribute)chargeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getCharge_Bill() {
-		return (EReference)chargeEClass.getEStructuralFeatures().get(2);
+		return (EReference)chargeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -1275,6 +1284,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		chargeEClass = createEClass(CHARGE);
 		createEAttribute(chargeEClass, CHARGE__AMOUNT);
 		createEAttribute(chargeEClass, CHARGE__DATE);
+		createEAttribute(chargeEClass, CHARGE__CHARGE_TYPE);
 		createEReference(chargeEClass, CHARGE__BILL);
 
 		administratorProvidesEClass = createEClass(ADMINISTRATOR_PROVIDES);
@@ -1531,6 +1541,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEClass(chargeEClass, Charge.class, "Charge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCharge_Amount(), ecorePackage.getEInt(), "amount", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCharge_Date(), ecorePackage.getEDate(), "date", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCharge_ChargeType(), this.getChargeType(), "chargeType", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCharge_Bill(), this.getBill(), this.getBill_Charge(), "bill", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(administratorProvidesEClass, AdministratorProvides.class, "AdministratorProvides", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1578,6 +1589,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEEnumLiteral(chargeTypeEEnum, ChargeType.CANCELLATION_FEE);
 		addEEnumLiteral(chargeTypeEEnum, ChargeType.BREAKFAST);
 		addEEnumLiteral(chargeTypeEEnum, ChargeType.SINGLE_ROOM);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.DOUBLE_ROOM);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.FAMILY_SUITE);
 
 		// Create resource
 		createResource(eNS_URI);
