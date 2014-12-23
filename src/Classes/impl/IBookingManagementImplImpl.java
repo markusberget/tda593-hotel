@@ -147,11 +147,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		standardRoomType.setFeatures("View");
 		
 		RoomType doubleRoomType = new RoomTypeImpl();
-		standardRoomType.setRoomTypeName(RoomTypeName.DOUBLE_ROOM);
-		standardRoomType.setDescription("A double room");
-		standardRoomType.setNumberOfGuests(2);
-		standardRoomType.setPrice(250);
-		standardRoomType.setFeatures(null);
+		doubleRoomType.setRoomTypeName(RoomTypeName.DOUBLE_ROOM);
+		doubleRoomType.setDescription("A double room");
+		doubleRoomType.setNumberOfGuests(2);
+		doubleRoomType.setPrice(250);
+		doubleRoomType.setFeatures(null);
 
 		Room room1 = new RoomImpl();
 		room1.setRoomNumber(1);
