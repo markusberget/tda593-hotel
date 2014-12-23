@@ -15,6 +15,7 @@ import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomType;
+import Classes.RoomTypeName;
 import Classes.StaffMember;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
@@ -92,6 +93,8 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 		switch (eDataType.getClassifierID()) {
 			case ClassesPackage.ROOM_STATUS:
 				return createRoomStatusFromString(eDataType, initialValue);
+			case ClassesPackage.ROOM_TYPE_NAME:
+				return createRoomTypeNameFromString(eDataType, initialValue);
 			case ClassesPackage.CHARGE_TYPE:
 				return createChargeTypeFromString(eDataType, initialValue);
 			default:
@@ -109,6 +112,8 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 		switch (eDataType.getClassifierID()) {
 			case ClassesPackage.ROOM_STATUS:
 				return convertRoomStatusToString(eDataType, instanceValue);
+			case ClassesPackage.ROOM_TYPE_NAME:
+				return convertRoomTypeNameToString(eDataType, instanceValue);
 			case ClassesPackage.CHARGE_TYPE:
 				return convertChargeTypeToString(eDataType, instanceValue);
 			default:
@@ -203,6 +208,26 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	 * @generated
 	 */
 	public String convertRoomStatusToString(EDataType eDataType, Object instanceValue) {
+		return instanceValue == null ? null : instanceValue.toString();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomTypeName createRoomTypeNameFromString(EDataType eDataType, String initialValue) {
+		RoomTypeName result = RoomTypeName.get(initialValue);
+		if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+		return result;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String convertRoomTypeNameToString(EDataType eDataType, Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 

@@ -13,7 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.RoomType#getName <em>Name</em>}</li>
+ *   <li>{@link Classes.RoomType#getRoomTypeName <em>Room Type Name</em>}</li>
  *   <li>{@link Classes.RoomType#getFeatures <em>Features</em>}</li>
  *   <li>{@link Classes.RoomType#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link Classes.RoomType#getDescription <em>Description</em>}</li>
@@ -28,30 +28,33 @@ import org.eclipse.emf.ecore.EObject;
  */
 public interface RoomType extends EObject {
 	/**
-	 * Returns the value of the '<em><b>Name</b></em>' attribute.
+	 * Returns the value of the '<em><b>Room Type Name</b></em>' attribute.
+	 * The literals are from the enumeration {@link Classes.RoomTypeName}.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Name</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Room Type Name</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Name</em>' attribute.
-	 * @see #setName(String)
-	 * @see Classes.ClassesPackage#getRoomType_Name()
-	 * @model dataType="org.eclipse.uml2.types.String" required="true" ordered="false"
+	 * @return the value of the '<em>Room Type Name</em>' attribute.
+	 * @see Classes.RoomTypeName
+	 * @see #setRoomTypeName(RoomTypeName)
+	 * @see Classes.ClassesPackage#getRoomType_RoomTypeName()
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
-	String getName();
+	RoomTypeName getRoomTypeName();
 
 	/**
-	 * Sets the value of the '{@link Classes.RoomType#getName <em>Name</em>}' attribute.
+	 * Sets the value of the '{@link Classes.RoomType#getRoomTypeName <em>Room Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Name</em>' attribute.
-	 * @see #getName()
+	 * @param value the new value of the '<em>Room Type Name</em>' attribute.
+	 * @see Classes.RoomTypeName
+	 * @see #getRoomTypeName()
 	 * @generated
 	 */
-	void setName(String value);
+	void setRoomTypeName(RoomTypeName value);
 
 	/**
 	 * Returns the value of the '<em><b>Features</b></em>' attribute.

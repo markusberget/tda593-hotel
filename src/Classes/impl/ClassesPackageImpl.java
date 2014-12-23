@@ -21,6 +21,7 @@ import Classes.IPerson;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomType;
+import Classes.RoomTypeName;
 import Classes.StaffMember;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -101,6 +102,13 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * @generated
 	 */
 	private EEnum roomStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum roomTypeNameEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -290,7 +298,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomType_Name() {
+	public EAttribute getRoomType_RoomTypeName() {
 		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -479,7 +487,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__SearchRoom__Date_Date_int_String_int() {
+	public EOperation getIBookingManagement__SearchRoom__Date_Date_int_RoomTypeName_int() {
 		return iBookingManagementEClass.getEOperations().get(6);
 	}
 
@@ -769,6 +777,15 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 */
 	public EEnum getRoomStatus() {
 		return roomStatusEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getRoomTypeName() {
+		return roomTypeNameEEnum;
 	}
 
 	/**
@@ -1184,7 +1201,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEReference(roomEClass, ROOM__BOOKING);
 
 		roomTypeEClass = createEClass(ROOM_TYPE);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__ROOM_TYPE_NAME);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__FEATURES);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__NUMBER_OF_GUESTS);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__DESCRIPTION);
@@ -1270,7 +1287,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT);
+		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CHECK_IN__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING);
@@ -1295,6 +1312,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		// Create enums
 		roomStatusEEnum = createEEnum(ROOM_STATUS);
+		roomTypeNameEEnum = createEEnum(ROOM_TYPE_NAME);
 		chargeTypeEEnum = createEEnum(CHARGE_TYPE);
 	}
 
@@ -1343,7 +1361,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEReference(getRoom_Booking(), this.getBooking(), this.getBooking_Room(), "booking", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoomType_Name(), theTypesPackage.getString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_RoomTypeName(), this.getRoomTypeName(), "roomTypeName", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Features(), theTypesPackage.getString(), "features", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_NumberOfGuests(), theTypesPackage.getInteger(), "numberOfGuests", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Description(), theTypesPackage.getString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1504,11 +1522,11 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIBookingManagement__AddCancelationFee__Class(), null, "addCancelationFee", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEJavaClass(), "TODO", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIBookingManagement__SearchRoom__Date_Date_int_String_int(), ecorePackage.getEEList(), "searchRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIBookingManagement__SearchRoom__Date_Date_int_RoomTypeName_int(), ecorePackage.getEEList(), "searchRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "numberOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, this.getRoomTypeName(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "maximumPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIBookingManagement__CancelBooking__int(), ecorePackage.getEBoolean(), "cancelBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1584,6 +1602,11 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.OCCUPIED);
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.AVAILABLE);
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.CLEANING);
+
+		initEEnum(roomTypeNameEEnum, RoomTypeName.class, "RoomTypeName");
+		addEEnumLiteral(roomTypeNameEEnum, RoomTypeName.SINGLE_ROOM);
+		addEEnumLiteral(roomTypeNameEEnum, RoomTypeName.DOUBLE_ROOM);
+		addEEnumLiteral(roomTypeNameEEnum, RoomTypeName.FAMILY_SUITE);
 
 		initEEnum(chargeTypeEEnum, ChargeType.class, "ChargeType");
 		addEEnumLiteral(chargeTypeEEnum, ChargeType.CANCELLATION_FEE);

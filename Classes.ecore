@@ -17,8 +17,8 @@
     <eLiterals name="Cleaning" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomType">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="name" ordered="false" lowerBound="1"
-        eType="ecore:EDataType types.ecore#//String"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomTypeName" ordered="false"
+        lowerBound="1" eType="#//RoomTypeName"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="features" ordered="false"
         lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="numberOfGuests" ordered="false"
@@ -29,6 +29,11 @@
         lowerBound="1" eType="ecore:EDataType types.ecore#//Integer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
         eType="#//Room" eOpposite="#//Room/roomType"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RoomTypeName">
+    <eLiterals name="SingleRoom"/>
+    <eLiterals name="DoubleRoom" value="1"/>
+    <eLiterals name="FamilySuite" value="2"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Booking">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="checkIn" ordered="false"
@@ -220,7 +225,7 @@
       <eParameters name="checkIn" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eParameters name="checkOut" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eParameters name="numberOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-      <eParameters name="roomType" ordered="false" lowerBound="1" eType="ecore:EDataType types.ecore#//String"/>
+      <eParameters name="roomType" ordered="false" lowerBound="1" eType="#//RoomTypeName"/>
       <eParameters name="maximumPrice" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eOperations>
     <eOperations name="cancelBooking" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

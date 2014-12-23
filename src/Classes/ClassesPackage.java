@@ -133,13 +133,13 @@ public interface ClassesPackage extends EPackage {
 	int ROOM_TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Room Type Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__NAME = 0;
+	int ROOM_TYPE__ROOM_TYPE_NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' attribute.
@@ -653,7 +653,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = 6;
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT = 6;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -842,7 +842,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT;
+	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -1617,6 +1617,16 @@ public interface ClassesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link Classes.RoomTypeName <em>Room Type Name</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.RoomTypeName
+	 * @see Classes.impl.ClassesPackageImpl#getRoomTypeName()
+	 * @generated
+	 */
+	int ROOM_TYPE_NAME = 17;
+
+	/**
 	 * The meta object id for the '{@link Classes.ChargeType <em>Charge Type</em>}' enum.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1624,7 +1634,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getChargeType()
 	 * @generated
 	 */
-	int CHARGE_TYPE = 17;
+	int CHARGE_TYPE = 18;
 
 
 	/**
@@ -1692,15 +1702,15 @@ public interface ClassesPackage extends EPackage {
 	EClass getRoomType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Classes.RoomType#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link Classes.RoomType#getRoomTypeName <em>Room Type Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see Classes.RoomType#getName()
+	 * @return the meta object for the attribute '<em>Room Type Name</em>'.
+	 * @see Classes.RoomType#getRoomTypeName()
 	 * @see #getRoomType()
 	 * @generated
 	 */
-	EAttribute getRoomType_Name();
+	EAttribute getRoomType_RoomTypeName();
 
 	/**
 	 * Returns the meta object for the attribute '{@link Classes.RoomType#getFeatures <em>Features</em>}'.
@@ -1915,14 +1925,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__AddCancelationFee__Class();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, java.lang.String, int) <em>Search Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, Classes.RoomTypeName, int) <em>Search Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Search Room</em>' operation.
-	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, java.lang.String, int)
+	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, Classes.RoomTypeName, int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__SearchRoom__Date_Date_int_String_int();
+	EOperation getIBookingManagement__SearchRoom__Date_Date_int_RoomTypeName_int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#cancelBooking(int) <em>Cancel Booking</em>}' operation.
@@ -2249,6 +2259,16 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getRoomStatus();
+
+	/**
+	 * Returns the meta object for enum '{@link Classes.RoomTypeName <em>Room Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Room Type Name</em>'.
+	 * @see Classes.RoomTypeName
+	 * @generated
+	 */
+	EEnum getRoomTypeName();
 
 	/**
 	 * Returns the meta object for enum '{@link Classes.ChargeType <em>Charge Type</em>}'.
@@ -2773,12 +2793,12 @@ public interface ClassesPackage extends EPackage {
 		EClass ROOM_TYPE = eINSTANCE.getRoomType();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Room Type Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROOM_TYPE__NAME = eINSTANCE.getRoomType_Name();
+		EAttribute ROOM_TYPE__ROOM_TYPE_NAME = eINSTANCE.getRoomType_RoomTypeName();
 
 		/**
 		 * The meta object literal for the '<em><b>Features</b></em>' attribute feature.
@@ -2950,7 +2970,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_String_int();
+		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_RoomTypeName_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.
@@ -3217,6 +3237,16 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ROOM_STATUS = eINSTANCE.getRoomStatus();
+
+		/**
+		 * The meta object literal for the '{@link Classes.RoomTypeName <em>Room Type Name</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.RoomTypeName
+		 * @see Classes.impl.ClassesPackageImpl#getRoomTypeName()
+		 * @generated
+		 */
+		EEnum ROOM_TYPE_NAME = eINSTANCE.getRoomTypeName();
 
 		/**
 		 * The meta object literal for the '{@link Classes.ChargeType <em>Charge Type</em>}' enum.

@@ -101,9 +101,7 @@
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_WECQ4HZdEeSiQcRa0VNXAQ" name="numberOfGuests">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nKmJMHZdEeSiQcRa0VNXAQ" name="roomType">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-      </ownedParameter>
+      <ownedParameter xmi:type="uml:Parameter" xmi:id="_nKmJMHZdEeSiQcRa0VNXAQ" name="roomType" type="_cRAEAIqWEeS8o4yzl3IjCQ"/>
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_rcgDQHZdEeSiQcRa0VNXAQ" name="maximumPrice">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
       </ownedParameter>
@@ -437,9 +435,7 @@
     <interfaceRealization xmi:type="uml:InterfaceRealization" xmi:id="_jOCKkICxEeSsA-OdcGH-zg" client="_SwfqYHTaEeSOC7DG65-e3w" supplier="_HH40sICwEeSsA-OdcGH-zg" contract="_HH40sICwEeSsA-OdcGH-zg"/>
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_c1EbwHTcEeSOC7DG65-e3w" name="RoomType">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_fmASUHTcEeSOC7DG65-e3w" name="name">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_fmASUHTcEeSOC7DG65-e3w" name="roomTypeName" type="_cRAEAIqWEeS8o4yzl3IjCQ"/>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_jeHMUHTcEeSOC7DG65-e3w" name="features">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
     </ownedAttribute>
@@ -693,5 +689,10 @@
       <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_HkcV4oR2EeSz38BH1WnIsA" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_HkcV44R2EeSz38BH1WnIsA" value="1"/>
     </ownedEnd>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Enumeration" xmi:id="_cRAEAIqWEeS8o4yzl3IjCQ" name="RoomTypeName">
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_fs_pwIqWEeS8o4yzl3IjCQ" name="SingleRoom"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_g3OBMIqWEeS8o4yzl3IjCQ" name="DoubleRoom"/>
+    <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jKYWoIqWEeS8o4yzl3IjCQ" name="FamilySuite"/>
   </packagedElement>
 </uml:Package>
