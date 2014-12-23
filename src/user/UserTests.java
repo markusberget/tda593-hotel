@@ -94,14 +94,14 @@ public class UserTests {
 		// Now the booking to be "checked out" exists in the system, and the real
 		// check out process starts here!
 		
-		// 2) Choose room(s) to checkout from.
-		// 2a) A precondition for doing a check out is that a check in has been done, this must be checked first.
+		// 2) Choose room(s) to checkout from
+		// 2a) A precondition for doing a check out is that a check in has been done, this must be checked first
 		
 		// Calculate the sum of the bill
 		double checkOutSum = bookingManagement.getIFinanceImpl().calculatePayment(bookingID);
 		assertEquals(450.0, checkOutSum, 450.0);
 
-		// 3) Perform the payment part (see the payment use case/sequence diagram for flow).
+		// 3) Perform the payment part (see the payment use case/sequence diagram for flow)
 		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
 		assertEquals(1893.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 1893.0);
 		
@@ -143,10 +143,12 @@ public class UserTests {
 	}
 	
 	/**
-	 * Tests if two users (having a processor with only two cores in mind) can book at
-	 * the same time without experiencing race conditions etc. Uncomment user3 and user4
-	 * to let 4 users book at the same time. The single bookingManagement object represents
-	 * the system, and each user interacts with the same object (system).
+	 * Tests if four users can book at the same time without experiencing race
+	 * conditions etc. (Depends on how many processors and cores are used on the
+	 * testing system, but it is common that processors have at least two cores
+	 * these days so at least two threads will run concurrently at any instance
+	 * of time). The single bookingManagement object represents the system, and
+	 * each user interacts with the same object (system).
 	 */
 	@Test
 	public void test_valid_FourUsersBookingConcurrently() {
@@ -184,8 +186,11 @@ public class UserTests {
 			e.printStackTrace();
 		}
 		
+		// Check if the bookings ended up in the right location
 		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(4, bookingManagement.getConfirmedBookings().size());
+		
+		// Check that the bookingIDs are unique
 		int testBookingID1 = bookingManagement.getBooking(0).getBookingID();
 		int testBookingID2 = bookingManagement.getBooking(1).getBookingID();
 		int testBookingID3 = bookingManagement.getBooking(2).getBookingID();
@@ -224,7 +229,7 @@ public class UserTests {
 	
 	/**
 	 * This inner class is used for simulating users that perform bookings
-	 * at the same time.
+	 * concurrently.
 	 *
 	 */
 	class User implements Runnable {
