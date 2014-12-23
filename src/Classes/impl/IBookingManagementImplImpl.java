@@ -5,12 +5,10 @@ package Classes.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Collection;
 import java.util.Date;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
-import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
@@ -18,7 +16,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import Classes.Booking;
 import Classes.ChargeType;
 import Classes.ClassesPackage;
@@ -490,13 +487,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests, RoomTypeName roomType, int maximumPrice) {
+	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests, String roomType, int maximumPrice) {
 		EList<Room> rooms = this.getRoom();
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		for (Room r : rooms) {
 
 			if (numberOfGuests <= (r.getRoomType().getNumberOfGuests())
-					&& maximumPrice >= r.getRoomType().getPrice()  && roomType == (r.getRoomType().getRoomTypeName())) {
+					&& maximumPrice >= r.getRoomType().getPrice()  && roomType == (r.getRoomType().getRoomTypeName()).toString()) {
 				searchResult.add(r.getRoomNumber());
 			}
 
@@ -819,8 +816,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CANCELATION_FEE__CLASS:
 				addCancelationFee((Class)arguments.get(0));
 				return null;
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_ROOMTYPENAME_INT:
-				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2), (RoomTypeName)arguments.get(3), (Integer)arguments.get(4));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_STRING_INT:
+				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2), (String)arguments.get(3), (Integer)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT:
 				return cancelBooking((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT:
