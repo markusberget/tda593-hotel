@@ -7,10 +7,12 @@ import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.fail;
 
+import java.awt.List;
 import java.util.Date;
 
 import javax.xml.soap.SOAPException;
 
+import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -19,6 +21,10 @@ import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.RoomStatus;
 import Classes.RoomTypeName;
+<<<<<<< HEAD
+import Classes.impl.IFinanceImplImpl;
+=======
+>>>>>>> 48da637b538ea4c1bf2d260f8a2f3452830e05fb
 
 /**
  * This class contains unit tests for the BookingManager interface.
@@ -98,7 +104,15 @@ public class BookingManagerTests {
 	 */
 	@Test
 	public void testSearchRoom() {
-		fail("Not yet implemented");
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		Date checkIn = new Date(2016,02,10);
+		Date checkOut = new Date(2015,02,15);
+		int numberOfGuests = 1;
+		RoomTypeName roomType = RoomTypeName.SINGLE_ROOM;
+		int maximumPrice = 30000;
+		EList <Integer> roomIDs = bookingManagement.searchRoom(checkIn, checkOut,numberOfGuests,roomType,maximumPrice);
+		assertTrue(2<=bookingManagement.getRoomByID(roomIDs.get(0)).getRoomType().getNumberOfGuests());
+		
 	}
 
 	/**
