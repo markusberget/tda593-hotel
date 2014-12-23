@@ -203,6 +203,8 @@ public class BookingManagerTests {
 		pendingBooking.getRoom().add(bookingManagement.getRoom().get(0));
 		pendingBooking.getRoom().add(bookingManagement.getRoom().get(1));
 		pendingBooking.getRoom().add(bookingManagement.getRoom().get(4));
+		
+		// Check that correct rooms were added to booking so expected sum of bill is correct.
 		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRoom().get(0).getRoomType().getRoomTypeName());
 		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRoom().get(1).getRoomType().getRoomTypeName());
 		assertEquals(RoomTypeName.DOUBLE_ROOM, pendingBooking.getRoom().get(2).getRoomType().getRoomTypeName());
