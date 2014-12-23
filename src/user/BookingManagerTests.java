@@ -2,10 +2,12 @@ package user;
 
 import static org.junit.Assert.*;
 
+import java.awt.List;
 import java.util.Date;
 
 import javax.xml.soap.SOAPException;
 
+import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -13,6 +15,7 @@ import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
 import Classes.RoomStatus;
+import Classes.RoomTypeName;
 import Classes.impl.IFinanceImplImpl;
 
 /**
@@ -93,7 +96,15 @@ public class BookingManagerTests {
 	 */
 	@Test
 	public void testSearchRoom() {
-		fail("Not yet implemented");
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		Date checkIn = new Date(2016,02,10);
+		Date checkOut = new Date(2015,02,15);
+		int numberOfGuests = 1;
+		RoomTypeName roomType = RoomTypeName.SINGLE_ROOM;
+		int maximumPrice = 30000;
+		EList <Integer> roomIDs = bookingManagement.searchRoom(checkIn, checkOut,numberOfGuests,roomType,maximumPrice);
+		assertTrue(2<=bookingManagement.getRoomByID(roomIDs.get(0)).getRoomType().getNumberOfGuests());
+		
 	}
 
 	/**
