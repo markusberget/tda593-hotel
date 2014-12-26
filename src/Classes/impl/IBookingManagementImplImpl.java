@@ -3,10 +3,12 @@
 package Classes.impl;
 
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -18,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.Customer;
@@ -493,6 +496,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container imp
 	 * @generated NOT
 	 */
 	public synchronized int createPendingBooking(Date checkIn, Date checkOut, int guestCount) {
+		Date current = Calendar.getInstance().getTime();
+		//Check so the checkIn and checkOut times are valid
+		if (current.after(checkIn) || current.after(checkOut) || checkOut.before(checkIn)) {
+			return -1;
+		}
 		Customer customer = new CustomerImpl();
 		Booking booking = new BookingImpl();
 		booking.setCustomer(customer);

@@ -1,8 +1,6 @@
 package user;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
+import static org.junit.Assert.*;
 
 import java.util.Calendar;
 import java.util.Date;
@@ -127,6 +125,27 @@ public class UserTests {
 		bookingManagement.addCustomerInformationToBooking(bookingID, "John", "Doe", "john@doe.se", "0123-2131312");
 		
 		assertTrue(bookingManagement.confirmBooking(bookingID));
+	}
+	
+	/**
+	 * Test of invalid booking case
+	 */
+	
+	@Test
+	public void test_invalid_booking(){
+		IBookingManagementImplImpl bookingManagement = IBookingManagementImplImpl.instantiateForTest();
+		
+		Calendar cal = Calendar.getInstance();
+	
+		Date checkIn = cal.getTime();
+		cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) - 2);
+		Date checkOut = cal.getTime();
+	
+		int guestCount = 1;
+
+		int bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, guestCount);
+		
+		assertEquals(-1, bookingID);
 	}
 	
 	/**
