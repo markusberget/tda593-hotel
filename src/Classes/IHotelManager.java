@@ -53,7 +53,7 @@ public interface IHotelManager extends EObject {
 	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
 	 * @generated
 	 */
-	boolean isStaffMemberLoggedIn(String username);
+	Boolean isStaffMemberLoggedIn(String username);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -61,7 +61,7 @@ public interface IHotelManager extends EObject {
 	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
 	 * @generated
 	 */
-	boolean isStaffMemberAdmin(String username);
+	Boolean isStaffMemberAdmin(String username);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,13 +118,5 @@ public interface IHotelManager extends EObject {
 	 * @generated
 	 */
 	boolean logout(String username);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" usernameRequired="true" usernameOrdered="false"
-	 * @generated
-	 */
-	boolean isExistingStaffMember(String username);
 
 } // IHotelManager

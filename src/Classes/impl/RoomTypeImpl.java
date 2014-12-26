@@ -6,6 +6,7 @@ import Classes.ClassesPackage;
 import Classes.Room;
 import Classes.RoomType;
 
+import Classes.RoomTypeName;
 import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
 
@@ -26,7 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.impl.RoomTypeImpl#getName <em>Name</em>}</li>
+ *   <li>{@link Classes.impl.RoomTypeImpl#getRoomTypeName <em>Room Type Name</em>}</li>
  *   <li>{@link Classes.impl.RoomTypeImpl#getFeatures <em>Features</em>}</li>
  *   <li>{@link Classes.impl.RoomTypeImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link Classes.impl.RoomTypeImpl#getDescription <em>Description</em>}</li>
@@ -39,24 +40,24 @@ import org.eclipse.emf.ecore.util.InternalEList;
  */
 public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomType {
 	/**
-	 * The default value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The default value of the '{@link #getRoomTypeName() <em>Room Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getRoomTypeName()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final String NAME_EDEFAULT = null;
+	protected static final RoomTypeName ROOM_TYPE_NAME_EDEFAULT = RoomTypeName.SINGLE_ROOM;
 
 	/**
-	 * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
+	 * The cached value of the '{@link #getRoomTypeName() <em>Room Type Name</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getName()
+	 * @see #getRoomTypeName()
 	 * @generated
 	 * @ordered
 	 */
-	protected String name = NAME_EDEFAULT;
+	protected RoomTypeName roomTypeName = ROOM_TYPE_NAME_EDEFAULT;
 
 	/**
 	 * The default value of the '{@link #getFeatures() <em>Features</em>}' attribute.
@@ -172,8 +173,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getName() {
-		return name;
+	public RoomTypeName getRoomTypeName() {
+		return roomTypeName;
 	}
 
 	/**
@@ -181,11 +182,11 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setName(String newName) {
-		String oldName = name;
-		name = newName;
+	public void setRoomTypeName(RoomTypeName newRoomTypeName) {
+		RoomTypeName oldRoomTypeName = roomTypeName;
+		roomTypeName = newRoomTypeName == null ? ROOM_TYPE_NAME_EDEFAULT : newRoomTypeName;
 		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM_TYPE__NAME, oldName, name));
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM_TYPE__ROOM_TYPE_NAME, oldRoomTypeName, roomTypeName));
 	}
 
 	/**
@@ -321,8 +322,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClassesPackage.ROOM_TYPE__NAME:
-				return getName();
+			case ClassesPackage.ROOM_TYPE__ROOM_TYPE_NAME:
+				return getRoomTypeName();
 			case ClassesPackage.ROOM_TYPE__FEATURES:
 				return getFeatures();
 			case ClassesPackage.ROOM_TYPE__NUMBER_OF_GUESTS:
@@ -346,8 +347,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassesPackage.ROOM_TYPE__NAME:
-				setName((String)newValue);
+			case ClassesPackage.ROOM_TYPE__ROOM_TYPE_NAME:
+				setRoomTypeName((RoomTypeName)newValue);
 				return;
 			case ClassesPackage.ROOM_TYPE__FEATURES:
 				setFeatures((String)newValue);
@@ -377,8 +378,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.ROOM_TYPE__NAME:
-				setName(NAME_EDEFAULT);
+			case ClassesPackage.ROOM_TYPE__ROOM_TYPE_NAME:
+				setRoomTypeName(ROOM_TYPE_NAME_EDEFAULT);
 				return;
 			case ClassesPackage.ROOM_TYPE__FEATURES:
 				setFeatures(FEATURES_EDEFAULT);
@@ -407,8 +408,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.ROOM_TYPE__NAME:
-				return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+			case ClassesPackage.ROOM_TYPE__ROOM_TYPE_NAME:
+				return roomTypeName != ROOM_TYPE_NAME_EDEFAULT;
 			case ClassesPackage.ROOM_TYPE__FEATURES:
 				return FEATURES_EDEFAULT == null ? features != null : !FEATURES_EDEFAULT.equals(features);
 			case ClassesPackage.ROOM_TYPE__NUMBER_OF_GUESTS:
@@ -433,8 +434,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 		if (eIsProxy()) return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (name: ");
-		result.append(name);
+		result.append(" (roomTypeName: ");
+		result.append(roomTypeName);
 		result.append(", features: ");
 		result.append(features);
 		result.append(", numberOfGuests: ");

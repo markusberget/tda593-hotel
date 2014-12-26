@@ -18,6 +18,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link Classes.IBookingManagementImpl#getPendingBookings <em>Pending Bookings</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getIHotelManagerImpl <em>IHotel Manager Impl</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getBookingHistory <em>Booking History</em>}</li>
+ *   <li>{@link Classes.IBookingManagementImpl#getIFinanceImpl <em>IFinance Impl</em>}</li>
  *   <li>{@link Classes.IBookingManagementImpl#getCustomer <em>Customer</em>}</li>
  * </ul>
  * </p>
@@ -119,6 +120,34 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	 * @generated
 	 */
 	EList<Booking> getBookingHistory();
+
+	/**
+	 * Returns the value of the '<em><b>IFinance Impl</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link Classes.IFinanceImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>IFinance Impl</em>' reference isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>IFinance Impl</em>' reference.
+	 * @see #setIFinanceImpl(IFinanceImpl)
+	 * @see Classes.ClassesPackage#getIBookingManagementImpl_IFinanceImpl()
+	 * @see Classes.IFinanceImpl#getIBookingManagementImpl
+	 * @model opposite="iBookingManagementImpl" required="true" ordered="false"
+	 * @generated
+	 */
+	IFinanceImpl getIFinanceImpl();
+
+	/**
+	 * Sets the value of the '{@link Classes.IBookingManagementImpl#getIFinanceImpl <em>IFinance Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @param value the new value of the '<em>IFinance Impl</em>' reference.
+	 * @see #getIFinanceImpl()
+	 * @generated
+	 */
+	void setIFinanceImpl(IFinanceImpl value);
 
 	/**
 	 * Returns the value of the '<em><b>Customer</b></em>' reference list.

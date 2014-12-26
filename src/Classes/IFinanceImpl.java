@@ -12,9 +12,8 @@ package Classes;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link Classes.IFinanceImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.IFinanceImpl#getCustomerProvides <em>Customer Provides</em>}</li>
- *   <li>{@link Classes.IFinanceImpl#getAdministratorProvides <em>Administrator Provides</em>}</li>
+ *   <li>{@link Classes.IFinanceImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  * </ul>
  * </p>
  *
@@ -26,6 +25,7 @@ public interface IFinanceImpl extends IFinance {
 
 	/**
 	 * Returns the value of the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link Classes.IBookingManagementImpl#getIFinanceImpl <em>IFinance Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>IBooking Management Impl</em>' reference isn't clear,
@@ -35,7 +35,8 @@ public interface IFinanceImpl extends IFinance {
 	 * @return the value of the '<em>IBooking Management Impl</em>' reference.
 	 * @see #setIBookingManagementImpl(IBookingManagementImpl)
 	 * @see Classes.ClassesPackage#getIFinanceImpl_IBookingManagementImpl()
-	 * @model required="true" ordered="false"
+	 * @see Classes.IBookingManagementImpl#getIFinanceImpl
+	 * @model opposite="iFinanceImpl" required="true" ordered="false"
 	 * @generated
 	 */
 	IBookingManagementImpl getIBookingManagementImpl();
@@ -75,30 +76,4 @@ public interface IFinanceImpl extends IFinance {
 	 * @generated
 	 */
 	void setCustomerProvides(CustomerProvides value);
-
-	/**
-	 * Returns the value of the '<em><b>Administrator Provides</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Administrator Provides</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Administrator Provides</em>' reference.
-	 * @see #setAdministratorProvides(AdministratorProvides)
-	 * @see Classes.ClassesPackage#getIFinanceImpl_AdministratorProvides()
-	 * @model required="true" ordered="false"
-	 * @generated
-	 */
-	AdministratorProvides getAdministratorProvides();
-
-	/**
-	 * Sets the value of the '{@link Classes.IFinanceImpl#getAdministratorProvides <em>Administrator Provides</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Administrator Provides</em>' reference.
-	 * @see #getAdministratorProvides()
-	 * @generated
-	 */
-	void setAdministratorProvides(AdministratorProvides value);
 } // IFinanceImpl

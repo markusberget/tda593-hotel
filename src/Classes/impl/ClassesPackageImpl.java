@@ -6,6 +6,7 @@ import Classes.AdministratorProvides;
 import Classes.Bill;
 import Classes.Booking;
 import Classes.Charge;
+import Classes.ChargeType;
 import Classes.ClassesFactory;
 import Classes.ClassesPackage;
 import Classes.Customer;
@@ -20,6 +21,7 @@ import Classes.IPerson;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomType;
+import Classes.RoomTypeName;
 import Classes.StaffMember;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
@@ -100,6 +102,20 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * @generated
 	 */
 	private EEnum roomStatusEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum roomTypeNameEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	private EEnum chargeTypeEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -282,7 +298,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getRoomType_Name() {
+	public EAttribute getRoomType_RoomTypeName() {
 		return (EAttribute)roomTypeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -390,8 +406,17 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIBookingManagementImpl_Customer() {
+	public EReference getIBookingManagementImpl_IFinanceImpl() {
 		return (EReference)iBookingManagementImplEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EReference getIBookingManagementImpl_Customer() {
+		return (EReference)iBookingManagementImplEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -453,7 +478,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__AddCancelationFee__Class() {
+	public EOperation getIBookingManagement__SearchRoom__Date_Date_int_String_int() {
 		return iBookingManagementEClass.getEOperations().get(5);
 	}
 
@@ -462,7 +487,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__SearchRoom__Date_Date_int_int_int() {
+	public EOperation getIBookingManagement__CancelBooking__int() {
 		return iBookingManagementEClass.getEOperations().get(6);
 	}
 
@@ -471,7 +496,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__CancelBooking__int() {
+	public EOperation getIBookingManagement__CheckIn__int() {
 		return iBookingManagementEClass.getEOperations().get(7);
 	}
 
@@ -480,7 +505,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__CheckIn__int() {
+	public EOperation getIBookingManagement__AddCustomerInformationToBooking__int_String_String_String_String() {
 		return iBookingManagementEClass.getEOperations().get(8);
 	}
 
@@ -489,7 +514,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__AddCustomerInformationToBooking__int_String_String_String_String() {
+	public EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int() {
 		return iBookingManagementEClass.getEOperations().get(9);
 	}
 
@@ -498,17 +523,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int() {
-		return iBookingManagementEClass.getEOperations().get(10);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus() {
-		return iBookingManagementEClass.getEOperations().get(11);
+		return iBookingManagementEClass.getEOperations().get(10);
 	}
 
 	/**
@@ -534,7 +550,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIFinance__PayBill__int() {
+	public EOperation getIFinance__PayBill__String_String_int_int_String_String_double() {
 		return iFinanceEClass.getEOperations().get(1);
 	}
 
@@ -543,26 +559,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIFinance__ValidateWithBank__String_String_int_int_String_String() {
-		return iFinanceEClass.getEOperations().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EOperation getIFinance__BankTransfer__String_String_int_int_String_String() {
-		return iFinanceEClass.getEOperations().get(3);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getIFinance__BankSendInvoice() {
-		return iFinanceEClass.getEOperations().get(4);
+		return iFinanceEClass.getEOperations().get(2);
 	}
 
 	/**
@@ -624,8 +622,17 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getCharge_ChargeType() {
+		return (EAttribute)chargeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EReference getCharge_Bill() {
-		return (EReference)chargeEClass.getEStructuralFeatures().get(2);
+		return (EReference)chargeEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -759,8 +766,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__IsExistingStaffMember__String() {
-		return iHotelManagerEClass.getEOperations().get(13);
+	public EEnum getRoomStatus() {
+		return roomStatusEEnum;
 	}
 
 	/**
@@ -768,8 +775,17 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EEnum getRoomStatus() {
-		return roomStatusEEnum;
+	public EEnum getRoomTypeName() {
+		return roomTypeNameEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EEnum getChargeType() {
+		return chargeTypeEEnum;
 	}
 
 	/**
@@ -787,15 +803,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * @generated
 	 */
 	public EReference getIFinanceImpl_IBookingManagementImpl() {
-		return (EReference)iFinanceImplEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getIFinanceImpl_CustomerProvides() {
 		return (EReference)iFinanceImplEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -804,8 +811,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getIFinanceImpl_AdministratorProvides() {
-		return (EReference)iFinanceImplEClass.getEStructuralFeatures().get(2);
+	public EReference getIFinanceImpl_CustomerProvides() {
+		return (EReference)iFinanceImplEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -1185,7 +1192,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEReference(roomEClass, ROOM__BOOKING);
 
 		roomTypeEClass = createEClass(ROOM_TYPE);
-		createEAttribute(roomTypeEClass, ROOM_TYPE__NAME);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__ROOM_TYPE_NAME);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__FEATURES);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__NUMBER_OF_GUESTS);
 		createEAttribute(roomTypeEClass, ROOM_TYPE__DESCRIPTION);
@@ -1217,6 +1224,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEReference(iBookingManagementImplEClass, IBOOKING_MANAGEMENT_IMPL__PENDING_BOOKINGS);
 		createEReference(iBookingManagementImplEClass, IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL);
 		createEReference(iBookingManagementImplEClass, IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY);
+		createEReference(iBookingManagementImplEClass, IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL);
 		createEReference(iBookingManagementImplEClass, IBOOKING_MANAGEMENT_IMPL__CUSTOMER);
 
 		iHotelManagerImplEClass = createEClass(IHOTEL_MANAGER_IMPL);
@@ -1249,7 +1257,19 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___LOGOUT__STRING);
-		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING);
+
+		iFinanceImplEClass = createEClass(IFINANCE_IMPL);
+		createEReference(iFinanceImplEClass, IFINANCE_IMPL__CUSTOMER_PROVIDES);
+		createEReference(iFinanceImplEClass, IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL);
+
+		customerProvidesEClass = createEClass(CUSTOMER_PROVIDES);
+		createEOperation(customerProvidesEClass, CUSTOMER_PROVIDES___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
+		createEOperation(customerProvidesEClass, CUSTOMER_PROVIDES___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING);
+
+		iFinanceEClass = createEClass(IFINANCE);
+		createEOperation(iFinanceEClass, IFINANCE___CALCULATE_PAYMENT__INT);
+		createEOperation(iFinanceEClass, IFINANCE___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
+		createEOperation(iFinanceEClass, IFINANCE___BANK_SEND_INVOICE);
 
 		iBookingManagementEClass = createEClass(IBOOKING_MANAGEMENT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___UPDATE_BOOKING);
@@ -1257,8 +1277,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT);
+		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CHECK_IN__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING);
@@ -1272,23 +1291,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		chargeEClass = createEClass(CHARGE);
 		createEAttribute(chargeEClass, CHARGE__AMOUNT);
 		createEAttribute(chargeEClass, CHARGE__DATE);
+		createEAttribute(chargeEClass, CHARGE__CHARGE_TYPE);
 		createEReference(chargeEClass, CHARGE__BILL);
-
-		iFinanceEClass = createEClass(IFINANCE);
-		createEOperation(iFinanceEClass, IFINANCE___CALCULATE_PAYMENT__INT);
-		createEOperation(iFinanceEClass, IFINANCE___PAY_BILL__INT);
-		createEOperation(iFinanceEClass, IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING);
-		createEOperation(iFinanceEClass, IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING);
-		createEOperation(iFinanceEClass, IFINANCE___BANK_SEND_INVOICE);
-
-		iFinanceImplEClass = createEClass(IFINANCE_IMPL);
-		createEReference(iFinanceImplEClass, IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL);
-		createEReference(iFinanceImplEClass, IFINANCE_IMPL__CUSTOMER_PROVIDES);
-		createEReference(iFinanceImplEClass, IFINANCE_IMPL__ADMINISTRATOR_PROVIDES);
-
-		customerProvidesEClass = createEClass(CUSTOMER_PROVIDES);
-		createEOperation(customerProvidesEClass, CUSTOMER_PROVIDES___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
-		createEOperation(customerProvidesEClass, CUSTOMER_PROVIDES___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING);
 
 		administratorProvidesEClass = createEClass(ADMINISTRATOR_PROVIDES);
 		createEOperation(administratorProvidesEClass, ADMINISTRATOR_PROVIDES___MAKE_DEPOSIT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
@@ -1298,6 +1302,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		// Create enums
 		roomStatusEEnum = createEEnum(ROOM_STATUS);
+		roomTypeNameEEnum = createEEnum(ROOM_TYPE_NAME);
+		chargeTypeEEnum = createEEnum(CHARGE_TYPE);
 	}
 
 	/**
@@ -1345,7 +1351,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEReference(getRoom_Booking(), this.getBooking(), this.getBooking_Room(), "booking", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getRoomType_Name(), theTypesPackage.getString(), "name", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_RoomTypeName(), this.getRoomTypeName(), "roomTypeName", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Features(), theTypesPackage.getString(), "features", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_NumberOfGuests(), theTypesPackage.getInteger(), "numberOfGuests", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoomType_Description(), theTypesPackage.getString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1377,6 +1383,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEReference(getIBookingManagementImpl_PendingBookings(), this.getBooking(), null, "pendingBookings", null, 0, -1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIBookingManagementImpl_IHotelManagerImpl(), this.getIHotelManagerImpl(), null, "iHotelManagerImpl", null, 1, 1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIBookingManagementImpl_BookingHistory(), this.getBooking(), null, "bookingHistory", null, 0, -1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIBookingManagementImpl_IFinanceImpl(), this.getIFinanceImpl(), this.getIFinanceImpl_IBookingManagementImpl(), "iFinanceImpl", null, 1, 1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIBookingManagementImpl_Customer(), this.getCustomer(), this.getCustomer_IBookingManagementImpl(), "customer", null, 0, -1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iHotelManagerImplEClass, IHotelManagerImpl.class, "IHotelManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1418,10 +1425,10 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIHotelManager__IsValidUsername__String(), ecorePackage.getEBoolean(), "isValidUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelManager__IsStaffMemberLoggedIn__String(), ecorePackage.getEBoolean(), "isStaffMemberLoggedIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelManager__IsStaffMemberLoggedIn__String(), ecorePackage.getEBooleanObject(), "isStaffMemberLoggedIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelManager__IsStaffMemberAdmin__String(), ecorePackage.getEBoolean(), "isStaffMemberAdmin", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelManager__IsStaffMemberAdmin__String(), ecorePackage.getEBooleanObject(), "isStaffMemberAdmin", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIHotelManager__GetStaffMemberPassword__String(), ecorePackage.getEString(), "getStaffMemberPassword", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1445,8 +1452,44 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIHotelManager__Logout__String(), ecorePackage.getEBoolean(), "logout", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelManager__IsExistingStaffMember__String(), ecorePackage.getEBoolean(), "isExistingStaffMember", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		initEClass(iFinanceImplEClass, IFinanceImpl.class, "IFinanceImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getIFinanceImpl_CustomerProvides(), this.getCustomerProvides(), null, "customerProvides", null, 1, 1, IFinanceImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIFinanceImpl_IBookingManagementImpl(), this.getIBookingManagementImpl(), this.getIBookingManagementImpl_IFinanceImpl(), "iBookingManagementImpl", null, 1, 1, IFinanceImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(customerProvidesEClass, CustomerProvides.class, "CustomerProvides", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getCustomerProvides__MakePayment__String_String_int_int_String_String_double(), ecorePackage.getEBoolean(), "makePayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "sum", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getCustomerProvides__IsCreditCardValid__String_String_int_int_String_String(), ecorePackage.getEBoolean(), "isCreditCardValid", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, theTypesPackage.getString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEClass(iFinanceEClass, IFinance.class, "IFinance", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		op = initEOperation(getIFinance__CalculatePayment__int(), ecorePackage.getEInt(), "calculatePayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIFinance__PayBill__String_String_int_int_String_String_double(), theTypesPackage.getString(), "payBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "cost", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		initEOperation(getIFinance__BankSendInvoice(), null, "bankSendInvoice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iBookingManagementEClass, IBookingManagement.class, "IBookingManagement", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1466,14 +1509,11 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIBookingManagement__ConfirmBooking__int(), ecorePackage.getEBoolean(), "confirmBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIBookingManagement__AddCancelationFee__Class(), null, "addCancelationFee", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEJavaClass(), "TODO", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getIBookingManagement__SearchRoom__Date_Date_int_int_int(), ecorePackage.getEEList(), "searchRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIBookingManagement__SearchRoom__Date_Date_int_String_int(), ecorePackage.getEEList(), "searchRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "numberOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "maximumPrice", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIBookingManagement__CancelBooking__int(), ecorePackage.getEBoolean(), "cancelBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
@@ -1506,57 +1546,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEClass(chargeEClass, Charge.class, "Charge", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCharge_Amount(), ecorePackage.getEInt(), "amount", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getCharge_Date(), ecorePackage.getEDate(), "date", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getCharge_ChargeType(), this.getChargeType(), "chargeType", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getCharge_Bill(), this.getBill(), this.getBill_Charge(), "bill", null, 1, 1, Charge.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(iFinanceEClass, IFinance.class, "IFinance", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getIFinance__CalculatePayment__int(), ecorePackage.getEInt(), "calculatePayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getIFinance__PayBill__int(), theTypesPackage.getString(), "payBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getIFinance__ValidateWithBank__String_String_int_int_String_String(), theTypesPackage.getBoolean(), "validateWithBank", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getIFinance__BankTransfer__String_String_int_int_String_String(), theTypesPackage.getBoolean(), "bankTransfer", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEOperation(getIFinance__BankSendInvoice(), null, "bankSendInvoice", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		initEClass(iFinanceImplEClass, IFinanceImpl.class, "IFinanceImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getIFinanceImpl_IBookingManagementImpl(), this.getIBookingManagementImpl(), null, "iBookingManagementImpl", null, 1, 1, IFinanceImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getIFinanceImpl_CustomerProvides(), this.getCustomerProvides(), null, "customerProvides", null, 1, 1, IFinanceImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getIFinanceImpl_AdministratorProvides(), this.getAdministratorProvides(), null, "administratorProvides", null, 1, 1, IFinanceImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-
-		initEClass(customerProvidesEClass, CustomerProvides.class, "CustomerProvides", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		op = initEOperation(getCustomerProvides__MakePayment__String_String_int_int_String_String_double(), ecorePackage.getEBoolean(), "makePayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDouble(), "sum", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getCustomerProvides__IsCreditCardValid__String_String_int_int_String_String(), ecorePackage.getEBoolean(), "isCreditCardValid", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "expiryYear", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "firstName", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, theTypesPackage.getString(), "lastName", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(administratorProvidesEClass, AdministratorProvides.class, "AdministratorProvides", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1598,6 +1589,18 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.OCCUPIED);
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.AVAILABLE);
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.CLEANING);
+
+		initEEnum(roomTypeNameEEnum, RoomTypeName.class, "RoomTypeName");
+		addEEnumLiteral(roomTypeNameEEnum, RoomTypeName.SINGLE_ROOM);
+		addEEnumLiteral(roomTypeNameEEnum, RoomTypeName.DOUBLE_ROOM);
+		addEEnumLiteral(roomTypeNameEEnum, RoomTypeName.FAMILY_SUITE);
+
+		initEEnum(chargeTypeEEnum, ChargeType.class, "ChargeType");
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.CANCELLATION_FEE);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.BREAKFAST);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.SINGLE_ROOM);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.DOUBLE_ROOM);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.FAMILY_SUITE);
 
 		// Create resource
 		createResource(eNS_URI);

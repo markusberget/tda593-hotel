@@ -37,8 +37,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @ordered
 	 */
 
-	// TODO: replace EList with Map, somehow.
-	
 	protected EList<StaffMember> staff;
 	//private Map<String, StaffMember> staffMembers;
 
@@ -156,8 +154,12 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 
 		}
 
-                // TODO: also, check whether the staff member doesn't already exist!
-
+         // also, check whether the staff member doesn't already exist!
+		if(this.internal_lookupStaffMember(username) != null) {
+			return false;
+		}
+		
+		
 		// Both the new username and password are fine! Create the new user:
 
 
@@ -239,9 +241,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean isStaffMemberLoggedIn(String username) {
+	public Boolean isStaffMemberLoggedIn(String username) {
 		StaffMember s = this.internal_lookupStaffMember(username);
-		return s == null ? false : s.isLoggedIn();
+		return s == null ? null : s.isLoggedIn();
 	}
 
 	/**
@@ -249,9 +251,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
-	public boolean isStaffMemberAdmin(String username) {
+	public Boolean isStaffMemberAdmin(String username) {
 		StaffMember s = this.internal_lookupStaffMember(username);
-		return s == null ? false : s.isAdmin();
+		return s == null ? null : s.isAdmin();
 	}
 
 	/**
@@ -333,14 +335,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		}
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean isExistingStaffMember(String username) {
-		return this.internal_lookupStaffMember(username) != null;
-	}
+
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -435,8 +430,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getStaffMemberAddress((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
 				return logout((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_EXISTING_STAFF_MEMBER__STRING:
-				return isExistingStaffMember((String)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

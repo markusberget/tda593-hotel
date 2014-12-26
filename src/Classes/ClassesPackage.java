@@ -133,13 +133,13 @@ public interface ClassesPackage extends EPackage {
 	int ROOM_TYPE = 1;
 
 	/**
-	 * The feature id for the '<em><b>Name</b></em>' attribute.
+	 * The feature id for the '<em><b>Room Type Name</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_TYPE__NAME = 0;
+	int ROOM_TYPE__ROOM_TYPE_NAME = 0;
 
 	/**
 	 * The feature id for the '<em><b>Features</b></em>' attribute.
@@ -212,7 +212,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagement()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT = 9;
+	int IBOOKING_MANAGEMENT = 12;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IBookingManagementImplImpl <em>IBooking Management Impl</em>}' class.
@@ -232,7 +232,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinance()
 	 * @generated
 	 */
-	int IFINANCE = 12;
+	int IFINANCE = 11;
 
 	/**
 	 * The meta object id for the '{@link Classes.IHotelManager <em>IHotel Manager</em>}' class.
@@ -252,7 +252,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinanceImpl()
 	 * @generated
 	 */
-	int IFINANCE_IMPL = 13;
+	int IFINANCE_IMPL = 9;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.BookingImpl <em>Booking</em>}' class.
@@ -638,22 +638,13 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT = 4;
 
 	/**
-	 * The operation id for the '<em>Add Cancelation Fee</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS = 5;
-
-	/**
 	 * The operation id for the '<em>Search Room</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT = 6;
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = 5;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -662,7 +653,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 7;
+	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 6;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -671,7 +662,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 8;
+	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 7;
 
 	/**
 	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
@@ -680,7 +671,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 9;
+	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 8;
 
 	/**
 	 * The operation id for the '<em>Create Pending Booking</em>' operation.
@@ -689,7 +680,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 10;
+	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 9;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -698,7 +689,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 11;
+	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 10;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
@@ -707,7 +698,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 12;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -755,13 +746,22 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY = IBOOKING_MANAGEMENT_FEATURE_COUNT + 4;
 
 	/**
+	 * The feature id for the '<em><b>IFinance Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL = IBOOKING_MANAGEMENT_FEATURE_COUNT + 5;
+
+	/**
 	 * The feature id for the '<em><b>Customer</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL__CUSTOMER = IBOOKING_MANAGEMENT_FEATURE_COUNT + 5;
+	int IBOOKING_MANAGEMENT_IMPL__CUSTOMER = IBOOKING_MANAGEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of structural features of the '<em>IBooking Management Impl</em>' class.
@@ -770,7 +770,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL_FEATURE_COUNT = IBOOKING_MANAGEMENT_FEATURE_COUNT + 6;
+	int IBOOKING_MANAGEMENT_IMPL_FEATURE_COUNT = IBOOKING_MANAGEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The operation id for the '<em>Update Booking</em>' operation.
@@ -818,22 +818,13 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT_IMPL___CONFIRM_BOOKING__INT = IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT;
 
 	/**
-	 * The operation id for the '<em>Add Cancelation Fee</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___ADD_CANCELATION_FEE__CLASS = IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS;
-
-	/**
 	 * The operation id for the '<em>Search Room</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_INT_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT;
+	int IBOOKING_MANAGEMENT_IMPL___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -897,7 +888,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBill()
 	 * @generated
 	 */
-	int BILL = 10;
+	int BILL = 13;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.ChargeImpl <em>Charge</em>}' class.
@@ -907,7 +898,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCharge()
 	 * @generated
 	 */
-	int CHARGE = 11;
+	int CHARGE = 14;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Manager</em>' class.
@@ -1036,22 +1027,13 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___LOGOUT__STRING = 12;
 
 	/**
-	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = 13;
-
-	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 14;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 13;
 
 	/**
 	 * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -1189,15 +1171,6 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER_IMPL___LOGOUT__STRING = IHOTEL_MANAGER___LOGOUT__STRING;
 
 	/**
-	 * The operation id for the '<em>Is Existing Staff Member</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___IS_EXISTING_STAFF_MEMBER__STRING = IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING;
-
-	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1323,7 +1296,151 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCustomerProvides()
 	 * @generated
 	 */
-	int CUSTOMER_PROVIDES = 14;
+	int CUSTOMER_PROVIDES = 10;
+
+	/**
+	 * The number of structural features of the '<em>IFinance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Calculate Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE___CALCULATE_PAYMENT__INT = 0;
+
+	/**
+	 * The operation id for the '<em>Pay Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = 1;
+
+	/**
+	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE___BANK_SEND_INVOICE = 2;
+
+	/**
+	 * The number of operations of the '<em>IFinance</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_OPERATION_COUNT = 3;
+
+	/**
+	 * The feature id for the '<em><b>Customer Provides</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL__CUSTOMER_PROVIDES = IFINANCE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL = IFINANCE_FEATURE_COUNT + 1;
+
+	/**
+	 * The number of structural features of the '<em>IFinance Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL_FEATURE_COUNT = IFINANCE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Calculate Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL___CALCULATE_PAYMENT__INT = IFINANCE___CALCULATE_PAYMENT__INT;
+
+	/**
+	 * The operation id for the '<em>Pay Bill</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = IFINANCE___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE;
+
+	/**
+	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL___BANK_SEND_INVOICE = IFINANCE___BANK_SEND_INVOICE;
+
+	/**
+	 * The number of operations of the '<em>IFinance Impl</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IFINANCE_IMPL_OPERATION_COUNT = IFINANCE_OPERATION_COUNT + 0;
+
+	/**
+	 * The number of structural features of the '<em>Customer Provides</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_PROVIDES_FEATURE_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Make Payment</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_PROVIDES___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = 0;
+
+	/**
+	 * The operation id for the '<em>Is Credit Card Valid</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_PROVIDES___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING = 1;
+
+	/**
+	 * The number of operations of the '<em>Customer Provides</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CUSTOMER_PROVIDES_OPERATION_COUNT = 2;
 
 	/**
 	 * The feature id for the '<em><b>Charge</b></em>' reference list.
@@ -1380,13 +1497,22 @@ public interface ClassesPackage extends EPackage {
 	int CHARGE__DATE = 1;
 
 	/**
+	 * The feature id for the '<em><b>Charge Type</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int CHARGE__CHARGE_TYPE = 2;
+
+	/**
 	 * The feature id for the '<em><b>Bill</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHARGE__BILL = 2;
+	int CHARGE__BILL = 3;
 
 	/**
 	 * The number of structural features of the '<em>Charge</em>' class.
@@ -1395,7 +1521,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CHARGE_FEATURE_COUNT = 3;
+	int CHARGE_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Charge</em>' class.
@@ -1405,195 +1531,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int CHARGE_OPERATION_COUNT = 0;
-
-	/**
-	 * The number of structural features of the '<em>IFinance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Calculate Payment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___CALCULATE_PAYMENT__INT = 0;
-
-	/**
-	 * The operation id for the '<em>Pay Bill</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___PAY_BILL__INT = 1;
-
-	/**
-	 * The operation id for the '<em>Validate With Bank</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = 2;
-
-	/**
-	 * The operation id for the '<em>Bank Transfer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = 3;
-
-	/**
-	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE___BANK_SEND_INVOICE = 4;
-
-	/**
-	 * The number of operations of the '<em>IFinance</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_OPERATION_COUNT = 5;
-
-	/**
-	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL = IFINANCE_FEATURE_COUNT + 0;
-
-	/**
-	 * The feature id for the '<em><b>Customer Provides</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL__CUSTOMER_PROVIDES = IFINANCE_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Administrator Provides</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL__ADMINISTRATOR_PROVIDES = IFINANCE_FEATURE_COUNT + 2;
-
-	/**
-	 * The number of structural features of the '<em>IFinance Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL_FEATURE_COUNT = IFINANCE_FEATURE_COUNT + 3;
-
-	/**
-	 * The operation id for the '<em>Calculate Payment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___CALCULATE_PAYMENT__INT = IFINANCE___CALCULATE_PAYMENT__INT;
-
-	/**
-	 * The operation id for the '<em>Pay Bill</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___PAY_BILL__INT = IFINANCE___PAY_BILL__INT;
-
-	/**
-	 * The operation id for the '<em>Validate With Bank</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Bank Transfer</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING;
-
-	/**
-	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL___BANK_SEND_INVOICE = IFINANCE___BANK_SEND_INVOICE;
-
-	/**
-	 * The number of operations of the '<em>IFinance Impl</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IFINANCE_IMPL_OPERATION_COUNT = IFINANCE_OPERATION_COUNT + 0;
-
-	/**
-	 * The number of structural features of the '<em>Customer Provides</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER_PROVIDES_FEATURE_COUNT = 0;
-
-	/**
-	 * The operation id for the '<em>Make Payment</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER_PROVIDES___MAKE_PAYMENT__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = 0;
-
-	/**
-	 * The operation id for the '<em>Is Credit Card Valid</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER_PROVIDES___IS_CREDIT_CARD_VALID__STRING_STRING_INT_INT_STRING_STRING = 1;
-
-	/**
-	 * The number of operations of the '<em>Customer Provides</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER_PROVIDES_OPERATION_COUNT = 2;
 
 	/**
 	 * The number of structural features of the '<em>Administrator Provides</em>' class.
@@ -1662,6 +1599,27 @@ public interface ClassesPackage extends EPackage {
 
 
 	/**
+	 * The meta object id for the '{@link Classes.RoomTypeName <em>Room Type Name</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.RoomTypeName
+	 * @see Classes.impl.ClassesPackageImpl#getRoomTypeName()
+	 * @generated
+	 */
+	int ROOM_TYPE_NAME = 17;
+
+	/**
+	 * The meta object id for the '{@link Classes.ChargeType <em>Charge Type</em>}' enum.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see Classes.ChargeType
+	 * @see Classes.impl.ClassesPackageImpl#getChargeType()
+	 * @generated
+	 */
+	int CHARGE_TYPE = 18;
+
+
+	/**
 	 * Returns the meta object for class '{@link Classes.Room <em>Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1726,15 +1684,15 @@ public interface ClassesPackage extends EPackage {
 	EClass getRoomType();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Classes.RoomType#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link Classes.RoomType#getRoomTypeName <em>Room Type Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see Classes.RoomType#getName()
+	 * @return the meta object for the attribute '<em>Room Type Name</em>'.
+	 * @see Classes.RoomType#getRoomTypeName()
 	 * @see #getRoomType()
 	 * @generated
 	 */
-	EAttribute getRoomType_Name();
+	EAttribute getRoomType_RoomTypeName();
 
 	/**
 	 * Returns the meta object for the attribute '{@link Classes.RoomType#getFeatures <em>Features</em>}'.
@@ -1857,6 +1815,17 @@ public interface ClassesPackage extends EPackage {
 	EReference getIBookingManagementImpl_BookingHistory();
 
 	/**
+	 * Returns the meta object for the reference '{@link Classes.IBookingManagementImpl#getIFinanceImpl <em>IFinance Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IFinance Impl</em>'.
+	 * @see Classes.IBookingManagementImpl#getIFinanceImpl()
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 */
+	EReference getIBookingManagementImpl_IFinanceImpl();
+
+	/**
 	 * Returns the meta object for the reference list '{@link Classes.IBookingManagementImpl#getCustomer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1928,24 +1897,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__ConfirmBooking__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#addCancelationFee(java.lang.Class) <em>Add Cancelation Fee</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Cancelation Fee</em>' operation.
-	 * @see Classes.IBookingManagement#addCancelationFee(java.lang.Class)
-	 * @generated
-	 */
-	EOperation getIBookingManagement__AddCancelationFee__Class();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, int, int) <em>Search Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, java.lang.String, int) <em>Search Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Search Room</em>' operation.
-	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, int, int)
+	 * @see Classes.IBookingManagement#searchRoom(java.util.Date, java.util.Date, int, java.lang.String, int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__SearchRoom__Date_Date_int_int_int();
+	EOperation getIBookingManagement__SearchRoom__Date_Date_int_String_int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#cancelBooking(int) <em>Cancel Booking</em>}' operation.
@@ -2018,34 +1977,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIFinance__CalculatePayment__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IFinance#payBill(int) <em>Pay Bill</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IFinance#payBill(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double) <em>Pay Bill</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Pay Bill</em>' operation.
-	 * @see Classes.IFinance#payBill(int)
+	 * @see Classes.IFinance#payBill(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double)
 	 * @generated
 	 */
-	EOperation getIFinance__PayBill__int();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IFinance#validateWithBank(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Validate With Bank</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Validate With Bank</em>' operation.
-	 * @see Classes.IFinance#validateWithBank(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
-	 * @generated
-	 */
-	EOperation getIFinance__ValidateWithBank__String_String_int_int_String_String();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IFinance#bankTransfer(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String) <em>Bank Transfer</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Bank Transfer</em>' operation.
-	 * @see Classes.IFinance#bankTransfer(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String)
-	 * @generated
-	 */
-	EOperation getIFinance__BankTransfer__String_String_int_int_String_String();
+	EOperation getIFinance__PayBill__String_String_int_int_String_String_double();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IFinance#bankSendInvoice() <em>Bank Send Invoice</em>}' operation.
@@ -2120,6 +2059,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCharge_Date();
+
+	/**
+	 * Returns the meta object for the attribute '{@link Classes.Charge#getChargeType <em>Charge Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Charge Type</em>'.
+	 * @see Classes.Charge#getChargeType()
+	 * @see #getCharge()
+	 * @generated
+	 */
+	EAttribute getCharge_ChargeType();
 
 	/**
 	 * Returns the meta object for the reference '{@link Classes.Charge#getBill <em>Bill</em>}'.
@@ -2273,16 +2223,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__Logout__String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#isExistingStaffMember(java.lang.String) <em>Is Existing Staff Member</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Is Existing Staff Member</em>' operation.
-	 * @see Classes.IHotelManager#isExistingStaffMember(java.lang.String)
-	 * @generated
-	 */
-	EOperation getIHotelManager__IsExistingStaffMember__String();
-
-	/**
 	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2291,6 +2231,26 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EEnum getRoomStatus();
+
+	/**
+	 * Returns the meta object for enum '{@link Classes.RoomTypeName <em>Room Type Name</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Room Type Name</em>'.
+	 * @see Classes.RoomTypeName
+	 * @generated
+	 */
+	EEnum getRoomTypeName();
+
+	/**
+	 * Returns the meta object for enum '{@link Classes.ChargeType <em>Charge Type</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for enum '<em>Charge Type</em>'.
+	 * @see Classes.ChargeType
+	 * @generated
+	 */
+	EEnum getChargeType();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IFinanceImpl <em>IFinance Impl</em>}'.
@@ -2323,17 +2283,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getIFinanceImpl_CustomerProvides();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.IFinanceImpl#getAdministratorProvides <em>Administrator Provides</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Administrator Provides</em>'.
-	 * @see Classes.IFinanceImpl#getAdministratorProvides()
-	 * @see #getIFinanceImpl()
-	 * @generated
-	 */
-	EReference getIFinanceImpl_AdministratorProvides();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.AdministratorProvides <em>Administrator Provides</em>}'.
@@ -2816,12 +2765,12 @@ public interface ClassesPackage extends EPackage {
 		EClass ROOM_TYPE = eINSTANCE.getRoomType();
 
 		/**
-		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Room Type Name</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ROOM_TYPE__NAME = eINSTANCE.getRoomType_Name();
+		EAttribute ROOM_TYPE__ROOM_TYPE_NAME = eINSTANCE.getRoomType_RoomTypeName();
 
 		/**
 		 * The meta object literal for the '<em><b>Features</b></em>' attribute feature.
@@ -2914,6 +2863,14 @@ public interface ClassesPackage extends EPackage {
 		EReference IBOOKING_MANAGEMENT_IMPL__BOOKING_HISTORY = eINSTANCE.getIBookingManagementImpl_BookingHistory();
 
 		/**
+		 * The meta object literal for the '<em><b>IFinance Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL = eINSTANCE.getIBookingManagementImpl_IFinanceImpl();
+
+		/**
 		 * The meta object literal for the '<em><b>Customer</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2972,20 +2929,12 @@ public interface ClassesPackage extends EPackage {
 		EOperation IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT = eINSTANCE.getIBookingManagement__ConfirmBooking__int();
 
 		/**
-		 * The meta object literal for the '<em><b>Add Cancelation Fee</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IBOOKING_MANAGEMENT___ADD_CANCELATION_FEE__CLASS = eINSTANCE.getIBookingManagement__AddCancelationFee__Class();
-
-		/**
 		 * The meta object literal for the '<em><b>Search Room</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_INT_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_int_int();
+		EOperation IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = eINSTANCE.getIBookingManagement__SearchRoom__Date_Date_int_String_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Cancel Booking</b></em>' operation.
@@ -3051,23 +3000,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IFINANCE___PAY_BILL__INT = eINSTANCE.getIFinance__PayBill__int();
-
-		/**
-		 * The meta object literal for the '<em><b>Validate With Bank</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IFINANCE___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getIFinance__ValidateWithBank__String_String_int_int_String_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Bank Transfer</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IFINANCE___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING = eINSTANCE.getIFinance__BankTransfer__String_String_int_int_String_String();
+		EOperation IFINANCE___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = eINSTANCE.getIFinance__PayBill__String_String_int_int_String_String_double();
 
 		/**
 		 * The meta object literal for the '<em><b>Bank Send Invoice</b></em>' operation.
@@ -3128,6 +3061,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CHARGE__DATE = eINSTANCE.getCharge_Date();
+
+		/**
+		 * The meta object literal for the '<em><b>Charge Type</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute CHARGE__CHARGE_TYPE = eINSTANCE.getCharge_ChargeType();
 
 		/**
 		 * The meta object literal for the '<em><b>Bill</b></em>' reference feature.
@@ -3252,14 +3193,6 @@ public interface ClassesPackage extends EPackage {
 		EOperation IHOTEL_MANAGER___LOGOUT__STRING = eINSTANCE.getIHotelManager__Logout__String();
 
 		/**
-		 * The meta object literal for the '<em><b>Is Existing Staff Member</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IHOTEL_MANAGER___IS_EXISTING_STAFF_MEMBER__STRING = eINSTANCE.getIHotelManager__IsExistingStaffMember__String();
-
-		/**
 		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3268,6 +3201,26 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EEnum ROOM_STATUS = eINSTANCE.getRoomStatus();
+
+		/**
+		 * The meta object literal for the '{@link Classes.RoomTypeName <em>Room Type Name</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.RoomTypeName
+		 * @see Classes.impl.ClassesPackageImpl#getRoomTypeName()
+		 * @generated
+		 */
+		EEnum ROOM_TYPE_NAME = eINSTANCE.getRoomTypeName();
+
+		/**
+		 * The meta object literal for the '{@link Classes.ChargeType <em>Charge Type</em>}' enum.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @see Classes.ChargeType
+		 * @see Classes.impl.ClassesPackageImpl#getChargeType()
+		 * @generated
+		 */
+		EEnum CHARGE_TYPE = eINSTANCE.getChargeType();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.
@@ -3294,14 +3247,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference IFINANCE_IMPL__CUSTOMER_PROVIDES = eINSTANCE.getIFinanceImpl_CustomerProvides();
-
-		/**
-		 * The meta object literal for the '<em><b>Administrator Provides</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference IFINANCE_IMPL__ADMINISTRATOR_PROVIDES = eINSTANCE.getIFinanceImpl_AdministratorProvides();
 
 		/**
 		 * The meta object literal for the '{@link Classes.AdministratorProvides <em>Administrator Provides</em>}' class.

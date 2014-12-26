@@ -2,13 +2,18 @@
  */
 package Classes.impl;
 
-import Classes.AdministratorProvides;
+import Classes.Booking;
 import Classes.ClassesPackage;
 import Classes.CustomerProvides;
 import Classes.IBookingManagementImpl;
 import Classes.IFinanceImpl;
+
 import java.lang.reflect.InvocationTargetException;
+
+import javax.xml.soap.SOAPException;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -22,24 +27,14 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link Classes.impl.IFinanceImplImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.impl.IFinanceImplImpl#getCustomerProvides <em>Customer Provides</em>}</li>
- *   <li>{@link Classes.impl.IFinanceImplImpl#getAdministratorProvides <em>Administrator Provides</em>}</li>
+ *   <li>{@link Classes.impl.IFinanceImplImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
 public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IFinanceImpl {
-	/**
-	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getIBookingManagementImpl()
-	 * @generated
-	 * @ordered
-	 */
-	protected IBookingManagementImpl iBookingManagementImpl;
 	/**
 	 * The cached value of the '{@link #getCustomerProvides() <em>Customer Provides</em>}' reference.
 	 * <!-- begin-user-doc -->
@@ -50,15 +45,14 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 */
 	protected CustomerProvides customerProvides;
 	/**
-	 * The cached value of the '{@link #getAdministratorProvides() <em>Administrator Provides</em>}' reference.
+	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getAdministratorProvides()
+	 * @see #getIBookingManagementImpl()
 	 * @generated
 	 * @ordered
 	 */
-	protected AdministratorProvides administratorProvides;
-
+	protected IBookingManagementImpl iBookingManagementImpl;
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -118,11 +112,33 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+	public NotificationChain basicSetIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl, NotificationChain msgs) {
 		IBookingManagementImpl oldIBookingManagementImpl = iBookingManagementImpl;
 		iBookingManagementImpl = newIBookingManagementImpl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, newIBookingManagementImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+		if (newIBookingManagementImpl != iBookingManagementImpl) {
+			NotificationChain msgs = null;
+			if (iBookingManagementImpl != null)
+				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, IBookingManagementImpl.class, msgs);
+			if (newIBookingManagementImpl != null)
+				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, IBookingManagementImpl.class, msgs);
+			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL, newIBookingManagementImpl, newIBookingManagementImpl));
 	}
 
 	/**
@@ -164,172 +180,71 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AdministratorProvides getAdministratorProvides() {
-		if (administratorProvides != null && administratorProvides.eIsProxy()) {
-			InternalEObject oldAdministratorProvides = (InternalEObject)administratorProvides;
-			administratorProvides = (AdministratorProvides)eResolveProxy(oldAdministratorProvides);
-			if (administratorProvides != oldAdministratorProvides) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES, oldAdministratorProvides, administratorProvides));
-			}
-		}
-		return administratorProvides;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public AdministratorProvides basicGetAdministratorProvides() {
-		return administratorProvides;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setAdministratorProvides(AdministratorProvides newAdministratorProvides) {
-		AdministratorProvides oldAdministratorProvides = administratorProvides;
-		administratorProvides = newAdministratorProvides;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES, oldAdministratorProvides, administratorProvides));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Calculates the total cost of a bill by summing its associated charges.
+	 * At the moment calculatePayment sums all charges in a booking, and not
+	 * specific charges chosen beforehand.
+	 * 
 	 * @generated NOT
 	 */
-	public int calculatePayment(int bookingId) {
-		
-		// Question: Are room prices added as charge or should they be added separately into the calculation?
-		
-		// TODO: fix this.
-		/*int sum = 0;
-		for (Charge charge : this.iBookingManagement.getBooking(bookingId).getBill().getCharges()) {
-				sum += charge.getAmount();
+	public int calculatePayment(int bookingID) {
+		EList<ChargeImpl> charges;
+		int sum = 0;
+		EList<Booking> confirmedBookings = getIBookingManagementImpl().getConfirmedBookings();
+		for (Booking booking : confirmedBookings) {
+			if (booking.getBookingID() == bookingID) {
+				charges = ((BillImpl) booking.getBill()).getChargeImpl();
+				for (ChargeImpl charge : charges) {
+					sum += charge.getAmount();
+				}
+				return sum;
+			}
 		}
 		return sum;
-		*/
-		return 0;
-
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Performs the payment of a bill. First the credit card is checked if valid, and if valid the sum is withdrawn
+	 * form the credit card. This method contains the interaction with the bank.
+	 * 
 	 * @generated NOT
 	 */
-	public String payBill(int bookingId) {
-		
-		int amount = calculatePayment(bookingId);
-		
-		// for now.
-		//return "";
-		
-		if (amount > 0) {
-		
-			String customerFirstName;
-			String customerLastName;
-			
-			
-			/* prompt user to fill in customer information here */
-			// for now
-			customerFirstName = "Pellefjant";
-			customerLastName = "Stenskog";
-			
-			// Validate customer information
-			// TODO: fix this.
-			/*if(!customerFirstName == this.iBookingManagement.getBooking(bookingId).getCustomer().getFirstName() 
-			&& 	customerLastName == this.iBookingManagement.getBooking(bookingId).getCustomer().getLastName() ) { 
-				return "Payment failed: customer information invalid";
-			}*/
-			
-			//possibly enum
-			String paymentOption = "none";
-			/* prompt user to select payment method */	
-			// for now
-			paymentOption = "CreditCard";
-			
-			// If selected option is not using credit card
-			if( paymentOption.equals("none") ) { 
-				return "Payment failed: No payment option was selected"; 
+	public String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, double cost) {
+		se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires bankingCustomer;
+		boolean valid;
+		String message = null;
+		try {
+			bankingCustomer = se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires
+					.instance();
+			valid = bankingCustomer.isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
+			if (valid) {
+				valid = bankingCustomer.makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, cost);
+				if (valid) {
+					message = "Payment was successful";
+				}
+				else {
+					message = "Amount could not be withdrawn";
+				}
 			}
-			else if( paymentOption.equals("Invoice") ) { 
-				bankSendInvoice();
-				return "Success";
+			else {
+				message = "Credit Card is not valid";
 			}
-		
-			String ccNumber, ccv, firstName, lastName;
-			int expiryMonth, expiryYear;
-			
-			/* prompt user to fill in ccNumber:String, ccv:String, expiryMonth:int,
-			expiryYear:int, firstName:String, lastName:String */
-			
-			// for now
-			ccNumber = "1-1111-1111-1111-1111";
-			ccv = "345";
-			firstName = customerFirstName;
-			lastName = customerLastName;
-			expiryMonth = 12;
-			expiryYear = 16;
-			
-			// If invalid
-			if ( !validateWithBank(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName) ) {
-				return "Payment failed: Invalid credit card information";
-			}
-			
-			
-			boolean customerConfirm;
-			/* use case says: "The customer confirms the information."*/
-			// for now
-			customerConfirm = true;
-			
-			if( !customerConfirm ) { 
-				return "Payment failed: Aborted"; 
-			}
-
-			boolean bankTransferSuccess;
-			
-			bankTransferSuccess = bankTransfer(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
-			if( !bankTransferSuccess ) { 
-				return "Payment failed: Something went wrong with bank transfer";
-			}
-			
+		} catch (SOAPException e) {
+			System.err
+			.println("Error occurred while communicating with the bank administration");
+			e.printStackTrace();
 		}
-				
-		/* register payment as done */
-		
-		return "Success";
-		
+		return message;
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * Unimplemented method since the bank's interface do not offer the services necessary
+	 * for this method.
+	 * 
 	 * @generated NOT
 	 */
-	public boolean validateWithBank(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		return false;
-		// TODO: fix this.
-		//return customerProvides = isCreditCardValid(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public boolean bankTransfer(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName) {
-		// TODO: fix this.
-		//return customerProvides = makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName);
-		return false;
+	public void bankSendInvoice() {
+		// request that bank sends an invoice assigned to the customer to the customer’s address.
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -337,10 +252,29 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void bankSendInvoice() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				if (iBookingManagementImpl != null)
+					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL, IBookingManagementImpl.class, msgs);
+				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return basicSetIBookingManagementImpl(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -351,15 +285,12 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
-				if (resolve) return getIBookingManagementImpl();
-				return basicGetIBookingManagementImpl();
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				if (resolve) return getCustomerProvides();
 				return basicGetCustomerProvides();
-			case ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES:
-				if (resolve) return getAdministratorProvides();
-				return basicGetAdministratorProvides();
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				if (resolve) return getIBookingManagementImpl();
+				return basicGetIBookingManagementImpl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -372,14 +303,11 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
-				setIBookingManagementImpl((IBookingManagementImpl)newValue);
-				return;
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				setCustomerProvides((CustomerProvides)newValue);
 				return;
-			case ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES:
-				setAdministratorProvides((AdministratorProvides)newValue);
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -393,14 +321,11 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
-				setIBookingManagementImpl((IBookingManagementImpl)null);
-				return;
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				setCustomerProvides((CustomerProvides)null);
 				return;
-			case ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES:
-				setAdministratorProvides((AdministratorProvides)null);
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -414,12 +339,10 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
-				return iBookingManagementImpl != null;
 			case ClassesPackage.IFINANCE_IMPL__CUSTOMER_PROVIDES:
 				return customerProvides != null;
-			case ClassesPackage.IFINANCE_IMPL__ADMINISTRATOR_PROVIDES:
-				return administratorProvides != null;
+			case ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return iBookingManagementImpl != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -434,12 +357,8 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		switch (operationID) {
 			case ClassesPackage.IFINANCE_IMPL___CALCULATE_PAYMENT__INT:
 				return calculatePayment((Integer)arguments.get(0));
-			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__INT:
-				return payBill((Integer)arguments.get(0));
-			case ClassesPackage.IFINANCE_IMPL___VALIDATE_WITH_BANK__STRING_STRING_INT_INT_STRING_STRING:
-				return validateWithBank((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
-			case ClassesPackage.IFINANCE_IMPL___BANK_TRANSFER__STRING_STRING_INT_INT_STRING_STRING:
-				return bankTransfer((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5));
+			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE:
+				return payBill((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (Double)arguments.get(6));
 			case ClassesPackage.IFINANCE_IMPL___BANK_SEND_INVOICE:
 				bankSendInvoice();
 				return null;
