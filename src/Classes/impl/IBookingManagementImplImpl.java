@@ -388,7 +388,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public boolean updateBooking(int bookingID, Date checkIn, Date checkOut, int nrOfGuests) {
 		Booking booking = getConfirmedBooking(bookingID);
-		if (checkIn != null && checkOut != null && nrOfGuests > 0 && checkIn.before(checkOut)) {
+		if (booking != null && checkIn != null && checkOut != null && nrOfGuests > 0 && checkIn.before(checkOut)) {
 			booking.setCheckIn(checkIn);
 			booking.setCheckOut(checkOut);
 			booking.setNumberOfGuests(nrOfGuests);
