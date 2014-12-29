@@ -23,7 +23,7 @@ public interface IBookingManagement extends EObject {
 	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" checkInRequired="true" checkInOrdered="false" checkOutRequired="true" checkOutOrdered="false" nrOfGuestsRequired="true" nrOfGuestsOrdered="false"
 	 * @generated
 	 */
-	boolean updateBooking(int bookingID, Date checkIn, Date checkOut, int nrOfGuests);
+	String updateBooking(int bookingID, Date checkIn, Date checkOut, int nrOfGuests);
 
 	/**
 	 * <!-- begin-user-doc -->

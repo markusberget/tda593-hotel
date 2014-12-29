@@ -386,15 +386,18 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-	public boolean updateBooking(int bookingID, Date checkIn, Date checkOut, int nrOfGuests) {
+	public String updateBooking(int bookingID, Date checkIn, Date checkOut, int nrOfGuests) {
 		Booking booking = getConfirmedBooking(bookingID);
-		if (booking != null && checkIn != null && checkOut != null && nrOfGuests > 0 && checkIn.before(checkOut)) {
+		if(booking == null) {
+			return "booking was not found, check if bookingID is correct";
+		}
+		if (checkIn != null && checkOut != null && nrOfGuests > 0 && checkIn.before(checkOut)) {
 			booking.setCheckIn(checkIn);
 			booking.setCheckOut(checkOut);
 			booking.setNumberOfGuests(nrOfGuests);
-			return true;
+			return "Booking was updated successfully";
 		}
-		return false;
+		return "Booking could not be updated due to invalid argument(s)";
 	}
 
 	/**

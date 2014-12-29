@@ -417,7 +417,7 @@
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_1FAE0HsOEeSXcqnzxUEL_w" name="Message0Send" covered="_gBKJgHsMEeSXcqnzxUEL_w"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_3YejUHsOEeSXcqnzxUEL_w" name="Message1Send" covered="_gy03AHsMEeSXcqnzxUEL_w"/>
       <message xmi:type="uml:Message" xmi:id="_zWXYwHsOEeSXcqnzxUEL_w" name="updateBooking(bookingID, checkin, checkout, ...)" messageSort="asynchCall" receiveEvent="_zWZN8HsOEeSXcqnzxUEL_w" sendEvent="_zWX_0HsOEeSXcqnzxUEL_w"/>
-      <message xmi:type="uml:Message" xmi:id="_4YPXMHsOEeSXcqnzxUEL_w" name="boolean" messageSort="asynchCall" receiveEvent="_4YRMYHsOEeSXcqnzxUEL_w" sendEvent="_4YQlUHsOEeSXcqnzxUEL_w"/>
+      <message xmi:type="uml:Message" xmi:id="_4YPXMHsOEeSXcqnzxUEL_w" name="String" messageSort="asynchCall" receiveEvent="_4YRMYHsOEeSXcqnzxUEL_w" sendEvent="_4YQlUHsOEeSXcqnzxUEL_w"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Signal" xmi:id="_gA3fQHbSEeStp8eyZUfdUA" name="success"/>
     <packagedElement xmi:type="uml:Signal" xmi:id="_AfyLMHbfEeSheJiNqvd8mw" name="bookingID"/>

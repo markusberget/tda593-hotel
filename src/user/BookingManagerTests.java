@@ -69,7 +69,7 @@ public class BookingManagerTests {
 	// Update checkOut and nrOfGuests of the booking
 		Date newCheckOut = new Date();
 		int newNumberOfGuests = 6;
-		assertTrue(bookingManagement.updateBooking(bookingID, checkIn, newCheckOut, newNumberOfGuests));
+		assertEquals("Booking was updated successfully", bookingManagement.updateBooking(bookingID, checkIn, newCheckOut, newNumberOfGuests));
 		
 		// Check if the updated booking contains the desired information
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
@@ -78,7 +78,7 @@ public class BookingManagerTests {
 		
 		// Update checkOut again
 		Date newCheckOutAgain = new Date();
-		assertTrue(bookingManagement.updateBooking(bookingID, checkIn, newCheckOutAgain, newNumberOfGuests));
+		assertEquals("Booking was updated successfully", bookingManagement.updateBooking(bookingID, checkIn, newCheckOutAgain, newNumberOfGuests));
 		
 		// Check that only the check-out date has been updated
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
@@ -108,13 +108,14 @@ public class BookingManagerTests {
 		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly", "Hansen", "helly.hansen@gmail.com", "0734321234");
 		
 		// Check the information of the booking before update
+		assertEquals(bookingID, bookingManagement.getConfirmedBookings().get(0).getBookingID());
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
 		assertEquals(checkOut, bookingManagement.getConfirmedBookings().get(0).getCheckOut());
 		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings().get(0).getNumberOfGuests());
 		
 		// Update the booking using a negative value for newNumberOfGuests
 		int newNrOfGuests = -5;
-		assertFalse(bookingManagement.updateBooking(bookingID, checkIn, checkOut, newNrOfGuests));
+		assertEquals("Booking could not be updated due to invalid argument(s)", bookingManagement.updateBooking(bookingID, checkIn, checkOut, newNrOfGuests));
 		
 		// Check if the "updated" booking contains the desired (old) information
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
@@ -123,7 +124,7 @@ public class BookingManagerTests {
 		
 		// Update the booking using a check-in date that is later than the check-out date
 		Date newCheckIn = new Date();
-		bookingManagement.updateBooking(bookingID, newCheckIn, checkOut, nrOfGuests);
+		assertEquals("Booking could not be updated due to invalid argument(s)", bookingManagement.updateBooking(bookingID, newCheckIn, checkOut, nrOfGuests));
 		
 		// Check if the "updated" booking contains the desired (old) information
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
