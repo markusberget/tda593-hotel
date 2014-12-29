@@ -599,7 +599,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___UPDATE_BOOKING = 0;
+	int IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT = 0;
 
 	/**
 	 * The operation id for the '<em>Get Booking</em>' operation.
@@ -779,7 +779,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING = IBOOKING_MANAGEMENT___UPDATE_BOOKING;
+	int IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_DATE_DATE_INT = IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT;
 
 	/**
 	 * The operation id for the '<em>Get Booking</em>' operation.
@@ -1847,14 +1847,14 @@ public interface ClassesPackage extends EPackage {
 	EClass getIBookingManagement();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#updateBooking() <em>Update Booking</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#updateBooking(int, java.util.Date, java.util.Date, int) <em>Update Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Update Booking</em>' operation.
-	 * @see Classes.IBookingManagement#updateBooking()
+	 * @see Classes.IBookingManagement#updateBooking(int, java.util.Date, java.util.Date, int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__UpdateBooking();
+	EOperation getIBookingManagement__UpdateBooking__int_Date_Date_int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#getBooking(int) <em>Get Booking</em>}' operation.
@@ -2894,7 +2894,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___UPDATE_BOOKING = eINSTANCE.getIBookingManagement__UpdateBooking();
+		EOperation IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT = eINSTANCE.getIBookingManagement__UpdateBooking__int_Date_Date_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
