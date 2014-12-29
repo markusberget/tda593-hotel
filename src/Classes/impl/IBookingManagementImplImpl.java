@@ -650,12 +650,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public synchronized int createPendingBooking(Date checkIn, Date checkOut,
 			int guestCount) {
-//		Date current = Calendar.getInstance().getTime();
-//		// Check so the checkIn and checkOut times are valid
-//		if (current.after(checkIn) || current.after(checkOut)
-//				|| checkOut.before(checkIn)) {
-//			return -1;
-//		}
+		
+		// Check if the check in date is not later than the check out date
+		if (checkIn.after(checkOut)) {
+			return -1;
+		}
 		Customer customer = new CustomerImpl();
 		Booking booking = new BookingImpl();
 		booking.setCustomer(customer);
