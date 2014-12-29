@@ -220,7 +220,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-	public Booking getConfirmedBooking(int bookingID) {
+	private Booking getConfirmedBooking(int bookingID) {
 		for (int i = 0; i < confirmedBookings.size(); i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
 				return confirmedBookings.get(i);
