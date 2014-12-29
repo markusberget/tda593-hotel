@@ -1323,7 +1323,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IFINANCE___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = 1;
+	int IFINANCE___PAY_BILL__INT_STRING_STRING_INT_INT_STRING_STRING_DOUBLE = 1;
 
 	/**
 	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
@@ -1386,7 +1386,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IFINANCE_IMPL___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = IFINANCE___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE;
+	int IFINANCE_IMPL___PAY_BILL__INT_STRING_STRING_INT_INT_STRING_STRING_DOUBLE = IFINANCE___PAY_BILL__INT_STRING_STRING_INT_INT_STRING_STRING_DOUBLE;
 
 	/**
 	 * The operation id for the '<em>Bank Send Invoice</em>' operation.
@@ -1977,14 +1977,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIFinance__CalculatePayment__int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IFinance#payBill(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double) <em>Pay Bill</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IFinance#payBill(int, java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double) <em>Pay Bill</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Pay Bill</em>' operation.
-	 * @see Classes.IFinance#payBill(java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double)
+	 * @see Classes.IFinance#payBill(int, java.lang.String, java.lang.String, int, int, java.lang.String, java.lang.String, double)
 	 * @generated
 	 */
-	EOperation getIFinance__PayBill__String_String_int_int_String_String_double();
+	EOperation getIFinance__PayBill__int_String_String_int_int_String_String_double();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IFinance#bankSendInvoice() <em>Bank Send Invoice</em>}' operation.
@@ -3000,7 +3000,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IFINANCE___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE = eINSTANCE.getIFinance__PayBill__String_String_int_int_String_String_double();
+		EOperation IFINANCE___PAY_BILL__INT_STRING_STRING_INT_INT_STRING_STRING_DOUBLE = eINSTANCE.getIFinance__PayBill__int_String_String_int_int_String_String_double();
 
 		/**
 		 * The meta object literal for the '<em><b>Bank Send Invoice</b></em>' operation.

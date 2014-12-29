@@ -239,6 +239,7 @@ public class BookingManagerTests {
 	 */
 	@Test
 	public void testPayBill() {
+		int bookingID = 0;
 		// Set up of a credit card account for use when paying for the booking/room(s)
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
 		String ccNumber = "01234567", ccv = "123", firstName = "Karl", lastName = "urban";
@@ -254,16 +255,16 @@ public class BookingManagerTests {
 		Classes.impl.IFinanceImplImpl financeManagement = Classes.impl.IFinanceImplImpl.instantiateForTest();
 		
 		// Pay the bill using a credit card account with a balance greater than the bill cost
-		assertEquals("Payment was successful", financeManagement.payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 343.0));
+		assertEquals("Payment was successful", financeManagement.payBill(bookingID, ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 343.0));
 		
 		// Check the balance of the credit card account to see if correct amount was withdrawn
 		assertEquals(2000.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 2000.0);
 		
 		// Check if payBill returns correct String if balance on account is lower than the cost of the bill
-		assertEquals("Amount could not be withdrawn", financeManagement.payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 2343.0));
+		assertEquals("Amount could not be withdrawn", financeManagement.payBill(bookingID, ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 2343.0));
 		
 		// Check if payBill returns correct String if credit card is not valid
-		assertEquals("Credit Card is not valid", financeManagement.payBill("00234111", ccv, expiryMonth, expiryYear, firstName, lastName, 343.0));
+		assertEquals("Credit Card is not valid", financeManagement.payBill(bookingID, "00234111", ccv, expiryMonth, expiryYear, firstName, lastName, 343.0));
 		
 		// Remove the credit card account from the banking component
 		assertTrue(bankingAdmin.removeCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName));

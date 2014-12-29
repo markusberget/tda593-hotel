@@ -550,7 +550,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIFinance__PayBill__String_String_int_int_String_String_double() {
+	public EOperation getIFinance__PayBill__int_String_String_int_int_String_String_double() {
 		return iFinanceEClass.getEOperations().get(1);
 	}
 
@@ -1268,7 +1268,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		iFinanceEClass = createEClass(IFINANCE);
 		createEOperation(iFinanceEClass, IFINANCE___CALCULATE_PAYMENT__INT);
-		createEOperation(iFinanceEClass, IFINANCE___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
+		createEOperation(iFinanceEClass, IFINANCE___PAY_BILL__INT_STRING_STRING_INT_INT_STRING_STRING_DOUBLE);
 		createEOperation(iFinanceEClass, IFINANCE___BANK_SEND_INVOICE);
 
 		iBookingManagementEClass = createEClass(IBOOKING_MANAGEMENT);
@@ -1480,7 +1480,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIFinance__CalculatePayment__int(), ecorePackage.getEInt(), "calculatePayment", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIFinance__PayBill__String_String_int_int_String_String_double(), theTypesPackage.getString(), "payBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIFinance__PayBill__int_String_String_int_int_String_String_double(), theTypesPackage.getString(), "payBill", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "ccNumber", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "ccv", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "expiryMonth", 1, 1, IS_UNIQUE, !IS_ORDERED);

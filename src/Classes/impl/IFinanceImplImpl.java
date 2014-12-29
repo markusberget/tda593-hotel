@@ -205,11 +205,13 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 
 	/**
 	 * Performs the payment of a bill. First the credit card is checked if valid, and if valid the sum is withdrawn
-	 * form the credit card. This method contains the interaction with the bank.
+	 * form the credit card. This method contains the interaction with the bank. The bookingID is necessary
+	 * because a customer could have several bookings, and a specific booking must be able to be identified
+	 * for payment.
 	 * 
 	 * @generated NOT
 	 */
-	public String payBill(String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, double cost) {
+	public String payBill(int bookingID, String ccNumber, String ccv, int expiryMonth, int expiryYear, String firstName, String lastName, double cost) {
 		se.chalmers.cse.mdsd1415.banking.customerRequires.CustomerRequires bankingCustomer;
 		boolean valid;
 		String message = null;
@@ -358,8 +360,8 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		switch (operationID) {
 			case ClassesPackage.IFINANCE_IMPL___CALCULATE_PAYMENT__INT:
 				return calculatePayment((Integer)arguments.get(0));
-			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__STRING_STRING_INT_INT_STRING_STRING_DOUBLE:
-				return payBill((String)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2), (Integer)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (Double)arguments.get(6));
+			case ClassesPackage.IFINANCE_IMPL___PAY_BILL__INT_STRING_STRING_INT_INT_STRING_STRING_DOUBLE:
+				return payBill((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (Integer)arguments.get(3), (Integer)arguments.get(4), (String)arguments.get(5), (String)arguments.get(6), (Double)arguments.get(7));
 			case ClassesPackage.IFINANCE_IMPL___BANK_SEND_INVOICE:
 				bankSendInvoice();
 				return null;

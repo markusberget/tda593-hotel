@@ -99,7 +99,7 @@ public class UserTests {
 		assertEquals(450.0, checkOutSum, 450.0);
 
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow)
-		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
+		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(bookingID, ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
 		assertEquals(1893.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 1893.0);
 		
 		// 4) Change status of room(s) to CLEANING/AVAILABLE? (which is done when payment is a success).
