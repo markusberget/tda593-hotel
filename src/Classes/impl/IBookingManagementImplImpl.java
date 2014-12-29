@@ -380,15 +380,21 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * Modifies a booking according to given arguments. If any of the dates are null, then
-	 * that argument is ignored.
+	 * Modifies a booking according to given arguments. Parameter checkIn is the new
+	 * check-in date (could be the same as before modification) and checkOut is the
+	 * new check-out date (could also be the same as before modification).
 	 * 
 	 * @generated NOT
 	 */
-	public boolean updateBooking(int bookingID, Date datesAdded, Date datesRemoved, int nrOfGuests) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+	public boolean updateBooking(int bookingID, Date checkIn, Date checkOut, int nrOfGuests) {
+		Booking booking = getConfirmedBooking(bookingID);
+		if (checkIn != null && checkOut != null && nrOfGuests > 0) {
+			booking.setCheckIn(checkIn);
+			booking.setCheckOut(checkOut);
+			booking.setNumberOfGuests(nrOfGuests);
+			return true;
+		}
+		return false;
 	}
 
 	/**

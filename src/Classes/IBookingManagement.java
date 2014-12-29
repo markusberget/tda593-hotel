@@ -20,10 +20,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" datesAddedRequired="true" datesAddedOrdered="false" datesRemovedRequired="true" datesRemovedOrdered="false" nrOfGuestsRequired="true" nrOfGuestsOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" checkInRequired="true" checkInOrdered="false" checkOutRequired="true" checkOutOrdered="false" nrOfGuestsRequired="true" nrOfGuestsOrdered="false"
 	 * @generated
 	 */
-	boolean updateBooking(int bookingID, Date datesAdded, Date datesRemoved, int nrOfGuests);
+	boolean updateBooking(int bookingID, Date checkIn, Date checkOut, int nrOfGuests);
 
 	/**
 	 * <!-- begin-user-doc -->
