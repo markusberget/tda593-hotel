@@ -282,7 +282,7 @@ public class UserTests {
 	 * between the check-in time and the cancellation time is less than 24 hours.
 	 */
 	@Test
-	public void test_Cancel_Booking_CancellationFee() {
+	public void test_valid_Cancel_Booking_CancellationFee() {
 		fail("Not yet implemented");
 	}
 
