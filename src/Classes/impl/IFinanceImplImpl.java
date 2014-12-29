@@ -223,6 +223,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 				valid = bankingCustomer.makePayment(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, cost);
 				if (valid) {
 					message = "Payment was successful";
+					setBillZero(bookingID);
 				}
 				else {
 					message = "Amount could not be withdrawn";
@@ -238,6 +239,26 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 		}
 		return message;
 	}
+	
+	/**
+	 * Sets the charges of the bill (which was successfully paid) to zero.
+	 * 
+	 * @generated NOT
+	 */
+	private void setBillZero(int bookingID) {
+		EList<Charge> charges;
+		EList<Booking> confirmedBookings = getIBookingManagementImpl().getConfirmedBookings();
+		for (Booking booking : confirmedBookings) {
+			if (booking.getBookingID() == bookingID) {
+				charges = booking.getBill().getCharge();
+				for (Charge charge : charges) {
+					charge.setAmount(0);
+				}
+
+			}
+		}
+	}
+	
 
 	/**
 	 * Unimplemented method since the bank's interface do not offer the services necessary
