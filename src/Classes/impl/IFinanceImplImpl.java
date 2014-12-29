@@ -254,12 +254,10 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 				for (Charge charge : charges) {
 					charge.setAmount(0);
 				}
-
 			}
 		}
 	}
 	
-
 	/**
 	 * Unimplemented method since the bank's interface do not offer the services necessary
 	 * for this method.

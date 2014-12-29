@@ -485,14 +485,19 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * after a check in, the difference of the current time and the check in
 	 * time of the booking will not be negative.
 	 * 
-	 * @param checkIn
-	 *            the check-in date of the booking
-	 * @return true if the difference between dates are less than 24 hours,
-	 *         otherwise false
+	 * @param checkIn		the check-in date of the booking
+	 * @return 					true if the difference between dates are less than 24 hours,
+	 *         					otherwise false
 	 */
-	private boolean addCancellationFee(Calendar checkIn) {
+	private boolean addCancellationFee(int bookingID, Calendar checkIn) {
 		Calendar currentDate = Calendar.getInstance();
 		if ((checkIn.compareTo(currentDate)) < 86400000) {
+			Charge charge = new ChargeImpl();
+			charge.setDate(new Date());
+			charge.setChargeType(ChargeType.CANCELLATION_FEE);
+			int fee = getIFinanceImpl().calculatePayment(bookingID);
+			charge.setAmount(fee);
+			((BillImpl) getConfirmedBooking(bookingID).getBill()).setCharge(charge);
 			return true;
 		}
 		return false;
