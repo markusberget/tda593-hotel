@@ -34,10 +34,48 @@ public class BookingManagerTests {
 
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#updateBooking()}.
+	 * 
+	 * Test if the updated booking contain the correct information.
 	 */
 	@Test
-	public void testUpdateBooking() {
-		fail("Not yet implemented");
+	public void test_valid_UpdateBooking() {
+		
+		// Set up a booking
+		Date checkIn = new Date();
+		Date checkOut = new Date();
+		int nrOfGuests = 4;
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		int bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, nrOfGuests);
+		assertEquals(0, bookingID);
+		bookingManagement.confirmBooking(bookingID);
+		
+		// Add customer information if this information should be modifiable in the future
+		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly", "Hansen", "helly.hansen@gmail.com", "0734321234");
+		
+		// Check the information of the booking before update
+		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
+		assertEquals(checkOut, bookingManagement.getConfirmedBookings().get(0).getCheckOut());
+		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings().get(0).getNumberOfGuests());
+		
+		// Update checkIn, checkOut and nrOfGuests of the booking
+		Date newCheckIn = new Date();
+		Date newCheckOut = new Date();
+		int newNumberOfGuests = 6;
+		bookingManagement.updateBooking(bookingID, newCheckIn, newCheckOut, newNumberOfGuests);
+		
+		// Check if the updated booking contains the desired information
+		assertEquals(newCheckIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
+		assertEquals(newCheckOut, bookingManagement.getConfirmedBookings().get(0).getCheckOut());
+		assertEquals(newNumberOfGuests, bookingManagement.getConfirmedBookings().get(0).getNumberOfGuests());
+		
+		// Update checkOut again
+		Date newCheckOutAgain = new Date();
+		bookingManagement.updateBooking(bookingID, newCheckIn, newCheckOutAgain, newNumberOfGuests);
+		
+		// Check that only the check-out date has been updated
+		assertEquals(newCheckIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
+		assertEquals(newCheckOutAgain, bookingManagement.getConfirmedBookings().get(0).getCheckOut());
+		assertEquals(newNumberOfGuests, bookingManagement.getConfirmedBookings().get(0).getNumberOfGuests());
 	}
 
 //	/**
