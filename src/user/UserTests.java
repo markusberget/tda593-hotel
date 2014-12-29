@@ -276,6 +276,15 @@ public class UserTests {
 			bookingManagement.confirmBooking(bookingID);
 		}
 	} // end inner class User
+	
+	/**
+	 * Tests the scenario where a customer cancels a booking when the time difference
+	 * between the check-in time and the cancellation time is less than 24 hours.
+	 */
+	@Test
+	public void test_Cancel_Booking_CancellationFee() {
+		fail("Not yet implemented");
+	}
 
 	@Test
 	public void testAddStaffMember() {

@@ -47,7 +47,7 @@ public interface IBookingManagement extends EObject {
 	 * @model required="true" ordered="false" roomRequired="true" roomOrdered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	int addRoomPending(int room, int bookingID);
+	boolean addRoomPending(int room, int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->

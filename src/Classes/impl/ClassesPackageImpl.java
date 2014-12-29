@@ -1507,7 +1507,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEParameter(op, ecorePackage.getEInt(), "roomID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "date", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIBookingManagement__AddRoomPending__int_int(), ecorePackage.getEInt(), "addRoomPending", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIBookingManagement__AddRoomPending__int_int(), ecorePackage.getEBoolean(), "addRoomPending", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

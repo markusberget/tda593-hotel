@@ -115,7 +115,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	protected EList<Customer> customer;
 
 	private volatile int bookingsEver; // used in current implementation to make the
-								// bookingIDs unique
+																		 // bookingIDs unique
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -224,6 +224,20 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		for (int i = 0; i < confirmedBookings.size(); i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
 				return confirmedBookings.get(i);
+			}
+		}
+		return null;
+	}
+	
+	/**
+	 * Used to retrieve a specific booking from the pending bookings list.
+	 * 
+	 * @generated NOT
+	 */
+	private Booking getPendingBooking(int bookingID) {
+		for (int i = 0; i < pendingBookings.size(); i++) {
+			if (pendingBookings.get(i).getBookingID() == bookingID) {
+				return pendingBookings.get(i);
 			}
 		}
 		return null;
@@ -417,11 +431,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-	public synchronized int addRoomPending(int room, int bookingID) {
-		Room tmpRoom = getRoomByID(room);
-		Booking tmpBooking = getBooking(bookingID);
-		tmpBooking.getRoom().add(tmpRoom);
-		return tmpBooking.getBookingID();
+	public synchronized boolean addRoomPending(int room, int bookingID) {
+		return getPendingBooking(bookingID).getRoom().add(getRoomByID(room));
 	}
 
 	/**
@@ -656,7 +667,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public synchronized int createPendingBooking(Date checkIn, Date checkOut,
 			int guestCount) {
 		
-		// Check if the check in date is not later than the check out date
+		// Test if the check-in date is not later than the check-out date
 		if (checkIn.after(checkOut)) {
 			return -1;
 		}
