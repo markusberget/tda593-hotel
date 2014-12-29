@@ -209,10 +209,10 @@ public class UserTests {
 		assertEquals(4, bookingManagement.getConfirmedBookings().size());
 		
 		// Check that the bookingIDs are unique
-		int testBookingID1 = bookingManagement.getBooking(0).getBookingID();
-		int testBookingID2 = bookingManagement.getBooking(1).getBookingID();
-		int testBookingID3 = bookingManagement.getBooking(2).getBookingID();
-		int testBookingID4 = bookingManagement.getBooking(3).getBookingID();
+		int testBookingID1 = bookingManagement.getConfirmedBookings().get(0).getBookingID();
+		int testBookingID2 = bookingManagement.getConfirmedBookings().get(1).getBookingID();
+		int testBookingID3 = bookingManagement.getConfirmedBookings().get(2).getBookingID();
+		int testBookingID4 = bookingManagement.getConfirmedBookings().get(3).getBookingID();
 		assertTrue((testBookingID1 != testBookingID2) && (testBookingID1 != testBookingID3));
 		assertTrue((testBookingID3 != testBookingID4) && (testBookingID1 != testBookingID4));
 		assertTrue((testBookingID2 != testBookingID3) && (testBookingID2 != testBookingID4));

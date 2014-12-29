@@ -69,12 +69,6 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
       </ownedParameter>
     </ownedOperation>
-    <ownedOperation xmi:type="uml:Operation" xmi:id="_40O4AHYeEeS6mLi5FsOguA" name="getBooking">
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_mHOosHZSEeSiQcRa0VNXAQ" name="bookingID">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-      </ownedParameter>
-      <ownedParameter xmi:type="uml:Parameter" xmi:id="_2ynjUICXEeSFes4IcS1MiA" type="_NNrFkHTbEeSOC7DG65-e3w" direction="return"/>
-    </ownedOperation>
     <ownedOperation xmi:type="uml:Operation" xmi:id="_AD-cMHYfEeS6mLi5FsOguA" name="getBooking">
       <ownedParameter xmi:type="uml:Parameter" xmi:id="_riKAUHZSEeSiQcRa0VNXAQ" name="roomID">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>

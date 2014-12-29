@@ -399,7 +399,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 *
 	 * @generated NOT
 	 */
-	public Booking getBooking(int bookingNumber) {
+	private Booking getBooking(int bookingNumber) {
 		// pendingBookings is merged with confirmedBookings and bookingHistory
 		EList<Booking> tmpList = new BasicEList<Booking>(pendingBookings);
 		tmpList.addAll(confirmedBookings);
@@ -871,8 +871,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		switch (operationID) {
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_DATE_DATE_INT:
 				return updateBooking((Integer)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (Integer)arguments.get(3));
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT:
-				return getBooking((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_DATE:
 				getBooking((Integer)arguments.get(0), (Date)arguments.get(1));
 				return null;

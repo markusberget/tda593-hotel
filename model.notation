@@ -2878,10 +2878,6 @@
           <element xmi:type="uml:Operation" href="Classes.uml#_3FSC4HYeEeS6mLi5FsOguA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_8XUlcXsaEeSh4-XBGg9AIQ" x="31" y="15"/>
         </children>
-        <children xmi:type="notation:Shape" xmi:id="_8sDfUHsaEeSh4-XBGg9AIQ" type="5">
-          <element xmi:type="uml:Operation" href="Classes.uml#_40O4AHYeEeS6mLi5FsOguA"/>
-          <layoutConstraint xmi:type="notation:Location" xmi:id="_8sDfUXsaEeSh4-XBGg9AIQ" x="43" y="12"/>
-        </children>
         <children xmi:type="notation:Shape" xmi:id="_9hQB8HsaEeSh4-XBGg9AIQ" type="5">
           <element xmi:type="uml:Operation" href="Classes.uml#_AD-cMHYfEeS6mLi5FsOguA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_9hQB8XsaEeSh4-XBGg9AIQ" x="58" y="19"/>
