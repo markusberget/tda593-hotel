@@ -61,7 +61,8 @@ public class BookingManagerTests {
 		try {
 			Thread.sleep(500);
 		} catch (InterruptedException e) {
-			// TODO Auto-generated catch block
+			System.err
+			.println("Thread was interrupted while sleeping");
 			e.printStackTrace();
 		}
 		
