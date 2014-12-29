@@ -3,6 +3,7 @@
 package Classes.impl;
 
 import Classes.Booking;
+import Classes.Charge;
 import Classes.ClassesPackage;
 import Classes.CustomerProvides;
 import Classes.IBookingManagementImpl;
@@ -187,13 +188,13 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * @generated NOT
 	 */
 	public int calculatePayment(int bookingID) {
-		EList<ChargeImpl> charges;
+		EList<Charge> charges;
 		int sum = 0;
 		EList<Booking> confirmedBookings = getIBookingManagementImpl().getConfirmedBookings();
 		for (Booking booking : confirmedBookings) {
 			if (booking.getBookingID() == bookingID) {
-				charges = ((BillImpl) booking.getBill()).getChargeImpl();
-				for (ChargeImpl charge : charges) {
+				charges = ((BillImpl) booking.getBill()).getCharge();
+				for (Charge charge : charges) {
 					sum += charge.getAmount();
 				}
 				return sum;

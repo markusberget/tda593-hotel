@@ -504,7 +504,7 @@
   </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_1fha4IHjEeS837TtIXY58g" name="Bill">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_9kpH4IHjEeS837TtIXY58g" name="charge" type="_4V4kAIHjEeS837TtIXY58g" association="_9ksLMIHjEeS837TtIXY58g">
-      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9kpu8IHjEeS837TtIXY58g"/>
+      <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9kpu8IHjEeS837TtIXY58g" value="1"/>
       <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9kpu8YHjEeS837TtIXY58g" value="*"/>
     </ownedAttribute>
     <ownedAttribute xmi:type="uml:Property" xmi:id="_C_rNMIHkEeS837TtIXY58g" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_C_tCYIHkEeS837TtIXY58g">

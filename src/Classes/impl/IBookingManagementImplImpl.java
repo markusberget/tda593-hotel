@@ -19,7 +19,9 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import Classes.Bill;
 import Classes.Booking;
+import Classes.Charge;
 import Classes.ChargeType;
 import Classes.ClassesPackage;
 import Classes.Customer;
@@ -412,14 +414,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * Adds a pending room to booking (should be pendingBookings?)
+	 * Adds a room to a pending booking. Method is synchronized to avoid
+	 * that several customers adds the same room to their bookings at
+	 * the same time.
 	 * 
 	 * @generated NOT
 	 */
-	public int addRoomPending(int room, int bookingID) {
+	public synchronized int addRoomPending(int room, int bookingID) {
 		Room tmpRoom = getRoomByID(room);
-		Booking tmpBooking = getBooking(bookingID); // Supposed to be
-													// this.getPendingBookings(bookingID)?
+		Booking tmpBooking = getBooking(bookingID);
 		tmpBooking.getRoom().add(tmpRoom);
 		return tmpBooking.getBookingID();
 	}
@@ -456,7 +459,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				BillImpl bill = new BillImpl();
 				EList<Room> rooms = pendingBookings.get(i).getRoom();
 				for (Room room : rooms) {
-					ChargeImpl charge = new ChargeImpl();
+					Charge charge = new ChargeImpl();
 					charge.setDate(new Date());
 					charge.setAmount(room.getRoomType().getPrice());
 					if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
@@ -466,7 +469,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					} else {
 						charge.setChargeType(ChargeType.FAMILY_SUITE);
 					}
-					bill.setChargeImpl(charge);
+					bill.setCharge(charge);
 				}
 				pendingBookings.get(i).setBill(bill);
 				confirmedBookings.add(pendingBookings.remove(i));

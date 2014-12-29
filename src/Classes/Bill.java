@@ -37,7 +37,7 @@ public interface Bill extends EObject {
 	 * @return the value of the '<em>Charge</em>' reference list.
 	 * @see Classes.ClassesPackage#getBill_Charge()
 	 * @see Classes.Charge#getBill
-	 * @model opposite="bill" ordered="false"
+	 * @model opposite="bill" required="true" ordered="false"
 	 * @generated
 	 */
 	EList<Charge> getCharge();

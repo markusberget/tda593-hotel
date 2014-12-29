@@ -44,18 +44,14 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 * @ordered
 	 */
 	protected EList<Charge> charge;
-
-	// Why can't I use the Charge type in other classes?
-	protected EList<ChargeImpl> charges;
 	
-	//Why can't I use the Charge type in other classes?
-	public EList<ChargeImpl> getChargeImpl() {
-		return charges;
-	}
-	
-	//Why can't I use the Charge type in other classes?
-	public void setChargeImpl(ChargeImpl charge) {
-		charges.add(charge);
+	/**
+	 * Add a charge to this bill.
+	 * 
+	 * @param charges		the charge to be added to this bill
+	 */
+	public void setCharge(Charge charges) {
+		charge.add(charges);
 	}
 	
 	/**
@@ -76,7 +72,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	protected BillImpl() {
 		super();
 		charge = new BasicEList<Charge>();
-		charges = new BasicEList<ChargeImpl>();
 	}
 
 	/**

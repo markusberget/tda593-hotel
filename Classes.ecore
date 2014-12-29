@@ -257,7 +257,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bill">
     <eStructuralFeatures xsi:type="ecore:EReference" name="charge" ordered="false"
-        upperBound="-1" eType="#//Charge" eOpposite="#//Charge/bill"/>
+        lowerBound="1" upperBound="-1" eType="#//Charge" eOpposite="#//Charge/bill"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="booking" ordered="false"
         lowerBound="1" eType="#//Booking" eOpposite="#//Booking/bill"/>
   </eClassifiers>
