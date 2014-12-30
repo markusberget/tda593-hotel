@@ -21,6 +21,7 @@ import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.Room;
 import Classes.RoomStatus;
+import Classes.RoomType;
 import Classes.RoomTypeName;
 
 /**
@@ -76,14 +77,14 @@ public class BookingManagerTests {
 		Date newCheckOut1 = calCheckOut.getTime();
 		int newNumberOfGuests = 6;
 		assertEquals("Booking was updated successfully",
-				bookingManagement.updateBooking(bookingID, checkIn, 
+				bookingManagement.updateBooking(bookingID, checkIn,
 						newCheckOut1, newNumberOfGuests));
 
 		// Check if the updated booking contains the desired information
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckIn());
-		assertEquals(newCheckOut1,
-				bookingManagement.getConfirmedBookings().get(0).getCheckOut());
+		assertEquals(newCheckOut1, bookingManagement.getConfirmedBookings()
+				.get(0).getCheckOut());
 		assertEquals(newNumberOfGuests, bookingManagement
 				.getConfirmedBookings().get(0).getNumberOfGuests());
 
@@ -205,7 +206,8 @@ public class BookingManagerTests {
 		// bookingManagement.getPendingBookings().get(0).setRoom(bookingManagement.getRoom().get(0));
 		bookingManagement.confirmBooking(bookingID1);
 
-		// Check that no cancellation fee as added since >24 hours left to check-in
+		// Check that no cancellation fee as added since >24 hours left to
+		// check-in
 		assertEquals(0, bookingManagement.addCancellationFee(bookingID1));
 
 		// Increase current hour by 2 to force cancellation fee to be added
@@ -215,7 +217,7 @@ public class BookingManagerTests {
 		newCheckOut.roll(Calendar.DAY_OF_MONTH, 1);
 		Date newCheckInDate = newCheckIn.getTime();
 		Date newCheckOutDate = newCheckOut.getTime();
-		
+
 		// Create new booking to cancel
 		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate,
 				newCheckOutDate, nrOfGuests);
@@ -284,7 +286,7 @@ public class BookingManagerTests {
 
 		// Tests if returned list is correct if all parameters are entered
 		// correctly
-		
+
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 		checkIn.set(2015, 02, 12);
@@ -300,12 +302,11 @@ public class BookingManagerTests {
 
 		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
 			Integer roomID = (Integer) it.next();
-			Room room = bookingManagement.getRoomByID(roomID);
-			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests()
-					&& maximumPrice >= room.getRoomType().getPrice()
-					&& roomType == room.getRoomType().getRoomTypeName()
-							.toString());			
-			
+			RoomType typeOfRoom = bookingManagement.getRoomByID(roomID)
+					.getRoomType();
+			assertTrue(numberOfGuests <= typeOfRoom.getNumberOfGuests()
+					&& maximumPrice >= typeOfRoom.getPrice()
+					&& roomType == typeOfRoom.getRoomTypeName().toString());
 		}
 
 		// Tests if returned list is correct if not all parameters are
@@ -354,7 +355,7 @@ public class BookingManagerTests {
 		checkInDate = checkIn.getTime();
 		checkOutDate = checkOut.getTime();
 		roomType = "TrippleRoom";
-		
+
 		try {
 			roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 					numberOfGuests, roomType, maximumPrice);
@@ -481,8 +482,9 @@ public class BookingManagerTests {
 		assertEquals(checkOut,
 				pendingBooking.getPendingBookings().get(bookingID1)
 						.getCheckOut());
-		assertEquals(nrOfGuests6, pendingBooking.getPendingBookings().get(bookingID1)
-				.getNumberOfGuests());
+		assertEquals(nrOfGuests6,
+				pendingBooking.getPendingBookings().get(bookingID1)
+						.getNumberOfGuests());
 		int nrOfGuests4 = 4;
 		int bookingID2 = pendingBooking.createPendingBooking(checkIn, checkOut,
 				nrOfGuests4);
@@ -494,8 +496,9 @@ public class BookingManagerTests {
 		assertEquals(checkOut,
 				pendingBooking.getPendingBookings().get(bookingID2)
 						.getCheckOut());
-		assertEquals(nrOfGuests4, pendingBooking.getPendingBookings().get(bookingID2)
-				.getNumberOfGuests());
+		assertEquals(nrOfGuests4,
+				pendingBooking.getPendingBookings().get(bookingID2)
+						.getNumberOfGuests());
 	}
 
 	/**
@@ -536,7 +539,8 @@ public class BookingManagerTests {
 		// Confirm the booking
 		assertTrue(bookingManagement.confirmBooking(bookingID));
 
-		// Calculate the sum of the bill, 200 is expected since 2 nights are booked
+		// Calculate the sum of the bill, 200 is expected since 2 nights are
+		// booked
 		assertEquals(200,
 				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 	}
