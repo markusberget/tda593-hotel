@@ -643,11 +643,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return -1;
 		}
 
-		// Convert Dates to Calendar
+		// CurrentDate is used for comparison with check-in date
 		Calendar currentDate = Calendar.getInstance();
-		Date bookingsCheckIn = getConfirmedBooking(bookingID).getCheckIn();
-		Calendar checkIn = Calendar.getInstance();
-		checkIn.setTime(bookingsCheckIn);
+		
+	// Convert Date to Calendar
+		Calendar checkIn = convertCheckInDate(getConfirmedBooking(bookingID));
 
 		// Check if difference between check-in and current time is < 24 hours
 		if ((checkIn.getTimeInMillis() - currentDate.getTimeInMillis()) < 86400000L) {
