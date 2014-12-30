@@ -603,9 +603,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * Confirms a booking by removing the booking from the pending bookings list
-	 * and adding it to the confirmed bookings list instead. A bill is
-	 * associated with a booking when the booking is confirmed. A charge for
-	 * each room in the pending booking is added to the bill.
+	 * and adding it to the confirmed bookings list instead. 
 	 * 
 	 * This method is synchronized so that several bookings may be removed at
 	 * the "same" time, instead of experiencing race condition.
@@ -615,22 +613,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public synchronized boolean confirmBooking(int bookingID) {
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-//				BillImpl bill = new BillImpl();
-//				EList<Room> rooms = pendingBookings.get(i).getRooms();
-//				for (Room room : rooms) {
-//					Charge charge = new ChargeImpl();
-//					charge.setDate(new Date());
-//					charge.setAmount(room.getRoomType().getPrice());
-//					if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
-//						charge.setChargeType(ChargeType.SINGLE_ROOM);
-//					} else if (room.getRoomType().getRoomTypeName() == RoomTypeName.DOUBLE_ROOM) {
-//						charge.setChargeType(ChargeType.DOUBLE_ROOM);
-//					} else {
-//						charge.setChargeType(ChargeType.FAMILY_SUITE);
-//					}
-//					bill.setCharge(charge);
-//				}
-//				pendingBookings.get(i).setBill(bill);
 				confirmedBookings.add(pendingBookings.remove(i));
 				return true;
 			}
