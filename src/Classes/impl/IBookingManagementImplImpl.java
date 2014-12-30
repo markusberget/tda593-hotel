@@ -624,39 +624,39 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * NOTE: If the parameter roomType is not used, send in null instead and if
 	 * the parameter maximumPrice is not used, send in 0. The other parameters
-	 * has to be entered for searchRoom to be able to find appropriate rooms.
-	 * 
+	 * are required so that searchRoom can find appropriate rooms.
 	 * 
 	 * @generated NOT
 	 */
 	@Override
 	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
-			String roomType, int maximumPrice) throws UnsupportedOperationException{
+			String roomType, int maximumPrice)
+			throws UnsupportedOperationException {
 
 		EList<Room> rooms = this.getRoom();
 		EList<Integer> searchResult = new BasicEList<Integer>();
+		int minimumNbrOfGuests = 1;
+
+		// Works if Dates are entered in valid form, not the weird 1900
+		// + form
+		Calendar today = Calendar.getInstance();
+		Date todaysDate = today.getTime();
+		if (checkIn.before(todaysDate) || checkOut.before(checkIn)
+				|| maximumPrice < 0 || numberOfGuests < minimumNbrOfGuests
+				|| (roomType != null && RoomTypeName.get(roomType) == null)) {
+			throw new UnsupportedOperationException();
+		}
+
 		for (Room r : rooms) {
 			if (numberOfGuests <= (r.getRoomType().getNumberOfGuests())
 					&& (maximumPrice >= r.getRoomType().getPrice() || maximumPrice == 0)
 					&& (roomType == (r.getRoomType().getRoomTypeName())
 							.toString() || roomType == null)) {
 				EList<Booking> bookings = r.getBookings();
-				
-				if(maximumPrice < 0 || numberOfGuests  < 1 ){
-					throw new UnsupportedOperationException();
-				}
-				
-				// Works if Dates are entered in valid form, not the weird 1900 + form
-				Calendar today = Calendar.getInstance();
-				Date todaysDate = today.getTime();
-				if(checkIn.before(todaysDate) || checkOut.before(checkIn)){
-					throw new UnsupportedOperationException();
-				}
-				
+
 				if (bookings.isEmpty()) {
 					searchResult.add(r.getRoomNumber());
-				} 
-				else {
+				} else {
 					boolean roomFree = true;
 					Iterator<Booking> listIterator = bookings.iterator();
 					while (roomFree && listIterator.hasNext()) {

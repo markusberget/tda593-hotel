@@ -277,7 +277,7 @@ public class BookingManagerTests {
 	 * Tests if the rooms that are returned from the searchRoom method matches
 	 * the parameters that are sent in.
 	 * 
-	 * No test on if the Dates are free yet.
+	 * No test to check if valid Dates are free yet.
 	 * 
 	 */
 
@@ -337,7 +337,7 @@ public class BookingManagerTests {
 		} catch (Throwable exception) {
 			assertTrue(exception instanceof UnsupportedOperationException);
 		}
-		
+
 		checkIn.set(2011, 02, 12);
 		checkOut.set(2011, 01, 13);
 		checkInDate = checkIn.getTime();
@@ -348,7 +348,22 @@ public class BookingManagerTests {
 		} catch (Throwable exception) {
 			assertTrue(exception instanceof UnsupportedOperationException);
 		}
+
+		// Sets the dates to be valid again but enters an invalid room type name
+		// and tests so that the exception is thrown correctly
+
+		checkIn.set(2015, 02, 12);
+		checkOut.set(2015, 02, 14);
+		checkInDate = checkIn.getTime();
+		checkOutDate = checkOut.getTime();
+		roomType = "TrippleRoom";
 		
+		try {
+			roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
+					numberOfGuests, roomType, maximumPrice);
+		} catch (Throwable exception) {
+			assertTrue(exception instanceof UnsupportedOperationException);
+		}
 
 	}
 
