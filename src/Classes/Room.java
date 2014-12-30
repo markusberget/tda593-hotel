@@ -113,7 +113,7 @@ public interface Room extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Bookings</b></em>' reference list.
 	 * The list contents are of type {@link Classes.Booking}.
-	 * It is bidirectional and its opposite is '{@link Classes.Booking#getRoom <em>Room</em>}'.
+	 * It is bidirectional and its opposite is '{@link Classes.Booking#getRooms <em>Rooms</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bookings</em>' reference list isn't clear,
@@ -122,8 +122,8 @@ public interface Room extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Bookings</em>' reference list.
 	 * @see Classes.ClassesPackage#getRoom_Bookings()
-	 * @see Classes.Booking#getRoom
-	 * @model opposite="room" ordered="false"
+	 * @see Classes.Booking#getRooms
+	 * @model opposite="rooms" ordered="false"
 	 * @generated
 	 */
 	EList<Booking> getBookings();

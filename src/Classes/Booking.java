@@ -25,7 +25,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.Booking#getCustomer <em>Customer</em>}</li>
  *   <li>{@link Classes.Booking#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.Booking#getBill <em>Bill</em>}</li>
- *   <li>{@link Classes.Booking#getRoom <em>Room</em>}</li>
+ *   <li>{@link Classes.Booking#getRooms <em>Rooms</em>}</li>
  * </ul>
  * </p>
  *
@@ -299,24 +299,6 @@ public interface Booking extends EObject {
 	void setIBookingManagementImpl(IBookingManagementImpl value);
 
 	/**
-	 * Returns the value of the '<em><b>Room</b></em>' reference list.
-	 * The list contents are of type {@link Classes.Room}.
-	 * It is bidirectional and its opposite is '{@link Classes.Room#getBookings <em>Bookings</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Room</em>' reference list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room</em>' reference list.
-	 * @see Classes.ClassesPackage#getBooking_Room()
-	 * @see Classes.Room#getBookings
-	 * @model opposite="bookings" required="true" ordered="false"
-	 * @generated
-	 */
-	EList<Room> getRoom();
-
-	/**
 	 * Returns the value of the '<em><b>Bill</b></em>' reference.
 	 * It is bidirectional and its opposite is '{@link Classes.Bill#getBooking <em>Booking</em>}'.
 	 * <!-- begin-user-doc -->
@@ -343,5 +325,23 @@ public interface Booking extends EObject {
 	 * @generated
 	 */
 	void setBill(Bill value);
+
+	/**
+	 * Returns the value of the '<em><b>Rooms</b></em>' reference list.
+	 * The list contents are of type {@link Classes.Room}.
+	 * It is bidirectional and its opposite is '{@link Classes.Room#getBookings <em>Bookings</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Rooms</em>' reference list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Rooms</em>' reference list.
+	 * @see Classes.ClassesPackage#getBooking_Rooms()
+	 * @see Classes.Room#getBookings
+	 * @model opposite="bookings" ordered="false"
+	 * @generated
+	 */
+	EList<Room> getRooms();
 
 } // Booking
