@@ -3,11 +3,9 @@
 package Classes.impl;
 
 import java.lang.reflect.InvocationTargetException;
-import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -19,7 +17,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import Classes.Booking;
 import Classes.Charge;
 import Classes.ChargeType;
@@ -399,12 +396,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if (checkIn.after(checkOut)) {
 			return "Could not update booking, check-in date is later than check-out date";
 		}
-		if (checkIn != null || checkOut != null && nrOfGuests > 0) {
+		if ((checkIn != null || checkOut != null) && nrOfGuests > 0) {
 			if (checkIn != null) {
 				booking.setCheckIn(checkIn);
+				// Change booked dates for room in rooms bookedDate list
 			}
 			if (checkOut != null) {
 				booking.setCheckOut(checkOut);
+				// Change booked dates for room in rooms bookedDate list
 			}
 			booking.setNumberOfGuests(nrOfGuests);
 			return "Booking was updated successfully";
@@ -521,18 +520,20 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @return 					true if the difference between dates are less than 24 hours,
 	 *         					otherwise false
 	 */
-	private boolean addCancellationFee(int bookingID, Calendar checkIn) {
-		Calendar currentDate = Calendar.getInstance();
-		if ((checkIn.compareTo(currentDate)) < 86400000) {
+	public int addCancellationFee(int bookingID) {
+		// Get booking checkin date
+		//Calendar currentDate = Calendar.getInstance();
+		Date currentDate = new Date();
+		if ((getConfirmedBooking(bookingID).getCheckIn().compareTo(currentDate)) < 86400000) {
 			Charge charge = new ChargeImpl();
 			charge.setDate(new Date());
 			charge.setChargeType(ChargeType.CANCELLATION_FEE);
 			int fee = getIFinanceImpl().calculatePayment(bookingID);
 			charge.setAmount(fee);
 			((BillImpl) getConfirmedBooking(bookingID).getBill()).setCharge(charge);
-			return true;
+			return fee;
 		}
-		return false;
+		return 0;
 	}
 
 	/**
@@ -906,6 +907,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				return createPendingBooking((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS:
 				return changeStatusOfRoom((String)arguments.get(0), (Integer)arguments.get(1), (RoomStatus)arguments.get(2));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CANCELLATION_FEE__INT:
+				return addCancellationFee((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

@@ -692,13 +692,22 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 9;
 
 	/**
+	 * The operation id for the '<em>Add Cancellation Fee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = 10;
+
+	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 10;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 11;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -861,6 +870,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS;
+
+	/**
+	 * The operation id for the '<em>Add Cancellation Fee</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___ADD_CANCELLATION_FEE__INT = IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management Impl</em>' class.
@@ -1949,6 +1967,16 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#addCancellationFee(int) <em>Add Cancellation Fee</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Cancellation Fee</em>' operation.
+	 * @see Classes.IBookingManagement#addCancellationFee(int)
+	 * @generated
+	 */
+	EOperation getIBookingManagement__AddCancellationFee__int();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IFinance <em>IFinance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2967,6 +2995,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = eINSTANCE.getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Cancellation Fee</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = eINSTANCE.getIBookingManagement__AddCancellationFee__int();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IFinance <em>IFinance</em>}' class.
