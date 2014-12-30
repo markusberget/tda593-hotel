@@ -376,12 +376,19 @@ public class BookingManagerTests {
 	public void testCancelBooking() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
-		int bookingID1 = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 4);
-		int bookingID2 = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 2);
-		int bookingID3 = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 5);
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests4 = 4, nrOfGuests2 = 2, nrOfGuests5 = 5;
+		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests4);
+		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests2);
+		int bookingID3 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests5);
 		assertEquals(0, bookingID1);
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingID3);
