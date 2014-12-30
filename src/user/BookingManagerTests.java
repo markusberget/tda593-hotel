@@ -13,7 +13,6 @@ import java.util.Iterator;
 import javax.xml.soap.SOAPException;
 
 import org.eclipse.emf.common.util.EList;
-import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -115,8 +114,12 @@ public class BookingManagerTests {
 	public void test_invalid_UpdateBooking() {
 
 		// Set up a booking
-		Date checkIn = new Date();
-		Date checkOut = new Date();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests = 4;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
@@ -154,18 +157,10 @@ public class BookingManagerTests {
 		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
 
-		// Let thread sleep 500ms to increase difference between check-in and
-		// check-out dates
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			System.err.println("Thread was interrupted while sleeping");
-			e.printStackTrace();
-		}
-
 		// Update the booking using a check-in date that is later than the
 		// check-out date
-		Date newCheckIn = new Date();
+		calCheckOut.set(2015, 0, 19, 10, 00);
+		Date newCheckIn = calCheckOut.getTime();
 		assertEquals(
 				"Could not update booking, check-in date is later than check-out date",
 				bookingManagement.updateBooking(bookingID, newCheckIn,
