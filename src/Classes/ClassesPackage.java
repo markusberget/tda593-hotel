@@ -611,22 +611,13 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT = 0;
 
 	/**
-	 * The operation id for the '<em>Get Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE = 1;
-
-	/**
 	 * The operation id for the '<em>Add Room Pending</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT = 2;
+	int IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT = 1;
 
 	/**
 	 * The operation id for the '<em>Confirm Booking</em>' operation.
@@ -635,7 +626,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT = 3;
+	int IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT = 2;
 
 	/**
 	 * The operation id for the '<em>Search Room</em>' operation.
@@ -644,7 +635,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = 4;
+	int IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT = 3;
 
 	/**
 	 * The operation id for the '<em>Cancel Booking</em>' operation.
@@ -653,7 +644,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 5;
+	int IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT = 4;
 
 	/**
 	 * The operation id for the '<em>Check In</em>' operation.
@@ -662,7 +653,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 6;
+	int IBOOKING_MANAGEMENT___CHECK_IN__INT = 5;
 
 	/**
 	 * The operation id for the '<em>Add Customer Information To Booking</em>' operation.
@@ -671,7 +662,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 7;
+	int IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING = 6;
 
 	/**
 	 * The operation id for the '<em>Create Pending Booking</em>' operation.
@@ -680,7 +671,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 8;
+	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 7;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -689,7 +680,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 9;
+	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 8;
 
 	/**
 	 * The operation id for the '<em>Add Cancellation Fee</em>' operation.
@@ -698,7 +689,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = 10;
+	int IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = 9;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
@@ -707,7 +698,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 11;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -789,15 +780,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_DATE_DATE_INT = IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT;
-
-	/**
-	 * The operation id for the '<em>Get Booking</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_DATE = IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE;
 
 	/**
 	 * The operation id for the '<em>Add Room Pending</em>' operation.
@@ -1877,16 +1859,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__UpdateBooking__int_Date_Date_int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#getBooking(int, java.util.Date) <em>Get Booking</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Get Booking</em>' operation.
-	 * @see Classes.IBookingManagement#getBooking(int, java.util.Date)
-	 * @generated
-	 */
-	EOperation getIBookingManagement__GetBooking__int_Date();
-
-	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#addRoomPending(int, int) <em>Add Room Pending</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2923,14 +2895,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT = eINSTANCE.getIBookingManagement__UpdateBooking__int_Date_Date_int();
-
-		/**
-		 * The meta object literal for the '<em><b>Get Booking</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE = eINSTANCE.getIBookingManagement__GetBooking__int_Date();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Room Pending</b></em>' operation.

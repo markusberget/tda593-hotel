@@ -439,9 +439,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
-	public void getBooking(int roomID, Date date) {
+	private void getBooking(int roomID, Date date) {
 		// TODO: implement this method
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
@@ -901,9 +901,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		switch (operationID) {
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_DATE_DATE_INT:
 				return updateBooking((Integer)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (Integer)arguments.get(3));
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_DATE:
-				getBooking((Integer)arguments.get(0), (Date)arguments.get(1));
-				return null;
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_ROOM_PENDING__INT_INT:
 				return addRoomPending((Integer)arguments.get(0), (Integer)arguments.get(1));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CONFIRM_BOOKING__INT:
