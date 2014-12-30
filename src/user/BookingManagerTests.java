@@ -215,32 +215,20 @@ public class BookingManagerTests {
 		// bookingManagement.getPendingBookings().get(0).setRoom(bookingManagement.getRoom().get(0));
 		bookingManagement.confirmBooking(bookingID1);
 
-		// Check that no cancellation fee as added since >24 hours left to
-		// check-in
+		// Check that no cancellation fee as added since >24 hours left to check-in
 		assertEquals(0, bookingManagement.addCancellationFee(bookingID1));
-<<<<<<< HEAD
-		
-		// Increase current hour by 2 to force cancellation fee to be added
-=======
 
-		// Increase current hour by 2
->>>>>>> 925028b8b57ab6cd8f4e1c714046e2e60cb57c9f
+		// Increase current hour by 2 to force cancellation fee to be added
 		Calendar newCheckIn = Calendar.getInstance();
 		Calendar newCheckOut = Calendar.getInstance();
 		newCheckIn.roll(newCheckIn.HOUR_OF_DAY, 2);
 		newCheckOut.roll(newCheckOut.DAY_OF_MONTH, 1);
 		Date newCheckInDate = newCheckIn.getTime();
-<<<<<<< HEAD
 		Date newCheckOutDate = newCheckOut.getTime();
 		
 		// Create new booking to cancel
-		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate, newCheckOutDate, nrOfGuests);
-=======
-
-		// Create new booking to cancel
 		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate,
-				checkOutDate, nrOfGuests);
->>>>>>> 925028b8b57ab6cd8f4e1c714046e2e60cb57c9f
+				newCheckOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID2));
 		assertTrue(bookingManagement.addRoomPending(room2, bookingID2));
 		bookingManagement.confirmBooking(bookingID2);
