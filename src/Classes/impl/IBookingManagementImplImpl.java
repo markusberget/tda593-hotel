@@ -396,12 +396,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if (checkIn.after(checkOut)) {
 			return "Could not update booking, check-in date is later than check-out date";
 		}
-		if (checkIn != null || checkOut != null && nrOfGuests > 0) {
+		if ((checkIn != null || checkOut != null) && nrOfGuests > 0) {
 			if (checkIn != null) {
 				booking.setCheckIn(checkIn);
+				// Change booked dates for room in rooms bookedDate list
 			}
 			if (checkOut != null) {
 				booking.setCheckOut(checkOut);
+				// Change booked dates for room in rooms bookedDate list
 			}
 			booking.setNumberOfGuests(nrOfGuests);
 			return "Booking was updated successfully";

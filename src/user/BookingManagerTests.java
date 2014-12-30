@@ -122,9 +122,18 @@ public class BookingManagerTests {
 		assertEquals(checkOut, bookingManagement.getConfirmedBookings().get(0).getCheckOut());
 		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings().get(0).getNumberOfGuests());
 		
+		// Let thread sleep 500ms to increase difference between check-in and check-out dates
+		try {
+			Thread.sleep(500);
+		} catch (InterruptedException e) {
+			System.err
+			.println("Thread was interrupted while sleeping");
+			e.printStackTrace();
+		}
+		
 		// Update the booking using a check-in date that is later than the check-out date
 		Date newCheckIn = new Date();
-		assertEquals("Booking could not be updated due to invalid argument(s)", bookingManagement.updateBooking(bookingID, newCheckIn, checkOut, nrOfGuests));
+		assertEquals("Could not update booking, check-in date is later than check-out date", bookingManagement.updateBooking(bookingID, newCheckIn, checkOut, nrOfGuests));
 		
 		// Check if the "updated" booking contains the desired (old) information
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
