@@ -72,7 +72,14 @@ public class UserTests {
 		
 		// Set up a pending booking
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-		int bookingID = bookingManagement.createPendingBooking(new Date(), new Date(), 3);
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests3 = 3;
+		int bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, nrOfGuests3);
 		String email = "karl.urban@gmail.com", ph = "0843322";
 		bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 		
@@ -172,10 +179,17 @@ public class UserTests {
 	public void test_valid_FourUsersBookingConcurrently() {
 		String testName;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-		Thread user1 = new Thread(new User(bookingManagement, "Karl", "Urban", "karl.urban@gmail.com", "047663", new Date(), new Date(), 4));
-		Thread user2 = new Thread(new User(bookingManagement, "Didrik", "Didier", "didrik.didier@gmail.com", "34466", new Date(), new Date(), 2));
-		Thread user3 = new Thread(new User(bookingManagement, "Henn", "Venn", "henn.venn@gmail.com", "123456", new Date(), new Date(), 3));
-		Thread user4 = new Thread(new User(bookingManagement, "Lauder", "Dale", "lauder.dale@gmail.com", "056232", new Date(), new Date(), 1));
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests1 = 1, nrOfGuests2 = 2, nrOfGuests3 = 3, nrOfGuests4 = 4;
+		Thread user1 = new Thread(new User(bookingManagement, "Karl", "Urban", "karl.urban@gmail.com", "047663", checkIn, checkOut, nrOfGuests4));
+		Thread user2 = new Thread(new User(bookingManagement, "Didrik", "Didier", "didrik.didier@gmail.com", "34466", checkIn, checkOut, nrOfGuests2));
+		Thread user3 = new Thread(new User(bookingManagement, "Henn", "Venn", "henn.venn@gmail.com", "123456", checkIn, checkOut, nrOfGuests3));
+		Thread user4 = new Thread(new User(bookingManagement, "Lauder", "Dale", "lauder.dale@gmail.com", "056232", checkIn, checkOut, nrOfGuests1));
 		
 		// Perform booking
 		user1.start();
