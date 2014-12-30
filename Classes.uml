@@ -75,14 +75,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_AD-cMHYfEeS6mLi5FsOguA" name="getBooking">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_riKAUHZSEeSiQcRa0VNXAQ" name="roomID">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_xE2M0HZSEeSiQcRa0VNXAQ" name="date">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-        </ownedParameter>
-      </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_B99coHYfEeS6mLi5FsOguA" name="addRoomPending" concurrency="concurrent">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_T1akkHZaEeSiQcRa0VNXAQ" name="room">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>

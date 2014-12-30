@@ -28,14 +28,6 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model roomIDRequired="true" roomIDOrdered="false" dateRequired="true" dateOrdered="false"
-	 * @generated
-	 */
-	void getBooking(int roomID, Date date);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
 	 * @model required="true" ordered="false" roomRequired="true" roomOrdered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */

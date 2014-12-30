@@ -451,7 +451,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__GetBooking__int_Date() {
+	public EOperation getIBookingManagement__AddRoomPending__int_int() {
 		return iBookingManagementEClass.getEOperations().get(1);
 	}
 
@@ -460,7 +460,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__AddRoomPending__int_int() {
+	public EOperation getIBookingManagement__ConfirmBooking__int() {
 		return iBookingManagementEClass.getEOperations().get(2);
 	}
 
@@ -469,7 +469,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__ConfirmBooking__int() {
+	public EOperation getIBookingManagement__SearchRoom__Date_Date_int_String_int() {
 		return iBookingManagementEClass.getEOperations().get(3);
 	}
 
@@ -478,7 +478,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__SearchRoom__Date_Date_int_String_int() {
+	public EOperation getIBookingManagement__CancelBooking__int() {
 		return iBookingManagementEClass.getEOperations().get(4);
 	}
 
@@ -487,7 +487,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__CancelBooking__int() {
+	public EOperation getIBookingManagement__CheckIn__int() {
 		return iBookingManagementEClass.getEOperations().get(5);
 	}
 
@@ -496,7 +496,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__CheckIn__int() {
+	public EOperation getIBookingManagement__AddCustomerInformationToBooking__int_String_String_String_String() {
 		return iBookingManagementEClass.getEOperations().get(6);
 	}
 
@@ -505,7 +505,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__AddCustomerInformationToBooking__int_String_String_String_String() {
+	public EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int() {
 		return iBookingManagementEClass.getEOperations().get(7);
 	}
 
@@ -514,7 +514,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int() {
+	public EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus() {
 		return iBookingManagementEClass.getEOperations().get(8);
 	}
 
@@ -523,17 +523,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus() {
-		return iBookingManagementEClass.getEOperations().get(9);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getIBookingManagement__AddCancellationFee__int() {
-		return iBookingManagementEClass.getEOperations().get(10);
+		return iBookingManagementEClass.getEOperations().get(9);
 	}
 
 	/**
@@ -1283,7 +1274,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		iBookingManagementEClass = createEClass(IBOOKING_MANAGEMENT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___GET_BOOKING__INT_DATE);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_ROOM_PENDING__INT_INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT);
@@ -1510,10 +1500,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEParameter(op, ecorePackage.getEDate(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "nrOfGuests", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getIBookingManagement__GetBooking__int_Date(), null, "getBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "roomID", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDate(), "date", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIBookingManagement__AddRoomPending__int_int(), ecorePackage.getEBoolean(), "addRoomPending", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "room", 1, 1, IS_UNIQUE, !IS_ORDERED);
