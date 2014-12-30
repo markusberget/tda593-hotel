@@ -10,6 +10,8 @@
         lowerBound="1" eType="#//RoomType" eOpposite="#//RoomType/room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="booking" ordered="false"
         upperBound="-1" eType="#//Booking" eOpposite="#//Booking/room"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bookedDates" ordered="false"
+        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoomStatus">
     <eLiterals name="Occupied"/>

@@ -187,7 +187,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	 * 
 	 * @generated NOT
 	 */
-	public int calculatePayment(int bookingID) {
+	public synchronized int calculatePayment(int bookingID) {
 		EList<Charge> charges;
 		int sum = 0;
 		EList<Booking> confirmedBookings = getIBookingManagementImpl().getConfirmedBookings();

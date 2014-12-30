@@ -7,9 +7,8 @@ import Classes.ClassesPackage;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomType;
-
 import java.util.Collection;
-
+import java.util.Date;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
@@ -17,6 +16,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
@@ -31,6 +31,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Classes.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.impl.RoomImpl#getBookedDates <em>Booked Dates</em>}</li>
  * </ul>
  * </p>
  *
@@ -96,6 +97,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected EList<Booking> booking;
+
+	/**
+	 * The cached value of the '{@link #getBookedDates() <em>Booked Dates</em>}' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getBookedDates()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Date> bookedDates;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -258,6 +269,18 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Date> getBookedDates() {
+		if (bookedDates == null) {
+			bookedDates = new EDataTypeUniqueEList<Date>(Date.class, this, ClassesPackage.ROOM__BOOKED_DATES);
+		}
+		return bookedDates;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -305,6 +328,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return basicGetRoomType();
 			case ClassesPackage.ROOM__BOOKING:
 				return getBooking();
+			case ClassesPackage.ROOM__BOOKED_DATES:
+				return getBookedDates();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -331,6 +356,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				getBooking().clear();
 				getBooking().addAll((Collection<? extends Booking>)newValue);
 				return;
+			case ClassesPackage.ROOM__BOOKED_DATES:
+				getBookedDates().clear();
+				getBookedDates().addAll((Collection<? extends Date>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -355,6 +384,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__BOOKING:
 				getBooking().clear();
 				return;
+			case ClassesPackage.ROOM__BOOKED_DATES:
+				getBookedDates().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -375,6 +407,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return roomType != null;
 			case ClassesPackage.ROOM__BOOKING:
 				return booking != null && !booking.isEmpty();
+			case ClassesPackage.ROOM__BOOKED_DATES:
+				return bookedDates != null && !bookedDates.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -393,6 +427,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		result.append(status);
 		result.append(", roomNumber: ");
 		result.append(roomNumber);
+		result.append(", bookedDates: ");
+		result.append(bookedDates);
 		result.append(')');
 		return result.toString();
 	}

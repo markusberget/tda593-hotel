@@ -2,6 +2,7 @@
  */
 package Classes;
 
+import java.util.Date;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
@@ -17,6 +18,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link Classes.Room#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link Classes.Room#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.Room#getBookedDates <em>Booked Dates</em>}</li>
  * </ul>
  * </p>
  *
@@ -125,5 +127,21 @@ public interface Room extends EObject {
 	 * @generated
 	 */
 	EList<Booking> getBooking();
+
+	/**
+	 * Returns the value of the '<em><b>Booked Dates</b></em>' attribute list.
+	 * The list contents are of type {@link java.util.Date}.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Booked Dates</em>' attribute isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @return the value of the '<em>Booked Dates</em>' attribute list.
+	 * @see Classes.ClassesPackage#getRoom_BookedDates()
+	 * @model ordered="false"
+	 * @generated
+	 */
+	EList<Date> getBookedDates();
 
 } // Room

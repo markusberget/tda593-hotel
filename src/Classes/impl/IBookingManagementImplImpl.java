@@ -529,7 +529,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-
 	@Override
 	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
 			String roomType, int maximumPrice) {
@@ -577,27 +576,20 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * history list. The method is synchronized to avoid race conditions when
 	 * removing bookings (and searching for the correct booking)
 	 * 
-	 * NOTE1: A cancelled booking should make the associated rooms available for
-	 * booking again which is not the case at the moment. This will be
-	 * implemented later.
-	 * 
-	 * NOTE2: This method will be rewritten.
+	 * NOTE: A cancelled booking should make the associated rooms available for
+	 * booking again during concerned dates. This will be implemented later.
 	 * 
 	 * @generated NOT
 	 */
 	public synchronized boolean cancelBooking(int bookingID) {
-		int listSize; // Save current size of list because concurrent activity
-						// may change sizes
-		listSize = pendingBookings.size();
-
-		// Add invocation of addCancelationFee to add charge to bill if
-		// necessary
-		// If return of addCancelationFee is true, perform payment part
+		// Save current size of list because concurrent activity may change sizes
+		int listSize = pendingBookings.size();
 
 		// The lists are traversed separately because a booking should be
 		// removed from the correct list
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
+				// Remove booked dates for room(s) so they get available again
 				bookingHistory.add(pendingBookings.remove(i));
 				return true;
 			}
@@ -606,11 +598,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		listSize = confirmedBookings.size();
 		for (int i = 0; i < listSize; i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
+				// Remove booked dates for room(s) so they get available again
 				bookingHistory.add(confirmedBookings.remove(i));
 				return true;
 			}
 		}
-		// addCancellationFee();
 		return false;
 	}
 

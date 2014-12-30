@@ -105,13 +105,22 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__BOOKING = 3;
 
 	/**
+	 * The feature id for the '<em><b>Booked Dates</b></em>' attribute list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__BOOKED_DATES = 4;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 4;
+	int ROOM_FEATURE_COUNT = 5;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1656,6 +1665,17 @@ public interface ClassesPackage extends EPackage {
 	EReference getRoom_Booking();
 
 	/**
+	 * Returns the meta object for the attribute list '{@link Classes.Room#getBookedDates <em>Booked Dates</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute list '<em>Booked Dates</em>'.
+	 * @see Classes.Room#getBookedDates()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EAttribute getRoom_BookedDates();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.RoomType <em>Room Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2725,6 +2745,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference ROOM__BOOKING = eINSTANCE.getRoom_Booking();
+
+		/**
+		 * The meta object literal for the '<em><b>Booked Dates</b></em>' attribute list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute ROOM__BOOKED_DATES = eINSTANCE.getRoom_BookedDates();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.RoomTypeImpl <em>Room Type</em>}' class.
