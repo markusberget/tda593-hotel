@@ -516,11 +516,74 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	/**
 	 * Adds a room to a pending booking. Method is synchronized to avoid that
 	 * several customers adds the same room to their bookings at the same time.
+	 * The dates for which the room is being booked is created (date objects)
+	 * here and added to the room objects bookedDates list so that other users
+	 * of the system won't be able to book these dates for the specific room (or
+	 * even retrieve the room as a search result during booked date).
 	 * 
 	 * @generated NOT
 	 */
-	public synchronized boolean addRoomPending(int room, int bookingID) {
-		return getPendingBooking(bookingID).getRooms().add(getRoomByID(room));
+	public synchronized boolean addRoomPending(int roomNr, int bookingID) {
+		Booking booking = getPendingBooking(bookingID);
+		Room room = getRoomByID(roomNr);
+		Date bookedDate;
+		
+		// Check if booking exists
+		if (booking == null) {
+			return false;
+		}
+		
+		// Add room to booking
+		booking.getRooms().add(room);
+		
+		// Convert Date to Calendar
+		Date checkIn = booking.getCheckIn();
+		Date checkOut = booking.getCheckOut();
+		Calendar calCheckIn = Calendar.getInstance();
+		calCheckIn.setTime(checkIn);
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckOut.setTime(checkOut);
+		
+		// Retrieve date fields
+		int checkInDay = calCheckIn.get(calCheckIn.DAY_OF_MONTH);
+		int checkOutDay = calCheckOut.get(calCheckOut.DAY_OF_MONTH);
+		int checkInYear = calCheckIn.get(calCheckIn.YEAR);
+		int checkOutYear = calCheckOut.get(calCheckOut.YEAR);
+		int checkInMonth = calCheckIn.get(calCheckIn.MONTH);
+		int checkOutMonth = calCheckOut.get(calCheckOut.MONTH);
+		
+		// If any of these two are true, create Date objects for booked dates
+		boolean check1 = (checkInYear == checkOutYear) && (checkInMonth <= checkOutMonth);
+		boolean check2 = checkInYear < checkOutYear;
+
+		// This implementation do not work (roll) in all cases, like for different months
+		if (check1) {
+			while (checkInDay < checkOutDay) {
+				bookedDate = calCheckIn.getTime();
+				getRoomByID(roomNr).getBookedDates().add(bookedDate);
+				
+				// Add charge for spending one night at specified room
+				Charge charge = new ChargeImpl();
+				charge.setDate(new Date());
+				charge.setAmount(room.getRoomType().getPrice());
+				if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
+					charge.setChargeType(ChargeType.SINGLE_ROOM);
+				} else if (room.getRoomType().getRoomTypeName() == RoomTypeName.DOUBLE_ROOM) {
+					charge.setChargeType(ChargeType.DOUBLE_ROOM);
+				} else {
+					charge.setChargeType(ChargeType.FAMILY_SUITE);
+				}
+				booking.getBill().getCharge().add(charge);
+				
+				// Increment to next day
+				calCheckIn.roll(calCheckIn.DAY_OF_MONTH, 1);
+				checkInDay++;
+			}
+			return true;
+		} else if (check2) {
+			return true;
+		}
+		return false;
 	}
 
 	/**
@@ -552,22 +615,22 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public synchronized boolean confirmBooking(int bookingID) {
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				BillImpl bill = new BillImpl();
-				EList<Room> rooms = pendingBookings.get(i).getRooms();
-				for (Room room : rooms) {
-					Charge charge = new ChargeImpl();
-					charge.setDate(new Date());
-					charge.setAmount(room.getRoomType().getPrice());
-					if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
-						charge.setChargeType(ChargeType.SINGLE_ROOM);
-					} else if (room.getRoomType().getRoomTypeName() == RoomTypeName.DOUBLE_ROOM) {
-						charge.setChargeType(ChargeType.DOUBLE_ROOM);
-					} else {
-						charge.setChargeType(ChargeType.FAMILY_SUITE);
-					}
-					bill.setCharge(charge);
-				}
-				pendingBookings.get(i).setBill(bill);
+//				BillImpl bill = new BillImpl();
+//				EList<Room> rooms = pendingBookings.get(i).getRooms();
+//				for (Room room : rooms) {
+//					Charge charge = new ChargeImpl();
+//					charge.setDate(new Date());
+//					charge.setAmount(room.getRoomType().getPrice());
+//					if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
+//						charge.setChargeType(ChargeType.SINGLE_ROOM);
+//					} else if (room.getRoomType().getRoomTypeName() == RoomTypeName.DOUBLE_ROOM) {
+//						charge.setChargeType(ChargeType.DOUBLE_ROOM);
+//					} else {
+//						charge.setChargeType(ChargeType.FAMILY_SUITE);
+//					}
+//					bill.setCharge(charge);
+//				}
+//				pendingBookings.get(i).setBill(bill);
 				confirmedBookings.add(pendingBookings.remove(i));
 				return true;
 			}
@@ -593,7 +656,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public int addCancellationFee(int bookingID) {
 
-		// Check if given booking exists
+		// Check if booking with corresponding bookingID exists
 		if (getConfirmedBooking(bookingID) == null) {
 			return -1;
 		}
@@ -780,11 +843,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			int guestCount) {
 
 		// Test if the check-in date is not later than the check-out date
-		if (checkIn.after(checkOut)) {
+		if (checkIn.after(checkOut) || guestCount <= 0) {
 			return -1;
 		}
+		
+		BillImpl bill = new BillImpl();
 		Customer customer = new CustomerImpl();
 		Booking booking = new BookingImpl();
+		booking.setBill(bill);
 		booking.setCustomer(customer);
 		booking.setCheckIn(checkIn);
 		booking.setCheckOut(checkOut);

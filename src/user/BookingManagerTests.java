@@ -215,18 +215,20 @@ public class BookingManagerTests {
 		// bookingManagement.getPendingBookings().get(0).setRoom(bookingManagement.getRoom().get(0));
 		bookingManagement.confirmBooking(bookingID1);
 
-		// Check that no cancellation fee as added since >24 hours left to
-		// check-in
+		// Check that no cancellation fee as added since >24 hours left to check-in
 		assertEquals(0, bookingManagement.addCancellationFee(bookingID1));
 
-		// Increase current hour by 2
+		// Increase current hour by 2 to force cancellation fee to be added
 		Calendar newCheckIn = Calendar.getInstance();
+		Calendar newCheckOut = Calendar.getInstance();
 		newCheckIn.roll(newCheckIn.HOUR_OF_DAY, 2);
+		newCheckOut.roll(newCheckOut.DAY_OF_MONTH, 1);
 		Date newCheckInDate = newCheckIn.getTime();
-
+		Date newCheckOutDate = newCheckOut.getTime();
+		
 		// Create new booking to cancel
 		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate,
-				checkOutDate, nrOfGuests);
+				newCheckOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID2));
 		assertTrue(bookingManagement.addRoomPending(room2, bookingID2));
 		bookingManagement.confirmBooking(bookingID2);
@@ -494,32 +496,33 @@ public class BookingManagerTests {
 	@Test
 	public void testCalculatePayment() {
 
-		// Set up a pending booking and add three rooms to it
+		// Set up a pending booking and add three nights stay in a room for it
 		Booking pendingBooking;
+		int nrOfGuests = 6;
+		int room = 1;
+		Calendar checkIn = Calendar.getInstance();
+		Calendar checkOut = Calendar.getInstance();
+		checkIn.set(2015, 0, 12, 12, 00);
+		checkOut.set(2015, 0, 14, 10, 00);
+		Date checkInDate = checkIn.getTime();
+		Date checkOutDate = checkOut.getTime();
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
-		int bookingID = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 6);
+		int bookingID = bookingManagement.createPendingBooking(checkInDate,
+				checkOutDate, nrOfGuests);
 		pendingBooking = bookingManagement.getPendingBookings().get(0);
-		pendingBooking.getRooms().add(bookingManagement.getRoom().get(0));
-		pendingBooking.getRooms().add(bookingManagement.getRoom().get(1));
-		pendingBooking.getRooms().add(bookingManagement.getRoom().get(4));
+		assertTrue(bookingManagement.addRoomPending(room, bookingID));
 
 		// Check that correct rooms were added to booking so expected sum of
 		// bill is correct
 		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRooms().get(0)
 				.getRoomType().getRoomTypeName());
-		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRooms().get(1)
-				.getRoomType().getRoomTypeName());
-		assertEquals(RoomTypeName.DOUBLE_ROOM, pendingBooking.getRooms().get(2)
-				.getRoomType().getRoomTypeName());
 
-		// Confirm the booking so that a Bill is instantiated and associated to
-		// the booking
+		// Confirm the booking
 		assertTrue(bookingManagement.confirmBooking(bookingID));
 
-		// Calculate the sum of the bill
-		assertEquals(450,
+		// Calculate the sum of the bill, 200 is expected since 2 nights are booked
+		assertEquals(200,
 				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 	}
 
