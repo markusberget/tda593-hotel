@@ -196,17 +196,24 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		room7.setRoomNumber(7);
 		room7.setRoomType(doubleRoomType);
 		room7.setStatus(RoomStatus.AVAILABLE);
+		
+		Room room8 = new RoomImpl();
+		room8.setRoomNumber(8);
+		room8.setRoomType(doubleRoomType);
+		room8.setStatus(RoomStatus.OCCUPIED);
 
 		standardRoomType.getRoom().add(room1);
 		standardRoomType.getRoom().add(room2);
 		standardRoomType.getRoom().add(room3);
 		doubleRoomType.getRoom().add(room6);
 		doubleRoomType.getRoom().add(room7);
+		doubleRoomType.getRoom().add(room8);
 		bookingManagement.room.add(room1);
 		bookingManagement.room.add(room2);
 		bookingManagement.room.add(room3);
 		bookingManagement.room.add(room6);
 		bookingManagement.room.add(room7);
+		bookingManagement.room.add(room8);
 
 		return bookingManagement;
 	}
@@ -632,6 +639,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * the parameter maximumPrice is not used, send in 0. The other parameters
 	 * are required so that searchRoom can find appropriate rooms.
 	 * 
+	 * Maybe add so that several rooms can be combined to fit all of the guests. 
+	 * Should this be done in another method or when the number of guests exceeds
+	 * the maximum number of guest possible in a room.
+	 * 
 	 * @generated NOT
 	 */
 	@Override
@@ -643,8 +654,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		int minimumNbrOfGuests = 1;
 
-		// Works if Dates are entered in valid form, not the weird 1900
-		// + form
+		
 		Calendar today = Calendar.getInstance();
 		Date todaysDate = today.getTime();
 		if (checkIn.before(todaysDate) || checkOut.before(checkIn)
@@ -656,7 +666,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		for (Room r : rooms) {
 			if (numberOfGuests <= (r.getRoomType().getNumberOfGuests())
 					&& (maximumPrice >= r.getRoomType().getPrice() || maximumPrice == 0)
-					&& (roomType == (r.getRoomType().getRoomTypeName())
+					&& (roomType == (r.getRoomType().getRoomTypeName() )
 							.toString() || roomType == null)) {
 				EList<Booking> bookings = r.getBookings();
 
