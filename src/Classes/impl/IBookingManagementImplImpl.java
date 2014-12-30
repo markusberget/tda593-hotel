@@ -770,13 +770,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	private boolean removeBookedRooms(Booking booking) {
 		EList<Room> rooms = booking.getRooms();
-		Date checkIn = booking.getCheckIn();
-		Date checkOut = booking.getCheckOut();
 		Calendar calTest = Calendar.getInstance();	// Used only for testing
-		Calendar calCheckIn = Calendar.getInstance();
-		calCheckIn.setTime(checkIn);
-		Calendar calCheckOut = Calendar.getInstance();
-		calCheckOut.setTime(checkOut);
+		Calendar calCheckIn = convertCheckInDate(booking);
+		Calendar calCheckOut = convertCheckOutDate(booking);
 		int checkInDay;
 		int checkOutDay = calCheckOut.get(calCheckOut.DAY_OF_MONTH);
 		for (Room room : rooms) {
@@ -792,6 +788,34 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			}
 		}
 		return true;
+	}
+	
+	/**
+	 * Helper method for converting the check-in Date to check-in time of
+	 * type Calendar.
+	 * 
+	 * @param booking		the booking which check-in date is converted
+	 * @return					the check-in date as type Calendar
+	 */
+	private Calendar convertCheckInDate(Booking booking) {
+		Date checkIn = booking.getCheckIn();
+		Calendar calCheckIn = Calendar.getInstance();
+		calCheckIn.setTime(checkIn);
+		return calCheckIn;
+	}
+	
+	/**
+	 * Helper method for converting the check-out Date to check-out time of
+	 * type Calendar.
+	 * 
+	 * @param booking		the booking which check-out date is converted
+	 * @return					the check-out date as type Calendar
+	 */
+	private Calendar convertCheckOutDate(Booking booking) {
+		Date checkOut = booking.getCheckOut();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckOut.setTime(checkOut);
+		return calCheckOut;
 	}
 
 	/**
