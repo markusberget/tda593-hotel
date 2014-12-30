@@ -130,9 +130,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	protected EList<Customer> customer;
 
-	private volatile int bookingsEver; // used in current implementation to make
-										// the
-										// bookingIDs unique
+	//used in current implementation to make the bookingIDs unique
+	private volatile int bookingsEver;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -487,40 +486,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * Returns the booking object with the corresponding bookingNumber
-	 * containing its information. At the moment all three lists of bookings
-	 * (pending, confirmed, history) are checked because all three types of
-	 * bookings could be interesting to retrieve.
-	 *
-	 * @generated NOT
-	 */
-	private Booking getBooking(int bookingNumber) {
-		// pendingBookings is merged with confirmedBookings and bookingHistory
-		EList<Booking> tmpList = new BasicEList<Booking>(pendingBookings);
-		tmpList.addAll(confirmedBookings);
-		tmpList.addAll(bookingHistory);
-
-		for (int i = 0; i < tmpList.size(); i++) {
-			if (tmpList.get(i).getBookingID() == bookingNumber) {
-				return tmpList.get(i);
-			}
-		}
-
-		return null;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	private void getBooking(int roomID, Date date) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
-	/**
 	 * Adds a room to a pending booking. Method is synchronized to avoid that
 	 * several customers adds the same room to their bookings at the same time.
 	 * The dates for which the room is being booked is created (date objects)
@@ -544,12 +509,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		booking.getRooms().add(room);
 		
 		// Convert Date to Calendar
-		Date checkIn = booking.getCheckIn();
-		Date checkOut = booking.getCheckOut();
-		Calendar calCheckIn = Calendar.getInstance();
-		calCheckIn.setTime(checkIn);
-		Calendar calCheckOut = Calendar.getInstance();
-		calCheckOut.setTime(checkOut);
+		Calendar calCheckIn = convertCheckInDate(booking);
+		Calendar calCheckOut = convertCheckOutDate(booking);
 		
 		// Retrieve date fields
 		int checkInDay = calCheckIn.get(calCheckIn.DAY_OF_MONTH);
@@ -569,7 +530,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				bookedDate = calCheckIn.getTime();
 				getRoomByID(roomNr).getBookedDates().add(bookedDate);
 				
-				// Add charge for spending one night at specified room
+				// Add charge for each night at specified room
 				Charge charge = new ChargeImpl();
 				charge.setDate(new Date());
 				charge.setAmount(room.getRoomType().getPrice());

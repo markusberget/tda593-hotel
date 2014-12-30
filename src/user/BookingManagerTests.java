@@ -14,16 +14,13 @@ import javax.xml.soap.SOAPException;
 
 import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import Classes.Booking;
 import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.Room;
 import Classes.RoomStatus;
-import Classes.RoomType;
 import Classes.RoomTypeName;
 
 /**
@@ -47,8 +44,12 @@ public class BookingManagerTests {
 	public void test_valid_UpdateBooking() {
 
 		// Set up a booking
-		Date checkIn = new Date();
-		Date checkOut = new Date();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests = 4;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
@@ -70,40 +71,33 @@ public class BookingManagerTests {
 		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
 
-		// Let the thread sleep for 500ms to increase the difference between
-		// check-in and check-out dates
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			System.err.println("Thread was interrupted while sleeping");
-			e.printStackTrace();
-		}
-
 		// Update checkOut and nrOfGuests of the booking
-		Date newCheckOut = new Date();
+		calCheckOut.set(2015, 0, 16, 10, 00);
+		Date newCheckOut1 = calCheckOut.getTime();
 		int newNumberOfGuests = 6;
 		assertEquals("Booking was updated successfully",
-				bookingManagement.updateBooking(bookingID, checkIn,
-						newCheckOut, newNumberOfGuests));
+				bookingManagement.updateBooking(bookingID, checkIn, 
+						newCheckOut1, newNumberOfGuests));
 
 		// Check if the updated booking contains the desired information
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckIn());
-		assertEquals(newCheckOut,
+		assertEquals(newCheckOut1,
 				bookingManagement.getConfirmedBookings().get(0).getCheckOut());
 		assertEquals(newNumberOfGuests, bookingManagement
 				.getConfirmedBookings().get(0).getNumberOfGuests());
 
 		// Update checkOut again
-		Date newCheckOutAgain = new Date();
+		calCheckOut.set(2015, 0, 17, 10, 00);
+		Date newCheckOut2 = calCheckOut.getTime();
 		assertEquals("Booking was updated successfully",
 				bookingManagement.updateBooking(bookingID, checkIn,
-						newCheckOutAgain, newNumberOfGuests));
+						newCheckOut2, newNumberOfGuests));
 
 		// Check that only the check-out date has been updated
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckIn());
-		assertEquals(newCheckOutAgain, bookingManagement.getConfirmedBookings()
+		assertEquals(newCheckOut2, bookingManagement.getConfirmedBookings()
 				.get(0).getCheckOut());
 		assertEquals(newNumberOfGuests, bookingManagement
 				.getConfirmedBookings().get(0).getNumberOfGuests());
@@ -120,8 +114,12 @@ public class BookingManagerTests {
 	public void test_invalid_UpdateBooking() {
 
 		// Set up a booking
-		Date checkIn = new Date();
-		Date checkOut = new Date();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests = 4;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
@@ -159,18 +157,10 @@ public class BookingManagerTests {
 		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
 
-		// Let thread sleep 500ms to increase difference between check-in and
-		// check-out dates
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			System.err.println("Thread was interrupted while sleeping");
-			e.printStackTrace();
-		}
-
 		// Update the booking using a check-in date that is later than the
 		// check-out date
-		Date newCheckIn = new Date();
+		calCheckOut.set(2015, 0, 19, 10, 00);
+		Date newCheckIn = calCheckOut.getTime();
 		assertEquals(
 				"Could not update booking, check-in date is later than check-out date",
 				bookingManagement.updateBooking(bookingID, newCheckIn,
@@ -221,8 +211,8 @@ public class BookingManagerTests {
 		// Increase current hour by 2 to force cancellation fee to be added
 		Calendar newCheckIn = Calendar.getInstance();
 		Calendar newCheckOut = Calendar.getInstance();
-		newCheckIn.roll(newCheckIn.HOUR_OF_DAY, 2);
-		newCheckOut.roll(newCheckOut.DAY_OF_MONTH, 1);
+		newCheckIn.roll(Calendar.HOUR_OF_DAY, 2);
+		newCheckOut.roll(Calendar.DAY_OF_MONTH, 1);
 		Date newCheckInDate = newCheckIn.getTime();
 		Date newCheckOutDate = newCheckOut.getTime();
 		
@@ -248,8 +238,12 @@ public class BookingManagerTests {
 	public void testConfirmBooking() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
-		Date checkIn = new Date();
-		Date checkOut = new Date();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
 		int numberOfGuests1 = 6;
 		int numberOfGuests2 = 4;
 		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
@@ -383,12 +377,19 @@ public class BookingManagerTests {
 	public void testCancelBooking() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
-		int bookingID1 = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 4);
-		int bookingID2 = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 2);
-		int bookingID3 = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 5);
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests4 = 4, nrOfGuests2 = 2, nrOfGuests5 = 5;
+		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests4);
+		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests2);
+		int bookingID3 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests5);
 		assertEquals(0, bookingID1);
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingID3);
@@ -423,8 +424,15 @@ public class BookingManagerTests {
 	public void testAddCustomerInformationToBooking() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
-		int bookingID = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 3);
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests = 3;
+		int bookingID = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests);
 		assertEquals(0, bookingID);
 		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
 		Customer customer = bookingManagement.getPendingBookings()
@@ -456,10 +464,15 @@ public class BookingManagerTests {
 		Classes.impl.IBookingManagementImplImpl pendingBooking = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		assertEquals(0, pendingBooking.getPendingBookings().size());
-		Date checkIn = new Date();
-		Date checkOut = new Date();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests6 = 6;
 		int bookingID1 = pendingBooking.createPendingBooking(checkIn, checkOut,
-				6);
+				nrOfGuests6);
 		assertTrue(0 == bookingID1);
 		assertEquals(1, pendingBooking.getPendingBookings().size());
 		assertEquals(checkIn,
@@ -468,10 +481,11 @@ public class BookingManagerTests {
 		assertEquals(checkOut,
 				pendingBooking.getPendingBookings().get(bookingID1)
 						.getCheckOut());
-		assertEquals(6, pendingBooking.getPendingBookings().get(bookingID1)
+		assertEquals(nrOfGuests6, pendingBooking.getPendingBookings().get(bookingID1)
 				.getNumberOfGuests());
+		int nrOfGuests4 = 4;
 		int bookingID2 = pendingBooking.createPendingBooking(checkIn, checkOut,
-				4);
+				nrOfGuests4);
 		assertTrue(1 == bookingID2);
 		assertEquals(2, pendingBooking.getPendingBookings().size());
 		assertEquals(checkIn,
@@ -480,7 +494,7 @@ public class BookingManagerTests {
 		assertEquals(checkOut,
 				pendingBooking.getPendingBookings().get(bookingID2)
 						.getCheckOut());
-		assertEquals(4, pendingBooking.getPendingBookings().get(bookingID2)
+		assertEquals(nrOfGuests4, pendingBooking.getPendingBookings().get(bookingID2)
 				.getNumberOfGuests());
 	}
 
