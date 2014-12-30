@@ -290,7 +290,7 @@ public class BookingManagerTests {
 
 		// Tests if returned list is correct if all parameters are entered
 		// correctly
-		// Dates entered like this to get valid dates, not the year + 1900
+		
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 		checkIn.set(2015, 02, 12);
@@ -310,7 +310,8 @@ public class BookingManagerTests {
 			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests()
 					&& maximumPrice >= room.getRoomType().getPrice()
 					&& roomType == room.getRoomType().getRoomTypeName()
-							.toString());
+							.toString());			
+			
 		}
 
 		// Tests if returned list is correct if not all parameters are
