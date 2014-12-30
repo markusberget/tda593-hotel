@@ -280,8 +280,6 @@ public class BookingManagerTests {
 	 * No test on if the Dates are free yet.
 	 * 
 	 */
-	@Rule
-	public ExpectedException thrown = ExpectedException.none();
 
 	@Test
 	public void testSearchRoom() {
@@ -333,16 +331,24 @@ public class BookingManagerTests {
 		checkOut.set(2011, 02, 13);
 		checkInDate = checkIn.getTime();
 		checkOutDate = checkOut.getTime();
-		thrown.expect(UnsupportedOperationException.class);
-		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
-				numberOfGuests, roomType, maximumPrice);
+		try {
+			roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
+					numberOfGuests, roomType, maximumPrice);
+		} catch (Throwable exception) {
+			assertTrue(exception instanceof UnsupportedOperationException);
+		}
 		
 		checkIn.set(2011, 02, 12);
 		checkOut.set(2011, 01, 13);
 		checkInDate = checkIn.getTime();
 		checkOutDate = checkOut.getTime();
-		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
-				numberOfGuests, roomType, maximumPrice);
+		try {
+			roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
+					numberOfGuests, roomType, maximumPrice);
+		} catch (Throwable exception) {
+			assertTrue(exception instanceof UnsupportedOperationException);
+		}
+		
 
 	}
 
