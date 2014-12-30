@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.Room#getStatus <em>Status</em>}</li>
  *   <li>{@link Classes.Room#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link Classes.Room#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link Classes.Room#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.Room#getBookings <em>Bookings</em>}</li>
  *   <li>{@link Classes.Room#getBookedDates <em>Booked Dates</em>}</li>
  * </ul>
  * </p>
@@ -111,22 +111,22 @@ public interface Room extends EObject {
 	void setRoomType(RoomType value);
 
 	/**
-	 * Returns the value of the '<em><b>Booking</b></em>' reference list.
+	 * Returns the value of the '<em><b>Bookings</b></em>' reference list.
 	 * The list contents are of type {@link Classes.Booking}.
 	 * It is bidirectional and its opposite is '{@link Classes.Booking#getRoom <em>Room</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Booking</em>' reference list isn't clear,
+	 * If the meaning of the '<em>Bookings</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booking</em>' reference list.
-	 * @see Classes.ClassesPackage#getRoom_Booking()
+	 * @return the value of the '<em>Bookings</em>' reference list.
+	 * @see Classes.ClassesPackage#getRoom_Bookings()
 	 * @see Classes.Booking#getRoom
 	 * @model opposite="room" ordered="false"
 	 * @generated
 	 */
-	EList<Booking> getBooking();
+	EList<Booking> getBookings();
 
 	/**
 	 * Returns the value of the '<em><b>Booked Dates</b></em>' attribute list.

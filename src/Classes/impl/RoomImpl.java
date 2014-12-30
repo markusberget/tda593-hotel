@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  *   <li>{@link Classes.impl.RoomImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
- *   <li>{@link Classes.impl.RoomImpl#getBooking <em>Booking</em>}</li>
+ *   <li>{@link Classes.impl.RoomImpl#getBookings <em>Bookings</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getBookedDates <em>Booked Dates</em>}</li>
  * </ul>
  * </p>
@@ -89,14 +89,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected RoomType roomType;
 
 	/**
-	 * The cached value of the '{@link #getBooking() <em>Booking</em>}' reference list.
+	 * The cached value of the '{@link #getBookings() <em>Bookings</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getBooking()
+	 * @see #getBookings()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Booking> booking;
+	protected EList<Booking> bookings;
 
 	/**
 	 * The cached value of the '{@link #getBookedDates() <em>Booked Dates</em>}' attribute list.
@@ -257,11 +257,11 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Booking> getBooking() {
-		if (booking == null) {
-			booking = new EObjectWithInverseResolvingEList.ManyInverse<Booking>(Booking.class, this, ClassesPackage.ROOM__BOOKING, ClassesPackage.BOOKING__ROOM);
+	public EList<Booking> getBookings() {
+		if (bookings == null) {
+			bookings = new EObjectWithInverseResolvingEList.ManyInverse<Booking>(Booking.class, this, ClassesPackage.ROOM__BOOKINGS, ClassesPackage.BOOKING__ROOM);
 		}
-		return booking;
+		return bookings;
 	}
 
 	/**
@@ -289,8 +289,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				if (roomType != null)
 					msgs = ((InternalEObject)roomType).eInverseRemove(this, ClassesPackage.ROOM_TYPE__ROOM, RoomType.class, msgs);
 				return basicSetRoomType((RoomType)otherEnd, msgs);
-			case ClassesPackage.ROOM__BOOKING:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBooking()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.ROOM__BOOKINGS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBookings()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -305,8 +305,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 		switch (featureID) {
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				return basicSetRoomType(null, msgs);
-			case ClassesPackage.ROOM__BOOKING:
-				return ((InternalEList<?>)getBooking()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.ROOM__BOOKINGS:
+				return ((InternalEList<?>)getBookings()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -326,8 +326,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				if (resolve) return getRoomType();
 				return basicGetRoomType();
-			case ClassesPackage.ROOM__BOOKING:
-				return getBooking();
+			case ClassesPackage.ROOM__BOOKINGS:
+				return getBookings();
 			case ClassesPackage.ROOM__BOOKED_DATES:
 				return getBookedDates();
 		}
@@ -352,9 +352,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				setRoomType((RoomType)newValue);
 				return;
-			case ClassesPackage.ROOM__BOOKING:
-				getBooking().clear();
-				getBooking().addAll((Collection<? extends Booking>)newValue);
+			case ClassesPackage.ROOM__BOOKINGS:
+				getBookings().clear();
+				getBookings().addAll((Collection<? extends Booking>)newValue);
 				return;
 			case ClassesPackage.ROOM__BOOKED_DATES:
 				getBookedDates().clear();
@@ -381,8 +381,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				setRoomType((RoomType)null);
 				return;
-			case ClassesPackage.ROOM__BOOKING:
-				getBooking().clear();
+			case ClassesPackage.ROOM__BOOKINGS:
+				getBookings().clear();
 				return;
 			case ClassesPackage.ROOM__BOOKED_DATES:
 				getBookedDates().clear();
@@ -405,8 +405,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
 			case ClassesPackage.ROOM__ROOM_TYPE:
 				return roomType != null;
-			case ClassesPackage.ROOM__BOOKING:
-				return booking != null && !booking.isEmpty();
+			case ClassesPackage.ROOM__BOOKINGS:
+				return bookings != null && !bookings.isEmpty();
 			case ClassesPackage.ROOM__BOOKED_DATES:
 				return bookedDates != null && !bookedDates.isEmpty();
 		}

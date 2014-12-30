@@ -280,7 +280,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getRoom_Booking() {
+	public EReference getRoom_Bookings() {
 		return (EReference)roomEClass.getEStructuralFeatures().get(3);
 	}
 
@@ -1189,7 +1189,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEAttribute(roomEClass, ROOM__STATUS);
 		createEAttribute(roomEClass, ROOM__ROOM_NUMBER);
 		createEReference(roomEClass, ROOM__ROOM_TYPE);
-		createEReference(roomEClass, ROOM__BOOKING);
+		createEReference(roomEClass, ROOM__BOOKINGS);
 		createEAttribute(roomEClass, ROOM__BOOKED_DATES);
 
 		roomTypeEClass = createEClass(ROOM_TYPE);
@@ -1348,7 +1348,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEAttribute(getRoom_Status(), this.getRoomStatus(), "status", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_RoomNumber(), theTypesPackage.getInteger(), "roomNumber", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_RoomType(), this.getRoomType(), this.getRoomType_Room(), "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getRoom_Booking(), this.getBooking(), this.getBooking_Room(), "booking", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoom_Bookings(), this.getBooking(), this.getBooking_Room(), "bookings", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEAttribute(getRoom_BookedDates(), ecorePackage.getEDate(), "bookedDates", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1371,7 +1371,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEReference(getBooking_Customer(), this.getCustomer(), this.getCustomer_Booking(), "customer", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_IBookingManagementImpl(), this.getIBookingManagementImpl(), this.getIBookingManagementImpl_ConfirmedBookings(), "iBookingManagementImpl", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getBooking_Bill(), this.getBill(), this.getBill_Booking(), "bill", null, 1, 1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getBooking_Room(), this.getRoom(), this.getRoom_Booking(), "room", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getBooking_Room(), this.getRoom(), this.getRoom_Bookings(), "room", null, 1, -1, Booking.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(customerEClass, Customer.class, "Customer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getCustomer_PersonalInfo(), theTypesPackage.getString(), "personalInfo", null, 1, 1, Customer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

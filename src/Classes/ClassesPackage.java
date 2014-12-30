@@ -96,13 +96,13 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__ROOM_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Booking</b></em>' reference list.
+	 * The feature id for the '<em><b>Bookings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__BOOKING = 3;
+	int ROOM__BOOKINGS = 3;
 
 	/**
 	 * The feature id for the '<em><b>Booked Dates</b></em>' attribute list.
@@ -1654,15 +1654,15 @@ public interface ClassesPackage extends EPackage {
 	EReference getRoom_RoomType();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.Room#getBooking <em>Booking</em>}'.
+	 * Returns the meta object for the reference list '{@link Classes.Room#getBookings <em>Bookings</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Booking</em>'.
-	 * @see Classes.Room#getBooking()
+	 * @return the meta object for the reference list '<em>Bookings</em>'.
+	 * @see Classes.Room#getBookings()
 	 * @see #getRoom()
 	 * @generated
 	 */
-	EReference getRoom_Booking();
+	EReference getRoom_Bookings();
 
 	/**
 	 * Returns the meta object for the attribute list '{@link Classes.Room#getBookedDates <em>Booked Dates</em>}'.
@@ -2739,12 +2739,12 @@ public interface ClassesPackage extends EPackage {
 		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
 
 		/**
-		 * The meta object literal for the '<em><b>Booking</b></em>' reference list feature.
+		 * The meta object literal for the '<em><b>Bookings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ROOM__BOOKING = eINSTANCE.getRoom_Booking();
+		EReference ROOM__BOOKINGS = eINSTANCE.getRoom_Bookings();
 
 		/**
 		 * The meta object literal for the '<em><b>Booked Dates</b></em>' attribute list feature.

@@ -539,7 +539,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					&& maximumPrice >= r.getRoomType().getPrice()
 					&& roomType == (r.getRoomType().getRoomTypeName())
 							.toString()) {
-				EList<Booking> bookings = r.getBooking();
+				EList<Booking> bookings = r.getBookings();
 
 				if (bookings.isEmpty()) {
 					searchResult.add(r.getRoomNumber());

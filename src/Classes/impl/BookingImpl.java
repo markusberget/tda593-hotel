@@ -559,7 +559,7 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 */
 	public EList<Room> getRoom() {
 		if (room == null) {
-			room = new EObjectWithInverseResolvingEList.ManyInverse<Room>(Room.class, this, ClassesPackage.BOOKING__ROOM, ClassesPackage.ROOM__BOOKING);
+			room = new EObjectWithInverseResolvingEList.ManyInverse<Room>(Room.class, this, ClassesPackage.BOOKING__ROOM, ClassesPackage.ROOM__BOOKINGS);
 		}
 		return room;
 	}
