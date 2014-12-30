@@ -525,7 +525,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * Searches through the existing rooms to find the ones that match the parameters.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * NOTE: If the parameter roomType is not used, send in null instead and if the 
+	 * parameter maximumPrice is not used, send in 0. The other parameters has to be 
+	 * entered for searchRoom to be able to find appropriate rooms. 
+	 * 
 	 * 
 	 * @generated NOT
 	 */
@@ -536,9 +540,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		for (Room r : rooms) {
 			if (numberOfGuests <= (r.getRoomType().getNumberOfGuests())
-					&& maximumPrice >= r.getRoomType().getPrice()
-					&& roomType == (r.getRoomType().getRoomTypeName())
-							.toString()) {
+					&& (maximumPrice >= r.getRoomType().getPrice() || maximumPrice == 0)
+					&& (roomType == (r.getRoomType().getRoomTypeName()).toString() || roomType == null)) {
 				EList<Booking> bookings = r.getBookings();
 
 				if (bookings.isEmpty()) {
