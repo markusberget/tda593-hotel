@@ -382,7 +382,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	/**
 	 * Modifies a booking according to given arguments. Parameter checkIn is the new
 	 * check-in date (could be the same as before modification) and checkOut is the
-	 * new check-out date (could also be the same as before modification).
+	 * new check-out date (could also be the same as before modification). At the
+	 * moment the booked dates are updated for every room in the booking (not
+	 * possible yet to add certain rooms or update specific rooms).
 	 * 
 	 * @generated NOT
 	 */
@@ -391,9 +393,16 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if(booking == null) {
 			return "booking was not found, check if bookingID is correct";
 		}
-		if (checkIn != null && checkOut != null && nrOfGuests > 0 && checkIn.before(checkOut)) {
-			booking.setCheckIn(checkIn);
-			booking.setCheckOut(checkOut);
+		if (checkIn.after(checkOut)) {
+			return "Could not update booking, check-in date is later than check-out date";
+		}
+		if (checkIn != null || checkOut != null && nrOfGuests > 0) {
+			if (checkIn != null) {
+				booking.setCheckIn(checkIn);
+			}
+			if (checkOut != null) {
+				booking.setCheckOut(checkOut);
+			}
 			booking.setNumberOfGuests(nrOfGuests);
 			return "Booking was updated successfully";
 		}
