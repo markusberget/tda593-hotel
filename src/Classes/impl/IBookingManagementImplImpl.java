@@ -506,12 +506,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		Calendar calCheckOut = convertCheckOutDate(booking);
 		
 		// Retrieve date fields
-		int checkInDay = calCheckIn.get(calCheckIn.DAY_OF_MONTH);
-		int checkOutDay = calCheckOut.get(calCheckOut.DAY_OF_MONTH);
-		int checkInYear = calCheckIn.get(calCheckIn.YEAR);
-		int checkOutYear = calCheckOut.get(calCheckOut.YEAR);
-		int checkInMonth = calCheckIn.get(calCheckIn.MONTH);
-		int checkOutMonth = calCheckOut.get(calCheckOut.MONTH);
+		int checkInDay = calCheckIn.get(Calendar.DAY_OF_MONTH);
+		int checkOutDay = calCheckOut.get(Calendar.DAY_OF_MONTH);
+		int checkInYear = calCheckIn.get(Calendar.YEAR);
+		int checkOutYear = calCheckOut.get(Calendar.YEAR);
+		int checkInMonth = calCheckIn.get(Calendar.MONTH);
+		int checkOutMonth = calCheckOut.get(Calendar.MONTH);
 		
 		// If any of these two are true, create Date objects for booked dates
 		boolean check1 = (checkInYear == checkOutYear) && (checkInMonth <= checkOutMonth);
@@ -537,7 +537,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				booking.getBill().getCharge().add(charge);
 				
 				// Increment to next day
-				calCheckIn.roll(calCheckIn.DAY_OF_MONTH, 1);
+				calCheckIn.roll(Calendar.DAY_OF_MONTH, 1);
 				checkInDay++;
 			}
 			return true;
@@ -735,13 +735,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		Calendar calCheckIn = convertCheckInDate(booking);
 		Calendar calCheckOut = convertCheckOutDate(booking);
 		int checkInDay;
-		int checkOutDay = calCheckOut.get(calCheckOut.DAY_OF_MONTH);
+		int checkOutDay = calCheckOut.get(Calendar.DAY_OF_MONTH);
 		for (Room room : rooms) {
-			checkInDay = calCheckIn.get(calCheckIn.DAY_OF_MONTH);
+			checkInDay = calCheckIn.get(Calendar.DAY_OF_MONTH);
 			while (checkInDay != checkOutDay) {
 				for (int i = 0; i < room.getBookedDates().size(); i++) {
 					calTest.setTime(room.getBookedDates().get(i));
-					if (calTest.get(calTest.DAY_OF_MONTH) == checkInDay) {
+					if (calTest.get(Calendar.DAY_OF_MONTH) == checkInDay) {
 						room.getBookedDates().remove(i);
 					}
 				}
