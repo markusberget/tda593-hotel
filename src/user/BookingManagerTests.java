@@ -213,7 +213,7 @@ public class BookingManagerTests {
 	 * .
 	 */
 	@Test
-	public void testGetBookingIntDate() {
+	public void testAddCancellationFee() {
 		fail("Not yet implemented");
 	}
 

@@ -503,10 +503,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc --> <<<<<<< HEAD
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated =======
-	 * @generated NOT >>>>>>> d89cd4e9562cc9116cd1731d28aad82603ac7f95
+	 * @generated NOT
 	 */
 	private void getBooking(int roomID, Date date) {
 		// TODO: implement this method
@@ -585,16 +584,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * after a check in, the difference of the current time and the check in
 	 * time of the booking will not be negative.
 	 * 
-	 * @param checkIn
-	 *            the check-in date of the booking
-	 * @return true if the difference between dates are less than 24 hours,
-	 *         otherwise false
-	 * @param bookingID
-	 *            the bookingID of the booking to be cancelled
-	 * @return fee if the difference between dates are less than 24 hours,
-	 *         otherwise 0 (-1 if booking not found)
+	 * @param bookingID		the bookingID of the booking to be cancelled
+	 * @return 						fee if the difference between dates are less
+	 * 										than 24 hours, otherwise 0 (-1 if booking not found)
+	 *         
+	 * @generated NOT
 	 */
-
 	public int addCancellationFee(int bookingID) {
 
 		// Check if given booking exists
@@ -608,10 +603,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		Calendar checkIn = Calendar.getInstance();
 		checkIn.setTime(bookingsCheckIn);
 
-		// Check if difference between check-in time and current time is < 24
-		// hours
+		// Check if difference between check-in and current time is < 24 hours
 		if ((checkIn.compareTo(currentDate)) < 86400000) {
-
 			Charge charge = new ChargeImpl();
 			charge.setDate(new Date());
 			charge.setChargeType(ChargeType.CANCELLATION_FEE);
@@ -997,9 +990,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return updateBooking((Integer) arguments.get(0),
 					(Date) arguments.get(1), (Date) arguments.get(2),
 					(Integer) arguments.get(3));
-		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_BOOKING__INT_DATE:
-			getBooking((Integer) arguments.get(0), (Date) arguments.get(1));
-			return null;
 		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_ROOM_PENDING__INT_INT:
 			return addRoomPending((Integer) arguments.get(0),
 					(Integer) arguments.get(1));
