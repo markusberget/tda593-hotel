@@ -327,15 +327,20 @@ public class BookingManagerTests {
 		}
 
 		// Tests if exception is thrown as it should if date is invalid or
-		// checkIn is
-		// after checkOut and vice versa
+		// checkIn is after checkOut or vice versa
 
 		checkIn.set(2011, 02, 12);
 		checkOut.set(2011, 02, 13);
 		checkInDate = checkIn.getTime();
 		checkOutDate = checkOut.getTime();
-		
 		thrown.expect(UnsupportedOperationException.class);
+		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
+				numberOfGuests, roomType, maximumPrice);
+		
+		checkIn.set(2011, 02, 12);
+		checkOut.set(2011, 01, 13);
+		checkInDate = checkIn.getTime();
+		checkOutDate = checkOut.getTime();
 		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 				numberOfGuests, roomType, maximumPrice);
 
