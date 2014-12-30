@@ -423,8 +423,15 @@ public class BookingManagerTests {
 	public void testAddCustomerInformationToBooking() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
-		int bookingID = bookingManagement.createPendingBooking(new Date(),
-				new Date(), 3);
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests = 3;
+		int bookingID = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests);
 		assertEquals(0, bookingID);
 		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
 		Customer customer = bookingManagement.getPendingBookings()
