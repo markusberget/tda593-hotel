@@ -6,6 +6,8 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Iterator;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -17,6 +19,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import Classes.Booking;
 import Classes.Charge;
 import Classes.ChargeType;
@@ -536,6 +539,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	@Override
 	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
 			String roomType, int maximumPrice) {
+		
 		EList<Room> rooms = this.getRoom();
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		for (Room r : rooms) {
@@ -548,16 +552,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					searchResult.add(r.getRoomNumber());
 				} else {
 					boolean roomFree = true;
-					int listIterator = 0;
-					while (roomFree && listIterator < bookings.size()) {
-						Booking b = bookings.get(listIterator);
+					Iterator<Booking> listIterator = bookings.iterator();
+					while (roomFree && listIterator.hasNext()) {
+						Booking b = listIterator.next();
 						if (checkIn.after(b.getCheckOut())
 								|| checkOut.before(b.getCheckIn())) {
 							roomFree = true;
 						} else {
 							roomFree = false;
 						}
-						listIterator++;
 					}
 					if (roomFree) {
 						searchResult.add(r.getRoomNumber());
