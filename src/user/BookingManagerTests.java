@@ -183,31 +183,6 @@ public class BookingManagerTests {
 				.get(0).getNumberOfGuests());
 	}
 
-	// /**
-	// * Test method for {@link
-	// Classes.impl.IBookingManagementImplImpl#getBooking(int)}.
-	// *
-	// * Test if correct bookings are retrieved using the corresponding
-	// bookingID.
-	// */
-	// @Test
-	// public void testGetBookingInt() {
-	// Classes.impl.IBookingManagementImplImpl bookingManagement =
-	// Classes.impl.IBookingManagementImplImpl.instantiateForTest();
-	// int bookingID1 = bookingManagement.createPendingBooking(new Date(), new
-	// Date(), 4);
-	// int bookingID2 = bookingManagement.createPendingBooking(new Date(), new
-	// Date(), 2);
-	// assertEquals(0, bookingID1);
-	// assertEquals(1, bookingID2);
-	// bookingManagement.confirmBooking(bookingID1);
-	// bookingManagement.confirmBooking(bookingID2);
-	// assertEquals(bookingID2,
-	// bookingManagement.getBooking(bookingID2).getBookingID());
-	// assertEquals(bookingID1,
-	// bookingManagement.getBooking(bookingID1).getBookingID());
-	// }
-
 	/**
 	 * Test method for
 	 * {@link Classes.impl.IBookingManagementImplImpl#getBooking(int, java.util.Date)}
@@ -229,11 +204,6 @@ public class BookingManagerTests {
 		checkOut.set(2015, 0, 14, 10, 00);
 		Date checkInDate = checkIn.getTime();
 		Date checkOutDate = checkOut.getTime();
-		//assertEquals(13, checkOutDate.getDate());
-		//assertEquals(0, checkInDate.getMonth());
-		//assertEquals(2015, checkOutDate.getYear()+1900);
-		//assertEquals(10, checkOutDate.getHours());
-		//assertEquals(00, checkOutDate.getMinutes());
 		int nrOfGuests = 4;
 		int room1 = 1, room2 = 2;
 		int bookingID1 = bookingManagement.createPendingBooking(checkInDate, checkOutDate, nrOfGuests);
