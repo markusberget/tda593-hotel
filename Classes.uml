@@ -412,8 +412,8 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_X5WqMnZREeSiQcRa0VNXAQ" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_X5WqM3ZREeSiQcRa0VNXAQ" value="1"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_cqWXMHZVEeSiQcRa0VNXAQ" name="room" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_cqW-QHZVEeSiQcRa0VNXAQ">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cqWXMXZVEeSiQcRa0VNXAQ" value="1"/>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_cqWXMHZVEeSiQcRa0VNXAQ" name="rooms" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_cqW-QHZVEeSiQcRa0VNXAQ">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cqWXMXZVEeSiQcRa0VNXAQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cqWXMnZVEeSiQcRa0VNXAQ" value="*"/>
       </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_C_tCYYHkEeS837TtIXY58g" name="bill" type="_1fha4IHjEeS837TtIXY58g" association="_C_tCYIHkEeS837TtIXY58g">

@@ -81,9 +81,9 @@ public class UserTests {
 		
 		// Add three rooms to the pending booking
 		Booking pendingBooking = bookingManagement.getPendingBookings().get(0);
-		pendingBooking.getRoom().add(bookingManagement.getRoom().get(0));
-		pendingBooking.getRoom().add(bookingManagement.getRoom().get(1));
-		pendingBooking.getRoom().add(bookingManagement.getRoom().get(4));
+		pendingBooking.getRooms().add(bookingManagement.getRoom().get(0));
+		pendingBooking.getRooms().add(bookingManagement.getRoom().get(1));
+		pendingBooking.getRooms().add(bookingManagement.getRoom().get(4));
 		
 		// Confirm the pending booking so that a Bill is associated with the booking
 		assertTrue(bookingManagement.confirmBooking(bookingID));

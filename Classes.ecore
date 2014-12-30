@@ -9,7 +9,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="roomType" ordered="false"
         lowerBound="1" eType="#//RoomType" eOpposite="#//RoomType/room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bookings" ordered="false"
-        upperBound="-1" eType="#//Booking" eOpposite="#//Booking/room"/>
+        upperBound="-1" eType="#//Booking" eOpposite="#//Booking/rooms"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bookedDates" ordered="false"
         upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
@@ -60,7 +60,7 @@
         ordered="false" lowerBound="1" eType="#//IBookingManagementImpl" eOpposite="#//IBookingManagementImpl/confirmedBookings"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" lowerBound="1"
         eType="#//Bill" eOpposite="#//Bill/booking"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" lowerBound="1"
+    <eStructuralFeatures xsi:type="ecore:EReference" name="rooms" ordered="false"
         upperBound="-1" eType="#//Room" eOpposite="#//Room/bookings"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Customer" eSuperTypes="#//IPerson">

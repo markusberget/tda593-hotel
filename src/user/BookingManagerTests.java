@@ -21,6 +21,7 @@ import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.Room;
 import Classes.RoomStatus;
+import Classes.RoomType;
 import Classes.RoomTypeName;
 
 /**
@@ -217,7 +218,7 @@ public class BookingManagerTests {
 	 * 
 	 */
 	@Test
-	public void testAddCancellationFee() {
+	public void test_valid_AddCancellationFee() {
 		
 		// Set up a booking that can be canceled
 		Classes.impl.IBookingManagementImplImpl bookingManagement =
@@ -225,7 +226,7 @@ public class BookingManagerTests {
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 		checkIn.set(2015, 0, 12, 12, 00);
-		checkOut.set(2015, 0, 13, 10, 00);
+		checkOut.set(2015, 0, 14, 10, 00);
 		Date checkInDate = checkIn.getTime();
 		Date checkOutDate = checkOut.getTime();
 		//assertEquals(13, checkOutDate.getDate());
@@ -234,18 +235,30 @@ public class BookingManagerTests {
 		//assertEquals(10, checkOutDate.getHours());
 		//assertEquals(00, checkOutDate.getMinutes());
 		int nrOfGuests = 4;
-		int bookingID = bookingManagement.createPendingBooking(checkInDate, checkOutDate, nrOfGuests);
-		bookingManagement.confirmBooking(bookingID);
+		int room1 = 1, room2 = 2;
+		int bookingID1 = bookingManagement.createPendingBooking(checkInDate, checkOutDate, nrOfGuests);
+		assertTrue(bookingManagement.addRoomPending(room1, bookingID1));
+		assertTrue(bookingManagement.addRoomPending(room2, bookingID1));
+		
+		//bookingManagement.getPendingBookings().get(0).setRoom(bookingManagement.getRoom().get(0));
+		bookingManagement.confirmBooking(bookingID1);
 		
 		// Check that no cancellation fee as added since >24 hours left to check-in
-		assertEquals(0, bookingManagement.addCancellationFee(bookingID));
+		assertEquals(0, bookingManagement.addCancellationFee(bookingID1));
 		
+		// Increase current hour by 2
 		Calendar newCheckIn = Calendar.getInstance();
 		newCheckIn.roll(newCheckIn.HOUR_OF_DAY, 2);
+		Date newCheckInDate = newCheckIn.getTime();
 		
-		// Check that cancellation fee as added since 2 hours left to check-in
-		assertEquals(0, bookingManagement.addCancellationFee(bookingID));
+		// Create new booking to cancel
+		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate, checkOutDate, nrOfGuests);
+		assertTrue(bookingManagement.addRoomPending(room1, bookingID2));
+		assertTrue(bookingManagement.addRoomPending(room2, bookingID2));
+		bookingManagement.confirmBooking(bookingID2);
 		
+		// Check that cancellation fee is added since 2 hours left to check-in
+		assertEquals(200, bookingManagement.addCancellationFee(bookingID2));
 	}
 
 	/**
@@ -455,17 +468,17 @@ public class BookingManagerTests {
 		int bookingID = bookingManagement.createPendingBooking(new Date(),
 				new Date(), 6);
 		pendingBooking = bookingManagement.getPendingBookings().get(0);
-		pendingBooking.getRoom().add(bookingManagement.getRoom().get(0));
-		pendingBooking.getRoom().add(bookingManagement.getRoom().get(1));
-		pendingBooking.getRoom().add(bookingManagement.getRoom().get(4));
+		pendingBooking.getRooms().add(bookingManagement.getRoom().get(0));
+		pendingBooking.getRooms().add(bookingManagement.getRoom().get(1));
+		pendingBooking.getRooms().add(bookingManagement.getRoom().get(4));
 
 		// Check that correct rooms were added to booking so expected sum of
 		// bill is correct
-		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRoom().get(0)
+		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRooms().get(0)
 				.getRoomType().getRoomTypeName());
-		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRoom().get(1)
+		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRooms().get(1)
 				.getRoomType().getRoomTypeName());
-		assertEquals(RoomTypeName.DOUBLE_ROOM, pendingBooking.getRoom().get(2)
+		assertEquals(RoomTypeName.DOUBLE_ROOM, pendingBooking.getRooms().get(2)
 				.getRoomType().getRoomTypeName());
 
 		// Confirm the booking so that a Bill is instantiated and associated to

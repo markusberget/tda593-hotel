@@ -413,13 +413,13 @@ public interface ClassesPackage extends EPackage {
 	int BOOKING__BILL = 10;
 
 	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference list.
+	 * The feature id for the '<em><b>Rooms</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__ROOM = 11;
+	int BOOKING__ROOMS = 11;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -2531,17 +2531,6 @@ public interface ClassesPackage extends EPackage {
 	EReference getBooking_IBookingManagementImpl();
 
 	/**
-	 * Returns the meta object for the reference list '{@link Classes.Booking#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Room</em>'.
-	 * @see Classes.Booking#getRoom()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EReference getBooking_Room();
-
-	/**
 	 * Returns the meta object for the reference '{@link Classes.Booking#getBill <em>Bill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2551,6 +2540,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBooking_Bill();
+
+	/**
+	 * Returns the meta object for the reference list '{@link Classes.Booking#getRooms <em>Rooms</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference list '<em>Rooms</em>'.
+	 * @see Classes.Booking#getRooms()
+	 * @see #getBooking()
+	 * @generated
+	 */
+	EReference getBooking_Rooms();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IPerson <em>IPerson</em>}'.
@@ -3441,20 +3441,20 @@ public interface ClassesPackage extends EPackage {
 		EReference BOOKING__IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getBooking_IBookingManagementImpl();
 
 		/**
-		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BOOKING__ROOM = eINSTANCE.getBooking_Room();
-
-		/**
 		 * The meta object literal for the '<em><b>Bill</b></em>' reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
 		EReference BOOKING__BILL = eINSTANCE.getBooking_Bill();
+
+		/**
+		 * The meta object literal for the '<em><b>Rooms</b></em>' reference list feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference BOOKING__ROOMS = eINSTANCE.getBooking_Rooms();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IPerson <em>IPerson</em>}' class.

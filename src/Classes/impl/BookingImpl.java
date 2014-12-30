@@ -38,7 +38,7 @@ import java.util.Collection;
  *   <li>{@link Classes.impl.BookingImpl#getCustomer <em>Customer</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.impl.BookingImpl#getBill <em>Bill</em>}</li>
- *   <li>{@link Classes.impl.BookingImpl#getRoom <em>Room</em>}</li>
+ *   <li>{@link Classes.impl.BookingImpl#getRooms <em>Rooms</em>}</li>
  * </ul>
  * </p>
  *
@@ -236,14 +236,14 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	protected Bill bill;
 
 	/**
-	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
+	 * The cached value of the '{@link #getRooms() <em>Rooms</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getRoom()
+	 * @see #getRooms()
 	 * @generated
 	 * @ordered
 	 */
-	protected EList<Room> room;
+	protected EList<Room> rooms;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -557,18 +557,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EList<Room> getRoom() {
-		if (room == null) {
-			room = new EObjectWithInverseResolvingEList.ManyInverse<Room>(Room.class, this, ClassesPackage.BOOKING__ROOM, ClassesPackage.ROOM__BOOKINGS);
-		}
-		return room;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Bill getBill() {
 		if (bill != null && bill.eIsProxy()) {
 			InternalEObject oldBill = (InternalEObject)bill;
@@ -629,6 +617,18 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Room> getRooms() {
+		if (rooms == null) {
+			rooms = new EObjectWithInverseResolvingEList.ManyInverse<Room>(Room.class, this, ClassesPackage.BOOKING__ROOMS, ClassesPackage.ROOM__BOOKINGS);
+		}
+		return rooms;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
@@ -645,8 +645,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				if (bill != null)
 					msgs = ((InternalEObject)bill).eInverseRemove(this, ClassesPackage.BILL__BOOKING, Bill.class, msgs);
 				return basicSetBill((Bill)otherEnd, msgs);
-			case ClassesPackage.BOOKING__ROOM:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoom()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.BOOKING__ROOMS:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRooms()).basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -665,8 +665,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return basicSetIBookingManagementImpl(null, msgs);
 			case ClassesPackage.BOOKING__BILL:
 				return basicSetBill(null, msgs);
-			case ClassesPackage.BOOKING__ROOM:
-				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.BOOKING__ROOMS:
+				return ((InternalEList<?>)getRooms()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -704,8 +704,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__BILL:
 				if (resolve) return getBill();
 				return basicGetBill();
-			case ClassesPackage.BOOKING__ROOM:
-				return getRoom();
+			case ClassesPackage.BOOKING__ROOMS:
+				return getRooms();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -752,9 +752,9 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__BILL:
 				setBill((Bill)newValue);
 				return;
-			case ClassesPackage.BOOKING__ROOM:
-				getRoom().clear();
-				getRoom().addAll((Collection<? extends Room>)newValue);
+			case ClassesPackage.BOOKING__ROOMS:
+				getRooms().clear();
+				getRooms().addAll((Collection<? extends Room>)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -801,8 +801,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			case ClassesPackage.BOOKING__BILL:
 				setBill((Bill)null);
 				return;
-			case ClassesPackage.BOOKING__ROOM:
-				getRoom().clear();
+			case ClassesPackage.BOOKING__ROOMS:
+				getRooms().clear();
 				return;
 		}
 		super.eUnset(featureID);
@@ -838,8 +838,8 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return iBookingManagementImpl != null;
 			case ClassesPackage.BOOKING__BILL:
 				return bill != null;
-			case ClassesPackage.BOOKING__ROOM:
-				return room != null && !room.isEmpty();
+			case ClassesPackage.BOOKING__ROOMS:
+				return rooms != null && !rooms.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
