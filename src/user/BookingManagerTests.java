@@ -270,13 +270,20 @@ public class BookingManagerTests {
 	/**
 	 * Test method for
 	 * {@link Classes.impl.IBookingManagementImplImpl#searchRoom(java.util.Date, java.util.Date, java.lang.Class, int, int, int)}
-	 * Dates not tested at all yet .
+	 * 
+	 * Tests if the rooms that are returned from the searchRoom method matches the parameters 
+	 * that are sent in.
+	 * 
+	 * Dates not tested at all yet.
 	 * 
 	 */
 	@Test
 	public void testSearchRoom() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
+		
+		//Tests if returned list is correct if all parameters are entered correctly
+		
 		Date checkIn = new Date(2015, 02, 10);
 		Date checkOut = new Date(2015, 02, 15);
 		int numberOfGuests = 1;
@@ -292,8 +299,10 @@ public class BookingManagerTests {
 					&& maximumPrice >= room.getRoomType().getPrice()
 					&& roomType == room.getRoomType().getRoomTypeName().toString());
 		}
-
-		roomIDs.iterator();
+		
+		//Tests if returned list is correct if not all parameters are 
+		//specified but those who are, are given correctly.
+		
 		checkIn = new Date(2015, 02, 10);
 		checkOut = new Date(2015, 02, 15);
 		numberOfGuests = 1;
