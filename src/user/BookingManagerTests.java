@@ -13,17 +13,15 @@ import java.util.Iterator;
 import javax.xml.soap.SOAPException;
 
 import org.eclipse.emf.common.util.EList;
+import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Rule;
 import org.junit.Test;
-import org.junit.rules.ExpectedException;
 
 import Classes.Booking;
 import Classes.Customer;
 import Classes.IHotelManager;
 import Classes.Room;
 import Classes.RoomStatus;
-import Classes.RoomType;
 import Classes.RoomTypeName;
 
 /**
@@ -47,8 +45,12 @@ public class BookingManagerTests {
 	public void test_valid_UpdateBooking() {
 
 		// Set up a booking
-		Date checkIn = new Date();
-		Date checkOut = new Date();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests = 4;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
@@ -70,40 +72,33 @@ public class BookingManagerTests {
 		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
 
-		// Let the thread sleep for 500ms to increase the difference between
-		// check-in and check-out dates
-		try {
-			Thread.sleep(500);
-		} catch (InterruptedException e) {
-			System.err.println("Thread was interrupted while sleeping");
-			e.printStackTrace();
-		}
-
 		// Update checkOut and nrOfGuests of the booking
-		Date newCheckOut = new Date();
+		calCheckOut.set(2015, 0, 16, 10, 00);
+		Date newCheckOut1 = calCheckOut.getTime();
 		int newNumberOfGuests = 6;
 		assertEquals("Booking was updated successfully",
-				bookingManagement.updateBooking(bookingID, checkIn,
-						newCheckOut, newNumberOfGuests));
+				bookingManagement.updateBooking(bookingID, checkIn, 
+						newCheckOut1, newNumberOfGuests));
 
 		// Check if the updated booking contains the desired information
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckIn());
-		assertEquals(newCheckOut,
+		assertEquals(newCheckOut1,
 				bookingManagement.getConfirmedBookings().get(0).getCheckOut());
 		assertEquals(newNumberOfGuests, bookingManagement
 				.getConfirmedBookings().get(0).getNumberOfGuests());
 
 		// Update checkOut again
-		Date newCheckOutAgain = new Date();
+		calCheckOut.set(2015, 0, 17, 10, 00);
+		Date newCheckOut2 = calCheckOut.getTime();
 		assertEquals("Booking was updated successfully",
 				bookingManagement.updateBooking(bookingID, checkIn,
-						newCheckOutAgain, newNumberOfGuests));
+						newCheckOut2, newNumberOfGuests));
 
 		// Check that only the check-out date has been updated
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckIn());
-		assertEquals(newCheckOutAgain, bookingManagement.getConfirmedBookings()
+		assertEquals(newCheckOut2, bookingManagement.getConfirmedBookings()
 				.get(0).getCheckOut());
 		assertEquals(newNumberOfGuests, bookingManagement
 				.getConfirmedBookings().get(0).getNumberOfGuests());

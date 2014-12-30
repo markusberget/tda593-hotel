@@ -130,7 +130,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	protected EList<Customer> customer;
 
-//used in current implementation to make the bookingIDs unique
+	//used in current implementation to make the bookingIDs unique
 	private volatile int bookingsEver;
 
 	/**
@@ -523,7 +523,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				bookedDate = calCheckIn.getTime();
 				getRoomByID(roomNr).getBookedDates().add(bookedDate);
 				
-				// Add charge for spending one night at specified room
+				// Add charge for each night at specified room
 				Charge charge = new ChargeImpl();
 				charge.setDate(new Date());
 				charge.setAmount(room.getRoomType().getPrice());
