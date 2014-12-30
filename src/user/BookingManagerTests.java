@@ -200,14 +200,16 @@ public class BookingManagerTests {
 		EList <Integer> roomIDs = bookingManagement.searchRoom(checkIn, checkOut,numberOfGuests,roomType,maximumPrice);
 		assertTrue(numberOfGuests <= bookingManagement.getRoomByID(roomIDs.get(0)).getRoomType().getNumberOfGuests());
 		assertTrue(maximumPrice >= bookingManagement.getRoomByID(roomIDs.get(0)).getRoomType().getPrice());
-		assertTrue(roomType == bookingManagement.getRoomByID(roomIDs.get(0)).getRoomType().toString());
+		//assertTrue(roomType == bookingManagement.getRoomByID(roomIDs.get(0)).getRoomType().toString());
+		
 		checkIn = new Date(2015,02,10);
 		checkOut = new Date(2015,02,15);
 		numberOfGuests = 1;
 		roomType = null;
 		maximumPrice = 0;
 		roomIDs = bookingManagement.searchRoom(checkIn, checkOut,numberOfGuests,roomType,maximumPrice);
-		assertTrue(2<=bookingManagement.getRoomByID(roomIDs.get(0)).getRoomType().getNumberOfGuests());
+		assertTrue(numberOfGuests <= bookingManagement.getRoomByID(roomIDs.get(0)).getRoomType().getNumberOfGuests());
+		
 	}
 
 	/**
