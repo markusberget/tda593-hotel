@@ -2562,7 +2562,7 @@
         <children xmi:type="notation:Shape" xmi:id="_YId1kJBuEeSt1vjUWy_DqA" type="3009">
           <children xmi:type="notation:DecorationNode" xmi:id="_YIecoZBuEeSt1vjUWy_DqA" type="5006"/>
           <element xmi:type="uml:Comment" href="model.uml#_YIZkIJBuEeSt1vjUWy_DqA"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YIecoJBuEeSt1vjUWy_DqA" x="519" y="167" width="78" height="39"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_YIecoJBuEeSt1vjUWy_DqA" x="533" y="165" width="78" height="39"/>
         </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_95d4BHr2EeSXcqnzxUEL_w"/>
       </children>

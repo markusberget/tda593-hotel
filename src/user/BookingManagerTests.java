@@ -244,13 +244,13 @@ public class BookingManagerTests {
 		calCheckOut.set(2015, 0, 14, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
-		int numberOfGuests1 = 6;
-		int numberOfGuests2 = 4;
+		int numberOfGuests6 = 6;
+		int numberOfGuests4 = 4;
 		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
-				checkOut, numberOfGuests1);
+				checkOut, numberOfGuests6);
 		assertEquals(0, bookingID1);
 		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
-				checkOut, numberOfGuests2);
+				checkOut, numberOfGuests4);
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingManagement.getPendingBookings().size());
 		assertEquals(0, bookingManagement.getConfirmedBookings().size());
@@ -260,9 +260,9 @@ public class BookingManagerTests {
 		assertTrue(bookingManagement.confirmBooking(bookingID1));
 		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(2, bookingManagement.getConfirmedBookings().size());
-		assertEquals(numberOfGuests2, bookingManagement.getConfirmedBookings()
+		assertEquals(numberOfGuests4, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
-		assertEquals(numberOfGuests1, bookingManagement.getConfirmedBookings()
+		assertEquals(numberOfGuests6, bookingManagement.getConfirmedBookings()
 				.get(1).getNumberOfGuests());
 	}
 
