@@ -211,8 +211,8 @@ public class BookingManagerTests {
 		// Increase current hour by 2 to force cancellation fee to be added
 		Calendar newCheckIn = Calendar.getInstance();
 		Calendar newCheckOut = Calendar.getInstance();
-		newCheckIn.roll(newCheckIn.HOUR_OF_DAY, 2);
-		newCheckOut.roll(newCheckOut.DAY_OF_MONTH, 1);
+		newCheckIn.roll(Calendar.HOUR_OF_DAY, 2);
+		newCheckOut.roll(Calendar.DAY_OF_MONTH, 1);
 		Date newCheckInDate = newCheckIn.getTime();
 		Date newCheckOutDate = newCheckOut.getTime();
 		
@@ -238,8 +238,12 @@ public class BookingManagerTests {
 	public void testConfirmBooking() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
-		Date checkIn = new Date();
-		Date checkOut = new Date();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
 		int numberOfGuests1 = 6;
 		int numberOfGuests2 = 4;
 		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
