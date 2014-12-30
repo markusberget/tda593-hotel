@@ -183,22 +183,20 @@ public class BookingManagerTests {
 				.get(0).getNumberOfGuests());
 	}
 
-
 	/**
 	 * Test method for
 	 * {@link Classes.impl.IBookingManagementImplImpl#getBooking(int, java.util.Date)}
-	 * .
-	 * Tests if cancellation fee is added to a booking if canceled in less than
-	 * 24 hours, and also if cancellation fee is not added when a booking is
-	 * canceled earlier than 24 hours before check-in time.
+	 * . Tests if cancellation fee is added to a booking if canceled in less
+	 * than 24 hours, and also if cancellation fee is not added when a booking
+	 * is canceled earlier than 24 hours before check-in time.
 	 * 
 	 */
 	@Test
 	public void test_valid_AddCancellationFee() {
-		
+
 		// Set up a booking that can be canceled
-		Classes.impl.IBookingManagementImplImpl bookingManagement =
-		Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
+				.instantiateForTest();
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 		checkIn.set(2015, 0, 12, 12, 00);
@@ -207,27 +205,30 @@ public class BookingManagerTests {
 		Date checkOutDate = checkOut.getTime();
 		int nrOfGuests = 4;
 		int room1 = 1, room2 = 2;
-		int bookingID1 = bookingManagement.createPendingBooking(checkInDate, checkOutDate, nrOfGuests);
+		int bookingID1 = bookingManagement.createPendingBooking(checkInDate,
+				checkOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID1));
 		assertTrue(bookingManagement.addRoomPending(room2, bookingID1));
-		
-		//bookingManagement.getPendingBookings().get(0).setRoom(bookingManagement.getRoom().get(0));
+
+		// bookingManagement.getPendingBookings().get(0).setRoom(bookingManagement.getRoom().get(0));
 		bookingManagement.confirmBooking(bookingID1);
-		
-		// Check that no cancellation fee as added since >24 hours left to check-in
+
+		// Check that no cancellation fee as added since >24 hours left to
+		// check-in
 		assertEquals(0, bookingManagement.addCancellationFee(bookingID1));
-		
+
 		// Increase current hour by 2
 		Calendar newCheckIn = Calendar.getInstance();
 		newCheckIn.roll(newCheckIn.HOUR_OF_DAY, 2);
 		Date newCheckInDate = newCheckIn.getTime();
-		
+
 		// Create new booking to cancel
-		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate, checkOutDate, nrOfGuests);
+		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate,
+				checkOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID2));
 		assertTrue(bookingManagement.addRoomPending(room2, bookingID2));
 		bookingManagement.confirmBooking(bookingID2);
-		
+
 		// Check that cancellation fee is added since 2 hours left to check-in
 		assertEquals(200, bookingManagement.addCancellationFee(bookingID2));
 	}
@@ -271,44 +272,62 @@ public class BookingManagerTests {
 	 * Test method for
 	 * {@link Classes.impl.IBookingManagementImplImpl#searchRoom(java.util.Date, java.util.Date, java.lang.Class, int, int, int)}
 	 * 
-	 * Tests if the rooms that are returned from the searchRoom method matches the parameters 
-	 * that are sent in.
+	 * Tests if the rooms that are returned from the searchRoom method matches
+	 * the parameters that are sent in.
 	 * 
-	 * Dates not tested at all yet.
+	 * No test on if the Dates are free yet.
 	 * 
 	 */
 	@Test
 	public void testSearchRoom() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
+
+		// Tests if returned list is correct if all parameters are entered correctly
+		//Dates entered like this to get valid dates, not the year + 1900
+		Calendar checkIn = Calendar.getInstance();
+		Calendar checkOut = Calendar.getInstance();
+		checkIn.set(2015, 02, 12);
+		checkOut.set(2015, 02, 13);
+		Date checkInDate = checkIn.getTime();
+		Date checkOutDate = checkOut.getTime();
 		
-		//Tests if returned list is correct if all parameters are entered correctly
-		
-		Date checkIn = new Date(2015, 02, 10);
-		Date checkOut = new Date(2015, 02, 15);
 		int numberOfGuests = 1;
 		String roomType = RoomTypeName.SINGLE_ROOM.toString();
 		int maximumPrice = 30000;
-		EList<Integer> roomIDs = bookingManagement.searchRoom(checkIn,
-				checkOut, numberOfGuests, roomType, maximumPrice);
+		EList<Integer> roomIDs = bookingManagement.searchRoom(checkInDate,
+				checkOutDate, numberOfGuests, roomType, maximumPrice);
 
 		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
 			Integer roomID = (Integer) it.next();
 			Room room = bookingManagement.getRoomByID(roomID);
 			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests()
 					&& maximumPrice >= room.getRoomType().getPrice()
-					&& roomType == room.getRoomType().getRoomTypeName().toString());
+					&& roomType == room.getRoomType().getRoomTypeName()
+							.toString());
 		}
-		
-		//Tests if returned list is correct if not all parameters are 
-		//specified but those who are, are given correctly.
-		
-		checkIn = new Date(2015, 02, 10);
-		checkOut = new Date(2015, 02, 15);
-		numberOfGuests = 1;
+
+		// Tests if returned list is correct if not all parameters are
+		// specified but those who are, are given correctly.
+
 		roomType = null;
 		maximumPrice = 0;
-		roomIDs = bookingManagement.searchRoom(checkIn, checkOut,
+		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
+				numberOfGuests, roomType, maximumPrice);
+		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
+			Integer roomID = (Integer) it.next();
+			Room room = bookingManagement.getRoomByID(roomID);
+			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests());
+		}
+
+		// Tests if exception is thrown as it should if date is invalid or checkIn is 
+		// after checkOut and vice versa
+
+		checkIn.set(2011, 02, 12);
+		checkOut.set(2011, 02, 13);
+		checkInDate = checkIn.getTime();
+		checkOutDate = checkOut.getTime();
+		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 				numberOfGuests, roomType, maximumPrice);
 		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
 			Integer roomID = (Integer) it.next();

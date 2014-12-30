@@ -646,12 +646,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					throw new UnsupportedOperationException();
 				}
 				
-				// Doesn't work yet, don't know why.
-//				Calendar today = Calendar.getInstance();
-//				Date todaysDate = today.getTime();
-//				if(checkIn.before(todaysDate) || checkOut.before(checkIn)){
-//					throw new UnsupportedOperationException();
-//				}
+				// Works if Dates are entered in valid form, not the weird 1900 + form
+				Calendar today = Calendar.getInstance();
+				Date todaysDate = today.getTime();
+				if(checkIn.before(todaysDate) || checkOut.before(checkIn)){
+					throw new UnsupportedOperationException();
+				}
 				
 				if (bookings.isEmpty()) {
 					searchResult.add(r.getRoomNumber());
