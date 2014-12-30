@@ -14,7 +14,9 @@ import javax.xml.soap.SOAPException;
 
 import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
+import org.junit.Rule;
 import org.junit.Test;
+import org.junit.rules.ExpectedException;
 
 import Classes.Booking;
 import Classes.Customer;
@@ -278,20 +280,24 @@ public class BookingManagerTests {
 	 * No test on if the Dates are free yet.
 	 * 
 	 */
+	@Rule
+	public ExpectedException thrown = ExpectedException.none();
+
 	@Test
 	public void testSearchRoom() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 
-		// Tests if returned list is correct if all parameters are entered correctly
-		//Dates entered like this to get valid dates, not the year + 1900
+		// Tests if returned list is correct if all parameters are entered
+		// correctly
+		// Dates entered like this to get valid dates, not the year + 1900
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 		checkIn.set(2015, 02, 12);
 		checkOut.set(2015, 02, 13);
 		Date checkInDate = checkIn.getTime();
 		Date checkOutDate = checkOut.getTime();
-		
+
 		int numberOfGuests = 1;
 		String roomType = RoomTypeName.SINGLE_ROOM.toString();
 		int maximumPrice = 30000;
@@ -320,20 +326,18 @@ public class BookingManagerTests {
 			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests());
 		}
 
-		// Tests if exception is thrown as it should if date is invalid or checkIn is 
+		// Tests if exception is thrown as it should if date is invalid or
+		// checkIn is
 		// after checkOut and vice versa
 
 		checkIn.set(2011, 02, 12);
 		checkOut.set(2011, 02, 13);
 		checkInDate = checkIn.getTime();
 		checkOutDate = checkOut.getTime();
+		
+		thrown.expect(UnsupportedOperationException.class);
 		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 				numberOfGuests, roomType, maximumPrice);
-		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
-			Integer roomID = (Integer) it.next();
-			Room room = bookingManagement.getRoomByID(roomID);
-			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests());
-		}
 
 	}
 
