@@ -5,8 +5,8 @@ import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
-import static org.junit.Assert.fail;
 
+import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 
@@ -211,10 +211,41 @@ public class BookingManagerTests {
 	 * Test method for
 	 * {@link Classes.impl.IBookingManagementImplImpl#getBooking(int, java.util.Date)}
 	 * .
+	 * Tests if cancellation fee is added to a booking if canceled in less than
+	 * 24 hours, and also if cancellation fee is not added when a booking is
+	 * canceled earlier than 24 hours before check-in time.
+	 * 
 	 */
 	@Test
 	public void testAddCancellationFee() {
-		fail("Not yet implemented");
+		
+		// Set up a booking that can be canceled
+		Classes.impl.IBookingManagementImplImpl bookingManagement =
+		Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		Calendar checkIn = Calendar.getInstance();
+		Calendar checkOut = Calendar.getInstance();
+		checkIn.set(2015, 0, 12, 12, 00);
+		checkOut.set(2015, 0, 13, 10, 00);
+		Date checkInDate = checkIn.getTime();
+		Date checkOutDate = checkOut.getTime();
+		//assertEquals(13, checkOutDate.getDate());
+		//assertEquals(0, checkInDate.getMonth());
+		//assertEquals(2015, checkOutDate.getYear()+1900);
+		//assertEquals(10, checkOutDate.getHours());
+		//assertEquals(00, checkOutDate.getMinutes());
+		int nrOfGuests = 4;
+		int bookingID = bookingManagement.createPendingBooking(checkInDate, checkOutDate, nrOfGuests);
+		bookingManagement.confirmBooking(bookingID);
+		
+		// Check that no cancellation fee as added since >24 hours left to check-in
+		assertEquals(0, bookingManagement.addCancellationFee(bookingID));
+		
+		Calendar newCheckIn = Calendar.getInstance();
+		newCheckIn.roll(newCheckIn.HOUR_OF_DAY, 2);
+		
+		// Check that cancellation fee as added since 2 hours left to check-in
+		assertEquals(0, bookingManagement.addCancellationFee(bookingID));
+		
 	}
 
 	/**
