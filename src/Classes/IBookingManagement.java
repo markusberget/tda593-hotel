@@ -97,4 +97,12 @@ public interface IBookingManagement extends EObject {
 	 */
 	boolean changeStatusOfRoom(String staffMemberUsername, int roomId, RoomStatus status);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @generated
+	 */
+	int addCancellationFee(int bookingID);
+
 } // IBookingManagement
