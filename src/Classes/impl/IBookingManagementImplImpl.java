@@ -993,7 +993,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public Object eInvoke(int operationID, EList<?> arguments)
 			throws InvocationTargetException {
 		switch (operationID) {
-
 		case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_DATE_DATE_INT:
 			return updateBooking((Integer) arguments.get(0),
 					(Date) arguments.get(1), (Date) arguments.get(2),
