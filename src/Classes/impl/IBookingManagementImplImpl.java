@@ -471,16 +471,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if (checkIn.after(checkOut)) {
 			return "Could not update booking, check-in date is later than check-out date";
 		}
-		if ((checkIn != null || checkOut != null) && nrOfGuests > 0) {
-			if (checkIn != null) {
-				booking.setCheckIn(checkIn);		// Remove
-				//updateBookingDates(booking, checkIn, checkOut);
-			}
-			if (checkOut != null) {
-				booking.setCheckOut(checkOut);		// Remove
-				//updateBookingDates(booking, checkIn, checkOut);
-			}
+		if ((checkIn != null && checkOut != null) && nrOfGuests > 0) {
+			updateBookingDates(booking, checkIn, checkOut);
 			booking.setNumberOfGuests(nrOfGuests);
+			booking.setCheckIn(checkIn);
+			booking.setCheckOut(checkOut);
 			return "Booking was updated successfully";
 		}
 		return "Booking could not be updated due to invalid argument(s)";
@@ -589,11 +584,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		int checkInMonth = calCheckIn.get(Calendar.MONTH);
 		int checkOutMonth = calCheckOut.get(Calendar.MONTH);
 		
+		if (checkOutYear > checkInYear && checkOutMonth < checkInMonth) {
+			
+		}
+		
 		// If any of these two are true, create Date objects for booked dates
 		boolean check1 = (checkInYear <= checkOutYear) && (checkInMonth <= checkOutMonth);
 		boolean check2 = checkInYear < checkOutYear;
 
-		// This implementation do not work (roll) in all cases, like for different months
+		// This implementation do not work when next years earlier months used
 		if (check1) {
 			while (checkInDay != checkOutDay) {
 				bookedDate = calCheckIn.getTime();
@@ -612,8 +611,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				}
 				booking.getBill().getCharge().add(charge);
 				
-				// Increment to next day
-				calCheckIn.roll(Calendar.DAY_OF_MONTH, 1);
+				// Increment to next day (Does not work yet when entering new month
+				calCheckIn.set(Calendar.DAY_OF_MONTH, calCheckIn.get(Calendar.DAY_OF_MONTH)+1);
 				checkInDay++;
 			}
 			return true;

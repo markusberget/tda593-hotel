@@ -51,18 +51,23 @@ public class BookingManagerTests {
 		calCheckOut.set(2015, 0, 14, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
+		int room1 = 1, room2 = 2;
 		int nrOfGuests = 4;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		int bookingID = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests);
 		assertEquals(0, bookingID);
-		bookingManagement.confirmBooking(bookingID);
+		assertTrue(bookingManagement.addRoomPending(room1, bookingID));
+		assertTrue(bookingManagement.addRoomPending(room2, bookingID));
 
 		// Add customer information if this information should be modifiable in
 		// the future
 		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
+		
+		// Confirm booking
+		bookingManagement.confirmBooking(bookingID);
 
 		// Check the information of the booking before update
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0)
@@ -117,7 +122,7 @@ public class BookingManagerTests {
 		// Set up a booking
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckIn.set(2015, 0, 12, 10, 00);
 		calCheckOut.set(2015, 0, 14, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();

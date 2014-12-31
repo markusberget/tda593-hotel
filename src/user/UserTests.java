@@ -286,19 +286,12 @@ public class UserTests {
 		public void run() {
 			// Perform the booking procedure (the currently implemented parts)
 			bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests);
+			// Search room
+			// addRoomPending
 			bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 			bookingManagement.confirmBooking(bookingID);
 		}
 	} // end inner class User
-	
-	/**
-	 * Tests the scenario where a customer cancels a booking when the time difference
-	 * between the check-in time and the cancellation time is less than 24 hours.
-	 */
-	@Test
-	public void test_valid_Cancel_Booking_CancellationFee() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testAddStaffMember() {
