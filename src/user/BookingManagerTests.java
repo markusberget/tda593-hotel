@@ -380,7 +380,8 @@ public class BookingManagerTests {
 	 * Tests if a booking is cancelled by checking that the booking is removed
 	 * from the booking list (pending or confirmed) and added to the history
 	 * list. It is also tested what happens when a non-existing bookingID is
-	 * used as an argument.
+	 * used as an argument. When a booking is canceled all booked dates of
+	 * all associated rooms is removed. This expected behavior is also tested.
 	 */
 	@Test
 	public void testCancelBooking() {
@@ -393,6 +394,7 @@ public class BookingManagerTests {
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests4 = 4, nrOfGuests2 = 2, nrOfGuests5 = 5;
+		int room1 = 1, room2 = 2, room3 = 3;
 		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests4);
 		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
@@ -404,7 +406,26 @@ public class BookingManagerTests {
 		assertEquals(2, bookingID3);
 		assertFalse(bookingManagement.cancelBooking(3));
 		assertEquals(3, bookingManagement.getPendingBookings().size());
+		
+		// Add rooms to the bookings so it can be tested that the rooms are made available again when bookings are canceled
+		assertTrue(bookingManagement.addRoomPending(room1, bookingID1));
+		assertTrue(bookingManagement.addRoomPending(room2, bookingID2));
+		assertTrue(bookingManagement.addRoomPending(room3, bookingID3));
+		
+		// Check so that correct dates are booked for the rooms, and correct number of dates booked
+		assertEquals(2, bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().size());
+		assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().get(0)));
+		assertEquals(2, bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().size());
+		calCheckIn.set(2015, 0, 13, 12, 00);
+		checkIn = calCheckIn.getTime();
+		assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().get(1)));
+		
+		// Cancel a booking
 		assertTrue(bookingManagement.cancelBooking(bookingID3));
+		
+		// Check that the room associated with the above booking contains no booked dates
+		assertEquals(0, bookingManagement.getRoom().get(2).getBookedDates().size());
+		
 		assertEquals(2, bookingManagement.getBookingHistory().get(0)
 				.getBookingID());
 		assertEquals(1, bookingManagement.getBookingHistory().size());
