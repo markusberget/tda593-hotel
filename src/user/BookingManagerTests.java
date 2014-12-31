@@ -107,6 +107,12 @@ public class BookingManagerTests {
 				.get(0).getCheckOut());
 		assertEquals(newNumberOfGuests, bookingManagement
 				.getConfirmedBookings().get(0).getNumberOfGuests());
+		
+		// Check that the concerned room(s) is booked during check-in and check-out dates
+		assertEquals(4, bookingManagement.getConfirmedBookings().get(0).getRooms().get(0).getBookedDates().size());
+		assertEquals(4, bookingManagement.getConfirmedBookings().get(0).getRooms().get(1).getBookedDates().size());
+		assertEquals(0, checkIn.compareTo(bookingManagement.getConfirmedBookings().get(0).getRooms().get(1).getBookedDates().get(0)));
+
 	}
 
 	/**
