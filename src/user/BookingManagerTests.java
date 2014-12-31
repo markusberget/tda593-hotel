@@ -210,17 +210,14 @@ public class BookingManagerTests {
 		// check-in
 		assertEquals(0, bookingManagement.addCancellationFee(bookingID1));
 
-		// Increase current hour by 2 to force cancellation fee to be added
+		// Increase current hour by 1 to force cancellation fee to be added
 		Calendar newCheckIn = Calendar.getInstance();
-		Calendar newCheckOut = Calendar.getInstance();
-		newCheckIn.roll(Calendar.HOUR_OF_DAY, 2);
-		newCheckOut.roll(Calendar.DAY_OF_MONTH, 1);
+		newCheckIn.set(Calendar.HOUR_OF_DAY, newCheckIn.get(Calendar.HOUR_OF_DAY) + 1);
 		Date newCheckInDate = newCheckIn.getTime();
-		Date newCheckOutDate = newCheckOut.getTime();
 
 		// Create new booking to cancel
 		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate,
-				newCheckOutDate, nrOfGuests);
+				checkOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID2));
 		assertTrue(bookingManagement.addRoomPending(room2, bookingID2));
 		bookingManagement.confirmBooking(bookingID2);
