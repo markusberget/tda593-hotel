@@ -473,12 +473,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 		if ((checkIn != null || checkOut != null) && nrOfGuests > 0) {
 			if (checkIn != null) {
-				//booking.setCheckIn(checkIn);
-				// Change booked dates for room in rooms bookedDate list
+				booking.setCheckIn(checkIn);		// Remove
+				//updateBookingDates(booking, checkIn, checkOut);
 			}
 			if (checkOut != null) {
-				//booking.setCheckOut(checkOut);
-				// Change booked dates for room in rooms bookedDate list
+				booking.setCheckOut(checkOut);		// Remove
+				//updateBookingDates(booking, checkIn, checkOut);
 			}
 			booking.setNumberOfGuests(nrOfGuests);
 			return "Booking was updated successfully";
@@ -505,6 +505,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		Calendar oldCheckIn = convertCheckInDate(booking);
 		Calendar oldCheckOut = convertCheckOutDate(booking);
 		Calendar calTest = Calendar.getInstance();	// Used only for testing
+		Calendar calTest2 = Calendar.getInstance();	// Used only for testing
 		Calendar newCheckIn = Calendar.getInstance();
 		newCheckIn.setTime(checkIn);
 		Calendar newCheckOut = Calendar.getInstance();
@@ -531,19 +532,24 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 
 		// Remove all old dates remaining in bookedDates since they are same as new dates
-		
+		for (Room room : rooms) {
+			here: for (int i = 0; i < room.getBookedDates().size() ; i++) {
+				for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
+					calTest.setTime(iter.next());
+					calTest2.setTime(room.getBookedDates().get(i));
+					if (calTest.compareTo(calTest2) == 0) {
+						room.getBookedDates().remove(i);		// Remove old date in room's list
+						break here;
+					}
+				}
+			}
+		}
 		
 		// Create the new Date objects in the room(s) bookedDates list
 		for (Room room : rooms) {
-			checkInDay = oldCheckIn.get(Calendar.DAY_OF_MONTH);
-			while (checkInDay != checkOutDay) {
-				for (int i = 0; i < room.getBookedDates().size(); i++) {
-					calTest.setTime(room.getBookedDates().get(i));
-					if (calTest.get(Calendar.DAY_OF_MONTH) == checkInDay) {
-						room.getBookedDates().remove(i);
-					}
-				}
-				checkInDay++;
+			for (int i = 0; i < createNewDates.size(); i++) {
+				calTest.setTime(createNewDates.get(i));
+				room.getBookedDates().add(calTest.getTime());
 			}
 		}
 	}
