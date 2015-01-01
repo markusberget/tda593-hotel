@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import Classes.Bill;
 import Classes.Booking;
 import Classes.Charge;
 import Classes.ChargeType;
@@ -867,7 +868,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return -1;
 		}
 		
-		BillImpl bill = new BillImpl();
+		Bill bill = new BillImpl();
 		Customer customer = new CustomerImpl();
 		Booking booking = new BookingImpl();
 		booking.setBill(bill);
