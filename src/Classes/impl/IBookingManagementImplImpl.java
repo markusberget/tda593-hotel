@@ -672,7 +672,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 		EList<Room> rooms = this.getRoom();
 		EList<Integer> searchResult = new BasicEList<Integer>();
-		int minimumNbrOfGuests = 1;
+		final int minimumNbrOfGuests = 1;
 
 		
 		Calendar today = Calendar.getInstance();
@@ -836,7 +836,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * Because the createPendingBooking() method is also synchronized, the
 	 * bookingID should be unique for each booking.
-	 *
+	 * 
 	 * @generated NOT
 	 */
 	public synchronized boolean addCustomerInformationToBooking(int bookingID,
