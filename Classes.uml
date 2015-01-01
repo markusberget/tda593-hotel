@@ -184,6 +184,14 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_3mm8sJIJEeSHN9kF6UqsXw" name="checkInBooking">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_8kmgsJIJEeSHN9kF6UqsXw" name="bookingID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="__QNLUJIJEeSHN9kF6UqsXw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_bD0GwHYfEeS6mLi5FsOguA" name="IFinance">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_e5Z4QHYfEeS6mLi5FsOguA" name="calculatePayment" visibility="public">

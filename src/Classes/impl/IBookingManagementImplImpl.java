@@ -817,15 +817,29 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public String checkInBooking(int bookingID) {
 		Booking booking = getConfirmedBooking(bookingID);
-		EList<Room> rooms = booking.getRooms();
+		Calendar currentDate = Calendar.getInstance();
+		
+		// Set parameters of currentDate to the check-in time of the date for comparison
+		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
+		Calendar calDate = Calendar.getInstance();		// Used for comparison only
 		
 		if (booking == null) {
 			return "Booking was not found, please try another bookingID";
 		}
+		
+		EList<Room> rooms = booking.getRooms();
 		for (Room room : rooms) {
-			
+			if (room.getStatus() == RoomStatus.AVAILABLE) {
+				EList<Date> bookedDates = room.getBookedDates();
+				for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
+					calDate.setTime(iter.next());
+					if (calDate.compareTo(currentDate) == 0) {
+						room.setStatus(RoomStatus.OCCUPIED);
+					}
+				}
+			}
 		}
-		return "heh";
+		return "Checked in successfully";
 	}
 	
 	/**
