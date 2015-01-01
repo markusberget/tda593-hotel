@@ -594,7 +594,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * and adding it to the confirmed bookings list instead. 
 	 * 
 	 * This method is synchronized so that several bookings may be removed at
-	 * the "same" time, instead of experiencing race condition.
+	 * the "same" time, without experiencing a race condition.
 	 * 
 	 * @generated NOT
 	 */
