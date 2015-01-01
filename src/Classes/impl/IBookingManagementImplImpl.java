@@ -537,7 +537,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		int checkOutMonth = calCheckOut.get(Calendar.MONTH);
 		
 		if (checkOutYear > checkInYear && checkOutMonth < checkInMonth) {
-			
+			// TODO: what is this?
 		}
 		
 		// If any of these two are true, create Date objects for booked dates
