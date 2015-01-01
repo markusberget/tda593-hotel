@@ -119,4 +119,20 @@ public interface IHotelManager extends EObject {
 	 */
 	boolean logout(String username);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomIDRequired="true" roomIDOrdered="false"
+	 * @generated
+	 */
+	String checkIn(int roomID);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @generated
+	 */
+	String checkInBooking(int bookingID);
+
 } // IHotelManager

@@ -79,7 +79,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="pendingBookings" ordered="false"
         upperBound="-1" eType="#//Booking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iHotelManagerImpl" ordered="false"
-        lowerBound="1" eType="#//IHotelManagerImpl"/>
+        lowerBound="1" eType="#//IHotelManagerImpl" eOpposite="#//IHotelManagerImpl/iBookingManagementImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bookingHistory" ordered="false"
         upperBound="-1" eType="#//Booking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iFinanceImpl" ordered="false"
@@ -90,6 +90,8 @@
   <eClassifiers xsi:type="ecore:EClass" name="IHotelManagerImpl" eSuperTypes="#//IHotelManager">
     <eStructuralFeatures xsi:type="ecore:EReference" name="staff" ordered="false"
         upperBound="-1" eType="#//StaffMember"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iBookingManagementImpl"
+        ordered="false" lowerBound="1" eType="#//IBookingManagementImpl" eOpposite="#//IBookingManagementImpl/iHotelManagerImpl"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StaffMember" eSuperTypes="#//IPerson">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="admin" ordered="false"
@@ -162,6 +164,12 @@
     <eOperations name="logout" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="username" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="checkIn" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="roomID" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+    <eOperations name="checkInBooking" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
+      <eParameters name="bookingID" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IFinanceImpl" eSuperTypes="#//IFinance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="customerProvides" ordered="false"
@@ -228,9 +236,6 @@
     </eOperations>
     <eOperations name="cancelBooking" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">
       <eParameters name="bookingID" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eOperations>
-    <eOperations name="checkIn" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
-      <eParameters name="roomID" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eOperations>
     <eOperations name="addCustomerInformationToBooking" ordered="false" lowerBound="1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean">

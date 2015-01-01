@@ -111,6 +111,8 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//IHotelManagerImpl">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IHotelManagerImpl/staff"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//IHotelManagerImpl/iBookingManagementImpl"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//StaffMember">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//StaffMember/admin"/>
@@ -173,6 +175,12 @@
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/logout">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/logout/username"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/checkIn">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/checkIn/roomID"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/checkInBooking">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/checkInBooking/bookingID"/>
       </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//IFinanceImpl">
@@ -239,9 +247,6 @@
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IBookingManagement/cancelBooking">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/cancelBooking/bookingID"/>
-      </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IBookingManagement/checkIn">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/checkIn/roomID"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IBookingManagement/addCustomerInformationToBooking">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/addCustomerInformationToBooking/bookingID"/>

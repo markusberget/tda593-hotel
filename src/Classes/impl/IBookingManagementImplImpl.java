@@ -302,14 +302,36 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIHotelManagerImpl(IHotelManagerImpl newIHotelManagerImpl, NotificationChain msgs) {
+		IHotelManagerImpl oldIHotelManagerImpl = iHotelManagerImpl;
+		iHotelManagerImpl = newIHotelManagerImpl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, newIHotelManagerImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	public void setIHotelManagerImpl(IHotelManagerImpl newIHotelManagerImpl) {
-		IHotelManagerImpl oldIHotelManagerImpl = iHotelManagerImpl;
-		iHotelManagerImpl = newIHotelManagerImpl;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, oldIHotelManagerImpl, iHotelManagerImpl));
+		if (newIHotelManagerImpl != iHotelManagerImpl) {
+			NotificationChain msgs = null;
+			if (iHotelManagerImpl != null)
+				msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, IHotelManagerImpl.class, msgs);
+			if (newIHotelManagerImpl != null)
+				msgs = ((InternalEObject)newIHotelManagerImpl).eInverseAdd(this, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, IHotelManagerImpl.class, msgs);
+			msgs = basicSetIHotelManagerImpl(newIHotelManagerImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, newIHotelManagerImpl, newIHotelManagerImpl));
 	}
 
 	/**
@@ -806,76 +828,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		return calCheckOut;
 	}
 
-	/**
-	 * The customer is checked in by setting the status of the room(s) in the
-	 * booking to Occupied. Checking in is only allowed if the status of the
-	 * room(s) is Available. This method is used to check in to all room(s) in
-	 * a booking at the same time. If a room in the booking has already been
-	 * checked in to, it is just ignored.
-	 * 
-	 * @generated NOT
-	 */
-	public String checkInBooking(int bookingID) {
-		Booking booking = getConfirmedBooking(bookingID);
-		Calendar currentDate = Calendar.getInstance();
-		
-		// Set parameters of currentDate to the check-in time of the date for comparison
-		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
-		Calendar calDate = Calendar.getInstance();		// Used for comparison only
-		
-		if (booking == null) {
-			return "Booking was not found, please try another bookingID";
-		}
-		
-		EList<Room> rooms = booking.getRooms();
-		for (Room room : rooms) {
-			if (room.getStatus() == RoomStatus.AVAILABLE) {
-				EList<Date> bookedDates = room.getBookedDates();
-				for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
-					calDate.setTime(iter.next());
-					if (calDate.compareTo(currentDate) == 0) {
-						room.setStatus(RoomStatus.OCCUPIED);
-					}
-				}
-			}
-		}
-		return "Checked in successfully";
-	}
 	
-	/**
-	 * The customer is checked in by setting the status of the room to Occupied.
-	 * Checking in is only allowed if the status of the room is Available and the
-	 * room's bookedDates list contain the current date. This method is used to
-	 * check in to a specific room.
-	 * 
-	 * @generated NOT
-	 */
-	public String checkIn(int roomID) {
-		Room room = getRoomByID(roomID);
-		Calendar currentDate = Calendar.getInstance();
-		
-		// Set parameters of currentDate to the check-in time of the date for comparison
-		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
-		Calendar calDate = Calendar.getInstance();		// Used for comparison only
-		
-		if (room == null) {
-			return "Room was not found, please try another room number";
-		}
-		if (room.getStatus() != RoomStatus.AVAILABLE) {
-			return "Cannot check in since room is currently not available";
-		}
-		EList<Date> bookedDates = room.getBookedDates();
-		
-		// Check that the room has been booked for this particular date
-		for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
-			calDate.setTime(iter.next());
-			if (calDate.compareTo(currentDate) == 0) {
-				room.setStatus(RoomStatus.OCCUPIED);
-				return "Checked in successfully";
-			}
-		}
-		return "Check-in failed";
-	}
+	
+	
 
 	/**
 	 * This method is synchronized to avoid problems with assigning wrong values
@@ -966,6 +921,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		switch (featureID) {
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getConfirmedBookings()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL:
+				if (iHotelManagerImpl != null)
+					msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, IHotelManagerImpl.class, msgs);
+				return basicSetIHotelManagerImpl((IHotelManagerImpl)otherEnd, msgs);
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:
 				if (iFinanceImpl != null)
 					msgs = ((InternalEObject)iFinanceImpl).eInverseRemove(this, ClassesPackage.IFINANCE_IMPL__IBOOKING_MANAGEMENT_IMPL, IFinanceImpl.class, msgs);
@@ -986,6 +945,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		switch (featureID) {
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS:
 				return ((InternalEList<?>)getConfirmedBookings()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL:
+				return basicSetIHotelManagerImpl(null, msgs);
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:
 				return basicSetIFinanceImpl(null, msgs);
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CUSTOMER:
@@ -1134,8 +1095,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				return searchRoom((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2), (String)arguments.get(3), (Integer)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CANCEL_BOOKING__INT:
 				return cancelBooking((Integer)arguments.get(0));
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHECK_IN__INT:
-				return checkIn((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING:
 				return addCustomerInformationToBooking((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT:

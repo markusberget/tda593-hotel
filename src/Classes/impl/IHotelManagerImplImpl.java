@@ -2,14 +2,27 @@
  */
 package Classes.impl;
 
+import Classes.Booking;
 import Classes.ClassesPackage;
+import Classes.IBookingManagementImpl;
 import Classes.IHotelManagerImpl;
+import Classes.Room;
+import Classes.RoomStatus;
 import Classes.StaffMember;
+
 import java.lang.reflect.InvocationTargetException;
+import java.util.Calendar;
 import java.util.Collection;
+import java.util.Date;
+import java.util.ListIterator;
+
+import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
@@ -21,6 +34,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
  * The following features are implemented:
  * <ul>
  *   <li>{@link Classes.impl.IHotelManagerImplImpl#getStaff <em>Staff</em>}</li>
+ *   <li>{@link Classes.impl.IHotelManagerImplImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +52,17 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 
 	protected EList<StaffMember> staff;
+
+
+	/**
+	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBookingManagementImpl iBookingManagementImpl;
 
 
 	/**
@@ -105,6 +130,62 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		return staff;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBookingManagementImpl getIBookingManagementImpl() {
+		if (iBookingManagementImpl != null && iBookingManagementImpl.eIsProxy()) {
+			InternalEObject oldIBookingManagementImpl = (InternalEObject)iBookingManagementImpl;
+			iBookingManagementImpl = (IBookingManagementImpl)eResolveProxy(oldIBookingManagementImpl);
+			if (iBookingManagementImpl != oldIBookingManagementImpl) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
+			}
+		}
+		return iBookingManagementImpl;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBookingManagementImpl basicGetIBookingManagementImpl() {
+		return iBookingManagementImpl;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl, NotificationChain msgs) {
+		IBookingManagementImpl oldIBookingManagementImpl = iBookingManagementImpl;
+		iBookingManagementImpl = newIBookingManagementImpl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, newIBookingManagementImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+		if (newIBookingManagementImpl != iBookingManagementImpl) {
+			NotificationChain msgs = null;
+			if (iBookingManagementImpl != null)
+				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, IBookingManagementImpl.class, msgs);
+			if (newIBookingManagementImpl != null)
+				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, IBookingManagementImpl.class, msgs);
+			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, newIBookingManagementImpl, newIBookingManagementImpl));
+	}
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -335,6 +416,118 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		}
 	}
 
+	/**
+	 * The customer is checked in by setting the status of the room(s) in the
+	 * booking to Occupied. Checking in is only allowed if the status of the
+	 * room(s) is Available. This method is used to check in to all room(s) in
+	 * a booking at the same time. If a room in the booking has already been
+	 * checked in to, it is just ignored.
+	 * 
+	 * @generated NOT
+	 */
+	public String checkInBooking(int bookingID) {
+		EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
+		Booking booking = null;
+		for (int i = 0; i < bookings.size(); i++) {
+			if(bookings.get(i).getBookingID() == bookingID) {
+				booking = bookings.get(i);
+			}
+		}
+		Calendar currentDate = Calendar.getInstance();
+		
+		// Set parameters of currentDate to the check-in time of the date for comparison
+		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
+		Calendar calDate = Calendar.getInstance();		// Used for comparison only
+		
+		if (booking == null) {
+			return "Booking was not found, please try another bookingID";
+		}
+		
+		EList<Room> rooms = booking.getRooms();
+		for (Room room : rooms) {
+			if (room.getStatus() == RoomStatus.AVAILABLE) {
+				EList<Date> bookedDates = room.getBookedDates();
+				for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
+					calDate.setTime(iter.next());
+					if (calDate.compareTo(currentDate) == 0) {
+						room.setStatus(RoomStatus.OCCUPIED);
+					}
+				}
+			}
+		}
+		return "Checked in successfully";
+	}
+	
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				if (iBookingManagementImpl != null)
+					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, IBookingManagementImpl.class, msgs);
+				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return basicSetIBookingManagementImpl(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+	/**
+	 * The customer is checked in by setting the status of the room to Occupied.
+	 * Checking in is only allowed if the status of the room is Available and the
+	 * room's bookedDates list contain the current date. This method is used to
+	 * check in to a specific room.
+	 * 
+	 * @generated NOT
+	 */
+	public String checkIn(int roomID) {
+		Room room = null;
+		EList<Room> rooms = getIBookingManagementImpl().getRoom();
+		for (int i = 0; i < rooms.size(); i++) {
+			if(rooms.get(i).getRoomNumber() == roomID) {
+				room = rooms.get(i);
+			}
+		}
+		
+		Calendar currentDate = Calendar.getInstance();
+		
+		// Set parameters of currentDate to the check-in time of the date for comparison
+		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
+		Calendar calDate = Calendar.getInstance();		// Used for comparison only
+		
+		if (room == null) {
+			return "Room was not found, please try another room number";
+		}
+		if (room.getStatus() != RoomStatus.AVAILABLE) {
+			return "Cannot check in since room is currently not available";
+		}
+		EList<Date> bookedDates = room.getBookedDates();
+		
+		// Check that the room has been booked for this particular date
+		for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
+			calDate.setTime(iter.next());
+			if (calDate.compareTo(currentDate) == 0) {
+				room.setStatus(RoomStatus.OCCUPIED);
+				return "Checked in successfully";
+			}
+		}
+		return "Check-in failed";
+	}
+
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -346,6 +539,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
 				return getStaff();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				if (resolve) return getIBookingManagementImpl();
+				return basicGetIBookingManagementImpl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -363,6 +559,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				getStaff().clear();
 				getStaff().addAll((Collection<? extends StaffMember>)newValue);
 				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -378,6 +577,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
 				getStaff().clear();
 				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -392,6 +594,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		switch (featureID) {
 			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
 				return staff != null && !staff.isEmpty();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return iBookingManagementImpl != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -430,6 +634,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getStaffMemberAddress((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
 				return logout((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN__INT:
+				return checkIn((Integer)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT:
+				return checkInBooking((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

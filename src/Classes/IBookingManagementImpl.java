@@ -81,6 +81,7 @@ public interface IBookingManagementImpl extends IBookingManagement {
 
 	/**
 	 * Returns the value of the '<em><b>IHotel Manager Impl</b></em>' reference.
+	 * It is bidirectional and its opposite is '{@link Classes.IHotelManagerImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>IHotel Manager Impl</em>' reference isn't clear,
@@ -90,7 +91,8 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	 * @return the value of the '<em>IHotel Manager Impl</em>' reference.
 	 * @see #setIHotelManagerImpl(IHotelManagerImpl)
 	 * @see Classes.ClassesPackage#getIBookingManagementImpl_IHotelManagerImpl()
-	 * @model required="true" ordered="false"
+	 * @see Classes.IHotelManagerImpl#getIBookingManagementImpl
+	 * @model opposite="iBookingManagementImpl" required="true" ordered="false"
 	 * @generated
 	 */
 	IHotelManagerImpl getIHotelManagerImpl();

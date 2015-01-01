@@ -487,7 +487,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__CheckIn__int() {
+	public EOperation getIBookingManagement__AddCustomerInformationToBooking__int_String_String_String_String() {
 		return iBookingManagementEClass.getEOperations().get(5);
 	}
 
@@ -496,7 +496,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__AddCustomerInformationToBooking__int_String_String_String_String() {
+	public EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int() {
 		return iBookingManagementEClass.getEOperations().get(6);
 	}
 
@@ -505,7 +505,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int() {
+	public EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus() {
 		return iBookingManagementEClass.getEOperations().get(7);
 	}
 
@@ -514,17 +514,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus() {
-		return iBookingManagementEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getIBookingManagement__AddCancellationFee__int() {
-		return iBookingManagementEClass.getEOperations().get(9);
+		return iBookingManagementEClass.getEOperations().get(8);
 	}
 
 	/**
@@ -759,6 +750,24 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 */
 	public EOperation getIHotelManager__Logout__String() {
 		return iHotelManagerEClass.getEOperations().get(12);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIHotelManager__CheckIn__int() {
+		return iHotelManagerEClass.getEOperations().get(13);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public EOperation getIHotelManager__CheckInBooking__int() {
+		return iHotelManagerEClass.getEOperations().get(14);
 	}
 
 	/**
@@ -1162,6 +1171,15 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getIHotelManagerImpl_IBookingManagementImpl() {
+		return (EReference)iHotelManagerImplEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public ClassesFactory getClassesFactory() {
 		return (ClassesFactory)getEFactoryInstance();
 	}
@@ -1230,6 +1248,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		iHotelManagerImplEClass = createEClass(IHOTEL_MANAGER_IMPL);
 		createEReference(iHotelManagerImplEClass, IHOTEL_MANAGER_IMPL__STAFF);
+		createEReference(iHotelManagerImplEClass, IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL);
 
 		staffMemberEClass = createEClass(STAFF_MEMBER);
 		createEAttribute(staffMemberEClass, STAFF_MEMBER__ADMIN);
@@ -1258,6 +1277,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___LOGOUT__STRING);
+		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_IN__INT);
+		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_IN_BOOKING__INT);
 
 		iFinanceImplEClass = createEClass(IFINANCE_IMPL);
 		createEReference(iFinanceImplEClass, IFINANCE_IMPL__CUSTOMER_PROVIDES);
@@ -1278,7 +1299,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CONFIRM_BOOKING__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEARCH_ROOM__DATE_DATE_INT_STRING_INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CHECK_IN__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS);
@@ -1382,13 +1402,14 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEReference(getIBookingManagementImpl_ConfirmedBookings(), this.getBooking(), this.getBooking_IBookingManagementImpl(), "confirmedBookings", null, 0, -1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIBookingManagementImpl_Room(), this.getRoom(), null, "room", null, 0, -1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIBookingManagementImpl_PendingBookings(), this.getBooking(), null, "pendingBookings", null, 0, -1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
-		initEReference(getIBookingManagementImpl_IHotelManagerImpl(), this.getIHotelManagerImpl(), null, "iHotelManagerImpl", null, 1, 1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIBookingManagementImpl_IHotelManagerImpl(), this.getIHotelManagerImpl(), this.getIHotelManagerImpl_IBookingManagementImpl(), "iHotelManagerImpl", null, 1, 1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIBookingManagementImpl_BookingHistory(), this.getBooking(), null, "bookingHistory", null, 0, -1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIBookingManagementImpl_IFinanceImpl(), this.getIFinanceImpl(), this.getIFinanceImpl_IBookingManagementImpl(), "iFinanceImpl", null, 1, 1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getIBookingManagementImpl_Customer(), this.getCustomer(), this.getCustomer_IBookingManagementImpl(), "customer", null, 0, -1, IBookingManagementImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(iHotelManagerImplEClass, IHotelManagerImpl.class, "IHotelManagerImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIHotelManagerImpl_Staff(), this.getStaffMember(), null, "staff", null, 0, -1, IHotelManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getIHotelManagerImpl_IBookingManagementImpl(), this.getIBookingManagementImpl(), this.getIBookingManagementImpl_IHotelManagerImpl(), "iBookingManagementImpl", null, 1, 1, IHotelManagerImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(staffMemberEClass, StaffMember.class, "StaffMember", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStaffMember_Admin(), theTypesPackage.getBoolean(), "admin", null, 1, 1, StaffMember.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1452,6 +1473,12 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		op = initEOperation(getIHotelManager__Logout__String(), ecorePackage.getEBoolean(), "logout", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIHotelManager__CheckIn__int(), ecorePackage.getEString(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "roomID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIHotelManager__CheckInBooking__int(), ecorePackage.getEString(), "checkInBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iFinanceImplEClass, IFinanceImpl.class, "IFinanceImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIFinanceImpl_CustomerProvides(), this.getCustomerProvides(), null, "customerProvides", null, 1, 1, IFinanceImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1517,9 +1544,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		op = initEOperation(getIBookingManagement__CancelBooking__int(), ecorePackage.getEBoolean(), "cancelBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getIBookingManagement__CheckIn__int(), ecorePackage.getEString(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "roomID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIBookingManagement__AddCustomerInformationToBooking__int_String_String_String_String(), ecorePackage.getEBoolean(), "addCustomerInformationToBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
