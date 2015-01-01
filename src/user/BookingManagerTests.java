@@ -341,7 +341,7 @@ public class BookingManagerTests {
 			roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 					numberOfGuests, roomType, maximumPrice);
 		} catch (Throwable exception) {
-			assertTrue(exception instanceof UnsupportedOperationException);
+			assertTrue(exception instanceof IllegalArgumentException);
 		}
 
 		checkIn.set(2011, 02, 12);
@@ -352,7 +352,7 @@ public class BookingManagerTests {
 			roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 					numberOfGuests, roomType, maximumPrice);
 		} catch (Throwable exception) {
-			assertTrue(exception instanceof UnsupportedOperationException);
+			assertTrue(exception instanceof IllegalArgumentException);
 		}
 
 		// Sets the dates to be valid again but enters an invalid room type name
@@ -368,7 +368,7 @@ public class BookingManagerTests {
 			roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 					numberOfGuests, roomType, maximumPrice);
 		} catch (Throwable exception) {
-			assertTrue(exception instanceof UnsupportedOperationException);
+			assertTrue(exception instanceof IllegalArgumentException);
 		}
 
 	}

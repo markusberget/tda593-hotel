@@ -668,19 +668,18 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	@Override
 	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
 			String roomType, int maximumPrice)
-			throws UnsupportedOperationException {
+			throws IllegalArgumentException {
 
 		EList<Room> rooms = this.getRoom();
 		EList<Integer> searchResult = new BasicEList<Integer>();
 		final int minimumNbrOfGuests = 1;
 
-		
 		Calendar today = Calendar.getInstance();
 		Date todaysDate = today.getTime();
 		if (checkIn.before(todaysDate) || checkOut.before(checkIn)
 				|| maximumPrice < 0 || numberOfGuests < minimumNbrOfGuests
 				|| (roomType != null && RoomTypeName.get(roomType) == null)) {
-			throw new UnsupportedOperationException();
+			throw new IllegalArgumentException();
 		}
 
 		for (Room r : rooms) {
