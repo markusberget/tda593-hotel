@@ -407,7 +407,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return "booking was not found, check if bookingID is correct";
 		}
 		if (checkIn.after(checkOut)) {
-			return "Could not update booking, check-in date is later than check-out date";
+			return "Could not update booking, check-in if date is later than check-out date";
 		}
 		if ((checkIn != null && checkOut != null) && nrOfGuests > 0) {
 			updateBookingDates(booking, checkIn, checkOut);
