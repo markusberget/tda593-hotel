@@ -38,7 +38,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 
 	protected EList<StaffMember> staff;
-	//private Map<String, StaffMember> staffMembers;
 
 
 	/**
@@ -58,8 +57,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 
-
-
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -68,7 +65,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	protected IHotelManagerImplImpl() {
 		super();
 
-		//this.staffMembers = new HashMap<String, StaffMember>();
 		this.staff = new BasicEList<StaffMember>();
 
 		// add an admin for testing purposes.
