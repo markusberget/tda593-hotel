@@ -409,6 +409,13 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if (checkIn.after(checkOut)) {
 			return "Could not update booking, check-in if date is later than check-out date";
 		}
+		
+		/**
+		 * TODO: Why do we need "(checkIn != null && checkOut != null)"?
+		 * If checkIn and checkOut were null, then the previous check
+		 * "if (checkIn.after(checkOut)) {"
+		 * would have thrown a NullPointerException.
+		 */
 		if ((checkIn != null && checkOut != null) && nrOfGuests > 0) {
 			updateBookingDates(booking, checkIn, checkOut);
 			booking.setNumberOfGuests(nrOfGuests);
