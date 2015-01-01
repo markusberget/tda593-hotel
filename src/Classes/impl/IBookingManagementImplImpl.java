@@ -716,7 +716,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * A booking can be cancelled while it is pending and also when it is in the
+	 * A booking can be cancelled while it is pending or when it is in the
 	 * confirmed state. For the moment, a cancelled booking is placed in the
 	 * history list. The method is synchronized to avoid race conditions when
 	 * removing bookings (and searching for the correct booking)
