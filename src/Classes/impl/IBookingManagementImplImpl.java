@@ -515,6 +515,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return false;
 		}
 		
+		// Also check if room exists	
+		if (room == null) {	
+			return false;	
+		}
+				
+		
 		// Add room to booking
 		booking.getRooms().add(room);
 		
