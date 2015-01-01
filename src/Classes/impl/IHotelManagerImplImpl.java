@@ -145,12 +145,13 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			return false;
 		}
 
+		// are the password and username of the new user okay?
 		if(!isPasswordSecure(password) || !isValidUsername(username)) {
 			return false;
 
 		}
 
-         // also, check whether the staff member doesn't already exist!
+         // also, check whether a user with that username doesn't already exist!
 		if(this.internal_lookupStaffMember(username) != null) {
 			return false;
 		}
@@ -170,6 +171,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		newStaffMember.setAddress(address);
 		newStaffMember.setAdmin(admin);
 
+		// and finally, add the new user to the system. 
 		this.internal_addStaffMember(newStaffMember);
 		return true;
 	}
@@ -321,12 +323,14 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	public boolean logout(String username) {
 		StaffMember s = this.internal_lookupStaffMember(username);
 
+		// if staff member doesn't exist in the system. 
 		if(s == null) return false;
 
 		if(s.isLoggedIn()) {
 			s.setIsLoggedIn(false);
 			return true;
 		} else {
+			// can't logout twice!
 			return false;
 		}
 	}
