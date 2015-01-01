@@ -807,23 +807,60 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * The customer is checked in by setting the status of the rooms in the
-	 * booking to occupied.
-	 * 
-	 * Note: There should be some check when it is allowed to check-in.
+	 * The customer is checked in by setting the status of the room(s) in the
+	 * booking to Occupied. Checking in is only allowed if the status of the
+	 * room(s) is Available. This method is used to check in to all room(s) in
+	 * a booking at the same time. If a room in the booking has already been
+	 * checked in to, it is just ignored.
 	 * 
 	 * @generated NOT
 	 */
-	public boolean checkIn(int bookingID) {
-		// Booking booking = bookings.get(bookingID);
-		if (confirmedBookings != null) {
-			// List<Room> rooms = rooms.get(bookingID);
-			// for (Room room : rooms) {
-			// room.setStatus(RoomStatus.OCCUPIED);
-			// }
-			return true;
+	public String checkInBooking(int bookingID) {
+		Booking booking = getConfirmedBooking(bookingID);
+		EList<Room> rooms = booking.getRooms();
+		
+		if (booking == null) {
+			return "Booking was not found, please try another bookingID";
 		}
-		return false;
+		for (Room room : rooms) {
+			
+		}
+		return "heh";
+	}
+	
+	/**
+	 * The customer is checked in by setting the status of the room to Occupied.
+	 * Checking in is only allowed if the status of the room is Available and the
+	 * room's bookedDates list contain the current date. This method is used to
+	 * check in to a specific room.
+	 * 
+	 * @generated NOT
+	 */
+	public String checkIn(int roomID) {
+		Room room = getRoomByID(roomID);
+		Calendar currentDate = Calendar.getInstance();
+		
+		// Set parameters of currentDate to the check-in time of the date for comparison
+		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
+		Calendar calDate = Calendar.getInstance();		// Used for comparison only
+		
+		if (room == null) {
+			return "Room was not found, please try another room number";
+		}
+		if (room.getStatus() != RoomStatus.AVAILABLE) {
+			return "Cannot check in since room is currently not available";
+		}
+		EList<Date> bookedDates = room.getBookedDates();
+		
+		// Check that the room has been booked for this particular date
+		for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
+			calDate.setTime(iter.next());
+			if (calDate.compareTo(currentDate) == 0) {
+				room.setStatus(RoomStatus.OCCUPIED);
+				return "Checked in successfully";
+			}
+		}
+		return "Check-in failed";
 	}
 
 	/**

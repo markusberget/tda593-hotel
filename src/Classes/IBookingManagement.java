@@ -60,10 +60,10 @@ public interface IBookingManagement extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @model required="true" ordered="false" roomIDRequired="true" roomIDOrdered="false"
 	 * @generated
 	 */
-	boolean checkIn(int bookingID);
+	String checkIn(int roomID);
 
 	/**
 	 * <!-- begin-user-doc -->
