@@ -225,10 +225,15 @@ public class BookingManagerTests {
 		Calendar newCheckIn = Calendar.getInstance();
 		newCheckIn.set(Calendar.HOUR_OF_DAY, newCheckIn.get(Calendar.HOUR_OF_DAY) + 1);
 		Date newCheckInDate = newCheckIn.getTime();
+		
+		// Increase current day by 1 of check-out date so that cancellation fee will be same
+		Calendar newCheckOut = Calendar.getInstance();
+		newCheckOut.set(Calendar.DAY_OF_MONTH, newCheckOut.get(Calendar.DAY_OF_MONTH) + 1);
+		Date newCheckOutDate = newCheckOut.getTime();
 
 		// Create new booking to cancel
 		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate,
-				checkOutDate, nrOfGuests);
+				newCheckOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID2));
 		assertTrue(bookingManagement.addRoomPending(room2, bookingID2));
 		bookingManagement.confirmBooking(bookingID2);
