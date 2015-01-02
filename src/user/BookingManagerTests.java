@@ -128,7 +128,7 @@ public class BookingManagerTests {
 		// Set up a booking
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(2015, 0, 12, 10, 00);
+		calCheckIn.set(2015, 0, 12, 12, 00);
 		calCheckOut.set(2015, 0, 14, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
