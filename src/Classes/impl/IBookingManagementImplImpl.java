@@ -979,6 +979,20 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		pendingBookings.add(booking);
 		return booking.getBookingID();
 	}
+	
+	// This is a IHotelManager method, only staff should be able to run it
+/*	public boolean changeStatusOfRoom(String staffMemberUsername, int roomId,
+			RoomStatus status) {
+		IHotelManager hm = getIHotelManagerImpl();
+
+		if (!hm.isStaffMemberLoggedIn(staffMemberUsername))
+			return false; // not logged in!
+
+		Room room = getRoomByID(roomId);
+		room.setStatus(status);
+
+		return true;
+	}*/
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
