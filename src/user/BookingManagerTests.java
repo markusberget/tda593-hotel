@@ -487,6 +487,19 @@ public class BookingManagerTests {
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID3));
 		assertEquals(1, bookingManagement.getPendingBookings().get(2).getRooms().size());
 		assertEquals(room1, bookingManagement.getPendingBookings().get(2).getRooms().get(0).getRoomNumber());
+		
+		// Let a third customer book room1 in a new booking between other customers dates
+		calCheckIn.set(2015, 06, 10, 12, 00);
+		calCheckOut.set(2015, 07, 17, 10, 00);
+		checkIn = calCheckIn.getTime();
+		checkOut = calCheckOut.getTime();
+		int bookingID4 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests2);
+		assertTrue(bookingManagement.addRoomPending(room1, bookingID4));
+		assertEquals(1, bookingManagement.getPendingBookings().get(3).getRooms().size());
+		assertEquals(room1, bookingManagement.getPendingBookings().get(3).getRooms().get(0).getRoomNumber());
+		
+		
 	}
 
 	/**
