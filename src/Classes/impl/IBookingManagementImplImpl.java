@@ -546,10 +546,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			ListIterator<Booking> iter = bookings.listIterator();
 			while (available && iter.hasNext()) {
 				Booking booked = iter.next();
-				if (!booked.getCheckIn().after(booking.getCheckOut()) || 
-						!booked.getCheckOut().before(booking.getCheckIn())) {
-					available = false;
-					free = false;
+				available = false;
+				free = false;
+				if (booking.getCheckIn().after(booked.getCheckOut()) || 
+						booking.getCheckOut().before(booked.getCheckIn())) {
+					available = true;
+					free = true;
 				}
 			}
 			if (available) {
@@ -779,9 +781,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					ListIterator<Booking> iter = bookings.listIterator();
 					while (available && iter.hasNext()) {
 						Booking booking = iter.next();
-						if (!checkIn.after(booking.getCheckOut()) || 
-								!checkOut.before(booking.getCheckIn())) {
-							available = false;
+						available = false;
+						if (checkIn.after(booking.getCheckOut()) || 
+								checkOut.before(booking.getCheckIn())) {
+							available = true;
 						}
 					}
 					if (available) {

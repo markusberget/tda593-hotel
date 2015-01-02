@@ -440,6 +440,54 @@ public class BookingManagerTests {
 		assertEquals(0, bookingManagement.getBookingHistory().get(1)
 				.getBookingID());
 	}
+	
+	/**
+	 * Tests addPendingRooms(roomID, bookingID).
+	 */
+	@Test
+	public void testAddRoomPending() {
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
+				.instantiateForTest();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests4 = 4, nrOfGuests2 = 2;
+		int room1 = 1, room2 = 2, room3 = 3;
+		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests4);
+		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests2);
+		
+		// Test when one customer adds a room
+		assertTrue(bookingManagement.addRoomPending(room1, bookingID1));
+		assertEquals(room1, bookingManagement.getPendingBookings().get(0).getRooms().get(0).getRoomNumber());
+		assertTrue(bookingManagement.addRoomPending(room2, bookingID1));
+		assertEquals(room2, bookingManagement.getPendingBookings().get(0).getRooms().get(1).getRoomNumber());
+		assertEquals(2, bookingManagement.getPendingBookings().get(0).getRooms().size());
+		
+		// Test when a second customer tries to book same room during same dates
+		assertFalse(bookingManagement.addRoomPending(room2, bookingID2));
+		assertFalse(bookingManagement.addRoomPending(room1, bookingID2));
+		assertEquals(0, bookingManagement.getPendingBookings().get(1).getRooms().size());
+		
+		// Let second customer book available room
+		assertTrue(bookingManagement.addRoomPending(room3, bookingID2));
+		assertEquals(room3, bookingManagement.getPendingBookings().get(1).getRooms().get(0).getRoomNumber());
+		
+		// Let second customer book room1 in a new booking after first customers check-out date
+		calCheckIn.set(2015, 10, 12, 12, 00);
+		calCheckOut.set(2015, 10, 14, 10, 00);
+		checkIn = calCheckIn.getTime();
+		checkOut = calCheckOut.getTime();
+		int bookingID3 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests2);
+		assertTrue(bookingManagement.addRoomPending(room1, bookingID3));
+		assertEquals(1, bookingManagement.getPendingBookings().get(2).getRooms().size());
+		assertEquals(room1, bookingManagement.getPendingBookings().get(2).getRooms().get(0).getRoomNumber());
+	}
 
 	/**
 	 * Test method for
