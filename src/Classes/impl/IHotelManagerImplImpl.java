@@ -537,8 +537,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		Calendar currentDate = Calendar.getInstance();
 		
 		// Set parameters of currentDate to the check-in time of the date for comparison
-		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
-		Calendar calDate = Calendar.getInstance();		// Used for comparison only
+		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00, 00);
+		Date current = currentDate.getTime();
+		Calendar calTest = Calendar.getInstance();
+		
 		
 		if (room == null) {
 			return "Room was not found, please try another room number";
@@ -546,14 +548,19 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		if (room.getStatus() != RoomStatus.AVAILABLE) {
 			return "Cannot check in since room is currently not available";
 		}
-		EList<Date> bookedDates = room.getBookedDates();
-		
+		EList<Booking> bookings = room.getBookings();
 		// Check that the room has been booked for this particular date
-		for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
-			calDate.setTime(iter.next());
-			if (calDate.compareTo(currentDate) == 0) {
-				room.setStatus(RoomStatus.OCCUPIED);
-				return "Checked in successfully";
+		if (bookings.isEmpty()) {
+			return "Could not check in since no booking is made for the room";
+		} else {
+			// current.equals(booking.getCheckIn())
+			for (Booking booking : bookings) {
+				calTest.setTime(booking.getCheckIn());
+				if (calTest.get(0) == currentDate.get(0) && calTest.get(1) == currentDate.get(1)
+						&& calTest.get(2) == currentDate.get(2) && calTest.get(3) == currentDate.get(3)) {
+					room.setStatus(RoomStatus.OCCUPIED);
+					return "Checked in successfully";
+				}
 			}
 		}
 		return "Check-in failed";
