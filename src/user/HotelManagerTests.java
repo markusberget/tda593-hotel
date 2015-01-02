@@ -202,7 +202,8 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void testChangeStatusOfRoom() {
-
+		// Uncomment if old changeStatusOfRoom is moved to IHotelManager
+/*
 		Classes.impl.IBookingManagementImplImpl bm = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		IHotelManager hm = bm.getIHotelManagerImpl();
@@ -212,15 +213,15 @@ public class HotelManagerTests {
 		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
 
 		// try to change status when admin is logged out:
-		//assertFalse(bm.changeStatusOfRoom(Util.adminUsername, 1,
-		//		RoomStatus.CLEANING));
+		assertFalse(bm.changeStatusOfRoom(Util.adminUsername, 1,
+				RoomStatus.CLEANING));
 		// status should be unchanged.
 		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
 
 		// now login and try again!
 		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
-		//assertTrue(bm.changeStatusOfRoom(Util.adminUsername, 1,
-		//		RoomStatus.CLEANING));
+		assertTrue(bm.changeStatusOfRoom(Util.adminUsername, 1,
+				RoomStatus.CLEANING));
 		assertEquals(RoomStatus.CLEANING, bm.getRoomByID(1).getStatus());
 
 		// Next, make sure that a staff member that is not admin can also change
@@ -230,7 +231,29 @@ public class HotelManagerTests {
 				"552219", "Tomtebacken 14", false));
 		assertTrue(hm.login("alex4", "ankeborg4444"));
 		//assertTrue(bm.changeStatusOfRoom("alex4", 1, RoomStatus.AVAILABLE));
+		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());*/
+		
+		Classes.impl.IBookingManagementImplImpl bm = Classes.impl.IBookingManagementImplImpl
+				.instantiateForTest();
+		IHotelManager hm = bm.getIHotelManagerImpl();
+		
+		assertNotNull(hm);
+		
+		// Check that the room has its default status
 		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
+		
+		// Change status of room to the different types that are available for choosing
+		assertEquals("Changed status of room 1 to Cleaning", hm.changeStatusOfRoom(1, "Cleaning"));
+		assertEquals(RoomStatus.CLEANING, bm.getRoomByID(1).getStatus());
+		assertEquals("Changed status of room 1 to Available", hm.changeStatusOfRoom(1, "Available"));
+		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
+		assertEquals("Changed status of room 1 to Occupied", hm.changeStatusOfRoom(1, "Occupied"));
+		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(1).getStatus());
+		
+		// Test what happens if a non-existing room status is entered 
+		assertEquals("Status of room could not be changed", hm.changeStatusOfRoom(1, "NONEXISTENT"));
+		// Check that the room's status is still the same as before
+		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(1).getStatus());
 	}
 	
 }
