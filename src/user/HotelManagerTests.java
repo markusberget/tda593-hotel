@@ -263,13 +263,15 @@ public class HotelManagerTests {
 	
 	/**
 	 * Test method for {@link Classes.impl.IHotelManagerImplImpl#checkIn(java.lang.Class)}.
+	 * 
+	 * Tests both valid and invalid uses of getBooking(roomID) and getBooking(bookingID)
 	 */
 	@Test
 	public void test_CheckIn() {
 		Classes.impl.IBookingManagementImplImpl bm = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		IHotelManager hm = bm.getIHotelManagerImpl();
-		int room1 = 1, room11 = 11;
+		int room1 = 1, room2 = 2, room3 = 3, room11 = 11;
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 		
@@ -299,9 +301,9 @@ public class HotelManagerTests {
 		assertEquals("Could not check in since no booking is made for the room", hm.checkIn(room1));
 		
 		// Create a booking
-		int bookingID = bm.createPendingBooking(checkInDate, checkOutDate, nrOfGuests1);
-		bm.addRoomPending(room1, bookingID);
-		bm.confirmBooking(bookingID);
+		int bookingID1 = bm.createPendingBooking(checkInDate, checkOutDate, nrOfGuests1);
+		bm.addRoomPending(room1, bookingID1);
+		bm.confirmBooking(bookingID1);
 		assertTrue(checkInDate.compareTo(bm.getRoomByID(room1).getBookings().get(0).getCheckIn()) == 0);
 		
 		// Check that booking is associated with room
@@ -310,6 +312,40 @@ public class HotelManagerTests {
 		// Check in
 		assertEquals("Checked in successfully", hm.checkIn(room1));
 		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(room1).getStatus());
+		
+		// Make new booking containing several rooms
+		int nrOfGuests2 = 2;
+		int bookingID2 = bm.createPendingBooking(checkInDate, checkOutDate, nrOfGuests2);
+		// Add room1 for this booking also, and during same dates as first booking
+		bm.addRoomPending(room1, bookingID2);
+		bm.addRoomPending(room2, bookingID2);
+		bm.addRoomPending(room3, bookingID2);
+		bm.confirmBooking(bookingID2);
+		
+		// Check that bookings are associated with room
+		assertEquals(2, bm.getRoomByID(room1).getBookings().size());
+		assertTrue(checkInDate.compareTo(bm.getRoomByID(room2).getBookings().get(0).getCheckIn()) == 0);
+		
+		// Check in
+		assertEquals("Failed to check in to rooms [1]", hm.checkInBooking(bookingID2));
+		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(room1).getStatus());
+		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(room2).getStatus());
+		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(room3).getStatus());
+		
+		// Staff changes status of all three rooms to Available so all can be checked in
+		assertEquals("Changed status of room 1 to Available", hm.changeStatusOfRoom(room1, "Available"));
+		assertEquals("Changed status of room 2 to Available", hm.changeStatusOfRoom(room2, "Available"));
+		assertEquals("Changed status of room 3 to Available", hm.changeStatusOfRoom(room3, "Available"));
+		
+		// Check in
+		assertEquals("Checked in successfully to all rooms", hm.checkInBooking(bookingID2));
+		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(room1).getStatus());
+		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(room2).getStatus());
+		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(room3).getStatus());
+		
+		// Try to check in using a non-existing bookingID
+		int bookingID3 = 3;
+		assertEquals("Booking was not found, please try another bookingID", hm.checkInBooking(bookingID3));
 	}
 	
 }
