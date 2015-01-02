@@ -646,42 +646,4 @@ public class BookingManagerTests {
 		}
 	}
 
-	/**
-	 * Test method for
-	 * {@link Classes.impl.HotelManager_IHotelManagerImplImpl#ChangeStatusOfRoom(int, Enum)}
-	 * .
-	 */
-	@Test
-	public void testChangeStatusOfRoom() {
-
-		Classes.impl.IBookingManagementImplImpl bm = Classes.impl.IBookingManagementImplImpl
-				.instantiateForTest();
-		IHotelManager hm = bm.getIHotelManagerImpl();
-
-		assertNotNull(hm);
-
-		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
-
-		// try to change status when admin is logged out:
-		assertFalse(bm.changeStatusOfRoom(Util.adminUsername, 1,
-				RoomStatus.CLEANING));
-		// status should be unchanged.
-		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
-
-		// now login and try again!
-		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
-		assertTrue(bm.changeStatusOfRoom(Util.adminUsername, 1,
-				RoomStatus.CLEANING));
-		assertEquals(RoomStatus.CLEANING, bm.getRoomByID(1).getStatus());
-
-		// Next, make sure that a staff member that is not admin can also change
-		// status of room.
-		assertTrue(hm.addStaffMember(Util.adminUsername, "alex4",
-				"ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com",
-				"552219", "Tomtebacken 14", false));
-		assertTrue(hm.login("alex4", "ankeborg4444"));
-		assertTrue(bm.changeStatusOfRoom("alex4", 1, RoomStatus.AVAILABLE));
-		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
-	}
-
 }
