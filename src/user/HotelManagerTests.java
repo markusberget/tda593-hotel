@@ -4,6 +4,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.fail;
 
 import org.junit.Test;
 
@@ -254,6 +255,14 @@ public class HotelManagerTests {
 		assertEquals("Status of room could not be changed", hm.changeStatusOfRoom(1, "NONEXISTENT"));
 		// Check that the room's status is still the same as before
 		assertEquals(RoomStatus.OCCUPIED, bm.getRoomByID(1).getStatus());
+	}
+	
+	/**
+	 * Test method for {@link Classes.impl.IHotelManagerImplImpl#checkIn(java.lang.Class)}.
+	 */
+	@Test
+	public void test_CheckIn() {
+		fail("Not yet implemented");
 	}
 	
 }

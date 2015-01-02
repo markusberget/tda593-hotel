@@ -31,14 +31,6 @@ public class UserTests {
 	 public static void oneTimeSetUp() {
 	 // one-time initialization code
 	 }
-	
-	/**
-	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#checkIn(java.lang.Class)}.
-	 */
-	@Test
-	public void test_CheckIn() {
-		fail("Not yet implemented");
-	}
 
 	/**
 	 * Test method for {@link Classes.impl.IBookingManagementImplImpl#checkOut(java.lang.Class)}.
