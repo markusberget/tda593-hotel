@@ -135,4 +135,12 @@ public interface IHotelManager extends EObject {
 	 */
 	String checkInBooking(int bookingID);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" roomIDRequired="true" roomIDOrdered="false" statusRequired="true" statusOrdered="false"
+	 * @generated
+	 */
+	String changeStatusOfRoom(int roomID, String status);
+
 } // IHotelManager

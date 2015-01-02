@@ -8,7 +8,6 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.ListIterator;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -20,7 +19,6 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
-
 import Classes.Bill;
 import Classes.Booking;
 import Classes.Charge;
@@ -29,7 +27,6 @@ import Classes.ClassesPackage;
 import Classes.Customer;
 import Classes.IBookingManagementImpl;
 import Classes.IFinanceImpl;
-import Classes.IHotelManager;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
@@ -985,24 +982,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public boolean changeStatusOfRoom(String staffMemberUsername, int roomId,
-			RoomStatus status) {
-		IHotelManager hm = getIHotelManagerImpl();
-
-		if (!hm.isStaffMemberLoggedIn(staffMemberUsername))
-			return false; // not logged in!
-
-		Room room = getRoomByID(roomId);
-		room.setStatus(status);
-
-		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
@@ -1190,8 +1169,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				return addCustomerInformationToBooking((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT:
 				return createPendingBooking((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2));
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS:
-				return changeStatusOfRoom((String)arguments.get(0), (Integer)arguments.get(1), (RoomStatus)arguments.get(2));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CANCELLATION_FEE__INT:
 				return addCancellationFee((Integer)arguments.get(0));
 		}

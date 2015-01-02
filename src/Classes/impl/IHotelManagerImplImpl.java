@@ -459,6 +459,37 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 	
 	/**
+	 * Change status of a room.
+	 * 
+	 * @generated NOT
+	 */
+	public String changeStatusOfRoom(int roomID, String status) {
+		String message = "Status of room could not be changed";
+		EList<Room> rooms = getIBookingManagementImpl().getRoom();
+		Room room = null;
+		for (int i = 0; i < rooms.size(); i++) {
+			if(rooms.get(i).getRoomNumber() == roomID) {
+				room = rooms.get(i);
+			}
+		}
+		
+		if (room == null) {
+			return "Room could not be found";
+		}
+		
+		if (status == RoomStatus.AVAILABLE.toString()) {
+			room.setStatus(RoomStatus.AVAILABLE);
+			message = "Changed status of room " + roomID + " to Available";
+		} else if (status == RoomStatus.OCCUPIED.toString()) {
+			room.setStatus(RoomStatus.OCCUPIED);
+			message = "Changed status of room " + roomID + " to Occupied";
+		} else if (status == RoomStatus.CLEANING.toString()) {
+			room.setStatus(RoomStatus.CLEANING);
+			message = "Changed status of room " + roomID + " to Cleaning";
+		}
+		return message;
+	}
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -638,6 +669,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return checkIn((Integer)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT:
 				return checkInBooking((Integer)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:
+				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

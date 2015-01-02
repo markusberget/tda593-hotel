@@ -2921,6 +2921,10 @@
           <element xmi:type="uml:Operation" href="Classes.uml#_ZRro0JINEeSHN9kF6UqsXw"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_ZRusIZINEeSHN9kF6UqsXw"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_mwuRUJKQEeSDJasUW0pwUg" type="5">
+          <element xmi:type="uml:Operation" href="Classes.uml#_mr2YYJKQEeSDJasUW0pwUg"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_mwuRUZKQEeSDJasUW0pwUg"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_Foyw1nsbEeSh4-XBGg9AIQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_Foyw13sbEeSh4-XBGg9AIQ"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_Foyw2HsbEeSh4-XBGg9AIQ"/>

@@ -665,22 +665,13 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 6;
 
 	/**
-	 * The operation id for the '<em>Change Status Of Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = 7;
-
-	/**
 	 * The operation id for the '<em>Add Cancellation Fee</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = 8;
+	int IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = 7;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
@@ -689,7 +680,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 9;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -825,15 +816,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT = IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT;
-
-	/**
-	 * The operation id for the '<em>Change Status Of Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS;
 
 	/**
 	 * The operation id for the '<em>Add Cancellation Fee</em>' operation.
@@ -1018,13 +1000,22 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___CHECK_IN_BOOKING__INT = 14;
 
 	/**
+	 * The operation id for the '<em>Change Status Of Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING = 15;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 15;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -1187,6 +1178,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT = IHOTEL_MANAGER___CHECK_IN_BOOKING__INT;
+
+	/**
+	 * The operation id for the '<em>Change Status Of Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
@@ -1946,16 +1946,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#changeStatusOfRoom(java.lang.String, int, Classes.RoomStatus) <em>Change Status Of Room</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Change Status Of Room</em>' operation.
-	 * @see Classes.IBookingManagement#changeStatusOfRoom(java.lang.String, int, Classes.RoomStatus)
-	 * @generated
-	 */
-	EOperation getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus();
-
-	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#addCancellationFee(int) <em>Add Cancellation Fee</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2250,6 +2240,16 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EOperation getIHotelManager__CheckInBooking__int();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String) <em>Change Status Of Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Change Status Of Room</em>' operation.
+	 * @see Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__ChangeStatusOfRoom__int_String();
 
 	/**
 	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
@@ -2993,14 +2993,6 @@ public interface ClassesPackage extends EPackage {
 		EOperation IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = eINSTANCE.getIBookingManagement__CreatePendingBooking__Date_Date_int();
 
 		/**
-		 * The meta object literal for the '<em><b>Change Status Of Room</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IBOOKING_MANAGEMENT___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS = eINSTANCE.getIBookingManagement__ChangeStatusOfRoom__String_int_RoomStatus();
-
-		/**
 		 * The meta object literal for the '<em><b>Add Cancellation Fee</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3239,6 +3231,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___CHECK_IN_BOOKING__INT = eINSTANCE.getIHotelManager__CheckInBooking__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Change Status Of Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING = eINSTANCE.getIHotelManager__ChangeStatusOfRoom__int_String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.
