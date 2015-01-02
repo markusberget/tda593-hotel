@@ -736,6 +736,112 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 		return searchResult;
 	}
+	
+	/**
+	 * Alternative version of searchRoom
+	 * 
+	 * @param checkIn
+	 * @param checkOut
+	 * @param numberOfGuests
+	 * @param roomType
+	 * @param maximumPrice
+	 * @return
+	 */
+	public synchronized EList<Integer> searchRooms(Date checkIn, Date checkOut, int numberOfGuests,
+			String roomType, int maximumPrice) {
+		EList<Room> allRooms = getRoom();		// allRooms contain rooms that meet criteria
+		EList<Integer> allRoomsNumbers = new BasicEList<Integer>();
+		
+		// If a specific room type is given, remove all rooms of other room types
+		if (roomType != null) {
+			EList<Room> roomsWithType = new BasicEList<Room>();
+			for (int i = 0; i < allRooms.size(); i++) {
+				if (allRooms.get(i).getRoomType().getRoomTypeName().toString() == roomType) {
+					roomsWithType.add(allRooms.get(i));
+				}
+			}
+			if (roomsWithType.size() > 0) {
+				allRooms = roomsWithType;
+			}
+		}
+		
+		// Check if any of the rooms is already booked during any of desired dates
+		if (checkIn != null && checkOut != null) {
+			EList<Room> roomsWithDates = new BasicEList<Room>();
+			Calendar checkOutDate = Calendar.getInstance();
+			Calendar checkInDate = Calendar.getInstance();
+			Calendar calTest = Calendar.getInstance();	// Used for comparison only
+			checkInDate.setTime(checkIn);
+			checkOutDate.setTime(checkOut);
+			int year = checkOutDate.get(0);
+			int month = checkOutDate.get(1);
+			int day = checkOutDate.get(2);
+			int checkInYear = checkInDate.get(0);
+			int checkInMonth = checkInDate.get(1);
+			int checkInDay = checkInDate.get(2);
+			checkOutDate.set(year, month, day, 12, 00);
+			// Be aware that check-in date should have hour 12 and minute 00 set
+			// Be aware that check-out date should have hour 10 and minute 00 set
+			// This is why hour of testDate (checkOut) is incremented by 2
+			// That makes the date objects comparable and iteration stops when equal
+next: for (int i = 0; i < allRooms.size(); i++) {
+				checkInDate.setTime(checkIn);
+				EList<Date> bookedDates = allRooms.get(i).getBookedDates();
+				while (checkInDate.compareTo(checkOutDate) != 0) {
+					for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
+						calTest.setTime(iter.next());
+						if (calTest.compareTo(checkInDate) == 0) {
+							break next;		// If date is already booked for room, check next room
+						}
+					}
+					// If room was available during the checked date, increment one day
+					checkInDate.set(checkInYear, checkInMonth, checkInDay + 1 + i, 12, 00);
+				}
+				// If room was available during all desired dates, add room to list
+				roomsWithDates.add(allRooms.get(i));
+			}
+			// If any rooms meet date criteria, assign those to allRooms
+			if (roomsWithDates.size() > 0) {
+				allRooms = roomsWithDates;
+			}
+		}
+
+		// If maximumPrice is greater than 0, only return room(s) that cost less
+		if (maximumPrice > 0) {
+			EList<Room> roomsWithPrice = new BasicEList<Room>();
+			for (int i = 0; i < allRooms.size(); i++) {
+				if (allRooms.get(i).getRoomType().getPrice() < maximumPrice) {
+					roomsWithPrice.add(allRooms.get(i));
+				}
+			}
+			if (roomsWithPrice.size() > 0) {
+				allRooms = roomsWithPrice;
+			}
+		}
+		
+		// Assume the customer is considered as 1 guest
+		if (numberOfGuests == 1) {
+			for (Room room : allRooms) {
+				allRoomsNumbers.add(room.getRoomNumber());
+			}
+			// If only customer, return RoomNr's of all rooms meeting search criteria
+			return allRoomsNumbers;
+		} else {
+			EList<Room> roomsWithGuests = new BasicEList<Room>();
+			int totalGuests = 0, i = 0;
+			while (totalGuests < numberOfGuests) {
+				roomsWithGuests.add(allRooms.get(i));
+				totalGuests += allRooms.get(i).getRoomType().getNumberOfGuests();
+				i++;
+			}
+			for (Room room : roomsWithGuests) {
+				allRoomsNumbers.add(room.getRoomNumber());
+			}
+			// Return RoomNr's of enough rooms to hold given number of guests
+			return allRoomsNumbers;
+		}
+	}
+	
 
 	/**
 	 * A booking can be cancelled while it is pending or when it is in the
