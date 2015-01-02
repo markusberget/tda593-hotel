@@ -285,8 +285,8 @@ public class HotelManagerTests {
 		assertEquals("Room was not found, please try another room number", hm.checkIn(room11));
 		
 		// Check in to a room (the room must have been booked for that date)
-		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00, 00);
-		checkOut.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH+1, 10, 00, 00);
+		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
+		checkOut.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH+1, 10, 00);
 		Date checkInDate = checkIn.getTime();
 		Date checkOutDate = checkOut.getTime();
 		int nrOfGuests1 = 1;
