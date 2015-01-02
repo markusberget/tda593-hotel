@@ -524,7 +524,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public synchronized boolean addRoomPending(int roomNr, int bookingID) {
 		Booking booking = getPendingBooking(bookingID);
 		Room room = getRoomByID(roomNr);
-		Date bookedDate;
+		boolean free = true;		// Set to true if room is available for booking
 		
 		// Check if booking exists
 		if (booking == null) {
@@ -536,6 +536,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return false;	
 		}
 		
+		// Check if room already booked during any of the desired dates
 		EList<Booking> bookings = room.getBookings();
 		if (bookings.isEmpty()) {
 			// Add room to booking if room do not have any bookings yet
@@ -548,6 +549,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				if (!booked.getCheckIn().after(booking.getCheckOut()) || 
 						!booked.getCheckOut().before(booking.getCheckIn())) {
 					available = false;
+					free = false;
 				}
 			}
 			if (available) {
@@ -570,15 +572,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		int checkInMonth = calCheckIn.get(Calendar.MONTH);
 		int checkOutMonth = calCheckOut.get(Calendar.MONTH);
 		
-		// If any of these two are true, create Date objects for booked dates
-		boolean check1 = (checkInYear <= checkOutYear) && (checkInMonth <= checkOutMonth);
-		boolean check2 = checkInYear < checkOutYear;
-		
-		// This implementation do not work when next years earlier months used
-		if (check1) {
+		if (free) {
 			while (checkInDay != checkOutDay) {
-				bookedDate = calCheckIn.getTime();
-				getRoomByID(roomNr).getBookedDates().add(bookedDate);
 				
 				// Add charge for each night at specified room
 				Charge charge = new ChargeImpl();
@@ -598,9 +593,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				checkInDay++;
 			}
 			return true;
-		} else if (check2) {
-			return true;
-		}
+		} 
 		return false;
 	}
 
