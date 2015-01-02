@@ -445,23 +445,24 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		}
 		
 		EList<Room> rooms = booking.getRooms();
-		EList<Integer> roomNumbers = new BasicEList<Integer>();
+		EList<Integer> roomNumbersFail = new BasicEList<Integer>();
+		EList<Integer> roomNumbersSuccess = new BasicEList<Integer>();
 		int roomCheckIns = 0;		// Keep track of how many rooms are checked in
 		calTest.setTime(booking.getCheckIn());
 		if (calTest.get(0) == currentDate.get(0) && calTest.get(1) == currentDate.get(1)
 				&& calTest.get(2) == currentDate.get(2) && currentDate.get(3) >= calTest.get(3)) {
 			for (Room room : rooms) {
-				roomNumbers.add(room.getRoomNumber());		// Add room's number to list
+				roomNumbersFail.add(room.getRoomNumber());		// Add room's number to list
 				if (room.getStatus() == RoomStatus.AVAILABLE) {
 					room.setStatus(RoomStatus.OCCUPIED);
 					roomCheckIns++;		
-					roomNumbers.remove(roomNumbers.size()-1);
+					roomNumbersSuccess.add(roomNumbersFail.remove(roomNumbersFail.size()-1));
 				}
 			}
 			if (roomCheckIns == rooms.size()) {
-				return "Checked in successfully to all rooms";
+				return "Checked in successfully to rooms " + roomNumbersSuccess.toString();
 			} else {
-				return "Failed to check in to rooms " + roomNumbers.toString();
+				return "Failed to check in to rooms " + roomNumbersFail.toString();
 			}
 		}
 		return "Check-in failed";

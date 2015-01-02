@@ -205,7 +205,7 @@ public class BookingManagerTests {
 		Date checkInDate = checkIn.getTime();
 		Date checkOutDate = checkOut.getTime();
 		int nrOfGuests = 4;
-		int room1 = 1, room2 = 2;
+		int room1 = 1, room2 = 2, room3 = 3, room6 = 6;
 		int bookingID1 = bookingManagement.createPendingBooking(checkInDate,
 				checkOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID1));
@@ -231,12 +231,12 @@ public class BookingManagerTests {
 		// Create new booking to cancel
 		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate,
 				newCheckOutDate, nrOfGuests);
-		assertTrue(bookingManagement.addRoomPending(room1, bookingID2));
-		assertTrue(bookingManagement.addRoomPending(room2, bookingID2));
+		assertTrue(bookingManagement.addRoomPending(room3, bookingID2));
+		assertTrue(bookingManagement.addRoomPending(room6, bookingID2));
 		bookingManagement.confirmBooking(bookingID2);
 
 		// Check that cancellation fee is added since 2 hours left to check-in
-		assertEquals(200, bookingManagement.addCancellationFee(bookingID2));
+		assertEquals(350, bookingManagement.addCancellationFee(bookingID2));
 	}
 
 	/**

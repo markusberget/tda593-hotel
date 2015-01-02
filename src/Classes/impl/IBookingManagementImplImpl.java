@@ -536,8 +536,27 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return false;	
 		}
 		
-		// Add room to booking
-		booking.getRooms().add(room);
+		EList<Booking> bookings = room.getBookings();
+		if (bookings.isEmpty()) {
+			// Add room to booking if room do not have any bookings yet
+			booking.getRooms().add(room);
+		} else {
+			boolean available = true;
+			ListIterator<Booking> iter = bookings.listIterator();
+			while (available && iter.hasNext()) {
+				Booking booked = iter.next();
+				if (!booked.getCheckIn().after(booking.getCheckOut()) || 
+						!booked.getCheckOut().before(booking.getCheckIn())) {
+					available = false;
+				}
+			}
+			if (available) {
+				// Add room to booking if room is available during desired dates
+				booking.getRooms().add(room);
+			} else {
+				return false;		// Room could not be added since already booked
+			}
+		}
 		
 		// Convert Date to Calendar
 		Calendar calCheckIn = convertCheckInDate(booking);
@@ -551,14 +570,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		int checkInMonth = calCheckIn.get(Calendar.MONTH);
 		int checkOutMonth = calCheckOut.get(Calendar.MONTH);
 		
-		if (checkOutYear > checkInYear && checkOutMonth < checkInMonth) {
-			// TODO: what is this?
-		}
-		
 		// If any of these two are true, create Date objects for booked dates
 		boolean check1 = (checkInYear <= checkOutYear) && (checkInMonth <= checkOutMonth);
 		boolean check2 = checkInYear < checkOutYear;
-
+		
 		// This implementation do not work when next years earlier months used
 		if (check1) {
 			while (checkInDay != checkOutDay) {
