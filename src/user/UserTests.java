@@ -12,6 +12,7 @@ import org.junit.Test;
 
 import Classes.Booking;
 import Classes.IHotelManager;
+import Classes.RoomTypeName;
 import Classes.impl.ClassesFactoryImpl;
 import Classes.impl.IBookingManagementImplImpl;
 
@@ -173,12 +174,12 @@ public class UserTests {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(2015, 0, 12, 12, 00);
-		calCheckOut.set(2015, 0, 14, 10, 00);
+		calCheckIn.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH, 12, 00);
+		calCheckOut.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH+2, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
-		int nrOfGuests1 = 1, nrOfGuests2 = 2, nrOfGuests3 = 3, nrOfGuests4 = 4;
-		Thread user1 = new Thread(new User(bookingManagement, "Karl", "Urban", "karl.urban@gmail.com", "047663", checkIn, checkOut, nrOfGuests4));
+		int nrOfGuests1 = 1, nrOfGuests2 = 2, nrOfGuests3 = 3, nrOfGuests6 = 6;
+		Thread user1 = new Thread(new User(bookingManagement, "Karl", "Urban", "karl.urban@gmail.com", "047663", checkIn, checkOut, nrOfGuests6));
 		Thread user2 = new Thread(new User(bookingManagement, "Didrik", "Didier", "didrik.didier@gmail.com", "34466", checkIn, checkOut, nrOfGuests2));
 		Thread user3 = new Thread(new User(bookingManagement, "Henn", "Venn", "henn.venn@gmail.com", "123456", checkIn, checkOut, nrOfGuests3));
 		Thread user4 = new Thread(new User(bookingManagement, "Lauder", "Dale", "lauder.dale@gmail.com", "056232", checkIn, checkOut, nrOfGuests1));
@@ -227,25 +228,37 @@ public class UserTests {
 		for (int i = 0; i < bookingManagement.getConfirmedBookings().size(); i++) {
 			testName = bookingManagement.getConfirmedBookings().get(i).getCustomer().getFirstName();
 			switch (testName) {
-				case "Karl":		assertEquals(4, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
+				case "Karl":		assertEquals(6, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
 												assertEquals("Urban", bookingManagement.getConfirmedBookings().get(i).getCustomer().getLastName());
 												assertEquals("karl.urban@gmail.com", bookingManagement.getConfirmedBookings().get(i).getCustomer().getEmail());
 												assertEquals("047663", bookingManagement.getConfirmedBookings().get(i).getCustomer().getPhoneNumber());
+												assertEquals(RoomTypeName.DOUBLE_ROOM, bookingManagement.getConfirmedBookings().get(i).getRooms().get(0).getRoomType().getRoomTypeName());
+												assertEquals(1, bookingManagement.getConfirmedBookings().get(i).getRooms().size());
+												assertEquals(6, bookingManagement.getConfirmedBookings().get(i).getRooms().get(0).getRoomNumber());
 												break;
 				case "Didrik":	assertEquals(2, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
 												assertEquals("Didier", bookingManagement.getConfirmedBookings().get(i).getCustomer().getLastName());
 												assertEquals("didrik.didier@gmail.com", bookingManagement.getConfirmedBookings().get(i).getCustomer().getEmail());
 												assertEquals("34466", bookingManagement.getConfirmedBookings().get(i).getCustomer().getPhoneNumber());
+												assertEquals(RoomTypeName.SINGLE_ROOM, bookingManagement.getConfirmedBookings().get(i).getRooms().get(0).getRoomType().getRoomTypeName());
+												assertEquals(1, bookingManagement.getConfirmedBookings().get(i).getRooms().size());
+												assertEquals(2, bookingManagement.getConfirmedBookings().get(i).getRooms().get(0).getRoomNumber());
 												break;
 				case "Henn":		assertEquals(3, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
 												assertEquals("Venn", bookingManagement.getConfirmedBookings().get(i).getCustomer().getLastName());
 												assertEquals("henn.venn@gmail.com", bookingManagement.getConfirmedBookings().get(i).getCustomer().getEmail());
 												assertEquals("123456", bookingManagement.getConfirmedBookings().get(i).getCustomer().getPhoneNumber());
+												assertEquals(RoomTypeName.SINGLE_ROOM, bookingManagement.getConfirmedBookings().get(i).getRooms().get(0).getRoomType().getRoomTypeName());
+												assertEquals(1, bookingManagement.getConfirmedBookings().get(i).getRooms().size());
+												assertEquals(3, bookingManagement.getConfirmedBookings().get(i).getRooms().get(0).getRoomNumber());
 												break;
 				case "Lauder":	assertEquals(1, bookingManagement.getConfirmedBookings().get(i).getNumberOfGuests());
 												assertEquals("Dale", bookingManagement.getConfirmedBookings().get(i).getCustomer().getLastName());
 												assertEquals("lauder.dale@gmail.com", bookingManagement.getConfirmedBookings().get(i).getCustomer().getEmail());
 												assertEquals("056232", bookingManagement.getConfirmedBookings().get(i).getCustomer().getPhoneNumber());
+												assertEquals(RoomTypeName.SINGLE_ROOM, bookingManagement.getConfirmedBookings().get(i).getRooms().get(0).getRoomType().getRoomTypeName());
+												assertEquals(1, bookingManagement.getConfirmedBookings().get(i).getRooms().size());
+												assertEquals(1, bookingManagement.getConfirmedBookings().get(i).getRooms().get(0).getRoomNumber());
 												break;
 			}
 		}
@@ -279,7 +292,8 @@ public class UserTests {
 			// Perform the booking procedure (the currently implemented parts)
 			bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests);
 			// Search room
-			// addRoomPending
+			// Here the variable numberOfGuests also resembles which room is chosen
+			bookingManagement.addRoomPending(numberOfGuests, bookingID);
 			bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 			bookingManagement.confirmBooking(bookingID);
 		}
