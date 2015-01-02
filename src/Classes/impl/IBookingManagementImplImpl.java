@@ -768,37 +768,25 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		// Check if any of the rooms is already booked during any of desired dates
 		if (checkIn != null && checkOut != null) {
 			EList<Room> roomsWithDates = new BasicEList<Room>();
-			Calendar checkOutDate = Calendar.getInstance();
-			Calendar checkInDate = Calendar.getInstance();
-			Calendar calTest = Calendar.getInstance();	// Used for comparison only
-			checkInDate.setTime(checkIn);
-			checkOutDate.setTime(checkOut);
-			int year = checkOutDate.get(0);
-			int month = checkOutDate.get(1);
-			int day = checkOutDate.get(2);
-			int checkInYear = checkInDate.get(0);
-			int checkInMonth = checkInDate.get(1);
-			int checkInDay = checkInDate.get(2);
-			checkOutDate.set(year, month, day, 12, 00);
-			// Be aware that check-in date should have hour 12 and minute 00 set
-			// Be aware that check-out date should have hour 10 and minute 00 set
-			// This is why hour of testDate (checkOut) is incremented by 2
-			// That makes the date objects comparable and iteration stops when equal
-next: for (int i = 0; i < allRooms.size(); i++) {
-				checkInDate.setTime(checkIn);
-				EList<Date> bookedDates = allRooms.get(i).getBookedDates();
-				while (checkInDate.compareTo(checkOutDate) != 0) {
-					for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
-						calTest.setTime(iter.next());
-						if (calTest.compareTo(checkInDate) == 0) {
-							break next;		// If date is already booked for room, check next room
+			
+			for (Room room : allRooms) {
+				EList<Booking> bookings = room.getBookings();
+				if (bookings.isEmpty()) {
+					roomsWithDates.add(room);
+				} else {
+					boolean available = true;
+					ListIterator<Booking> iter = bookings.listIterator();
+					while (available && iter.hasNext()) {
+						Booking booking = iter.next();
+						if (!checkIn.after(booking.getCheckOut()) || 
+								!checkOut.before(booking.getCheckIn())) {
+							available = false;
 						}
 					}
-					// If room was available during the checked date, increment one day
-					checkInDate.set(checkInYear, checkInMonth, checkInDay + 1 + i, 12, 00);
+					if (available) {
+						roomsWithDates.add(room);
+					}
 				}
-				// If room was available during all desired dates, add room to list
-				roomsWithDates.add(allRooms.get(i));
 			}
 			// If any rooms meet date criteria, assign those to allRooms
 			if (roomsWithDates.size() > 0) {
