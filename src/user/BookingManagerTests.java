@@ -265,10 +265,10 @@ public class BookingManagerTests {
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingManagement.getPendingBookings().size());
 		assertEquals(0, bookingManagement.getConfirmedBookings().size());
-		assertTrue(bookingManagement.confirmBooking(bookingID2));
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID2));
 		assertEquals(1, bookingManagement.getPendingBookings().size());
 		assertEquals(1, bookingManagement.getConfirmedBookings().size());
-		assertTrue(bookingManagement.confirmBooking(bookingID1));
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID1));
 		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(2, bookingManagement.getConfirmedBookings().size());
 		assertEquals(numberOfGuests4, bookingManagement.getConfirmedBookings()
@@ -404,7 +404,7 @@ public class BookingManagerTests {
 		assertEquals(0, bookingID1);
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingID3);
-		assertFalse(bookingManagement.cancelBooking(3));
+		assertEquals("Booking could not be cancelled", bookingManagement.cancelBooking(3));
 		assertEquals(3, bookingManagement.getPendingBookings().size());
 		
 		// Add rooms to the bookings so it can be tested that the rooms are made available again when bookings are canceled
@@ -421,7 +421,7 @@ public class BookingManagerTests {
 		//assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().get(1)));
 		
 		// Cancel a booking
-		assertTrue(bookingManagement.cancelBooking(bookingID3));
+		assertEquals("Pending booking was successfully cancelled", bookingManagement.cancelBooking(bookingID3));
 		
 		// Check that the room associated with the above booking contains no booked dates
 		//assertEquals(0, bookingManagement.getRoom().get(2).getBookedDates().size());
@@ -432,7 +432,7 @@ public class BookingManagerTests {
 		assertEquals(2, bookingManagement.getPendingBookings().size());
 		bookingManagement.confirmBooking(bookingID1);
 		bookingManagement.confirmBooking(bookingID2);
-		assertTrue(bookingManagement.cancelBooking(0));
+		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(0));
 		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(1, bookingManagement.getConfirmedBookings().size());
 		assertEquals(2, bookingManagement.getBookingHistory().size());
@@ -627,7 +627,7 @@ public class BookingManagerTests {
 				.getRoomType().getRoomTypeName());
 
 		// Confirm the booking
-		assertTrue(bookingManagement.confirmBooking(bookingID));
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
 
 		// Calculate the sum of the bill, 200 is expected since 2 nights are
 		// booked

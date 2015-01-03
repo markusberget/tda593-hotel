@@ -86,7 +86,7 @@ public class UserTests {
 		pendingBooking.getRooms().add(bookingManagement.getRoom().get(4));
 		
 		// Confirm the pending booking so that a Bill is associated with the booking
-		assertTrue(bookingManagement.confirmBooking(bookingID));
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
 		
 		// Now the booking to be "checked out" exists in the system, and the real
 		// check out process starts here!
@@ -136,7 +136,7 @@ public class UserTests {
 		
 		bookingManagement.addCustomerInformationToBooking(bookingID, "John", "Doe", "john@doe.se", "0123-2131312");
 		
-		assertTrue(bookingManagement.confirmBooking(bookingID));
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
 	}
 	
 	/**

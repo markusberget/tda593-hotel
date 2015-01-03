@@ -665,13 +665,31 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = 7;
 
 	/**
+	 * The operation id for the '<em>Send Confirmation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___SEND_CONFIRMATION__INT_STRING = 8;
+
+	/**
+	 * The operation id for the '<em>Add Extra Charge</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING = 9;
+
+	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 8;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -816,6 +834,24 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___ADD_CANCELLATION_FEE__INT = IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT;
+
+	/**
+	 * The operation id for the '<em>Send Confirmation</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___SEND_CONFIRMATION__INT_STRING = IBOOKING_MANAGEMENT___SEND_CONFIRMATION__INT_STRING;
+
+	/**
+	 * The operation id for the '<em>Add Extra Charge</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING = IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management Impl</em>' class.
@@ -1936,6 +1972,26 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__AddCancellationFee__int();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#sendConfirmation(int, java.lang.String) <em>Send Confirmation</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Send Confirmation</em>' operation.
+	 * @see Classes.IBookingManagement#sendConfirmation(int, java.lang.String)
+	 * @generated
+	 */
+	EOperation getIBookingManagement__SendConfirmation__int_String();
+
+	/**
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#addExtraCharge(int, java.lang.String) <em>Add Extra Charge</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Extra Charge</em>' operation.
+	 * @see Classes.IBookingManagement#addExtraCharge(int, java.lang.String)
+	 * @generated
+	 */
+	EOperation getIBookingManagement__AddExtraCharge__int_String();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IFinance <em>IFinance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2971,6 +3027,22 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = eINSTANCE.getIBookingManagement__AddCancellationFee__int();
+
+		/**
+		 * The meta object literal for the '<em><b>Send Confirmation</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING_MANAGEMENT___SEND_CONFIRMATION__INT_STRING = eINSTANCE.getIBookingManagement__SendConfirmation__int_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Extra Charge</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING = eINSTANCE.getIBookingManagement__AddExtraCharge__int_String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IFinance <em>IFinance</em>}' class.

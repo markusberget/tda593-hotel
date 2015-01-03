@@ -267,6 +267,14 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IBookingManagement/addCancellationFee">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/addCancellationFee/bookingID"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IBookingManagement/sendConfirmation">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/sendConfirmation/bookingID"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/sendConfirmation/message"/>
+      </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IBookingManagement/addExtraCharge">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/addExtraCharge/bookingID"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IBookingManagement/addExtraCharge/charge"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Bill">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"

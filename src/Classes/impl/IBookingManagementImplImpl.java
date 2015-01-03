@@ -8,6 +8,7 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.Iterator;
 import java.util.ListIterator;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -19,6 +20,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
+
 import Classes.Bill;
 import Classes.Booking;
 import Classes.Charge;
@@ -624,14 +626,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-	public synchronized boolean confirmBooking(int bookingID) {
+	public synchronized String confirmBooking(int bookingID) {
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
 				confirmedBookings.add(pendingBookings.remove(i));
-				return true;
+				return "Booking has been confirmed";
 			}
 		}
-		return false;
+		return "Booking could not be confirmed";
 	}
 
 	/**
@@ -675,6 +677,19 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return fee;
 		}
 		return 0;
+	}
+
+	/**
+	 * This method sends a confirmation to the customer of given booking via
+	 * SMS or email that the booking has been confirmed/cancelled. Since JavaMail
+	 * API etc is not part of the core Java SE, this method is not implemented.
+	 * 
+	 * @generated NOT
+	 */
+	public String sendConfirmation(int bookingID, String message) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -844,7 +859,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-	public synchronized boolean cancelBooking(int bookingID) {
+	public synchronized String cancelBooking(int bookingID) {
 		// Save current size of list as concurrent activity may change sizes
 		int listSize = pendingBookings.size();
 
@@ -855,7 +870,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				EList<Room> rooms = pendingBookings.get(i).getRooms();
 				removeBookedRooms(bookingID, rooms);
 				bookingHistory.add(pendingBookings.remove(i));
-				return true;
+				return "Pending booking was successfully cancelled";
 			}
 		}
 
@@ -865,10 +880,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				EList<Room> rooms = confirmedBookings.get(i).getRooms();
 				removeBookedRooms(bookingID, rooms);
 				bookingHistory.add(confirmedBookings.remove(i));
-				return true;
+				return "Confirmed booking was successfully cancelled";
 			}
 		}
-		return false;
+		return "Booking could not be cancelled";
 	}
 	
 	/**
@@ -1011,6 +1026,18 @@ next: for (Room room : rooms) {
 
 		return true;
 	}*/
+
+	/**
+	 * Adds an extra charge to the bill of the given booking.
+	 * 
+	 * @generated NOT
+	 */
+	public String addExtraCharge(int bookingID, String charge) {
+		
+		
+		
+		return "Fail";
+	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1203,6 +1230,10 @@ next: for (Room room : rooms) {
 				return createPendingBooking((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CANCELLATION_FEE__INT:
 				return addCancellationFee((Integer)arguments.get(0));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEND_CONFIRMATION__INT_STRING:
+				return sendConfirmation((Integer)arguments.get(0), (String)arguments.get(1));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING:
+				return addExtraCharge((Integer)arguments.get(0), (String)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

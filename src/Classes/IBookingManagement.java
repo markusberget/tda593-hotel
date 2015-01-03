@@ -39,7 +39,7 @@ public interface IBookingManagement extends EObject {
 	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	boolean confirmBooking(int bookingID);
+	String confirmBooking(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -55,7 +55,7 @@ public interface IBookingManagement extends EObject {
 	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
 	 * @generated
 	 */
-	boolean cancelBooking(int bookingID);
+	String cancelBooking(int bookingID);
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -80,5 +80,21 @@ public interface IBookingManagement extends EObject {
 	 * @generated
 	 */
 	int addCancellationFee(int bookingID);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" messageRequired="true" messageOrdered="false"
+	 * @generated
+	 */
+	String sendConfirmation(int bookingID, String message);
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" chargeRequired="true" chargeOrdered="false"
+	 * @generated
+	 */
+	String addExtraCharge(int bookingID, String charge);
 
 } // IBookingManagement
