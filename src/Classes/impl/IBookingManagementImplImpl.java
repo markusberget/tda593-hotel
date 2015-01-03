@@ -1058,7 +1058,7 @@ next: for (Room room : rooms) {
 			}
 			return "Successfully added " + quantity + " breakfast charges to bill";
 		}
-		return "Failed to add extra charge";
+		return "Invalid charge";
 	}
 
 	/**

@@ -210,16 +210,14 @@ public class BookingManagerTests {
 				checkOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID1));
 		assertTrue(bookingManagement.addRoomPending(room2, bookingID1));
-
-		// bookingManagement.getPendingBookings().get(0).setRoom(bookingManagement.getRoom().get(0));
 		bookingManagement.confirmBooking(bookingID1);
 
 		// Check that no cancellation fee as added since >24 hours left to check-in
 		assertEquals(0, bookingManagement.addCancellationFee(bookingID1));
 
-		// Increase current hour by 1 to force cancellation fee to be added
+		// Increase current second by 1 to force cancellation fee to be added
 		Calendar newCheckIn = Calendar.getInstance();
-		newCheckIn.set(Calendar.HOUR_OF_DAY, newCheckIn.get(Calendar.HOUR_OF_DAY) + 1);
+		newCheckIn.set(Calendar.SECOND, newCheckIn.get(Calendar.SECOND) + 1);
 		Date newCheckInDate = newCheckIn.getTime();
 		
 		// Increase current day by 1 of check-out date so that cancellation fee will be same
@@ -233,8 +231,11 @@ public class BookingManagerTests {
 		assertTrue(bookingManagement.addRoomPending(room3, bookingID2));
 		assertTrue(bookingManagement.addRoomPending(room6, bookingID2));
 		bookingManagement.confirmBooking(bookingID2);
+		assertEquals(2, bookingManagement.getConfirmedBookings().get(1).getRooms().size());
 
 		// Check that cancellation fee is added since 2 hours left to check-in
+		// Expected cost 700 since bill is for two nights per room
+		assertEquals(700, bookingManagement.getIFinanceImpl().calculatePayment(bookingID2));
 		assertEquals(700, bookingManagement.addCancellationFee(bookingID2));
 	}
 
@@ -700,6 +701,40 @@ public class BookingManagerTests {
 					.println("Error occurred while communicating with the bank administration");
 			e.printStackTrace();
 		}
+	}
+	
+	/**
+	 * Tests both valid and invalid arguments of method
+	 * addExtraCharge(int bookingID, String charge, int quantity).
+	 */
+	@Test
+	public void testAddExtraCharge() {
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
+				.instantiateForTest();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 12, 12, 00);
+		calCheckOut.set(2015, 0, 14, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests = 3;
+		int bookingID = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests);
+		
+		// Test some invalid arguments
+		assertEquals("The quantity of the charge must be at least 1", bookingManagement.addExtraCharge(bookingID, "Breakfast", 0));
+		assertEquals("Invalid charge", bookingManagement.addExtraCharge(bookingID, "Bedfast", 1));
+		assertEquals("A charge must be chosen to be added", bookingManagement.addExtraCharge(bookingID, null, 1));
+		assertEquals("Booking could not be found, try another bookingID", bookingManagement.addExtraCharge(3, "Breakfast", 1));
+		
+		// Test some valid arguments
+		assertEquals("Successfully added 1 breakfast charges to bill", bookingManagement.addExtraCharge(bookingID, "Breakfast", 1));
+		assertEquals("Breakfast", bookingManagement.getPendingBookings().get(0).getBill().getCharge().get(0).getChargeType().toString());
+		bookingManagement.confirmBooking(bookingID);
+		assertEquals(50, bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
+		assertEquals("Successfully added 4 breakfast charges to bill", bookingManagement.addExtraCharge(bookingID, "Breakfast", 4));
+		assertEquals(5, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(250, bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 	}
 
 }
