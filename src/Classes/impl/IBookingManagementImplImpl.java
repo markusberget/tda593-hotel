@@ -849,14 +849,14 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @generated NOT
 	 */
 	public synchronized boolean cancelBooking(int bookingID) {
-/*		// Save current size of list as concurrent activity may change sizes
+		// Save current size of list as concurrent activity may change sizes
 		int listSize = pendingBookings.size();
 
 		// The lists are traversed separately because a booking should be
 		// removed from the correct list
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				removeBookedRooms(pendingBookings.get(i));
+				//removeBookedRooms(pendingBookings.get(i));
 				bookingHistory.add(pendingBookings.remove(i));
 				return true;
 			}
@@ -865,11 +865,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		listSize = confirmedBookings.size();
 		for (int i = 0; i < listSize; i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
-				removeBookedRooms(confirmedBookings.get(i));
+				//removeBookedRooms(confirmedBookings.get(i));
 				bookingHistory.add(confirmedBookings.remove(i));
 				return true;
 			}
-		}*/
+		}
 		return false;
 	}
 	
