@@ -514,7 +514,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__AddExtraCharge__int_String() {
+	public EOperation getIBookingManagement__AddExtraCharge__int_String_int() {
 		return iBookingManagementEClass.getEOperations().get(9);
 	}
 
@@ -1312,7 +1312,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEND_CONFIRMATION__INT_STRING);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING);
+		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT);
 
 		billEClass = createEClass(BILL);
 		createEReference(billEClass, BILL__CHARGE);
@@ -1578,9 +1578,10 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "message", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIBookingManagement__AddExtraCharge__int_String(), ecorePackage.getEString(), "addExtraCharge", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIBookingManagement__AddExtraCharge__int_String_int(), ecorePackage.getEString(), "addExtraCharge", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "charge", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "quantity", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(billEClass, Bill.class, "Bill", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getBill_Charge(), this.getCharge(), this.getCharge_Bill(), "charge", null, 1, -1, Bill.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);

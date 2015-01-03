@@ -672,8 +672,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			charge.setChargeType(ChargeType.CANCELLATION_FEE);
 			int fee = getIFinanceImpl().calculatePayment(bookingID);
 			charge.setAmount(fee);
-			((BillImpl) getConfirmedBooking(bookingID).getBill())
-					.setCharge(charge);
+			Bill bill = getConfirmedBooking(bookingID).getBill();
+			bill.getCharge().add(charge);
 			return fee;
 		}
 		return 0;
@@ -1028,15 +1028,37 @@ next: for (Room room : rooms) {
 	}*/
 
 	/**
-	 * Adds an extra charge to the bill of the given booking.
+	 * Adds an extra charge to the bill of the given booking. The booking
+	 * could be a pending booking or a confirmed booking.
 	 * 
 	 * @generated NOT
 	 */
-	public String addExtraCharge(int bookingID, String charge) {
-		
-		
-		
-		return "Fail";
+	public String addExtraCharge(int bookingID, String charge, int quantity) {
+		if (quantity < 1) {
+			return "The quantity of the charge must be at least 1";
+		}
+		Booking booking = getPendingBooking(bookingID);
+		if (booking == null) {
+			booking = getConfirmedBooking(bookingID);
+			if (booking == null) {
+				return "Booking could not be found, try another bookingID";
+			}
+		}
+		if (charge == null) {
+			return "A charge must be chosen to be added";
+		}
+		Bill bill = booking.getBill();
+		if (charge.equals(ChargeType.BREAKFAST.toString())) {
+			for (int i = 0; i < quantity; i++) {
+				Charge newCharge = new ChargeImpl();
+				newCharge.setDate(new Date());
+				newCharge.setChargeType(ChargeType.BREAKFAST);
+				newCharge.setAmount(50);
+				bill.getCharge().add(newCharge);
+			}
+			return "Successfully added " + quantity + " breakfast charges to bill";
+		}
+		return "Failed to add extra charge";
 	}
 
 	/**
@@ -1232,8 +1254,8 @@ next: for (Room room : rooms) {
 				return addCancellationFee((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEND_CONFIRMATION__INT_STRING:
 				return sendConfirmation((Integer)arguments.get(0), (String)arguments.get(1));
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING:
-				return addExtraCharge((Integer)arguments.get(0), (String)arguments.get(1));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING_INT:
+				return addExtraCharge((Integer)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

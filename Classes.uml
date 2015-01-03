@@ -180,6 +180,9 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_uREqMJOJEeSbQ_sKuj9BXQ" name="charge">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_TggjAJOPEeSbQ_sKuj9BXQ" name="quantity">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_wF9IMJOJEeSbQ_sKuj9BXQ" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>

@@ -483,13 +483,13 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			return "Room could not be found";
 		}
 		
-		if (status == RoomStatus.AVAILABLE.toString()) {
+		if (status.equals(RoomStatus.AVAILABLE.toString())) {
 			room.setStatus(RoomStatus.AVAILABLE);
 			message = "Changed status of room " + roomID + " to Available";
-		} else if (status == RoomStatus.OCCUPIED.toString()) {
+		} else if (status.equals(RoomStatus.OCCUPIED.toString())) {
 			room.setStatus(RoomStatus.OCCUPIED);
 			message = "Changed status of room " + roomID + " to Occupied";
-		} else if (status == RoomStatus.CLEANING.toString()) {
+		} else if (status.equals(RoomStatus.CLEANING.toString())) {
 			room.setStatus(RoomStatus.CLEANING);
 			message = "Changed status of room " + roomID + " to Cleaning";
 		}

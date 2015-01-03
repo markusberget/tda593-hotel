@@ -680,7 +680,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING = 9;
+	int IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT = 9;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
@@ -851,7 +851,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING = IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING;
+	int IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING_INT = IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management Impl</em>' class.
@@ -1982,14 +1982,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__SendConfirmation__int_String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#addExtraCharge(int, java.lang.String) <em>Add Extra Charge</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#addExtraCharge(int, java.lang.String, int) <em>Add Extra Charge</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Add Extra Charge</em>' operation.
-	 * @see Classes.IBookingManagement#addExtraCharge(int, java.lang.String)
+	 * @see Classes.IBookingManagement#addExtraCharge(int, java.lang.String, int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__AddExtraCharge__int_String();
+	EOperation getIBookingManagement__AddExtraCharge__int_String_int();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IFinance <em>IFinance</em>}'.
@@ -3042,7 +3042,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING = eINSTANCE.getIBookingManagement__AddExtraCharge__int_String();
+		EOperation IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT = eINSTANCE.getIBookingManagement__AddExtraCharge__int_String_int();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IFinance <em>IFinance</em>}' class.
