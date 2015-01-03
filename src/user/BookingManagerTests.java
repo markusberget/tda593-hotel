@@ -311,8 +311,7 @@ public class BookingManagerTests {
 
 		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
 			Integer roomID = (Integer) it.next();
-			RoomType typeOfRoom = bookingManagement.getRoomByID(roomID)
-					.getRoomType();
+			RoomType typeOfRoom = bookingManagement.getRoomByID(roomID).getRoomType();
 			assertTrue(numberOfGuests <= typeOfRoom.getNumberOfGuests()
 					&& maximumPrice >= typeOfRoom.getPrice()
 					&& roomType == typeOfRoom.getRoomTypeName().toString());

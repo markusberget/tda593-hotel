@@ -225,7 +225,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * Used to retrieve a specific booking from the confirmed bookings list.
+	 * Helper method used to retrieve a specific booking from the
+	 * confirmed bookings list.
 	 * 
 	 * @generated NOT
 	 */
@@ -239,7 +240,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * Used to retrieve a specific booking from the pending bookings list.
+	 * Helper method used to retrieve a specific booking from the
+	 * pending bookings list.
 	 * 
 	 * @generated NOT
 	 */
@@ -471,7 +473,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				}
 			}
 		}
-
 		if (checkIn != null || checkOut != null) {
 			// Check if room(s) already booked during any of the desired dates
 			EList<Room> rooms = booking.getRooms();
@@ -516,17 +517,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	/**
 	 * Adds a room to a pending booking. Method is synchronized to avoid that
 	 * several customers adds the same room to their bookings at the same time.
-	 * The dates for which the room is being booked is created (date objects)
-	 * here and added to the room objects bookedDates list so that other users
-	 * of the system won't be able to book these dates for the specific room (or
-	 * even retrieve the room as a search result during booked date).
+	 * If a room is added to a booking, a charge for each night of stay at that
+	 * room is added to the bookings Bill.
 	 * 
 	 * @generated NOT
 	 */
 	public synchronized boolean addRoomPending(int roomNr, int bookingID) {
 		Booking booking = getPendingBooking(bookingID);
 		Room room = getRoomByID(roomNr);
-		boolean free = true;		// Set to true if room is available for booking
+		boolean free = true;
 		
 		// Check if booking exists
 		if (booking == null) {
@@ -552,8 +551,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				free = false;
 				if (booking.getCheckIn().after(booked.getCheckOut()) || 
 						booking.getCheckOut().before(booked.getCheckIn())) {
-					available = true;
-					free = true;
+					available = true;	// Set to true if room is available for booking
+					free = true;	// Set to true for adding charges for each night of stay
 				}
 			}
 			if (available) {
@@ -602,7 +601,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
-	 * Searches in the array of rooms by room number
+	 * Method used for testing. Searches in list of rooms by room number.
 	 * 
 	 * @param id
 	 * @return
@@ -919,9 +918,6 @@ next: for (Room room : rooms) {
 		calCheckOut.setTime(checkOut);
 		return calCheckOut;
 	}
-
-	
-	
 	
 
 	/**
@@ -929,10 +925,12 @@ next: for (Room room : rooms) {
 	 * to instance variables when different threads invoke the method at the
 	 * same time. The first name, last name, email and phone number of the
 	 * customer is added to a given pending booking. In case some of these
-	 * fields have not been filled in by the customer, they are null.
+	 * fields have not been filled in by the customer, they are null. If a
+	 * parameter would be null, that information will not be added to the
+	 * booking. That way a customer can add (or change) information, or parts
+	 * of it, at a later stage without overwriting old information (or having
+	 * to type in everything again).
 	 * 
-	 * Because the createPendingBooking() method is also synchronized, the
-	 * bookingID should be unique for each booking.
 	 * 
 	 * @generated NOT
 	 */
@@ -941,10 +939,21 @@ next: for (Room room : rooms) {
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
 				Customer customer = pendingBookings.get(i).getCustomer();
-				customer.setFirstName(firstName);
-				customer.setLastName(lastName);
-				customer.setEmail(email);
-				customer.setPhoneNumber(ph);
+				if (customer == null) {
+					return false;
+				}
+				if (firstName != null) {
+					customer.setFirstName(firstName);
+				}
+				if (lastName != null) {
+					customer.setLastName(lastName);
+				}
+				if (email != null) {
+					customer.setEmail(email);
+				}
+				if (ph != null) {
+					customer.setPhoneNumber(ph);
+				}
 				return true;
 			}
 		}
@@ -952,22 +961,27 @@ next: for (Room room : rooms) {
 	}
 
 	/**
-	 * A pending booking has not yet been stored in the system. The pending
-	 * bookings are stored in the pendingBookings array. The method is
-	 * synchronized to avoid several threads interfering, setting wrong
-	 * attributes for each other and so on. A "place holder object" for the
-	 * customer is created and referenced to from this pending booking.
+	 * The pending booking is created when the customer has chosen which dates
+	 * (and number of guests) that person want to book room(s) for. The idea is
+	 * that the method is invoked right before addRoomPending(..) (which is
+	 * invoked one time per chosen room), but right after the customer has chosen
+	 * which room(s) he/she is interested in after a successful search. The pending
+	 * booking stores the check-in and check-out dates of the customers choosing (the
+	 * dates for which room(s) were found and chosen). 
 	 * 
-	 * The bookingID is returned for use when invoking the contains method on
-	 * the pendingBooking array (if necessary, depends on how we implement it).
+	 * The method is synchronized to avoid several threads interfering, setting
+	 * wrong attributes for each other and so on. The customer is associated with
+	 * the pending booking, and also a bill is associated with the pending
+	 * booking. It is also here the unique ID for a booking is retained.
 	 * 
 	 * @generated NOT
 	 */
 	public synchronized int createPendingBooking(Date checkIn, Date checkOut,
-			int guestCount) {
+			int nrOfGuests) {
 
-		// Test if the check-in date is not later than the check-out date
-		if (checkIn.after(checkOut) || guestCount <= 0) {
+		// Test if the check-in date is not later than the check-out date or
+		// that guest count is less than 1 since the customer represents 1 guest
+		if (checkIn.after(checkOut) || nrOfGuests < 1) {
 			return -1;
 		}
 		
@@ -978,7 +992,7 @@ next: for (Room room : rooms) {
 		booking.setCustomer(customer);
 		booking.setCheckIn(checkIn);
 		booking.setCheckOut(checkOut);
-		booking.setNumberOfGuests(guestCount);
+		booking.setNumberOfGuests(nrOfGuests);
 		booking.setBookingID(bookingsEver++);
 		pendingBookings.add(booking);
 		return booking.getBookingID();

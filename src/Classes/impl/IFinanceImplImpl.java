@@ -241,7 +241,8 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	}
 	
 	/**
-	 * Sets the charges of the bill (which was successfully paid) to zero.
+	 * Helper method used by payBill(...).
+	 * Sets the charges of the bill (if successfully paid) to zero.
 	 * 
 	 * @generated NOT
 	 */
@@ -259,13 +260,14 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	}
 	
 	/**
-	 * Unimplemented method since the bank's interface do not offer the services necessary
-	 * for this method.
+	 * Unimplemented method since the bank's interface do not offer the
+	 * services necessary for this method.
 	 * 
 	 * @generated NOT
 	 */
 	public void bankSendInvoice() {
-		// request that bank sends an invoice assigned to the customer to the customer’s address.
+		// request that bank sends an invoice assigned to the customer
+		// to the customer’s address.
 		throw new UnsupportedOperationException();
 	}
 
