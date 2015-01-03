@@ -839,12 +839,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * A booking can be cancelled while it is pending or when it is in the
-	 * confirmed state. For the moment, a cancelled booking is placed in the
+	 * confirmed state. For the moment, a canceled booking is placed in the
 	 * history list. The method is synchronized to avoid race conditions when
-	 * removing bookings (and searching for the correct booking)
-	 * 
-	 * NOTE: A cancelled booking should make the associated rooms available for
-	 * booking again during concerned dates. This will be implemented later.
+	 * removing bookings (and searching for the correct booking).
 	 * 
 	 * @generated NOT
 	 */
@@ -856,7 +853,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		// removed from the correct list
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				//removeBookedRooms(pendingBookings.get(i));
+				EList<Room> rooms = pendingBookings.get(i).getRooms();
+				removeBookedRooms(bookingID, rooms);
 				bookingHistory.add(pendingBookings.remove(i));
 				return true;
 			}
@@ -865,7 +863,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		listSize = confirmedBookings.size();
 		for (int i = 0; i < listSize; i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
-				//removeBookedRooms(confirmedBookings.get(i));
+				EList<Room> rooms = confirmedBookings.get(i).getRooms();
+				removeBookedRooms(bookingID, rooms);
 				bookingHistory.add(confirmedBookings.remove(i));
 				return true;
 			}
@@ -874,31 +873,24 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 	
 	/**
-	 * Removes booked dates for room(s) in booking so that the room(s)
+	 * Helper method for updateBooking(...).
+	 * Removes booking(s) from room(s) booking lists so that the room(s)
 	 * can be booked again during those dates by other customers.
 	 * 
-	 * @param booking		the booking that has its booked dates removed
+	 * @param bookingID		the booking that has its booked dates removed
+	 * @param rooms				the room(s) that remove booking from their list
 	 */
-/*	private void removeBookedRooms(Booking booking) {
-		EList<Room> rooms = booking.getRooms();
-		Calendar calTest = Calendar.getInstance();	// Used only for testing
-		Calendar calCheckIn = convertCheckInDate(booking);
-		Calendar calCheckOut = convertCheckOutDate(booking);
-		int checkInDay;
-		int checkOutDay = calCheckOut.get(Calendar.DAY_OF_MONTH);
-		for (Room room : rooms) {
-			checkInDay = calCheckIn.get(Calendar.DAY_OF_MONTH);
-			while (checkInDay != checkOutDay) {
-				for (int i = 0; i < room.getBookedDates().size(); i++) {
-					calTest.setTime(room.getBookedDates().get(i));
-					if (calTest.get(Calendar.DAY_OF_MONTH) == checkInDay) {
-						room.getBookedDates().remove(i);
+	private void removeBookedRooms(int bookingID, EList<Room> rooms) {
+next: for (Room room : rooms) {
+				EList<Booking> bookings = room.getBookings();
+				for (int i = 0; i < bookings.size(); i++) {
+					if (bookings.get(i).getBookingID() == bookingID ) {
+						room.getBookings().remove(i);
+						break next;
 					}
 				}
-				checkInDay++;
 			}
-		}
-	}*/
+	}
 	
 	/**
 	 * Helper method for converting the check-in Date to check-in time of
