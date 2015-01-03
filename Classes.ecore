@@ -10,8 +10,6 @@
         lowerBound="1" eType="#//RoomType" eOpposite="#//RoomType/room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bookings" ordered="false"
         upperBound="-1" eType="#//Booking" eOpposite="#//Booking/rooms"/>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="bookedDates" ordered="false"
-        upperBound="-1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoomStatus">
     <eLiterals name="Occupied"/>
@@ -220,6 +218,7 @@
       interface="true">
     <eOperations name="updateBooking" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString">
       <eParameters name="bookingID" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="roomID" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eParameters name="checkIn" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eParameters name="checkOut" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
       <eParameters name="nrOfGuests" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>

@@ -9,13 +9,9 @@ import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.StaffMember;
-
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
-import java.util.Date;
-import java.util.ListIterator;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;

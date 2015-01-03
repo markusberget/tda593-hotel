@@ -415,14 +415,17 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * new check-in date (could be the same as before modification) and checkOut
 	 * is the new check-out date (could also be the same as before
 	 * modification). At the moment the booked dates are updated for every room
-	 * in the booking (not possible yet to add certain rooms or update specific
-	 * rooms). Only arguments that are non-null or non-zero is updated.
+	 * in the booking since a booking is from one date to another. Only arguments
+	 * that are non-null or non-zero is updated. A room can be added to a booking
+	 * if the room is available during specified check-in and check-out dates.
+	 * 
 	 * 
 	 * @generated NOT
 	 */
-	public String updateBooking(int bookingID, Date checkIn, Date checkOut,
+	public String updateBooking(int bookingID, int roomID, Date checkIn, Date checkOut,
 			int nrOfGuests) {
 		Booking booking = getConfirmedBooking(bookingID);
+		
 		if (booking == null) {
 			return "booking was not found, check if bookingID is correct";
 		}
@@ -434,6 +437,39 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 		if (nrOfGuests != booking.getNumberOfGuests() && nrOfGuests > 0) {
 			booking.setNumberOfGuests(nrOfGuests);
+		}
+		if (roomID < 0) {
+			return "Could not update booking since value of roomID is less than 0";
+		}
+		if (roomID > 0) {
+			Room room = getRoomByID(roomID);
+			if (room == null) {
+				return "room was not found, check if roomID is correct";
+			} else {
+				// Check if room already booked during any of the desired dates
+				EList<Booking> bookings = room.getBookings();
+				if (bookings.isEmpty()) {
+					// Add room to booking if room do not have any bookings yet
+					booking.getRooms().add(room);
+				} else {
+					boolean available = true;
+					ListIterator<Booking> iter = bookings.listIterator();
+					while (available && iter.hasNext()) {
+						Booking booked = iter.next();
+						available = false;
+						if (booking.getCheckIn().after(booked.getCheckOut()) || 
+								booking.getCheckOut().before(booked.getCheckIn())) {
+							available = true;
+						}
+					}
+					if (available) {
+						// Add room to booking if room is available during desired dates
+						booking.getRooms().add(room);
+					} else {
+						return "Room could not be added since already booked";
+					}
+				}
+			}
 		}
 
 		if (checkIn != null || checkOut != null) {
@@ -464,8 +500,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			}
 			// If all room(s) were available during desired dates, change dates of booking
 			if (rooms.size() == availableRooms.size()) {
-				booking.setCheckIn(checkIn);
-				booking.setCheckOut(checkOut);
+				if (checkIn != null) {
+					booking.setCheckIn(checkIn);
+				}
+				if (checkOut != null) {
+					booking.setCheckOut(checkOut);
+				}
 			} else {
 				return "Could not update booking because date(s) for room(s) already booked";
 			}
@@ -809,7 +849,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @generated NOT
 	 */
 	public synchronized boolean cancelBooking(int bookingID) {
-		// Save current size of list as concurrent activity may change sizes
+/*		// Save current size of list as concurrent activity may change sizes
 		int listSize = pendingBookings.size();
 
 		// The lists are traversed separately because a booking should be
@@ -829,7 +869,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				bookingHistory.add(confirmedBookings.remove(i));
 				return true;
 			}
-		}
+		}*/
 		return false;
 	}
 	
@@ -839,7 +879,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @param booking		the booking that has its booked dates removed
 	 */
-	private void removeBookedRooms(Booking booking) {
+/*	private void removeBookedRooms(Booking booking) {
 		EList<Room> rooms = booking.getRooms();
 		Calendar calTest = Calendar.getInstance();	// Used only for testing
 		Calendar calCheckIn = convertCheckInDate(booking);
@@ -858,7 +898,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				checkInDay++;
 			}
 		}
-	}
+	}*/
 	
 	/**
 	 * Helper method for converting the check-in Date to check-in time of
@@ -1141,8 +1181,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public Object eInvoke(int operationID, EList<?> arguments)
 			throws InvocationTargetException {
 		switch (operationID) {
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_DATE_DATE_INT:
-				return updateBooking((Integer)arguments.get(0), (Date)arguments.get(1), (Date)arguments.get(2), (Integer)arguments.get(3));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_INT_DATE_DATE_INT:
+				return updateBooking((Integer)arguments.get(0), (Integer)arguments.get(1), (Date)arguments.get(2), (Date)arguments.get(3), (Integer)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_ROOM_PENDING__INT_INT:
 				return addRoomPending((Integer)arguments.get(0), (Integer)arguments.get(1));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CONFIRM_BOOKING__INT:

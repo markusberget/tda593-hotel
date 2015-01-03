@@ -14,11 +14,6 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cqW-QnZVEeSiQcRa0VNXAQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cqW-Q3ZVEeSiQcRa0VNXAQ" value="*"/>
       </ownedAttribute>
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_bBtrUJAFEeSt1vjUWy_DqA" name="bookedDates">
-        <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EDate"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cp9bgJAFEeSt1vjUWy_DqA"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cp-CkJAFEeSt1vjUWy_DqA" value="*"/>
-      </ownedAttribute>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_yno2sIRzEeSz38BH1WnIsA" memberEnd="_yno2sYRzEeSz38BH1WnIsA">
         <ownedEnd xmi:type="uml:Property" xmi:id="_yno2sYRzEeSz38BH1WnIsA" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_yno2sIRzEeSz38BH1WnIsA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yno2soRzEeSz38BH1WnIsA" value="1"/>
@@ -60,6 +55,9 @@
     <packagedElement xmi:type="uml:Interface" xmi:id="_d2I54HYeEeS6mLi5FsOguA" name="IBookingManagement">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_3FSC4HYeEeS6mLi5FsOguA" name="updateBooking" visibility="public">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_ViFQwI9_EeSgGY4aIuxzqw" name="bookingID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_YOim8JNkEeSbQ_sKuj9BXQ" name="roomID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_bArc4I9-EeSgGY4aIuxzqw" name="checkIn">

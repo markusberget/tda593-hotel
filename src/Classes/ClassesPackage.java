@@ -105,22 +105,13 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__BOOKINGS = 3;
 
 	/**
-	 * The feature id for the '<em><b>Booked Dates</b></em>' attribute list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__BOOKED_DATES = 4;
-
-	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 5;
+	int ROOM_FEATURE_COUNT = 4;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -608,7 +599,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT = 0;
+	int IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_INT_DATE_DATE_INT = 0;
 
 	/**
 	 * The operation id for the '<em>Add Room Pending</em>' operation.
@@ -761,7 +752,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_DATE_DATE_INT = IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT;
+	int IBOOKING_MANAGEMENT_IMPL___UPDATE_BOOKING__INT_INT_DATE_DATE_INT = IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_INT_DATE_DATE_INT;
 
 	/**
 	 * The operation id for the '<em>Add Room Pending</em>' operation.
@@ -1692,17 +1683,6 @@ public interface ClassesPackage extends EPackage {
 	EReference getRoom_Bookings();
 
 	/**
-	 * Returns the meta object for the attribute list '{@link Classes.Room#getBookedDates <em>Booked Dates</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute list '<em>Booked Dates</em>'.
-	 * @see Classes.Room#getBookedDates()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EAttribute getRoom_BookedDates();
-
-	/**
 	 * Returns the meta object for class '{@link Classes.RoomType <em>Room Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1876,14 +1856,14 @@ public interface ClassesPackage extends EPackage {
 	EClass getIBookingManagement();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#updateBooking(int, java.util.Date, java.util.Date, int) <em>Update Booking</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#updateBooking(int, int, java.util.Date, java.util.Date, int) <em>Update Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Update Booking</em>' operation.
-	 * @see Classes.IBookingManagement#updateBooking(int, java.util.Date, java.util.Date, int)
+	 * @see Classes.IBookingManagement#updateBooking(int, int, java.util.Date, java.util.Date, int)
 	 * @generated
 	 */
-	EOperation getIBookingManagement__UpdateBooking__int_Date_Date_int();
+	EOperation getIBookingManagement__UpdateBooking__int_int_Date_Date_int();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#addRoomPending(int, int) <em>Add Room Pending</em>}' operation.
@@ -2795,14 +2775,6 @@ public interface ClassesPackage extends EPackage {
 		EReference ROOM__BOOKINGS = eINSTANCE.getRoom_Bookings();
 
 		/**
-		 * The meta object literal for the '<em><b>Booked Dates</b></em>' attribute list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute ROOM__BOOKED_DATES = eINSTANCE.getRoom_BookedDates();
-
-		/**
 		 * The meta object literal for the '{@link Classes.impl.RoomTypeImpl <em>Room Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2942,7 +2914,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_DATE_DATE_INT = eINSTANCE.getIBookingManagement__UpdateBooking__int_Date_Date_int();
+		EOperation IBOOKING_MANAGEMENT___UPDATE_BOOKING__INT_INT_DATE_DATE_INT = eINSTANCE.getIBookingManagement__UpdateBooking__int_int_Date_Date_int();
 
 		/**
 		 * The meta object literal for the '<em><b>Add Room Pending</b></em>' operation.
