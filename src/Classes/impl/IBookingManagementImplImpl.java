@@ -416,7 +416,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * is the new check-out date (could also be the same as before
 	 * modification). At the moment the booked dates are updated for every room
 	 * in the booking (not possible yet to add certain rooms or update specific
-	 * rooms).
+	 * rooms). Only arguments that are non-null or non-zero is updated.
 	 * 
 	 * @generated NOT
 	 */
@@ -426,89 +426,51 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if (booking == null) {
 			return "booking was not found, check if bookingID is correct";
 		}
-		if (checkIn == null || checkOut == null) {
-			return "A check-in date and a check-out date must be given";
-		}
-		if (checkIn.after(checkOut)) {
+		if (checkIn != null && checkOut != null && checkIn.after(checkOut)) {
 			return "Could not update booking, check-in date is later than check-out date";
 		}
-		
-		if (nrOfGuests > 0) {
-			updateBookingDates(booking, checkIn, checkOut);
+		if (nrOfGuests < 0) {
+			return "Could not update booking since value of nrOfGuests is less than 0";
+		}
+		if (nrOfGuests != booking.getNumberOfGuests() && nrOfGuests > 0) {
 			booking.setNumberOfGuests(nrOfGuests);
-			booking.setCheckIn(checkIn);
-			booking.setCheckOut(checkOut);
-			return "Booking was updated successfully";
-		}
-		return "Booking could not be updated due to invalid argument(s)";
-	}
-	
-	/**
-	 * Helper method to update the booked dates of room(s). Only booked dates
-	 * of a room that is not present in the room's bookedDates list is created
-	 * and added, since the already existing dates should remain. Since all
-	 * rooms in a booking are booked during the same dates, it is enough to
-	 * check the booked dates of one of the rooms.
-	 * 
-	 * @param booking		the booking for which to update booked room dates
-	 * @param checkIn		the new check-in date
-	 * @param checkOut	the new check-out date
-	 */
-	private void updateBookingDates(Booking booking, Date checkIn, Date checkOut) {
-		boolean add = true;
-		EList<Room> rooms = booking.getRooms();
-		EList<Date> bookedDates = booking.getRooms().get(0).getBookedDates();
-		EList<Date> createNewDates = new BasicEList<Date>();
-		Calendar oldCheckIn = convertCheckInDate(booking);
-		Calendar oldCheckOut = convertCheckOutDate(booking);
-		Calendar calTest = Calendar.getInstance();	// Used only for testing
-		Calendar calTest2 = Calendar.getInstance();	// Used only for testing
-		Calendar newCheckIn = Calendar.getInstance();
-		newCheckIn.setTime(checkIn);
-		Calendar newCheckOut = Calendar.getInstance();
-		newCheckOut.setTime(checkOut);
-		int checkInDay = oldCheckIn.get(Calendar.DAY_OF_MONTH);
-		int checkOutDay = oldCheckOut.get(Calendar.DAY_OF_MONTH);
-		
-		// Check if any of the new dates overlaps with the old dates, remove old if yes
-		while (checkInDay != checkOutDay) {
-			for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
-				calTest.setTime(iter.next());
-				if (calTest.compareTo(newCheckIn) == 0) {
-					iter.remove();
-					add = false;
-				}
-		}
-			if (add) {
-				// Add the new date to list of dates that are going to be created
-				createNewDates.add(newCheckIn.getTime());
-			}
-			add = true;
-			newCheckIn.roll(Calendar.DAY_OF_MONTH, 1);
-			checkInDay++;
 		}
 
-		// Remove all old dates remaining in bookedDates since they are same as new dates
-		for (Room room : rooms) {
-			here: for (int i = 0; i < room.getBookedDates().size() ; i++) {
-				for (ListIterator<Date> iter = bookedDates.listIterator(); iter.hasNext(); ) {
-					calTest.setTime(iter.next());
-					calTest2.setTime(room.getBookedDates().get(i));
-					if (calTest.compareTo(calTest2) == 0) {
-						room.getBookedDates().remove(i);		// Remove old date in room's list
-						break here;
+		if (checkIn != null || checkOut != null) {
+			// Check if room(s) already booked during any of the desired dates
+			EList<Room> rooms = booking.getRooms();
+			EList<Room> availableRooms = new BasicEList<Room>();	// Used for comparison
+			for (Room room : rooms) {
+				EList<Booking> bookings = room.getBookings();
+				boolean available = true;
+				ListIterator<Booking> iter = bookings.listIterator();
+				while (available && iter.hasNext()) {
+					Booking booked = iter.next();
+					available = false;
+					// Must check if room already booked during those dates, and if it is,
+					// must check if it is the booking that is supposed to be updated
+					if (booking.getCheckIn().after(booked.getCheckOut()) || 
+							booking.getCheckOut().before(booked.getCheckIn()) ||
+							(booking.getBookingID() == booked.getBookingID() &&
+							booking.getCheckIn() == booked.getCheckIn() &&
+							booking.getCheckOut() == booked.getCheckOut())) {
+						available = true;
 					}
 				}
+				// Add room to availableRooms for later comparison if room is available
+				if (available) {
+					availableRooms.add(room);
+				}
+			}
+			// If all room(s) were available during desired dates, change dates of booking
+			if (rooms.size() == availableRooms.size()) {
+				booking.setCheckIn(checkIn);
+				booking.setCheckOut(checkOut);
+			} else {
+				return "Could not update booking because date(s) for room(s) already booked";
 			}
 		}
-		
-		// Create the new Date objects in the room(s) bookedDates list
-		for (Room room : rooms) {
-			for (int i = 0; i < createNewDates.size(); i++) {
-				calTest.setTime(createNewDates.get(i));
-				room.getBookedDates().add(calTest.getTime());
-			}
-		}
+		return "Booking was updated successfully";
 	}
 
 	/**

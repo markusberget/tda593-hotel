@@ -154,7 +154,7 @@ public class BookingManagerTests {
 
 		// Update the booking using a negative value for newNumberOfGuests
 		int newNrOfGuests = -5;
-		assertEquals("Booking could not be updated due to invalid argument(s)",
+		assertEquals("Could not update booking since value of nrOfGuests is less than 0",
 				bookingManagement.updateBooking(bookingID, checkIn, checkOut,
 						newNrOfGuests));
 
