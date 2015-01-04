@@ -520,6 +520,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public String checkOut(int bookingID) {
 		int sumBill = 0;
+		boolean feeExists = false;
 		Calendar currentTime = Calendar.getInstance();
 		Calendar testTime = Calendar.getInstance();
 		EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
@@ -532,12 +533,20 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 					for (Charge aCharge : charges) {
 						// Check if the Late Check Out Fee exists and if it has been paid
 						if (aCharge.getChargeType() == ChargeType.LATE_CHECK_OUT_FEE) {
+							feeExists = true;
 							if (aCharge.getAmount() != 0) {
 								return "Check out failed, Late-check-out fee has not been paid";
 							}
 						}
 					}
+					if (!feeExists) {
+						Charge charge = new ChargeImpl();
+						charge.setDate(currentTime.getTime());
+						charge.setAmount(100);
+						booking.getBill().getCharge().add(charge);
+					}
 				}
+				charges = booking.getBill().getCharge();
 				// Check if bill has been paid
 				for (Charge charge : charges) {
 					sumBill += charge.getAmount();
