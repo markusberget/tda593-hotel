@@ -1438,6 +1438,10 @@
           <element xmi:type="uml:EnumerationLiteral" href="Classes.uml#_KskroIHdEeSiLMRkmJ4pCA"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_KslSsYHdEeSiLMRkmJ4pCA"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_rongIJQLEeS-CsQQdduDXw" type="3017">
+          <element xmi:type="uml:EnumerationLiteral" href="Classes.uml#_rj3jAJQLEeS-CsQQdduDXw"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_rongIZQLEeS-CsQQdduDXw"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_CxCYcoHdEeSiLMRkmJ4pCA"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_CxCYc4HdEeSiLMRkmJ4pCA"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_CxCYdIHdEeSiLMRkmJ4pCA"/>

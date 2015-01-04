@@ -46,7 +46,15 @@ public enum RoomStatus implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	CLEANING(2, "Cleaning", "Cleaning");
+	CLEANING(2, "Cleaning", "Cleaning"), /**
+	 * The '<em><b>Maintenance</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #MAINTENANCE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	MAINTENANCE(3, "Maintenance", "Maintenance");
 
 	/**
 	 * The '<em><b>Occupied</b></em>' literal value.
@@ -94,6 +102,21 @@ public enum RoomStatus implements Enumerator {
 	public static final int CLEANING_VALUE = 2;
 
 	/**
+	 * The '<em><b>Maintenance</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Maintenance</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #MAINTENANCE
+	 * @model name="Maintenance"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int MAINTENANCE_VALUE = 3;
+
+	/**
 	 * An array of all the '<em><b>Room Status</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -104,6 +127,7 @@ public enum RoomStatus implements Enumerator {
 			OCCUPIED,
 			AVAILABLE,
 			CLEANING,
+			MAINTENANCE,
 		};
 
 	/**
@@ -157,6 +181,7 @@ public enum RoomStatus implements Enumerator {
 			case OCCUPIED_VALUE: return OCCUPIED;
 			case AVAILABLE_VALUE: return AVAILABLE;
 			case CLEANING_VALUE: return CLEANING;
+			case MAINTENANCE_VALUE: return MAINTENANCE;
 		}
 		return null;
 	}

@@ -15,6 +15,7 @@
     <eLiterals name="Occupied"/>
     <eLiterals name="Available" value="1"/>
     <eLiterals name="Cleaning" value="2"/>
+    <eLiterals name="Maintenance" value="3"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="RoomType">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="roomTypeName" ordered="false"

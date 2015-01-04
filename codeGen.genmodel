@@ -36,6 +36,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//RoomStatus/Occupied"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//RoomStatus/Available"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//RoomStatus/Cleaning"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//RoomStatus/Maintenance"/>
     </genEnums>
     <genEnums xsi:type="genmodel:GenEnum" typeSafeEnumCompatible="false" ecoreEnum="Classes.ecore#//RoomTypeName">
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//RoomTypeName/SingleRoom"/>

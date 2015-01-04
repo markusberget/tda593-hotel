@@ -1633,6 +1633,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.OCCUPIED);
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.AVAILABLE);
 		addEEnumLiteral(roomStatusEEnum, RoomStatus.CLEANING);
+		addEEnumLiteral(roomStatusEEnum, RoomStatus.MAINTENANCE);
 
 		initEEnum(roomTypeNameEEnum, RoomTypeName.class, "RoomTypeName");
 		addEEnumLiteral(roomTypeNameEEnum, RoomTypeName.SINGLE_ROOM);
