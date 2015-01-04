@@ -726,14 +726,14 @@ public class BookingManagerTests {
 		assertEquals("Invalid charge", bookingManagement.addExtraCharge(bookingID, "Bedfast", 1));
 		assertEquals("A charge must be chosen to be added", bookingManagement.addExtraCharge(bookingID, null, 1));
 		assertEquals("Booking could not be found, try another bookingID", bookingManagement.addExtraCharge(3, "Breakfast", 1));
+		assertEquals(-1, bookingManagement.getIFinanceImpl().calculatePayment(bookingID));	// Cannot calculate pending booking
 		
 		// Test some valid arguments
 		assertEquals("Successfully added 1 breakfast charges to bill", bookingManagement.addExtraCharge(bookingID, "Breakfast", 1));
 		assertEquals("Breakfast", bookingManagement.getPendingBookings().get(0).getBill().getCharge().get(0).getChargeType().toString());
-		bookingManagement.confirmBooking(bookingID);
-		assertEquals(50, bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 		assertEquals("Successfully added 4 breakfast charges to bill", bookingManagement.addExtraCharge(bookingID, "Breakfast", 4));
-		assertEquals(5, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(5, bookingManagement.getPendingBookings().get(0).getBill().getCharge().size());
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
 		assertEquals(250, bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 	}
 

@@ -183,7 +183,8 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	/**
 	 * Calculates the total cost of a bill by summing its associated charges.
 	 * At the moment calculatePayment sums all charges in a booking, and not
-	 * specific charges chosen beforehand.
+	 * specific charges chosen beforehand. A booking must be confirmed before
+	 * it can be paid. Returns -1 if booking was not found.
 	 * 
 	 * @generated NOT
 	 */
@@ -200,7 +201,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 				return sum;
 			}
 		}
-		return sum;
+		return -1;
 	}
 
 	/**

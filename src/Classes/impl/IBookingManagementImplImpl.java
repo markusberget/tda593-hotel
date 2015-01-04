@@ -643,7 +643,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * customer should pay for the whole booking (cancellation fee is currently
 	 * the cost of the whole booking). Because a booking cannot be canceled
 	 * after a check in, the difference of the current time and the check in
-	 * time of the booking will not be negative.
+	 * time of the booking will not be negative. Only confirmed bookings that are
+	 * cancelled can have a cancellation fee added.
 	 * 
 	 * @param bookingID
 	 *            the bookingID of the booking to be cancelled
@@ -1028,8 +1029,9 @@ next: for (Room room : rooms) {
 	}*/
 
 	/**
-	 * Adds an extra charge to the bill of the given booking. The booking
-	 * could be a pending booking or a confirmed booking.
+	 * Adds an extra charge to the bill of the given pending booking. At the
+	 * moment the only extra charge that can be added is breakfast. A confirmed
+	 * booking must use the updateBooking(...) method for modification.
 	 * 
 	 * @generated NOT
 	 */
@@ -1039,10 +1041,7 @@ next: for (Room room : rooms) {
 		}
 		Booking booking = getPendingBooking(bookingID);
 		if (booking == null) {
-			booking = getConfirmedBooking(bookingID);
-			if (booking == null) {
 				return "Booking could not be found, try another bookingID";
-			}
 		}
 		if (charge == null) {
 			return "A charge must be chosen to be added";
