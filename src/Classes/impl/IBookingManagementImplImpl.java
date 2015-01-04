@@ -524,19 +524,19 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-	public synchronized boolean addRoomPending(int roomNr, int bookingID) {
+	public synchronized String addRoomPending(int roomNr, int bookingID) {
 		Booking booking = getPendingBooking(bookingID);
 		Room room = getRoomByID(roomNr);
 		boolean free = true;
 		
 		// Check if booking exists
 		if (booking == null) {
-			return false;
+			return "Booking could not be found";
 		}
 		
 		// Also check if room exists	
 		if (room == null) {	
-			return false;	
+			return "Room could not be found";	
 		}
 		
 		// Check if room already booked during any of the desired dates
@@ -561,7 +561,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				// Add room to booking if room is available during desired dates
 				booking.getRooms().add(room);
 			} else {
-				return false;		// Room could not be added since already booked
+				return "Room could not be added since already booked";
 			}
 		}
 		
@@ -597,9 +597,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				calCheckIn.set(Calendar.DAY_OF_MONTH, calCheckIn.get(Calendar.DAY_OF_MONTH)+1);
 				checkInDay++;
 			}
-			return true;
+			return "Room was successfully added to pending booking";
 		} 
-		return false;
+		return "Room could not be added to pending booking";
 	}
 
 	/**
@@ -893,8 +893,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		// removed from the correct list
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				EList<Room> rooms = pendingBookings.get(i).getRooms();
-				removeBookedRooms(bookingID, rooms);
+				removeBookedRooms(bookingID);
 				bookingHistory.add(pendingBookings.remove(i));
 				return "Pending booking was successfully cancelled";
 			}
@@ -921,8 +920,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				}
 				// If bill has been paid (all charges set to 0), cancel booking
 				if (billSum == 0) {
-					EList<Room> rooms = confirmedBookings.get(i).getRooms();
-					removeBookedRooms(bookingID, rooms);
+					removeBookedRooms(bookingID);
 					bookingHistory.add(confirmedBookings.remove(i));
 					return "Confirmed booking was successfully cancelled";
 				} else {
@@ -940,19 +938,27 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * can be booked again during those dates by other customers.
 	 * 
 	 * @param bookingID		the booking that has its booked dates removed
-	 * @param rooms				the room(s) that remove booking from their list
 	 */
-	private void removeBookedRooms(int bookingID, EList<Room> rooms) {
-next: for (Room room : rooms) {
-				EList<Booking> bookings = room.getBookings();
-				int nrOfRooms = bookings.size();
-				for (int i = 0; i < nrOfRooms; i++) {
-					if (bookings.get(i).getBookingID() == bookingID ) {
-						room.getBookings().remove(i);
-						break next;
-					}
+	private void removeBookedRooms(int bookingID) {
+		EList<Room> rooms = null;
+		if (getPendingBooking(bookingID) != null) {
+			rooms = getPendingBooking(bookingID).getRooms();
+		} else if (getConfirmedBooking(bookingID) != null) {
+			rooms = getConfirmedBooking(bookingID).getRooms();
+		}
+		
+		for (int i = 0; i < rooms.size(); i++) {
+			EList<Booking> bookings = rooms.get(i).getBookings();
+			int j = 0;
+			boolean notFound = true;
+			while (j < bookings.size() && notFound) {
+				if (bookings.get(j).getBookingID() == bookingID) {
+					bookings.remove(j);
+					notFound = false;
 				}
+				j++;
 			}
+		}
 	}
 	
 	/**
