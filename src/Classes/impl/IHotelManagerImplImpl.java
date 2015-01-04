@@ -2,16 +2,10 @@
  */
 package Classes.impl;
 
-import Classes.Booking;
-import Classes.ClassesPackage;
-import Classes.IBookingManagementImpl;
-import Classes.IHotelManagerImpl;
-import Classes.Room;
-import Classes.RoomStatus;
-import Classes.StaffMember;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -21,6 +15,15 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
+import Classes.Booking;
+import Classes.Charge;
+import Classes.ClassesPackage;
+import Classes.IBookingManagementImpl;
+import Classes.IHotelManagerImpl;
+import Classes.Room;
+import Classes.RoomStatus;
+import Classes.StaffMember;
 
 /**
  * <!-- begin-user-doc -->
@@ -502,6 +505,37 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		return message;
 	}
 	/**
+	 * Checks if the bill of the given booking is paid for (if all charges
+	 * are set to 0). If the bill is paid, the customer is checked-out and
+	 * the room(s) status is set to Cleaning as a default since the room would
+	 * preferably be cleaned before next customer checks in. Only confirmed
+	 * bookings can be checked-out.
+	 * 
+	 * @generated NOT
+	 */
+	public String checkOut(int bookingID) {
+		int sumBill = 0;
+		EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
+		for (Booking booking : bookings) {
+			if (booking.getBookingID() == bookingID) {
+				EList<Room> rooms = booking.getRooms();
+				EList<Charge> charges = booking.getBill().getCharge();
+				for (Charge charge : charges) {
+					sumBill += charge.getAmount();
+				}
+				if (sumBill == 0) {
+					for (Room room : rooms) {
+						room.setStatus(RoomStatus.CLEANING);
+					}
+					return "Check-out was successful";
+				} else {
+					return "Check-out failed, bill has not been fully paid yet";
+				}
+			}
+		}
+		return "Check-out failed, booking could not be found";
+	}
+	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -687,6 +721,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return checkInBooking((Integer)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:
 				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_OUT__INT:
+				return checkOut((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

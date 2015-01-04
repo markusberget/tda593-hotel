@@ -2933,6 +2933,10 @@
           <element xmi:type="uml:Operation" href="Classes.uml#_mr2YYJKQEeSDJasUW0pwUg"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_mwuRUZKQEeSDJasUW0pwUg"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_MAQcYJQ5EeSL9PQL15jNtQ" type="5">
+          <element xmi:type="uml:Operation" href="Classes.uml#_L7LvIJQ5EeSL9PQL15jNtQ"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_MAQcYZQ5EeSL9PQL15jNtQ"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_Foyw1nsbEeSh4-XBGg9AIQ"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_Foyw13sbEeSh4-XBGg9AIQ"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_Foyw2HsbEeSh4-XBGg9AIQ"/>
