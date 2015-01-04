@@ -465,7 +465,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 	
 	/**
-	 * Change status of a room.
+	 * Change status of a room. This method is used by Staff when they need
+	 * to change the status of a room outside of the check-in/check-out (and
+	 * other defined) processes, for example if a room need to be unavailable
+	 * for a while (perhaps due to maintenance).
 	 * 
 	 * @generated NOT
 	 */
@@ -492,6 +495,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		} else if (status.equals(RoomStatus.CLEANING.toString())) {
 			room.setStatus(RoomStatus.CLEANING);
 			message = "Changed status of room " + roomID + " to Cleaning";
+		} else if (status.equals(RoomStatus.MAINTENANCE.toString())) {
+			room.setStatus(RoomStatus.MAINTENANCE);
+			message = "Changed status of room " + roomID + " to Maintenance";
 		}
 		return message;
 	}
