@@ -685,6 +685,7 @@
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_FnW94In3EeSgKsQ-gK_oCw" name="SingleRoom"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_hIVb0IqVEeS8o4yzl3IjCQ" name="DoubleRoom"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_imrpIIqVEeS8o4yzl3IjCQ" name="FamilySuite"/>
+      <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_bhPhMJQ9EeSL9PQL15jNtQ" name="LateCheckOutFee"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_pd2VsoHfEeSMdr2cPLX2Nw" name="CustomerProvides">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_pd2Vs4HfEeSMdr2cPLX2Nw" name="makePayment">

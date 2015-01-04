@@ -1659,6 +1659,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEEnumLiteral(chargeTypeEEnum, ChargeType.SINGLE_ROOM);
 		addEEnumLiteral(chargeTypeEEnum, ChargeType.DOUBLE_ROOM);
 		addEEnumLiteral(chargeTypeEEnum, ChargeType.FAMILY_SUITE);
+		addEEnumLiteral(chargeTypeEEnum, ChargeType.LATE_CHECK_OUT_FEE);
 
 		// Create resource
 		createResource(eNS_URI);

@@ -62,7 +62,15 @@ public enum ChargeType implements Enumerator {
 	 * @generated
 	 * @ordered
 	 */
-	FAMILY_SUITE(4, "FamilySuite", "FamilySuite");
+	FAMILY_SUITE(4, "FamilySuite", "FamilySuite"), /**
+	 * The '<em><b>Late Check Out Fee</b></em>' literal object.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #LATE_CHECK_OUT_FEE_VALUE
+	 * @generated
+	 * @ordered
+	 */
+	LATE_CHECK_OUT_FEE(5, "LateCheckOutFee", "LateCheckOutFee");
 
 	/**
 	 * The '<em><b>Cancellation Fee</b></em>' literal value.
@@ -140,6 +148,21 @@ public enum ChargeType implements Enumerator {
 	public static final int FAMILY_SUITE_VALUE = 4;
 
 	/**
+	 * The '<em><b>Late Check Out Fee</b></em>' literal value.
+	 * <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of '<em><b>Late Check Out Fee</b></em>' literal object isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * @see #LATE_CHECK_OUT_FEE
+	 * @model name="LateCheckOutFee"
+	 * @generated
+	 * @ordered
+	 */
+	public static final int LATE_CHECK_OUT_FEE_VALUE = 5;
+
+	/**
 	 * An array of all the '<em><b>Charge Type</b></em>' enumerators.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -152,6 +175,7 @@ public enum ChargeType implements Enumerator {
 			SINGLE_ROOM,
 			DOUBLE_ROOM,
 			FAMILY_SUITE,
+			LATE_CHECK_OUT_FEE,
 		};
 
 	/**
@@ -207,6 +231,7 @@ public enum ChargeType implements Enumerator {
 			case SINGLE_ROOM_VALUE: return SINGLE_ROOM;
 			case DOUBLE_ROOM_VALUE: return DOUBLE_ROOM;
 			case FAMILY_SUITE_VALUE: return FAMILY_SUITE;
+			case LATE_CHECK_OUT_FEE_VALUE: return LATE_CHECK_OUT_FEE;
 		}
 		return null;
 	}

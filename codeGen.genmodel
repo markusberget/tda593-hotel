@@ -49,6 +49,7 @@
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//ChargeType/SingleRoom"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//ChargeType/DoubleRoom"/>
       <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//ChargeType/FamilySuite"/>
+      <genEnumLiterals xsi:type="genmodel:GenEnumLiteral" ecoreEnumLiteral="Classes.ecore#//ChargeType/LateCheckOutFee"/>
     </genEnums>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Room">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Room/status"/>

@@ -900,7 +900,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		listSize = confirmedBookings.size();
 		for (int i = 0; i < listSize; i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
-				// Check that a cancellation fee (if existing) has been paid before cancelling
+				// Check that a cancellation fee (if existing) has been paid before canceling
 				EList<Charge> charges = confirmedBookings.get(i).getBill().getCharge();
 				for (Charge charge : charges) {
 					if (charge.getChargeType() == ChargeType.CANCELLATION_FEE) {

@@ -292,6 +292,7 @@
     <eLiterals name="SingleRoom" value="2"/>
     <eLiterals name="DoubleRoom" value="3"/>
     <eLiterals name="FamilySuite" value="4"/>
+    <eLiterals name="LateCheckOutFee" value="5"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="AdministratorProvides" abstract="true"
       interface="true">
