@@ -619,21 +619,38 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * Confirms a booking by removing the booking from the pending bookings list
-	 * and adding it to the confirmed bookings list instead. 
-	 * 
-	 * This method is synchronized so that several bookings may be removed at
-	 * the "same" time, without experiencing a race condition.
+	 * and adding it to the confirmed bookings list instead, after a check has
+	 * been made that the required information has been added to the booking.
+	 * The required information is the customer's first name, last name, credit
+	 * card information, check-in and check-out dates, number of guests, and
+	 * email or phone (needed for retrieving confirmation of successful
+	 * booking/canceling if desired, and for being contacted).
 	 * 
 	 * @generated NOT
 	 */
 	public synchronized String confirmBooking(int bookingID) {
 		for (int i = 0; i < pendingBookings.size(); i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				confirmedBookings.add(pendingBookings.remove(i));
-				return "Booking has been confirmed";
+				Customer customer = pendingBookings.get(i).getCustomer();
+				if (customer.getFirstName() == null) {
+					return "Must fill in First Name";
+				} else if (customer.getLastName() == null) {
+					return "Must fill in Last Name";
+				} else if (pendingBookings.get(i).getCheckIn() == null) {
+					return "Must fill in Check-in date";
+				} else if (pendingBookings.get(i).getCheckOut() == null) {
+					return "Must fill in Check-out date";
+				} else if (pendingBookings.get(i).getNumberOfGuests() < 1) {
+					return "Must fill in Number of guests";
+				} else if (customer.getEmail() == null && customer.getPhoneNumber() == null) {
+					return "Must fill in at least an E-mail or a Phone number";
+				} else {
+					confirmedBookings.add(pendingBookings.remove(i));
+					return "Booking has been confirmed";
+				}
 			}
 		}
-		return "Booking could not be confirmed";
+		return "Booking could not be found, please try another bookingID";
 	}
 
 	/**
