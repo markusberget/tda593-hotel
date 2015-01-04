@@ -496,7 +496,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__AddCancellationFee__int() {
+	public EOperation getIBookingManagement__SendConfirmation__int_String() {
 		return iBookingManagementEClass.getEOperations().get(7);
 	}
 
@@ -505,17 +505,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIBookingManagement__SendConfirmation__int_String() {
-		return iBookingManagementEClass.getEOperations().get(8);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public EOperation getIBookingManagement__AddExtraCharge__int_String_int() {
-		return iBookingManagementEClass.getEOperations().get(9);
+		return iBookingManagementEClass.getEOperations().get(8);
 	}
 
 	/**
@@ -1320,7 +1311,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CANCEL_BOOKING__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CUSTOMER_INFORMATION_TO_BOOKING__INT_STRING_STRING_STRING_STRING);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT);
-		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___SEND_CONFIRMATION__INT_STRING);
 		createEOperation(iBookingManagementEClass, IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT);
 
@@ -1583,9 +1573,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEParameter(op, ecorePackage.getEDate(), "checkIn", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDate(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "guestCount", 1, 1, IS_UNIQUE, !IS_ORDERED);
-
-		op = initEOperation(getIBookingManagement__AddCancellationFee__int(), ecorePackage.getEInt(), "addCancellationFee", 1, 1, IS_UNIQUE, !IS_ORDERED);
-		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIBookingManagement__SendConfirmation__int_String(), ecorePackage.getEString(), "sendConfirmation", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);

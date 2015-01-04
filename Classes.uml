@@ -154,14 +154,6 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_yIafIJAbEeSt1vjUWy_DqA" name="addCancellationFee">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_5dcL8JAbEeSt1vjUWy_DqA" name="bookingID">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_H-lhMJAcEeSt1vjUWy_DqA" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-        </ownedParameter>
-      </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_XTkzsJOJEeSbQ_sKuj9BXQ" name="sendConfirmation">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_eUBXoJOJEeSbQ_sKuj9BXQ" name="bookingID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>

@@ -277,6 +277,9 @@ public class HotelManagerTests {
 		
 		assertNotNull(hm);
 		
+		// Used for checking in after booking's check-in date:
+		//currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, Calendar.HOUR, 00);
+		
 		// Set room to Occupied and check that it is not possible to check-in
 		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(room1).getStatus());
 		assertEquals("Changed status of room 1 to Occupied", hm.changeStatusOfRoom(room1, "Occupied"));

@@ -656,22 +656,13 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = 6;
 
 	/**
-	 * The operation id for the '<em>Add Cancellation Fee</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = 7;
-
-	/**
 	 * The operation id for the '<em>Send Confirmation</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___SEND_CONFIRMATION__INT_STRING = 8;
+	int IBOOKING_MANAGEMENT___SEND_CONFIRMATION__INT_STRING = 7;
 
 	/**
 	 * The operation id for the '<em>Add Extra Charge</em>' operation.
@@ -680,7 +671,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT = 9;
+	int IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT = 8;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
@@ -689,7 +680,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 10;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 9;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -825,15 +816,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT = IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT;
-
-	/**
-	 * The operation id for the '<em>Add Cancellation Fee</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IBOOKING_MANAGEMENT_IMPL___ADD_CANCELLATION_FEE__INT = IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT;
 
 	/**
 	 * The operation id for the '<em>Send Confirmation</em>' operation.
@@ -1980,16 +1962,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__CreatePendingBooking__Date_Date_int();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IBookingManagement#addCancellationFee(int) <em>Add Cancellation Fee</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Cancellation Fee</em>' operation.
-	 * @see Classes.IBookingManagement#addCancellationFee(int)
-	 * @generated
-	 */
-	EOperation getIBookingManagement__AddCancellationFee__int();
-
-	/**
 	 * Returns the meta object for the '{@link Classes.IBookingManagement#sendConfirmation(int, java.lang.String) <em>Send Confirmation</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3047,14 +3019,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING_MANAGEMENT___CREATE_PENDING_BOOKING__DATE_DATE_INT = eINSTANCE.getIBookingManagement__CreatePendingBooking__Date_Date_int();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Cancellation Fee</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IBOOKING_MANAGEMENT___ADD_CANCELLATION_FEE__INT = eINSTANCE.getIBookingManagement__AddCancellationFee__int();
 
 		/**
 		 * The meta object literal for the '<em><b>Send Confirmation</b></em>' operation.

@@ -654,6 +654,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
+	 * Helper method for calculating a cancellation fee.
 	 * The customer must pay a cancellation fee if the booking is canceled less
 	 * than 24 hours before check-in date. The difference between the current
 	 * date and the check in date of the booking is used when deciding if the
@@ -666,16 +667,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @param bookingID
 	 *            the bookingID of the booking to be cancelled
 	 * @return fee if the difference between dates are less than 24 hours,
-	 *         otherwise 0 (-1 if booking not found)
+	 *         otherwise 0
 	 * 
 	 * @generated NOT
 	 */
-	public int addCancellationFee(int bookingID) {
-
-		// Check if booking with corresponding bookingID exists
-		if (getConfirmedBooking(bookingID) == null) {
-			return -1;
-		}
+	private int addCancellationFee(int bookingID) {
+		int fee = 0;
 
 		// CurrentDate is used for comparison with check-in date
 		Calendar currentDate = Calendar.getInstance();
@@ -685,16 +682,20 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 		// Check if difference between check-in and current time is < 24 hours
 		if ((checkIn.getTimeInMillis() - currentDate.getTimeInMillis()) < 86400000L) {
-			Charge charge = new ChargeImpl();
-			charge.setDate(new Date());
-			charge.setChargeType(ChargeType.CANCELLATION_FEE);
-			int fee = getIFinanceImpl().calculatePayment(bookingID);
-			charge.setAmount(fee);
+			Charge newCharge = new ChargeImpl();
+			newCharge.setDate(new Date());
+			newCharge.setChargeType(ChargeType.CANCELLATION_FEE);
+			EList<Charge> charges = getConfirmedBooking(bookingID).getBill().getCharge();
+			// Set the cancellation fee equal to the sum of the charges of the bill
+			for (Charge charge : charges) {
+				fee += charge.getAmount();
+			}
+			newCharge.setAmount(fee);
 			Bill bill = getConfirmedBooking(bookingID).getBill();
-			bill.getCharge().add(charge);
+			bill.getCharge().add(newCharge);
 			return fee;
 		}
-		return 0;
+		return fee;
 	}
 
 	/**
@@ -872,17 +873,19 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	/**
 	 * A booking can be cancelled while it is pending or when it is in the
 	 * confirmed state. For the moment, a canceled booking is placed in the
-	 * history list. The method is synchronized to avoid race conditions when
-	 * removing bookings (and searching for the correct booking). Only a confirmed
-	 * booking has to be paid if cancelled within 24 hours of check-in time (the
-	 * cancellation fee), which is why only confirmed bookings are checked if they
-	 * contain a Cancellation Fee and if it is zero (which means it has been paid).
-	 * The cancellation fee must be zero (paid) before a confirmed booking can be
-	 * cancelled.
+	 * history list. Only a confirmed booking has to be paid if cancelled within 24
+	 * hours of check-in time (the cancellation fee), which is why only confirmed
+	 * bookings are checked if they contain a Cancellation Fee and if it is zero
+	 * (which means it has been paid). The cancellation fee must be zero (paid)
+	 * before a confirmed booking can be cancelled. If a confirmed booking is
+	 * canceled within 24 hours of the booking's check-in date, and the bill do
+	 * not yet contain a charge of type Cancellation fee, a new charge is created.
 	 * 
 	 * @generated NOT
 	 */
 	public synchronized String cancelBooking(int bookingID) {
+		boolean feeExist = false;
+		int billSum = 0;
 		// Save current size of list as concurrent activity may change sizes
 		int listSize = pendingBookings.size();
 
@@ -904,15 +907,28 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				EList<Charge> charges = confirmedBookings.get(i).getBill().getCharge();
 				for (Charge charge : charges) {
 					if (charge.getChargeType() == ChargeType.CANCELLATION_FEE) {
-						if (charge.getAmount() != 0) {
+						billSum = charge.getAmount();
+						feeExist = true;
+						if (billSum != 0) {
 							return "Booking could not be cancelled since cancellation fee has not been paid";
 						}
 					}
+					// If no cancellation fee exists already, add one if cancellation of
+					// the booking is performed within 24 hours of booking's check-in date
+					if (!feeExist) {
+						billSum = addCancellationFee(bookingID);
+					}
 				}
-				EList<Room> rooms = confirmedBookings.get(i).getRooms();
-				removeBookedRooms(bookingID, rooms);
-				bookingHistory.add(confirmedBookings.remove(i));
-				return "Confirmed booking was successfully cancelled";
+				// If bill has been paid (all charges set to 0), cancel booking
+				if (billSum == 0) {
+					EList<Room> rooms = confirmedBookings.get(i).getRooms();
+					removeBookedRooms(bookingID, rooms);
+					bookingHistory.add(confirmedBookings.remove(i));
+					return "Confirmed booking was successfully cancelled";
+				} else {
+					return "Could not cancel booking since cancellation fee is not paid yet";
+				}
+
 			}
 		}
 		return "Booking could not be cancelled since it was not found";
@@ -929,7 +945,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	private void removeBookedRooms(int bookingID, EList<Room> rooms) {
 next: for (Room room : rooms) {
 				EList<Booking> bookings = room.getBookings();
-				for (int i = 0; i < bookings.size(); i++) {
+				int nrOfRooms = bookings.size();
+				for (int i = 0; i < nrOfRooms; i++) {
 					if (bookings.get(i).getBookingID() == bookingID ) {
 						room.getBookings().remove(i);
 						break next;
@@ -1280,8 +1297,6 @@ next: for (Room room : rooms) {
 				return addCustomerInformationToBooking((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___CREATE_PENDING_BOOKING__DATE_DATE_INT:
 				return createPendingBooking((Date)arguments.get(0), (Date)arguments.get(1), (Integer)arguments.get(2));
-			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_CANCELLATION_FEE__INT:
-				return addCancellationFee((Integer)arguments.get(0));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___SEND_CONFIRMATION__INT_STRING:
 				return sendConfirmation((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING_INT:

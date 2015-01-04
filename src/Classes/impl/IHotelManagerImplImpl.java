@@ -530,7 +530,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				// Check if current time is before the bookings check-in time
 				testTime.setTime(booking.getCheckIn());
 				if (currentTime.before(testTime)) {
-					return "Cannot perform a check-out before the booking's check-in date";
+					return "Cannot perform check-out before the booking's check-in date";
 				}
 				testTime.setTime(booking.getCheckOut());
 				EList<Room> rooms = booking.getRooms();

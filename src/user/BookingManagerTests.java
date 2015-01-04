@@ -194,7 +194,7 @@ public class BookingManagerTests {
 	 * 
 	 */
 	@Test
-	public void test_valid_AddCancellationFee() {
+	public void test_valid_cancelBooking() {
 
 		// Set up a booking that can be canceled
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
@@ -207,6 +207,18 @@ public class BookingManagerTests {
 		Date checkOutDate = checkOut.getTime();
 		int nrOfGuests = 4;
 		int room1 = 1, room2 = 2, room3 = 3, room6 = 6;
+		int bookingID0 = bookingManagement.createPendingBooking(checkInDate,
+				checkOutDate, nrOfGuests);
+		assertTrue(bookingManagement.addRoomPending(room1, bookingID0));
+		assertTrue(bookingManagement.addRoomPending(room2, bookingID0));
+		bookingManagement.addCustomerInformationToBooking(bookingID0, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
+		bookingManagement.confirmBooking(bookingID0);
+
+		// Check that no cancellation fee ss added since >24 hours left to check-in
+		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(bookingID0));
+
+		// Create a new booking
 		int bookingID1 = bookingManagement.createPendingBooking(checkInDate,
 				checkOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID1));
@@ -214,10 +226,7 @@ public class BookingManagerTests {
 		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID1);
-
-		// Check that no cancellation fee as added since >24 hours left to check-in
-		assertEquals(0, bookingManagement.addCancellationFee(bookingID1));
-
+		
 		// Increase current second by 1 to force cancellation fee to be added
 		Calendar newCheckIn = Calendar.getInstance();
 		newCheckIn.set(Calendar.SECOND, newCheckIn.get(Calendar.SECOND) + 1);
@@ -241,7 +250,7 @@ public class BookingManagerTests {
 		// Check that cancellation fee is added since 2 hours left to check-in
 		// Expected cost 700 since bill is for two nights per room
 		assertEquals(700, bookingManagement.getIFinanceImpl().calculatePayment(bookingID2));
-		assertEquals(700, bookingManagement.addCancellationFee(bookingID2));
+		assertEquals(700, bookingManagement.cancelBooking(bookingID2));
 	}
 
 	/**
@@ -399,8 +408,8 @@ public class BookingManagerTests {
 				.instantiateForTest();
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(2015, 0, 12, 12, 00);
-		calCheckOut.set(2015, 0, 14, 10, 00);
+		calCheckIn.set(2015, 0, 24, 12, 00);
+		calCheckOut.set(2015, 0, 26, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests4 = 4, nrOfGuests2 = 2, nrOfGuests5 = 5;
@@ -428,7 +437,7 @@ public class BookingManagerTests {
 		//assertEquals(2, bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().size());
 		//assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().get(0)));
 		//assertEquals(2, bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().size());
-		calCheckIn.set(2015, 0, 13, 12, 00);
+		calCheckIn.set(2015, 0, 25, 12, 00);
 		checkIn = calCheckIn.getTime();
 		//assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().get(1)));
 		
@@ -446,7 +455,9 @@ public class BookingManagerTests {
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID1);
 		bookingManagement.confirmBooking(bookingID2);
-		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(0));
+		
+		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(bookingID1));
+		
 		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(1, bookingManagement.getConfirmedBookings().size());
 		assertEquals(2, bookingManagement.getBookingHistory().size());
