@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 
 import Classes.Booking;
 import Classes.Charge;
+import Classes.ChargeType;
 import Classes.ClassesPackage;
 import Classes.IBookingManagementImpl;
 import Classes.IHotelManagerImpl;
@@ -505,6 +506,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		return message;
 	}
 	/**
+	 * 
+	 * If the check-out is performed after the bookings check-out time, a fee
+	 * will be added to the bill.
+	 * 
 	 * Checks if the bill of the given booking is paid for (if all charges
 	 * are set to 0). If the bill is paid, the customer is checked-out and
 	 * the room(s) status is set to Cleaning as a default since the room would
@@ -515,14 +520,29 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public String checkOut(int bookingID) {
 		int sumBill = 0;
+		Calendar currentTime = Calendar.getInstance();
+		Calendar testTime = Calendar.getInstance();
 		EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
 		for (Booking booking : bookings) {
 			if (booking.getBookingID() == bookingID) {
+				testTime.setTime(booking.getCheckOut());
 				EList<Room> rooms = booking.getRooms();
 				EList<Charge> charges = booking.getBill().getCharge();
+				if (currentTime.after(testTime)) {
+					for (Charge aCharge : charges) {
+						// Check if the Late Check Out Fee exists and if it has been paid
+						if (aCharge.getChargeType() == ChargeType.LATE_CHECK_OUT_FEE) {
+							if (aCharge.getAmount() != 0) {
+								return "Check out failed, Late-check-out fee has not been paid";
+							}
+						}
+					}
+				}
+				// Check if bill has been paid
 				for (Charge charge : charges) {
 					sumBill += charge.getAmount();
 				}
+				// If bill has been paid, perform check-out
 				if (sumBill == 0) {
 					for (Room room : rooms) {
 						room.setStatus(RoomStatus.CLEANING);
