@@ -243,7 +243,7 @@ public class IFinanceImplImpl extends MinimalEObjectImpl.Container implements IF
 	
 	/**
 	 * Helper method used by payBill(...).
-	 * Sets the charges of the bill (if successfully paid) to zero.
+	 * Set the charges of the bill (if successfully paid) to zero.
 	 * 
 	 * @generated NOT
 	 */

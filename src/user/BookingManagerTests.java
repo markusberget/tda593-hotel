@@ -405,7 +405,7 @@ public class BookingManagerTests {
 		assertEquals(0, bookingID1);
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingID3);
-		assertEquals("Booking could not be cancelled", bookingManagement.cancelBooking(3));
+		assertEquals("Booking could not be cancelled since it was not found", bookingManagement.cancelBooking(3));
 		assertEquals(3, bookingManagement.getPendingBookings().size());
 		
 		// Add rooms to the bookings so it can be tested that the rooms are made available again when bookings are canceled

@@ -856,7 +856,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * A booking can be cancelled while it is pending or when it is in the
 	 * confirmed state. For the moment, a canceled booking is placed in the
 	 * history list. The method is synchronized to avoid race conditions when
-	 * removing bookings (and searching for the correct booking).
+	 * removing bookings (and searching for the correct booking). Only a confirmed
+	 * booking has to be paid if cancelled within 24 hours of check-in time (the
+	 * cancellation fee), which is why only confirmed bookings are checked if they
+	 * contain a Cancellation Fee and if it is zero (which means it has been paid).
+	 * The cancellation fee must be zero (paid) before a confirmed booking can be
+	 * cancelled.
 	 * 
 	 * @generated NOT
 	 */
@@ -878,13 +883,22 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		listSize = confirmedBookings.size();
 		for (int i = 0; i < listSize; i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
+				// Check that a cancellation fee (if existing) has been paid before cancelling
+				EList<Charge> charges = confirmedBookings.get(i).getBill().getCharge();
+				for (Charge charge : charges) {
+					if (charge.getChargeType() == ChargeType.CANCELLATION_FEE) {
+						if (charge.getAmount() != 0) {
+							return "Booking could not be cancelled since cancellation fee has not been paid";
+						}
+					}
+				}
 				EList<Room> rooms = confirmedBookings.get(i).getRooms();
 				removeBookedRooms(bookingID, rooms);
 				bookingHistory.add(confirmedBookings.remove(i));
 				return "Confirmed booking was successfully cancelled";
 			}
 		}
-		return "Booking could not be cancelled";
+		return "Booking could not be cancelled since it was not found";
 	}
 	
 	/**
