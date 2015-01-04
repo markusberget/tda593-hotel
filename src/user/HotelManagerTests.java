@@ -320,6 +320,8 @@ public class HotelManagerTests {
 		assertFalse(bm.addRoomPending(room1, bookingID2));	// Room could not be added
 		assertTrue(bm.addRoomPending(room2, bookingID2));
 		assertTrue(bm.addRoomPending(room3, bookingID2));
+		bm.addCustomerInformationToBooking(bookingID2, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bm.confirmBooking(bookingID2);
 		
 		// Check that room1 was not added to bookingID2 since that date is already booked

@@ -135,12 +135,13 @@ public class BookingManagerTests {
 		int bookingID = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests);
 		assertEquals(0, bookingID);
-		bookingManagement.confirmBooking(bookingID);
+		
 
 		// Add customer information if this information should be modifiable in
 		// the future
 		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
+		bookingManagement.confirmBooking(bookingID);
 
 		// Check the information of the booking before update
 		assertEquals(bookingID, bookingManagement.getConfirmedBookings().get(0)
@@ -210,6 +211,8 @@ public class BookingManagerTests {
 				checkOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room1, bookingID1));
 		assertTrue(bookingManagement.addRoomPending(room2, bookingID1));
+		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID1);
 
 		// Check that no cancellation fee as added since >24 hours left to check-in
@@ -230,6 +233,8 @@ public class BookingManagerTests {
 				newCheckOutDate, nrOfGuests);
 		assertTrue(bookingManagement.addRoomPending(room3, bookingID2));
 		assertTrue(bookingManagement.addRoomPending(room6, bookingID2));
+		bookingManagement.addCustomerInformationToBooking(bookingID2, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID2);
 		assertEquals(2, bookingManagement.getConfirmedBookings().get(1).getRooms().size());
 
@@ -263,6 +268,10 @@ public class BookingManagerTests {
 		assertEquals(0, bookingID1);
 		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
 				checkOut, numberOfGuests4);
+		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
+		bookingManagement.addCustomerInformationToBooking(bookingID2, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingManagement.getPendingBookings().size());
 		assertEquals(0, bookingManagement.getConfirmedBookings().size());
@@ -402,6 +411,8 @@ public class BookingManagerTests {
 				checkOut, nrOfGuests2);
 		int bookingID3 = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests5);
+		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		assertEquals(0, bookingID1);
 		assertEquals(1, bookingID2);
 		assertEquals(2, bookingID3);
@@ -431,6 +442,8 @@ public class BookingManagerTests {
 				.getBookingID());
 		assertEquals(1, bookingManagement.getBookingHistory().size());
 		assertEquals(2, bookingManagement.getPendingBookings().size());
+		bookingManagement.addCustomerInformationToBooking(bookingID2, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID1);
 		bookingManagement.confirmBooking(bookingID2);
 		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(0));
@@ -621,6 +634,8 @@ public class BookingManagerTests {
 				checkOutDate, nrOfGuests);
 		pendingBooking = bookingManagement.getPendingBookings().get(0);
 		assertTrue(bookingManagement.addRoomPending(room, bookingID));
+		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
 
 		// Check that correct rooms were added to booking so expected sum of
 		// bill is correct
@@ -720,6 +735,8 @@ public class BookingManagerTests {
 		int nrOfGuests = 3;
 		int bookingID = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests);
+		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		
 		// Test some invalid arguments
 		assertEquals("The quantity of the charge must be at least 1", bookingManagement.addExtraCharge(bookingID, "Breakfast", 0));
