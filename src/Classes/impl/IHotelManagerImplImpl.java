@@ -508,7 +508,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * 
 	 * If the check-out is performed after the bookings check-out time, a fee
-	 * will be added to the bill.
+	 * will be added to the bill. A restriction is that a check-out cannot be
+	 * performed if the bookings check-in date is after the current time.
 	 * 
 	 * Checks if the bill of the given booking is paid for (if all charges
 	 * are set to 0). If the bill is paid, the customer is checked-out and
@@ -526,6 +527,11 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
 		for (Booking booking : bookings) {
 			if (booking.getBookingID() == bookingID) {
+				// Check if current time is before the bookings check-in time
+				testTime.setTime(booking.getCheckIn());
+				if (currentTime.before(testTime)) {
+					return "Cannot perform a check-out before the booking's check-in date";
+				}
 				testTime.setTime(booking.getCheckOut());
 				EList<Room> rooms = booking.getRooms();
 				EList<Charge> charges = booking.getBill().getCharge();
@@ -539,6 +545,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 							}
 						}
 					}
+					// If check-out time is later than bookings check-out time and there are
+					// no prior LateCheckOutFee charge present in the bill; add the charge
 					if (!feeExists) {
 						Charge charge = new ChargeImpl();
 						charge.setDate(currentTime.getTime());
