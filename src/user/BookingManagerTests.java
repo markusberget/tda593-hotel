@@ -8,13 +8,10 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
 
-import javax.xml.soap.SOAPException;
-
 import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import Classes.Booking;
 import Classes.ChargeType;
 import Classes.Customer;
 import Classes.Room;
@@ -386,11 +383,14 @@ public class BookingManagerTests {
 		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
 				checkOut, numberOfGuests4);
 		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
-				null, "helly.hansen@gmail.com", "0734321234");
+				null, null, null);
 		// Check what happens when trying to confirm a pending booking that is missing
 		// required information
 		assertEquals("Must fill in First Name", bookingManagement.confirmBooking(bookingID2));
 		assertEquals("Must fill in Last Name", bookingManagement.confirmBooking(bookingID1));
+		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
+				"Hansen", null, null);
+		assertEquals("Must fill in at least an E-mail or a Phone number", bookingManagement.confirmBooking(bookingID1));
 		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
 				"Hansen", null, "0734321234");
 		
@@ -513,7 +513,7 @@ public class BookingManagerTests {
 	}
 	
 	/**
-	 * Tests addPendingRooms(roomID, bookingID).
+	 * Tests both valid and invalid use of addPendingRooms(roomID, bookingID).
 	 */
 	@Test
 	public void testAddRoomPending() {
@@ -569,8 +569,6 @@ public class BookingManagerTests {
 		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID4));
 		assertEquals(1, bookingManagement.getPendingBookings().get(3).getRooms().size());
 		assertEquals(room1, bookingManagement.getPendingBookings().get(3).getRooms().get(0).getRoomNumber());
-		
-		
 	}
 
 	/**
@@ -633,10 +631,21 @@ public class BookingManagerTests {
 		calCheckOut.set(2015, 0, 14, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
-		int nrOfGuests6 = 6;
+		int nrOfGuests6 = 6, nrOfGuests0 = 0;
+		
+		// Try to create a pending booking using a check-in date that is later
+		// than the check-out date
+		assertEquals(-1, bookingManagement.createPendingBooking(checkOut,checkIn,
+				nrOfGuests6));
+		
+		// Try using 0 guests as an argument
+		assertEquals(-1, bookingManagement.createPendingBooking(checkIn,checkOut,
+				nrOfGuests0));
+		
+		// Test method using valid arguments
 		int bookingID1 = bookingManagement.createPendingBooking(checkIn, checkOut,
 				nrOfGuests6);
-		assertTrue(0 == bookingID1);
+		assertEquals(0, bookingID1);
 		assertEquals(1, bookingManagement.getPendingBookings().size());
 		assertEquals(checkIn,
 				bookingManagement.getPendingBookings().get(bookingID1)
@@ -650,7 +659,7 @@ public class BookingManagerTests {
 		int nrOfGuests4 = 4;
 		int bookingID2 = bookingManagement.createPendingBooking(checkIn, checkOut,
 				nrOfGuests4);
-		assertTrue(1 == bookingID2);
+		assertEquals(1, bookingID2);
 		assertEquals(2, bookingManagement.getPendingBookings().size());
 		assertEquals(checkIn,
 				bookingManagement.getPendingBookings().get(bookingID2)
