@@ -924,7 +924,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					bookingHistory.add(confirmedBookings.remove(i));
 					return "Confirmed booking was successfully cancelled";
 				} else {
-					return "Could not cancel booking since cancellation fee is not paid yet";
+					return "Late cancel, please pay the added cancellation fee";
 				}
 
 			}

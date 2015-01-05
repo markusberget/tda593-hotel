@@ -194,7 +194,7 @@ public class BookingManagerTests {
 	 * 
 	 */
 	@Test
-	public void test_valid_cancelBooking() {
+	public void test_cancelBooking() {
 
 		// Set up a booking that can be canceled
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
@@ -250,12 +250,23 @@ public class BookingManagerTests {
 		bookingManagement.confirmBooking(bookingID2);
 		assertEquals(2, bookingManagement.getConfirmedBookings().get(1).getRooms().size());
 
-		// Check that cancellation fee is added since 2 hours left to check-in
+		// Check that cancellation fee is added (and created) since 2 hours left to check-in
 		// Expected cost 700 since bill is for two nights per room
 		assertEquals(700, bookingManagement.getIFinanceImpl().calculatePayment(bookingID2));
-		assertEquals("Could not cancel booking since cancellation fee is not paid yet", bookingManagement.cancelBooking(bookingID2));
+		assertEquals("Late cancel, please pay the added cancellation fee", bookingManagement.cancelBooking(bookingID2));
 		assertEquals(ChargeType.CANCELLATION_FEE, bookingManagement.getConfirmedBookings().get(1).getBill().getCharge().get(4).getChargeType());
+		assertEquals(700, bookingManagement.getConfirmedBookings().get(1).getBill().getCharge().get(4).getAmount());
 		
+		// Try to cancel booking again without paying the cancellation fee first
+		assertEquals("Booking could not be cancelled since cancellation fee has not been paid", bookingManagement.cancelBooking(bookingID2));
+		
+		// Set fee to zero to be able to cancel the booking
+		bookingManagement.getConfirmedBookings().get(1).getBill().getCharge().get(4).setAmount(0);
+		assertEquals(0, bookingManagement.getConfirmedBookings().get(1).getBill().getCharge().get(4).getAmount());
+		assertEquals(2, bookingManagement.getConfirmedBookings().size());
+		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(bookingID2));
+		assertEquals(1, bookingManagement.getConfirmedBookings().size());
+		assertEquals(2, bookingManagement.getBookingHistory().size());
 	}
 
 	/**
