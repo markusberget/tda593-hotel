@@ -51,8 +51,6 @@ public class UserTests {
 	@Test
 	public void test_checkOut() {
 		
-		// Set up a booking and do some test on checkOut(...) in HotelManagerImpl
-		
 		// Set up of a credit card account for use when paying for the booking/room(s).
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
 		String ccNumber = "01234567", ccv = "123", firstName = "Karl", lastName = "urban";
@@ -67,10 +65,11 @@ public class UserTests {
 		
 		// Set up a pending booking
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl.instantiateForTest();
+		IHotelManager hotelManagement = bookingManagement.getIHotelManagerImpl();
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(2015, 0, 12, 12, 00);
-		calCheckOut.set(2015, 0, 14, 10, 00);
+		calCheckIn.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH-2, 12, 00);
+		calCheckOut.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests3 = 3;
@@ -78,23 +77,14 @@ public class UserTests {
 		String email = "karl.urban@gmail.com", ph = "0843322";
 		bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
 		
-		// Check if there are 5 rooms instantiated and temporarily stored in the system
-		assertEquals(5, bookingManagement.getRoom().size());
-		
 		// Add three rooms to the pending booking
 		Booking pendingBooking = bookingManagement.getPendingBookings().get(0);
 		pendingBooking.getRooms().add(bookingManagement.getRoom().get(0));
 		pendingBooking.getRooms().add(bookingManagement.getRoom().get(1));
 		pendingBooking.getRooms().add(bookingManagement.getRoom().get(4));
 		
-		// Confirm the pending booking so that a Bill is associated with the booking
+		// Confirm the pending booking
 		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
-		
-		// Now the booking to be "checked out" exists in the system, and the real
-		// check out process starts here!
-		
-		// 2) Choose room(s) to checkout from
-		// 2a) A precondition for doing a check out is that a check in has been done, this must be checked first
 		
 		// Calculate the sum of the bill
 		double checkOutSum = bookingManagement.getIFinanceImpl().calculatePayment(bookingID);
@@ -104,7 +94,8 @@ public class UserTests {
 		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(bookingID, ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
 		assertEquals(1893.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 1893.0);
 		
-		// 4) Change status of room(s) to CLEANING/AVAILABLE? (which is done when payment is a success).
+		// Check out
+		assertEquals("Check-out was successful", hotelManagement.checkOut(bookingID));
 		
 		// Remove the credit card account from the banking component
 		assertTrue(bankingAdmin.removeCreditCard(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName));
