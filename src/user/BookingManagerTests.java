@@ -268,6 +268,96 @@ public class BookingManagerTests {
 		assertEquals(1, bookingManagement.getConfirmedBookings().size());
 		assertEquals(2, bookingManagement.getBookingHistory().size());
 	}
+	
+	/**
+	 * Test method for
+	 * {@link Classes.impl.IBookingManagementImplImpl#cancelBooking(int)}.
+	 * 
+	 * Tests if a booking is cancelled by checking that the booking is removed
+	 * from the booking list (pending or confirmed) and added to the history
+	 * list. It is also tested what happens when a non-existing bookingID is
+	 * used as an argument. When a booking is canceled all booked dates of
+	 * all associated rooms is removed. This expected behavior is also tested.
+	 */
+	@Test
+	public void testCancelBooking2() {
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
+				.instantiateForTest();
+		Calendar calCheckIn = Calendar.getInstance();
+		Calendar calCheckOut = Calendar.getInstance();
+		calCheckIn.set(2015, 0, 24, 12, 00);
+		calCheckOut.set(2015, 0, 26, 10, 00);
+		Date checkIn = calCheckIn.getTime();
+		Date checkOut = calCheckOut.getTime();
+		int nrOfGuests4 = 4, nrOfGuests2 = 2, nrOfGuests5 = 5;
+		int room1 = 1, room2 = 2, room3 = 3, room6 = 6, room7 = 7;
+		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests4);
+		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests2);
+		int bookingID3 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests5);
+		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
+		assertEquals(0, bookingID1);
+		assertEquals(1, bookingID2);
+		assertEquals(2, bookingID3);
+		assertEquals("Booking could not be cancelled since it was not found", bookingManagement.cancelBooking(3));
+		assertEquals(3, bookingManagement.getPendingBookings().size());
+		
+		// Add rooms to the bookings so it can be tested that the rooms are made available again when bookings are canceled
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
+		assertEquals("Room 2 was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID2));
+		assertEquals("Room 6 was successfully added to pending booking", bookingManagement.addRoomPending(room6, bookingID3));
+		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID3));
+		assertEquals("Room 7 was successfully added to pending booking", bookingManagement.addRoomPending(room7, bookingID3));
+		// Add another booking for room3 to check that it is not also removed when
+		// canceling bookingID3
+		calCheckIn.set(2015, 2, 24, 12, 00);
+		calCheckOut.set(2015, 2, 26, 10, 00);
+		checkIn = calCheckIn.getTime();
+		checkOut = calCheckOut.getTime();
+		int bookingID4 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests4);
+		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID4));
+		
+		// Check so that correct dates are booked for the rooms, and correct number of dates booked
+		//assertEquals(2, bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().size());
+		//assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().get(0)));
+		//assertEquals(2, bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().size());
+		calCheckIn.set(2015, 0, 25, 12, 00);
+		checkIn = calCheckIn.getTime();
+		//assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().get(1)));
+		
+		// Cancel a booking and assert that the booking is removed from the rooms
+		assertEquals(1, bookingManagement.getRoomByID(room6).getBookings().size());
+		assertEquals(2, bookingManagement.getRoomByID(room3).getBookings().size());
+		assertEquals(3, bookingManagement.getPendingBookings().get(bookingID3).getRooms().size());
+		assertEquals("Pending booking was successfully cancelled", bookingManagement.cancelBooking(bookingID3));
+		assertEquals(1, bookingManagement.getRoomByID(room3).getBookings().size());
+		assertEquals(0, bookingManagement.getRoomByID(room6).getBookings().size());
+		
+		
+		// Check that the room associated with the above booking contains no booked dates
+		//assertEquals(0, bookingManagement.getRoom().get(2).getBookedDates().size());
+		
+		assertEquals(bookingID3, bookingManagement.getBookingHistory().get(0)
+				.getBookingID());
+		assertEquals(1, bookingManagement.getBookingHistory().size());
+		assertEquals(3, bookingManagement.getPendingBookings().size());
+		bookingManagement.addCustomerInformationToBooking(bookingID2, "Helly",
+				"Hansen", "helly.hansen@gmail.com", "0734321234");
+		bookingManagement.confirmBooking(bookingID1);
+		bookingManagement.confirmBooking(bookingID2);
+		
+		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(bookingID1));
+		
+		assertEquals(1, bookingManagement.getPendingBookings().size());
+		assertEquals(1, bookingManagement.getConfirmedBookings().size());
+		assertEquals(2, bookingManagement.getBookingHistory().size());
+		assertEquals(0, bookingManagement.getBookingHistory().get(1)
+				.getBookingID());
+	}
 
 	/**
 	 * Test method for
@@ -406,96 +496,6 @@ public class BookingManagerTests {
 			assertTrue(exception instanceof IllegalArgumentException);
 		}
 
-	}
-
-	/**
-	 * Test method for
-	 * {@link Classes.impl.IBookingManagementImplImpl#cancelBooking(int)}.
-	 * 
-	 * Tests if a booking is cancelled by checking that the booking is removed
-	 * from the booking list (pending or confirmed) and added to the history
-	 * list. It is also tested what happens when a non-existing bookingID is
-	 * used as an argument. When a booking is canceled all booked dates of
-	 * all associated rooms is removed. This expected behavior is also tested.
-	 */
-	@Test
-	public void testCancelBooking() {
-		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
-				.instantiateForTest();
-		Calendar calCheckIn = Calendar.getInstance();
-		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(2015, 0, 24, 12, 00);
-		calCheckOut.set(2015, 0, 26, 10, 00);
-		Date checkIn = calCheckIn.getTime();
-		Date checkOut = calCheckOut.getTime();
-		int nrOfGuests4 = 4, nrOfGuests2 = 2, nrOfGuests5 = 5;
-		int room1 = 1, room2 = 2, room3 = 3, room6 = 6, room7 = 7;
-		int bookingID1 = bookingManagement.createPendingBooking(checkIn,
-				checkOut, nrOfGuests4);
-		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
-				checkOut, nrOfGuests2);
-		int bookingID3 = bookingManagement.createPendingBooking(checkIn,
-				checkOut, nrOfGuests5);
-		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
-				"Hansen", "helly.hansen@gmail.com", "0734321234");
-		assertEquals(0, bookingID1);
-		assertEquals(1, bookingID2);
-		assertEquals(2, bookingID3);
-		assertEquals("Booking could not be cancelled since it was not found", bookingManagement.cancelBooking(3));
-		assertEquals(3, bookingManagement.getPendingBookings().size());
-		
-		// Add rooms to the bookings so it can be tested that the rooms are made available again when bookings are canceled
-		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
-		assertEquals("Room 2 was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID2));
-		assertEquals("Room 6 was successfully added to pending booking", bookingManagement.addRoomPending(room6, bookingID3));
-		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID3));
-		assertEquals("Room 7 was successfully added to pending booking", bookingManagement.addRoomPending(room7, bookingID3));
-		// Add another booking for room3 to check that it is not also removed when
-		// canceling bookingID3
-		calCheckIn.set(2015, 2, 24, 12, 00);
-		calCheckOut.set(2015, 2, 26, 10, 00);
-		checkIn = calCheckIn.getTime();
-		checkOut = calCheckOut.getTime();
-		int bookingID4 = bookingManagement.createPendingBooking(checkIn,
-				checkOut, nrOfGuests4);
-		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID4));
-		
-		// Check so that correct dates are booked for the rooms, and correct number of dates booked
-		//assertEquals(2, bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().size());
-		//assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().get(0)));
-		//assertEquals(2, bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().size());
-		calCheckIn.set(2015, 0, 25, 12, 00);
-		checkIn = calCheckIn.getTime();
-		//assertEquals(0, checkIn.compareTo(bookingManagement.getPendingBookings().get(2).getRooms().get(0).getBookedDates().get(1)));
-		
-		// Cancel a booking and assert that the booking is removed from the rooms
-		assertEquals(1, bookingManagement.getRoomByID(room6).getBookings().size());
-		assertEquals(2, bookingManagement.getRoomByID(room3).getBookings().size());
-		assertEquals(3, bookingManagement.getPendingBookings().get(bookingID3).getRooms().size());
-		assertEquals("Pending booking was successfully cancelled", bookingManagement.cancelBooking(bookingID3));
-		assertEquals(1, bookingManagement.getRoomByID(room3).getBookings().size());
-		assertEquals(0, bookingManagement.getRoomByID(room6).getBookings().size());
-		
-		
-		// Check that the room associated with the above booking contains no booked dates
-		//assertEquals(0, bookingManagement.getRoom().get(2).getBookedDates().size());
-		
-		assertEquals(bookingID3, bookingManagement.getBookingHistory().get(0)
-				.getBookingID());
-		assertEquals(1, bookingManagement.getBookingHistory().size());
-		assertEquals(3, bookingManagement.getPendingBookings().size());
-		bookingManagement.addCustomerInformationToBooking(bookingID2, "Helly",
-				"Hansen", "helly.hansen@gmail.com", "0734321234");
-		bookingManagement.confirmBooking(bookingID1);
-		bookingManagement.confirmBooking(bookingID2);
-		
-		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(bookingID1));
-		
-		assertEquals(1, bookingManagement.getPendingBookings().size());
-		assertEquals(1, bookingManagement.getConfirmedBookings().size());
-		assertEquals(2, bookingManagement.getBookingHistory().size());
-		assertEquals(0, bookingManagement.getBookingHistory().get(1)
-				.getBookingID());
 	}
 	
 	/**
@@ -647,119 +647,6 @@ public class BookingManagerTests {
 		assertEquals(nrOfGuests4,
 				pendingBooking.getPendingBookings().get(bookingID2)
 						.getNumberOfGuests());
-	}
-
-	/**
-	 * Test method for
-	 * {@link Classes.impl.IFinanceImplImpl#calculatePayment(int)}.
-	 * 
-	 * Calculates the sum of the bill of a booking containing three rooms. Two
-	 * of the rooms in this test are single rooms, and one is a double room.
-	 * Each single room costs 100 (at the moment) and a double room cost 250 (at
-	 * the moment). The expected sum of the bill (since no other charges are
-	 * added yet) is 450.
-	 */
-	@Test
-	public void testCalculatePayment() {
-
-		// Set up a pending booking and add three nights stay in a room for it
-		Booking pendingBooking;
-		int nrOfGuests = 6;
-		int room1 = 1;
-		Calendar checkIn = Calendar.getInstance();
-		Calendar checkOut = Calendar.getInstance();
-		checkIn.set(2015, 0, 12, 12, 00);
-		checkOut.set(2015, 0, 14, 10, 00);
-		Date checkInDate = checkIn.getTime();
-		Date checkOutDate = checkOut.getTime();
-		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
-				.instantiateForTest();
-		int bookingID = bookingManagement.createPendingBooking(checkInDate,
-				checkOutDate, nrOfGuests);
-		pendingBooking = bookingManagement.getPendingBookings().get(0);
-		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID));
-		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly",
-				"Hansen", "helly.hansen@gmail.com", "0734321234");
-
-		// Check that correct rooms were added to booking so expected sum of
-		// bill is correct
-		assertEquals(RoomTypeName.SINGLE_ROOM, pendingBooking.getRooms().get(0)
-				.getRoomType().getRoomTypeName());
-
-		// Confirm the booking
-		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
-
-		// Calculate the sum of the bill, 200 is expected since 2 nights are
-		// booked
-		assertEquals(200,
-				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
-	}
-
-	/**
-	 * Test method for {@link Classes.impl.IFinanceImplImpl#payBill(int)}.
-	 * 
-	 * First a credit card account is created which contains enough money for
-	 * paying the bill. Then the three scenarios of too low balance on account,
-	 * invalid card, and valid card connected to an account with a large enough
-	 * balance is tested for the method payBill(...). Method payBill is expected
-	 * to handle these scenarios by returning appropriate strings.
-	 */
-	@Test
-	public void testPayBill() {
-		int bookingID = 0;
-		// Set up of a credit card account for use when paying for the
-		// booking/room(s)
-		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
-		String ccNumber = "01234567", ccv = "123", firstName = "Karl", lastName = "urban";
-		int expiryMonth = 10, expiryYear = 17;
-		try {
-			bankingAdmin = se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires
-					.instance();
-			bankingAdmin.removeCreditCard(ccNumber, ccv, expiryMonth,
-					expiryYear, firstName, lastName);
-			assertTrue(bankingAdmin.addCreditCard(ccNumber, ccv, expiryMonth,
-					expiryYear, firstName, lastName));
-			assertEquals(0.0, bankingAdmin.getBalance(ccNumber, ccv,
-					expiryMonth, expiryYear, firstName, lastName), 0.0);
-			assertEquals(2343.0, bankingAdmin.makeDeposit(ccNumber, ccv,
-					expiryMonth, expiryYear, firstName, lastName, 2343.0),
-					2343.0);
-
-			Classes.impl.IFinanceImplImpl financeManagement = Classes.impl.IFinanceImplImpl
-					.instantiateForTest();
-
-			// Pay the bill using a credit card account with a balance greater
-			// than the bill cost
-			assertEquals("Payment was successful", financeManagement.payBill(
-					bookingID, ccNumber, ccv, expiryMonth, expiryYear,
-					firstName, lastName, 343.0));
-
-			// Check the balance of the credit card account to see if correct
-			// amount was withdrawn
-			assertEquals(2000.0, bankingAdmin.getBalance(ccNumber, ccv,
-					expiryMonth, expiryYear, firstName, lastName), 2000.0);
-
-			// Check if payBill returns correct String if balance on account is
-			// lower than the cost of the bill
-			assertEquals("Amount could not be withdrawn",
-					financeManagement.payBill(bookingID, ccNumber, ccv,
-							expiryMonth, expiryYear, firstName, lastName,
-							2343.0));
-
-			// Check if payBill returns correct String if credit card is not
-			// valid
-			assertEquals("Credit Card is not valid", financeManagement.payBill(
-					bookingID, "00234111", ccv, expiryMonth, expiryYear,
-					firstName, lastName, 343.0));
-
-			// Remove the credit card account from the banking component
-			assertTrue(bankingAdmin.removeCreditCard(ccNumber, ccv,
-					expiryMonth, expiryYear, firstName, lastName));
-		} catch (SOAPException e) {
-			System.err
-					.println("Error occurred while communicating with the bank administration");
-			e.printStackTrace();
-		}
 	}
 	
 	/**
