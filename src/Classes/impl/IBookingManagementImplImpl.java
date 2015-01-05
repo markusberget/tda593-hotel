@@ -536,7 +536,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		
 		// Also check if room exists	
 		if (room == null) {	
-			return "Room could not be found";	
+			return "Room " + roomNr + " could not be found";	
 		}
 		
 		// Check if room already booked during any of the desired dates
@@ -561,7 +561,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				// Add room to booking if room is available during desired dates
 				booking.getRooms().add(room);
 			} else {
-				return "Room could not be added since already booked";
+				return "Room " + roomNr + " could not be added since already booked";
 			}
 		}
 		
@@ -597,9 +597,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				calCheckIn.set(Calendar.DAY_OF_MONTH, calCheckIn.get(Calendar.DAY_OF_MONTH)+1);
 				checkInDay++;
 			}
-			return "Room was successfully added to pending booking";
+			return "Room " + roomNr + " was successfully added to pending booking";
 		} 
-		return "Room could not be added to pending booking";
+		return "Room " + roomNr + " could not be added to pending booking";
 	}
 
 	/**

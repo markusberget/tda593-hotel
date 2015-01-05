@@ -55,8 +55,8 @@ public class BookingManagerTests {
 		int bookingID = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests);
 		assertEquals(0, bookingID);
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID));
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID));
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID));
+		assertEquals("Room 2 was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID));
 
 		// Add customer information if this information should be modifiable in
 		// the future
@@ -209,8 +209,8 @@ public class BookingManagerTests {
 		int room1 = 1, room2 = 2, room3 = 3, room6 = 6;
 		int bookingID0 = bookingManagement.createPendingBooking(checkInDate,
 				checkOutDate, nrOfGuests);
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID0));
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID0));
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID0));
+		assertEquals("Room 2 was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID0));
 		bookingManagement.addCustomerInformationToBooking(bookingID0, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID0);
@@ -224,8 +224,8 @@ public class BookingManagerTests {
 		int bookingID1 = bookingManagement.createPendingBooking(checkInDate,
 				checkOutDate, nrOfGuests);
 		// These rooms should be available during same dates since last booking cancelled
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID1));
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
+		assertEquals("Room 2 was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID1));
 		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID1);
@@ -243,8 +243,8 @@ public class BookingManagerTests {
 		// Create new booking to cancel
 		int bookingID2 = bookingManagement.createPendingBooking(newCheckInDate,
 				newCheckOutDate, nrOfGuests);
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID2));
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room6, bookingID2));
+		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID2));
+		assertEquals("Room 6 was successfully added to pending booking", bookingManagement.addRoomPending(room6, bookingID2));
 		bookingManagement.addCustomerInformationToBooking(bookingID2, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID2);
@@ -445,11 +445,11 @@ public class BookingManagerTests {
 		assertEquals(3, bookingManagement.getPendingBookings().size());
 		
 		// Add rooms to the bookings so it can be tested that the rooms are made available again when bookings are canceled
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID2));
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room6, bookingID3));
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID3));
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room7, bookingID3));
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
+		assertEquals("Room 2 was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID2));
+		assertEquals("Room 6 was successfully added to pending booking", bookingManagement.addRoomPending(room6, bookingID3));
+		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID3));
+		assertEquals("Room 7 was successfully added to pending booking", bookingManagement.addRoomPending(room7, bookingID3));
 		// Add another booking for room3 to check that it is not also removed when
 		// canceling bookingID3
 		calCheckIn.set(2015, 2, 24, 12, 00);
@@ -458,7 +458,7 @@ public class BookingManagerTests {
 		checkOut = calCheckOut.getTime();
 		int bookingID4 = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests4);
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID4));
+		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID4));
 		
 		// Check so that correct dates are booked for the rooms, and correct number of dates booked
 		//assertEquals(2, bookingManagement.getPendingBookings().get(0).getRooms().get(0).getBookedDates().size());
@@ -519,19 +519,19 @@ public class BookingManagerTests {
 				checkOut, nrOfGuests2);
 		
 		// Test when one customer adds a room
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
 		assertEquals(room1, bookingManagement.getPendingBookings().get(0).getRooms().get(0).getRoomNumber());
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID1));
+		assertEquals("Room 2 was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID1));
 		assertEquals(room2, bookingManagement.getPendingBookings().get(0).getRooms().get(1).getRoomNumber());
 		assertEquals(2, bookingManagement.getPendingBookings().get(0).getRooms().size());
 		
 		// Test when a second customer tries to book same room during same dates
-		assertEquals("Room could not be added since already booked", bookingManagement.addRoomPending(room2, bookingID2));
-		assertEquals("Room could not be added since already booked", bookingManagement.addRoomPending(room1, bookingID2));
+		assertEquals("Room 2 could not be added since already booked", bookingManagement.addRoomPending(room2, bookingID2));
+		assertEquals("Room 1 could not be added since already booked", bookingManagement.addRoomPending(room1, bookingID2));
 		assertEquals(0, bookingManagement.getPendingBookings().get(1).getRooms().size());
 		
 		// Let second customer book available room
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID2));
+		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID2));
 		assertEquals(room3, bookingManagement.getPendingBookings().get(1).getRooms().get(0).getRoomNumber());
 		
 		// Let second customer book room1 in a new booking after first customers check-out date
@@ -541,7 +541,7 @@ public class BookingManagerTests {
 		checkOut = calCheckOut.getTime();
 		int bookingID3 = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests2);
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID3));
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID3));
 		assertEquals(1, bookingManagement.getPendingBookings().get(2).getRooms().size());
 		assertEquals(room1, bookingManagement.getPendingBookings().get(2).getRooms().get(0).getRoomNumber());
 		
@@ -552,7 +552,7 @@ public class BookingManagerTests {
 		checkOut = calCheckOut.getTime();
 		int bookingID4 = bookingManagement.createPendingBooking(checkIn,
 				checkOut, nrOfGuests2);
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID4));
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID4));
 		assertEquals(1, bookingManagement.getPendingBookings().get(3).getRooms().size());
 		assertEquals(room1, bookingManagement.getPendingBookings().get(3).getRooms().get(0).getRoomNumber());
 		
@@ -665,7 +665,7 @@ public class BookingManagerTests {
 		// Set up a pending booking and add three nights stay in a room for it
 		Booking pendingBooking;
 		int nrOfGuests = 6;
-		int room = 1;
+		int room1 = 1;
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 		checkIn.set(2015, 0, 12, 12, 00);
@@ -677,7 +677,7 @@ public class BookingManagerTests {
 		int bookingID = bookingManagement.createPendingBooking(checkInDate,
 				checkOutDate, nrOfGuests);
 		pendingBooking = bookingManagement.getPendingBookings().get(0);
-		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room, bookingID));
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID));
 		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 

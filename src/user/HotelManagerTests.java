@@ -320,9 +320,9 @@ public class HotelManagerTests {
 		int nrOfGuests2 = 2;
 		int bookingID2 = bm.createPendingBooking(checkInDate, checkOutDate, nrOfGuests2);
 		// Add room1 for this booking also, and during same dates as first booking
-		assertEquals("Room could not be added since already booked", bm.addRoomPending(room1, bookingID2));	
-		assertEquals("Room was successfully added to pending booking",bm.addRoomPending(room2, bookingID2));
-		assertEquals("Room was successfully added to pending booking", bm.addRoomPending(room3, bookingID2));
+		assertEquals("Room 1 could not be added since already booked", bm.addRoomPending(room1, bookingID2));	
+		assertEquals("Room 2 was successfully added to pending booking",bm.addRoomPending(room2, bookingID2));
+		assertEquals("Room 3 was successfully added to pending booking", bm.addRoomPending(room3, bookingID2));
 		bm.addCustomerInformationToBooking(bookingID2, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bm.confirmBooking(bookingID2);
