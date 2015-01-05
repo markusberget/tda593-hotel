@@ -290,10 +290,18 @@ public class BookingManagerTests {
 		calCheckIn.set(2015, 0, 16, 12, 00);
 		newCheckIn = calCheckIn.getTime();
 		assertEquals(newCheckIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
+		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
+		assertEquals(4, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(400,
+				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 		assertEquals("Booking was updated successfully",
 				bookingManagement.updateBooking(bookingID, 0, null, newCheckOut,
 						nrOfGuests4));
-
+		assertEquals(newCheckIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
+		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
+		assertEquals(6, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(600,
+				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 	}
 
 	/**

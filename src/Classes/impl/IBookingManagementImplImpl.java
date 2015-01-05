@@ -520,6 +520,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				if (checkOut != null) {
 					booking.setCheckOut(checkOut);
 				}
+				updateBillWithNewDateCharges(bookingID);
 			} else {
 				return "Could not update booking because date(s) for room(s) already booked";
 			}
@@ -555,6 +556,52 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			booking.getBill().getCharge().add(charge);
 			calCheckIn.add(Calendar.DAY_OF_MONTH, 1);
 		}
+	}
+	
+	/**
+	 * Helper method for updateBooking(...) that adds a charge for each night
+	 * for each room of the modified dates of the booking.
+	 */
+	private void updateBillWithNewDateCharges(int bookingID) {
+		Booking booking = getConfirmedBooking(bookingID);
+		EList<Room> rooms = booking.getRooms();
+		
+		// Remove only charges for rooms, not other types of charges
+		EList<Charge> charges = booking.getBill().getCharge();
+		ListIterator<Charge> iter = charges.listIterator();
+		while (iter.hasNext()) {
+			Charge charge = iter.next();
+			if (charge.getChargeType() == ChargeType.SINGLE_ROOM ||
+					charge.getChargeType() == ChargeType.DOUBLE_ROOM ||
+					charge.getChargeType() == ChargeType.FAMILY_SUITE) {
+				iter.remove();
+			}
+		}
+		
+		// Add charges for each room in booking
+		for (Room room : rooms) {
+			// Convert Date to Calendar
+			Calendar calCheckIn = convertCheckInDate(booking);
+			Calendar calCheckOut = convertCheckOutDate(booking);
+				
+			while (!calCheckIn.after(calCheckOut)) {
+				
+				// Add charge for each night at specified room
+				Charge charge = new ChargeImpl();
+				charge.setDate(new Date());
+				charge.setAmount(room.getRoomType().getPrice());
+				if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
+					charge.setChargeType(ChargeType.SINGLE_ROOM);
+				} else if (room.getRoomType().getRoomTypeName() == RoomTypeName.DOUBLE_ROOM) {
+					charge.setChargeType(ChargeType.DOUBLE_ROOM);
+				} else {
+					charge.setChargeType(ChargeType.FAMILY_SUITE);
+				}
+				booking.getBill().getCharge().add(charge);
+				calCheckIn.add(Calendar.DAY_OF_MONTH, 1);
+			}
+		}
+
 	}
 	
 	/**
