@@ -885,7 +885,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public synchronized String cancelBooking(int bookingID) {
 		boolean feeExist = false;
-		int billSum = 0;
+		int billSum = -1;
 		// Save current size of list as concurrent activity may change sizes
 		int listSize = pendingBookings.size();
 
@@ -893,7 +893,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		// removed from the correct list
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
-				removeBookedRooms(bookingID);
+				removeBookedRooms(pendingBookings.get(i));
 				bookingHistory.add(pendingBookings.remove(i));
 				return "Pending booking was successfully cancelled";
 			}
@@ -912,15 +912,15 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 							return "Booking could not be cancelled since cancellation fee has not been paid";
 						}
 					}
-					// If no cancellation fee exists already, add one if cancellation of
-					// the booking is performed within 24 hours of booking's check-in date
-					if (!feeExist) {
-						billSum = addCancellationFee(bookingID);
-					}
+				}
+				// If no cancellation fee exists already, add one if cancellation of
+				// the booking is performed within 24 hours of booking's check-in date
+				if (!feeExist) {
+					billSum = addCancellationFee(bookingID);
 				}
 				// If bill has been paid (all charges set to 0), cancel booking
 				if (billSum == 0) {
-					removeBookedRooms(bookingID);
+					removeBookedRooms(confirmedBookings.get(i));
 					bookingHistory.add(confirmedBookings.remove(i));
 					return "Confirmed booking was successfully cancelled";
 				} else {
@@ -939,20 +939,16 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @param bookingID		the booking that has its booked dates removed
 	 */
-	private void removeBookedRooms(int bookingID) {
-		EList<Room> rooms = null;
-		if (getPendingBooking(bookingID) != null) {
-			rooms = getPendingBooking(bookingID).getRooms();
-		} else if (getConfirmedBooking(bookingID) != null) {
-			rooms = getConfirmedBooking(bookingID).getRooms();
-		}
+	private void removeBookedRooms(Booking booking) {
+		EList<Room> rooms = getRoom();
+		
 		
 		for (int i = 0; i < rooms.size(); i++) {
 			EList<Booking> bookings = rooms.get(i).getBookings();
 			int j = 0;
 			boolean notFound = true;
 			while (j < bookings.size() && notFound) {
-				if (bookings.get(j).getBookingID() == bookingID) {
+				if (bookings.get(j).getBookingID() == booking.getBookingID()) {
 					bookings.remove(j);
 					notFound = false;
 				}

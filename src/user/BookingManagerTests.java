@@ -1,7 +1,6 @@
 package user;
 
 import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;
 
@@ -16,6 +15,7 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 
 import Classes.Booking;
+import Classes.ChargeType;
 import Classes.Customer;
 import Classes.Room;
 import Classes.RoomType;
@@ -217,13 +217,15 @@ public class BookingManagerTests {
 
 		// Check that no cancellation fee is added since >24 hours left to check-in
 		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(bookingID0));
+		assertEquals(0, bookingManagement.getRoomByID(room1).getBookings().size());
+		assertEquals(0, bookingManagement.getRoomByID(room2).getBookings().size());
 
 		// Create a new booking
 		int bookingID1 = bookingManagement.createPendingBooking(checkInDate,
 				checkOutDate, nrOfGuests);
-		// None of these rooms should be available during same dates since already booked
-		assertEquals("Room could not be added since already booked", bookingManagement.addRoomPending(room1, bookingID1));
-		assertEquals("Room could not be added since already booked", bookingManagement.addRoomPending(room2, bookingID1));
+		// These rooms should be available during same dates since last booking cancelled
+		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID1));
+		assertEquals("Room was successfully added to pending booking", bookingManagement.addRoomPending(room2, bookingID1));
 		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID1);
@@ -251,7 +253,9 @@ public class BookingManagerTests {
 		// Check that cancellation fee is added since 2 hours left to check-in
 		// Expected cost 700 since bill is for two nights per room
 		assertEquals(700, bookingManagement.getIFinanceImpl().calculatePayment(bookingID2));
-		assertEquals(700, bookingManagement.cancelBooking(bookingID2));
+		assertEquals("Could not cancel booking since cancellation fee is not paid yet", bookingManagement.cancelBooking(bookingID2));
+		assertEquals(ChargeType.CANCELLATION_FEE, bookingManagement.getConfirmedBookings().get(1).getBill().getCharge().get(4).getChargeType());
+		
 	}
 
 	/**
@@ -468,7 +472,7 @@ public class BookingManagerTests {
 		assertEquals(bookingID3, bookingManagement.getBookingHistory().get(0)
 				.getBookingID());
 		assertEquals(1, bookingManagement.getBookingHistory().size());
-		assertEquals(2, bookingManagement.getPendingBookings().size());
+		assertEquals(3, bookingManagement.getPendingBookings().size());
 		bookingManagement.addCustomerInformationToBooking(bookingID2, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		bookingManagement.confirmBooking(bookingID1);
@@ -476,7 +480,7 @@ public class BookingManagerTests {
 		
 		assertEquals("Confirmed booking was successfully cancelled", bookingManagement.cancelBooking(bookingID1));
 		
-		assertEquals(0, bookingManagement.getPendingBookings().size());
+		assertEquals(1, bookingManagement.getPendingBookings().size());
 		assertEquals(1, bookingManagement.getConfirmedBookings().size());
 		assertEquals(2, bookingManagement.getBookingHistory().size());
 		assertEquals(0, bookingManagement.getBookingHistory().get(1)
