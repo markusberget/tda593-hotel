@@ -459,6 +459,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				if (bookings.isEmpty()) {
 					// Add room to booking if room do not have any bookings yet
 					booking.getRooms().add(room);
+					updateBillWithNewRoomCharge(roomID, bookingID);
 				} else {
 					boolean available = true;
 					ListIterator<Booking> iter = bookings.listIterator();
@@ -473,6 +474,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					if (available) {
 						// Add room to booking if room is available during desired dates
 						booking.getRooms().add(room);
+						updateBillWithNewRoomCharge(roomID, bookingID);
 					} else {
 						return "Room could not be added since already booked";
 					}
@@ -520,7 +522,37 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 		return "Booking was updated successfully";
 	}
-
+	
+	/**
+	 * Helper method for updateBooking(...) that adds a charge for each night
+	 * of newly added room.
+	 */
+	private void updateBillWithNewRoomCharge(int roomID, int bookingID) {
+		Booking booking = getConfirmedBooking(bookingID);
+		Room room = getRoomByID(roomID);
+		
+		// Convert Date to Calendar
+		Calendar calCheckIn = convertCheckInDate(booking);
+		Calendar calCheckOut = convertCheckOutDate(booking);
+			
+		while (!calCheckIn.after(calCheckOut)) {
+			
+			// Add charge for each night at specified room
+			Charge charge = new ChargeImpl();
+			charge.setDate(new Date());
+			charge.setAmount(room.getRoomType().getPrice());
+			if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
+				charge.setChargeType(ChargeType.SINGLE_ROOM);
+			} else if (room.getRoomType().getRoomTypeName() == RoomTypeName.DOUBLE_ROOM) {
+				charge.setChargeType(ChargeType.DOUBLE_ROOM);
+			} else {
+				charge.setChargeType(ChargeType.FAMILY_SUITE);
+			}
+			booking.getBill().getCharge().add(charge);
+			calCheckIn.add(Calendar.DAY_OF_MONTH, 1);
+		}
+	}
+	
 	/**
 	 * Adds a room to a pending booking. Method is synchronized to avoid that
 	 * several customers adds the same room to their bookings at the same time.
@@ -574,12 +606,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		Calendar calCheckIn = convertCheckInDate(booking);
 		Calendar calCheckOut = convertCheckOutDate(booking);
 		
-		// Retrieve date fields
-		int checkInDay = calCheckIn.get(Calendar.DAY_OF_MONTH);
-		int checkOutDay = calCheckOut.get(Calendar.DAY_OF_MONTH);
-		
 		if (free) {
-			while (checkInDay != checkOutDay) {
+			while (!calCheckIn.after(calCheckOut)) {
 				
 				// Add charge for each night at specified room
 				Charge charge = new ChargeImpl();
@@ -593,10 +621,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					charge.setChargeType(ChargeType.FAMILY_SUITE);
 				}
 				booking.getBill().getCharge().add(charge);
-				
-				// Increment to next day (Does not work yet when entering new month
-				calCheckIn.set(Calendar.DAY_OF_MONTH, calCheckIn.get(Calendar.DAY_OF_MONTH)+1);
-				checkInDay++;
+				calCheckIn.add(Calendar.DAY_OF_MONTH, 1);
 			}
 			return "Room " + roomNr + " was successfully added to pending booking";
 		} 

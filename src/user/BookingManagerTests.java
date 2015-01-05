@@ -106,12 +106,7 @@ public class BookingManagerTests {
 
 		// Check that the concerned room(s) is booked during check-in and
 		// check-out dates
-		// assertEquals(4,
-		// bookingManagement.getConfirmedBookings().get(0).getRooms().get(0).getBookedDates().size());
-		// assertEquals(4,
-		// bookingManagement.getConfirmedBookings().get(0).getRooms().get(1).getBookedDates().size());
-		// assertEquals(0,
-		// checkIn.compareTo(bookingManagement.getConfirmedBookings().get(0).getRooms().get(1).getBookedDates().get(0)));
+
 
 	}
 
@@ -120,7 +115,7 @@ public class BookingManagerTests {
 	 * {@link Classes.impl.IBookingManagementImplImpl#updateBooking()}.
 	 * 
 	 * Test how method updateBooking(...) handles a negative nrOfGuests and when
-	 * check-out date is earlier than the check-in date.
+	 * check-out date is earlier than the check-in date, and many other scenarios.
 	 */
 	@Test
 	public void test_invalid_UpdateBooking() {
@@ -206,9 +201,13 @@ public class BookingManagerTests {
 						checkOut, nrOfGuests4));
 
 		// Test to add a new room during same dates (room should be available)
+		assertEquals(1, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
+		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
 		assertEquals("Booking was updated successfully",
 				bookingManagement.updateBooking(bookingID, room2, null, null,
 						nrOfGuests4));
+		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
+		assertEquals(4, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
 
 		// Test to add a new room during same dates (room should not be
 		// available)
@@ -261,8 +260,7 @@ public class BookingManagerTests {
 		// Test if check-out date can be extended for a booking when one of the
 		// rooms in the booking will clash with some dates that it is booked
 		// for another customer (room 1 already booked during the last nights
-		// before
-		// the new check-out date)
+		// before the new check-out date)
 		calCheckOut.set(2015, 0, 22, 10, 00);
 		newCheckOut = calCheckOut.getTime();
 		assertEquals(
