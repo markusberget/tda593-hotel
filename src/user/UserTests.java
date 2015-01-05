@@ -49,7 +49,9 @@ public class UserTests {
 	 * the bill is successful.
 	 */
 	@Test
-	public void test_valid_CheckOut() {
+	public void test_checkOut() {
+		
+		// Set up a booking and do some test on checkOut(...) in HotelManagerImpl
 		
 		// Set up of a credit card account for use when paying for the booking/room(s).
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;

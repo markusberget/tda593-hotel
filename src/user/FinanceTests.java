@@ -62,10 +62,11 @@ public class FinanceTests {
 		// Confirm the booking
 		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
 
-		// Calculate the sum of the bill, 200 is expected since 2 nights are
-		// booked
-		assertEquals(200,
-				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
+		// Check what happens if trying to calculate the payment of a non-existing booking
+		assertEquals(-1, bookingManagement.getIFinanceImpl().calculatePayment(5));
+		
+		// Calculate the sum of the bill, 200 is expected since 2 nights are booked
+		assertEquals(200, bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 	}
 
 	/**
