@@ -536,6 +536,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				testTime.setTime(booking.getCheckOut());
 				EList<Room> rooms = booking.getRooms();
 				for (Room room : rooms) {
+						// If a room is not Occupied (checked-in), a check out cannot be performed
 						if (room.getStatus() != RoomStatus.OCCUPIED) {
 							return "Cannot check out from a room that is not checked in";
 						}

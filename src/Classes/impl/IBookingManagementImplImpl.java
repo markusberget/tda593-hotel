@@ -462,6 +462,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				} else {
 					boolean available = true;
 					ListIterator<Booking> iter = bookings.listIterator();
+					// Check if room is available during given dates
 					while (available && iter.hasNext()) {
 						Booking booked = iter.next();
 						if (!booking.getCheckIn().after(booked.getCheckOut()) || 
@@ -576,10 +577,6 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		// Retrieve date fields
 		int checkInDay = calCheckIn.get(Calendar.DAY_OF_MONTH);
 		int checkOutDay = calCheckOut.get(Calendar.DAY_OF_MONTH);
-		int checkInYear = calCheckIn.get(Calendar.YEAR);
-		int checkOutYear = calCheckOut.get(Calendar.YEAR);
-		int checkInMonth = calCheckIn.get(Calendar.MONTH);
-		int checkOutMonth = calCheckOut.get(Calendar.MONTH);
 		
 		if (free) {
 			while (checkInDay != checkOutDay) {
