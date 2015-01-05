@@ -73,7 +73,7 @@ public class BookingManagerTests {
 		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
 
-		// Update checkOut and nrOfGuests of the booking
+		// Update check out date and nrOfGuests of the booking
 		calCheckOut.set(2015, 0, 16, 10, 00);
 		Date newCheckOut1 = calCheckOut.getTime();
 		int newNumberOfGuests = 6;
@@ -103,10 +103,6 @@ public class BookingManagerTests {
 				.get(0).getCheckOut());
 		assertEquals(newNumberOfGuests, bookingManagement
 				.getConfirmedBookings().get(0).getNumberOfGuests());
-
-		// Check that the concerned room(s) is booked during check-in and
-		// check-out dates
-
 
 	}
 
@@ -203,11 +199,15 @@ public class BookingManagerTests {
 		// Test to add a new room during same dates (room should be available)
 		assertEquals(1, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
 		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(200,
+				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 		assertEquals("Booking was updated successfully",
 				bookingManagement.updateBooking(bookingID, room2, null, null,
 						nrOfGuests4));
 		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
 		assertEquals(4, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(400,
+				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 
 		// Test to add a new room during same dates (room should not be
 		// available)
@@ -219,6 +219,7 @@ public class BookingManagerTests {
 		assertEquals("Booking was updated successfully",
 				bookingManagement.updateBooking(bookingID, 0, checkIn,
 						checkOut, nrOfGuests4));
+		assertEquals(checkIn, bookingManagement.getRoom().get(1).getBookings().get(0).getCheckIn());
 
 		// Test if only one room in the booking can be updated with new dates
 		assertEquals(
@@ -256,7 +257,21 @@ public class BookingManagerTests {
 		bookingManagement.addCustomerInformationToBooking(bookingID2, "kol",
 				"beck", "kol.beck@gmail.com", "0444321234");
 		bookingManagement.confirmBooking(bookingID2);
-
+		
+		// Test if new booking can add room2 (already booked during other dates)
+		// and that right amount of charges are added.
+		assertEquals(3, bookingManagement.getConfirmedBookings().get(1).getRooms().size());
+		assertEquals(12, bookingManagement.getConfirmedBookings().get(1).getBill().getCharge().size());
+		assertEquals(1800,
+				bookingManagement.getIFinanceImpl().calculatePayment(bookingID2));
+		assertEquals("Booking was updated successfully",
+				bookingManagement.updateBooking(bookingID2, room2, null, null,
+						nrOfGuests4));
+		assertEquals(4, bookingManagement.getConfirmedBookings().get(1).getRooms().size());
+		assertEquals(16, bookingManagement.getConfirmedBookings().get(1).getBill().getCharge().size());
+		assertEquals(2200,
+				bookingManagement.getIFinanceImpl().calculatePayment(bookingID2));
+		
 		// Test if check-out date can be extended for a booking when one of the
 		// rooms in the booking will clash with some dates that it is booked
 		// for another customer (room 1 already booked during the last nights
@@ -268,11 +283,15 @@ public class BookingManagerTests {
 				bookingManagement.updateBooking(bookingID, 0, checkIn,
 						newCheckOut, nrOfGuests4));
 
-		// Test if a room booked by another customer during this booking's
-		// check-in and
-		// check-out dates can be added to this booking
-		assertEquals("Room could not be added since already booked",
-				bookingManagement.updateBooking(bookingID, room3, null, null,
+		// Test if by extending the stay of a booking, the charges of the room(s)
+		// increases accordingly
+		calCheckOut.set(2015, 0, 19, 10, 00);
+		newCheckOut = calCheckOut.getTime();
+		calCheckIn.set(2015, 0, 16, 12, 00);
+		newCheckIn = calCheckIn.getTime();
+		assertEquals(newCheckIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
+		assertEquals("Booking was updated successfully",
+				bookingManagement.updateBooking(bookingID, 0, null, newCheckOut,
 						nrOfGuests4));
 
 	}
