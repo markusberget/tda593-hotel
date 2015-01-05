@@ -727,7 +727,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @generated NOT
 	 */
 	@Override
-	public EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
+	public synchronized EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests,
 			String roomType, int maximumPrice)
 			throws IllegalArgumentException {
 

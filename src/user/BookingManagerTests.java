@@ -501,9 +501,9 @@ public class BookingManagerTests {
 	 * {@link Classes.impl.IBookingManagementImplImpl#searchRoom(java.util.Date, java.util.Date, java.lang.Class, int, int, int)}
 	 * 
 	 * Tests if the rooms that are returned from the searchRoom method matches
-	 * the parameters that are sent in.
+	 * the parameters that are sent in and tests if exceptions are thrown correctly
+	 * when faulty parameters are sent in.
 	 * 
-	 * No test to check if valid Dates are free yet.
 	 * 
 	 */
 
@@ -536,6 +536,32 @@ public class BookingManagerTests {
 					&& roomType == typeOfRoom.getRoomTypeName().toString());
 		}
 
+		// Tests if returned list is correct if not all parameters are
+		// specified but those who are, are given correctly.
+
+		Room bookedRoom = bookingManagement.getRoomByID(roomIDs.get(0));
+		
+		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
+				numberOfGuests, roomType, maximumPrice);
+		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
+			Integer roomID = (Integer) it.next();
+			Room room = bookingManagement.getRoomByID(roomID);
+			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests());
+		}
+		
+		// Tests if returned list is correct if not all parameters are
+		// specified but those who are, are given correctly.
+
+		roomType = null;
+		maximumPrice = 0;
+		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
+				numberOfGuests, roomType, maximumPrice);
+		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
+			Integer roomID = (Integer) it.next();
+			Room room = bookingManagement.getRoomByID(roomID);
+			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests());
+		}
+		
 		// Tests if returned list is correct if not all parameters are
 		// specified but those who are, are given correctly.
 
