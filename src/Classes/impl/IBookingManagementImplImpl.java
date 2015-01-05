@@ -1044,10 +1044,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public synchronized int createPendingBooking(Date checkIn, Date checkOut,
 			int nrOfGuests) {
-
+		
 		// Test if the check-in date is not later than the check-out date or
 		// that guest count is less than 1 since the customer represents 1 guest
-		if (checkIn.after(checkOut) || nrOfGuests < 1) {
+		if (checkIn == null || checkOut == null || checkIn.after(checkOut) || nrOfGuests < 1) {
 			return -1;
 		}
 		
