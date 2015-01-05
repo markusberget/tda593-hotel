@@ -122,17 +122,18 @@ public class BookingManagerTests {
 		// Set up a booking
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(2015, 0, 12, 12, 00);
-		calCheckOut.set(2015, 0, 14, 10, 00);
+		calCheckIn.set(2015, 0, 16, 12, 00);
+		calCheckOut.set(2015, 0, 18, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
-		int nrOfGuests = 4;
+		int nrOfGuests4 = 4;
+		int room1 = 1, room2 = 2, room3 = 3, room6 = 6, room11 = 11;
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		int bookingID = bookingManagement.createPendingBooking(checkIn,
-				checkOut, nrOfGuests);
+				checkOut, nrOfGuests4);
 		assertEquals(0, bookingID);
-		
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID));
 
 		// Add customer information if this information should be modifiable in
 		// the future
@@ -147,7 +148,7 @@ public class BookingManagerTests {
 				.getCheckIn());
 		assertEquals(checkOut, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckOut());
-		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings()
+		assertEquals(nrOfGuests4, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
 
 		// Update the booking using a negative value for newNumberOfGuests
@@ -161,7 +162,7 @@ public class BookingManagerTests {
 				.getCheckIn());
 		assertEquals(checkOut, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckOut());
-		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings()
+		assertEquals(nrOfGuests4, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
 
 		// Update the booking using a check-in date that is later than the
@@ -171,15 +172,90 @@ public class BookingManagerTests {
 		assertEquals(
 				"Could not update booking, check-in date is later than check-out date",
 				bookingManagement.updateBooking(bookingID, 0, newCheckIn,
-						checkOut, nrOfGuests));
+						checkOut, nrOfGuests4));
 
 		// Check if the "updated" booking contains the desired (old) information
 		assertEquals(checkIn, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckIn());
 		assertEquals(checkOut, bookingManagement.getConfirmedBookings().get(0)
 				.getCheckOut());
-		assertEquals(nrOfGuests, bookingManagement.getConfirmedBookings()
+		assertEquals(nrOfGuests4, bookingManagement.getConfirmedBookings()
 				.get(0).getNumberOfGuests());
+		
+		// Check what happens when trying to update with a room number that does not exist
+		assertEquals("room was not found, check if roomID is correct",
+				bookingManagement.updateBooking(bookingID, room11, null,
+						null, nrOfGuests4));
+		
+		// Check what happens when using a room number less than 0
+		assertEquals("Could not update booking since value of roomID is less than 0",
+				bookingManagement.updateBooking(bookingID, -1, checkIn,
+						checkOut, nrOfGuests4));
+		
+		// Test to add a new room during same dates (room should be available)
+		assertEquals("Booking was updated successfully",
+				bookingManagement.updateBooking(bookingID, room2, null,
+						null, nrOfGuests4));
+		
+		// Test to add a new room during same dates (room should not be available)
+		assertEquals("Room could not be added since already booked",
+				bookingManagement.updateBooking(bookingID, room2, null,
+						null, nrOfGuests4));
+		
+		// Test if the two booked rooms can be booked during new dates
+		assertEquals("Booking was updated successfully",
+				bookingManagement.updateBooking(bookingID, 0, checkIn,
+						checkOut, nrOfGuests4));
+		
+		// Test if only one room in the booking can be updated with new dates
+		assertEquals("Cannot update check-in and check-out dates for a single room only",
+				bookingManagement.updateBooking(bookingID, room1, checkIn,
+						checkOut, nrOfGuests4));
+		
+		calCheckIn.set(2015, 0, 16, 12, 00);
+		calCheckOut.set(2015, 0, 18, 10, 00);
+		newCheckIn = calCheckIn.getTime();
+		Date newCheckOut = calCheckOut.getTime();
+		
+		// Update booking with new dates when rooms are available
+		assertEquals("Booking was updated successfully",
+				bookingManagement.updateBooking(bookingID, 0, newCheckIn,
+						newCheckOut, nrOfGuests4));
+		assertEquals(newCheckIn, bookingManagement.getConfirmedBookings().get(0)
+				.getCheckIn());
+		assertEquals(newCheckOut, bookingManagement.getConfirmedBookings().get(0)
+				.getCheckOut());
+		
+		// Create a booking that has booked room1 during some nights
+		calCheckIn.set(2015, 0, 20, 12, 00);
+		calCheckOut.set(2015, 0, 24, 10, 00);
+		newCheckIn = calCheckIn.getTime();
+		newCheckOut = calCheckOut.getTime();
+		int bookingID2 = bookingManagement.createPendingBooking(newCheckIn,
+				newCheckOut, nrOfGuests4);
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID2));
+		assertEquals("Room 6 was successfully added to pending booking", bookingManagement.addRoomPending(room6, bookingID2));
+		assertEquals("Room 3 was successfully added to pending booking", bookingManagement.addRoomPending(room3, bookingID2));
+		bookingManagement.addCustomerInformationToBooking(bookingID2, "kol",
+				"beck", "kol.beck@gmail.com", "0444321234");
+		bookingManagement.confirmBooking(bookingID2);
+
+		// Test if check-out date can be extended for a booking when one of the
+		// rooms in the booking will clash with some dates that it is booked
+		// for another customer (room 1 already booked during the last nights before
+		// the new check-out date)
+		calCheckOut.set(2015, 0, 22, 10, 00);
+		newCheckOut = calCheckOut.getTime();
+		assertEquals("Could not update booking because date(s) for room(s) already booked",
+				bookingManagement.updateBooking(bookingID, 0, checkIn,
+						newCheckOut, nrOfGuests4));
+		
+		// Test if a room booked by another customer during this booking's check-in and
+		// check-out dates can be added to this booking
+		assertEquals("Room could not be added since already booked",
+				bookingManagement.updateBooking(bookingID, room3, null,
+						null, nrOfGuests4));
+
 	}
 
 	/**
@@ -602,16 +678,30 @@ public class BookingManagerTests {
 		String firstName = "Karl", lastName = "Urban", email = "karl.urban@gmail.com", ph = "0843322";
 		Customer customer = bookingManagement.getPendingBookings()
 				.get(bookingID).getCustomer();
+		
+		// Check that fields are null by default
 		assertNull(customer.getFirstName());
 		assertNull(customer.getLastName());
 		assertNull(customer.getEmail());
 		assertNull(customer.getPhoneNumber());
+		
+		// Add a non-null value for all fields except lastName
 		bookingManagement.addCustomerInformationToBooking(bookingID, firstName,
-				lastName, email, ph);
+				null, email, ph);
+		assertEquals(firstName, customer.getFirstName());
+		assertNull(customer.getLastName());
+		assertEquals(email, customer.getEmail());
+		assertEquals(ph, customer.getPhoneNumber());
+		
+		// Add a null value for all fields except lastName and check if all fields
+		// contain the old values (since null should not change old values)
+		bookingManagement.addCustomerInformationToBooking(bookingID, null,
+				lastName, null, null);
 		assertEquals(firstName, customer.getFirstName());
 		assertEquals(lastName, customer.getLastName());
 		assertEquals(email, customer.getEmail());
 		assertEquals(ph, customer.getPhoneNumber());
+		
 	}
 
 	/**

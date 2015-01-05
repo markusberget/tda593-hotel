@@ -422,6 +422,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * in the booking since a booking is from one date to another. Only arguments
 	 * that are non-null or non-zero is updated. A room can be added to a booking
 	 * if the room is available during specified check-in and check-out dates.
+	 * Only non-null or non-zero (positive) arguments are updated.
 	 * 
 	 * 
 	 * @generated NOT
@@ -445,7 +446,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if (roomID < 0) {
 			return "Could not update booking since value of roomID is less than 0";
 		}
-		if (roomID > 0) {
+		if (roomID > 0 && (checkIn != null || checkOut != null)) {
+			return "Cannot update check-in and check-out dates for a single room only";
+		}
+		if (roomID > 0 && (checkIn == null && checkOut == null)) {
 			Room room = getRoomByID(roomID);
 			if (room == null) {
 				return "room was not found, check if roomID is correct";
@@ -460,10 +464,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					ListIterator<Booking> iter = bookings.listIterator();
 					while (available && iter.hasNext()) {
 						Booking booked = iter.next();
-						available = false;
-						if (booking.getCheckIn().after(booked.getCheckOut()) || 
-								booking.getCheckOut().before(booked.getCheckIn())) {
-							available = true;
+						if (!booking.getCheckIn().after(booked.getCheckOut()) || 
+								!booking.getCheckOut().before(booked.getCheckIn())) {
+							available = false;
 						}
 					}
 					if (available) {
@@ -475,7 +478,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				}
 			}
 		}
-		if (checkIn != null || checkOut != null) {
+		if ((checkIn != null || checkOut != null) && roomID == 0) {
 			// Check if room(s) already booked during any of the desired dates
 			EList<Room> rooms = booking.getRooms();
 			EList<Room> availableRooms = new BasicEList<Room>();	// Used for comparison
@@ -485,15 +488,16 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				ListIterator<Booking> iter = bookings.listIterator();
 				while (available && iter.hasNext()) {
 					Booking booked = iter.next();
-					available = false;
 					// Must check if room already booked during those dates, and if it is,
 					// must check if it is the booking that is supposed to be updated
-					if (booking.getCheckIn().after(booked.getCheckOut()) || 
-							booking.getCheckOut().before(booked.getCheckIn()) ||
-							(booking.getBookingID() == booked.getBookingID() &&
-							booking.getCheckIn() == booked.getCheckIn() &&
-							booking.getCheckOut() == booked.getCheckOut())) {
+					if (booking.getBookingID() == booked.getBookingID()
+							&& booking.getCheckIn() == booked.getCheckIn()
+							&& booking.getCheckOut() == booked.getCheckOut()) {
 						available = true;
+					}
+					else if (!booking.getCheckIn().after(booked.getCheckOut()) || 
+							!booking.getCheckOut().before(booked.getCheckIn())) {
+						available = false;
 					}
 				}
 				// Add room to availableRooms for later comparison if room is available
