@@ -523,6 +523,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		int sumBill = 0;
 		boolean feeExists = false;
 		Calendar currentTime = Calendar.getInstance();
+		currentTime.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, Calendar.HOUR, 00);
 		Calendar testTime = Calendar.getInstance();
 		EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
 		for (Booking booking : bookings) {
@@ -534,6 +535,11 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				}
 				testTime.setTime(booking.getCheckOut());
 				EList<Room> rooms = booking.getRooms();
+				for (Room room : rooms) {
+						if (room.getStatus() != RoomStatus.OCCUPIED) {
+							return "Cannot check out from a room that is not checked in";
+						}
+					}
 				EList<Charge> charges = booking.getBill().getCharge();
 				if (currentTime.after(testTime)) {
 					for (Charge aCharge : charges) {
@@ -551,7 +557,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 						Charge charge = new ChargeImpl();
 						charge.setDate(currentTime.getTime());
 						charge.setAmount(100);
+						charge.setChargeType(ChargeType.LATE_CHECK_OUT_FEE);
 						booking.getBill().getCharge().add(charge);
+						return "Check-out performed after check-out time, Late check-out fee added to bill";
 					}
 				}
 				charges = booking.getBill().getCharge();
