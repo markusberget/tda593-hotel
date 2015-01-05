@@ -137,6 +137,7 @@ public class BookingManagerTests {
 		// the future
 		bookingManagement.addCustomerInformationToBooking(bookingID, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
+		assertEquals("Successfully added 3 breakfast charges to bill", bookingManagement.addExtraCharge(bookingID, "Breakfast", 3));
 		bookingManagement.confirmBooking(bookingID);
 
 		// Check the information of the booking before update
@@ -198,15 +199,15 @@ public class BookingManagerTests {
 
 		// Test to add a new room during same dates (room should be available)
 		assertEquals(1, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
-		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
-		assertEquals(200,
+		assertEquals(5, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(350,
 				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 		assertEquals("Booking was updated successfully",
 				bookingManagement.updateBooking(bookingID, room2, null, null,
 						nrOfGuests4));
 		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
-		assertEquals(4, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
-		assertEquals(400,
+		assertEquals(7, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(550,
 				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 
 		// Test to add a new room during same dates (room should not be
@@ -284,23 +285,25 @@ public class BookingManagerTests {
 						newCheckOut, nrOfGuests4));
 
 		// Test if by extending the stay of a booking, the charges of the room(s)
-		// increases accordingly
+		// increases accordingly (2 more charges since one more night for 2 rooms
 		calCheckOut.set(2015, 0, 19, 10, 00);
 		newCheckOut = calCheckOut.getTime();
 		calCheckIn.set(2015, 0, 16, 12, 00);
 		newCheckIn = calCheckIn.getTime();
 		assertEquals(newCheckIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
 		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
-		assertEquals(4, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
-		assertEquals(400,
+		// 3 Breakfast charges and 4 room charges (2 nights * 2 rooms)
+		assertEquals(7, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(550,
 				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 		assertEquals("Booking was updated successfully",
 				bookingManagement.updateBooking(bookingID, 0, null, newCheckOut,
 						nrOfGuests4));
 		assertEquals(newCheckIn, bookingManagement.getConfirmedBookings().get(0).getCheckIn());
 		assertEquals(2, bookingManagement.getConfirmedBookings().get(0).getRooms().size());
-		assertEquals(6, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
-		assertEquals(600,
+		// 3 Breakfast charges and 6 room charges (3 nights * 2 rooms)
+		assertEquals(9, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
+		assertEquals(750,
 				bookingManagement.getIFinanceImpl().calculatePayment(bookingID));
 	}
 
