@@ -885,6 +885,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public synchronized String cancelBooking(int bookingID) {
 		boolean feeExist = false;
+		Calendar currentTime = Calendar.getInstance();
+		Date currentDate = currentTime.getTime();
+		
 		int billSum = -1;
 		// Save current size of list as concurrent activity may change sizes
 		int listSize = pendingBookings.size();
@@ -893,6 +896,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		// removed from the correct list
 		for (int i = 0; i < listSize; i++) {
 			if (pendingBookings.get(i).getBookingID() == bookingID) {
+				if (currentDate.after(pendingBookings.get(i).getCheckIn())) {
+					return "Cannot cancel a booking after its check-in time";
+				}
 				removeBookedRooms(pendingBookings.get(i));
 				bookingHistory.add(pendingBookings.remove(i));
 				return "Pending booking was successfully cancelled";
@@ -902,6 +908,9 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		listSize = confirmedBookings.size();
 		for (int i = 0; i < listSize; i++) {
 			if (confirmedBookings.get(i).getBookingID() == bookingID) {
+				if (currentDate.after(confirmedBookings.get(i).getCheckIn())) {
+					return "Cannot cancel a booking after its check-in time";
+				}
 				// Check that a cancellation fee (if existing) has been paid before canceling
 				EList<Charge> charges = confirmedBookings.get(i).getBill().getCharge();
 				for (Charge charge : charges) {
