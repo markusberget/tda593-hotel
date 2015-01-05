@@ -364,7 +364,9 @@ public class BookingManagerTests {
 	 * {@link Classes.impl.IBookingManagementImplImpl#confirmBooking(int)}.
 	 * 
 	 * Two pending bookings are created, and then they are confirmed in reverse
-	 * order.
+	 * order. Some specific information must have been added to a pending booking
+	 * for it to be able to become a confirmed booking, and it is checked what
+	 * happens when some of these required information are left out.
 	 */
 	@Test
 	public void testConfirmBooking() {
@@ -384,21 +386,33 @@ public class BookingManagerTests {
 		int bookingID2 = bookingManagement.createPendingBooking(checkIn,
 				checkOut, numberOfGuests4);
 		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
-				"Hansen", "helly.hansen@gmail.com", "0734321234");
+				null, "helly.hansen@gmail.com", "0734321234");
+		// Check what happens when trying to confirm a pending booking that is missing
+		// required information
+		assertEquals("Must fill in First Name", bookingManagement.confirmBooking(bookingID2));
+		assertEquals("Must fill in Last Name", bookingManagement.confirmBooking(bookingID1));
+		bookingManagement.addCustomerInformationToBooking(bookingID1, "Helly",
+				"Hansen", null, "0734321234");
+		
+		// Booking should be confirmed since only either the email or the phone number
+		// is required to be able to confirm a booking
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID1));
 		bookingManagement.addCustomerInformationToBooking(bookingID2, "Helly",
 				"Hansen", "helly.hansen@gmail.com", "0734321234");
 		assertEquals(1, bookingID2);
-		assertEquals(2, bookingManagement.getPendingBookings().size());
-		assertEquals(0, bookingManagement.getConfirmedBookings().size());
-		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID2));
 		assertEquals(1, bookingManagement.getPendingBookings().size());
 		assertEquals(1, bookingManagement.getConfirmedBookings().size());
-		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID1));
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID2));
 		assertEquals(0, bookingManagement.getPendingBookings().size());
 		assertEquals(2, bookingManagement.getConfirmedBookings().size());
-		assertEquals(numberOfGuests4, bookingManagement.getConfirmedBookings()
-				.get(0).getNumberOfGuests());
+		
+		// try to confirm an already confirmed booking
+		assertEquals("Booking could not be found, please try another bookingID", bookingManagement.confirmBooking(bookingID1));
+		assertEquals(0, bookingManagement.getPendingBookings().size());
+		assertEquals(2, bookingManagement.getConfirmedBookings().size());
 		assertEquals(numberOfGuests6, bookingManagement.getConfirmedBookings()
+				.get(0).getNumberOfGuests());
+		assertEquals(numberOfGuests4, bookingManagement.getConfirmedBookings()
 				.get(1).getNumberOfGuests());
 	}
 
@@ -610,9 +624,9 @@ public class BookingManagerTests {
 	 */
 	@Test
 	public void testCreatePendingBooking() {
-		Classes.impl.IBookingManagementImplImpl pendingBooking = Classes.impl.IBookingManagementImplImpl
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
-		assertEquals(0, pendingBooking.getPendingBookings().size());
+		assertEquals(0, bookingManagement.getPendingBookings().size());
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
 		calCheckIn.set(2015, 0, 12, 12, 00);
@@ -620,32 +634,32 @@ public class BookingManagerTests {
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests6 = 6;
-		int bookingID1 = pendingBooking.createPendingBooking(checkIn, checkOut,
+		int bookingID1 = bookingManagement.createPendingBooking(checkIn, checkOut,
 				nrOfGuests6);
 		assertTrue(0 == bookingID1);
-		assertEquals(1, pendingBooking.getPendingBookings().size());
+		assertEquals(1, bookingManagement.getPendingBookings().size());
 		assertEquals(checkIn,
-				pendingBooking.getPendingBookings().get(bookingID1)
+				bookingManagement.getPendingBookings().get(bookingID1)
 						.getCheckIn());
 		assertEquals(checkOut,
-				pendingBooking.getPendingBookings().get(bookingID1)
+				bookingManagement.getPendingBookings().get(bookingID1)
 						.getCheckOut());
 		assertEquals(nrOfGuests6,
-				pendingBooking.getPendingBookings().get(bookingID1)
+				bookingManagement.getPendingBookings().get(bookingID1)
 						.getNumberOfGuests());
 		int nrOfGuests4 = 4;
-		int bookingID2 = pendingBooking.createPendingBooking(checkIn, checkOut,
+		int bookingID2 = bookingManagement.createPendingBooking(checkIn, checkOut,
 				nrOfGuests4);
 		assertTrue(1 == bookingID2);
-		assertEquals(2, pendingBooking.getPendingBookings().size());
+		assertEquals(2, bookingManagement.getPendingBookings().size());
 		assertEquals(checkIn,
-				pendingBooking.getPendingBookings().get(bookingID2)
+				bookingManagement.getPendingBookings().get(bookingID2)
 						.getCheckIn());
 		assertEquals(checkOut,
-				pendingBooking.getPendingBookings().get(bookingID2)
+				bookingManagement.getPendingBookings().get(bookingID2)
 						.getCheckOut());
 		assertEquals(nrOfGuests4,
-				pendingBooking.getPendingBookings().get(bookingID2)
+				bookingManagement.getPendingBookings().get(bookingID2)
 						.getNumberOfGuests());
 	}
 	
