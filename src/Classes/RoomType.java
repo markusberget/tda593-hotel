@@ -166,7 +166,7 @@ public interface RoomType extends EObject {
 	 * It is bidirectional and its opposite is '{@link Classes.Room#getRoomType <em>Room Type</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Room</em>' reference isn't clear,
+	 * If the meaning of the '<em>Room</em>' reference list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->

@@ -413,6 +413,18 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setBill(Bill newBill) {
+		Bill oldBill = bill;
+		bill = newBill;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__BILL, oldBill, bill));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * @generated NOT
 	 */
 	public NotificationChain basicSetBill(Bill newBill, NotificationChain msgs) {
@@ -423,25 +435,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void setBill(Bill newBill) {
-		if (newBill != bill) {
-			NotificationChain msgs = null;
-			if (bill != null)
-				msgs = ((InternalEObject)bill).eInverseRemove(this, ClassesPackage.BILL__BOOKING, Bill.class, msgs);
-			if (newBill != null)
-				msgs = ((InternalEObject)newBill).eInverseAdd(this, ClassesPackage.BILL__BOOKING, Bill.class, msgs);
-			msgs = basicSetBill(newBill, msgs);
-			if (msgs != null) msgs.dispatch();
-		}
-		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.BOOKING__BILL, newBill, newBill));
 	}
 
 	/**
@@ -473,10 +466,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				if (iBookingManagementImpl != null)
 					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__CONFIRMED_BOOKINGS, IBookingManagementImpl.class, msgs);
 				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
-			case ClassesPackage.BOOKING__BILL:
-				if (bill != null)
-					msgs = ((InternalEObject)bill).eInverseRemove(this, ClassesPackage.BILL__BOOKING, Bill.class, msgs);
-				return basicSetBill((Bill)otherEnd, msgs);
 			case ClassesPackage.BOOKING__ROOMS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRooms()).basicAdd(otherEnd, msgs);
 		}
@@ -495,8 +484,6 @@ public class BookingImpl extends MinimalEObjectImpl.Container implements Booking
 				return basicSetCustomer(null, msgs);
 			case ClassesPackage.BOOKING__IBOOKING_MANAGEMENT_IMPL:
 				return basicSetIBookingManagementImpl(null, msgs);
-			case ClassesPackage.BOOKING__BILL:
-				return basicSetBill(null, msgs);
 			case ClassesPackage.BOOKING__ROOMS:
 				return ((InternalEList<?>)getRooms()).basicRemove(otherEnd, msgs);
 		}

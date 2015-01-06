@@ -91,6 +91,12 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
+			case ClassesPackage.IPERSON: {
+				IPerson iPerson = (IPerson)theEObject;
+				T result = caseIPerson(iPerson);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: {
 				IBookingManagementImpl iBookingManagementImpl = (IBookingManagementImpl)theEObject;
 				T result = caseIBookingManagementImpl(iBookingManagementImpl);
@@ -109,12 +115,6 @@ public class ClassesSwitch<T> extends Switch<T> {
 				StaffMember staffMember = (StaffMember)theEObject;
 				T result = caseStaffMember(staffMember);
 				if (result == null) result = caseIPerson(staffMember);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
-			case ClassesPackage.IPERSON: {
-				IPerson iPerson = (IPerson)theEObject;
-				T result = caseIPerson(iPerson);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

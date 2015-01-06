@@ -192,7 +192,6 @@ public interface Booking extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Bill</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link Classes.Bill#getBooking <em>Booking</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Bill</em>' reference isn't clear,
@@ -202,8 +201,7 @@ public interface Booking extends EObject {
 	 * @return the value of the '<em>Bill</em>' reference.
 	 * @see #setBill(Bill)
 	 * @see Classes.ClassesPackage#getBooking_Bill()
-	 * @see Classes.Bill#getBooking
-	 * @model opposite="booking" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	Bill getBill();

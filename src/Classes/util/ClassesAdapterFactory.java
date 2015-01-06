@@ -84,6 +84,10 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createCustomerAdapter();
 			}
 			@Override
+			public Adapter caseIPerson(IPerson object) {
+				return createIPersonAdapter();
+			}
+			@Override
 			public Adapter caseIBookingManagementImpl(IBookingManagementImpl object) {
 				return createIBookingManagementImplAdapter();
 			}
@@ -94,10 +98,6 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseStaffMember(StaffMember object) {
 				return createStaffMemberAdapter();
-			}
-			@Override
-			public Adapter caseIPerson(IPerson object) {
-				return createIPersonAdapter();
 			}
 			@Override
 			public Adapter caseIHotelManager(IHotelManager object) {

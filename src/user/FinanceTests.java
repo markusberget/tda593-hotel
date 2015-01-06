@@ -104,8 +104,12 @@ public class FinanceTests {
 		try {
 			bankingAdmin = se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires
 					.instance();
+			
+			// ensure that the credit card doesn't already exist. 
 			bankingAdmin.removeCreditCard(ccNumber, ccv, expiryMonth,
 					expiryYear, firstName, lastName);
+			
+			
 			assertTrue(bankingAdmin.addCreditCard(ccNumber, ccv, expiryMonth,
 					expiryYear, firstName, lastName));
 			assertEquals(0.0, bankingAdmin.getBalance(ccNumber, ccv,
