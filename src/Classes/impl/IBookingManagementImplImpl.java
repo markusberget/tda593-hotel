@@ -449,6 +449,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if (roomID > 0 && (checkIn != null || checkOut != null)) {
 			return "Cannot update check-in and check-out dates for a single room only";
 		}
+		
+		// if we are adding a new room to the booking. 
 		if (roomID > 0 && (checkIn == null && checkOut == null)) {
 			Room room = getRoomByID(roomID);
 			if (room == null) {
@@ -482,6 +484,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				}
 			}
 		}
+		
+		// If we are changing the checkIn and checkOut times of the booking.
 		if ((checkIn != null || checkOut != null) && roomID == 0) {
 			// Check if room(s) already booked during any of the desired dates
 			if (checkIn == null) {
