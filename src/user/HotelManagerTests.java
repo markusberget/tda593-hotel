@@ -247,20 +247,21 @@ public class HotelManagerTests {
 		int room1 = 1;
 		
 		assertNotNull(hotelManagement);
+		assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
 		
 		// Check that the room has its default status
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
 		
 		// Change status of room to the different types that are available for choosing
-		assertEquals("Changed status of room 1 to Cleaning", hotelManagement.changeStatusOfRoom(room1, "Cleaning"));
+		assertEquals("Changed status of room 1 to Cleaning", hotelManagement.changeStatusOfRoom(room1, "Cleaning", Util.adminUsername));
 		assertEquals(RoomStatus.CLEANING, bookingManagement.getRoomByID(room1).getStatus());
-		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available"));
+		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available", Util.adminUsername));
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
-		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied"));
+		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied", Util.adminUsername));
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
 		
 		// Test what happens if a non-existing room status is entered 
-		assertEquals("Status of room could not be changed", hotelManagement.changeStatusOfRoom(room1, "NONEXISTENT"));
+		assertEquals("Status of room could not be changed", hotelManagement.changeStatusOfRoom(room1, "NONEXISTENT", Util.adminUsername));
 		// Check that the room's status is still the same as before
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
 	}
