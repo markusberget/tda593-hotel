@@ -300,15 +300,15 @@ public class HotelManagerTests {
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
 		
 		// Change status of room to the different types that are available for choosing
-		assertEquals("Changed status of room 1 to Cleaning", hotelManagement.changeStatusOfRoom(room1, "Cleaning"));
+		assertEquals("Changed status of room 1 to Cleaning", hotelManagement.changeStatusOfRoom(room1, "Cleaning", Util.adminUsername));
 		assertEquals(RoomStatus.CLEANING, bookingManagement.getRoomByID(room1).getStatus());
-		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available"));
+		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available", Util.adminUsername));
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
-		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied"));
+		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied", Util.adminUsername));
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
 		
 		// Test what happens if a non-existing room status is entered 
-		assertEquals("Status of room could not be changed", hotelManagement.changeStatusOfRoom(room1, "NONEXISTENT"));
+		assertEquals("Status of room could not be changed", hotelManagement.changeStatusOfRoom(room1, "NONEXISTENT", Util.adminUsername));
 		// Check that the room's status is still the same as before
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
 	}
@@ -381,12 +381,12 @@ public class HotelManagerTests {
 		
 		// Set room to Occupied and check that it is not possible to check-in
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
-		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied"));
+		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied", Util.adminUsername));
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
-		assertEquals("Cannot check in since room is currently not available", hotelManagement.checkIn(room1));
+		assertEquals("Cannot check in since room is currently not available", hotelManagement.checkIn(room1, Util.adminUsername));
 		
 		// Try to check in to a non-existing room
-		assertEquals("Room was not found, please try another room number", hotelManagement.checkIn(room11));
+		assertEquals("Room was not found, please try another room number", hotelManagement.checkIn(room11, Util.adminUsername));
 		
 		// Check in to a room (the room must have been booked for that date)
 		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
@@ -396,7 +396,7 @@ public class HotelManagerTests {
 		int nrOfGuests1 = 1;
 		
 		// Set room status to Available to make it possible to check-in
-		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available"));
+		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available", Util.adminUsername));
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
 		
 		// Try to check in to a room when no booking is made for room
@@ -435,28 +435,28 @@ public class HotelManagerTests {
 		assertTrue(checkInDate.compareTo(bookingManagement.getRoomByID(room2).getBookings().get(0).getCheckIn()) == 0);
 		
 		// Check in
-		assertEquals("Checked in successfully to rooms [2, 3]", hotelManagement.checkInBooking(bookingID2));
+		assertEquals("Checked in successfully to rooms [2, 3]", hotelManagement.checkInBooking(bookingID2, Util.adminUsername));
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room2).getStatus());
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room3).getStatus());
 		
 		// Staff changes status of all three rooms to Available so all can be checked in
-		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available"));
-		assertEquals("Changed status of room 2 to Available", hotelManagement.changeStatusOfRoom(room2, "Available"));
-		assertEquals("Changed status of room 3 to Available", hotelManagement.changeStatusOfRoom(room3, "Available"));
+		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available", Util.adminUsername));
+		assertEquals("Changed status of room 2 to Available", hotelManagement.changeStatusOfRoom(room2, "Available", Util.adminUsername));
+		assertEquals("Changed status of room 3 to Available", hotelManagement.changeStatusOfRoom(room3, "Available", Util.adminUsername));
 		
 		// Set status of room3 to cleaning so customer cannot be checked in to that room
-		assertEquals("Changed status of room 3 to Cleaning", hotelManagement.changeStatusOfRoom(room3, "Cleaning"));
+		assertEquals("Changed status of room 3 to Cleaning", hotelManagement.changeStatusOfRoom(room3, "Cleaning", Util.adminUsername));
 		
 		// Check in bookingID2 again
-		assertEquals("Failed to check in to rooms [3]", hotelManagement.checkInBooking(bookingID2));
+		assertEquals("Failed to check in to rooms [3]", hotelManagement.checkInBooking(bookingID2, Util.adminUsername));
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room2).getStatus());
 		assertEquals(RoomStatus.CLEANING, bookingManagement.getRoomByID(room3).getStatus());
 		
 		// Try to check in using a non-existing bookingID
 		int bookingID3 = 3;
-		assertEquals("Booking was not found, please try another bookingID", hotelManagement.checkInBooking(bookingID3));
+		assertEquals("Booking was not found, please try another bookingID", hotelManagement.checkInBooking(bookingID3, Util.adminUsername));
 	}
 	
 	/**
@@ -536,7 +536,7 @@ public class HotelManagerTests {
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room2).getStatus());
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room3).getStatus());
-		assertEquals("Checked in successfully to rooms [1, 2, 3]", hotelManagement.checkInBooking(bookingID1));
+		assertEquals("Checked in successfully to rooms [1, 2, 3]", hotelManagement.checkInBooking(bookingID1, Util.adminUsername));
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room2).getStatus());
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room3).getStatus());
@@ -557,13 +557,13 @@ public class HotelManagerTests {
 		assertEquals("Check-out failed, bill has not been fully paid yet", hotelManagement.checkOut(bookingID1));
 		
 		// try to check out from a room (booking) that has not yet been checked in.
-		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available"));
-		assertEquals("Changed status of room 2 to Available", hotelManagement.changeStatusOfRoom(room2, "Available"));
-		assertEquals("Changed status of room 3 to Available", hotelManagement.changeStatusOfRoom(room3, "Available"));
+		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available", Util.adminUsername));
+		assertEquals("Changed status of room 2 to Available", hotelManagement.changeStatusOfRoom(room2, "Available", Util.adminUsername));
+		assertEquals("Changed status of room 3 to Available", hotelManagement.changeStatusOfRoom(room3, "Available", Util.adminUsername));
 		assertEquals("Cannot check out from a room that is not checked in", hotelManagement.checkOut(bookingID1));
-		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied"));
-		assertEquals("Changed status of room 2 to Occupied", hotelManagement.changeStatusOfRoom(room2, "Occupied"));
-		assertEquals("Changed status of room 3 to Occupied", hotelManagement.changeStatusOfRoom(room3, "Occupied"));
+		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied", Util.adminUsername));
+		assertEquals("Changed status of room 2 to Occupied", hotelManagement.changeStatusOfRoom(room2, "Occupied", Util.adminUsername));
+		assertEquals("Changed status of room 3 to Occupied", hotelManagement.changeStatusOfRoom(room3, "Occupied", Util.adminUsername));
 		
 		// Try to check out after the check-out time (for the first time)
 		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH-2, 12, 00);

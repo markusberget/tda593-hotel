@@ -59,7 +59,7 @@ public class UserTests {
 				
 		for (Object roomID : roomIds) {
 			int rID = (int) roomID;
-			System.out.println(bookingManagement.getIHotelManagerImpl().changeStatusOfRoom(rID, "Occupied"));
+			System.out.println(bookingManagement.getIHotelManagerImpl().changeStatusOfRoom(rID, "Occupied", Util.adminUsername));
 			
 			assertEquals("Status should be changed", "Occupied", bookingManagement.getRoomByID(rID).getStatus().toString());
 		}
