@@ -103,7 +103,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM__BOOKINGS = 3;
-<<<<<<< HEAD
 
 	/**
 	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
@@ -113,8 +112,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM__IBOOKING_MANAGEMENT_IMPL = 4;
-=======
->>>>>>> 5fc6d03b5414471bbead6b757637133e33863d10
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -123,11 +120,8 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-<<<<<<< HEAD
 	int ROOM_FEATURE_COUNT = 5;
-=======
-	int ROOM_FEATURE_COUNT = 4;
->>>>>>> 5fc6d03b5414471bbead6b757637133e33863d10
+	int ROOM_FEATURE_COUNT1 = 4;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.

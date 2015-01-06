@@ -289,7 +289,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-<<<<<<< HEAD
 	public EReference getRoom_IBookingManagementImpl() {
 		return (EReference)roomEClass.getEStructuralFeatures().get(4);
 	}
@@ -299,8 +298,6 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-=======
->>>>>>> 5fc6d03b5414471bbead6b757637133e33863d10
 	public EClass getRoomType() {
 		return roomTypeEClass;
 	}

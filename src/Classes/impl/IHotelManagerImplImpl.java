@@ -652,7 +652,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-	public void addRoom(String roomType, int roomNbr, String adminUsername) {
+/*	public void addRoom(String roomType, int roomNbr, String adminUsername) {
 		Room room = new RoomImpl();
 		room.setRoomNumber(roomNbr);
 		if(roomType == (r.getRoomType().getRoomTypeName())){
@@ -661,7 +661,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		}
 		room.setStatus(RoomStatus.AVAILABLE);
 		throw new UnsupportedOperationException();
-	}
+	}*/
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -840,6 +840,12 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 			return null;
 		}
 		return super.eInvoke(operationID, arguments);
+	}
+
+	@Override
+	public void addRoom(String roomType, int roomNbr, String adminUsername) {
+		// TODO Auto-generated method stub
+		
 	}
 
 } // IHotelManagerImplImpl
