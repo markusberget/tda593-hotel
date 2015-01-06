@@ -585,7 +585,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @generated
+	 * @generated NOT
 	 */
 	public void changeStatusOfRoom(String staffMemberUsername, int roomId, RoomStatus status) {
 		// TODO: implement this method
