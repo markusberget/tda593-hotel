@@ -449,6 +449,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		if (roomID > 0 && (checkIn != null || checkOut != null)) {
 			return "Cannot update check-in and check-out dates for a single room only";
 		}
+		
+		// if we are adding a new room to the booking. 
 		if (roomID > 0 && (checkIn == null && checkOut == null)) {
 			Room room = getRoomByID(roomID);
 			if (room == null) {
@@ -469,6 +471,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 						if (!booking.getCheckIn().after(booked.getCheckOut()) && 
 								!booking.getCheckOut().before(booked.getCheckIn())) {
 							available = false;
+							break;
 						}
 					}
 					if (available) {
@@ -481,6 +484,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				}
 			}
 		}
+		
+		// If we are changing the checkIn and/or checkOut times of the booking.
 		if ((checkIn != null || checkOut != null) && roomID == 0) {
 			// Check if room(s) already booked during any of the desired dates
 			if (checkIn == null) {
@@ -505,6 +510,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 							checkOut.after(booked.getCheckIn())) &&
 							bookingID != booked.getBookingID()) {
 						available = false;
+						break;
 					}
 				}
 				// Add room to availableRooms for later comparison if room is available
@@ -615,7 +621,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public synchronized String addRoomPending(int roomNr, int bookingID) {
 		Booking booking = getPendingBooking(bookingID);
 		Room room = getRoomByID(roomNr);
-		boolean free = true;
+		boolean free = true;		// Used for adding charges for each night for each room
 		
 		// Check if booking exists
 		if (booking == null) {

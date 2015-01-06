@@ -1,13 +1,14 @@
 package user;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Calendar;
 import java.util.Date;
 
 import javax.xml.soap.SOAPException;
 
-import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -35,7 +36,7 @@ public class UserTests {
 	 }
 	 
 	 /**
-	  * Test method for checkin
+	  * Test method for checkin		TODO:// This method does not really test the checkIn method
 	  */
 	 @Test
 	 public void test_checkIn(){
@@ -44,6 +45,7 @@ public class UserTests {
 		assertTrue(bookingManagement.getIHotelManagerImpl().login(Util.adminUsername, Util.adminPassword));
 		//Create booking to check in for
 		Calendar cal = Calendar.getInstance();	
+		cal.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
 		Date checkIn = cal.getTime();
 		cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
 		Date checkOut = cal.getTime();
@@ -52,18 +54,17 @@ public class UserTests {
 		int room = bookingManagement.getRoom().get(0).getRoomNumber();
 		bookingManagement.addRoomPending(room, bookingID);
 		bookingManagement.addCustomerInformationToBooking(bookingID, "John", "Doe", "john@doe.se", "0123-2131312");
-		bookingManagement.confirmBooking(bookingID);
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
 		//End create booking
 		
-		@SuppressWarnings("rawtypes")
-		EList roomIds = bookingManagement.getRoomsOfBooking(bookingID);
-				
-		for (Object roomID : roomIds) {
-			int rID = (int) roomID;
-			System.out.println(bookingManagement.getIHotelManagerImpl().changeStatusOfRoom(rID, "Occupied", Util.adminUsername));
-			
-			assertEquals("Status should be changed", "Occupied", bookingManagement.getRoomByID(rID).getStatus().toString());
-		}
+		
+		//Check in
+		System.out.println(bookingManagement.getIHotelManagerImpl().checkInBooking(bookingID, Util.adminUsername));
+
+		
+		//Making sure all rooms are occupied
+		assertEquals("Occupied", bookingManagement.getRoomByID(room).getStatus().toString());
+
 	 }
 
 	/**
@@ -82,7 +83,7 @@ public class UserTests {
 	 * the bill is successful.
 	 */
 	@Test
-	public void test_checkOut() {
+	public void test_valid_checkOut() {
 
 		// Set up of a credit card account for use when paying for the booking/room(s).
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
