@@ -374,6 +374,9 @@ public class HotelManagerTests {
 		IHotelManager hotelManagement = bookingManagement.getIHotelManagerImpl();
 		assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
 		int room1 = 1, room2 = 2, room3 = 3;
+		assertEquals(6, bookingManagement.getRoom().size());
+		hotelManagement.addRoom("SingleRoom", 222, Util.adminUsername);
+		assertEquals(7, bookingManagement.getRoom().size());
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);

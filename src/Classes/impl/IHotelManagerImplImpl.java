@@ -638,11 +638,18 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 			if (addRoom) {
 				Room room = new RoomImpl();
 				room.setRoomNumber(roomNbr);
+					
+				RoomType roomtypen = new RoomTypeImpl();
+				room.setRoomType(roomtypen);
+				if (roomType == RoomTypeName.SINGLE_ROOM.toString()) {
+			    room.getRoomType().setRoomTypeName(RoomTypeName.SINGLE_ROOM);
+				} else if (roomType == RoomTypeName.DOUBLE_ROOM.toString()) {
+			    room.getRoomType().setRoomTypeName(RoomTypeName.DOUBLE_ROOM);
+				} else if (roomType == RoomTypeName.FAMILY_SUITE.toString()) {
+			    room.getRoomType().setRoomTypeName(RoomTypeName.FAMILY_SUITE);
+				}
 
-				//Här försöker jag komma vilken roomType jag skall tilldela rummet
-
-
-				room.getRoomType().setRoomTypeName(type);
+				//room.getRoomType().setRoomTypeName(type);
 
 				room.setStatus(RoomStatus.AVAILABLE);
 //				getIBookingManagementImpl().room.add(room);
