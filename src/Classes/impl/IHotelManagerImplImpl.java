@@ -618,6 +618,16 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void removeRoom(int roomNbr, String adminUsername) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -755,6 +765,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return checkOut((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING:
 				addRoom((String)arguments.get(0), (Integer)arguments.get(1), (String)arguments.get(2));
+				return null;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___REMOVE_ROOM__INT_STRING:
+				removeRoom((Integer)arguments.get(0), (String)arguments.get(1));
 				return null;
 		}
 		return super.eInvoke(operationID, arguments);

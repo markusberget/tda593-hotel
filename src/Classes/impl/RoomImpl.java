@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link Classes.impl.RoomImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
+ *   <li>{@link Classes.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getBookings <em>Bookings</em>}</li>
  * </ul>
  * </p>
@@ -73,6 +74,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected int roomNumber = ROOM_NUMBER_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoomType() <em>Room Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomType()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoomType roomType;
 
 	/**
 	 * The cached value of the '{@link #getBookings() <em>Bookings</em>}' reference list.
@@ -173,6 +184,66 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoomType getRoomType() {
+		if (roomType != null && roomType.eIsProxy()) {
+			InternalEObject oldRoomType = (InternalEObject)roomType;
+			roomType = (RoomType)eResolveProxy(oldRoomType);
+			if (roomType != oldRoomType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
+			}
+		}
+		return roomType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomType basicGetRoomType() {
+		return roomType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRoomType(RoomType newRoomType, NotificationChain msgs) {
+		RoomType oldRoomType = roomType;
+		roomType = newRoomType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__ROOM_TYPE, oldRoomType, newRoomType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoomType(RoomType newRoomType) {
+		if (newRoomType != roomType) {
+			NotificationChain msgs = null;
+			if (roomType != null)
+				msgs = ((InternalEObject)roomType).eInverseRemove(this, ClassesPackage.ROOM_TYPE__ROOM, RoomType.class, msgs);
+			if (newRoomType != null)
+				msgs = ((InternalEObject)newRoomType).eInverseAdd(this, ClassesPackage.ROOM_TYPE__ROOM, RoomType.class, msgs);
+			msgs = basicSetRoomType(newRoomType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__ROOM_TYPE, newRoomType, newRoomType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Booking> getBookings() {
 		if (bookings == null) {
 			bookings = new EObjectWithInverseResolvingEList.ManyInverse<Booking>(Booking.class, this, ClassesPackage.ROOM__BOOKINGS, ClassesPackage.BOOKING__ROOMS);
@@ -189,6 +260,10 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				if (roomType != null)
+					msgs = ((InternalEObject)roomType).eInverseRemove(this, ClassesPackage.ROOM_TYPE__ROOM, RoomType.class, msgs);
+				return basicSetRoomType((RoomType)otherEnd, msgs);
 			case ClassesPackage.ROOM__BOOKINGS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBookings()).basicAdd(otherEnd, msgs);
 		}
@@ -203,6 +278,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				return basicSetRoomType(null, msgs);
 			case ClassesPackage.ROOM__BOOKINGS:
 				return ((InternalEList<?>)getBookings()).basicRemove(otherEnd, msgs);
 		}
@@ -221,6 +298,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return getStatus();
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				return getRoomNumber();
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				if (resolve) return getRoomType();
+				return basicGetRoomType();
 			case ClassesPackage.ROOM__BOOKINGS:
 				return getBookings();
 		}
@@ -241,6 +321,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return;
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber((Integer)newValue);
+				return;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				setRoomType((RoomType)newValue);
 				return;
 			case ClassesPackage.ROOM__BOOKINGS:
 				getBookings().clear();
@@ -264,6 +347,9 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber(ROOM_NUMBER_EDEFAULT);
 				return;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				setRoomType((RoomType)null);
+				return;
 			case ClassesPackage.ROOM__BOOKINGS:
 				getBookings().clear();
 				return;
@@ -283,6 +369,8 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return status != STATUS_EDEFAULT;
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				return roomType != null;
 			case ClassesPackage.ROOM__BOOKINGS:
 				return bookings != null && !bookings.isEmpty();
 		}

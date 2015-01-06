@@ -169,6 +169,10 @@
       <eParameters name="roomNbr" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
       <eParameters name="adminUsername" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
+    <eOperations name="removeRoom" ordered="false" lowerBound="1">
+      <eParameters name="roomNbr" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+      <eParameters name="adminUsername" ordered="false" lowerBound="1" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="IFinanceImpl" eSuperTypes="#//IFinance">
     <eStructuralFeatures xsi:type="ecore:EReference" name="customerProvides" ordered="false"

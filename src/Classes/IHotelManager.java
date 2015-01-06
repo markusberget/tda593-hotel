@@ -151,4 +151,12 @@ public interface IHotelManager extends EObject {
 	 */
 	void addRoom(String roomType, int roomNbr, String adminUsername);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model roomNbrRequired="true" roomNbrOrdered="false" adminUsernameRequired="true" adminUsernameOrdered="false"
+	 * @generated
+	 */
+	void removeRoom(int roomNbr, String adminUsername);
+
 } // IHotelManager
