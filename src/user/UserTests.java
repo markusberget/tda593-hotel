@@ -40,6 +40,55 @@ public class UserTests {
 	 @Test
 	 public void test_checkIn(){
 		IBookingManagementImplImpl bookingManagement = IBookingManagementImplImpl.instantiateForTest();
+		
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
+	
 		 
 		assertTrue(bookingManagement.getIHotelManagerImpl().login(Util.adminUsername, Util.adminPassword));
 		//Create booking to check in for
@@ -83,6 +132,58 @@ public class UserTests {
 	 */
 	@Test
 	public void test_checkOut() {
+<<<<<<< HEAD
+=======
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
+	
+		
+>>>>>>> afae8ccfba735f14d0417f7ddbe5bfcb02931525
 		// Set up of a credit card account for use when paying for the booking/room(s).
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
 		String ccNumber = "01234567", ccv = "123", firstName = "Karl", lastName = "urban";

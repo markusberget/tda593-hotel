@@ -988,7 +988,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHECK_OUT__INT = 15;
+	int IHOTEL_MANAGER___CHECK_OUT__INT_STRING = 15;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
@@ -1168,7 +1168,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL___CHECK_OUT__INT = IHOTEL_MANAGER___CHECK_OUT__INT;
+	int IHOTEL_MANAGER_IMPL___CHECK_OUT__INT_STRING = IHOTEL_MANAGER___CHECK_OUT__INT_STRING;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
@@ -2233,14 +2233,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__ChangeStatusOfRoom__int_String_String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#checkOut(int) <em>Check Out</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IHotelManager#checkOut(int, java.lang.String) <em>Check Out</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check Out</em>' operation.
-	 * @see Classes.IHotelManager#checkOut(int)
+	 * @see Classes.IHotelManager#checkOut(int, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelManager__CheckOut__int();
+	EOperation getIHotelManager__CheckOut__int_String();
 
 	/**
 	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
@@ -3182,7 +3182,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_MANAGER___CHECK_OUT__INT = eINSTANCE.getIHotelManager__CheckOut__int();
+		EOperation IHOTEL_MANAGER___CHECK_OUT__INT_STRING = eINSTANCE.getIHotelManager__CheckOut__int_String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.

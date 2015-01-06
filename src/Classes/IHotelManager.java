@@ -138,9 +138,9 @@ public interface IHotelManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" staffMemberUsernameRequired="true" staffMemberUsernameOrdered="false"
 	 * @generated
 	 */
-	String checkOut(int bookingID);
+	String checkOut(int bookingID, String staffMemberUsername);
 
 } // IHotelManager
