@@ -1489,22 +1489,13 @@ public interface ClassesPackage extends EPackage {
 	int BILL__CHARGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Booking</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL__BOOKING = 1;
-
-	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_FEATURE_COUNT = 2;
+	int BILL_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Bill</em>' class.
@@ -2045,17 +2036,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getBill_Charge();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.Bill#getBooking <em>Booking</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Booking</em>'.
-	 * @see Classes.Bill#getBooking()
-	 * @see #getBill()
-	 * @generated
-	 */
-	EReference getBill_Booking();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.Charge <em>Charge</em>}'.
@@ -3040,14 +3020,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EReference BILL__CHARGE = eINSTANCE.getBill_Charge();
-
-		/**
-		 * The meta object literal for the '<em><b>Booking</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BILL__BOOKING = eINSTANCE.getBill_Booking();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.ChargeImpl <em>Charge</em>}' class.

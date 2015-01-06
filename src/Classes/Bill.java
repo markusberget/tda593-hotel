@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link Classes.Bill#getCharge <em>Charge</em>}</li>
- *   <li>{@link Classes.Bill#getBooking <em>Booking</em>}</li>
  * </ul>
  * </p>
  *
@@ -39,33 +38,5 @@ public interface Bill extends EObject {
 	 * @generated
 	 */
 	EList<Charge> getCharge();
-
-	/**
-	 * Returns the value of the '<em><b>Booking</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link Classes.Booking#getBill <em>Bill</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Booking</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Booking</em>' reference.
-	 * @see #setBooking(Booking)
-	 * @see Classes.ClassesPackage#getBill_Booking()
-	 * @see Classes.Booking#getBill
-	 * @model opposite="bill" required="true" ordered="false"
-	 * @generated
-	 */
-	Booking getBooking();
-
-	/**
-	 * Sets the value of the '{@link Classes.Bill#getBooking <em>Booking</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Booking</em>' reference.
-	 * @see #getBooking()
-	 * @generated
-	 */
-	void setBooking(Booking value);
 
 } // Bill

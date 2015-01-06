@@ -554,10 +554,6 @@
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_rj3jAJQLEeS-CsQQdduDXw" name="Maintenance"/>
     </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_1fha4IHjEeS837TtIXY58g" name="Bill">
-      <ownedAttribute xmi:type="uml:Property" xmi:id="_C_rNMIHkEeS837TtIXY58g" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_C_tCYIHkEeS837TtIXY58g">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_C_rNMYHkEeS837TtIXY58g" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_C_rNMoHkEeS837TtIXY58g" value="1"/>
-      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_9kpH4IHjEeS837TtIXY58g" name="charge" type="_4V4kAIHjEeS837TtIXY58g" association="_9ksLMIHjEeS837TtIXY58g">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_9kpu8IHjEeS837TtIXY58g" value="1"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9kpu8YHjEeS837TtIXY58g" value="*"/>
@@ -569,7 +565,12 @@
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_9ksLM4HjEeS837TtIXY58g" value="1"/>
       </ownedEnd>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_C_tCYIHkEeS837TtIXY58g" memberEnd="_C_tCYYHkEeS837TtIXY58g _C_rNMIHkEeS837TtIXY58g"/>
+    <packagedElement xmi:type="uml:Association" xmi:id="_C_tCYIHkEeS837TtIXY58g" memberEnd="_C_tCYYHkEeS837TtIXY58g _C_rNMIHkEeS837TtIXY58g">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_C_rNMIHkEeS837TtIXY58g" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_C_tCYIHkEeS837TtIXY58g">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_C_rNMYHkEeS837TtIXY58g" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_C_rNMoHkEeS837TtIXY58g" value="1"/>
+      </ownedEnd>
+    </packagedElement>
     <packagedElement xmi:type="uml:Class" xmi:id="_4V4kAIHjEeS837TtIXY58g" name="Charge">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_rgqe4IRxEeSz38BH1WnIsA" name="amount">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/JavaPrimitiveTypes.library.uml#int"/>
