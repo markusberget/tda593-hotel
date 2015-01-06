@@ -396,11 +396,11 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_DyEr8ZWXEeSVorXjRL6sfg" name="roomType">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_DyEr8pWXEeSVorXjRL6sfg" name="password">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_DyEr8pWXEeSVorXjRL6sfg" name="roomNbr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
         </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_DyEr85WXEeSVorXjRL6sfg" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_DyEr85WXEeSVorXjRL6sfg" name="adminUsername">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
     </packagedElement>
