@@ -655,10 +655,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	public void addRoom(String roomType, int roomNbr, String adminUsername) {
 		Room room = new RoomImpl();
 		room.setRoomNumber(roomNbr);
-		if(roomType == (r.getRoomType().getRoomTypeName())){
-		RoomType roomTypeType = new RoomType();
-		room.setRoomType(roomTypeType);
-		}
+//		if (roomType == (r.getRoomType().getRoomTypeName())) {
+//			RoomType roomTypeType = new RoomType();
+//			room.setRoomType(roomTypeType);
+//		}
 		room.setStatus(RoomStatus.AVAILABLE);
 		throw new UnsupportedOperationException();
 	}
