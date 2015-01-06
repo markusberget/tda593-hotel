@@ -658,24 +658,20 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	 * 
 	 * @generated NOT
 	 */
-	public void addRoom(String roomType, int roomNbr, String adminUsername) {
+	public void addRoom(String roomType, int roomNbr, String adminUsername)
+			throws IllegalArgumentException, UnsupportedOperationException {
 		boolean addRoom = false;
 		RoomTypeName type = null;
 		if (isStaffMemberLoggedIn(adminUsername)
-				&& isStaffMemberAdmin(adminUsername)
-				&& !existingRoomNbr(roomNbr)) {
+				&& isStaffMemberAdmin(adminUsername)) {
 			for (ListIterator<RoomTypeName> it = RoomTypeName.VALUES
 					.listIterator(); it.hasNext() && addRoom == false;) {
-
+				if(existingRoomNbr(roomNbr)){
+					throw new IllegalArgumentException("Room number already exists");
+				}
 				type = (RoomTypeName) it.next();
 				if (roomType.equals(type.toString())) {
-					EList<Room> rooms = getIBookingManagementImpl().getRoom();
-					for (Room room : rooms) {
-						if (room.getRoomNumber() == roomNbr) {
-							throw new IllegalArgumentException(
-									"Room number already exists");
-						}
-					}
+
 					Room room = new RoomImpl();
 					room.setRoomNumber(roomNbr);
 
@@ -685,6 +681,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 					room.setRoomType(roomTypen);
 					room.getRoomType().setRoomTypeName(type);
 					room.setStatus(RoomStatus.AVAILABLE);
+
 					getIBookingManagementImpl().getRoom().add(room);
 					addRoom = true;
 
@@ -722,9 +719,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	public void removeRoom(int roomNbr, String adminUsername) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
+
 	}
 
 	/**
