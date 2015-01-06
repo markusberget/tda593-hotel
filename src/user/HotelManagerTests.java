@@ -417,7 +417,7 @@ public class HotelManagerTests {
 		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available", Util.adminUsername));
 		assertEquals("Changed status of room 2 to Available", hotelManagement.changeStatusOfRoom(room2, "Available", Util.adminUsername));
 		assertEquals("Changed status of room 3 to Available", hotelManagement.changeStatusOfRoom(room3, "Available", Util.adminUsername));
-		assertEquals("Cannot check out from a room that is not checked in", hotelManagement.checkOut(bookingID1));
+		assertEquals("Cannot check out from a room that is not checked in", hotelManagement.checkOut(bookingID1, Util.adminUsername));
 		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied", Util.adminUsername));
 		assertEquals("Changed status of room 2 to Occupied", hotelManagement.changeStatusOfRoom(room2, "Occupied", Util.adminUsername));
 		assertEquals("Changed status of room 3 to Occupied", hotelManagement.changeStatusOfRoom(room3, "Occupied", Util.adminUsername));

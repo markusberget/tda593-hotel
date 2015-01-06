@@ -485,7 +485,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			}
 		}
 		
-		// If we are changing the checkIn and checkOut times of the booking.
+		// If we are changing the checkIn and/or checkOut times of the booking.
 		if ((checkIn != null || checkOut != null) && roomID == 0) {
 			// Check if room(s) already booked during any of the desired dates
 			if (checkIn == null) {
@@ -620,9 +620,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public synchronized String addRoomPending(int roomNr, int bookingID) {
 		Booking booking = getPendingBooking(bookingID);
 		Room room = getRoomByID(roomNr);
-		
-		// // TODO: why do we need this variable? Even if I completely remove this variable , all the units tests pass
-		boolean free = true;
+		boolean free = true;		// Used for adding charges for each night for each room
 		
 		// Check if booking exists
 		if (booking == null) {
