@@ -427,6 +427,11 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * @generated NOT
 	 */
 	public String checkInBooking(int bookingID, String staffMemberUsername) {
+		
+		if(this.isStaffMemberLoggedIn(staffMemberUsername)) {
+			return "Staff member is not logged in";
+		}
+		
 			EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
 		Booking booking = null;
 		for (int i = 0; i < bookings.size(); i++) {
