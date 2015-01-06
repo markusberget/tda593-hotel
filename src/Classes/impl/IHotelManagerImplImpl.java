@@ -5,6 +5,8 @@ package Classes.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
+import java.util.Iterator;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -14,6 +16,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
+
 import Classes.Booking;
 import Classes.Charge;
 import Classes.ChargeType;
@@ -22,6 +25,8 @@ import Classes.IBookingManagementImpl;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
+import Classes.RoomType;
+import Classes.RoomTypeName;
 import Classes.StaffMember;
 
 /**
@@ -651,22 +656,33 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	 * @generated NOT
 	 */
 	public void addRoom(String roomType, int roomNbr, String adminUsername) {
+		boolean addRoom = false;
+		RoomTypeName type;
 		if (isStaffMemberLoggedIn(adminUsername)
 				&& isStaffMemberAdmin(adminUsername)
 				&& !existingRoomNbr(roomNbr)) {
+			for (Iterator it = RoomTypeName.VALUES.listIterator(); it.hasNext() && addRoom == false;) {
+				type =  (RoomTypeName) it.next();
+				if (roomType.equals(type.toString())) {
+					addRoom = true;
+				}
+			}
+			if (addRoom) {
+				Room room = new RoomImpl();
+				room.setRoomNumber(roomNbr);
+				room.setRoomType(type);
+				room.setStatus(RoomStatus.AVAILABLE);
 
-			Room room = new RoomImpl();
-			boolean newRoomNumber = true;
+			} else {
+				throw new IllegalArgumentException(
+						"Room type not specified correctly");
+			}
 
-//			if (getIBookingManagementImpl().getRoomByID(roomNbr) == null) {
-//				room.setRoomNumber(roomNbr);
-//			}
-//			if (roomType == (r.getRoomType().getRoomTypeName())) {
-//				RoomType roomTypeType = new RoomType();
-//				room.setRoomType(roomTypeType);
-//			}
-			room.setStatus(RoomStatus.AVAILABLE);
-			throw new UnsupportedOperationException();
+		}
+
+		else {
+			throw new UnsupportedOperationException(
+					"Not logged in or not an admin");
 
 		}
 
