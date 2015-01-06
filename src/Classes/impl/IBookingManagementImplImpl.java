@@ -469,6 +469,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 						if (!booking.getCheckIn().after(booked.getCheckOut()) && 
 								!booking.getCheckOut().before(booked.getCheckIn())) {
 							available = false;
+							break;
 						}
 					}
 					if (available) {
