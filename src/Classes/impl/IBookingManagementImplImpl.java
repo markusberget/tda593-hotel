@@ -1184,6 +1184,26 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated NOT
+	 */
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public EList getRoomsOfBooking(int bookingID) {
+		
+		Booking booking = this.getConfirmedBooking(bookingID);
+		
+		EList<Room> rooms = booking.getRooms();
+		
+		EList roomIds = new BasicEList();
+		for (Room room : rooms) {
+			roomIds.add(room.getRoomNumber());
+		}
+		
+		return roomIds;
+	}
+
+	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @generated
 	 */
@@ -1376,6 +1396,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				return sendConfirmation((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING_INT:
 				return addExtraCharge((Integer)arguments.get(0), (String)arguments.get(1), (Integer)arguments.get(2));
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL___GET_ROOMS_OF_BOOKING__INT:
+				return getRoomsOfBooking((Integer)arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
