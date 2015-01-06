@@ -466,6 +466,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		for (int i = 0; i < bookings.size(); i++) {
 			if (bookings.get(i).getBookingID() == bookingID) {
 				booking = bookings.get(i);
+				break;
 			}
 		}
 		Calendar currentDate = Calendar.getInstance();
