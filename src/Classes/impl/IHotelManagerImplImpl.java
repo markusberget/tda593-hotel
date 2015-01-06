@@ -717,7 +717,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @generated
+	 * @generated NOT
 	 */
 	public void removeRoom(int roomNbr, String adminUsername) {
 		if (isStaffMemberLoggedIn(adminUsername)

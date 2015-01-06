@@ -459,7 +459,7 @@ public class HotelManagerTests {
 	@Test
 	public void addRoom() {
 		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
-		
+		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
 	}
 	
 	/**
