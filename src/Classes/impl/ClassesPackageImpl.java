@@ -766,7 +766,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__CheckOut__int() {
+	public EOperation getIHotelManager__CheckOut__int_String() {
 		return iHotelManagerEClass.getEOperations().get(15);
 	}
 
@@ -1228,7 +1228,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___LOGOUT__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_IN_BOOKING__INT_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING);
-		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_OUT__INT);
+		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_OUT__INT_STRING);
 
 		iFinanceImplEClass = createEClass(IFINANCE_IMPL);
 		createEReference(iFinanceImplEClass, IFINANCE_IMPL__CUSTOMER_PROVIDES);
@@ -1427,8 +1427,9 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		addEParameter(op, ecorePackage.getEString(), "status", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "staffMemberUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelManager__CheckOut__int(), ecorePackage.getEString(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelManager__CheckOut__int_String(), ecorePackage.getEString(), "checkOut", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "staffMemberUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		initEClass(iFinanceImplEClass, IFinanceImpl.class, "IFinanceImpl", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getIFinanceImpl_CustomerProvides(), this.getCustomerProvides(), null, "customerProvides", null, 1, 1, IFinanceImpl.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
