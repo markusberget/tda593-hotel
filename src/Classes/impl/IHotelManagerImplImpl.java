@@ -538,6 +538,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 			return "Staff member is not logged in";
 		}
 		
+		
 		int sumBill = 0;
 		boolean feeExists = false;
 		Calendar currentTime = Calendar.getInstance();
