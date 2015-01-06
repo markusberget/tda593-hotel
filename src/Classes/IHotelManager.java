@@ -122,10 +122,10 @@ public interface IHotelManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" staffMemberUsernameRequired="true" staffMemberUsernameOrdered="false"
 	 * @generated
 	 */
-	String checkInBooking(int bookingID);
+	String checkInBooking(int bookingID, String staffMemberUsername);
 
 	/**
 	 * <!-- begin-user-doc -->

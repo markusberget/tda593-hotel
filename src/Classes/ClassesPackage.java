@@ -952,7 +952,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHECK_IN_BOOKING__INT = 13;
+	int IHOTEL_MANAGER___CHECK_IN_BOOKING__INT_STRING = 13;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -1132,7 +1132,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT = IHOTEL_MANAGER___CHECK_IN_BOOKING__INT;
+	int IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT_STRING = IHOTEL_MANAGER___CHECK_IN_BOOKING__INT_STRING;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -2185,14 +2185,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__Logout__String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#checkInBooking(int) <em>Check In Booking</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IHotelManager#checkInBooking(int, java.lang.String) <em>Check In Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check In Booking</em>' operation.
-	 * @see Classes.IHotelManager#checkInBooking(int)
+	 * @see Classes.IHotelManager#checkInBooking(int, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelManager__CheckInBooking__int();
+	EOperation getIHotelManager__CheckInBooking__int_String();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String) <em>Change Status Of Room</em>}' operation.
@@ -3130,7 +3130,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_MANAGER___CHECK_IN_BOOKING__INT = eINSTANCE.getIHotelManager__CheckInBooking__int();
+		EOperation IHOTEL_MANAGER___CHECK_IN_BOOKING__INT_STRING = eINSTANCE.getIHotelManager__CheckInBooking__int_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Change Status Of Room</b></em>' operation.

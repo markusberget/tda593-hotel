@@ -748,7 +748,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EOperation getIHotelManager__CheckInBooking__int() {
+	public EOperation getIHotelManager__CheckInBooking__int_String() {
 		return iHotelManagerEClass.getEOperations().get(13);
 	}
 
@@ -1226,7 +1226,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_STAFF_MEMBER_PHONE_NUMBER__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___GET_STAFF_MEMBER_ADDRESS__STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___LOGOUT__STRING);
-		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_IN_BOOKING__INT);
+		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_IN_BOOKING__INT_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_OUT__INT);
 
@@ -1418,8 +1418,9 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		op = initEOperation(getIHotelManager__Logout__String(), ecorePackage.getEBoolean(), "logout", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "username", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
-		op = initEOperation(getIHotelManager__CheckInBooking__int(), ecorePackage.getEString(), "checkInBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		op = initEOperation(getIHotelManager__CheckInBooking__int_String(), ecorePackage.getEString(), "checkInBooking", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "bookingID", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "staffMemberUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
 
 		op = initEOperation(getIHotelManager__ChangeStatusOfRoom__int_String(), ecorePackage.getEString(), "changeStatusOfRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomID", 1, 1, IS_UNIQUE, !IS_ORDERED);

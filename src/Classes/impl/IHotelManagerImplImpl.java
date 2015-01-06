@@ -426,8 +426,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * 
 	 * @generated NOT
 	 */
-	public String checkInBooking(int bookingID) {
-		EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
+	public String checkInBooking(int bookingID, String staffMemberUsername) {
+			EList<Booking> bookings = getIBookingManagementImpl().getConfirmedBookings();
 		Booking booking = null;
 		for (int i = 0; i < bookings.size(); i++) {
 			if(bookings.get(i).getBookingID() == bookingID) {
@@ -717,8 +717,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getStaffMemberAddress((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
 				return logout((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT:
-				return checkInBooking((Integer)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT_STRING:
+				return checkInBooking((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:
 				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_OUT__INT:
