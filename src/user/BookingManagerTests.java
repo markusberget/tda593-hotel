@@ -761,28 +761,35 @@ public class BookingManagerTests {
 				checkOut, nrOfGuests2);
 
 		// Test when one customer adds a room
+		assertEquals(0, bookingManagement.getPendingBookings().get(0).getBill().getCharge().size());
 		assertEquals("Room 1 was successfully added to pending booking",
 				bookingManagement.addRoomPending(room1, bookingID1));
+		assertEquals(2, bookingManagement.getPendingBookings().get(0).getBill().getCharge().size());
 		assertEquals(room1, bookingManagement.getPendingBookings().get(0)
 				.getRooms().get(0).getRoomNumber());
 		assertEquals("Room 2 was successfully added to pending booking",
 				bookingManagement.addRoomPending(room2, bookingID1));
+		assertEquals(4, bookingManagement.getPendingBookings().get(0).getBill().getCharge().size());
 		assertEquals(room2, bookingManagement.getPendingBookings().get(0)
 				.getRooms().get(1).getRoomNumber());
 		assertEquals(2, bookingManagement.getPendingBookings().get(0)
 				.getRooms().size());
 
 		// Test when a second customer tries to book same room during same dates
+		assertEquals(0, bookingManagement.getPendingBookings().get(1).getBill().getCharge().size());
 		assertEquals("Room 2 could not be added since already booked",
 				bookingManagement.addRoomPending(room2, bookingID2));
+		
 		assertEquals("Room 1 could not be added since already booked",
 				bookingManagement.addRoomPending(room1, bookingID2));
 		assertEquals(0, bookingManagement.getPendingBookings().get(1)
 				.getRooms().size());
-
+		assertEquals(0, bookingManagement.getPendingBookings().get(1).getBill().getCharge().size());
+		
 		// Let second customer book available room
 		assertEquals("Room 3 was successfully added to pending booking",
 				bookingManagement.addRoomPending(room3, bookingID2));
+		assertEquals(2, bookingManagement.getPendingBookings().get(1).getBill().getCharge().size());
 		assertEquals(room3, bookingManagement.getPendingBookings().get(1)
 				.getRooms().get(0).getRoomNumber());
 
@@ -811,6 +818,7 @@ public class BookingManagerTests {
 				checkOut, nrOfGuests2);
 		assertEquals("Room 1 was successfully added to pending booking",
 				bookingManagement.addRoomPending(room1, bookingID4));
+		assertEquals(38, bookingManagement.getPendingBookings().get(3).getBill().getCharge().size());
 		assertEquals(1, bookingManagement.getPendingBookings().get(3)
 				.getRooms().size());
 		assertEquals(room1, bookingManagement.getPendingBookings().get(3)
