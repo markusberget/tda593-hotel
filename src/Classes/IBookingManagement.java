@@ -89,4 +89,12 @@ public interface IBookingManagement extends EObject {
 	 */
 	String addExtraCharge(int bookingID, String charge, int quantity);
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model required="true" many="false" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @generated
+	 */
+	EList getRoomsOfBooking(int bookingID);
+
 } // IBookingManagement

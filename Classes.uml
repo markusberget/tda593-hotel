@@ -179,6 +179,14 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_kH6g8JWOEeSfEcy8cygQTA" name="getRoomsOfBooking">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_qDw0UJWOEeSfEcy8cygQTA" name="bookingID">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_sJa5QJWOEeSfEcy8cygQTA" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EEList"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Interface" xmi:id="_bD0GwHYfEeS6mLi5FsOguA" name="IFinance">
       <ownedOperation xmi:type="uml:Operation" xmi:id="_e5Z4QHYfEeS6mLi5FsOguA" name="calculatePayment" visibility="public">
@@ -352,19 +360,14 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EBoolean"/>
         </ownedParameter>
       </ownedOperation>
-      <ownedOperation xmi:type="uml:Operation" xmi:id="_Q0FKYJINEeSHN9kF6UqsXw" name="checkIn">
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_Vm6AMJINEeSHN9kF6UqsXw" name="roomID">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
-        </ownedParameter>
-        <ownedParameter xmi:type="uml:Parameter" xmi:id="_XhcaQJINEeSHN9kF6UqsXw" direction="return">
-          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
-        </ownedParameter>
-      </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ZRro0JINEeSHN9kF6UqsXw" name="checkInBooking">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_faR-wJINEeSHN9kF6UqsXw" name="bookingID">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_hjXLIJINEeSHN9kF6UqsXw" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_zTmLgJWPEeSuRNeIzxQhPA" name="staffMemberUsername">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
@@ -376,6 +379,9 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_xYgvYJKQEeSDJasUW0pwUg" direction="return">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_I6PuYJWREeSuRNeIzxQhPA" name="staffMemberUsername">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>

@@ -122,26 +122,18 @@ public interface IHotelManager extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomIDRequired="true" roomIDOrdered="false"
+	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false" staffMemberUsernameRequired="true" staffMemberUsernameOrdered="false"
 	 * @generated
 	 */
-	String checkIn(int roomID);
+	String checkInBooking(int bookingID, String staffMemberUsername);
 
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" bookingIDRequired="true" bookingIDOrdered="false"
+	 * @model required="true" ordered="false" roomIDRequired="true" roomIDOrdered="false" statusRequired="true" statusOrdered="false" staffMemberUsernameRequired="true" staffMemberUsernameOrdered="false"
 	 * @generated
 	 */
-	String checkInBooking(int bookingID);
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model required="true" ordered="false" roomIDRequired="true" roomIDOrdered="false" statusRequired="true" statusOrdered="false"
-	 * @generated
-	 */
-	String changeStatusOfRoom(int roomID, String status);
+	String changeStatusOfRoom(int roomID, String status, String staffMemberUsername);
 
 	/**
 	 * <!-- begin-user-doc -->

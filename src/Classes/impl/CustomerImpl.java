@@ -32,7 +32,6 @@ import Classes.IBookingManagementImpl;
  *   <li>{@link Classes.impl.CustomerImpl#getAddress <em>Address</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getEmail <em>Email</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getPhoneNumber <em>Phone Number</em>}</li>
- *   <li>{@link Classes.impl.CustomerImpl#getPersonalInfo <em>Personal Info</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  *   <li>{@link Classes.impl.CustomerImpl#getBooking <em>Booking</em>}</li>
  * </ul>
@@ -140,26 +139,6 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * @ordered
 	 */
 	protected String phoneNumber = PHONE_NUMBER_EDEFAULT;
-
-	/**
-	 * The default value of the '{@link #getPersonalInfo() <em>Personal Info</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPersonalInfo()
-	 * @generated
-	 * @ordered
-	 */
-	protected static final String PERSONAL_INFO_EDEFAULT = null;
-
-	/**
-	 * The cached value of the '{@link #getPersonalInfo() <em>Personal Info</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getPersonalInfo()
-	 * @generated
-	 * @ordered
-	 */
-	protected String personalInfo = PERSONAL_INFO_EDEFAULT;
 
 	/**
 	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
@@ -325,27 +304,6 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public String getPersonalInfo() {
-		return personalInfo;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setPersonalInfo(String newPersonalInfo) {
-		String oldPersonalInfo = personalInfo;
-		personalInfo = newPersonalInfo;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.CUSTOMER__PERSONAL_INFO, oldPersonalInfo, personalInfo));
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public IBookingManagementImpl getIBookingManagementImpl() {
 		if (iBookingManagementImpl != null && iBookingManagementImpl.eIsProxy()) {
 			InternalEObject oldIBookingManagementImpl = (InternalEObject)iBookingManagementImpl;
@@ -466,8 +424,6 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return getEmail();
 			case ClassesPackage.CUSTOMER__PHONE_NUMBER:
 				return getPhoneNumber();
-			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
-				return getPersonalInfo();
 			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
 				if (resolve) return getIBookingManagementImpl();
 				return basicGetIBookingManagementImpl();
@@ -500,9 +456,6 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return;
 			case ClassesPackage.CUSTOMER__PHONE_NUMBER:
 				setPhoneNumber((String)newValue);
-				return;
-			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
-				setPersonalInfo((String)newValue);
 				return;
 			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
 				setIBookingManagementImpl((IBookingManagementImpl)newValue);
@@ -538,9 +491,6 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 			case ClassesPackage.CUSTOMER__PHONE_NUMBER:
 				setPhoneNumber(PHONE_NUMBER_EDEFAULT);
 				return;
-			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
-				setPersonalInfo(PERSONAL_INFO_EDEFAULT);
-				return;
 			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
 				setIBookingManagementImpl((IBookingManagementImpl)null);
 				return;
@@ -569,8 +519,6 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 				return EMAIL_EDEFAULT == null ? email != null : !EMAIL_EDEFAULT.equals(email);
 			case ClassesPackage.CUSTOMER__PHONE_NUMBER:
 				return PHONE_NUMBER_EDEFAULT == null ? phoneNumber != null : !PHONE_NUMBER_EDEFAULT.equals(phoneNumber);
-			case ClassesPackage.CUSTOMER__PERSONAL_INFO:
-				return PERSONAL_INFO_EDEFAULT == null ? personalInfo != null : !PERSONAL_INFO_EDEFAULT.equals(personalInfo);
 			case ClassesPackage.CUSTOMER__IBOOKING_MANAGEMENT_IMPL:
 				return iBookingManagementImpl != null;
 			case ClassesPackage.CUSTOMER__BOOKING:
@@ -599,8 +547,6 @@ public class CustomerImpl extends MinimalEObjectImpl.Container implements Custom
 		result.append(email);
 		result.append(", phoneNumber: ");
 		result.append(phoneNumber);
-		result.append(", personalInfo: ");
-		result.append(personalInfo);
 		result.append(')');
 		return result.toString();
 	}

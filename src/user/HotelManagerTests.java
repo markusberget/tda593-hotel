@@ -206,6 +206,9 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void testChangeStatusOfRoom() {
+		
+		
+		
 		// Uncomment if old changeStatusOfRoom is moved to IHotelManager
 /*
 		Classes.impl.IBookingManagementImplImpl bm = Classes.impl.IBookingManagementImplImpl
@@ -236,6 +239,53 @@ public class HotelManagerTests {
 		assertTrue(hm.login("alex4", "ankeborg4444"));
 		//assertTrue(bm.changeStatusOfRoom("alex4", 1, RoomStatus.AVAILABLE));
 		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());*/
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
 		
 		
 		// The new version of changeStatusOfRoom
@@ -270,6 +320,54 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void test_CheckIn() {
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
+		
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		IHotelManager hotelManagement = bookingManagement.getIHotelManagerImpl();
@@ -278,6 +376,8 @@ public class HotelManagerTests {
 		Calendar checkOut = Calendar.getInstance();
 		
 		assertNotNull(hotelManagement);
+		
+		
 		
 		// Set room to Occupied and check that it is not possible to check-in
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
@@ -301,6 +401,8 @@ public class HotelManagerTests {
 		
 		// Try to check in to a room when no booking is made for room
 		assertEquals("Could not check in since no booking is made for the room", hotelManagement.checkIn(room1));
+		
+		
 		
 		// Create a booking
 		int bookingID1 = bookingManagement.createPendingBooking(checkInDate, checkOutDate, nrOfGuests1);
@@ -362,6 +464,54 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void testCheckOut() {
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
+		
 		// Set up a booking and check in first
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
