@@ -650,17 +650,35 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	 * @generated NOT
 	 */
 	public void addRoom(String roomType, int roomNbr, String adminUsername) {
-		Room room = new RoomImpl();
-		boolean newRoomNumber = true;
-//		if (getInstance.getRoomByID(roomNbr) == null) {
-//			room.setRoomNumber(roomNbr);
-//		}
-//		if (roomType == (r.getRoomType().getRoomTypeName())) {
-//			RoomType roomTypeType = new RoomType();
-//			room.setRoomType(roomTypeType);
-//		}
-		room.setStatus(RoomStatus.AVAILABLE);
-		throw new UnsupportedOperationException();
+		if (isStaffMemberLoggedIn(adminUsername)
+				&& isStaffMemberAdmin(adminUsername)
+				&& !existingRoomNbr(roomNbr)) {
+
+			Room room = new RoomImpl();
+			boolean newRoomNumber = true;
+
+//			if (getIBookingManagementImpl().getRoomByID(roomNbr) == null) {
+//				room.setRoomNumber(roomNbr);
+//			}
+//			if (roomType == (r.getRoomType().getRoomTypeName())) {
+//				RoomType roomTypeType = new RoomType();
+//				room.setRoomType(roomTypeType);
+//			}
+			room.setStatus(RoomStatus.AVAILABLE);
+			throw new UnsupportedOperationException();
+
+		}
+
+	}
+
+	private boolean existingRoomNbr(int roomNbr) {
+		EList<Room> rooms = getIBookingManagementImpl().getRoom();
+		for (Room tempRoom : rooms) {
+			if (tempRoom.getRoomNumber() == roomNbr) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	/**
