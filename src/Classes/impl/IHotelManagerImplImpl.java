@@ -6,6 +6,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.ListIterator;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -624,11 +625,11 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public void addRoom(String roomType, int roomNbr, String adminUsername) {
 		boolean addRoom = false;
-		RoomTypeName type;
+		RoomTypeName type = null;
 		if (isStaffMemberLoggedIn(adminUsername)
 				&& isStaffMemberAdmin(adminUsername)
 				&& !existingRoomNbr(roomNbr)) {
-			for (Iterator it = RoomTypeName.VALUES.listIterator(); it.hasNext() && addRoom == false;) {
+			for (ListIterator<RoomTypeName> it = RoomTypeName.VALUES.listIterator(); it.hasNext() && addRoom == false;) {
 				type =  (RoomTypeName) it.next();
 				if (roomType.equals(type.toString())) {
 					addRoom = true;
@@ -637,9 +638,13 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 			if (addRoom) {
 				Room room = new RoomImpl();
 				room.setRoomNumber(roomNbr);
+<<<<<<< HEAD
 				//Här försöker jag komma vilken roomType jag skall tilldela rummet
 				RoomType r;
 				room.setRoomType(r);
+=======
+				room.getRoomType().setRoomTypeName(type);
+>>>>>>> 35e6197707edb701809cc679933978e6e4a546a0
 				room.setStatus(RoomStatus.AVAILABLE);
 //				getIBookingManagementImpl().room.add(room);
 
