@@ -673,7 +673,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 					//Since no room types exist the room type will be empty for now
 					room.getRoomType().setRoomTypeName(type);
 					room.setStatus(RoomStatus.AVAILABLE);
-					getIBookingManagementImpl().room.add(room);
+					//getIBookingManagementImpl().room.add(room);
 					addRoom = true;
 				}
 			}
