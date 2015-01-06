@@ -417,6 +417,16 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String checkIn(int roomID, String staffMemberUsername) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+	/**
 	 * The customer is checked in by setting the status of the room(s) in the
 	 * booking to Occupied. Checking in is only allowed if the status of the
 	 * room(s) is Available and the current date is the same as the check-in date.
@@ -771,8 +781,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getStaffMemberAddress((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
 				return logout((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN__INT:
-				return checkIn((Integer)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN__INT_STRING:
+				return checkIn((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT:
 				return checkInBooking((Integer)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:

@@ -503,22 +503,13 @@ public interface ClassesPackage extends EPackage {
 	int CUSTOMER__PHONE_NUMBER = IPERSON__PHONE_NUMBER;
 
 	/**
-	 * The feature id for the '<em><b>Personal Info</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CUSTOMER__PERSONAL_INFO = IPERSON_FEATURE_COUNT + 0;
-
-	/**
 	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER__IBOOKING_MANAGEMENT_IMPL = IPERSON_FEATURE_COUNT + 1;
+	int CUSTOMER__IBOOKING_MANAGEMENT_IMPL = IPERSON_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Booking</b></em>' reference list.
@@ -527,7 +518,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER__BOOKING = IPERSON_FEATURE_COUNT + 2;
+	int CUSTOMER__BOOKING = IPERSON_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Customer</em>' class.
@@ -536,7 +527,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int CUSTOMER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 3;
+	int CUSTOMER_FEATURE_COUNT = IPERSON_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of operations of the '<em>Customer</em>' class.
@@ -961,7 +952,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHECK_IN__INT = 13;
+	int IHOTEL_MANAGER___CHECK_IN__INT_STRING = 13;
 
 	/**
 	 * The operation id for the '<em>Check In Booking</em>' operation.
@@ -1150,7 +1141,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL___CHECK_IN__INT = IHOTEL_MANAGER___CHECK_IN__INT;
+	int IHOTEL_MANAGER_IMPL___CHECK_IN__INT_STRING = IHOTEL_MANAGER___CHECK_IN__INT_STRING;
 
 	/**
 	 * The operation id for the '<em>Check In Booking</em>' operation.
@@ -2212,14 +2203,14 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__Logout__String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#checkIn(int) <em>Check In</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IHotelManager#checkIn(int, java.lang.String) <em>Check In</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check In</em>' operation.
-	 * @see Classes.IHotelManager#checkIn(int)
+	 * @see Classes.IHotelManager#checkIn(int, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelManager__CheckIn__int();
+	EOperation getIHotelManager__CheckIn__int_String();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IHotelManager#checkInBooking(int) <em>Check In Booking</em>}' operation.
@@ -2619,17 +2610,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getCustomer();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Classes.Customer#getPersonalInfo <em>Personal Info</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Personal Info</em>'.
-	 * @see Classes.Customer#getPersonalInfo()
-	 * @see #getCustomer()
-	 * @generated
-	 */
-	EAttribute getCustomer_PersonalInfo();
 
 	/**
 	 * Returns the meta object for the reference '{@link Classes.Customer#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
@@ -3178,7 +3158,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_MANAGER___CHECK_IN__INT = eINSTANCE.getIHotelManager__CheckIn__int();
+		EOperation IHOTEL_MANAGER___CHECK_IN__INT_STRING = eINSTANCE.getIHotelManager__CheckIn__int_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Check In Booking</b></em>' operation.
@@ -3503,14 +3483,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EClass CUSTOMER = eINSTANCE.getCustomer();
-
-		/**
-		 * The meta object literal for the '<em><b>Personal Info</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute CUSTOMER__PERSONAL_INFO = eINSTANCE.getCustomer_PersonalInfo();
 
 		/**
 		 * The meta object literal for the '<em><b>IBooking Management Impl</b></em>' reference feature.

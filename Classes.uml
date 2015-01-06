@@ -359,6 +359,9 @@
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_XhcaQJINEeSHN9kF6UqsXw" direction="return">
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_6v5acJWOEeSuRNeIzxQhPA" name="staffMemberUsername">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
       </ownedOperation>
       <ownedOperation xmi:type="uml:Operation" xmi:id="_ZRro0JINEeSHN9kF6UqsXw" name="checkInBooking">
         <ownedParameter xmi:type="uml:Parameter" xmi:id="_faR-wJINEeSHN9kF6UqsXw" name="bookingID">
