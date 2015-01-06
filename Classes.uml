@@ -387,6 +387,15 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_laUvkJWEEeSuRNeIzxQhPA" name="changeStatusOfRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_urFJQJWEEeSuRNeIzxQhPA" name="staffMemberUsername">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_y44mcJWEEeSuRNeIzxQhPA" name="roomId">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_9EJgkJWEEeSuRNeIzxQhPA" name="status" type="_Cw_8MIHdEeSiLMRkmJ4pCA"/>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_wlzyUHZQEeSiQcRa0VNXAQ" memberEnd="_wlzyUXZQEeSiQcRa0VNXAQ _wlxWEHZQEeSiQcRa0VNXAQ"/>
     <packagedElement xmi:type="uml:Association" xmi:id="_UjloQHZREeSiQcRa0VNXAQ" memberEnd="_UjloQXZREeSiQcRa0VNXAQ _Ujik8HZREeSiQcRa0VNXAQ"/>

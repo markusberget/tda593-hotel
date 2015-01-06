@@ -587,6 +587,16 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public void changeStatusOfRoom(String staffMemberUsername, int roomId, RoomStatus status) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
@@ -770,6 +780,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_OUT__INT:
 				return checkOut((Integer)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__STRING_INT_ROOMSTATUS:
+				changeStatusOfRoom((String)arguments.get(0), (Integer)arguments.get(1), (RoomStatus)arguments.get(2));
+				return null;
 		}
 		return super.eInvoke(operationID, arguments);
 	}

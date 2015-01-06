@@ -186,6 +186,11 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/checkOut">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/checkOut/bookingID"/>
       </genOperations>
+      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/changeStatusOfRoom.1">
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/changeStatusOfRoom.1/staffMemberUsername"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/changeStatusOfRoom.1/roomId"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/changeStatusOfRoom.1/status"/>
+      </genOperations>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//IFinanceImpl">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
