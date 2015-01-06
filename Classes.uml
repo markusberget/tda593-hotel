@@ -757,6 +757,26 @@
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_g3OBMIqWEeS8o4yzl3IjCQ" name="DoubleRoom"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_jKYWoIqWEeS8o4yzl3IjCQ" name="FamilySuite"/>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_wWH3gJXAEeSDqIhjtRhbhw" memberEnd="_wWH3gZXAEeSDqIhjtRhbhw _wWGpYJXAEeSDqIhjtRhbhw">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_wWH3gZXAEeSDqIhjtRhbhw" name="bill" type="_1fha4IHjEeS837TtIXY58g" association="_wWH3gJXAEeSDqIhjtRhbhw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wWH3gpXAEeSDqIhjtRhbhw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wWH3g5XAEeSDqIhjtRhbhw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_wWGpYJXAEeSDqIhjtRhbhw" name="charges" type="_4V4kAIHjEeS837TtIXY58g" association="_wWH3gJXAEeSDqIhjtRhbhw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_wWGpYZXAEeSDqIhjtRhbhw"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_wWGpYpXAEeSDqIhjtRhbhw" value="*"/>
+      </ownedEnd>
+    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_4T0t4JXAEeSDqIhjtRhbhw" memberEnd="_4T0t4ZXAEeSDqIhjtRhbhw _4T0G0JXAEeSDqIhjtRhbhw">
+      <ownedEnd xmi:type="uml:Property" xmi:id="_4T0t4ZXAEeSDqIhjtRhbhw" name="bill" type="_1fha4IHjEeS837TtIXY58g" association="_4T0t4JXAEeSDqIhjtRhbhw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4T0t4pXAEeSDqIhjtRhbhw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4T0t45XAEeSDqIhjtRhbhw" value="1"/>
+      </ownedEnd>
+      <ownedEnd xmi:type="uml:Property" xmi:id="_4T0G0JXAEeSDqIhjtRhbhw" name="booking" type="_NNrFkHTbEeSOC7DG65-e3w" association="_4T0t4JXAEeSDqIhjtRhbhw">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_4T0G0ZXAEeSDqIhjtRhbhw" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_4T0G0pXAEeSDqIhjtRhbhw" value="1"/>
+      </ownedEnd>
+    </packagedElement>
     <profileApplication xmi:type="uml:ProfileApplication" xmi:id="_MNkIQJAKEeSt1vjUWy_DqA">
       <eAnnotations xmi:type="ecore:EAnnotation" xmi:id="_MOPdsJAKEeSt1vjUWy_DqA" source="http://www.eclipse.org/uml2/2.0.0/UML">
         <references xmi:type="ecore:EPackage" href="pathmap://PAPYRUS_ACTIONLANGUAGE_PROFILE/ActionLanguage-Profile.profile.uml#_sYse0YZLEeKyw49uR6nx3g"/>
