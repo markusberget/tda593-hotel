@@ -723,6 +723,12 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		if (isStaffMemberLoggedIn(adminUsername)
 				&& isStaffMemberAdmin(adminUsername)) {
 			if (existingRoomNbr(roomNbr)) {
+				EList<Room> rooms = getIBookingManagementImpl().getRoom();
+				for (Room tempRoom : rooms) {
+					if (tempRoom.getRoomNumber() == roomNbr) {
+						getIBookingManagementImpl().getRoom().remove(tempRoom);
+					}
+				}
 			}
 
 			else {
