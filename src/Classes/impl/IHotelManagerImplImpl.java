@@ -612,6 +612,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		// Ensure that you remove @generated or mark it @generated NOT
 		throw new UnsupportedOperationException();
 	}
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

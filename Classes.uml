@@ -407,6 +407,14 @@
           <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
         </ownedParameter>
       </ownedOperation>
+      <ownedOperation xmi:type="uml:Operation" xmi:id="_66hnAJWXEeSVorXjRL6sfg" name="removeRoom">
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_66hnApWXEeSVorXjRL6sfg" name="roomNbr">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EInt"/>
+        </ownedParameter>
+        <ownedParameter xmi:type="uml:Parameter" xmi:id="_66hnA5WXEeSVorXjRL6sfg" name="adminUsername">
+          <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
+        </ownedParameter>
+      </ownedOperation>
     </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_wlzyUHZQEeSiQcRa0VNXAQ" memberEnd="_wlzyUXZQEeSiQcRa0VNXAQ _wlxWEHZQEeSiQcRa0VNXAQ">
       <ownedEnd xmi:type="uml:Property" xmi:id="_wlzyUXZQEeSiQcRa0VNXAQ" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_wlzyUHZQEeSiQcRa0VNXAQ">
