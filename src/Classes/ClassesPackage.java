@@ -964,22 +964,13 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___LOGOUT__STRING = 12;
 
 	/**
-	 * The operation id for the '<em>Check In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___CHECK_IN__INT = 13;
-
-	/**
 	 * The operation id for the '<em>Check In Booking</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHECK_IN_BOOKING__INT = 14;
+	int IHOTEL_MANAGER___CHECK_IN_BOOKING__INT_STRING = 13;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -988,7 +979,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING = 15;
+	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING = 14;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -997,7 +988,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHECK_OUT__INT = 16;
+	int IHOTEL_MANAGER___CHECK_OUT__INT = 15;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
@@ -1006,7 +997,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 17;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -1153,22 +1144,13 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER_IMPL___LOGOUT__STRING = IHOTEL_MANAGER___LOGOUT__STRING;
 
 	/**
-	 * The operation id for the '<em>Check In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___CHECK_IN__INT = IHOTEL_MANAGER___CHECK_IN__INT;
-
-	/**
 	 * The operation id for the '<em>Check In Booking</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT = IHOTEL_MANAGER___CHECK_IN_BOOKING__INT;
+	int IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT_STRING = IHOTEL_MANAGER___CHECK_IN_BOOKING__INT_STRING;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -1177,7 +1159,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING;
+	int IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING = IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -2231,34 +2213,24 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__Logout__String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#checkIn(int) <em>Check In</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Check In</em>' operation.
-	 * @see Classes.IHotelManager#checkIn(int)
-	 * @generated
-	 */
-	EOperation getIHotelManager__CheckIn__int();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#checkInBooking(int) <em>Check In Booking</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IHotelManager#checkInBooking(int, java.lang.String) <em>Check In Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Check In Booking</em>' operation.
-	 * @see Classes.IHotelManager#checkInBooking(int)
+	 * @see Classes.IHotelManager#checkInBooking(int, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelManager__CheckInBooking__int();
+	EOperation getIHotelManager__CheckInBooking__int_String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String) <em>Change Status Of Room</em>}' operation.
+	 * Returns the meta object for the '{@link Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String, java.lang.String) <em>Change Status Of Room</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the '<em>Change Status Of Room</em>' operation.
-	 * @see Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String)
+	 * @see Classes.IHotelManager#changeStatusOfRoom(int, java.lang.String, java.lang.String)
 	 * @generated
 	 */
-	EOperation getIHotelManager__ChangeStatusOfRoom__int_String();
+	EOperation getIHotelManager__ChangeStatusOfRoom__int_String_String();
 
 	/**
 	 * Returns the meta object for the '{@link Classes.IHotelManager#checkOut(int) <em>Check Out</em>}' operation.
@@ -3189,20 +3161,12 @@ public interface ClassesPackage extends EPackage {
 		EOperation IHOTEL_MANAGER___LOGOUT__STRING = eINSTANCE.getIHotelManager__Logout__String();
 
 		/**
-		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IHOTEL_MANAGER___CHECK_IN__INT = eINSTANCE.getIHotelManager__CheckIn__int();
-
-		/**
 		 * The meta object literal for the '<em><b>Check In Booking</b></em>' operation.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_MANAGER___CHECK_IN_BOOKING__INT = eINSTANCE.getIHotelManager__CheckInBooking__int();
+		EOperation IHOTEL_MANAGER___CHECK_IN_BOOKING__INT_STRING = eINSTANCE.getIHotelManager__CheckInBooking__int_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Change Status Of Room</b></em>' operation.
@@ -3210,7 +3174,7 @@ public interface ClassesPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EOperation IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING = eINSTANCE.getIHotelManager__ChangeStatusOfRoom__int_String();
+		EOperation IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING = eINSTANCE.getIHotelManager__ChangeStatusOfRoom__int_String_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Check Out</b></em>' operation.

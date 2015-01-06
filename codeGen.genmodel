@@ -172,15 +172,14 @@
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/logout">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/logout/username"/>
       </genOperations>
-      <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/checkIn">
-        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/checkIn/roomID"/>
-      </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/checkInBooking">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/checkInBooking/bookingID"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/checkInBooking/staffMemberUsername"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/changeStatusOfRoom">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/changeStatusOfRoom/roomID"/>
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/changeStatusOfRoom/status"/>
+        <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/changeStatusOfRoom/staffMemberUsername"/>
       </genOperations>
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//IHotelManager/checkOut">
         <genParameters xsi:type="genmodel:GenParameter" ecoreParameter="Classes.ecore#//IHotelManager/checkOut/bookingID"/>
