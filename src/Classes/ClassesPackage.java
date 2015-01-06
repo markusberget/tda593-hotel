@@ -341,49 +341,13 @@ public interface ClassesPackage extends EPackage {
 	int BOOKING__NUMBER_OF_GUESTS = 3;
 
 	/**
-	 * The feature id for the '<em><b>First Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__FIRST_NAME = 4;
-
-	/**
-	 * The feature id for the '<em><b>Last Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__LAST_NAME = 5;
-
-	/**
-	 * The feature id for the '<em><b>Email</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__EMAIL = 6;
-
-	/**
-	 * The feature id for the '<em><b>Phone Number</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BOOKING__PHONE_NUMBER = 7;
-
-	/**
 	 * The feature id for the '<em><b>Customer</b></em>' reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__CUSTOMER = 8;
+	int BOOKING__CUSTOMER = 4;
 
 	/**
 	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
@@ -392,7 +356,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__IBOOKING_MANAGEMENT_IMPL = 9;
+	int BOOKING__IBOOKING_MANAGEMENT_IMPL = 5;
 
 	/**
 	 * The feature id for the '<em><b>Bill</b></em>' reference.
@@ -401,7 +365,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__BILL = 10;
+	int BOOKING__BILL = 6;
 
 	/**
 	 * The feature id for the '<em><b>Rooms</b></em>' reference list.
@@ -410,7 +374,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING__ROOMS = 11;
+	int BOOKING__ROOMS = 7;
 
 	/**
 	 * The number of structural features of the '<em>Booking</em>' class.
@@ -419,7 +383,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BOOKING_FEATURE_COUNT = 12;
+	int BOOKING_FEATURE_COUNT = 8;
 
 	/**
 	 * The number of operations of the '<em>Booking</em>' class.
@@ -2538,50 +2502,6 @@ public interface ClassesPackage extends EPackage {
 	EAttribute getBooking_NumberOfGuests();
 
 	/**
-	 * Returns the meta object for the attribute '{@link Classes.Booking#getFirstName <em>First Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>First Name</em>'.
-	 * @see Classes.Booking#getFirstName()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EAttribute getBooking_FirstName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Classes.Booking#getLastName <em>Last Name</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Last Name</em>'.
-	 * @see Classes.Booking#getLastName()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EAttribute getBooking_LastName();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Classes.Booking#getEmail <em>Email</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Email</em>'.
-	 * @see Classes.Booking#getEmail()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EAttribute getBooking_Email();
-
-	/**
-	 * Returns the meta object for the attribute '{@link Classes.Booking#getPhoneNumber <em>Phone Number</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Phone Number</em>'.
-	 * @see Classes.Booking#getPhoneNumber()
-	 * @see #getBooking()
-	 * @generated
-	 */
-	EAttribute getBooking_PhoneNumber();
-
-	/**
 	 * Returns the meta object for the reference '{@link Classes.Booking#getCustomer <em>Customer</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3491,38 +3411,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute BOOKING__NUMBER_OF_GUESTS = eINSTANCE.getBooking_NumberOfGuests();
-
-		/**
-		 * The meta object literal for the '<em><b>First Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOKING__FIRST_NAME = eINSTANCE.getBooking_FirstName();
-
-		/**
-		 * The meta object literal for the '<em><b>Last Name</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOKING__LAST_NAME = eINSTANCE.getBooking_LastName();
-
-		/**
-		 * The meta object literal for the '<em><b>Email</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOKING__EMAIL = eINSTANCE.getBooking_Email();
-
-		/**
-		 * The meta object literal for the '<em><b>Phone Number</b></em>' attribute feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EAttribute BOOKING__PHONE_NUMBER = eINSTANCE.getBooking_PhoneNumber();
 
 		/**
 		 * The meta object literal for the '<em><b>Customer</b></em>' reference feature.

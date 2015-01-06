@@ -466,7 +466,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					// Check if room is available during given dates
 					while (available && iter.hasNext()) {
 						Booking booked = iter.next();
-						if (!booking.getCheckIn().after(booked.getCheckOut()) || 
+						if (!booking.getCheckIn().after(booked.getCheckOut()) && 
 								!booking.getCheckOut().before(booked.getCheckIn())) {
 							available = false;
 						}
@@ -483,6 +483,12 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 		}
 		if ((checkIn != null || checkOut != null) && roomID == 0) {
 			// Check if room(s) already booked during any of the desired dates
+			if (checkIn == null) {
+				checkIn = booking.getCheckIn();
+			}
+			if (checkOut == null) {
+				checkOut = booking.getCheckOut();
+			}
 			EList<Room> rooms = booking.getRooms();
 			EList<Room> availableRooms = new BasicEList<Room>();	// Used for comparison
 			for (Room room : rooms) {
@@ -493,13 +499,11 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 					Booking booked = iter.next();
 					// Must check if room already booked during those dates, and if it is,
 					// must check if it is the booking that is supposed to be updated
-					if (booking.getBookingID() == booked.getBookingID()
-							&& booking.getCheckIn() == booked.getCheckIn()
-							&& booking.getCheckOut() == booked.getCheckOut()) {
-						available = true;
-					}
-					else if (!booking.getCheckIn().after(booked.getCheckOut()) || 
-							!booking.getCheckOut().before(booked.getCheckIn())) {
+					if (((checkIn.before(booked.getCheckOut()) &&
+							checkOut.after(booked.getCheckOut())) ||
+							checkIn.before(booked.getCheckIn()) &&
+							checkOut.after(booked.getCheckIn())) &&
+							bookingID != booked.getBookingID()) {
 						available = false;
 					}
 				}
@@ -516,6 +520,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 				if (checkOut != null) {
 					booking.setCheckOut(checkOut);
 				}
+				updateBillWithNewDateCharges(bookingID);
 			} else {
 				return "Could not update booking because date(s) for room(s) already booked";
 			}
@@ -551,6 +556,52 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			booking.getBill().getCharge().add(charge);
 			calCheckIn.add(Calendar.DAY_OF_MONTH, 1);
 		}
+	}
+	
+	/**
+	 * Helper method for updateBooking(...) that adds a charge for each night
+	 * for each room of the modified dates of the booking.
+	 */
+	private void updateBillWithNewDateCharges(int bookingID) {
+		Booking booking = getConfirmedBooking(bookingID);
+		EList<Room> rooms = booking.getRooms();
+		
+		// Remove only charges for rooms, not other types of charges
+		EList<Charge> charges = booking.getBill().getCharge();
+		ListIterator<Charge> iter = charges.listIterator();
+		while (iter.hasNext()) {
+			Charge charge = iter.next();
+			if (charge.getChargeType() == ChargeType.SINGLE_ROOM ||
+					charge.getChargeType() == ChargeType.DOUBLE_ROOM ||
+					charge.getChargeType() == ChargeType.FAMILY_SUITE) {
+				iter.remove();
+			}
+		}
+		
+		// Add charges for each room in booking
+		for (Room room : rooms) {
+			// Convert Date to Calendar
+			Calendar calCheckIn = convertCheckInDate(booking);
+			Calendar calCheckOut = convertCheckOutDate(booking);
+				
+			while (!calCheckIn.after(calCheckOut)) {
+				
+				// Add charge for each night at specified room
+				Charge charge = new ChargeImpl();
+				charge.setDate(new Date());
+				charge.setAmount(room.getRoomType().getPrice());
+				if (room.getRoomType().getRoomTypeName() == RoomTypeName.SINGLE_ROOM) {
+					charge.setChargeType(ChargeType.SINGLE_ROOM);
+				} else if (room.getRoomType().getRoomTypeName() == RoomTypeName.DOUBLE_ROOM) {
+					charge.setChargeType(ChargeType.DOUBLE_ROOM);
+				} else {
+					charge.setChargeType(ChargeType.FAMILY_SUITE);
+				}
+				booking.getBill().getCharge().add(charge);
+				calCheckIn.add(Calendar.DAY_OF_MONTH, 1);
+			}
+		}
+
 	}
 	
 	/**
