@@ -638,13 +638,13 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 			if (addRoom) {
 				Room room = new RoomImpl();
 				room.setRoomNumber(roomNbr);
-<<<<<<< HEAD
+
 				//Här försöker jag komma vilken roomType jag skall tilldela rummet
 				RoomType r;
 				room.setRoomType(r);
-=======
+
 				room.getRoomType().setRoomTypeName(type);
->>>>>>> 35e6197707edb701809cc679933978e6e4a546a0
+
 				room.setStatus(RoomStatus.AVAILABLE);
 //				getIBookingManagementImpl().room.add(room);
 
