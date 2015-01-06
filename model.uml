@@ -3,18 +3,6 @@
   <packageImport xmi:type="uml:PackageImport" xmi:id="_bJsJ8HTaEeSOC7DG65-e3w">
     <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
   </packageImport>
-  <packagedElement xmi:type="uml:Class" xmi:id="_4eyw0HTcEeSOC7DG65-e3w" name="Maintainance">
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_-Y-3UHTcEeSOC7DG65-e3w" name="fromDate">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-      <defaultValue xmi:type="uml:TimeInterval" xmi:id="_DRooUHTdEeSOC7DG65-e3w" name=""/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_Eu0YAHTdEeSOC7DG65-e3w" name="toDate">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
-    </ownedAttribute>
-    <ownedAttribute xmi:type="uml:Property" xmi:id="_IxeVIHTdEeSOC7DG65-e3w" name="description">
-      <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
-    </ownedAttribute>
-  </packagedElement>
   <packagedElement xmi:type="uml:Class" xmi:id="_50oF4HTdEeSOC7DG65-e3w" name="Guest">
     <ownedAttribute xmi:type="uml:Property" xmi:id="_7cFL4HTdEeSOC7DG65-e3w" name="type">
       <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#String"/>
@@ -540,28 +528,6 @@ return error message</body>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" xmi:id="_vVFssICVEeSs8Il9R7hMpQ" name="DomainModel">
-    <packagedElement xmi:type="uml:Association" xmi:id="_Dtsx4HTgEeSOC7DG65-e3w" name="maintainance_staff_1" memberEnd="_Dtsx4XTgEeSOC7DG65-e3w _Dtq8sHTgEeSOC7DG65-e3w">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_Dtsx4XTgEeSOC7DG65-e3w" name="maintainance" type="_4eyw0HTcEeSOC7DG65-e3w" association="_Dtsx4HTgEeSOC7DG65-e3w">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dtsx4nTgEeSOC7DG65-e3w"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dtsx43TgEeSOC7DG65-e3w" value="*"/>
-      </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_Dtq8sHTgEeSOC7DG65-e3w" name="staff" association="_Dtsx4HTgEeSOC7DG65-e3w">
-        <type xmi:type="uml:Class" href="Classes.uml#_NLnlMHTdEeSOC7DG65-e3w"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_Dtq8sXTgEeSOC7DG65-e3w" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_Dtq8snTgEeSOC7DG65-e3w" value="1"/>
-      </ownedEnd>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_UbpV4HTgEeSOC7DG65-e3w" name="maintainance_room_1" memberEnd="_UbpV4XTgEeSOC7DG65-e3w _UboHwHTgEeSOC7DG65-e3w">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_UbpV4XTgEeSOC7DG65-e3w" name="maintainance" type="_4eyw0HTcEeSOC7DG65-e3w" association="_UbpV4HTgEeSOC7DG65-e3w">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UbpV4nTgEeSOC7DG65-e3w"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UbpV43TgEeSOC7DG65-e3w" value="*"/>
-      </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_UboHwHTgEeSOC7DG65-e3w" name="room" association="_UbpV4HTgEeSOC7DG65-e3w">
-        <type xmi:type="uml:Class" href="Classes.uml#_Y1EUkHTdEeSOC7DG65-e3w"/>
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_UboHwXTgEeSOC7DG65-e3w" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_UboHwnTgEeSOC7DG65-e3w" value="1"/>
-      </ownedEnd>
-    </packagedElement>
     <packagedElement xmi:type="uml:Association" xmi:id="_na4nEHTgEeSOC7DG65-e3w" name="roomType_room_1" memberEnd="_na4nEXTgEeSOC7DG65-e3w _na4AAHTgEeSOC7DG65-e3w">
       <ownedEnd xmi:type="uml:Property" xmi:id="_na4nEXTgEeSOC7DG65-e3w" name="roomType" association="_na4nEHTgEeSOC7DG65-e3w">
         <type xmi:type="uml:Class" href="Classes.uml#_c1EbwHTcEeSOC7DG65-e3w"/>
