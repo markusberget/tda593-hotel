@@ -240,54 +240,6 @@ public class HotelManagerTests {
 		//assertTrue(bm.changeStatusOfRoom("alex4", 1, RoomStatus.AVAILABLE));
 		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());*/
 		
-		
-		/**
-		 * NOTE TO JOEL:
-		 * you can log in using:
-		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		READ!!!!!
-		 */
-		
-		
 		// The new version of changeStatusOfRoom
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
@@ -320,54 +272,6 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void test_CheckIn() {
-		
-		
-		/**
-		 * NOTE TO JOEL:
-		 * you can log in using:
-		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		READ!!!!!
-		 */
-		
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		IHotelManager hotelManagement = bookingManagement.getIHotelManagerImpl();
@@ -381,13 +285,13 @@ public class HotelManagerTests {
 		
 		// Set room to Occupied and check that it is not possible to check-in
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
-		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied"));
+		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied", Util.adminUsername));
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
-		assertEquals("Cannot check in since room is currently not available", hotelManagement.checkIn(room1));
+/*		assertEquals("Cannot check in since room is currently not available", hotelManagement.checkIn(room1));
 		
 		// Try to check in to a non-existing room
 		assertEquals("Room was not found, please try another room number", hotelManagement.checkIn(room11));
-		
+		*/
 		// Check in to a room (the room must have been booked for that date)
 		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
 		checkOut.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH+1, 10, 00);
