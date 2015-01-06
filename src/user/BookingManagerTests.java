@@ -530,10 +530,22 @@ public class BookingManagerTests {
 		bookingManagement.addCustomerInformationToBooking(bookingID5, "Nelly",
 				"Nansen", "nelly.nansen@gmail.com", "0734371234");
 		assertEquals("Cannot cancel a booking after its check-in time",
-				bookingManagement.cancelBooking(bookingID5));
+				bookingManagement.cancelBooking(bookingID5)); // pending
 		bookingManagement.confirmBooking(bookingID5);
 		assertEquals("Cannot cancel a booking after its check-in time",
-				bookingManagement.cancelBooking(bookingID5));
+				bookingManagement.cancelBooking(bookingID5)); // confirmed
+		
+		// Change check-in and check-out dates to the same as bookingID3 had
+		// and try to add one of the rooms that got available again after
+		// bookingID3 was cancelled
+		calCheckIn.set(2015, 0, 24, 12, 00);
+		calCheckOut.set(2015, 0, 26, 10, 00);
+		checkIn = calCheckIn.getTime();
+		checkOut = calCheckOut.getTime();
+		int bookingID6 = bookingManagement.createPendingBooking(checkIn,
+				checkOut, nrOfGuests4);
+		assertEquals("Room 6 was successfully added to pending booking",
+				bookingManagement.addRoomPending(room6, bookingID6));
 	}
 
 	/**
