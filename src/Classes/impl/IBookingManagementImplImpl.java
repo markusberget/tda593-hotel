@@ -615,6 +615,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public synchronized String addRoomPending(int roomNr, int bookingID) {
 		Booking booking = getPendingBooking(bookingID);
 		Room room = getRoomByID(roomNr);
+		
+		// // TODO: why do we need this variable? Even if I completely remove this variable , all the units tests pass
 		boolean free = true;
 		
 		// Check if booking exists
