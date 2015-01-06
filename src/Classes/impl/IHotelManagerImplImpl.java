@@ -417,16 +417,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	}
 
 	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public String checkIn(int roomID, String staffMemberUsername) {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-	/**
 	 * The customer is checked in by setting the status of the room(s) in the
 	 * booking to Occupied. Checking in is only allowed if the status of the
 	 * room(s) is Available and the current date is the same as the check-in date.
@@ -592,14 +582,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		return "Check-out failed, booking could not be found";
 	}
 	
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated NOT
-	 */
-	public void changeStatusOfRoom(String staffMemberUsername, int roomId, RoomStatus status) {
-		
-	}
 	
 	/**
 	 * <!-- begin-user-doc -->
@@ -629,53 +611,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
-	/**
-	 * The customer is checked in by setting the status of the room to Occupied.
-	 * Checking in is only allowed if the status of the room is Available and the
-	 * room's check-in date is the same as the current date. This method is used to
-	 * check in to a specific room.
-	 * 
-	 * @generated NOT
-	 */
-	public String checkIn(int roomID) {
-		Room room = null;
-		EList<Room> rooms = getIBookingManagementImpl().getRoom();
-		for (int i = 0; i < rooms.size(); i++) {
-			if(rooms.get(i).getRoomNumber() == roomID) {
-				room = rooms.get(i);
-			}
-		}
-		
-		Calendar currentDate = Calendar.getInstance();
-		
-		// Set parameters of currentDate to the check-in time of the date for comparison
-		// Hour of currentDate must be equal or greater than hour of check-in Date
-		currentDate.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, Calendar.HOUR, 00);
-		Calendar calTest = Calendar.getInstance();
-		
-		if (room == null) {
-			return "Room was not found, please try another room number";
-		}
-		if (room.getStatus() != RoomStatus.AVAILABLE) {
-			return "Cannot check in since room is currently not available";
-		}
-		EList<Booking> bookings = room.getBookings();
-		// Check that the room has been booked for this particular date
-		if (bookings.isEmpty()) {
-			return "Could not check in since no booking is made for the room";
-		} else {
-			for (Booking booking : bookings) {
-				calTest.setTime(booking.getCheckIn());
-				if (calTest.get(0) == currentDate.get(0) && calTest.get(1) == currentDate.get(1)
-						&& calTest.get(2) == currentDate.get(2) && currentDate.get(3) >= calTest.get(3)) {
-					room.setStatus(RoomStatus.OCCUPIED);
-					return "Checked in successfully";
-				}
-			}
-		}
-		return "Check-in failed";
-	}
-
+	
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -781,8 +717,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return getStaffMemberAddress((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
 				return logout((String)arguments.get(0));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN__INT_STRING:
-				return checkIn((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT:
 				return checkInBooking((Integer)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:

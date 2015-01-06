@@ -946,22 +946,13 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___LOGOUT__STRING = 12;
 
 	/**
-	 * The operation id for the '<em>Check In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___CHECK_IN__INT_STRING = 13;
-
-	/**
 	 * The operation id for the '<em>Check In Booking</em>' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHECK_IN_BOOKING__INT = 14;
+	int IHOTEL_MANAGER___CHECK_IN_BOOKING__INT = 13;
 
 	/**
 	 * The operation id for the '<em>Change Status Of Room</em>' operation.
@@ -970,7 +961,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING = 15;
+	int IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING = 14;
 
 	/**
 	 * The operation id for the '<em>Check Out</em>' operation.
@@ -979,7 +970,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER___CHECK_OUT__INT = 16;
+	int IHOTEL_MANAGER___CHECK_OUT__INT = 15;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
@@ -988,7 +979,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 17;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -1133,15 +1124,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___LOGOUT__STRING = IHOTEL_MANAGER___LOGOUT__STRING;
-
-	/**
-	 * The operation id for the '<em>Check In</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___CHECK_IN__INT_STRING = IHOTEL_MANAGER___CHECK_IN__INT_STRING;
 
 	/**
 	 * The operation id for the '<em>Check In Booking</em>' operation.
@@ -2203,16 +2185,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__Logout__String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#checkIn(int, java.lang.String) <em>Check In</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Check In</em>' operation.
-	 * @see Classes.IHotelManager#checkIn(int, java.lang.String)
-	 * @generated
-	 */
-	EOperation getIHotelManager__CheckIn__int_String();
-
-	/**
 	 * Returns the meta object for the '{@link Classes.IHotelManager#checkInBooking(int) <em>Check In Booking</em>}' operation.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3151,14 +3123,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___LOGOUT__STRING = eINSTANCE.getIHotelManager__Logout__String();
-
-		/**
-		 * The meta object literal for the '<em><b>Check In</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IHOTEL_MANAGER___CHECK_IN__INT_STRING = eINSTANCE.getIHotelManager__CheckIn__int_String();
 
 		/**
 		 * The meta object literal for the '<em><b>Check In Booking</b></em>' operation.
