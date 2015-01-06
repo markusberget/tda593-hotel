@@ -319,11 +319,9 @@ public class HotelManagerTests {
 		
 		// Check that booking is associated with room
 		assertEquals(1, bookingManagement.getRoomByID(room1).getBookings().size());
+
+		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied", Util.adminUsername));
 		
-/*		// Check in
-		assertEquals("Checked in successfully", hotelManagement.checkIn(room1));
-		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
-		*/
 		// Make new booking containing several rooms
 		int nrOfGuests2 = 2;
 		int bookingID2 = bookingManagement.createPendingBooking(checkInDate, checkOutDate, nrOfGuests2);
@@ -369,58 +367,12 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void testCheckOut() {
-		
-		
-		/**
-		 * NOTE TO JOEL:
-		 * you can log in using:
-		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		READ!!!!!
-		 */
-		
+	
 		// Set up a booking and check in first
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		IHotelManager hotelManagement = bookingManagement.getIHotelManagerImpl();
+		assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
 		int room1 = 1, room2 = 2, room3 = 3;
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
@@ -441,34 +393,34 @@ public class HotelManagerTests {
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room2).getStatus());
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room3).getStatus());
-		assertEquals("Checked in successfully to rooms [1, 2, 3]", hotelManagement.checkInBooking(bookingID1));
+		assertEquals("Checked in successfully to rooms [1, 2, 3]", hotelManagement.checkInBooking(bookingID1, Util.adminUsername));
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1).getStatus());
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room2).getStatus());
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room3).getStatus());
 		
 		// Try to check out using a non-existing bookingID
-		assertEquals("Check-out failed, booking could not be found", hotelManagement.checkOut(5));
+		assertEquals("Check-out failed, booking could not be found", hotelManagement.checkOut(5, Util.adminUsername));
 		
 		// Try to check out before the check in date of the booking
 		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH+1, 12, 00);
 		checkInDate = checkIn.getTime();
 		bookingManagement.getConfirmedBookings().get(0).setCheckIn(checkInDate);
-		assertEquals("Cannot perform check-out before the booking's check-in date", hotelManagement.checkOut(bookingID1));
+		assertEquals("Cannot perform check-out before the booking's check-in date", hotelManagement.checkOut(bookingID1, Util.adminUsername));
 		
 		// Try to check out without having paid the bill
 		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH-1, 12, 00);
 		checkInDate = checkIn.getTime();
 		bookingManagement.getConfirmedBookings().get(0).setCheckIn(checkInDate);
-		assertEquals("Check-out failed, bill has not been fully paid yet", hotelManagement.checkOut(bookingID1));
+		assertEquals("Check-out failed, bill has not been fully paid yet", hotelManagement.checkOut(bookingID1, Util.adminUsername));
 		
 		// try to check out from a room (booking) that has not yet been checked in.
-		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available"));
-		assertEquals("Changed status of room 2 to Available", hotelManagement.changeStatusOfRoom(room2, "Available"));
-		assertEquals("Changed status of room 3 to Available", hotelManagement.changeStatusOfRoom(room3, "Available"));
-		assertEquals("Cannot check out from a room that is not checked in", hotelManagement.checkOut(bookingID1));
-		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied"));
-		assertEquals("Changed status of room 2 to Occupied", hotelManagement.changeStatusOfRoom(room2, "Occupied"));
-		assertEquals("Changed status of room 3 to Occupied", hotelManagement.changeStatusOfRoom(room3, "Occupied"));
+		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available", Util.adminUsername));
+		assertEquals("Changed status of room 2 to Available", hotelManagement.changeStatusOfRoom(room2, "Available", Util.adminUsername));
+		assertEquals("Changed status of room 3 to Available", hotelManagement.changeStatusOfRoom(room3, "Available", Util.adminUsername));
+		assertEquals("Cannot check out from a room that is not checked in", hotelManagement.checkOut(bookingID1, Util.adminUsername));
+		assertEquals("Changed status of room 1 to Occupied", hotelManagement.changeStatusOfRoom(room1, "Occupied", Util.adminUsername));
+		assertEquals("Changed status of room 2 to Occupied", hotelManagement.changeStatusOfRoom(room2, "Occupied", Util.adminUsername));
+		assertEquals("Changed status of room 3 to Occupied", hotelManagement.changeStatusOfRoom(room3, "Occupied", Util.adminUsername));
 		
 		// Try to check out after the check-out time (for the first time)
 		checkIn.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH-2, 12, 00);
@@ -478,11 +430,11 @@ public class HotelManagerTests {
 		bookingManagement.getConfirmedBookings().get(0).setCheckIn(checkInDate);
 		bookingManagement.getConfirmedBookings().get(0).setCheckOut(checkOutDate);
 		assertEquals(6, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
-		assertEquals("Check-out performed after check-out time, Late check-out fee added to bill", hotelManagement.checkOut(bookingID1));
+		assertEquals("Check-out performed after check-out time, Late check-out fee added to bill", hotelManagement.checkOut(bookingID1, Util.adminUsername));
 		assertEquals(7, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().size());
 		
 		// Try to check out after the check-out time (for the second time)
-		assertEquals("Check out failed, Late-check-out fee has not been paid", hotelManagement.checkOut(bookingID1));
+		assertEquals("Check out failed, Late-check-out fee has not been paid", hotelManagement.checkOut(bookingID1, Util.adminUsername));
 		assertEquals(ChargeType.LATE_CHECK_OUT_FEE, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().get(6).getChargeType());
 		assertEquals(100, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().get(6).getAmount());
 		
@@ -492,7 +444,7 @@ public class HotelManagerTests {
 			bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().get(i).setAmount(0);
 		}
 		assertEquals(0, bookingManagement.getConfirmedBookings().get(0).getBill().getCharge().get(6).getAmount());
-		assertEquals("Check-out was successful", hotelManagement.checkOut(bookingID1));
+		assertEquals("Check-out was successful", hotelManagement.checkOut(bookingID1, Util.adminUsername));
 	}
 	
 }
