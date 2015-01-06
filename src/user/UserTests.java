@@ -35,7 +35,7 @@ public class UserTests {
 	 }
 	 
 	 /**
-	  * Test method for checkin
+	  * Test method for checkin		TODO:// This method does not really test the checkIn method
 	  */
 	 @Test
 	 public void test_checkIn(){
@@ -82,7 +82,7 @@ public class UserTests {
 	 * the bill is successful.
 	 */
 	@Test
-	public void test_checkOut() {
+	public void test_valid_checkOut() {
 
 		// Set up of a credit card account for use when paying for the booking/room(s).
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
