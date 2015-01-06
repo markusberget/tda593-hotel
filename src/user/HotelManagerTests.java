@@ -270,6 +270,43 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void test_CheckIn() {
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
+		
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		IHotelManager hotelManagement = bookingManagement.getIHotelManagerImpl();
@@ -278,6 +315,8 @@ public class HotelManagerTests {
 		Calendar checkOut = Calendar.getInstance();
 		
 		assertNotNull(hotelManagement);
+		
+		
 		
 		// Set room to Occupied and check that it is not possible to check-in
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
@@ -301,6 +340,8 @@ public class HotelManagerTests {
 		
 		// Try to check in to a room when no booking is made for room
 		assertEquals("Could not check in since no booking is made for the room", hotelManagement.checkIn(room1));
+		
+		
 		
 		// Create a booking
 		int bookingID1 = bookingManagement.createPendingBooking(checkInDate, checkOutDate, nrOfGuests1);
