@@ -534,6 +534,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 
 	public String checkOut(int bookingID, String staffMemberUsername) {
 	
+		if(!this.isStaffMemberLoggedIn(staffMemberUsername)) {
+			return "Staff member is not logged in";
+		}
+		
 		int sumBill = 0;
 		boolean feeExists = false;
 		Calendar currentTime = Calendar.getInstance();

@@ -629,13 +629,22 @@ public interface ClassesPackage extends EPackage {
 	int IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT = 8;
 
 	/**
+	 * The operation id for the '<em>Get Rooms Of Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT___GET_ROOMS_OF_BOOKING__INT = 9;
+
+	/**
 	 * The number of operations of the '<em>IBooking Management</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 9;
+	int IBOOKING_MANAGEMENT_OPERATION_COUNT = 10;
 
 	/**
 	 * The feature id for the '<em><b>Confirmed Bookings</b></em>' reference list.
@@ -789,6 +798,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IBOOKING_MANAGEMENT_IMPL___ADD_EXTRA_CHARGE__INT_STRING_INT = IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT;
+
+	/**
+	 * The operation id for the '<em>Get Rooms Of Booking</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IBOOKING_MANAGEMENT_IMPL___GET_ROOMS_OF_BOOKING__INT = IBOOKING_MANAGEMENT___GET_ROOMS_OF_BOOKING__INT;
 
 	/**
 	 * The number of operations of the '<em>IBooking Management Impl</em>' class.
@@ -1919,6 +1937,16 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIBookingManagement__AddExtraCharge__int_String_int();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.IBookingManagement#getRoomsOfBooking(int) <em>Get Rooms Of Booking</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Get Rooms Of Booking</em>' operation.
+	 * @see Classes.IBookingManagement#getRoomsOfBooking(int)
+	 * @generated
+	 */
+	EOperation getIBookingManagement__GetRoomsOfBooking__int();
+
+	/**
 	 * Returns the meta object for class '{@link Classes.IFinance <em>IFinance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2907,6 +2935,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IBOOKING_MANAGEMENT___ADD_EXTRA_CHARGE__INT_STRING_INT = eINSTANCE.getIBookingManagement__AddExtraCharge__int_String_int();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Rooms Of Booking</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IBOOKING_MANAGEMENT___GET_ROOMS_OF_BOOKING__INT = eINSTANCE.getIBookingManagement__GetRoomsOfBooking__int();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IFinance <em>IFinance</em>}' class.

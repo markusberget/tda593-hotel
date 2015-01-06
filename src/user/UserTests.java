@@ -7,6 +7,7 @@ import java.util.Date;
 
 import javax.xml.soap.SOAPException;
 
+import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -31,6 +32,37 @@ public class UserTests {
 	 @BeforeClass
 	 public static void oneTimeSetUp() {
 	 // one-time initialization code
+	 }
+	 
+	 /**
+	  * Test method for checkin
+	  */
+	 @Test
+	 public void test_checkIn(){
+		IBookingManagementImplImpl bookingManagement = IBookingManagementImplImpl.instantiateForTest();
+		 
+		//Create booking to check in for
+		Calendar cal = Calendar.getInstance();	
+		Date checkIn = cal.getTime();
+		cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
+		Date checkOut = cal.getTime();
+		int guestCount = 1;
+		int bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, guestCount);
+		int room = bookingManagement.getRoom().get(0).getRoomNumber();
+		bookingManagement.addRoomPending(room, bookingID);
+		bookingManagement.addCustomerInformationToBooking(bookingID, "John", "Doe", "john@doe.se", "0123-2131312");
+		bookingManagement.confirmBooking(bookingID);
+		//End create booking
+		
+		@SuppressWarnings("rawtypes")
+		EList roomIds = bookingManagement.getRoomsOfBooking(bookingID);
+				
+		for (Object roomID : roomIds) {
+			int rID = (int) roomID;
+			System.out.println(bookingManagement.getIHotelManagerImpl().changeStatusOfRoom(rID, "Occupied"));
+			
+			assertEquals("Status should be changed", "Occupied", bookingManagement.getRoomByID(rID).getStatus().toString());
+		}
 	 }
 
 	/**
@@ -68,8 +100,8 @@ public class UserTests {
 		IHotelManager hotelManagement = bookingManagement.getIHotelManagerImpl();
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH-2, 12, 00);
-		calCheckOut.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH, 10, 00);
+		calCheckIn.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH-1, 12, 00);
+		calCheckOut.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH+1, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests3 = 3;
@@ -85,13 +117,14 @@ public class UserTests {
 		
 		// Confirm the pending booking
 		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
+		bookingManagement.getIHotelManagerImpl().checkInBooking(bookingID);
 		
 		// Calculate the sum of the bill
 		double checkOutSum = bookingManagement.getIFinanceImpl().calculatePayment(bookingID);
 		assertEquals(450.0, checkOutSum, 450.0);
 
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow)
-		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(bookingID, ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
+		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(bookingID, ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 450.0));
 		assertEquals(1893.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 1893.0);
 		
 		// Check out
