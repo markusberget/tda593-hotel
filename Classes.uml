@@ -6,6 +6,10 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_hZMRwHTdEeSOC7DG65-e3w" name="roomNumber">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yPT4QH97EeSGQvz0Zrfl-Q" name="roomType" type="_c1EbwHTcEeSOC7DG65-e3w" association="_yPWUgH97EeSGQvz0Zrfl-Q">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yPT4QX97EeSGQvz0Zrfl-Q" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yPT4Qn97EeSGQvz0Zrfl-Q" value="1"/>
+      </ownedAttribute>
       <ownedAttribute xmi:type="uml:Property" xmi:id="_cqW-QXZVEeSiQcRa0VNXAQ" name="bookings" type="_NNrFkHTbEeSOC7DG65-e3w" association="_cqW-QHZVEeSiQcRa0VNXAQ">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cqW-QnZVEeSiQcRa0VNXAQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cqW-Q3ZVEeSiQcRa0VNXAQ" value="*"/>
@@ -496,17 +500,12 @@
       <ownedAttribute xmi:type="uml:Property" xmi:id="_xzgkkHTcEeSOC7DG65-e3w" name="price">
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#Integer"/>
       </ownedAttribute>
-    </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_yPWUgH97EeSGQvz0Zrfl-Q" memberEnd="_yPWUgX97EeSGQvz0Zrfl-Q _yPT4QH97EeSGQvz0Zrfl-Q" navigableOwnedEnd="_yPT4QH97EeSGQvz0Zrfl-Q">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_yPWUgX97EeSGQvz0Zrfl-Q" name="room" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_yPWUgH97EeSGQvz0Zrfl-Q">
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_yPWUgX97EeSGQvz0Zrfl-Q" name="room" type="_Y1EUkHTdEeSOC7DG65-e3w" association="_yPWUgH97EeSGQvz0Zrfl-Q">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yPWUgn97EeSGQvz0Zrfl-Q"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yPWUg397EeSGQvz0Zrfl-Q" value="*"/>
-      </ownedEnd>
-      <ownedEnd xmi:type="uml:Property" xmi:id="_yPT4QH97EeSGQvz0Zrfl-Q" name="roomType" type="_c1EbwHTcEeSOC7DG65-e3w" association="_yPWUgH97EeSGQvz0Zrfl-Q">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yPT4QX97EeSGQvz0Zrfl-Q" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_yPT4Qn97EeSGQvz0Zrfl-Q" value="1"/>
-      </ownedEnd>
+      </ownedAttribute>
     </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_yPWUgH97EeSGQvz0Zrfl-Q" memberEnd="_yPWUgX97EeSGQvz0Zrfl-Q _yPT4QH97EeSGQvz0Zrfl-Q"/>
     <packagedElement xmi:type="uml:Class" xmi:id="_QaiNQHYaEeSNRvHXkk2GGA" name="IHotelManagerImpl" visibility="package">
       <ownedAttribute xmi:type="uml:Property" xmi:id="_0HI7UXZhEeSBRfeA9UETiw" name="staff" type="_NLnlMHTdEeSOC7DG65-e3w" association="_0HI7UHZhEeSBRfeA9UETiw">
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_0HI7UnZhEeSBRfeA9UETiw"/>
