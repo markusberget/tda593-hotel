@@ -289,6 +289,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+<<<<<<< HEAD
 	public EReference getRoom_IBookingManagementImpl() {
 		return (EReference)roomEClass.getEStructuralFeatures().get(4);
 	}
@@ -298,6 +299,8 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+=======
+>>>>>>> 5fc6d03b5414471bbead6b757637133e33863d10
 	public EClass getRoomType() {
 		return roomTypeEClass;
 	}
@@ -802,6 +805,15 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EOperation getIHotelManager__RemoveRoom__int_String() {
+		return iHotelManagerEClass.getEOperations().get(17);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EEnum getRoomStatus() {
 		return roomStatusEEnum;
 	}
@@ -1191,6 +1203,14 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEAttribute(roomTypeEClass, ROOM_TYPE__PRICE);
 		createEReference(roomTypeEClass, ROOM_TYPE__ROOM);
 
+		roomTypeEClass = createEClass(ROOM_TYPE);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__ROOM_TYPE_NAME);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__FEATURES);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__NUMBER_OF_GUESTS);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__DESCRIPTION);
+		createEAttribute(roomTypeEClass, ROOM_TYPE__PRICE);
+		createEReference(roomTypeEClass, ROOM_TYPE__ROOM);
+
 		bookingEClass = createEClass(BOOKING);
 		createEAttribute(bookingEClass, BOOKING__CHECK_IN);
 		createEAttribute(bookingEClass, BOOKING__CHECK_OUT);
@@ -1248,6 +1268,7 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___CHECK_OUT__INT_STRING);
 		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING);
+		createEOperation(iHotelManagerEClass, IHOTEL_MANAGER___REMOVE_ROOM__INT_STRING);
 
 		iFinanceImplEClass = createEClass(IFINANCE_IMPL);
 		createEReference(iFinanceImplEClass, IFINANCE_IMPL__CUSTOMER_PROVIDES);
@@ -1340,6 +1361,14 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 		initEReference(getRoom_RoomType(), this.getRoomType(), this.getRoomType_Room(), "roomType", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_Bookings(), this.getBooking(), this.getBooking_Rooms(), "bookings", null, 0, -1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 		initEReference(getRoom_IBookingManagementImpl(), this.getIBookingManagementImpl(), this.getIBookingManagementImpl_Room(), "iBookingManagementImpl", null, 1, 1, Room.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+
+		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRoomType_RoomTypeName(), this.getRoomTypeName(), "roomTypeName", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Features(), theTypesPackage.getString(), "features", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_NumberOfGuests(), theTypesPackage.getInteger(), "numberOfGuests", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Description(), theTypesPackage.getString(), "description", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEAttribute(getRoomType_Price(), theTypesPackage.getInteger(), "price", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
+		initEReference(getRoomType_Room(), this.getRoom(), this.getRoom_RoomType(), "room", null, 0, -1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
 
 		initEClass(roomTypeEClass, RoomType.class, "RoomType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoomType_RoomTypeName(), this.getRoomTypeName(), "roomTypeName", null, 1, 1, RoomType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, !IS_ORDERED);
@@ -1453,6 +1482,10 @@ public class ClassesPackageImpl extends EPackageImpl implements ClassesPackage {
 
 		op = initEOperation(getIHotelManager__AddRoom__String_int_String(), null, "addRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "roomType", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEInt(), "roomNbr", 1, 1, IS_UNIQUE, !IS_ORDERED);
+		addEParameter(op, ecorePackage.getEString(), "adminUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
+
+		op = initEOperation(getIHotelManager__RemoveRoom__int_String(), null, "removeRoom", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEInt(), "roomNbr", 1, 1, IS_UNIQUE, !IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "adminUsername", 1, 1, IS_UNIQUE, !IS_ORDERED);
 

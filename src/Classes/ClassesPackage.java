@@ -103,6 +103,7 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM__BOOKINGS = 3;
+<<<<<<< HEAD
 
 	/**
 	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
@@ -112,6 +113,8 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int ROOM__IBOOKING_MANAGEMENT_IMPL = 4;
+=======
+>>>>>>> 5fc6d03b5414471bbead6b757637133e33863d10
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -120,7 +123,11 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
+<<<<<<< HEAD
 	int ROOM_FEATURE_COUNT = 5;
+=======
+	int ROOM_FEATURE_COUNT = 4;
+>>>>>>> 5fc6d03b5414471bbead6b757637133e33863d10
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1020,13 +1027,22 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING = 16;
 
 	/**
+	 * The operation id for the '<em>Remove Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___REMOVE_ROOM__INT_STRING = 17;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 17;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 18;
 
 	/**
 	 * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -1207,6 +1223,15 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING = IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING;
+
+	/**
+	 * The operation id for the '<em>Remove Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___REMOVE_ROOM__INT_STRING = IHOTEL_MANAGER___REMOVE_ROOM__INT_STRING;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
@@ -2282,6 +2307,16 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__AddRoom__String_int_String();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#removeRoom(int, java.lang.String) <em>Remove Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Remove Room</em>' operation.
+	 * @see Classes.IHotelManager#removeRoom(int, java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__RemoveRoom__int_String();
+
+	/**
 	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3227,6 +3262,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING = eINSTANCE.getIHotelManager__AddRoom__String_int_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Remove Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___REMOVE_ROOM__INT_STRING = eINSTANCE.getIHotelManager__RemoveRoom__int_String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.
