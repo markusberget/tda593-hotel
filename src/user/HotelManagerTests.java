@@ -304,6 +304,17 @@ public class HotelManagerTests {
 		
 		
 		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		READ!!!!!
 		 */
 		
@@ -403,6 +414,54 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void testCheckOut() {
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
+		
 		// Set up a booking and check in first
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
