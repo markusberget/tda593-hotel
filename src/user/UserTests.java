@@ -1,13 +1,14 @@
 package user;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 import java.util.Calendar;
 import java.util.Date;
 
 import javax.xml.soap.SOAPException;
 
-import org.eclipse.emf.common.util.EList;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
@@ -44,6 +45,7 @@ public class UserTests {
 		assertTrue(bookingManagement.getIHotelManagerImpl().login(Util.adminUsername, Util.adminPassword));
 		//Create booking to check in for
 		Calendar cal = Calendar.getInstance();	
+		cal.set(Calendar.YEAR,Calendar.MONTH,Calendar.DAY_OF_MONTH, 12, 00);
 		Date checkIn = cal.getTime();
 		cal.set(Calendar.DAY_OF_MONTH, cal.get(Calendar.DAY_OF_MONTH) + 1);
 		Date checkOut = cal.getTime();
@@ -52,7 +54,7 @@ public class UserTests {
 		int room = bookingManagement.getRoom().get(0).getRoomNumber();
 		bookingManagement.addRoomPending(room, bookingID);
 		bookingManagement.addCustomerInformationToBooking(bookingID, "John", "Doe", "john@doe.se", "0123-2131312");
-		bookingManagement.confirmBooking(bookingID);
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
 		//End create booking
 		
 		
@@ -61,13 +63,8 @@ public class UserTests {
 
 		
 		//Making sure all rooms are occupied
-		@SuppressWarnings("rawtypes")
-		EList roomIds = bookingManagement.getRoomsOfBooking(bookingID);
-				
-		for (Object roomID : roomIds) {
-			int rID = (int) roomID;			
-			assertEquals("Status should be changed", "Occupied", bookingManagement.getRoomByID(rID).getStatus().toString());
-		}
+		assertEquals("Occupied", bookingManagement.getRoomByID(room).getStatus().toString());
+
 	 }
 
 	/**
