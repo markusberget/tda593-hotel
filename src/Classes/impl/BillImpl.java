@@ -3,7 +3,6 @@
 package Classes.impl;
 
 import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -12,9 +11,7 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
-import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import Classes.Bill;
 import Classes.Booking;
 import Classes.Charge;
@@ -91,7 +88,7 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	 */
 	public EList<Charge> getCharge() {
 		if (charge == null) {
-			charge = new EObjectWithInverseResolvingEList<Charge>(Charge.class, this, ClassesPackage.BILL__CHARGE, ClassesPackage.CHARGE__BILL);
+			charge = new EObjectResolvingEList<Charge>(Charge.class, this, ClassesPackage.BILL__CHARGE);
 		}
 		return charge;
 	}
@@ -165,8 +162,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ClassesPackage.BILL__CHARGE:
-				return ((InternalEList<InternalEObject>)(InternalEList<?>)getCharge()).basicAdd(otherEnd, msgs);
 			case ClassesPackage.BILL__BOOKING:
 				if (booking != null)
 					msgs = ((InternalEObject)booking).eInverseRemove(this, ClassesPackage.BOOKING__BILL, Booking.class, msgs);
@@ -183,8 +178,6 @@ public class BillImpl extends MinimalEObjectImpl.Container implements Bill {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case ClassesPackage.BILL__CHARGE:
-				return ((InternalEList<?>)getCharge()).basicRemove(otherEnd, msgs);
 			case ClassesPackage.BILL__BOOKING:
 				return basicSetBooking(null, msgs);
 		}

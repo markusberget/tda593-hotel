@@ -271,7 +271,7 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Bill">
     <eStructuralFeatures xsi:type="ecore:EReference" name="charge" ordered="false"
-        lowerBound="1" upperBound="-1" eType="#//Charge" eOpposite="#//Charge/bill"/>
+        lowerBound="1" upperBound="-1" eType="#//Charge"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="booking" ordered="false"
         lowerBound="1" eType="#//Booking" eOpposite="#//Booking/bill"/>
   </eClassifiers>
@@ -282,8 +282,6 @@
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="chargeType" ordered="false"
         lowerBound="1" eType="#//ChargeType"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="bill" ordered="false" lowerBound="1"
-        eType="#//Bill" eOpposite="#//Bill/charge"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="ChargeType">
     <eLiterals name="CancellationFee"/>

@@ -1543,22 +1543,13 @@ public interface ClassesPackage extends EPackage {
 	int CHARGE__CHARGE_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Bill</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARGE__BILL = 3;
-
-	/**
 	 * The number of structural features of the '<em>Charge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHARGE_FEATURE_COUNT = 4;
+	int CHARGE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Charge</em>' class.
@@ -2108,17 +2099,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCharge_ChargeType();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.Charge#getBill <em>Bill</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Bill</em>'.
-	 * @see Classes.Charge#getBill()
-	 * @see #getCharge()
-	 * @generated
-	 */
-	EReference getCharge_Bill();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IHotelManager <em>IHotel Manager</em>}'.
@@ -3102,14 +3082,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CHARGE__CHARGE_TYPE = eINSTANCE.getCharge_ChargeType();
-
-		/**
-		 * The meta object literal for the '<em><b>Bill</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHARGE__BILL = eINSTANCE.getCharge_Bill();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IHotelManager <em>IHotel Manager</em>}' class.

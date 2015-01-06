@@ -27,7 +27,6 @@ public interface Bill extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Charge</b></em>' reference list.
 	 * The list contents are of type {@link Classes.Charge}.
-	 * It is bidirectional and its opposite is '{@link Classes.Charge#getBill <em>Bill</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Charge</em>' reference list isn't clear,
@@ -36,8 +35,7 @@ public interface Bill extends EObject {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Charge</em>' reference list.
 	 * @see Classes.ClassesPackage#getBill_Charge()
-	 * @see Classes.Charge#getBill
-	 * @model opposite="bill" required="true" ordered="false"
+	 * @model required="true" ordered="false"
 	 * @generated
 	 */
 	EList<Charge> getCharge();
