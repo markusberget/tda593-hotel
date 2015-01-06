@@ -428,7 +428,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 */
 	public String checkInBooking(int bookingID, String staffMemberUsername) {
 		
-		if(this.isStaffMemberLoggedIn(staffMemberUsername)) {
+		if(!this.isStaffMemberLoggedIn(staffMemberUsername)) {
 			return "Staff member is not logged in";
 		}
 		
@@ -473,6 +473,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		return "Check-in failed";
 	}
 	
+
 	/**
 	 * Change status of a room. This method is used by Staff when they need
 	 * to change the status of a room outside of the check-in/check-out (and
@@ -481,7 +482,12 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * 
 	 * @generated NOT
 	 */
-	public String changeStatusOfRoom(int roomID, String status) {
+	public String changeStatusOfRoom(int roomID, String status, String staffMemberUsername) {	
+		
+		if(!this.isStaffMemberLoggedIn(staffMemberUsername)) {
+			return "Staff member is not logged in";
+		}
+		
 		String message = "Status of room could not be changed";
 		EList<Room> rooms = getIBookingManagementImpl().getRoom();
 		Room room = null;
@@ -724,8 +730,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return logout((String)arguments.get(0));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT_STRING:
 				return checkInBooking((Integer)arguments.get(0), (String)arguments.get(1));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING:
-				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING:
+				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_OUT__INT:
 				return checkOut((Integer)arguments.get(0));
 		}
