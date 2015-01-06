@@ -452,6 +452,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		EList<Integer> roomNumbersSuccess = new BasicEList<Integer>();
 		int roomCheckIns = 0; // Keep track of how many rooms are checked in
 		calTest.setTime(booking.getCheckIn());
+		// Check if current time is later than check-in time (otherwise cannot check in)
 		if (calTest.get(0) == currentDate.get(0)
 				&& calTest.get(1) == currentDate.get(1)
 				&& calTest.get(2) == currentDate.get(2)
