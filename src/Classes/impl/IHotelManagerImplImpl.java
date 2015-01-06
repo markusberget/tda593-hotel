@@ -494,10 +494,10 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		calTest.setTime(booking.getCheckIn());
 		// Check if current time is later than check-in time (otherwise cannot
 		// check in)
-		if (calTest.get(0) == currentDate.get(0)
+		if ((calTest.get(0) == currentDate.get(0)
 				&& calTest.get(1) == currentDate.get(1)
 				&& calTest.get(2) == currentDate.get(2)
-				&& currentDate.get(3) >= calTest.get(3)) {
+				&& currentDate.get(3) >= calTest.get(3))) {
 			for (Room room : rooms) {
 				roomNumbersFail.add(room.getRoomNumber()); // Add room's number
 															// to list
@@ -677,7 +677,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 					addRoom = true;
 				}
 			}
-<<<<<<< HEAD
 			if (addRoom) {
 				Room room = new RoomImpl();
 				room.setRoomNumber(roomNbr);
@@ -698,24 +697,21 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 //				getIBookingManagementImpl().room.add(room);
 
 			} else {
-=======
+
 
 			if (!addRoom) {
->>>>>>> 6d0e43599f73ea1e74410cf6e4dc12546cb897aa
 				throw new IllegalArgumentException(
 						"Room type not specified correctly");
 			}
 
-		}
 
 		else {
 			throw new UnsupportedOperationException(
 					"Not logged in or not an admin");
-
 		}
-
+			}
 	}
-
+		}
 	private boolean existingRoomNbr(int roomNbr) {
 		EList<Room> rooms = getIBookingManagementImpl().getRoom();
 		for (Room tempRoom : rooms) {
