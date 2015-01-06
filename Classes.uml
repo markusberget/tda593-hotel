@@ -14,6 +14,10 @@
         <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_cqW-QnZVEeSiQcRa0VNXAQ"/>
         <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_cqW-Q3ZVEeSiQcRa0VNXAQ" value="*"/>
       </ownedAttribute>
+      <ownedAttribute xmi:type="uml:Property" xmi:id="_bHcNgYHbEeSiLMRkmJ4pCA" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_bHcNgIHbEeSiLMRkmJ4pCA">
+        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bHcNgoHbEeSiLMRkmJ4pCA" value="1"/>
+        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bHcNg4HbEeSiLMRkmJ4pCA" value="1"/>
+      </ownedAttribute>
       <nestedClassifier xmi:type="uml:Association" xmi:id="_yno2sIRzEeSz38BH1WnIsA" memberEnd="_yno2sYRzEeSz38BH1WnIsA">
         <ownedEnd xmi:type="uml:Property" xmi:id="_yno2sYRzEeSz38BH1WnIsA" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_yno2sIRzEeSz38BH1WnIsA">
           <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_yno2soRzEeSz38BH1WnIsA" value="1"/>
@@ -534,12 +538,7 @@
         <type xmi:type="uml:PrimitiveType" href="pathmap://UML_LIBRARIES/EcorePrimitiveTypes.library.uml#EString"/>
       </ownedAttribute>
     </packagedElement>
-    <packagedElement xmi:type="uml:Association" xmi:id="_bHcNgIHbEeSiLMRkmJ4pCA" memberEnd="_bHcNgYHbEeSiLMRkmJ4pCA _bHaYUIHbEeSiLMRkmJ4pCA">
-      <ownedEnd xmi:type="uml:Property" xmi:id="_bHcNgYHbEeSiLMRkmJ4pCA" name="iBookingManagementImpl" type="_queoAHZPEeSiQcRa0VNXAQ" association="_bHcNgIHbEeSiLMRkmJ4pCA">
-        <lowerValue xmi:type="uml:LiteralInteger" xmi:id="_bHcNgoHbEeSiLMRkmJ4pCA" value="1"/>
-        <upperValue xmi:type="uml:LiteralUnlimitedNatural" xmi:id="_bHcNg4HbEeSiLMRkmJ4pCA" value="1"/>
-      </ownedEnd>
-    </packagedElement>
+    <packagedElement xmi:type="uml:Association" xmi:id="_bHcNgIHbEeSiLMRkmJ4pCA" memberEnd="_bHcNgYHbEeSiLMRkmJ4pCA _bHaYUIHbEeSiLMRkmJ4pCA"/>
     <packagedElement xmi:type="uml:Enumeration" xmi:id="_Cw_8MIHdEeSiLMRkmJ4pCA" name="RoomStatus">
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_Fek8wIHdEeSiLMRkmJ4pCA" name="Occupied"/>
       <ownedLiteral xmi:type="uml:EnumerationLiteral" xmi:id="_H6ciQIHdEeSiLMRkmJ4pCA" name="Available"/>

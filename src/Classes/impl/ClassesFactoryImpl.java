@@ -69,6 +69,7 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
 			case ClassesPackage.ROOM: return createRoom();
+			case ClassesPackage.ROOM_TYPE: return createRoomType();
 			case ClassesPackage.BOOKING: return createBooking();
 			case ClassesPackage.CUSTOMER: return createCustomer();
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL: return createIBookingManagementImpl();
@@ -77,7 +78,6 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 			case ClassesPackage.IFINANCE_IMPL: return createIFinanceImpl();
 			case ClassesPackage.BILL: return createBill();
 			case ClassesPackage.CHARGE: return createCharge();
-			case ClassesPackage.ROOM_TYPE: return createRoomType();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -93,10 +93,10 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 		switch (eDataType.getClassifierID()) {
 			case ClassesPackage.ROOM_STATUS:
 				return createRoomStatusFromString(eDataType, initialValue);
-			case ClassesPackage.CHARGE_TYPE:
-				return createChargeTypeFromString(eDataType, initialValue);
 			case ClassesPackage.ROOM_TYPE_NAME:
 				return createRoomTypeNameFromString(eDataType, initialValue);
+			case ClassesPackage.CHARGE_TYPE:
+				return createChargeTypeFromString(eDataType, initialValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}
@@ -112,10 +112,10 @@ public class ClassesFactoryImpl extends EFactoryImpl implements ClassesFactory {
 		switch (eDataType.getClassifierID()) {
 			case ClassesPackage.ROOM_STATUS:
 				return convertRoomStatusToString(eDataType, instanceValue);
-			case ClassesPackage.CHARGE_TYPE:
-				return convertChargeTypeToString(eDataType, instanceValue);
 			case ClassesPackage.ROOM_TYPE_NAME:
 				return convertRoomTypeNameToString(eDataType, instanceValue);
+			case ClassesPackage.CHARGE_TYPE:
+				return convertChargeTypeToString(eDataType, instanceValue);
 			default:
 				throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
 		}

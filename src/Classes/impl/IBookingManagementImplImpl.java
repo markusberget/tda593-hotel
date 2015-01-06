@@ -262,7 +262,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 */
 	public EList<Room> getRoom() {
 		if (room == null) {
-			room = new EObjectResolvingEList<Room>(Room.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM);
+			room = new EObjectWithInverseResolvingEList<Room>(Room.class, this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM, ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL);
 		}
 		return room;
 	}
@@ -1212,6 +1212,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoom()).basicAdd(otherEnd, msgs);
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL:
 				if (iHotelManagerImpl != null)
 					msgs = ((InternalEObject)iHotelManagerImpl).eInverseRemove(this, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, IHotelManagerImpl.class, msgs);
@@ -1234,6 +1236,8 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM:
+				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL:
 				return basicSetIHotelManagerImpl(null, msgs);
 			case ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IFINANCE_IMPL:

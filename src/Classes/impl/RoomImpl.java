@@ -4,6 +4,7 @@ package Classes.impl;
 
 import Classes.Booking;
 import Classes.ClassesPackage;
+import Classes.IBookingManagementImpl;
 import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomType;
@@ -27,7 +28,9 @@ import org.eclipse.emf.ecore.util.InternalEList;
  * <ul>
  *   <li>{@link Classes.impl.RoomImpl#getStatus <em>Status</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getRoomNumber <em>Room Number</em>}</li>
+ *   <li>{@link Classes.impl.RoomImpl#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link Classes.impl.RoomImpl#getBookings <em>Bookings</em>}</li>
+ *   <li>{@link Classes.impl.RoomImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  * </ul>
  * </p>
  *
@@ -75,6 +78,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	protected int roomNumber = ROOM_NUMBER_EDEFAULT;
 
 	/**
+	 * The cached value of the '{@link #getRoomType() <em>Room Type</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoomType()
+	 * @generated
+	 * @ordered
+	 */
+	protected RoomType roomType;
+
+	/**
 	 * The cached value of the '{@link #getBookings() <em>Bookings</em>}' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -83,6 +96,16 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * @ordered
 	 */
 	protected EList<Booking> bookings;
+
+	/**
+	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getIBookingManagementImpl()
+	 * @generated
+	 * @ordered
+	 */
+	protected IBookingManagementImpl iBookingManagementImpl;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -173,6 +196,66 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public RoomType getRoomType() {
+		if (roomType != null && roomType.eIsProxy()) {
+			InternalEObject oldRoomType = (InternalEObject)roomType;
+			roomType = (RoomType)eResolveProxy(oldRoomType);
+			if (roomType != oldRoomType) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.ROOM__ROOM_TYPE, oldRoomType, roomType));
+			}
+		}
+		return roomType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public RoomType basicGetRoomType() {
+		return roomType;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetRoomType(RoomType newRoomType, NotificationChain msgs) {
+		RoomType oldRoomType = roomType;
+		roomType = newRoomType;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__ROOM_TYPE, oldRoomType, newRoomType);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setRoomType(RoomType newRoomType) {
+		if (newRoomType != roomType) {
+			NotificationChain msgs = null;
+			if (roomType != null)
+				msgs = ((InternalEObject)roomType).eInverseRemove(this, ClassesPackage.ROOM_TYPE__ROOM, RoomType.class, msgs);
+			if (newRoomType != null)
+				msgs = ((InternalEObject)newRoomType).eInverseAdd(this, ClassesPackage.ROOM_TYPE__ROOM, RoomType.class, msgs);
+			msgs = basicSetRoomType(newRoomType, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__ROOM_TYPE, newRoomType, newRoomType));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EList<Booking> getBookings() {
 		if (bookings == null) {
 			bookings = new EObjectWithInverseResolvingEList.ManyInverse<Booking>(Booking.class, this, ClassesPackage.ROOM__BOOKINGS, ClassesPackage.BOOKING__ROOMS);
@@ -185,12 +268,80 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public IBookingManagementImpl getIBookingManagementImpl() {
+		if (iBookingManagementImpl != null && iBookingManagementImpl.eIsProxy()) {
+			InternalEObject oldIBookingManagementImpl = (InternalEObject)iBookingManagementImpl;
+			iBookingManagementImpl = (IBookingManagementImpl)eResolveProxy(oldIBookingManagementImpl);
+			if (iBookingManagementImpl != oldIBookingManagementImpl) {
+				if (eNotificationRequired())
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
+			}
+		}
+		return iBookingManagementImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public IBookingManagementImpl basicGetIBookingManagementImpl() {
+		return iBookingManagementImpl;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public NotificationChain basicSetIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl, NotificationChain msgs) {
+		IBookingManagementImpl oldIBookingManagementImpl = iBookingManagementImpl;
+		iBookingManagementImpl = newIBookingManagementImpl;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, newIBookingManagementImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setIBookingManagementImpl(IBookingManagementImpl newIBookingManagementImpl) {
+		if (newIBookingManagementImpl != iBookingManagementImpl) {
+			NotificationChain msgs = null;
+			if (iBookingManagementImpl != null)
+				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM, IBookingManagementImpl.class, msgs);
+			if (newIBookingManagementImpl != null)
+				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM, IBookingManagementImpl.class, msgs);
+			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL, newIBookingManagementImpl, newIBookingManagementImpl));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				if (roomType != null)
+					msgs = ((InternalEObject)roomType).eInverseRemove(this, ClassesPackage.ROOM_TYPE__ROOM, RoomType.class, msgs);
+				return basicSetRoomType((RoomType)otherEnd, msgs);
 			case ClassesPackage.ROOM__BOOKINGS:
 				return ((InternalEList<InternalEObject>)(InternalEList<?>)getBookings()).basicAdd(otherEnd, msgs);
+			case ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL:
+				if (iBookingManagementImpl != null)
+					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__ROOM, IBookingManagementImpl.class, msgs);
+				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -203,8 +354,12 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				return basicSetRoomType(null, msgs);
 			case ClassesPackage.ROOM__BOOKINGS:
 				return ((InternalEList<?>)getBookings()).basicRemove(otherEnd, msgs);
+			case ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL:
+				return basicSetIBookingManagementImpl(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -221,8 +376,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return getStatus();
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				return getRoomNumber();
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				if (resolve) return getRoomType();
+				return basicGetRoomType();
 			case ClassesPackage.ROOM__BOOKINGS:
 				return getBookings();
+			case ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL:
+				if (resolve) return getIBookingManagementImpl();
+				return basicGetIBookingManagementImpl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -242,9 +403,15 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber((Integer)newValue);
 				return;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				setRoomType((RoomType)newValue);
+				return;
 			case ClassesPackage.ROOM__BOOKINGS:
 				getBookings().clear();
 				getBookings().addAll((Collection<? extends Booking>)newValue);
+				return;
+			case ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -264,8 +431,14 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				setRoomNumber(ROOM_NUMBER_EDEFAULT);
 				return;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				setRoomType((RoomType)null);
+				return;
 			case ClassesPackage.ROOM__BOOKINGS:
 				getBookings().clear();
+				return;
+			case ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -283,8 +456,12 @@ public class RoomImpl extends MinimalEObjectImpl.Container implements Room {
 				return status != STATUS_EDEFAULT;
 			case ClassesPackage.ROOM__ROOM_NUMBER:
 				return roomNumber != ROOM_NUMBER_EDEFAULT;
+			case ClassesPackage.ROOM__ROOM_TYPE:
+				return roomType != null;
 			case ClassesPackage.ROOM__BOOKINGS:
 				return bookings != null && !bookings.isEmpty();
+			case ClassesPackage.ROOM__IBOOKING_MANAGEMENT_IMPL:
+				return iBookingManagementImpl != null;
 		}
 		return super.eIsSet(featureID);
 	}

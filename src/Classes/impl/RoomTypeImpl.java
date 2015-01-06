@@ -3,12 +3,19 @@
 package Classes.impl;
 
 import Classes.ClassesPackage;
+import Classes.Room;
 import Classes.RoomType;
 import Classes.RoomTypeName;
+import java.util.Collection;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
+import org.eclipse.emf.ecore.util.EObjectWithInverseResolvingEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,6 +29,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
  *   <li>{@link Classes.impl.RoomTypeImpl#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link Classes.impl.RoomTypeImpl#getDescription <em>Description</em>}</li>
  *   <li>{@link Classes.impl.RoomTypeImpl#getPrice <em>Price</em>}</li>
+ *   <li>{@link Classes.impl.RoomTypeImpl#getRoom <em>Room</em>}</li>
  * </ul>
  * </p>
  *
@@ -127,6 +135,16 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * @ordered
 	 */
 	protected int price = PRICE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getRoom() <em>Room</em>}' reference list.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRoom()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Room> room;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -257,6 +275,47 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EList<Room> getRoom() {
+		if (room == null) {
+			room = new EObjectWithInverseResolvingEList<Room>(Room.class, this, ClassesPackage.ROOM_TYPE__ROOM, ClassesPackage.ROOM__ROOM_TYPE);
+		}
+		return room;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@SuppressWarnings("unchecked")
+	@Override
+	public NotificationChain eInverseAdd(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.ROOM_TYPE__ROOM:
+				return ((InternalEList<InternalEObject>)(InternalEList<?>)getRoom()).basicAdd(otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case ClassesPackage.ROOM_TYPE__ROOM:
+				return ((InternalEList<?>)getRoom()).basicRemove(otherEnd, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -270,6 +329,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return getDescription();
 			case ClassesPackage.ROOM_TYPE__PRICE:
 				return getPrice();
+			case ClassesPackage.ROOM_TYPE__ROOM:
+				return getRoom();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -298,6 +359,10 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 			case ClassesPackage.ROOM_TYPE__PRICE:
 				setPrice((Integer)newValue);
 				return;
+			case ClassesPackage.ROOM_TYPE__ROOM:
+				getRoom().clear();
+				getRoom().addAll((Collection<? extends Room>)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -325,6 +390,9 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 			case ClassesPackage.ROOM_TYPE__PRICE:
 				setPrice(PRICE_EDEFAULT);
 				return;
+			case ClassesPackage.ROOM_TYPE__ROOM:
+				getRoom().clear();
+				return;
 		}
 		super.eUnset(featureID);
 	}
@@ -347,6 +415,8 @@ public class RoomTypeImpl extends MinimalEObjectImpl.Container implements RoomTy
 				return DESCRIPTION_EDEFAULT == null ? description != null : !DESCRIPTION_EDEFAULT.equals(description);
 			case ClassesPackage.ROOM_TYPE__PRICE:
 				return price != PRICE_EDEFAULT;
+			case ClassesPackage.ROOM_TYPE__ROOM:
+				return room != null && !room.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}

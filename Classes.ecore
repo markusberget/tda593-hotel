@@ -10,6 +10,8 @@
         lowerBound="1" eType="#//RoomType" eOpposite="#//RoomType/room"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="bookings" ordered="false"
         upperBound="-1" eType="#//Booking" eOpposite="#//Booking/rooms"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="iBookingManagementImpl"
+        ordered="false" lowerBound="1" eType="#//IBookingManagementImpl" eOpposite="#//IBookingManagementImpl/room"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EEnum" name="RoomStatus">
     <eLiterals name="Occupied"/>
@@ -74,7 +76,7 @@
     <eStructuralFeatures xsi:type="ecore:EReference" name="customer" ordered="false"
         upperBound="-1" eType="#//Customer"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="room" ordered="false" upperBound="-1"
-        eType="#//Room"/>
+        eType="#//Room" eOpposite="#//Room/iBookingManagementImpl"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="pendingBookings" ordered="false"
         upperBound="-1" eType="#//Booking"/>
     <eStructuralFeatures xsi:type="ecore:EReference" name="iHotelManagerImpl" ordered="false"
