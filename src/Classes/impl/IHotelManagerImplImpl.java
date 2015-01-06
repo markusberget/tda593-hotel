@@ -666,8 +666,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 				&& isStaffMemberAdmin(adminUsername)) {
 			for (ListIterator<RoomTypeName> it = RoomTypeName.VALUES
 					.listIterator(); it.hasNext() && addRoom == false;) {
-				if(existingRoomNbr(roomNbr)){
-					throw new IllegalArgumentException("Room number already exists");
+				if (existingRoomNbr(roomNbr)) {
+					throw new IllegalArgumentException(
+							"Room number already exists");
 				}
 				type = (RoomTypeName) it.next();
 				if (roomType.equals(type.toString())) {
@@ -719,7 +720,20 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	 * @generated
 	 */
 	public void removeRoom(int roomNbr, String adminUsername) {
+		if (isStaffMemberLoggedIn(adminUsername)
+				&& isStaffMemberAdmin(adminUsername)) {
+			if (existingRoomNbr(roomNbr)) {
+			}
 
+			else {
+				throw new IllegalArgumentException(
+						"Not an existing room number");
+			}
+
+		} else {
+			throw new UnsupportedOperationException(
+					"Not logged in or not an admin");
+		}
 	}
 
 	/**
