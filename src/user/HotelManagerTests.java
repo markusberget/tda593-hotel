@@ -206,6 +206,9 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void testChangeStatusOfRoom() {
+		
+		
+		
 		// Uncomment if old changeStatusOfRoom is moved to IHotelManager
 /*
 		Classes.impl.IBookingManagementImplImpl bm = Classes.impl.IBookingManagementImplImpl
@@ -236,6 +239,53 @@ public class HotelManagerTests {
 		assertTrue(hm.login("alex4", "ankeborg4444"));
 		//assertTrue(bm.changeStatusOfRoom("alex4", 1, RoomStatus.AVAILABLE));
 		assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());*/
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
 		
 		
 		// The new version of changeStatusOfRoom
