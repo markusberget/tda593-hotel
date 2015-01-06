@@ -77,6 +77,10 @@
           <element xmi:type="uml:Property" href="Classes.uml#_Wdr4YHTbEeSOC7DG65-e3w"/>
           <layoutConstraint xmi:type="notation:Location" xmi:id="_XPUM0XTfEeSOC7DG65-e3w" x="87" y="20"/>
         </children>
+        <children xmi:type="notation:Shape" xmi:id="_h-O0cJWKEeSuRNeIzxQhPA" type="3012">
+          <element xmi:type="uml:Property" href="Classes.uml#_VsR0IHTcEeSOC7DG65-e3w"/>
+          <layoutConstraint xmi:type="notation:Location" xmi:id="_h-O0cZWKEeSuRNeIzxQhPA"/>
+        </children>
         <styles xmi:type="notation:TitleStyle" xmi:id="_2kJXKHTeEeSOC7DG65-e3w"/>
         <styles xmi:type="notation:SortingStyle" xmi:id="_2kJXKXTeEeSOC7DG65-e3w"/>
         <styles xmi:type="notation:FilteringStyle" xmi:id="_2kJXKnTeEeSOC7DG65-e3w"/>
