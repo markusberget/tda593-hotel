@@ -448,4 +448,32 @@ public class HotelManagerTests {
 		assertEquals("Check-out was successful", hotelManagement.checkOut(bookingID1, Util.adminUsername));
 	}
 	
+	
+	/**
+	 * Test method for {@link Classes.impl.IHotelManagerImplImpl#addRoom(java.lang.Class)}.
+	 * 
+	 * Tests if an added room is actually added and if exceptions are thrown
+	 * as they are supposed to when adding a room with the ID of an already 
+	 * existing room and when the user is not logged in or not an admin.
+	 */
+	@Test
+	public void addRoom() {
+		IHotelManager hm = ClassesFactoryImpl.eINSTANCE.createIHotelManagerImpl();
+		
+	}
+	
+	/**
+	 * Test method for {@link Classes.impl.IHotelManagerImplImpl#removeRoom(java.lang.Class)}.
+	 * 
+	 * Tests if an existing room is removed and if exceptions are thrown
+	 * as they are supposed to when removing a room with the ID of a room 
+	 * that doesn't exist and when the user is not logged in or not an admin.
+	 */
+	@Test
+	public void removeRoom() {
+		
+
+	}
+	
+	
 }
