@@ -72,12 +72,6 @@ public class ClassesSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case ClassesPackage.ROOM_TYPE: {
-				RoomType roomType = (RoomType)theEObject;
-				T result = caseRoomType(roomType);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			case ClassesPackage.BOOKING: {
 				Booking booking = (Booking)theEObject;
 				T result = caseBooking(booking);
@@ -158,6 +152,12 @@ public class ClassesSwitch<T> extends Switch<T> {
 			case ClassesPackage.CHARGE: {
 				Charge charge = (Charge)theEObject;
 				T result = caseCharge(charge);
+				if (result == null) result = defaultCase(theEObject);
+				return result;
+			}
+			case ClassesPackage.ROOM_TYPE: {
+				RoomType roomType = (RoomType)theEObject;
+				T result = caseRoomType(roomType);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}

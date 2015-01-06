@@ -15,7 +15,6 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link Classes.Room#getStatus <em>Status</em>}</li>
  *   <li>{@link Classes.Room#getRoomNumber <em>Room Number</em>}</li>
- *   <li>{@link Classes.Room#getRoomType <em>Room Type</em>}</li>
  *   <li>{@link Classes.Room#getBookings <em>Bookings</em>}</li>
  * </ul>
  * </p>
@@ -79,34 +78,6 @@ public interface Room extends EObject {
 	 * @generated
 	 */
 	void setRoomNumber(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Room Type</b></em>' reference.
-	 * It is bidirectional and its opposite is '{@link Classes.RoomType#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Room Type</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room Type</em>' reference.
-	 * @see #setRoomType(RoomType)
-	 * @see Classes.ClassesPackage#getRoom_RoomType()
-	 * @see Classes.RoomType#getRoom
-	 * @model opposite="room" required="true" ordered="false"
-	 * @generated
-	 */
-	RoomType getRoomType();
-
-	/**
-	 * Sets the value of the '{@link Classes.Room#getRoomType <em>Room Type</em>}' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Room Type</em>' reference.
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	void setRoomType(RoomType value);
 
 	/**
 	 * Returns the value of the '<em><b>Bookings</b></em>' reference list.

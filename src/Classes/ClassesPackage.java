@@ -87,22 +87,13 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__ROOM_NUMBER = 1;
 
 	/**
-	 * The feature id for the '<em><b>Room Type</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM__ROOM_TYPE = 2;
-
-	/**
 	 * The feature id for the '<em><b>Bookings</b></em>' reference list.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM__BOOKINGS = 3;
+	int ROOM__BOOKINGS = 2;
 
 	/**
 	 * The number of structural features of the '<em>Room</em>' class.
@@ -111,7 +102,7 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 4;
+	int ROOM_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -130,79 +121,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getRoomType()
 	 * @generated
 	 */
-	int ROOM_TYPE = 1;
-
-	/**
-	 * The feature id for the '<em><b>Room Type Name</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__ROOM_TYPE_NAME = 0;
-
-	/**
-	 * The feature id for the '<em><b>Features</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__FEATURES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__NUMBER_OF_GUESTS = 2;
-
-	/**
-	 * The feature id for the '<em><b>Description</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__DESCRIPTION = 3;
-
-	/**
-	 * The feature id for the '<em><b>Price</b></em>' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__PRICE = 4;
-
-	/**
-	 * The feature id for the '<em><b>Room</b></em>' reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE__ROOM = 5;
-
-	/**
-	 * The number of structural features of the '<em>Room Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_FEATURE_COUNT = 6;
-
-	/**
-	 * The number of operations of the '<em>Room Type</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int ROOM_TYPE_OPERATION_COUNT = 0;
+	int ROOM_TYPE = 14;
 
 	/**
 	 * The meta object id for the '{@link Classes.IBookingManagement <em>IBooking Management</em>}' class.
@@ -212,7 +131,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagement()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT = 12;
+	int IBOOKING_MANAGEMENT = 11;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IBookingManagementImplImpl <em>IBooking Management Impl</em>}' class.
@@ -222,7 +141,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIBookingManagementImpl()
 	 * @generated
 	 */
-	int IBOOKING_MANAGEMENT_IMPL = 5;
+	int IBOOKING_MANAGEMENT_IMPL = 4;
 
 	/**
 	 * The meta object id for the '{@link Classes.IFinance <em>IFinance</em>}' class.
@@ -232,7 +151,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinance()
 	 * @generated
 	 */
-	int IFINANCE = 11;
+	int IFINANCE = 10;
 
 	/**
 	 * The meta object id for the '{@link Classes.IHotelManager <em>IHotel Manager</em>}' class.
@@ -242,7 +161,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIHotelManager()
 	 * @generated
 	 */
-	int IHOTEL_MANAGER = 8;
+	int IHOTEL_MANAGER = 7;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IFinanceImplImpl <em>IFinance Impl</em>}' class.
@@ -252,7 +171,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIFinanceImpl()
 	 * @generated
 	 */
-	int IFINANCE_IMPL = 9;
+	int IFINANCE_IMPL = 8;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.BookingImpl <em>Booking</em>}' class.
@@ -262,7 +181,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBooking()
 	 * @generated
 	 */
-	int BOOKING = 2;
+	int BOOKING = 1;
 
 	/**
 	 * The meta object id for the '{@link Classes.IPerson <em>IPerson</em>}' class.
@@ -272,7 +191,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIPerson()
 	 * @generated
 	 */
-	int IPERSON = 4;
+	int IPERSON = 3;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.StaffMemberImpl <em>Staff Member</em>}' class.
@@ -282,7 +201,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getStaffMember()
 	 * @generated
 	 */
-	int STAFF_MEMBER = 7;
+	int STAFF_MEMBER = 6;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.CustomerImpl <em>Customer</em>}' class.
@@ -292,7 +211,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCustomer()
 	 * @generated
 	 */
-	int CUSTOMER = 3;
+	int CUSTOMER = 2;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.IHotelManagerImplImpl <em>IHotel Manager Impl</em>}' class.
@@ -302,7 +221,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getIHotelManagerImpl()
 	 * @generated
 	 */
-	int IHOTEL_MANAGER_IMPL = 6;
+	int IHOTEL_MANAGER_IMPL = 5;
 
 	/**
 	 * The feature id for the '<em><b>Check In</b></em>' attribute.
@@ -816,7 +735,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getBill()
 	 * @generated
 	 */
-	int BILL = 13;
+	int BILL = 12;
 
 	/**
 	 * The meta object id for the '{@link Classes.impl.ChargeImpl <em>Charge</em>}' class.
@@ -826,7 +745,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCharge()
 	 * @generated
 	 */
-	int CHARGE = 14;
+	int CHARGE = 13;
 
 	/**
 	 * The number of structural features of the '<em>IHotel Manager</em>' class.
@@ -982,13 +901,22 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___CHECK_OUT__INT_STRING = 15;
 
 	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING = 16;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 17;
 
 	/**
 	 * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -1162,6 +1090,15 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER_IMPL___CHECK_OUT__INT_STRING = IHOTEL_MANAGER___CHECK_OUT__INT_STRING;
 
 	/**
+	 * The operation id for the '<em>Add Room</em>' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int IHOTEL_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING = IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING;
+
+	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1287,7 +1224,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getCustomerProvides()
 	 * @generated
 	 */
-	int CUSTOMER_PROVIDES = 10;
+	int CUSTOMER_PROVIDES = 9;
 
 	/**
 	 * The number of structural features of the '<em>IFinance</em>' class.
@@ -1524,6 +1461,69 @@ public interface ClassesPackage extends EPackage {
 	int CHARGE_OPERATION_COUNT = 0;
 
 	/**
+	 * The feature id for the '<em><b>Room Type Name</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__ROOM_TYPE_NAME = 0;
+
+	/**
+	 * The feature id for the '<em><b>Features</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__FEATURES = 1;
+
+	/**
+	 * The feature id for the '<em><b>Number Of Guests</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__NUMBER_OF_GUESTS = 2;
+
+	/**
+	 * The feature id for the '<em><b>Description</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__DESCRIPTION = 3;
+
+	/**
+	 * The feature id for the '<em><b>Price</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE__PRICE = 4;
+
+	/**
+	 * The number of structural features of the '<em>Room Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_FEATURE_COUNT = 5;
+
+	/**
+	 * The number of operations of the '<em>Room Type</em>' class.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM_TYPE_OPERATION_COUNT = 0;
+
+	/**
 	 * The number of structural features of the '<em>Administrator Provides</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1597,7 +1597,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getRoomTypeName()
 	 * @generated
 	 */
-	int ROOM_TYPE_NAME = 17;
+	int ROOM_TYPE_NAME = 18;
 
 	/**
 	 * The meta object id for the '{@link Classes.ChargeType <em>Charge Type</em>}' enum.
@@ -1607,7 +1607,7 @@ public interface ClassesPackage extends EPackage {
 	 * @see Classes.impl.ClassesPackageImpl#getChargeType()
 	 * @generated
 	 */
-	int CHARGE_TYPE = 18;
+	int CHARGE_TYPE = 17;
 
 
 	/**
@@ -1641,17 +1641,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRoom_RoomNumber();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.Room#getRoomType <em>Room Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Room Type</em>'.
-	 * @see Classes.Room#getRoomType()
-	 * @see #getRoom()
-	 * @generated
-	 */
-	EReference getRoom_RoomType();
 
 	/**
 	 * Returns the meta object for the reference list '{@link Classes.Room#getBookings <em>Bookings</em>}'.
@@ -1728,17 +1717,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getRoomType_Price();
-
-	/**
-	 * Returns the meta object for the reference list '{@link Classes.RoomType#getRoom <em>Room</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference list '<em>Room</em>'.
-	 * @see Classes.RoomType#getRoom()
-	 * @see #getRoomType()
-	 * @generated
-	 */
-	EReference getRoomType_Room();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IBookingManagementImpl <em>IBooking Management Impl</em>}'.
@@ -2234,6 +2212,16 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__CheckOut__int_String();
 
 	/**
+	 * Returns the meta object for the '{@link Classes.IHotelManager#addRoom(java.lang.String, int, java.lang.String) <em>Add Room</em>}' operation.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the '<em>Add Room</em>' operation.
+	 * @see Classes.IHotelManager#addRoom(java.lang.String, int, java.lang.String)
+	 * @generated
+	 */
+	EOperation getIHotelManager__AddRoom__String_int_String();
+
+	/**
 	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2695,14 +2683,6 @@ public interface ClassesPackage extends EPackage {
 		EAttribute ROOM__ROOM_NUMBER = eINSTANCE.getRoom_RoomNumber();
 
 		/**
-		 * The meta object literal for the '<em><b>Room Type</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM__ROOM_TYPE = eINSTANCE.getRoom_RoomType();
-
-		/**
 		 * The meta object literal for the '<em><b>Bookings</b></em>' reference list feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -2759,14 +2739,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute ROOM_TYPE__PRICE = eINSTANCE.getRoomType_Price();
-
-		/**
-		 * The meta object literal for the '<em><b>Room</b></em>' reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference ROOM_TYPE__ROOM = eINSTANCE.getRoomType_Room();
 
 		/**
 		 * The meta object literal for the '{@link Classes.impl.IBookingManagementImplImpl <em>IBooking Management Impl</em>}' class.
@@ -3163,6 +3135,14 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___CHECK_OUT__INT_STRING = eINSTANCE.getIHotelManager__CheckOut__int_String();
+
+		/**
+		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EOperation IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING = eINSTANCE.getIHotelManager__AddRoom__String_int_String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.

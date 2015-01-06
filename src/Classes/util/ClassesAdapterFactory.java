@@ -72,10 +72,6 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 				return createRoomAdapter();
 			}
 			@Override
-			public Adapter caseRoomType(RoomType object) {
-				return createRoomTypeAdapter();
-			}
-			@Override
 			public Adapter caseBooking(Booking object) {
 				return createBookingAdapter();
 			}
@@ -126,6 +122,10 @@ public class ClassesAdapterFactory extends AdapterFactoryImpl {
 			@Override
 			public Adapter caseCharge(Charge object) {
 				return createChargeAdapter();
+			}
+			@Override
+			public Adapter caseRoomType(RoomType object) {
+				return createRoomTypeAdapter();
 			}
 			@Override
 			public Adapter caseAdministratorProvides(AdministratorProvides object) {

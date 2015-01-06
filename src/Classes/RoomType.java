@@ -2,7 +2,6 @@
  */
 package Classes;
 
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -18,7 +17,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link Classes.RoomType#getNumberOfGuests <em>Number Of Guests</em>}</li>
  *   <li>{@link Classes.RoomType#getDescription <em>Description</em>}</li>
  *   <li>{@link Classes.RoomType#getPrice <em>Price</em>}</li>
- *   <li>{@link Classes.RoomType#getRoom <em>Room</em>}</li>
  * </ul>
  * </p>
  *
@@ -159,23 +157,5 @@ public interface RoomType extends EObject {
 	 * @generated
 	 */
 	void setPrice(int value);
-
-	/**
-	 * Returns the value of the '<em><b>Room</b></em>' reference list.
-	 * The list contents are of type {@link Classes.Room}.
-	 * It is bidirectional and its opposite is '{@link Classes.Room#getRoomType <em>Room Type</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Room</em>' reference isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Room</em>' reference list.
-	 * @see Classes.ClassesPackage#getRoomType_Room()
-	 * @see Classes.Room#getRoomType
-	 * @model opposite="roomType" ordered="false"
-	 * @generated
-	 */
-	EList<Room> getRoom();
 
 } // RoomType
