@@ -58,6 +58,8 @@
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//Room/roomType"/>
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//Room/bookings"/>
+      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
+          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//Room/iBookingManagementImpl"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//RoomType">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//RoomType/roomTypeName"/>
@@ -287,15 +289,11 @@
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Bill">
       <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
           propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//Bill/charge"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//Bill/booking"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" ecoreClass="Classes.ecore#//Charge">
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Charge/amount"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Charge/date"/>
       <genFeatures xsi:type="genmodel:GenFeature" createChild="false" ecoreFeature="ecore:EAttribute Classes.ecore#//Charge/chargeType"/>
-      <genFeatures xsi:type="genmodel:GenFeature" notify="false" createChild="false"
-          propertySortChoices="true" ecoreFeature="ecore:EReference Classes.ecore#//Charge/bill"/>
     </genClasses>
     <genClasses xsi:type="genmodel:GenClass" image="false" ecoreClass="Classes.ecore#//AdministratorProvides">
       <genOperations xsi:type="genmodel:GenOperation" ecoreOperation="Classes.ecore#//AdministratorProvides/makeDeposit">

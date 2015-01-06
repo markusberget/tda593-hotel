@@ -105,13 +105,23 @@ public interface ClassesPackage extends EPackage {
 	int ROOM__BOOKINGS = 3;
 
 	/**
+	 * The feature id for the '<em><b>IBooking Management Impl</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ROOM__IBOOKING_MANAGEMENT_IMPL = 4;
+
+	/**
 	 * The number of structural features of the '<em>Room</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ROOM_FEATURE_COUNT = 4;
+	int ROOM_FEATURE_COUNT = 5;
+	int ROOM_FEATURE_COUNT1 = 4;
 
 	/**
 	 * The number of operations of the '<em>Room</em>' class.
@@ -1479,22 +1489,13 @@ public interface ClassesPackage extends EPackage {
 	int BILL__CHARGE = 0;
 
 	/**
-	 * The feature id for the '<em><b>Booking</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int BILL__BOOKING = 1;
-
-	/**
 	 * The number of structural features of the '<em>Bill</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BILL_FEATURE_COUNT = 2;
+	int BILL_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Bill</em>' class.
@@ -1533,22 +1534,13 @@ public interface ClassesPackage extends EPackage {
 	int CHARGE__CHARGE_TYPE = 2;
 
 	/**
-	 * The feature id for the '<em><b>Bill</b></em>' reference.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int CHARGE__BILL = 3;
-
-	/**
 	 * The number of structural features of the '<em>Charge</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int CHARGE_FEATURE_COUNT = 4;
+	int CHARGE_FEATURE_COUNT = 3;
 
 	/**
 	 * The number of operations of the '<em>Charge</em>' class.
@@ -1699,6 +1691,17 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getRoom_Bookings();
+
+	/**
+	 * Returns the meta object for the reference '{@link Classes.Room#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>IBooking Management Impl</em>'.
+	 * @see Classes.Room#getIBookingManagementImpl()
+	 * @see #getRoom()
+	 * @generated
+	 */
+	EReference getRoom_IBookingManagementImpl();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.RoomType <em>Room Type</em>}'.
@@ -2035,17 +2038,6 @@ public interface ClassesPackage extends EPackage {
 	EReference getBill_Charge();
 
 	/**
-	 * Returns the meta object for the reference '{@link Classes.Bill#getBooking <em>Booking</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Booking</em>'.
-	 * @see Classes.Bill#getBooking()
-	 * @see #getBill()
-	 * @generated
-	 */
-	EReference getBill_Booking();
-
-	/**
 	 * Returns the meta object for class '{@link Classes.Charge <em>Charge</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2087,17 +2079,6 @@ public interface ClassesPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getCharge_ChargeType();
-
-	/**
-	 * Returns the meta object for the reference '{@link Classes.Charge#getBill <em>Bill</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Bill</em>'.
-	 * @see Classes.Charge#getBill()
-	 * @see #getCharge()
-	 * @generated
-	 */
-	EReference getCharge_Bill();
 
 	/**
 	 * Returns the meta object for class '{@link Classes.IHotelManager <em>IHotel Manager</em>}'.
@@ -2767,6 +2748,14 @@ public interface ClassesPackage extends EPackage {
 		EReference ROOM__BOOKINGS = eINSTANCE.getRoom_Bookings();
 
 		/**
+		 * The meta object literal for the '<em><b>IBooking Management Impl</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ROOM__IBOOKING_MANAGEMENT_IMPL = eINSTANCE.getRoom_IBookingManagementImpl();
+
+		/**
 		 * The meta object literal for the '{@link Classes.impl.RoomTypeImpl <em>Room Type</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3033,14 +3022,6 @@ public interface ClassesPackage extends EPackage {
 		EReference BILL__CHARGE = eINSTANCE.getBill_Charge();
 
 		/**
-		 * The meta object literal for the '<em><b>Booking</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference BILL__BOOKING = eINSTANCE.getBill_Booking();
-
-		/**
 		 * The meta object literal for the '{@link Classes.impl.ChargeImpl <em>Charge</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
@@ -3073,14 +3054,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute CHARGE__CHARGE_TYPE = eINSTANCE.getCharge_ChargeType();
-
-		/**
-		 * The meta object literal for the '<em><b>Bill</b></em>' reference feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference CHARGE__BILL = eINSTANCE.getCharge_Bill();
 
 		/**
 		 * The meta object literal for the '{@link Classes.IHotelManager <em>IHotel Manager</em>}' class.

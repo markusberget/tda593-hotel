@@ -50,6 +50,7 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	/**
 	 * Returns the value of the '<em><b>Room</b></em>' reference list.
 	 * The list contents are of type {@link Classes.Room}.
+	 * It is bidirectional and its opposite is '{@link Classes.Room#getIBookingManagementImpl <em>IBooking Management Impl</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Room</em>' reference list isn't clear,
@@ -58,7 +59,8 @@ public interface IBookingManagementImpl extends IBookingManagement {
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Room</em>' reference list.
 	 * @see Classes.ClassesPackage#getIBookingManagementImpl_Room()
-	 * @model ordered="false"
+	 * @see Classes.Room#getIBookingManagementImpl
+	 * @model opposite="iBookingManagementImpl" ordered="false"
 	 * @generated
 	 */
 	EList<Room> getRoom();
