@@ -666,15 +666,27 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 				&& !existingRoomNbr(roomNbr)) {
 			for (ListIterator<RoomTypeName> it = RoomTypeName.VALUES
 					.listIterator(); it.hasNext() && addRoom == false;) {
+				
 				type = (RoomTypeName) it.next();
 				if (roomType.equals(type.toString())) {
+					EList<Room> rooms = getIBookingManagementImpl().getRoom();
+					for (Room room : rooms) {
+					    if (room.getRoomNumber() == roomNbr) {
+					    	throw new IllegalArgumentException(
+									"Room number already exists");
+					    }
+					}
 					Room room = new RoomImpl();
 					room.setRoomNumber(roomNbr);
-					//Since no room types exist the room type will be empty for now
+					
+					//Since no room types exist yet the room type will be empty for now
+					RoomType roomTypen = new RoomTypeImpl();
+	                room.setRoomType(roomTypen);
 					room.getRoomType().setRoomTypeName(type);
 					room.setStatus(RoomStatus.AVAILABLE);
-					//getIBookingManagementImpl().room.add(room);
+					getIBookingManagementImpl().getRoom().add(room);
 					addRoom = true;
+					
 				}
 			}
 

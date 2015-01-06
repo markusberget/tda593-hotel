@@ -650,7 +650,7 @@ public class BookingManagerTests {
 		EList<Integer> roomIDs = bookingManagement.searchRoom(checkInDate,
 				checkOutDate, numberOfGuests, roomType, maximumPrice);
 
-		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
+		for (Iterator<Integer> it = roomIDs.listIterator(); it.hasNext();) {
 			Integer roomID = (Integer) it.next();
 			RoomType typeOfRoom = bookingManagement.getRoomByID(roomID)
 					.getRoomType();
@@ -673,7 +673,7 @@ public class BookingManagerTests {
 		roomIDs = bookingManagement.searchRoom(checkInDate,
 				checkOutDate, numberOfGuests, roomType, maximumPrice);
 		
-		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
+		for (Iterator<Integer> it = roomIDs.listIterator(); it.hasNext();) {
 			Integer roomID = (Integer) it.next();
 			assertTrue(bookedRoom != roomID);
 			RoomType typeOfRoom = bookingManagement.getRoomByID(roomID)
@@ -690,7 +690,7 @@ public class BookingManagerTests {
 		maximumPrice = 0;
 		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 				numberOfGuests, roomType, maximumPrice);
-		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
+		for (Iterator<Integer> it = roomIDs.listIterator(); it.hasNext();) {
 			Integer roomID = (Integer) it.next();
 			Room room = bookingManagement.getRoomByID(roomID);
 			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests());
@@ -703,7 +703,7 @@ public class BookingManagerTests {
 		maximumPrice = 0;
 		roomIDs = bookingManagement.searchRoom(checkInDate, checkOutDate,
 				numberOfGuests, roomType, maximumPrice);
-		for (Iterator it = roomIDs.listIterator(); it.hasNext();) {
+		for (Iterator<Integer> it = roomIDs.listIterator(); it.hasNext();) {
 			Integer roomID = (Integer) it.next();
 			Room room = bookingManagement.getRoomByID(roomID);
 			assertTrue(numberOfGuests <= room.getRoomType().getNumberOfGuests());
