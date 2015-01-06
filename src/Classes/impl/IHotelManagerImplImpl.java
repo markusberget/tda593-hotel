@@ -640,8 +640,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 				room.setRoomNumber(roomNbr);
 
 				//Här försöker jag komma vilken roomType jag skall tilldela rummet
-				RoomType r;
-				room.setRoomType(r);
+
 
 				room.getRoomType().setRoomTypeName(type);
 
