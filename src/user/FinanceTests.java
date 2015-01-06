@@ -80,11 +80,26 @@ public class FinanceTests {
 	 */
 	@Test
 	public void testPayBill() {
-		int bookingID = 0;
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
+				.instantiateForTest();
+		Calendar checkIn = Calendar.getInstance();
+		Calendar checkOut = Calendar.getInstance();
+		checkIn.set(2015, 0, 12, 12, 00);
+		checkOut.set(2015, 0, 14, 10, 00);
+		Date checkInDate = checkIn.getTime();
+		Date checkOutDate = checkOut.getTime();
+		int nrOfGuests1 = 1, room1 = 1;
+		String firstName = "Karl", lastName = "urban";
+		int bookingID = bookingManagement.createPendingBooking(checkInDate,
+				checkOutDate, nrOfGuests1);
+		assertEquals("Room 1 was successfully added to pending booking", bookingManagement.addRoomPending(room1, bookingID));
+		bookingManagement.addCustomerInformationToBooking(bookingID, firstName,
+				lastName, "helly.hansen@gmail.com", "0734321234");
+		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
 		// Set up of a credit card account for use when paying for the
 		// booking/room(s)
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
-		String ccNumber = "01234567", ccv = "123", firstName = "Karl", lastName = "urban";
+		String ccNumber = "01234567", ccv = "123";
 		int expiryMonth = 10, expiryYear = 17;
 		try {
 			bankingAdmin = se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires
@@ -99,12 +114,9 @@ public class FinanceTests {
 					expiryMonth, expiryYear, firstName, lastName, 2343.0),
 					2343.0);
 
-			Classes.impl.IFinanceImplImpl financeManagement = Classes.impl.IFinanceImplImpl
-					.instantiateForTest();
-
 			// Pay the bill using a credit card account with a balance greater
 			// than the bill cost
-			assertEquals("Payment was successful", financeManagement.payBill(
+			assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(
 					bookingID, ccNumber, ccv, expiryMonth, expiryYear,
 					firstName, lastName, 343.0));
 
@@ -116,13 +128,13 @@ public class FinanceTests {
 			// Check if payBill returns correct String if balance on account is
 			// lower than the cost of the bill
 			assertEquals("Amount could not be withdrawn",
-					financeManagement.payBill(bookingID, ccNumber, ccv,
+					bookingManagement.getIFinanceImpl().payBill(bookingID, ccNumber, ccv,
 							expiryMonth, expiryYear, firstName, lastName,
 							2343.0));
 
 			// Check if payBill returns correct String if credit card is not
 			// valid
-			assertEquals("Credit Card is not valid", financeManagement.payBill(
+			assertEquals("Credit Card is not valid", bookingManagement.getIFinanceImpl().payBill(
 					bookingID, "00234111", ccv, expiryMonth, expiryYear,
 					firstName, lastName, 343.0));
 

@@ -40,6 +40,55 @@ public class UserTests {
 	 @Test
 	 public void test_checkIn(){
 		IBookingManagementImplImpl bookingManagement = IBookingManagementImplImpl.instantiateForTest();
+		
+		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
+	
 		 
 		//Create booking to check in for
 		Calendar cal = Calendar.getInstance();	
@@ -83,6 +132,54 @@ public class UserTests {
 	@Test
 	public void test_checkOut() {
 		
+		
+		/**
+		 * NOTE TO JOEL:
+		 * you can log in using:
+		 * assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		READ!!!!!
+		 */
+	
+		
 		// Set up of a credit card account for use when paying for the booking/room(s).
 		se.chalmers.cse.mdsd1415.banking.administratorRequires.AdministratorRequires bankingAdmin;
 		String ccNumber = "01234567", ccv = "123", firstName = "Karl", lastName = "urban";
@@ -100,8 +197,8 @@ public class UserTests {
 		IHotelManager hotelManagement = bookingManagement.getIHotelManagerImpl();
 		Calendar calCheckIn = Calendar.getInstance();
 		Calendar calCheckOut = Calendar.getInstance();
-		calCheckIn.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH-2, 12, 00);
-		calCheckOut.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH, 10, 00);
+		calCheckIn.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH-1, 12, 00);
+		calCheckOut.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH+1, 10, 00);
 		Date checkIn = calCheckIn.getTime();
 		Date checkOut = calCheckOut.getTime();
 		int nrOfGuests3 = 3;
@@ -117,13 +214,14 @@ public class UserTests {
 		
 		// Confirm the pending booking
 		assertEquals("Booking has been confirmed", bookingManagement.confirmBooking(bookingID));
+		bookingManagement.getIHotelManagerImpl().checkInBooking(bookingID);
 		
 		// Calculate the sum of the bill
 		double checkOutSum = bookingManagement.getIFinanceImpl().calculatePayment(bookingID);
 		assertEquals(450.0, checkOutSum, 450.0);
 
 		// 3) Perform the payment part (see the payment use case/sequence diagram for flow)
-		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(bookingID, ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, checkOutSum));
+		assertEquals("Payment was successful", bookingManagement.getIFinanceImpl().payBill(bookingID, ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName, 450.0));
 		assertEquals(1893.0, bankingAdmin.getBalance(ccNumber, ccv, expiryMonth, expiryYear, firstName, lastName), 1893.0);
 		
 		// Check out

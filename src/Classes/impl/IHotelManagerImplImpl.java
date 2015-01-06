@@ -516,6 +516,7 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 		}
 		return message;
 	}
+
 	/**
 	 * 
 	 * If the check-out is performed after the bookings check-out time, a fee
@@ -530,7 +531,14 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 	 * 
 	 * @generated NOT
 	 */
-	public String checkOut(int bookingID) {
+
+	public String checkOut(int bookingID, String staffMemberUsername) {
+	
+		if(!this.isStaffMemberLoggedIn(staffMemberUsername)) {
+			return "Staff member is not logged in";
+		}
+		
+		
 		int sumBill = 0;
 		boolean feeExists = false;
 		Calendar currentTime = Calendar.getInstance();
@@ -732,8 +740,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container implemen
 				return checkInBooking((Integer)arguments.get(0), (String)arguments.get(1));
 			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING:
 				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2));
-			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_OUT__INT:
-				return checkOut((Integer)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_OUT__INT_STRING:
+				return checkOut((Integer)arguments.get(0), (String)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
