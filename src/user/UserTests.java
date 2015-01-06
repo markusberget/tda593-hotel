@@ -55,13 +55,17 @@ public class UserTests {
 		bookingManagement.confirmBooking(bookingID);
 		//End create booking
 		
+		
+		//Check in
+		System.out.println(bookingManagement.getIHotelManagerImpl().checkInBooking(bookingID, Util.adminUsername));
+
+		
+		//Making sure all rooms are occupied
 		@SuppressWarnings("rawtypes")
 		EList roomIds = bookingManagement.getRoomsOfBooking(bookingID);
 				
 		for (Object roomID : roomIds) {
-			int rID = (int) roomID;
-			System.out.println(bookingManagement.getIHotelManagerImpl().changeStatusOfRoom(rID, "Occupied", Util.adminUsername));
-			
+			int rID = (int) roomID;			
 			assertEquals("Status should be changed", "Occupied", bookingManagement.getRoomByID(rID).getStatus().toString());
 		}
 	 }
