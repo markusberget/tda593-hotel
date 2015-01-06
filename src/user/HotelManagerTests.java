@@ -376,7 +376,7 @@ public class HotelManagerTests {
 		Calendar checkOut = Calendar.getInstance();
 		
 		assertNotNull(hotelManagement);
-		
+		assertTrue(hotelManagement.login(Util.adminUsername, Util.adminPassword));
 		
 		
 		// Set room to Occupied and check that it is not possible to check-in
@@ -396,7 +396,7 @@ public class HotelManagerTests {
 		int nrOfGuests1 = 1;
 		
 		// Set room status to Available to make it possible to check-in
-		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available"));
+		assertEquals("Changed status of room 1 to Available", hotelManagement.changeStatusOfRoom(room1, "Available", Util.adminUsername));
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1).getStatus());
 		
 		// Try to check in to a room when no booking is made for room
