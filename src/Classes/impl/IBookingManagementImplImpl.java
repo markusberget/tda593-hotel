@@ -510,6 +510,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 							checkOut.after(booked.getCheckIn())) &&
 							bookingID != booked.getBookingID()) {
 						available = false;
+						break;
 					}
 				}
 				// Add room to availableRooms for later comparison if room is available
