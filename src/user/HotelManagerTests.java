@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import Classes.ChargeType;
 import Classes.IHotelManager;
+import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomTypeName;
 import Classes.impl.ClassesFactoryImpl;
