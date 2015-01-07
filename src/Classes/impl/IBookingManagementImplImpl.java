@@ -1051,6 +1051,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			if (roomsWithPrice.size() > 0) {
 				allRooms = roomsWithPrice;
 			}
+			
 		}
 
 		// Assume the customer is considered as 1 guest
