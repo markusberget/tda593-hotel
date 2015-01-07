@@ -47,7 +47,7 @@ public interface IBookingManagement extends EObject {
 	 * @model required="true" many="false" ordered="false" checkInRequired="true" checkInOrdered="false" checkOutRequired="true" checkOutOrdered="false" numberOfGuestsRequired="true" numberOfGuestsOrdered="false" roomTypeRequired="true" roomTypeOrdered="false" maximumPriceRequired="true" maximumPriceOrdered="false"
 	 * @generated
 	 */
-	EList<Integer> searchRoom(Date checkIn, Date checkOut, int numberOfGuests, String roomType, int maximumPrice);
+	EList searchRoom(Date checkIn, Date checkOut, int numberOfGuests, String roomType, int maximumPrice);
 
 	/**
 	 * <!-- begin-user-doc -->

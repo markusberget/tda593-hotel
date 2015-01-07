@@ -1012,31 +1012,13 @@ public interface ClassesPackage extends EPackage {
 	int IHOTEL_MANAGER___CHECK_OUT__INT_STRING = 15;
 
 	/**
-	 * The operation id for the '<em>Add Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING = 16;
-
-	/**
-	 * The operation id for the '<em>Remove Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER___REMOVE_ROOM__INT_STRING = 17;
-
-	/**
 	 * The number of operations of the '<em>IHotel Manager</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int IHOTEL_MANAGER_OPERATION_COUNT = 18;
+	int IHOTEL_MANAGER_OPERATION_COUNT = 16;
 
 	/**
 	 * The feature id for the '<em><b>Staff</b></em>' reference list.
@@ -1208,24 +1190,6 @@ public interface ClassesPackage extends EPackage {
 	 * @ordered
 	 */
 	int IHOTEL_MANAGER_IMPL___CHECK_OUT__INT_STRING = IHOTEL_MANAGER___CHECK_OUT__INT_STRING;
-
-	/**
-	 * The operation id for the '<em>Add Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING = IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING;
-
-	/**
-	 * The operation id for the '<em>Remove Room</em>' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int IHOTEL_MANAGER_IMPL___REMOVE_ROOM__INT_STRING = IHOTEL_MANAGER___REMOVE_ROOM__INT_STRING;
 
 	/**
 	 * The number of operations of the '<em>IHotel Manager Impl</em>' class.
@@ -2251,26 +2215,6 @@ public interface ClassesPackage extends EPackage {
 	EOperation getIHotelManager__CheckOut__int_String();
 
 	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#addRoom(java.lang.String, int, java.lang.String) <em>Add Room</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Add Room</em>' operation.
-	 * @see Classes.IHotelManager#addRoom(java.lang.String, int, java.lang.String)
-	 * @generated
-	 */
-	EOperation getIHotelManager__AddRoom__String_int_String();
-
-	/**
-	 * Returns the meta object for the '{@link Classes.IHotelManager#removeRoom(int, java.lang.String) <em>Remove Room</em>}' operation.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the '<em>Remove Room</em>' operation.
-	 * @see Classes.IHotelManager#removeRoom(int, java.lang.String)
-	 * @generated
-	 */
-	EOperation getIHotelManager__RemoveRoom__int_String();
-
-	/**
 	 * Returns the meta object for enum '{@link Classes.RoomStatus <em>Room Status</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -3192,22 +3136,6 @@ public interface ClassesPackage extends EPackage {
 		 * @generated
 		 */
 		EOperation IHOTEL_MANAGER___CHECK_OUT__INT_STRING = eINSTANCE.getIHotelManager__CheckOut__int_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Add Room</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IHOTEL_MANAGER___ADD_ROOM__STRING_INT_STRING = eINSTANCE.getIHotelManager__AddRoom__String_int_String();
-
-		/**
-		 * The meta object literal for the '<em><b>Remove Room</b></em>' operation.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EOperation IHOTEL_MANAGER___REMOVE_ROOM__INT_STRING = eINSTANCE.getIHotelManager__RemoveRoom__int_String();
 
 		/**
 		 * The meta object literal for the '{@link Classes.RoomStatus <em>Room Status</em>}' enum.

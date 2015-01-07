@@ -13,6 +13,7 @@ import org.junit.Test;
 
 import Classes.ChargeType;
 import Classes.IHotelManager;
+import Classes.Room;
 import Classes.RoomStatus;
 import Classes.RoomTypeName;
 import Classes.impl.ClassesFactoryImpl;
@@ -534,73 +535,6 @@ public class HotelManagerTests {
 				hotelManagement.checkOut(bookingID1, Util.adminUsername));
 	}
 
-	/**
-	 * Test method for
-	 * {@link Classes.impl.IHotelManagerImplImpl#addRoom(java.lang.Class)}.
-	 * 
-	 * Tests if an added room is actually added and if exceptions are thrown as
-	 * they are supposed to when adding a room with the ID of an already
-	 * existing room and when the user is not logged in or not an admin.
-	 */
-	@Test
-	public void addRoom() {
-		IHotelManager hotelManager = ClassesFactoryImpl.eINSTANCE
-				.createIHotelManagerImpl();
-		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
-				.instantiateForTest();
-		String roomType = "SingleRoom";
-		boolean correctRoomType = false;
-		for (ListIterator<RoomTypeName> it = RoomTypeName.VALUES
-				.listIterator(); it.hasNext();) {
-			RoomTypeName type = (RoomTypeName) it.next();
-			if (roomType.equals(type.toString())){
-				correctRoomType = true;
-			}
-		}
-		assertTrue(correctRoomType);
-		
-		int roomNbr = 345;
-		String adminUsername = Util.adminUsername;
-		String password = Util.adminPassword;
-		assertTrue(hotelManager.login(adminUsername, password));
-		assertTrue(hotelManager.isStaffMemberAdmin(adminUsername));
-
-		try{
-			hotelManager.addRoom(roomType, roomNbr, adminUsername);
-		}
-		catch(Throwable exception){
-			assertTrue(exception instanceof NullPointerException);
-		}
-//		Room addedRoom = bookingManagement.getRoomByID(roomNbr);
-//		assertTrue(bookingManagement.getRoom().contains(addedRoom));
-		
-	}
-
-	/**
-	 * Test method for
-	 * {@link Classes.impl.IHotelManagerImplImpl#removeRoom(java.lang.Class)}.
-	 * 
-	 * Tests if an existing room is removed and if exceptions are thrown as they
-	 * are supposed to when removing a room with the ID of a room that doesn't
-	 * exist and when the user is not logged in or not an admin.
-	 */
-	@Test
-	public void removeRoom() {
-		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
-				.instantiateForTest();
-		IHotelManager hotelManager = ClassesFactoryImpl.eINSTANCE
-				.createIHotelManagerImpl();
-		
-		int roomNbr = 1;
-		String adminUsername = Util.adminUsername;
-		String password = Util.adminPassword;
-		//assertTrue(hotelManager.login(adminUsername, password));
-		//assertTrue(hotelManager.isStaffMemberAdmin(adminUsername));
-		Room removedRoom = bookingManagement.getRoomByID(roomNbr);
-		hotelManager.removeRoom(roomNbr, adminUsername);
-		//assertTrue(!bookingManagement.getRoom().contains(removedRoom));
-		
-
-	}
+	
 
 }

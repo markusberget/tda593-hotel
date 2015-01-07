@@ -5,9 +5,6 @@ package Classes.impl;
 import java.lang.reflect.InvocationTargetException;
 import java.util.Calendar;
 import java.util.Collection;
-import java.util.Iterator;
-import java.util.ListIterator;
-
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.BasicEList;
@@ -17,7 +14,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
-
 import Classes.Booking;
 import Classes.Charge;
 import Classes.ChargeType;
@@ -26,8 +22,6 @@ import Classes.IBookingManagementImpl;
 import Classes.IHotelManagerImpl;
 import Classes.Room;
 import Classes.RoomStatus;
-import Classes.RoomType;
-import Classes.RoomTypeName;
 import Classes.StaffMember;
 
 /**
@@ -36,9 +30,8 @@ import Classes.StaffMember;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link Classes.impl.IHotelManagerImplImpl#getStaff <em>Staff</em>}</li>
- * <li>{@link Classes.impl.IHotelManagerImplImpl#getIBookingManagementImpl <em>
- * IBooking Management Impl</em>}</li>
+ *   <li>{@link Classes.impl.IHotelManagerImplImpl#getStaff <em>Staff</em>}</li>
+ *   <li>{@link Classes.impl.IHotelManagerImplImpl#getIBookingManagementImpl <em>IBooking Management Impl</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,9 +41,8 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		implements IHotelManagerImpl {
 
 	/**
-	 * The cached value of the '{@link #getStaff() <em>Staff</em>}' reference
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 * The cached value of the '{@link #getStaff() <em>Staff</em>}' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * @see #getStaff()
 	 * @generated
 	 * @ordered
@@ -59,10 +51,9 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 	protected EList<StaffMember> staff;
 
 	/**
-	 * The cached value of the '{@link #getIBookingManagementImpl()
-	 * <em>IBooking Management Impl</em>}' reference. <!-- begin-user-doc -->
+	 * The cached value of the '{@link #getIBookingManagementImpl() <em>IBooking Management Impl</em>}' reference.
+	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
 	 * @see #getIBookingManagementImpl()
 	 * @generated
 	 * @ordered
@@ -113,7 +104,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
@@ -123,33 +113,26 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public EList<StaffMember> getStaff() {
 		if (staff == null) {
-			staff = new EObjectResolvingEList<StaffMember>(StaffMember.class,
-					this, ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF);
+			staff = new EObjectResolvingEList<StaffMember>(StaffMember.class, this, ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF);
 		}
 		return staff;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public IBookingManagementImpl getIBookingManagementImpl() {
 		if (iBookingManagementImpl != null && iBookingManagementImpl.eIsProxy()) {
-			InternalEObject oldIBookingManagementImpl = (InternalEObject) iBookingManagementImpl;
-			iBookingManagementImpl = (IBookingManagementImpl) eResolveProxy(oldIBookingManagementImpl);
+			InternalEObject oldIBookingManagementImpl = (InternalEObject)iBookingManagementImpl;
+			iBookingManagementImpl = (IBookingManagementImpl)eResolveProxy(oldIBookingManagementImpl);
 			if (iBookingManagementImpl != oldIBookingManagementImpl) {
 				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(
-							this,
-							Notification.RESOLVE,
-							ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL,
-							oldIBookingManagementImpl, iBookingManagementImpl));
+					eNotify(new ENotificationImpl(this, Notification.RESOLVE, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, iBookingManagementImpl));
 			}
 		}
 		return iBookingManagementImpl;
@@ -157,7 +140,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public IBookingManagementImpl basicGetIBookingManagementImpl() {
@@ -166,7 +148,6 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public NotificationChain basicSetIBookingManagementImpl(
@@ -175,22 +156,14 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		IBookingManagementImpl oldIBookingManagementImpl = iBookingManagementImpl;
 		iBookingManagementImpl = newIBookingManagementImpl;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(
-					this,
-					Notification.SET,
-					ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL,
-					oldIBookingManagementImpl, newIBookingManagementImpl);
-			if (msgs == null)
-				msgs = notification;
-			else
-				msgs.add(notification);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, oldIBookingManagementImpl, newIBookingManagementImpl);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	public void setIBookingManagementImpl(
@@ -198,27 +171,14 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		if (newIBookingManagementImpl != iBookingManagementImpl) {
 			NotificationChain msgs = null;
 			if (iBookingManagementImpl != null)
-				msgs = ((InternalEObject) iBookingManagementImpl)
-						.eInverseRemove(
-								this,
-								ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL,
-								IBookingManagementImpl.class, msgs);
+				msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, IBookingManagementImpl.class, msgs);
 			if (newIBookingManagementImpl != null)
-				msgs = ((InternalEObject) newIBookingManagementImpl)
-						.eInverseAdd(
-								this,
-								ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL,
-								IBookingManagementImpl.class, msgs);
-			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl,
-					msgs);
-			if (msgs != null)
-				msgs.dispatch();
-		} else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(
-					this,
-					Notification.SET,
-					ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL,
-					newIBookingManagementImpl, newIBookingManagementImpl));
+				msgs = ((InternalEObject)newIBookingManagementImpl).eInverseAdd(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, IBookingManagementImpl.class, msgs);
+			msgs = basicSetIBookingManagementImpl(newIBookingManagementImpl, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL, newIBookingManagementImpl, newIBookingManagementImpl));
 	}
 
 	/**
@@ -652,260 +612,144 @@ public class IHotelManagerImplImpl extends MinimalEObjectImpl.Container
 		return "Check-out failed, booking could not be found";
 	}
 
-	/**
-	 * Adds a room with the specified room type and room number if the user is
-	 * an admin.
-	 * 
-	 * @generated NOT
-	 */
-	public void addRoom(String roomType, int roomNbr, String adminUsername)
-			throws IllegalArgumentException, UnsupportedOperationException {
-		boolean addRoom = false;
-		RoomTypeName type = null;
-		if (isStaffMemberLoggedIn(adminUsername)
-				&& isStaffMemberAdmin(adminUsername)) {
-			for (ListIterator<RoomTypeName> it = RoomTypeName.VALUES
-					.listIterator(); it.hasNext() && addRoom == false;) {
-				if (existingRoomNbr(roomNbr)) {
-					throw new IllegalArgumentException(
-							"Room number already exists");
-				}
-				type = (RoomTypeName) it.next();
-				if (roomType.equals(type.toString())) {
-
-					Room room = new RoomImpl();
-					room.setRoomNumber(roomNbr);
-
-					// Since no room types exist yet the room type will be empty
-					// for now
-					RoomType roomTypen = new RoomTypeImpl();
-					room.setRoomType(roomTypen);
-					room.getRoomType().setRoomTypeName(type);
-					room.setStatus(RoomStatus.AVAILABLE);
-
-					getIBookingManagementImpl().getRoom().add(room);
-					addRoom = true;
-
-				}
-			}
-		}
-
-		else {
-
-			if (!addRoom) {
-				throw new IllegalArgumentException(
-						"Room type not specified correctly");
-			}
-
-			else {
-				throw new UnsupportedOperationException(
-						"Not logged in or not an admin");
-			}
-		}
-	}
-
-	private boolean existingRoomNbr(int roomNbr) {
-		EList<Room> rooms = getIBookingManagementImpl().getRoom();
-		for (Room tempRoom : rooms) {
-			if (tempRoom.getRoomNumber() == roomNbr) {
-				return true;
-			}
-		}
-		return false;
-	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated NOT
-	 */
-	public void removeRoom(int roomNbr, String adminUsername) {
-		if (isStaffMemberLoggedIn(adminUsername)
-				&& isStaffMemberAdmin(adminUsername)) {
-			if (existingRoomNbr(roomNbr)) {
-				EList<Room> rooms = getIBookingManagementImpl().getRoom();
-				for (Room tempRoom : rooms) {
-					if (tempRoom.getRoomNumber() == roomNbr) {
-						getIBookingManagementImpl().getRoom().remove(tempRoom);
-					}
-				}
-			}
-
-			else {
-				throw new IllegalArgumentException(
-						"Not an existing room number");
-			}
-
-		} else {
-			throw new UnsupportedOperationException(
-					"Not logged in or not an admin");
-		}
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseAdd(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
-			if (iBookingManagementImpl != null)
-				msgs = ((InternalEObject) iBookingManagementImpl)
-						.eInverseRemove(
-								this,
-								ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL,
-								IBookingManagementImpl.class, msgs);
-			return basicSetIBookingManagementImpl(
-					(IBookingManagementImpl) otherEnd, msgs);
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				if (iBookingManagementImpl != null)
+					msgs = ((InternalEObject)iBookingManagementImpl).eInverseRemove(this, ClassesPackage.IBOOKING_MANAGEMENT_IMPL__IHOTEL_MANAGER_IMPL, IBookingManagementImpl.class, msgs);
+				return basicSetIBookingManagementImpl((IBookingManagementImpl)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
-			return basicSetIBookingManagementImpl(null, msgs);
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return basicSetIBookingManagementImpl(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
-			return getStaff();
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
-			if (resolve)
-				return getIBookingManagementImpl();
-			return basicGetIBookingManagementImpl();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				return getStaff();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				if (resolve) return getIBookingManagementImpl();
+				return basicGetIBookingManagementImpl();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
-			getStaff().clear();
-			getStaff().addAll((Collection<? extends StaffMember>) newValue);
-			return;
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
-			setIBookingManagementImpl((IBookingManagementImpl) newValue);
-			return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				getStaff().clear();
+				getStaff().addAll((Collection<? extends StaffMember>)newValue);
+				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)newValue);
+				return;
 		}
 		super.eSet(featureID, newValue);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
-			getStaff().clear();
-			return;
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
-			setIBookingManagementImpl((IBookingManagementImpl) null);
-			return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				getStaff().clear();
+				return;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				setIBookingManagementImpl((IBookingManagementImpl)null);
+				return;
 		}
 		super.eUnset(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
-			return staff != null && !staff.isEmpty();
-		case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
-			return iBookingManagementImpl != null;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__STAFF:
+				return staff != null && !staff.isEmpty();
+			case ClassesPackage.IHOTEL_MANAGER_IMPL__IBOOKING_MANAGEMENT_IMPL:
+				return iBookingManagementImpl != null;
 		}
 		return super.eIsSet(featureID);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
 	 * @generated
 	 */
 	@Override
 	public Object eInvoke(int operationID, EList<?> arguments)
 			throws InvocationTargetException {
 		switch (operationID) {
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING:
-			return login((String) arguments.get(0), (String) arguments.get(1));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN:
-			return addStaffMember((String) arguments.get(0),
-					(String) arguments.get(1), (String) arguments.get(2),
-					(String) arguments.get(3), (String) arguments.get(4),
-					(String) arguments.get(5), (String) arguments.get(6),
-					(String) arguments.get(7), (Boolean) arguments.get(8));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING:
-			return isPasswordSecure((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
-			return isValidUsername((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_LOGGED_IN__STRING:
-			return isStaffMemberLoggedIn((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_ADMIN__STRING:
-			return isStaffMemberAdmin((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PASSWORD__STRING:
-			return getStaffMemberPassword((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_FIRST_NAME__STRING:
-			return getStaffMemberFirstName((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_LAST_NAME__STRING:
-			return getStaffMemberLastName((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_EMAIL__STRING:
-			return getStaffMemberEmail((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PHONE_NUMBER__STRING:
-			return getStaffMemberPhoneNumber((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_ADDRESS__STRING:
-			return getStaffMemberAddress((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
-			return logout((String) arguments.get(0));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT_STRING:
-			return checkInBooking((Integer) arguments.get(0),
-					(String) arguments.get(1));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING:
-			return changeStatusOfRoom((Integer) arguments.get(0),
-					(String) arguments.get(1), (String) arguments.get(2));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_OUT__INT_STRING:
-			return checkOut((Integer) arguments.get(0),
-					(String) arguments.get(1));
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_ROOM__STRING_INT_STRING:
-			addRoom((String) arguments.get(0), (Integer) arguments.get(1),
-					(String) arguments.get(2));
-			return null;
-		case ClassesPackage.IHOTEL_MANAGER_IMPL___REMOVE_ROOM__INT_STRING:
-			removeRoom((Integer) arguments.get(0), (String) arguments.get(1));
-			return null;
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGIN__STRING_STRING:
+				return login((String)arguments.get(0), (String)arguments.get(1));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___ADD_STAFF_MEMBER__STRING_STRING_STRING_STRING_STRING_STRING_STRING_STRING_BOOLEAN:
+				return addStaffMember((String)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2), (String)arguments.get(3), (String)arguments.get(4), (String)arguments.get(5), (String)arguments.get(6), (String)arguments.get(7), (Boolean)arguments.get(8));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_PASSWORD_SECURE__STRING:
+				return isPasswordSecure((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_VALID_USERNAME__STRING:
+				return isValidUsername((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_LOGGED_IN__STRING:
+				return isStaffMemberLoggedIn((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___IS_STAFF_MEMBER_ADMIN__STRING:
+				return isStaffMemberAdmin((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PASSWORD__STRING:
+				return getStaffMemberPassword((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_FIRST_NAME__STRING:
+				return getStaffMemberFirstName((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_LAST_NAME__STRING:
+				return getStaffMemberLastName((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_EMAIL__STRING:
+				return getStaffMemberEmail((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_PHONE_NUMBER__STRING:
+				return getStaffMemberPhoneNumber((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___GET_STAFF_MEMBER_ADDRESS__STRING:
+				return getStaffMemberAddress((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___LOGOUT__STRING:
+				return logout((String)arguments.get(0));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_IN_BOOKING__INT_STRING:
+				return checkInBooking((Integer)arguments.get(0), (String)arguments.get(1));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHANGE_STATUS_OF_ROOM__INT_STRING_STRING:
+				return changeStatusOfRoom((Integer)arguments.get(0), (String)arguments.get(1), (String)arguments.get(2));
+			case ClassesPackage.IHOTEL_MANAGER_IMPL___CHECK_OUT__INT_STRING:
+				return checkOut((Integer)arguments.get(0), (String)arguments.get(1));
 		}
 		return super.eInvoke(operationID, arguments);
 	}
