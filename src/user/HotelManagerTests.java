@@ -273,12 +273,12 @@ public class HotelManagerTests {
 	 * getBooking(bookingID)
 	 */
 	@Test
-	public void test_CheckIn() {
+	public void test_CheckInBooking() {
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		IHotelManager hotelManagement = bookingManagement
 				.getIHotelManagerImpl();
-		int room1 = 1, room2 = 2, room3 = 3, room11 = 11;
+		int room1 = 1, room2 = 2, room3 = 3;
 		Calendar checkIn = Calendar.getInstance();
 		Calendar checkOut = Calendar.getInstance();
 
@@ -294,14 +294,7 @@ public class HotelManagerTests {
 						Util.adminUsername));
 		assertEquals(RoomStatus.OCCUPIED, bookingManagement.getRoomByID(room1)
 				.getStatus());
-		/*
-		 * assertEquals("Cannot check in since room is currently not available",
-		 * hotelManagement.checkIn(room1));
-		 * 
-		 * // Try to check in to a non-existing room
-		 * assertEquals("Room was not found, please try another room number",
-		 * hotelManagement.checkIn(room11));
-		 */
+
 		// Check in to a room (the room must have been booked for that date)
 		checkIn.set(Calendar.YEAR, Calendar.MONTH, Calendar.DAY_OF_MONTH, 12,
 				00);
@@ -317,13 +310,6 @@ public class HotelManagerTests {
 						Util.adminUsername));
 		assertEquals(RoomStatus.AVAILABLE, bookingManagement.getRoomByID(room1)
 				.getStatus());
-
-		/*
-		 * // Try to check in to a room when no booking is made for room
-		 * assertEquals
-		 * ("Could not check in since no booking is made for the room",
-		 * hotelManagement.checkIn(room1));
-		 */
 
 		// Create a booking
 		int bookingID1 = bookingManagement.createPendingBooking(checkInDate,
