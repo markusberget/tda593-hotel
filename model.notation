@@ -3083,7 +3083,7 @@
         <children xmi:type="notation:Shape" xmi:id="_vUEVAJRJEeSL9PQL15jNtQ" type="3009">
           <children xmi:type="notation:DecorationNode" xmi:id="_vUE8EJRJEeSL9PQL15jNtQ" type="5006"/>
           <element xmi:type="uml:Comment" href="model.uml#_vUCf0JRJEeSL9PQL15jNtQ"/>
-          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vUEVAZRJEeSL9PQL15jNtQ" x="351" y="150" width="71" height="47"/>
+          <layoutConstraint xmi:type="notation:Bounds" xmi:id="_vUEVAZRJEeSL9PQL15jNtQ" x="347" y="129" width="156" height="47"/>
         </children>
         <layoutConstraint xmi:type="notation:Bounds" xmi:id="_KPeFJJRCEeSL9PQL15jNtQ"/>
       </children>

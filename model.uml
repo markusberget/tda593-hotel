@@ -441,13 +441,14 @@ return error message</body>
     </packagedElement>
     <packagedElement xmi:type="uml:Interaction" xmi:id="_IUKPAJRCEeSL9PQL15jNtQ" name="checkOut">
       <ownedComment xmi:type="uml:Comment" xmi:id="_vUCf0JRJEeSL9PQL15jNtQ">
-        <body> bill > 0</body>
+        <body>If bill has not been paid,
+return error message</body>
       </ownedComment>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_MzhWQJRCEeSL9PQL15jNtQ" name="Staff" coveredBy="_I_0JMJREEeSL9PQL15jNtQ _qowccJRJEeSL9PQL15jNtQ _tmQIUJRJEeSL9PQL15jNtQ _tmQvYJRJEeSL9PQL15jNtQ"/>
       <lifeline xmi:type="uml:Lifeline" xmi:id="_NuV_wJRCEeSL9PQL15jNtQ" name="IHotelManager" coveredBy="_I_0wQJREEeSL9PQL15jNtQ _qov1YJRJEeSL9PQL15jNtQ _tmQIUJRJEeSL9PQL15jNtQ _tmQvYJRJEeSL9PQL15jNtQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I_0JMJREEeSL9PQL15jNtQ" name="MessageSend" covered="_MzhWQJRCEeSL9PQL15jNtQ" message="_I_y7EJREEeSL9PQL15jNtQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_I_0wQJREEeSL9PQL15jNtQ" name="MessageRecv" covered="_NuV_wJRCEeSL9PQL15jNtQ" message="_I_y7EJREEeSL9PQL15jNtQ"/>
-      <fragment xmi:type="uml:CombinedFragment" xmi:id="_tmQIUJRJEeSL9PQL15jNtQ" name="CombinedFragment" covered="_NuV_wJRCEeSL9PQL15jNtQ _MzhWQJRCEeSL9PQL15jNtQ" interactionOperator="opt">
+      <fragment xmi:type="uml:CombinedFragment" xmi:id="_tmQIUJRJEeSL9PQL15jNtQ" name="CombinedFragment" covered="_NuV_wJRCEeSL9PQL15jNtQ _MzhWQJRCEeSL9PQL15jNtQ" interactionOperator="alt">
         <operand xmi:type="uml:InteractionOperand" xmi:id="_tmQvYJRJEeSL9PQL15jNtQ" name="InteractionOperand" covered="_NuV_wJRCEeSL9PQL15jNtQ _MzhWQJRCEeSL9PQL15jNtQ">
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_onhkgJRJEeSL9PQL15jNtQ" name="MessageSend0" message="_ong9cJRJEeSL9PQL15jNtQ"/>
           <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_oniLkJRJEeSL9PQL15jNtQ" name="MessageRecv0" message="_ong9cJRJEeSL9PQL15jNtQ"/>
@@ -461,8 +462,8 @@ return error message</body>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qov1YJRJEeSL9PQL15jNtQ" name="MessageSend1" covered="_NuV_wJRCEeSL9PQL15jNtQ" message="_qovOUJRJEeSL9PQL15jNtQ"/>
       <fragment xmi:type="uml:MessageOccurrenceSpecification" xmi:id="_qowccJRJEeSL9PQL15jNtQ" name="MessageRecv1" covered="_MzhWQJRCEeSL9PQL15jNtQ" message="_qovOUJRJEeSL9PQL15jNtQ"/>
       <message xmi:type="uml:Message" xmi:id="_I_y7EJREEeSL9PQL15jNtQ" name="checkOut(bookingID)" messageSort="asynchCall" receiveEvent="_I_0wQJREEeSL9PQL15jNtQ" sendEvent="_I_0JMJREEeSL9PQL15jNtQ"/>
-      <message xmi:type="uml:Message" xmi:id="_ong9cJRJEeSL9PQL15jNtQ" name="failure" messageSort="asynchCall" receiveEvent="_oniLkJRJEeSL9PQL15jNtQ" sendEvent="_onhkgJRJEeSL9PQL15jNtQ"/>
-      <message xmi:type="uml:Message" xmi:id="_qovOUJRJEeSL9PQL15jNtQ" name="success" messageSort="asynchCall" receiveEvent="_qowccJRJEeSL9PQL15jNtQ" sendEvent="_qov1YJRJEeSL9PQL15jNtQ"/>
+      <message xmi:type="uml:Message" xmi:id="_ong9cJRJEeSL9PQL15jNtQ" name="String" messageSort="asynchCall" receiveEvent="_oniLkJRJEeSL9PQL15jNtQ" sendEvent="_onhkgJRJEeSL9PQL15jNtQ"/>
+      <message xmi:type="uml:Message" xmi:id="_qovOUJRJEeSL9PQL15jNtQ" name="String" messageSort="asynchCall" receiveEvent="_qowccJRJEeSL9PQL15jNtQ" sendEvent="_qov1YJRJEeSL9PQL15jNtQ"/>
     </packagedElement>
   </packagedElement>
   <packagedElement xmi:type="uml:Package" href="Classes.uml#_49dQQHpiEeSOqIzpWDGINg"/>
