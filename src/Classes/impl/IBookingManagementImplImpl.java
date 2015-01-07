@@ -952,7 +952,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 
 			}
 		} else {
-			return searchRooms(checkIn, checkOut, numberOfGuests, roomType,
+			return searchComboRooms(checkIn, checkOut, numberOfGuests, roomType,
 					maximumPrice);
 		}
 
@@ -989,7 +989,7 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * @param maximumPrice
 	 * @return
 	 */
-	public synchronized EList<Integer> searchRooms(Date checkIn, Date checkOut,
+	public synchronized EList<Integer> searchComboRooms(Date checkIn, Date checkOut,
 			int numberOfGuests, String roomType, int maximumPrice) {
 		EList<Room> allRooms = getRoom(); // allRooms contain rooms that meet
 											// criteria
