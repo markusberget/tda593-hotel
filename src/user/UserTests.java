@@ -320,7 +320,7 @@ public class UserTests {
 		public void run() {
 			// Perform the booking procedure (the currently implemented parts)
 			bookingID = bookingManagement.createPendingBooking(checkIn, checkOut, numberOfGuests);
-			// Search room
+			// Search room (pretend the room list is returned for choosing since method not fully implemented yet)
 			// Here the variable numberOfGuests also resembles which room is chosen
 			bookingManagement.addRoomPending(numberOfGuests, bookingID);
 			bookingManagement.addCustomerInformationToBooking(bookingID, firstName, lastName, email, ph);
