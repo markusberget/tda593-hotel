@@ -635,10 +635,20 @@ public class HotelManagerTests {
 	 */
 	@Test
 	public void removeRoom() {
-		IHotelManager hm = ClassesFactoryImpl.eINSTANCE
+		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
+				.instantiateForTest();
+		IHotelManager hotelManager = ClassesFactoryImpl.eINSTANCE
 				.createIHotelManagerImpl();
-		assertTrue(hm.login(Util.adminUsername, Util.adminPassword));
-		assertTrue(hm.isStaffMemberAdmin(Util.adminUsername));
+		
+		int roomNbr = 1;
+		String adminUsername = Util.adminUsername;
+		String password = Util.adminPassword;
+		//assertTrue(hotelManager.login(adminUsername, password));
+		//assertTrue(hotelManager.isStaffMemberAdmin(adminUsername));
+		Room removedRoom = bookingManagement.getRoomByID(roomNbr);
+		hotelManager.removeRoom(roomNbr, adminUsername);
+		//assertTrue(!bookingManagement.getRoom().contains(removedRoom));
+		
 
 	}
 

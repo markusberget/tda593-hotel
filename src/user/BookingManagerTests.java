@@ -730,8 +730,8 @@ public class BookingManagerTests {
 		}
 
 		
-		// Tests if returned list is correct if all parameters are entered
-		// correctly.
+		//Tests if returned list is correct if a large number of guests 
+		//are sent in and the searchRooms method has to be used
 
 		numberOfGuests = 10;
 		roomType = RoomTypeName.SINGLE_ROOM.toString();
@@ -747,10 +747,10 @@ public class BookingManagerTests {
 					.getRoomType();
 			sumOfPeople = sumOfPeople + typeOfRoom.getNumberOfGuests();
 			totalPrice = totalPrice + typeOfRoom.getPrice();
-			//assertTrue(roomType == typeOfRoom.getRoomTypeName().toString());
+			assertTrue(roomType == typeOfRoom.getRoomTypeName().toString());
 		}
-		//assertTrue(totalPrice<maximumPrice);
-		assertTrue(sumOfPeople>numberOfGuests);
+		assertTrue(totalPrice<maximumPrice);
+		assertTrue(sumOfPeople>numberOfGuests || sumOfPeople == 0);
 		
 		// Tests if exception is thrown as it should if date is invalid or
 		// checkIn is after checkOut or vice versa

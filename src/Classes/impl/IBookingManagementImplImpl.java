@@ -893,9 +893,10 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 	 * an alternate method of search will be used to take out a combination of
 	 * rooms that can accommodate for the large number of guests.
 	 * 
-	 * NOTE: If the parameter roomType is not used, send in null instead and if
-	 * the parameter maximumPrice is not used, send in 0. The other parameters
-	 * are required so that searchRoom can find appropriate rooms.
+	 * NOTE: If the parameter roomType is not used, send in null instead, if
+	 * maximu and if the parameter maximumPrice is not used, send in 0. The
+	 * other parameters are required so that searchRoom can find appropriate
+	 * rooms.
 	 * 
 	 * 
 	 * 
@@ -1062,15 +1063,23 @@ public class IBookingManagementImplImpl extends MinimalEObjectImpl.Container
 			return allRoomsNumbers;
 		} else {
 			EList<Room> roomsWithGuests = new BasicEList<Room>();
-			int totalGuests = 0, i = 0;
-			while (totalGuests < numberOfGuests) {
-				roomsWithGuests.add(allRooms.get(i));
-				totalGuests += allRooms.get(i).getRoomType()
+			int totalGuests = 0;
+			for (int j = 0; j < allRooms.size(); j++) {
+				roomsWithGuests.add(allRooms.get(j));
+				totalGuests += allRooms.get(j).getRoomType()
 						.getNumberOfGuests();
-				i++;
+				if (totalGuests >= numberOfGuests) {
+					break;
+				}
 			}
-			for (Room room : roomsWithGuests) {
-				allRoomsNumbers.add(room.getRoomNumber());
+			if (totalGuests >= numberOfGuests) {
+
+				for (Room room : roomsWithGuests) {
+					allRoomsNumbers.add(room.getRoomNumber());
+				}
+			}
+			else{
+				allRoomsNumbers.clear();
 			}
 			// Return RoomNr's of enough rooms to hold given number of guests
 			return allRoomsNumbers;
