@@ -13,13 +13,10 @@ import org.junit.Test;
 
 import Classes.ChargeType;
 import Classes.IHotelManager;
-import Classes.Room;
 import Classes.RoomStatus;
-import Classes.RoomType;
 import Classes.RoomTypeName;
 import Classes.impl.ClassesFactoryImpl;
 import Classes.impl.IHotelManagerImplImpl;
-import Classes.impl.RoomTypeImpl;
 
 public class HotelManagerTests {
 
@@ -227,38 +224,6 @@ public class HotelManagerTests {
 	@Test
 	public void testChangeStatusOfRoom() {
 
-		// Uncomment if old changeStatusOfRoom is moved to IHotelManager
-		/*
-		 * Classes.impl.IBookingManagementImplImpl bm =
-		 * Classes.impl.IBookingManagementImplImpl .instantiateForTest();
-		 * IHotelManager hm = bm.getIHotelManagerImpl();
-		 * 
-		 * assertNotNull(hm);
-		 * 
-		 * assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
-		 * 
-		 * // try to change status when admin is logged out:
-		 * assertFalse(bm.changeStatusOfRoom(Util.adminUsername, 1,
-		 * RoomStatus.CLEANING)); // status should be unchanged.
-		 * assertEquals(RoomStatus.AVAILABLE, bm.getRoomByID(1).getStatus());
-		 * 
-		 * // now login and try again! assertTrue(hm.login(Util.adminUsername,
-		 * Util.adminPassword));
-		 * assertTrue(bm.changeStatusOfRoom(Util.adminUsername, 1,
-		 * RoomStatus.CLEANING)); assertEquals(RoomStatus.CLEANING,
-		 * bm.getRoomByID(1).getStatus());
-		 * 
-		 * // Next, make sure that a staff member that is not admin can also
-		 * change // status of room.
-		 * assertTrue(hm.addStaffMember(Util.adminUsername, "alex4",
-		 * "ankeborg4444", "Alexander", "Lukas", "alex4@hotmail.com", "552219",
-		 * "Tomtebacken 14", false)); assertTrue(hm.login("alex4",
-		 * "ankeborg4444")); //assertTrue(bm.changeStatusOfRoom("alex4", 1,
-		 * RoomStatus.AVAILABLE)); assertEquals(RoomStatus.AVAILABLE,
-		 * bm.getRoomByID(1).getStatus());
-		 */
-
-		// The new version of changeStatusOfRoom
 		Classes.impl.IBookingManagementImplImpl bookingManagement = Classes.impl.IBookingManagementImplImpl
 				.instantiateForTest();
 		IHotelManager hotelManagement = bookingManagement
